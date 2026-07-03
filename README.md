@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blueprint
 
-## Getting Started
+**Sistema Operativo para Construir Empresas.** Construye una vez. Reutiliza para siempre.
 
-First, run the development server:
+Blueprint es una plataforma SaaS multi-tenant que ayuda a empresas y consultores a construir, organizar, documentar y reutilizar su conocimiento empresarial, en lugar de duplicarlo cada vez en un documento nuevo.
+
+## Documentación de referencia
+
+Antes de tocar código, lee:
+
+- [`docs/blueprint-master-spec.md`](./docs/blueprint-master-spec.md) — arquitectura, jerarquía de dominio, los 5 motores núcleo, modelo de datos, design tokens y decisiones de diseño ya resueltas.
+- [`docs/roadmap.md`](./docs/roadmap.md) — los sprints de desarrollo, en orden de dependencia.
+
+## Stack
+
+- **Frontend**: Next.js (App Router) · TypeScript · Tailwind CSS v4 · shadcn/ui (Radix) · Lucide Icons · Framer Motion · React Hook Form + Zod
+- **Backend**: Firebase (Firestore, Auth, Storage, Cloud Functions)
+- **IA**: Anthropic Claude API
+- **Deploy**: GitHub → Vercel
+
+## Desarrollo local
 
 ```bash
+npm install
+cp .env.local.example .env.local   # rellenar con credenciales reales de Firebase / Anthropic
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Otros scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint          # ESLint
+npm run format        # Prettier (escribe)
+npm run format:check  # Prettier (solo verifica)
+npm run build          # build de produccion
+```
 
-## Learn More
+Un pre-commit hook (Husky + lint-staged) corre lint y format automáticamente sobre los archivos modificados.
 
-To learn more about Next.js, take a look at the following resources:
+## Estructura del proyecto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ver `docs/blueprint-master-spec.md` §8 para el detalle completo de `app/`, `components/{ui,features}`, `hooks/`, `services/`, `lib/`, `providers/`, `types/`, `config/` y el modelo de datos en Firestore.
