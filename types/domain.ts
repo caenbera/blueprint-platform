@@ -150,3 +150,26 @@ export interface Card {
   createdBy: string;
   updatedAt: string;
 }
+
+/** Comentario libre sobre una Card (Prompt 8/9 — sin menciones todavia, Sprint 4). */
+export interface Comment {
+  id: string;
+  authorUid: string;
+  authorName: string;
+  text: string;
+  createdAt: string;
+}
+
+/**
+ * Snapshot de una Card justo ANTES de aplicarse un cambio (Prompt 11
+ * "Soft Delete"/"Versionado": nunca sobrescribir informacion). Se escribe
+ * automaticamente desde `services/cards.ts#updateCard`.
+ */
+export interface CardVersion {
+  id: string;
+  title: string;
+  objective: string;
+  content: unknown;
+  savedBy: string;
+  createdAt: string;
+}

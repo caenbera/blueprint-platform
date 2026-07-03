@@ -29,6 +29,9 @@ export interface NavigatorContextValue {
   setActiveBlueprint: (id: string | null, name: string | null) => void;
   selection: NavigatorSelection | null;
   setSelection: (selection: NavigatorSelection | null) => void;
+  /** Modo Focus (Prompt 2/8): oculta Navigator + Assistant Panel, deja solo breadcrumb + Cards. */
+  focusMode: boolean;
+  setFocusMode: (value: boolean) => void;
 }
 
 export const NavigatorContext = createContext<NavigatorContextValue | null>(null);
@@ -39,6 +42,7 @@ export function NavigatorProvider({ children }: { children: ReactNode }) {
   const [activeBlueprintId, setActiveBlueprintId] = useState<string | null>(null);
   const [activeBlueprintName, setActiveBlueprintName] = useState<string | null>(null);
   const [selection, setSelection] = useState<NavigatorSelection | null>(null);
+  const [focusMode, setFocusMode] = useState(false);
 
   return (
     <NavigatorContext.Provider
@@ -57,6 +61,8 @@ export function NavigatorProvider({ children }: { children: ReactNode }) {
         },
         selection,
         setSelection,
+        focusMode,
+        setFocusMode,
       }}
     >
       {children}

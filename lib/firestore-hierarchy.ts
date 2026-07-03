@@ -47,6 +47,12 @@ export interface WorkspaceRef extends ChapterRef {
 export interface CardRef extends WorkspaceRef {
   cardId: string;
 }
+export interface CommentRef extends CardRef {
+  commentId: string;
+}
+export interface CardVersionRef extends CardRef {
+  versionId: string;
+}
 
 export const projectsPath = (orgId: string) => `organizations/${orgId}/projects`;
 export const projectPath = (ref: ProjectRef) => `${projectsPath(ref.orgId)}/${ref.projectId}`;
@@ -68,6 +74,12 @@ export const workspacePath = (ref: WorkspaceRef) => `${workspacesPath(ref)}/${re
 
 export const cardsPath = (ref: WorkspaceRef) => `${workspacePath(ref)}/cards`;
 export const cardPath = (ref: CardRef) => `${cardsPath(ref)}/${ref.cardId}`;
+
+export const commentsPath = (ref: CardRef) => `${cardPath(ref)}/comments`;
+export const commentPath = (ref: CommentRef) => `${commentsPath(ref)}/${ref.commentId}`;
+
+export const cardVersionsPath = (ref: CardRef) => `${cardPath(ref)}/versions`;
+export const cardVersionPath = (ref: CardVersionRef) => `${cardVersionsPath(ref)}/${ref.versionId}`;
 
 function toIso(value: unknown): string {
   if (value instanceof Timestamp) return value.toDate().toISOString();

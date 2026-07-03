@@ -1,7 +1,10 @@
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { auth, db } from "@/lib/firebase/client";
 import {
   archiveNode,
   cardPath,
   cardsPath,
+  cardVersionsPath,
   createNode,
   getNode,
   listNodes,
@@ -21,7 +24,7 @@ export interface CreateCardInput {
 
 /**
  * CRUD basico de Cards. La riqueza completa del Card System (los 20 tipos,
- * versiones, comentarios anidados - Prompt 8/9) se construye en el
+ * contenido especializado por tipo - Prompt 9) se construye en el
  * Sprint 5; esto solo deja la base de datos lista para esa fase.
  */
 export async function createCard(ref: WorkspaceRef, input: CreateCardInput): Promise<string> {
@@ -50,10 +53,31 @@ export async function getCard(ref: CardRef): Promise<Card | null> {
   return getNode<Card>(cardPath(ref));
 }
 
+/**
+ * Antes de aplicar un cambio de titulo/objetivo/contenido, guarda un
+ * snapshot del estado ANTERIOR en versions/ (Prompt 11: "nunca sobrescribir
+ * informacion"). No versiona cambios que solo tocan lifecycleStatus/order.
+ */
 export async function updateCard(
   ref: CardRef,
   data: Partial<Pick<Card, "title" | "objective" | "content" | "order" | "lifecycleStatus">>,
 ): Promise<void> {
+  const touchesContent = "title" in data || "objective" in data || "content" in data;
+
+  if (touchesContent) {
+    const current = await getCard(ref);
+    const user = auth.currentUser;
+    if (current && user) {
+      await addDoc(collection(db, cardVersionsPath(ref)), {
+        title: current.title,
+        objective: current.objective,
+        content: current.content,
+        savedBy: user.uid,
+        createdAt: serverTimestamp(),
+      });
+    }
+  }
+
   return updateNode(cardPath(ref), data);
 }
 
