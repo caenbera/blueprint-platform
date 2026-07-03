@@ -1,0 +1,112 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isSuperAdmin() {
+      return isSignedIn() &&
+        exists(/databases/$(database)/documents/platformAdmins/$(request.auth.uid));
+    }
+
+    function isOrgMember(orgId) {
+      return isSignedIn() &&
+        exists(/databases/$(database)/documents/organizations/$(orgId)/users/$(request.auth.uid));
+    }
+
+    function orgRole(orgId) {
+      return get(/databases/$(database)/documents/organizations/$(orgId)/users/$(request.auth.uid)).data.role;
+    }
+
+    function hasApprovedSupportAccess(orgId) {
+      return isSuperAdmin() &&
+        exists(/databases/$(database)/documents/organizations/$(orgId)/supportAccessGrants/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/organizations/$(orgId)/supportAccessGrants/$(request.auth.uid)).data.status == 'approved';
+    }
+
+    // Rol de plataforma (Super Admin). Nunca se escribe desde el cliente:
+    // solo el script scripts/grant-super-admin.cjs, via Admin SDK, lo crea.
+    match /platformAdmins/{uid} {
+      allow read: if isSuperAdmin();
+      allow write: if false;
+    }
+
+    // Indice simple uid -> orgId, para que un usuario pueda encontrar su
+    // organizacion al iniciar sesion sin necesitar una collection group
+    // query (evita requerir un indice compuesto manual). Solo el propio
+    // usuario puede leer su entrada; se escribe con el Admin SDK al crear
+    // la organizacion.
+    match /userOrgIndex/{uid} {
+      allow read: if isSignedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    match /organizations/{orgId} {
+      // Metadata de la organizacion (nombre, owner, fecha) - gestion de
+      // plataforma, el Super Admin siempre puede leerla sin pedir permiso.
+      allow read: if isOrgMember(orgId) || isSuperAdmin();
+      // La creacion de una organizacion nueva solo ocurre via
+      // app/api/organizations/route.ts (Admin SDK), nunca directo del cliente.
+      allow create: if false;
+      allow update: if isOrgMember(orgId);
+      allow delete: if false;
+
+      match /users/{userId} {
+        // Membresias/roles - tambien es gestion de plataforma, no contenido
+        // de negocio, asi que el Super Admin las puede leer siempre.
+        allow read: if isOrgMember(orgId) || isSuperAdmin();
+        // Se crean junto con la organizacion (API route). Invitar
+        // colaboradores existentes se añadira mas adelante.
+        allow write: if false;
+      }
+
+      match /supportAccessGrants/{superAdminUid} {
+        // Un Super Admin puede ver su propia solicitud; cualquier miembro
+        // de la organizacion puede ver las solicitudes hechas sobre ella.
+        allow read: if isOrgMember(orgId) ||
+          (isSuperAdmin() && request.auth.uid == superAdminUid);
+        // El Super Admin solo puede solicitar acceso para si mismo, y
+        // siempre debe nacer en estado "pending" (nunca se auto-aprueba).
+        allow create: if isSuperAdmin() &&
+          request.auth.uid == superAdminUid &&
+          request.resource.data.status == 'pending';
+        // Solo el Owner/Administrator de la organizacion puede aprobar,
+        // denegar o revocar una solicitud.
+        allow update: if isOrgMember(orgId) &&
+          orgRole(orgId) in ['owner', 'administrator'];
+        allow delete: if false;
+      }
+
+      // TODO Sprint 1 (posterior): cuando existan projects/blueprints/
+      // phases/modules/chapters/workspaces/cards/knowledgeItems/documents/
+      // aiConversations/activityLog como colecciones reales, aplican esta
+      // misma regla de aislamiento por organizacion. El Super Admin solo
+      // lee si tiene supportAccessGrant aprobado; nunca escribe contenido
+      // de negocio ajeno. Se refinara a permisos de 4 niveles
+      // (org/project/workspace/card) cuando se implemente el modelo
+      // completo de roles/permisos granular.
+      //
+      // IMPORTANTE: Firestore evalua todas las reglas que matchean una ruta
+      // con semantica OR (si alguna permite, se permite). Este wildcard
+      // matchearia tambien /users/** y /supportAccessGrants/**, asi que se
+      // excluyen explicitamente para no otorgar sin querer acceso mas amplio
+      // del que definen sus bloques especificos arriba.
+      match /{businessCollection}/{docId=**} {
+        allow read: if businessCollection != 'users' &&
+          businessCollection != 'supportAccessGrants' &&
+          (isOrgMember(orgId) || hasApprovedSupportAccess(orgId));
+        allow write: if businessCollection != 'users' &&
+          businessCollection != 'supportAccessGrants' &&
+          isOrgMember(orgId);
+      }
+    }
+
+    // Deny-by-default para cualquier otra ruta no contemplada arriba.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

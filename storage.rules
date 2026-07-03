@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOrgMember(orgId) {
+      return isSignedIn() &&
+        firestore.exists(/databases/(default)/documents/organizations/$(orgId)/users/$(request.auth.uid));
+    }
+
+    // Todo archivo de una organizacion vive bajo organizations/{orgId}/...
+    // Aislamiento por organizacion, igual que en Firestore. El mecanismo de
+    // supportAccessGrants para archivos se añadira cuando exista upload real
+    // (Sprint 4/5) — por ahora, sin acceso de Super Admin a archivos.
+    match /organizations/{orgId}/{allPaths=**} {
+      allow read, write: if isOrgMember(orgId);
+    }
+
+    // Deny-by-default para cualquier otra ruta.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
