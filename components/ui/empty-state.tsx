@@ -10,6 +10,8 @@ export interface EmptyStateProps {
   actionLabel?: string;
   onAction?: () => void;
   className?: string;
+  /** Contenido personalizado (ej. un formulario) en vez de un unico boton de accion. */
+  children?: React.ReactNode;
 }
 
 /**
@@ -24,6 +26,7 @@ export function EmptyState({
   actionLabel,
   onAction,
   className,
+  children,
 }: EmptyStateProps) {
   return (
     <div
@@ -44,6 +47,7 @@ export function EmptyState({
           {actionLabel}
         </Button>
       )}
+      {children && <div className="mt-2 flex w-full flex-col items-center">{children}</div>}
     </div>
   );
 }

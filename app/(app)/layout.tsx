@@ -2,16 +2,22 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { Loader2, Layers } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { BlueprintNavigator } from "@/components/features/navigator/blueprint-navigator";
+import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
+import { NavigatorProvider } from "@/providers/navigator-provider";
 import { useAuth } from "@/hooks/use-auth";
+import { signOutUser } from "@/services/auth";
 
 /**
- * Guarda de sesion para todo lo que vive bajo (app): si no hay usuario
- * autenticado, redirige a /login. Version cliente simple para Sprint 1;
- * una guarda server-side con cookies de sesion es una mejora futura.
+ * Chrome persistente para toda la app autenticada (Prompt 2/6): Top
+ * Navigation + Blueprint Navigator (columna izquierda fija) + area de
+ * contenido con Breadcrumb arriba. El Navigator nunca es una pantalla
+ * propia, vive aqui para estar siempre visible.
  */
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth();
+  const { user, membership, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -28,5 +34,44 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     );
   }
 
-  return <div className="flex min-h-screen flex-1 flex-col">{children}</div>;
+  async function handleSignOut() {
+    await signOutUser();
+    router.replace("/login");
+  }
+
+  return (
+    <NavigatorProvider>
+      <div className="flex h-screen flex-col">
+        <header className="flex h-12 shrink-0 items-center justify-between border-b px-4">
+          <div className="flex items-center gap-2">
+            <Layers className="text-primary h-5 w-5" />
+            <span className="text-body font-semibold">
+              {membership?.organizationName ?? "Blueprint"}
+            </span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-small text-muted-foreground">
+              {user.displayName || user.email}
+            </span>
+            <Button variant="ghost" size="sm" onClick={handleSignOut}>
+              Cerrar sesión
+            </Button>
+          </div>
+        </header>
+
+        <div className="flex flex-1 overflow-hidden">
+          <aside className="w-72 shrink-0 overflow-hidden border-r">
+            <BlueprintNavigator />
+          </aside>
+
+          <main className="flex flex-1 flex-col overflow-hidden">
+            <div className="shrink-0 border-b">
+              <BreadcrumbTrail />
+            </div>
+            <div className="flex-1 overflow-y-auto">{children}</div>
+          </main>
+        </div>
+      </div>
+    </NavigatorProvider>
+  );
 }
