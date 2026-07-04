@@ -18,6 +18,7 @@ import { signOutUser } from "@/services/auth";
 const NAV_LINKS = [
   { href: "/dashboard", label: "Workspace" },
   { href: "/knowledge", label: "Knowledge Base" },
+  { href: "/documents", label: "Documentos" },
 ];
 
 function AppShell({ children }: { children: React.ReactNode }) {

@@ -279,3 +279,59 @@ export interface KnowledgeItem {
   createdAt: string;
   updatedAt: string;
 }
+
+/** Catalogo de plantillas del Documents Center (Prompt 4.6). */
+export type DocumentTemplateType =
+  | "plan_negocio"
+  | "modelo_negocio"
+  | "propuesta_comercial"
+  | "plan_estrategico"
+  | "manual_procesos"
+  | "manual_operativo"
+  | "informe_ejecutivo"
+  | "diagnostico_empresarial"
+  | "presentacion"
+  | "reporte_financiero"
+  | "personalizado";
+
+/** Estado de un documento (Prompt 4.6), distinto de CardLifecycleStatus/KnowledgeItemStatus. */
+export type DocumentStatus =
+  "borrador" | "en_edicion" | "en_revision" | "aprobado" | "publicado" | "archivado";
+
+/**
+ * Seccion de un documento: copia (snapshot) de un Knowledge Item, o texto
+ * libre. Reordenar/ocultar/quitar una seccion nunca modifica la fuente
+ * (Prompt 4.6: "constructor no destructivo").
+ */
+export interface DocumentSection {
+  id: string;
+  title: string;
+  content: string;
+  sourceKnowledgeItemId: string | null;
+  hidden: boolean;
+  order: number;
+}
+
+export interface BlueprintDocument {
+  id: string;
+  orgId: string;
+  title: string;
+  templateType: DocumentTemplateType;
+  status: DocumentStatus;
+  sections: DocumentSection[];
+  createdBy: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export type DocumentExportFormat = "pdf" | "word" | "markdown" | "html" | "json";
+
+export interface DocumentExportRecord {
+  id: string;
+  documentId: string;
+  documentTitle: string;
+  format: DocumentExportFormat;
+  url: string;
+  createdBy: string;
+  createdAt: string;
+}
