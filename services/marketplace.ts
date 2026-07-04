@@ -90,8 +90,14 @@ async function publish(
   return ref.id;
 }
 
-/** Lee recursivamente el arbol completo (Fases->Modulos->Capitulos->Workspaces->Cards) para publicarlo. */
-async function buildBlueprintSnapshot(ref: BlueprintRef): Promise<BlueprintResourceSnapshot> {
+/**
+ * Lee recursivamente el arbol completo (Fases->Modulos->Capitulos->Workspaces->Cards)
+ * para publicarlo. Exportada (Sprint 11) para poder probar la recursividad
+ * con datos mockeados sin depender de una organizacion real.
+ */
+export async function buildBlueprintSnapshot(
+  ref: BlueprintRef,
+): Promise<BlueprintResourceSnapshot> {
   const phases = await listPhases(ref);
   const phaseSnapshots = await Promise.all(
     phases.map(async (phase) => {

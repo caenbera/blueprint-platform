@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { adminAuth, adminDb } from "@/lib/firebase/admin";
 import { getAiProvider } from "@/lib/ai";
+import { checkRateLimit } from "@/lib/rate-limit";
 
 /**
  * Assistant Recommendations (Mission Control widget, Sprint 9): unico
@@ -21,6 +22,23 @@ export async function POST(request: Request) {
     uid = (await adminAuth.verifyIdToken(idToken)).uid;
   } catch {
     return NextResponse.json({ error: "Token de autenticación inválido." }, { status: 401 });
+  }
+
+  // Rate limiting (Sprint 11, auditoria de seguridad): ya esta detras de un
+  // boton "Generar" en el cliente, pero igual necesita un techo. 5 / hora
+  // por usuario.
+  const rateLimit = await checkRateLimit(uid, {
+    key: "assistant-recommendations",
+    maxRequests: 5,
+    windowMs: 60 * 60 * 1000,
+  });
+  if (!rateLimit.allowed) {
+    return NextResponse.json(
+      {
+        error: `Demasiadas recomendaciones generadas. Intenta de nuevo en ${Math.ceil((rateLimit.retryAfterMs ?? 0) / 1000)} segundos.`,
+      },
+      { status: 429 },
+    );
   }
 
   const indexSnap = await adminDb.collection("userOrgIndex").doc(uid).get();

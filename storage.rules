@@ -16,8 +16,16 @@ service firebase.storage {
     // Aislamiento por organizacion, igual que en Firestore. El mecanismo de
     // supportAccessGrants para archivos se añadira cuando exista upload real
     // (Sprint 4/5) — por ahora, sin acceso de Super Admin a archivos.
+    //
+    // Limite de tamaño (Sprint 11, auditoria de seguridad): sin esto,
+    // cualquier miembro podia subir un archivo de cualquier tamaño. 25MB
+    // cubre los usos reales (Cards tipo archivo/imagen, exportaciones de
+    // Documentos) sin permitir abuso de almacenamiento/costo. `delete` no
+    // tiene `request.resource`, asi que va aparte del limite de tamaño.
     match /organizations/{orgId}/{allPaths=**} {
-      allow read, write: if isOrgMember(orgId);
+      allow read: if isOrgMember(orgId);
+      allow create, update: if isOrgMember(orgId) && request.resource.size < 25 * 1024 * 1024;
+      allow delete: if isOrgMember(orgId);
     }
 
     // Deny-by-default para cualquier otra ruta.
