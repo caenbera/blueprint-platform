@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { BlueprintNavigator } from "@/components/features/navigator/blueprint-navigator";
 import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
 import { AssistantPanel } from "@/components/features/workspace/assistant-panel";
+import { WorkspaceWalkthroughBar } from "@/components/features/super-admin/workspace-walkthrough-bar";
 import { NavigatorProvider } from "@/providers/navigator-provider";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
@@ -68,6 +69,8 @@ function AppShell({ children }: { children: React.ReactNode }) {
           </aside>
         )}
       </div>
+
+      <WorkspaceWalkthroughBar />
     </div>
   );
 }
