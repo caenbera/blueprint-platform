@@ -411,3 +411,78 @@ export interface AssistantRecommendation {
   text: string;
   generatedAt: string;
 }
+
+/**
+ * Marketplace (Sprint 10, Prompt "Marketplace"): recursos reutilizables con
+ * alcance Publico o Biblioteca Privada de Empresa. "Incorporar" siempre crea
+ * una copia nueva a partir del snapshot - nunca modifica el original ni el
+ * recurso publicado (mismo principio ya usado en Card->KnowledgeItem y
+ * KnowledgeItem->Document Section).
+ */
+export type MarketplaceResourceType = "blueprint" | "document" | "knowledge_item";
+export type MarketplaceVisibility = "public" | "organization";
+export type MarketplaceResourceStatus = "publicado" | "archivado";
+
+export interface BlueprintSnapshotCard {
+  type: CardType;
+  title: string;
+  objective: string;
+  content: unknown;
+  order: number;
+}
+export interface BlueprintSnapshotWorkspace {
+  name: string;
+  description: string;
+  order: number;
+  cards: BlueprintSnapshotCard[];
+}
+export interface BlueprintSnapshotChapter {
+  name: string;
+  description: string;
+  order: number;
+  workspaces: BlueprintSnapshotWorkspace[];
+}
+export interface BlueprintSnapshotModule {
+  name: string;
+  description: string;
+  order: number;
+  chapters: BlueprintSnapshotChapter[];
+}
+export interface BlueprintSnapshotPhase {
+  name: string;
+  description: string;
+  order: number;
+  modules: BlueprintSnapshotModule[];
+}
+/** Snapshot recursivo del arbol completo de un Blueprint (Fases->Modulos->Capitulos->Workspaces->Cards). */
+export interface BlueprintResourceSnapshot {
+  phases: BlueprintSnapshotPhase[];
+}
+
+export interface DocumentResourceSnapshot {
+  templateType: DocumentTemplateType;
+  sections: { title: string; content: string }[];
+}
+
+export interface KnowledgeItemResourceSnapshot {
+  category: KnowledgeCategory;
+  tags: string[];
+  summary: string;
+  content: unknown;
+}
+
+export interface MarketplaceResource {
+  id: string;
+  resourceType: MarketplaceResourceType;
+  title: string;
+  description: string;
+  visibility: MarketplaceVisibility;
+  orgId: string;
+  orgName: string;
+  publishedBy: string;
+  publishedByName: string;
+  status: MarketplaceResourceStatus;
+  snapshot: BlueprintResourceSnapshot | DocumentResourceSnapshot | KnowledgeItemResourceSnapshot;
+  createdAt: string;
+  updatedAt: string;
+}

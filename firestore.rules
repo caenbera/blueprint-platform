@@ -44,6 +44,31 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    // Marketplace (Sprint 10, Prompt "Marketplace"): unica coleccion de
+    // negocio top-level (no anidada bajo organizations/{orgId}), porque un
+    // recurso "publico" debe ser legible por cualquier organizacion, no
+    // solo la que lo publico. "Incorporar" nunca modifica este documento -
+    // solo lee el snapshot y crea copias nuevas en la organizacion destino
+    // (via services/marketplace.ts), asi que no hace falta una regla
+    // especial para "incorporar", solo lectura.
+    match /marketplaceResources/{resourceId} {
+      allow read: if resource.data.visibility == 'public' ||
+        (isSignedIn() && isOrgMember(resource.data.orgId));
+      allow create: if isOrgMember(request.resource.data.orgId) &&
+        orgRole(request.resource.data.orgId) in ['owner', 'administrator', 'editor'] &&
+        request.resource.data.publishedBy == request.auth.uid;
+      // Solo se puede modificar el status (archivar) y campos de
+      // presentacion - nunca el orgId/publishedBy/snapshot ya publicados.
+      allow update: if isOrgMember(resource.data.orgId) &&
+        orgRole(resource.data.orgId) in ['owner', 'administrator', 'editor'] &&
+        request.resource.data.orgId == resource.data.orgId &&
+        request.resource.data.publishedBy == resource.data.publishedBy &&
+        request.resource.data.resourceType == resource.data.resourceType;
+      // Nunca se borra fisicamente (mismo principio de soft-delete del
+      // resto del proyecto) - "archivar" es un cambio de status via update.
+      allow delete: if false;
+    }
+
     match /organizations/{orgId} {
       // Metadata de la organizacion (nombre, owner, fecha) - gestion de
       // plataforma, el Super Admin siempre puede leerla sin pedir permiso.

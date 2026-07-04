@@ -20,6 +20,7 @@ const NAV_LINKS = [
   { href: "/workspace", label: "Workspace" },
   { href: "/knowledge", label: "Knowledge Base" },
   { href: "/documents", label: "Documentos" },
+  { href: "/marketplace", label: "Marketplace" },
 ];
 
 function AppShell({ children }: { children: React.ReactNode }) {

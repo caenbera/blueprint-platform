@@ -73,6 +73,43 @@ export async function createKnowledgeItem(orgId: string, input: PromoteCardInput
   return ref.id;
 }
 
+/**
+ * Crea un Knowledge Item a partir de un snapshot del Marketplace (Sprint 10)
+ * - a diferencia de `createKnowledgeItem`, no exige una Card de origen real
+ * (nunca existio en esta organizacion). `sourceCardId` queda vacio como
+ * marcador de que el origen fue una incorporacion, no una promocion.
+ */
+export async function createKnowledgeItemFromSnapshot(
+  orgId: string,
+  input: {
+    title: string;
+    category: KnowledgeCategory;
+    tags: string[];
+    summary: string;
+    content: unknown;
+  },
+): Promise<string> {
+  const user = auth.currentUser;
+  if (!user) throw new Error("No hay sesión activa.");
+
+  const ref = await addDoc(collection(db, knowledgeItemsPath(orgId)), {
+    orgId,
+    title: input.title,
+    summary: input.summary,
+    category: input.category,
+    tags: input.tags,
+    sourceCardId: "",
+    sourceCardTitle: "",
+    content: input.content,
+    status: "borrador",
+    relatedItemIds: [],
+    createdBy: user.uid,
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+  });
+  return ref.id;
+}
+
 export async function listKnowledgeItems(orgId: string): Promise<KnowledgeItem[]> {
   const snap = await getDocs(
     query(collection(db, knowledgeItemsPath(orgId)), orderBy("createdAt", "desc")),
