@@ -11,6 +11,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
+import { logActivity } from "@/services/activity";
 import type { Card, KnowledgeCategory, KnowledgeItem } from "@/types/domain";
 
 /**
@@ -64,6 +65,10 @@ export async function createKnowledgeItem(orgId: string, input: PromoteCardInput
     createdBy: user.uid,
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
+  });
+  void logActivity(orgId, {
+    action: "knowledge_promoted",
+    summary: `Card promovida a Knowledge Base: "${input.card.title}"`,
   });
   return ref.id;
 }

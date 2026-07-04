@@ -12,6 +12,7 @@ import {
   type CardRef,
   type WorkspaceRef,
 } from "@/lib/firestore-hierarchy";
+import { logActivity } from "@/services/activity";
 import type { Card, CardType } from "@/types/domain";
 
 export interface CreateCardInput {
@@ -28,7 +29,7 @@ export interface CreateCardInput {
  * Sprint 5; esto solo deja la base de datos lista para esa fase.
  */
 export async function createCard(ref: WorkspaceRef, input: CreateCardInput): Promise<string> {
-  return createNode(cardsPath(ref), {
+  const id = await createNode(cardsPath(ref), {
     orgId: ref.orgId,
     projectId: ref.projectId,
     blueprintId: ref.blueprintId,
@@ -43,6 +44,19 @@ export async function createCard(ref: WorkspaceRef, input: CreateCardInput): Pro
     order: input.order ?? 0,
     lifecycleStatus: "borrador",
   });
+  void logActivity(ref.orgId, {
+    action: "card_created",
+    summary: `Card creada: "${input.title}"`,
+    workspaceRef: {
+      projectId: ref.projectId,
+      blueprintId: ref.blueprintId,
+      phaseId: ref.phaseId,
+      moduleId: ref.moduleId,
+      chapterId: ref.chapterId,
+      workspaceId: ref.workspaceId,
+    },
+  });
+  return id;
 }
 
 export async function listCards(ref: WorkspaceRef): Promise<Card[]> {

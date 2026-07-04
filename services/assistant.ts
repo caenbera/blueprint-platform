@@ -1,6 +1,8 @@
 import {
   addDoc,
   collection,
+  doc,
+  getDoc,
   getDocs,
   orderBy,
   query,
@@ -8,7 +10,7 @@ import {
   Timestamp,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
-import type { AiMessage, AssistantMode } from "@/types/domain";
+import type { AiMessage, AssistantMode, AssistantRecommendation } from "@/types/domain";
 import type { NavigatorSelection } from "@/providers/navigator-provider";
 
 /**
@@ -71,6 +73,34 @@ export async function sendMessage(
   if (!response.ok) {
     const body = await response.json().catch(() => null);
     throw new Error(body?.error ?? "El Assistant no pudo responder.");
+  }
+
+  return response.json();
+}
+
+/** Recomendacion cacheada (Mission Control, Sprint 9) - lectura directa, sin llamar al proveedor de IA. */
+export async function getCachedRecommendation(
+  orgId: string,
+): Promise<AssistantRecommendation | null> {
+  const snap = await getDoc(doc(db, `organizations/${orgId}/assistantRecommendations`, "latest"));
+  if (!snap.exists()) return null;
+  return snap.data() as AssistantRecommendation;
+}
+
+/** Genera una recomendacion nueva bajo demanda (llama al AI Engine vía la API route; el servidor resuelve el orgId desde el token). */
+export async function generateRecommendation(): Promise<AssistantRecommendation> {
+  const user = auth.currentUser;
+  if (!user) throw new Error("No hay sesión activa.");
+
+  const idToken = await user.getIdToken();
+  const response = await fetch("/api/assistant/recommendations", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${idToken}` },
+  });
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => null);
+    throw new Error(body?.error ?? "No se pudo generar la recomendación.");
   }
 
   return response.json();

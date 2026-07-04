@@ -11,6 +11,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
+import { logActivity } from "@/services/activity";
 import type {
   BlueprintDocument,
   DocumentSection,
@@ -61,6 +62,7 @@ export async function createDocument(
     createdAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
   });
+  void logActivity(orgId, { action: "document_created", summary: `Documento creado: "${title}"` });
   return ref.id;
 }
 

@@ -381,3 +381,33 @@ export interface AiMessage {
   createdBy: string;
   createdAt: string;
 }
+
+/** Eventos que alimentan el Activity Log de Mission Control (Prompt 12, Sprint 9) - alcance minimo: solo los de mayor valor, no cada edicion menor. */
+export type ActivityAction =
+  "card_created" | "knowledge_promoted" | "document_created" | "document_exported";
+
+/** Referencia minima (solo IDs) para que "Continuar Trabajando" pueda saltar al Workspace de origen - sin nombres, para no encarecer cada escritura del Activity Log. */
+export interface ActivityWorkspaceRef {
+  projectId: string;
+  blueprintId: string;
+  phaseId: string;
+  moduleId: string;
+  chapterId: string;
+  workspaceId: string;
+}
+
+export interface ActivityLogEntry {
+  id: string;
+  action: ActivityAction;
+  summary: string;
+  actorUid: string;
+  actorName: string;
+  workspaceRef?: ActivityWorkspaceRef;
+  createdAt: string;
+}
+
+/** Recomendacion generada bajo demanda por el Assistant Recommendations widget (Sprint 9), cacheada para no llamar al proveedor de IA en cada carga de Mission Control. */
+export interface AssistantRecommendation {
+  text: string;
+  generatedAt: string;
+}

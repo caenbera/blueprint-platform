@@ -16,7 +16,8 @@ import { useNavigator } from "@/hooks/use-navigator";
 import { signOutUser } from "@/services/auth";
 
 const NAV_LINKS = [
-  { href: "/dashboard", label: "Workspace" },
+  { href: "/dashboard", label: "Mission Control" },
+  { href: "/workspace", label: "Workspace" },
   { href: "/knowledge", label: "Knowledge Base" },
   { href: "/documents", label: "Documentos" },
 ];

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/use-auth";
@@ -19,6 +20,7 @@ export function WorkspaceWalkthroughBar() {
   const { isSuperAdmin, membership } = useAuth();
   const { activeProjectId, activeBlueprintId, selection, setSelection } = useNavigator();
   const [entries, setEntries] = useState<FlatWorkspaceEntry[]>([]);
+  const router = useRouter();
 
   const orgId = membership?.orgId ?? null;
 
@@ -56,6 +58,9 @@ export function WorkspaceWalkthroughBar() {
       workspaceId: workspace.id,
       workspaceName: workspace.name,
     });
+    // El recorrido siempre debe mostrar el contenido del Workspace, sin
+    // importar en que pantalla estaba el Super Admin (Mission Control, etc.).
+    router.push("/workspace");
   }
 
   return (

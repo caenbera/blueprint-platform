@@ -10,6 +10,7 @@ import {
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { auth, db, storage } from "@/lib/firebase/client";
 import { documentsPath } from "@/services/documents";
+import { logActivity } from "@/services/activity";
 import { getDocumentTemplateLabel } from "@/config/document-templates";
 import type { BlueprintDocument, DocumentExportFormat, DocumentExportRecord } from "@/types/domain";
 
@@ -45,6 +46,11 @@ export async function exportDocument(
     url,
     createdBy: user.uid,
     createdAt: serverTimestamp(),
+  });
+
+  void logActivity(orgId, {
+    action: "document_exported",
+    summary: `Documento exportado (${format.toUpperCase()}): "${document.title}"`,
   });
 
   return url;
