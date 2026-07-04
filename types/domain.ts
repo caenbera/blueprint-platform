@@ -173,3 +173,68 @@ export interface CardVersion {
   savedBy: string;
   createdAt: string;
 }
+
+/**
+ * Formas de `Card.content` por tipo (Card System, Sprint 5). `content`
+ * sigue siendo `unknown` a nivel de dominio - cada renderer en
+ * components/features/workspace/card-content/ valida/castea localmente.
+ */
+
+export interface ChecklistItem {
+  id: string;
+  text: string;
+  done: boolean;
+}
+export type ChecklistContent = ChecklistItem[];
+
+export interface TableContent {
+  headers: string[];
+  rows: string[][];
+}
+
+export interface TimelineEntry {
+  id: string;
+  date: string;
+  title: string;
+  description: string;
+}
+export type TimelineContent = TimelineEntry[];
+
+export interface KpiContent {
+  value: string;
+  target: string;
+  unit: string;
+  trend: "up" | "down" | "flat";
+}
+
+export interface ComparisonRow {
+  id: string;
+  aspect: string;
+  optionA: string;
+  optionB: string;
+}
+export interface ComparisonContent {
+  labelA: string;
+  labelB: string;
+  rows: ComparisonRow[];
+}
+
+export interface FormField {
+  id: string;
+  label: string;
+  answer: string;
+}
+export type FormContent = FormField[];
+
+/** Usado por los tipos "archivo" e "imagen" (Firebase Storage). */
+export interface FileContent {
+  url: string;
+  fileName: string;
+  contentType: string;
+  sizeBytes: number;
+}
+
+/** Usado por los tipos "video" y "audio" (URL externa, sin subida). */
+export interface MediaContent {
+  url: string;
+}

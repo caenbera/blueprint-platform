@@ -12,8 +12,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { CardContentRenderer } from "@/components/features/workspace/card-content/card-content-renderer";
 import { CardVersionHistory } from "@/components/features/workspace/card-version-history";
+import { getCardTypeConfig } from "@/config/card-types";
 import { useAutosave } from "@/hooks/use-autosave";
 import { archiveCard, updateCard } from "@/services/cards";
 import { createComment, listComments } from "@/services/comments";
@@ -65,9 +66,12 @@ function cardRef(card: Card): CardRef {
 export function CardItem({ card, onArchived }: { card: Card; onArchived: () => void }) {
   const ref = cardRef(card);
 
+  const typeConfig = getCardTypeConfig(card.type);
+  const TypeIcon = typeConfig.icon;
+
   const [title, setTitle] = useState(card.title);
   const [objective, setObjective] = useState(card.objective);
-  const [content, setContent] = useState(typeof card.content === "string" ? card.content : "");
+  const [content, setContent] = useState<unknown>(card.content);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [comments, setComments] = useState<Comment[] | null>(null);
   const [newComment, setNewComment] = useState("");
@@ -94,11 +98,17 @@ export function CardItem({ card, onArchived }: { card: Card; onArchived: () => v
   return (
     <CardShell>
       <CardHeader className="flex-row items-start justify-between gap-2 space-y-0">
-        <Input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          className="text-h4 h-auto border-none px-0 shadow-none focus-visible:ring-0"
-        />
+        <div className="flex flex-1 items-center gap-2">
+          <TypeIcon
+            className="text-muted-foreground h-4 w-4 shrink-0"
+            aria-label={typeConfig.label}
+          />
+          <Input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            className="text-h4 h-auto border-none px-0 shadow-none focus-visible:ring-0"
+          />
+        </div>
         <div className="flex shrink-0 items-center gap-2">
           <Badge variant={STATUS_VARIANTS[card.lifecycleStatus]}>
             {STATUS_LABELS[card.lifecycleStatus]}
@@ -140,11 +150,11 @@ export function CardItem({ card, onArchived }: { card: Card; onArchived: () => v
           placeholder="¿Qué pretende resolver esta Card?"
           className="text-body text-muted-foreground"
         />
-        <Textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Escribe el contenido aquí..."
-          className="min-h-24"
+        <CardContentRenderer
+          type={card.type}
+          cardRef={ref}
+          content={content}
+          onChange={setContent}
         />
       </CardContent>
 

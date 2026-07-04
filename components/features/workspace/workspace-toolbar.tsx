@@ -1,14 +1,16 @@
 "use client";
 
-import { Focus, Plus } from "lucide-react";
+import { Focus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CreateCardMenu } from "@/components/features/workspace/create-card-menu";
 import { useNavigator } from "@/hooks/use-navigator";
+import type { CardType } from "@/types/domain";
 
 /**
  * Barra de herramientas del Workspace (Prompt 8): solo acciones del
  * contexto actual, nunca acciones globales de la plataforma.
  */
-export function WorkspaceToolbar({ onCreateCard }: { onCreateCard: () => void }) {
+export function WorkspaceToolbar({ onCreateCard }: { onCreateCard: (type: CardType) => void }) {
   const { focusMode, setFocusMode } = useNavigator();
 
   return (
@@ -23,10 +25,7 @@ export function WorkspaceToolbar({ onCreateCard }: { onCreateCard: () => void })
           <Focus className="h-4 w-4" />
           Modo Focus
         </Button>
-        <Button size="sm" onClick={onCreateCard}>
-          <Plus className="h-4 w-4" />
-          Nueva Card
-        </Button>
+        <CreateCardMenu onSelect={onCreateCard} />
       </div>
     </div>
   );

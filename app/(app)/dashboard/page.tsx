@@ -5,11 +5,12 @@ import { Loader2, MousePointerClick } from "lucide-react";
 import { EmptyState } from "@/components/ui/empty-state";
 import { CardItem } from "@/components/features/workspace/card-item";
 import { WorkspaceToolbar } from "@/components/features/workspace/workspace-toolbar";
+import { getCardTypeConfig } from "@/config/card-types";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { createCard, listCards } from "@/services/cards";
 import type { WorkspaceRef } from "@/lib/firestore-hierarchy";
-import type { Card } from "@/types/domain";
+import type { Card, CardType } from "@/types/domain";
 
 /**
  * Area de trabajo del Workspace seleccionado (Prompt 8). Si no hay ningun
@@ -61,8 +62,8 @@ export default function DashboardPage() {
     );
   }
 
-  async function handleCreateCard() {
-    await createCard(ref!, { type: "informacion", title: "Nueva Card" });
+  async function handleCreateCard(type: CardType = "informacion") {
+    await createCard(ref!, { type, title: `Nueva ${getCardTypeConfig(type).label}` });
     setCards(await listCards(ref!));
   }
 
@@ -81,7 +82,7 @@ export default function DashboardPage() {
             title="Aún no hay Cards"
             description="Cada idea, respuesta o proceso es una Card independiente."
             actionLabel="Crear la primera Card"
-            onAction={handleCreateCard}
+            onAction={() => handleCreateCard()}
           />
         )}
         {cards?.map((card) => (
