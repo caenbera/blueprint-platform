@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { History, Loader2, MoreHorizontal, Trash2 } from "lucide-react";
+import { BookOpen, History, Loader2, MoreHorizontal, Trash2 } from "lucide-react";
+import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card as CardShell, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
@@ -14,6 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { CardContentRenderer } from "@/components/features/workspace/card-content/card-content-renderer";
 import { CardVersionHistory } from "@/components/features/workspace/card-version-history";
+import { PromoteToKnowledgeDialog } from "@/components/features/knowledge/promote-to-knowledge-dialog";
 import { getCardTypeConfig } from "@/config/card-types";
 import { useAutosave } from "@/hooks/use-autosave";
 import { archiveCard, updateCard } from "@/services/cards";
@@ -73,6 +75,7 @@ export function CardItem({ card, onArchived }: { card: Card; onArchived: () => v
   const [objective, setObjective] = useState(card.objective);
   const [content, setContent] = useState<unknown>(card.content);
   const [historyOpen, setHistoryOpen] = useState(false);
+  const [promoteOpen, setPromoteOpen] = useState(false);
   const [comments, setComments] = useState<Comment[] | null>(null);
   const [newComment, setNewComment] = useState("");
   const [postingComment, setPostingComment] = useState(false);
@@ -128,6 +131,9 @@ export function CardItem({ card, onArchived }: { card: Card; onArchived: () => v
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => setHistoryOpen(true)}>
                 <History /> Historial
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setPromoteOpen(true)}>
+                <BookOpen /> Promover a Knowledge Base
               </DropdownMenuItem>
               <DropdownMenuItem
                 variant="destructive"
@@ -197,6 +203,13 @@ export function CardItem({ card, onArchived }: { card: Card; onArchived: () => v
       </CardFooter>
 
       <CardVersionHistory cardRef={ref} open={historyOpen} onOpenChange={setHistoryOpen} />
+      <PromoteToKnowledgeDialog
+        orgId={card.orgId}
+        card={{ ...card, title, objective, content }}
+        open={promoteOpen}
+        onOpenChange={setPromoteOpen}
+        onPromoted={() => toast.success("Card promovida a la Knowledge Base")}
+      />
     </CardShell>
   );
 }

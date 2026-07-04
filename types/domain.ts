@@ -238,3 +238,44 @@ export interface FileContent {
 export interface MediaContent {
   url: string;
 }
+
+/** Catalogo de categorias de la Knowledge Base (Prompt 4.5), extensible. */
+export type KnowledgeCategory =
+  | "estrategia"
+  | "finanzas"
+  | "operaciones"
+  | "marketing"
+  | "rrhh"
+  | "legal"
+  | "ventas"
+  | "clientes"
+  | "productos"
+  | "procesos"
+  | "plantillas"
+  | "documentos";
+
+/** Estado de publicacion de un Knowledge Item (Prompt 4.5) - solo lo
+ * "aprobado" es reutilizable por defecto. Distinto de CardLifecycleStatus. */
+export type KnowledgeItemStatus = "borrador" | "en_revision" | "aprobado" | "archivado";
+
+/**
+ * Elemento de la Knowledge Base (Prompt 4.5/9): copia (snapshot) del
+ * contenido de una Card promovida en el momento de la promocion - no una
+ * referencia viva (ver plan Sprint 6).
+ */
+export interface KnowledgeItem {
+  id: string;
+  orgId: string;
+  title: string;
+  summary: string;
+  category: KnowledgeCategory;
+  tags: string[];
+  sourceCardId: string;
+  sourceCardTitle: string;
+  content: unknown;
+  status: KnowledgeItemStatus;
+  relatedItemIds: string[];
+  createdBy: string;
+  createdAt: string;
+  updatedAt: string;
+}

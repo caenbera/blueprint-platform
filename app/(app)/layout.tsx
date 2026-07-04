@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Loader2, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { BlueprintNavigator } from "@/components/features/navigator/blueprint-navigator";
 import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
 import { AssistantPanel } from "@/components/features/workspace/assistant-panel";
@@ -13,11 +15,17 @@ import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { signOutUser } from "@/services/auth";
 
+const NAV_LINKS = [
+  { href: "/dashboard", label: "Workspace" },
+  { href: "/knowledge", label: "Knowledge Base" },
+];
+
 function AppShell({ children }: { children: React.ReactNode }) {
   const { membership, user } = useAuth();
   const { focusMode } = useNavigator();
   const [assistantCollapsed, setAssistantCollapsed] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   async function handleSignOut() {
     await signOutUser();
@@ -27,11 +35,28 @@ function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex h-screen flex-col">
       <header className="flex h-12 shrink-0 items-center justify-between border-b px-4">
-        <div className="flex items-center gap-2">
-          <Layers className="text-primary h-5 w-5" />
-          <span className="text-body font-semibold">
-            {membership?.organizationName ?? "Blueprint"}
-          </span>
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <Layers className="text-primary h-5 w-5" />
+            <span className="text-body font-semibold">
+              {membership?.organizationName ?? "Blueprint"}
+            </span>
+          </div>
+          <nav className="flex items-center gap-1">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  "text-body text-muted-foreground hover:bg-muted hover:text-foreground rounded-md px-2.5 py-1",
+                  pathname.startsWith(link.href) &&
+                    "bg-accent/10 text-accent-foreground font-medium",
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-small text-muted-foreground">
