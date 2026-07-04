@@ -168,7 +168,7 @@ export const CARD_TYPES: CardTypeConfig[] = [
   {
     type: "ia",
     label: "IA",
-    description: "Requiere el AI Engine (Sprint 8)",
+    description: "Contenido especializado próximamente — usa el Assistant Panel mientras tanto",
     icon: Sparkles,
     category: "Otro",
   },

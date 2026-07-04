@@ -335,3 +335,49 @@ export interface DocumentExportRecord {
   createdBy: string;
   createdAt: string;
 }
+
+/** Los 6 modos de comportamiento del Blueprint AI Engine (Prompt 10) — un unico motor. */
+export type AssistantMode =
+  "consultor" | "redactor" | "analista" | "investigador" | "estratega" | "presentador";
+
+/** Fuente citada por el Assistant (Knowledge Engine): de donde salio la informacion usada. */
+export interface KnowledgeSourceRef {
+  id: string;
+  title: string;
+  category: KnowledgeCategory;
+}
+
+/** Acciones que el Action/Document Engine puede proponer (Prompt 10) — nunca se ejecutan solas. */
+export type ProposedActionType = "create_card" | "create_document";
+
+export interface CreateCardActionPayload {
+  cardType: CardType;
+  title: string;
+  objective: string;
+  content: string;
+}
+
+export interface CreateDocumentActionPayload {
+  title: string;
+  templateType: DocumentTemplateType;
+  sections: { title: string; content: string }[];
+}
+
+export interface ProposedAction {
+  id: string;
+  type: ProposedActionType;
+  summary: string;
+  payload: CreateCardActionPayload | CreateDocumentActionPayload;
+}
+
+/** Mensaje de la conversacion continua con el Assistant (una por usuario por organizacion). */
+export interface AiMessage {
+  id: string;
+  role: "user" | "assistant";
+  content: string;
+  mode?: AssistantMode;
+  sources?: KnowledgeSourceRef[];
+  proposedActions?: ProposedAction[];
+  createdBy: string;
+  createdAt: string;
+}

@@ -23,7 +23,7 @@ const NAV_LINKS = [
 
 function AppShell({ children }: { children: React.ReactNode }) {
   const { membership, user } = useAuth();
-  const { focusMode } = useNavigator();
+  const { focusMode, selection } = useNavigator();
   const [assistantCollapsed, setAssistantCollapsed] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
@@ -91,6 +91,8 @@ function AppShell({ children }: { children: React.ReactNode }) {
             <AssistantPanel
               collapsed={assistantCollapsed}
               onToggleCollapsed={() => setAssistantCollapsed((v) => !v)}
+              orgId={membership?.orgId ?? null}
+              selection={selection}
             />
           </aside>
         )}
