@@ -42,7 +42,7 @@ export default function ForgotPasswordPage() {
   }
 
   return (
-    <div className="flex flex-1 flex-col lg:flex-row">
+    <div className="flex min-h-screen flex-1 flex-col lg:flex-row">
       <AuthBranding />
 
       <div className="flex flex-1 flex-col items-center justify-center px-6 py-12">
