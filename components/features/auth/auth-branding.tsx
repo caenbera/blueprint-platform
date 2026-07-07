@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const BRANDING_IMAGE_URL = "https://i.postimg.cc/76dZDVMM/01-1.png";
+const BRANDING_IMAGE_URL = "https://i.postimg.cc/2yDYG8QD/01-2.png";
 
 /**
  * Panel de branding compartido por Login y Registro (Prompt 4.1). Solo
