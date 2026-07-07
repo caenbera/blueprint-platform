@@ -33,9 +33,14 @@ export interface SupportAccessGrant {
   superAdminUid: string;
   orgId: string;
   status: SupportAccessStatus;
+  /** Motivo de la solicitud (Panel de Super Admin) - obligatorio en la UI, no impuesto por las Security Rules. */
+  reason: string;
   requestedAt: string;
   respondedAt: string | null;
   respondedBy: string | null;
+  /** Denormalizados al crear la solicitud, para mostrar sin fetch extra. */
+  organizationName?: string;
+  superAdminEmail?: string;
 }
 
 /**

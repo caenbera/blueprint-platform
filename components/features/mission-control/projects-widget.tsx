@@ -13,7 +13,11 @@ import { useNavigator } from "@/hooks/use-navigator";
 import { listProjects } from "@/services/projects";
 import type { Project } from "@/types/domain";
 
-export function ProjectsWidget({ orgId, ...controls }: { orgId: string } & WidgetControlProps) {
+export function ProjectsWidget({
+  orgId,
+  navigable = true,
+  ...controls
+}: { orgId: string; navigable?: boolean } & WidgetControlProps) {
   const config = getMissionControlWidgetConfig("projects");
   const { setActiveProject } = useNavigator();
   const router = useRouter();
@@ -24,6 +28,7 @@ export function ProjectsWidget({ orgId, ...controls }: { orgId: string } & Widge
   }, [orgId]);
 
   function handleOpen(project: Project) {
+    if (!navigable) return;
     setActiveProject(project.id, project.name);
     router.push("/workspace");
   }
@@ -39,7 +44,8 @@ export function ProjectsWidget({ orgId, ...controls }: { orgId: string } & Widge
           <button
             key={project.id}
             onClick={() => handleOpen(project)}
-            className="hover:bg-muted flex items-center justify-between gap-2 rounded-md px-1.5 py-1 text-left"
+            disabled={!navigable}
+            className="hover:bg-muted flex items-center justify-between gap-2 rounded-md px-1.5 py-1 text-left disabled:cursor-default disabled:hover:bg-transparent"
           >
             <span className="text-small truncate">{project.name}</span>
             <Badge variant="outline">{project.progressStatus}</Badge>

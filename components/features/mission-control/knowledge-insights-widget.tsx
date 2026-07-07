@@ -15,8 +15,9 @@ import type { KnowledgeCategory } from "@/types/domain";
 
 export function KnowledgeInsightsWidget({
   orgId,
+  showLink = true,
   ...controls
-}: { orgId: string } & WidgetControlProps) {
+}: { orgId: string; showLink?: boolean } & WidgetControlProps) {
   const config = getMissionControlWidgetConfig("knowledgeInsights");
   const [insights, setInsights] = useState<KnowledgeInsights | null>(null);
 
@@ -42,9 +43,11 @@ export function KnowledgeInsightsWidget({
               </Badge>
             ))}
           </div>
-          <Link href="/knowledge" className="text-small text-accent hover:underline">
-            Ver Knowledge Base →
-          </Link>
+          {showLink && (
+            <Link href="/knowledge" className="text-small text-accent hover:underline">
+              Ver Knowledge Base →
+            </Link>
+          )}
         </div>
       )}
     </WidgetShell>

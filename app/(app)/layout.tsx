@@ -15,7 +15,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { signOutUser } from "@/services/auth";
 
-const NAV_LINKS = [
+const BASE_NAV_LINKS = [
   { href: "/dashboard", label: "Mission Control" },
   { href: "/workspace", label: "Workspace" },
   { href: "/knowledge", label: "Knowledge Base" },
@@ -24,11 +24,16 @@ const NAV_LINKS = [
 ];
 
 function AppShell({ children }: { children: React.ReactNode }) {
-  const { membership, user } = useAuth();
+  const { membership, user, isSuperAdmin } = useAuth();
   const { focusMode, selection } = useNavigator();
   const [assistantCollapsed, setAssistantCollapsed] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+
+  // "Admin" solo aparece para Super Admin (Panel de Super Admin).
+  const navLinks = isSuperAdmin
+    ? [...BASE_NAV_LINKS, { href: "/admin", label: "Admin" }]
+    : BASE_NAV_LINKS;
 
   async function handleSignOut() {
     await signOutUser();
@@ -46,7 +51,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
             </span>
           </div>
           <nav className="flex items-center gap-1">
-            {NAV_LINKS.map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

@@ -13,8 +13,9 @@ import { getDocumentsSummary, type DocumentsSummary } from "@/services/mission-c
 
 export function DocumentsCenterWidget({
   orgId,
+  showLink = true,
   ...controls
-}: { orgId: string } & WidgetControlProps) {
+}: { orgId: string; showLink?: boolean } & WidgetControlProps) {
   const config = getMissionControlWidgetConfig("documentsCenter");
   const [summary, setSummary] = useState<DocumentsSummary | null>(null);
 
@@ -41,9 +42,11 @@ export function DocumentsCenterWidget({
               </div>
             ))}
           </div>
-          <Link href="/documents" className="text-small text-accent hover:underline">
-            Ver Documents Center →
-          </Link>
+          {showLink && (
+            <Link href="/documents" className="text-small text-accent hover:underline">
+              Ver Documents Center →
+            </Link>
+          )}
         </div>
       )}
     </WidgetShell>
