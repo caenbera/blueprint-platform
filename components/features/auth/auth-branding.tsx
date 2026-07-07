@@ -12,7 +12,7 @@ const BRANDING_IMAGE_URL = "https://i.postimg.cc/76dZDVMM/01-1.png";
  */
 export function AuthBranding() {
   return (
-    <div className="flex h-64 w-full items-center justify-center bg-[#050914] lg:h-full lg:w-3/5">
+    <div className="flex h-64 w-full items-center justify-center bg-[#050914] lg:h-screen lg:w-3/5">
       {/* eslint-disable-next-line @next/next/no-img-element -- imagen alojada en hosting externo, no en /public */}
       <img src={BRANDING_IMAGE_URL} alt="Blueprint" className="h-full w-full object-contain" />
     </div>
