@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { AuthBranding } from "@/components/features/auth/auth-branding";
+import { AuthMobileLogo } from "@/components/features/auth/auth-mobile-logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -49,10 +50,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-1 flex-col lg:flex-row">
+    <div className="flex min-h-screen">
       <AuthBranding />
 
       <div className="flex flex-1 flex-col items-center justify-center px-6 py-12">
+        <AuthMobileLogo />
+
         <Card className="w-full max-w-sm">
           <CardHeader className="text-center">
             <h1 className="text-h3">Bienvenido nuevamente</h1>
