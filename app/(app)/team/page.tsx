@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Loader2, Mail, UserPlus, X } from "lucide-react";
+import { Loader2, Mail, ShieldCheck, UserPlus, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +17,11 @@ import { ROLE_LABELS } from "@/config/roles";
 import { useAuth } from "@/hooks/use-auth";
 import { listMembers } from "@/services/organizations";
 import { listInvites, revokeInvite } from "@/services/invites";
-import type { Invite, Membership } from "@/types/domain";
+import {
+  listSupportAccessGrantsForOrg,
+  respondToSupportAccessGrant,
+} from "@/services/platform-admin";
+import type { Invite, Membership, SupportAccessGrant } from "@/types/domain";
 
 function initials(name: string): string {
   const parts = name.trim().split(/\s+/);
@@ -31,10 +35,14 @@ function initials(name: string): string {
 export default function TeamPage() {
   const { membership } = useAuth();
   const orgId = membership?.orgId ?? null;
+  const canManageSupportAccess =
+    membership?.role === "owner" || membership?.role === "administrator";
 
   const [members, setMembers] = useState<Membership[] | null>(null);
   const [invites, setInvites] = useState<Invite[] | null>(null);
   const [inviteOpen, setInviteOpen] = useState(false);
+  const [grants, setGrants] = useState<SupportAccessGrant[] | null>(null);
+  const [respondingTo, setRespondingTo] = useState<string | null>(null);
 
   function reload() {
     if (!orgId) return;
@@ -47,12 +55,31 @@ export default function TeamPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orgId]);
 
+  useEffect(() => {
+    if (!orgId || !canManageSupportAccess) return;
+    listSupportAccessGrantsForOrg(orgId).then(setGrants);
+  }, [orgId, canManageSupportAccess]);
+
   async function handleRevoke(inviteId: string) {
     if (!orgId) return;
     await revokeInvite(orgId, inviteId);
     setInvites(
       (prev) => prev?.map((i) => (i.id === inviteId ? { ...i, status: "revoked" } : i)) ?? null,
     );
+  }
+
+  async function handleRespondGrant(
+    grant: SupportAccessGrant,
+    status: "approved" | "denied" | "revoked",
+  ) {
+    if (!orgId) return;
+    setRespondingTo(grant.superAdminUid);
+    try {
+      await respondToSupportAccessGrant(orgId, grant.superAdminUid, status);
+      setGrants((prev) => prev?.filter((g) => g.superAdminUid !== grant.superAdminUid) ?? null);
+    } finally {
+      setRespondingTo(null);
+    }
   }
 
   if (!orgId || members === null || invites === null) {
@@ -139,6 +166,64 @@ export default function TeamPage() {
                 <Button size="sm" variant="ghost" onClick={() => handleRevoke(invite.id)}>
                   <X className="h-3.5 w-3.5" /> Revocar
                 </Button>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {canManageSupportAccess && grants && grants.length > 0 && (
+        <div className="mt-6">
+          <div className="mb-2 flex items-center gap-1.5">
+            <ShieldCheck className="text-muted-foreground h-4 w-4" />
+            <p className="text-h4">Solicitudes de acceso de soporte</p>
+          </div>
+          <div className="flex flex-col gap-2">
+            {grants.map((grant) => (
+              <div
+                key={grant.superAdminUid}
+                className="flex items-center justify-between gap-2 rounded-lg border p-3"
+              >
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-body">{grant.superAdminEmail}</span>
+                    <Badge variant={grant.status === "approved" ? "success" : "warning"}>
+                      {grant.status === "approved" ? "Aprobado" : "Pendiente"}
+                    </Badge>
+                  </div>
+                  <p className="text-small text-muted-foreground">{grant.reason}</p>
+                </div>
+                <div className="flex shrink-0 gap-1.5">
+                  {grant.status === "pending" && (
+                    <>
+                      <Button
+                        size="sm"
+                        onClick={() => handleRespondGrant(grant, "approved")}
+                        disabled={respondingTo === grant.superAdminUid}
+                      >
+                        Aprobar
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => handleRespondGrant(grant, "denied")}
+                        disabled={respondingTo === grant.superAdminUid}
+                      >
+                        Denegar
+                      </Button>
+                    </>
+                  )}
+                  {grant.status === "approved" && (
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => handleRespondGrant(grant, "revoked")}
+                      disabled={respondingTo === grant.superAdminUid}
+                    >
+                      Revocar
+                    </Button>
+                  )}
+                </div>
               </div>
             ))}
           </div>

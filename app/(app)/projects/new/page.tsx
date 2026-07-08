@@ -1,127 +1,87 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Compass, Layers, ListChecks, Loader2 } from "lucide-react";
-import { SearchBar } from "@/components/ui/search-bar";
-import { EmptyState } from "@/components/ui/empty-state";
-import { Badge } from "@/components/ui/badge";
-import { listPublishedBlueprints } from "@/services/blueprints";
-import type { Blueprint } from "@/types/domain";
-
-function countSteps(blueprint: Blueprint): number {
-  return blueprint.roadmap.reduce((sum, phase) => sum + phase.steps.length, 0);
-}
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
+import { ArrowLeft, Compass, Sparkles, SquarePen } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { PROJECT_CATEGORIES } from "@/config/project-categories";
 
 /**
- * Elegir Blueprint (Sprint 14, mockup "04-blueprint.png" simplificado): la
- * lista real de Blueprints publicados suele ser corta (autoria exclusiva
- * de Super Admin), asi que se fusiona con el paso previo "Que deseas
- * construir" del mockup en una sola pantalla con busqueda + categorias.
+ * Tipo de Proyecto (mockup "03-tipo-proyecto.png", pantalla A3): primer
+ * paso del asistente de creacion de proyectos. Solo identifica la
+ * intencion del usuario (una categoria, no un Blueprint) - la seleccion
+ * navega automaticamente al paso 2 (Elegir Blueprint), no hay boton
+ * "Continuar".
  */
-export default function ChooseBlueprintPage() {
-  const [blueprints, setBlueprints] = useState<Blueprint[] | null>(null);
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState<string | null>(null);
-
-  useEffect(() => {
-    listPublishedBlueprints().then(setBlueprints);
-  }, []);
-
-  if (blueprints === null) {
-    return (
-      <div className="flex flex-1 items-center justify-center p-6">
-        <Loader2 className="text-muted-foreground h-5 w-5 animate-spin" />
-      </div>
-    );
-  }
-
-  const categories = Array.from(new Set(blueprints.map((b) => b.category).filter(Boolean)));
-  const filtered = blueprints.filter((b) => {
-    const matchesSearch =
-      !search ||
-      b.name.toLowerCase().includes(search.toLowerCase()) ||
-      b.description.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = !category || b.category === category;
-    return matchesSearch && matchesCategory;
-  });
+export default function ProjectTypePage() {
+  const router = useRouter();
 
   return (
     <div className="flex flex-1 flex-col overflow-y-auto p-4">
       <Link
-        href="/projects"
-        className="text-body text-muted-foreground hover:text-foreground mb-3 flex items-center gap-1.5"
+        href="/dashboard"
+        className="text-body text-muted-foreground hover:text-foreground mb-4 flex w-fit items-center gap-1.5"
       >
-        <ArrowLeft className="h-3.5 w-3.5" /> Mis proyectos
+        <ArrowLeft className="h-3.5 w-3.5" /> Inicio
       </Link>
 
-      <div className="mb-4 flex items-center gap-2">
-        <Compass className="text-primary h-6 w-6" />
-        <div>
-          <h1 className="text-h3">Elige un Blueprint</h1>
-          <p className="text-body text-muted-foreground">
-            Selecciona el Blueprint que mejor se adapte al proyecto que quieres construir.
-          </p>
+      <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+        <div className="bg-primary/10 mb-3 flex h-12 w-12 items-center justify-center rounded-full">
+          <Compass className="text-primary h-6 w-6" />
         </div>
-      </div>
+        <h1 className="text-h2">¿Qué deseas construir?</h1>
+        <p className="text-body text-muted-foreground mt-1">
+          Elige el tipo de proyecto que quieres desarrollar.
+        </p>
 
-      <div className="mb-4 flex flex-wrap items-center gap-2">
-        <SearchBar
-          value={search}
-          onValueChange={setSearch}
-          placeholder="Buscar Blueprint..."
-          className="max-w-xs"
-        />
-        {categories.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            <Badge
-              variant={category === null ? "default" : "outline"}
-              className="cursor-pointer"
-              onClick={() => setCategory(null)}
-            >
-              Todos
-            </Badge>
-            {categories.map((c) => (
-              <Badge
-                key={c}
-                variant={category === c ? "default" : "outline"}
-                className="cursor-pointer"
-                onClick={() => setCategory(c)}
+        <div className="mt-8 grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {PROJECT_CATEGORIES.map((category) => {
+            const Icon = category.icon;
+            return (
+              <button
+                key={category.id}
+                type="button"
+                onClick={() => router.push(`/projects/new/blueprint?category=${category.id}`)}
+                className="group hover:border-primary flex flex-col items-center gap-1 rounded-lg border p-6 text-center transition-all hover:shadow-md"
               >
-                {c}
-              </Badge>
-            ))}
-          </div>
-        )}
-      </div>
+                <div
+                  className={cn(
+                    "mb-3 flex h-16 w-16 items-center justify-center rounded-full transition-transform group-hover:scale-105",
+                    category.color,
+                  )}
+                >
+                  <Icon className="h-7 w-7" />
+                </div>
+                <p className="text-h4">{category.label}</p>
+                <p className="text-small text-muted-foreground">{category.description}</p>
+              </button>
+            );
+          })}
 
-      {filtered.length === 0 && (
-        <EmptyState
-          icon={Layers}
-          title="No hay Blueprints disponibles"
-          description="Todavía no hay ningún Blueprint publicado que coincida con tu búsqueda."
-        />
-      )}
-
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {filtered.map((blueprint) => (
-          <Link
-            key={blueprint.id}
-            href={`/projects/new/${blueprint.id}`}
-            className="hover:border-primary/50 flex flex-col gap-2 rounded-lg border p-4 transition-colors"
+          <button
+            type="button"
+            onClick={() =>
+              toast.info(
+                "Los proyectos personalizados (sin Blueprint) estarán disponibles próximamente.",
+              )
+            }
+            className="hover:border-primary flex flex-col items-center gap-1 rounded-lg border border-dashed p-6 text-center transition-all hover:shadow-md"
           >
-            <span className="text-h4">{blueprint.name}</span>
-            <p className="text-body text-muted-foreground line-clamp-2">{blueprint.description}</p>
-            <div className="text-small text-muted-foreground mt-1 flex items-center gap-3">
-              <span className="flex items-center gap-1">
-                <Layers className="h-3.5 w-3.5" /> {blueprint.roadmap.length} fases
-              </span>
-              <span className="flex items-center gap-1">
-                <ListChecks className="h-3.5 w-3.5" /> {countSteps(blueprint)} pasos
-              </span>
+            <div className="bg-muted text-muted-foreground mb-3 flex h-16 w-16 items-center justify-center rounded-full">
+              <SquarePen className="h-7 w-7" />
             </div>
-          </Link>
-        ))}
+            <p className="text-h4">Proyecto personalizado</p>
+            <p className="text-small text-muted-foreground">
+              Empieza desde cero con la guía de Blueprint.
+            </p>
+          </button>
+        </div>
+
+        <p className="text-small text-muted-foreground mt-8 flex items-center gap-1.5">
+          <Sparkles className="h-3.5 w-3.5" />
+          No te preocupes, podrás cambiar el tipo de proyecto más adelante.
+        </p>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2, ShieldAlert, Wrench } from "lucide-react";
+import { Loader2, ShieldAlert, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
 import { AssistantPanel } from "@/components/features/workspace/assistant-panel";
@@ -37,6 +37,27 @@ function AppShell({ children }: { children: React.ReactNode }) {
       <CollapsibleSidebar
         groups={navGroups}
         brandSubtitle={membership?.organizationName ?? "Construye tu empresa paso a paso"}
+        footerTop={
+          !isSuperAdmin && (
+            <div className="rounded-lg border p-3">
+              <div className="flex items-center gap-1.5">
+                <Sparkles className="text-primary h-4 w-4" />
+                <span className="text-body font-medium">Asistente IA</span>
+              </div>
+              <p className="text-caption text-muted-foreground mt-0.5">
+                Tu copiloto para construir cada paso.
+              </p>
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-2 w-full justify-between"
+                onClick={() => setAssistantCollapsed(false)}
+              >
+                Abrir asistente
+              </Button>
+            </div>
+          )
+        }
         userName={user?.displayName || user?.email || ""}
         userRoleLabel={roleLabel}
         onSignOut={handleSignOut}

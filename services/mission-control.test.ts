@@ -33,7 +33,6 @@ import {
   getBlueprintHealth,
   getDocumentsSummary,
   getKnowledgeInsights,
-  getPendingReviewItems,
   getProgressOverview,
 } from "@/services/mission-control";
 
@@ -125,25 +124,6 @@ describe("getDocumentsSummary", () => {
     expect(result.recent).toEqual([
       { id: "d1", title: "Doc Uno", status: "publicado" },
       { id: "d2", title: "Doc Dos", status: "borrador" },
-    ]);
-  });
-});
-
-describe("getPendingReviewItems", () => {
-  it("solo incluye elementos en_revision, etiquetados por tipo", async () => {
-    vi.mocked(listKnowledgeItems).mockResolvedValue([
-      { id: "k1", title: "KB en revision", status: "en_revision" },
-      { id: "k2", title: "KB aprobado", status: "aprobado" },
-    ] as never);
-    vi.mocked(listDocuments).mockResolvedValue([
-      { id: "d1", title: "Doc en revision", status: "en_revision" },
-    ] as never);
-
-    const result = await getPendingReviewItems("org1");
-
-    expect(result).toEqual([
-      { type: "knowledge", id: "k1", title: "KB en revision" },
-      { type: "document", id: "d1", title: "Doc en revision" },
     ]);
   });
 });

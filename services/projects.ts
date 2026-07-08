@@ -8,6 +8,7 @@ import {
   query,
   serverTimestamp,
   Timestamp,
+  updateDoc,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
 import { logActivity } from "@/services/activity";
@@ -80,7 +81,7 @@ export async function listProjects(orgId: string): Promise<Project[]> {
   );
   return snap.docs
     .map((d) => fromFirestore(d.id, d.data()))
-    .filter((p) => p.deletionStatus !== "deleted" && isValidProject(p));
+    .filter((p) => p.deletionStatus === "active" && isValidProject(p));
 }
 
 export async function getProject(orgId: string, projectId: string): Promise<Project | null> {
@@ -98,4 +99,25 @@ export async function getProject(orgId: string, projectId: string): Promise<Proj
  */
 function isValidProject(project: Project): boolean {
   return Boolean(project.blueprintSnapshot);
+}
+
+/** Tarjeta "Mis proyectos" (mockup "02-inicio.png") - menu de opciones, Renombrar. */
+export async function renameProject(orgId: string, projectId: string, name: string): Promise<void> {
+  await updateDoc(doc(db, projectsPath(orgId), projectId), { name, updatedAt: serverTimestamp() });
+}
+
+/** Menu de opciones - Archivar (soft delete reversible, ver DeletionStatus en types/domain.ts). */
+export async function archiveProject(orgId: string, projectId: string): Promise<void> {
+  await updateDoc(doc(db, projectsPath(orgId), projectId), {
+    deletionStatus: "archived",
+    updatedAt: serverTimestamp(),
+  });
+}
+
+/** Menu de opciones - Eliminar (soft delete: "Soft delete universal: nunca borrado fisico"). */
+export async function deleteProject(orgId: string, projectId: string): Promise<void> {
+  await updateDoc(doc(db, projectsPath(orgId), projectId), {
+    deletionStatus: "deleted",
+    updatedAt: serverTimestamp(),
+  });
 }

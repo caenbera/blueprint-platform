@@ -110,31 +110,3 @@ export async function getDocumentsSummary(orgId: string): Promise<DocumentsSumma
     recent: documents.slice(0, 5).map((d) => ({ id: d.id, title: d.title, status: d.status })),
   };
 }
-
-export interface PendingReviewItem {
-  type: "knowledge" | "document";
-  id: string;
-  title: string;
-}
-
-/**
- * "Notificaciones" (Sprint 9): elementos que ya estan en estado "en_revision"
- * (asignable desde la UI existente de Knowledge/Documents). El flujo de
- * aprobacion de supportAccessGrants nunca se construyo y queda fuera de
- * alcance - no es parte de Mission Control.
- */
-export async function getPendingReviewItems(orgId: string): Promise<PendingReviewItem[]> {
-  const [knowledgeItems, documents] = await Promise.all([
-    listKnowledgeItems(orgId),
-    listDocuments(orgId),
-  ]);
-
-  const items: PendingReviewItem[] = [];
-  for (const k of knowledgeItems) {
-    if (k.status === "en_revision") items.push({ type: "knowledge", id: k.id, title: k.title });
-  }
-  for (const d of documents) {
-    if (d.status === "en_revision") items.push({ type: "document", id: d.id, title: d.title });
-  }
-  return items;
-}

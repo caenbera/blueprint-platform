@@ -46,7 +46,12 @@ export default function ProjectRoadmapPage() {
       ([p, states]) => {
         setProject(p);
         setStepStates(states);
-        if (p) setActiveProject(p.id, p.name);
+        if (p) {
+          setActiveProject(p.id, p.name);
+          // Tarjeta "Continuar proyecto" del Inicio (mockup "02-inicio.png"):
+          // recuerda el ultimo Proyecto abierto por este usuario en este navegador.
+          window.localStorage.setItem(`blueprint:lastProjectId:${orgId}`, p.id);
+        }
       },
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps

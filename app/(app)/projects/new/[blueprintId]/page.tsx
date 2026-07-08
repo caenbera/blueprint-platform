@@ -65,7 +65,7 @@ export default function BlueprintSummaryPage() {
   return (
     <div className="flex flex-1 flex-col overflow-y-auto p-4">
       <button
-        onClick={() => router.push("/projects/new")}
+        onClick={() => router.push("/projects/new/blueprint")}
         className="text-body text-muted-foreground hover:text-foreground mb-3 flex w-fit items-center gap-1.5"
       >
         <ArrowLeft className="h-3.5 w-3.5" /> Elegir Blueprint

@@ -2,9 +2,9 @@ import {
   BookOpen,
   FileText,
   FolderKanban,
-  LayoutDashboard,
+  Home,
+  Package,
   Settings,
-  Store,
   Users,
   type LucideIcon,
 } from "lucide-react";
@@ -16,36 +16,26 @@ export interface NavItem {
 }
 
 export interface NavGroup {
+  /** Vacio = sin encabezado, siempre expandido (ver collapsible-sidebar.tsx). */
   label: string;
   items: NavItem[];
 }
 
 /**
- * Sidebar del rol Administrador (usuario final de una organizacion), por
- * bloques desplegables (Sprint 12 - rediseno de layout). Sprint 14: el
- * link a "/workspace" (Card System viejo, retirado en el Sprint 13) se
- * reemplaza por "/projects" (Roadmap -> Fase -> Step, motor de datos nuevo).
- * Sprint 15: se agrega el grupo "Equipo y Configuración".
+ * Sidebar del rol Administrador (usuario final de una organizacion),
+ * mockup "02-inicio.png" (Sprint "rediseno pantalla por pantalla"): lista
+ * plana sin bloques desplegables - a diferencia del Super Admin (mas
+ * secciones, si se benefician de agrupar), aqui son solo 7 items.
  */
 export const ADMIN_NAV_GROUPS: NavGroup[] = [
   {
-    label: "General",
+    label: "",
     items: [
-      { href: "/dashboard", label: "Mission Control", icon: LayoutDashboard },
-      { href: "/projects", label: "Mis Proyectos", icon: FolderKanban },
-    ],
-  },
-  {
-    label: "Contenido",
-    items: [
-      { href: "/knowledge", label: "Knowledge Base", icon: BookOpen },
+      { href: "/dashboard", label: "Inicio", icon: Home },
+      { href: "/projects", label: "Mis proyectos", icon: FolderKanban },
+      { href: "/knowledge", label: "Biblioteca", icon: BookOpen },
       { href: "/documents", label: "Documentos", icon: FileText },
-      { href: "/marketplace", label: "Marketplace", icon: Store },
-    ],
-  },
-  {
-    label: "Equipo y Configuración",
-    items: [
+      { href: "/marketplace", label: "Recursos", icon: Package },
       { href: "/team", label: "Equipo", icon: Users },
       { href: "/settings", label: "Configuración", icon: Settings },
     ],
