@@ -159,6 +159,12 @@ export default function ProjectRoadmapPage() {
               <span className="text-small font-medium">{sortedPhases.length}</span>
             </div>
           </div>
+          <Link
+            href={`/projects/${project.id}/progress`}
+            className="text-body text-primary mt-3 block hover:underline"
+          >
+            Ver mi progreso →
+          </Link>
         </div>
       </aside>
     </div>

@@ -1,4 +1,4 @@
-import { doc, getDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
 import type { Membership, Organization } from "@/types/domain";
 
@@ -51,4 +51,24 @@ export async function getMyMembership(uid: string): Promise<MembershipWithOrg | 
     orgId,
     organizationName,
   };
+}
+
+/** Miembros de la organizacion (Equipo, Sprint 15) - lectura permitida a cualquier miembro por firestore.rules; escribir un Membership sigue restringido al Admin SDK. */
+export async function listMembers(orgId: string): Promise<Membership[]> {
+  const snap = await getDocs(collection(db, "organizations", orgId, "users"));
+  return snap.docs.map((d) => d.data() as Membership);
+}
+
+export async function getOrganization(orgId: string): Promise<Organization | null> {
+  const snap = await getDoc(doc(db, "organizations", orgId));
+  if (!snap.exists()) return null;
+  return { ...(snap.data() as Omit<Organization, "id">), id: snap.id };
+}
+
+/** Configuración > Empresa (Sprint 15) - firestore.rules ya permite `allow update: if isOrgMember(orgId)`. */
+export async function updateOrganization(
+  orgId: string,
+  data: Partial<Pick<Organization, "name" | "website" | "industry">>,
+): Promise<void> {
+  await updateDoc(doc(db, "organizations", orgId), data);
 }

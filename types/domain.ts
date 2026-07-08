@@ -15,6 +15,9 @@ export interface Organization {
   name: string;
   ownerId: string;
   createdAt: string;
+  /** Campos opcionales de Configuración (Sprint 15) - editables por cualquier miembro, sin validación de dominio externo. */
+  website?: string;
+  industry?: string;
 }
 
 export interface Membership {
@@ -24,6 +27,26 @@ export interface Membership {
   displayName: string;
   email: string;
   joinedAt: string;
+}
+
+export type InviteStatus = "pending" | "accepted" | "revoked";
+
+/**
+ * Invitacion a un correo para unirse a la organizacion (Sprint 15). Solo
+ * registra la intencion - el envio real de correo y el flujo de
+ * aceptacion (un usuario nuevo se une a ESTA organizacion en vez de crear
+ * la suya propia) quedan fuera de alcance por ahora, ver
+ * app/api/organizations/route.ts.
+ */
+export interface Invite {
+  id: string;
+  orgId: string;
+  email: string;
+  role: Role;
+  status: InviteStatus;
+  invitedBy: string;
+  invitedByName: string;
+  createdAt: string;
 }
 
 export interface UserProfile {
