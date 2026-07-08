@@ -3,6 +3,7 @@ import {
   collection,
   doc,
   getDocs,
+  orderBy,
   query,
   serverTimestamp,
   Timestamp,
@@ -138,6 +139,12 @@ export async function listMarketplaceResources(orgId: string): Promise<Marketpla
     byId.set(d.id, fromFirestore(d.id, d.data()));
   }
   return Array.from(byId.values()).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+}
+
+/** Moderación de plataforma (Sprint 17): todo el catálogo, sin filtrar por organización ni status - firestore.rules ya permite isSuperAdmin() sin condiciones. */
+export async function listAllMarketplaceResourcesForAdmin(): Promise<MarketplaceResource[]> {
+  const snap = await getDocs(query(collection(db, COLLECTION), orderBy("createdAt", "desc")));
+  return snap.docs.map((d) => fromFirestore(d.id, d.data()));
 }
 
 export async function archiveMarketplaceResource(resourceId: string): Promise<void> {

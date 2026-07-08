@@ -52,8 +52,13 @@ service cloud.firestore {
     // (via services/marketplace.ts), asi que no hace falta una regla
     // especial para "incorporar", solo lectura.
     match /marketplaceResources/{resourceId} {
+      // Sprint 17: Super Admin puede ver todo el catalogo (moderacion en
+      // /admin/marketplace) - un recurso de Marketplace es un articulo de
+      // catalogo pensado para compartirse, no contenido de negocio interno
+      // como projects/knowledgeItems, asi que no necesita supportAccessGrant.
       allow read: if resource.data.visibility == 'public' ||
-        (isSignedIn() && isOrgMember(resource.data.orgId));
+        (isSignedIn() && isOrgMember(resource.data.orgId)) ||
+        isSuperAdmin();
       allow create: if isOrgMember(request.resource.data.orgId) &&
         orgRole(request.resource.data.orgId) in ['owner', 'administrator', 'editor'] &&
         request.resource.data.publishedBy == request.auth.uid;

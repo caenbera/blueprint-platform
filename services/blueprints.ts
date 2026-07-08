@@ -13,7 +13,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
 import { validateBlueprintJson } from "@/lib/blueprint-schema";
-import type { Blueprint, BlueprintStatus } from "@/types/domain";
+import type { Blueprint, BlueprintPhase, BlueprintStatus } from "@/types/domain";
 
 /**
  * Blueprints (Sprint 13, motor de datos nuevo): coleccion TOP-LEVEL
@@ -84,4 +84,30 @@ export async function updateBlueprintStatus(
   status: BlueprintStatus,
 ): Promise<void> {
   await updateDoc(doc(db, COLLECTION, blueprintId), { status, updatedAt: serverTimestamp() });
+}
+
+/** Editor del Blueprint (Sprint 17) - metadata general, nunca el roadmap (ver updateBlueprintRoadmap). */
+export async function updateBlueprintMeta(
+  blueprintId: string,
+  data: Partial<
+    Pick<
+      Blueprint,
+      "name" | "description" | "category" | "industry" | "difficulty" | "estimatedDuration" | "tags"
+    >
+  >,
+): Promise<void> {
+  await updateDoc(doc(db, COLLECTION, blueprintId), { ...data, updatedAt: serverTimestamp() });
+}
+
+/**
+ * Guarda el roadmap completo (Editor del Blueprint, Sprint 17). Firestore
+ * no soporta editar un elemento de un array por indice - el cliente muta
+ * una copia local del array completo (ver app/(app)/admin/blueprints/
+ * [blueprintId]/page.tsx) y esta funcion la reescribe entera.
+ */
+export async function updateBlueprintRoadmap(
+  blueprintId: string,
+  roadmap: BlueprintPhase[],
+): Promise<void> {
+  await updateDoc(doc(db, COLLECTION, blueprintId), { roadmap, updatedAt: serverTimestamp() });
 }
