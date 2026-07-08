@@ -1,39 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { Loader2, Layers } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { BlueprintNavigator } from "@/components/features/navigator/blueprint-navigator";
+import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
 import { AssistantPanel } from "@/components/features/workspace/assistant-panel";
-import { WorkspaceWalkthroughBar } from "@/components/features/super-admin/workspace-walkthrough-bar";
+import { CollapsibleSidebar } from "@/components/features/shell/collapsible-sidebar";
 import { NavigatorProvider } from "@/providers/navigator-provider";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { signOutUser } from "@/services/auth";
-
-const BASE_NAV_LINKS = [
-  { href: "/dashboard", label: "Mission Control" },
-  { href: "/workspace", label: "Workspace" },
-  { href: "/knowledge", label: "Knowledge Base" },
-  { href: "/documents", label: "Documentos" },
-  { href: "/marketplace", label: "Marketplace" },
-];
+import { ADMIN_NAV_GROUPS } from "@/config/admin-nav";
+import { SUPER_ADMIN_NAV_GROUPS } from "@/config/super-admin-nav";
+import { ROLE_LABELS } from "@/config/roles";
 
 function AppShell({ children }: { children: React.ReactNode }) {
   const { membership, user, isSuperAdmin } = useAuth();
   const { focusMode, selection } = useNavigator();
   const [assistantCollapsed, setAssistantCollapsed] = useState(false);
   const router = useRouter();
-  const pathname = usePathname();
 
-  // "Admin" solo aparece para Super Admin (Panel de Super Admin).
-  const navLinks = isSuperAdmin
-    ? [...BASE_NAV_LINKS, { href: "/admin", label: "Admin" }]
-    : BASE_NAV_LINKS;
+  const navGroups = isSuperAdmin ? SUPER_ADMIN_NAV_GROUPS : ADMIN_NAV_GROUPS;
+  const roleLabel = isSuperAdmin
+    ? "Super Admin"
+    : (membership && ROLE_LABELS[membership.role]) || "";
 
   async function handleSignOut() {
     await signOutUser();
@@ -41,48 +31,16 @@ function AppShell({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="flex h-screen flex-col">
-      <header className="flex h-12 shrink-0 items-center justify-between border-b px-4">
-        <div className="flex items-center gap-6">
-          <div className="flex items-center gap-2">
-            <Layers className="text-primary h-5 w-5" />
-            <span className="text-body font-semibold">
-              {membership?.organizationName ?? "Blueprint"}
-            </span>
-          </div>
-          <nav className="flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-body text-muted-foreground hover:bg-muted hover:text-foreground rounded-md px-2.5 py-1",
-                  pathname.startsWith(link.href) &&
-                    "bg-accent/10 text-accent-foreground font-medium",
-                )}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-        <div className="flex items-center gap-3">
-          <span className="text-small text-muted-foreground">
-            {user?.displayName || user?.email}
-          </span>
-          <Button variant="ghost" size="sm" onClick={handleSignOut}>
-            Cerrar sesión
-          </Button>
-        </div>
-      </header>
+    <div className="flex h-screen">
+      <CollapsibleSidebar
+        groups={navGroups}
+        brandSubtitle={membership?.organizationName ?? "Construye tu empresa paso a paso"}
+        userName={user?.displayName || user?.email || ""}
+        userRoleLabel={roleLabel}
+        onSignOut={handleSignOut}
+      />
 
       <div className="flex flex-1 overflow-hidden">
-        {!focusMode && (
-          <aside className="w-72 shrink-0 overflow-hidden border-r">
-            <BlueprintNavigator />
-          </aside>
-        )}
-
         <main className="flex flex-1 flex-col overflow-hidden">
           <div className="shrink-0 border-b">
             <BreadcrumbTrail />
@@ -104,17 +62,16 @@ function AppShell({ children }: { children: React.ReactNode }) {
           </aside>
         )}
       </div>
-
-      <WorkspaceWalkthroughBar />
     </div>
   );
 }
 
 /**
- * Chrome persistente para toda la app autenticada (Prompt 2/6/8): Top
- * Navigation + Blueprint Navigator + area de contenido + Assistant Panel.
- * Ninguno de los tres paneles es una pantalla propia, viven aqui para
- * estar siempre visibles (salvo en Modo Focus).
+ * Chrome persistente para toda la app autenticada: Sidebar + area de
+ * contenido + Assistant Panel. El Navigator de arbol (Fase/Modulo/
+ * Capitulo/Workspace) se retiro en el Sprint 13 junto con el modelo de
+ * datos viejo - el Sprint 14 reconstruye la navegacion sobre Proyecto ->
+ * Fase -> Step (Roadmap).
  */
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();

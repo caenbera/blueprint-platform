@@ -10,6 +10,7 @@ import {
 import { getMissionControlWidgetConfig } from "@/config/mission-control-widgets";
 import { getBlueprintHealth, type BlueprintHealth } from "@/services/mission-control";
 
+/** Que metodologias (Blueprints) esta usando realmente la organizacion (Sprint 13: ya no hay "progressStatus" de Blueprint - son plantillas globales). */
 export function BlueprintHealthWidget({
   orgId,
   ...controls
@@ -24,28 +25,22 @@ export function BlueprintHealthWidget({
   return (
     <WidgetShell label={config.label} icon={config.icon} {...controls}>
       {health === null && <Loader2 className="text-muted-foreground h-4 w-4 animate-spin" />}
-      {health && health.totalBlueprints === 0 && (
-        <p className="text-small text-muted-foreground">Aún no hay Blueprints creados.</p>
+      {health && health.byBlueprint.length === 0 && (
+        <p className="text-small text-muted-foreground">Aún no hay Proyectos creados.</p>
       )}
-      {health && health.totalBlueprints > 0 && (
+      {health && health.byBlueprint.length > 0 && (
         <div className="flex flex-col gap-2">
           <p className="text-small text-muted-foreground">
-            {health.totalBlueprints} Blueprints en total
+            {health.totalProjects} Proyectos en {health.byBlueprint.length} Blueprints distintos
           </p>
-          <div className="flex flex-wrap gap-1.5">
-            <Badge variant="success">Aprobados: {health.byStatus.aprobado}</Badge>
-            <Badge variant="info">En progreso: {health.byStatus.en_progreso}</Badge>
-            <Badge variant="destructive">Bloqueados: {health.byStatus.bloqueado}</Badge>
+          <div className="flex flex-col gap-1.5">
+            {health.byBlueprint.slice(0, 5).map((entry) => (
+              <div key={entry.blueprintName} className="flex items-center justify-between gap-2">
+                <span className="text-small truncate">{entry.blueprintName}</span>
+                <Badge variant="outline">{entry.projectCount}</Badge>
+              </div>
+            ))}
           </div>
-          {health.blocked.length > 0 && (
-            <div className="mt-1 flex flex-col gap-1">
-              {health.blocked.slice(0, 3).map((b, i) => (
-                <p key={i} className="text-small text-destructive">
-                  ⚠ {b.blueprintName} ({b.projectName})
-                </p>
-              ))}
-            </div>
-          )}
         </div>
       )}
     </WidgetShell>

@@ -1,4 +1,4 @@
-import { BookOpen, FileText, Layers } from "lucide-react";
+import { BookOpen, FileText } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { MarketplaceResourceType, MarketplaceVisibility } from "@/types/domain";
 
@@ -9,14 +9,12 @@ export interface MarketplaceResourceTypeConfig {
   icon: LucideIcon;
 }
 
-/** Catalogo de los 3 tipos de recurso del Marketplace (Sprint 10). */
+/**
+ * Catalogo de tipos de recurso del Marketplace. Sprint 13: "blueprint" se
+ * retiro de aqui - los Blueprints ya no se publican/incorporan via
+ * Marketplace, su autoria es exclusiva de Super Admin.
+ */
 export const MARKETPLACE_RESOURCE_TYPES: MarketplaceResourceTypeConfig[] = [
-  {
-    value: "blueprint",
-    label: "Blueprint",
-    description: "Estructura completa: Fases, Módulos, Capítulos, Workspaces y Cards",
-    icon: Layers,
-  },
   {
     value: "document",
     label: "Documento",

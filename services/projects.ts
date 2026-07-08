@@ -1,46 +1,90 @@
 import {
-  archiveNode,
-  createNode,
-  getNode,
-  listNodes,
-  projectPath,
-  projectsPath,
-  updateNode,
-  type ProjectRef,
-} from "@/lib/firestore-hierarchy";
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  orderBy,
+  query,
+  serverTimestamp,
+  Timestamp,
+} from "firebase/firestore";
+import { auth, db } from "@/lib/firebase/client";
+import { logActivity } from "@/services/activity";
+import { getBlueprint } from "@/services/blueprints";
 import type { Project } from "@/types/domain";
 
-export interface CreateProjectInput {
-  name: string;
-  description?: string;
-  order?: number;
+/**
+ * Proyectos (Sprint 13, motor de datos nuevo): subcoleccion
+ * `organizations/{orgId}/projects/{id}` - instancia de un Blueprint para
+ * una organizacion. `blueprintSnapshot` congela el Blueprint completo al
+ * momento de iniciar (copia no destructiva, mismo principio que
+ * Knowledge/Documents/Marketplace) - cambios posteriores al Blueprint
+ * original no afectan Proyectos ya iniciados.
+ */
+
+function projectsPath(orgId: string) {
+  return `organizations/${orgId}/projects`;
 }
 
-export async function createProject(orgId: string, input: CreateProjectInput): Promise<string> {
-  return createNode(projectsPath(orgId), {
+function toIso(value: unknown): string {
+  if (value instanceof Timestamp) return value.toDate().toISOString();
+  return typeof value === "string" ? value : new Date().toISOString();
+}
+
+function fromFirestore(id: string, data: Record<string, unknown>): Project {
+  return {
+    ...data,
+    id,
+    createdAt: toIso(data.createdAt),
+    updatedAt: toIso(data.updatedAt),
+  } as Project;
+}
+
+export async function createProjectFromBlueprint(
+  orgId: string,
+  blueprintId: string,
+  name?: string,
+): Promise<string> {
+  const user = auth.currentUser;
+  if (!user) throw new Error("No hay sesión activa.");
+
+  const blueprint = await getBlueprint(blueprintId);
+  if (!blueprint) throw new Error("El Blueprint no existe.");
+
+  const projectName = name?.trim() || blueprint.name;
+  const ref = await addDoc(collection(db, projectsPath(orgId)), {
     orgId,
-    name: input.name,
-    description: input.description ?? "",
-    order: input.order ?? 0,
-    progressStatus: "no_iniciado",
+    blueprintId,
+    blueprintSnapshot: blueprint,
+    name: projectName,
+    icon: blueprint.icon,
+    deletionStatus: "active",
+    createdBy: user.uid,
+    createdAt: serverTimestamp(),
+    updatedAt: serverTimestamp(),
   });
+
+  void logActivity(orgId, {
+    action: "project_created",
+    summary: `Proyecto creado: "${projectName}"`,
+    projectRef: { projectId: ref.id, projectName },
+  });
+
+  return ref.id;
 }
 
 export async function listProjects(orgId: string): Promise<Project[]> {
-  return listNodes<Project>(projectsPath(orgId));
+  const snap = await getDocs(
+    query(collection(db, projectsPath(orgId)), orderBy("createdAt", "desc")),
+  );
+  return snap.docs
+    .map((d) => fromFirestore(d.id, d.data()))
+    .filter((p) => p.deletionStatus !== "deleted");
 }
 
-export async function getProject(ref: ProjectRef): Promise<Project | null> {
-  return getNode<Project>(projectPath(ref));
-}
-
-export async function updateProject(
-  ref: ProjectRef,
-  data: Partial<Pick<Project, "name" | "description" | "order" | "progressStatus">>,
-): Promise<void> {
-  return updateNode(projectPath(ref), data);
-}
-
-export async function archiveProject(ref: ProjectRef): Promise<void> {
-  return archiveNode(projectPath(ref));
+export async function getProject(orgId: string, projectId: string): Promise<Project | null> {
+  const snap = await getDoc(doc(db, projectsPath(orgId), projectId));
+  if (!snap.exists()) return null;
+  return fromFirestore(snap.id, snap.data());
 }

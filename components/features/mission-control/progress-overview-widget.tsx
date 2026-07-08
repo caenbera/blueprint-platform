@@ -13,13 +13,11 @@ import type { ProgressStatus } from "@/types/domain";
 
 const STATUS_META: Record<
   ProgressStatus,
-  { label: string; variant: "secondary" | "info" | "warning" | "success" | "destructive" }
+  { label: string; variant: "secondary" | "info" | "success" }
 > = {
   no_iniciado: { label: "No iniciado", variant: "secondary" },
   en_progreso: { label: "En progreso", variant: "info" },
-  revisado: { label: "Revisado", variant: "warning" },
-  aprobado: { label: "Aprobado", variant: "success" },
-  bloqueado: { label: "Bloqueado", variant: "destructive" },
+  aprobado: { label: "Completado", variant: "success" },
 };
 
 export function ProgressOverviewWidget({

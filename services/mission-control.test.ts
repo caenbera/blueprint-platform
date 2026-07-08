@@ -1,12 +1,32 @@
 import { describe, expect, it, vi } from "vitest";
 
 vi.mock("@/services/projects", () => ({ listProjects: vi.fn() }));
-vi.mock("@/services/blueprints", () => ({ listBlueprints: vi.fn() }));
+// No se usa vi.importActual: el modulo real importa services/activity.ts ->
+// lib/firebase/client.ts, que falla al inicializar en el entorno de Vitest
+// (ver marketplace.test.ts para el mismo problema). calculateProjectProgress
+// es una funcion pura sin dependencias externas, asi que se reimplementa
+// aqui tal cual el original en vez de importarlo.
+vi.mock("@/services/step-state", () => ({
+  listStepStates: vi.fn(),
+  calculateProjectProgress: (project: never, stepStates: { status: string }[]) => {
+    const total = (
+      project as { blueprintSnapshot: { roadmap: { steps: unknown[] }[] } }
+    ).blueprintSnapshot.roadmap.reduce((sum, phase) => sum + phase.steps.length, 0);
+    const completed = stepStates.filter((s) => s.status === "completed").length;
+    const status =
+      completed === 0
+        ? "no_iniciado"
+        : completed >= total && total > 0
+          ? "aprobado"
+          : "en_progreso";
+    return { total, completed, percent: 0, status };
+  },
+}));
 vi.mock("@/services/knowledge", () => ({ listKnowledgeItems: vi.fn() }));
 vi.mock("@/services/documents", () => ({ listDocuments: vi.fn() }));
 
 import { listProjects } from "@/services/projects";
-import { listBlueprints } from "@/services/blueprints";
+import { listStepStates } from "@/services/step-state";
 import { listKnowledgeItems } from "@/services/knowledge";
 import { listDocuments } from "@/services/documents";
 import {
@@ -17,60 +37,59 @@ import {
   getProgressOverview,
 } from "@/services/mission-control";
 
-function baseNode(overrides: Record<string, unknown> = {}) {
+function project(overrides: Record<string, unknown> = {}) {
   return {
-    id: "n1",
-    name: "Nodo",
-    description: "",
-    order: 0,
-    progressStatus: "no_iniciado",
+    id: "p1",
+    orgId: "org1",
+    blueprintId: "b1",
+    blueprintSnapshot: { name: "Blueprint A", roadmap: [{ steps: [{ id: "s1" }, { id: "s2" }] }] },
+    name: "Proyecto",
+    icon: "",
     deletionStatus: "active",
-    createdAt: "",
     createdBy: "",
+    createdAt: "",
     updatedAt: "",
     ...overrides,
   };
 }
 
 describe("getProgressOverview", () => {
-  it("cuenta los Proyectos por progressStatus", async () => {
+  it("calcula el status de cada Proyecto a partir de sus ProjectStepState", async () => {
     vi.mocked(listProjects).mockResolvedValue([
-      baseNode({ id: "p1", progressStatus: "aprobado" }),
-      baseNode({ id: "p2", progressStatus: "aprobado" }),
-      baseNode({ id: "p3", progressStatus: "bloqueado" }),
+      project({ id: "p1" }),
+      project({ id: "p2" }),
+      project({ id: "p3" }),
     ] as never);
+
+    vi.mocked(listStepStates).mockImplementation(async (_orgId, projectId) => {
+      if (projectId === "p1") return [{ status: "completed" }, { status: "completed" }] as never;
+      if (projectId === "p2") return [{ status: "completed" }] as never;
+      return [] as never;
+    });
 
     const result = await getProgressOverview("org1");
 
     expect(result.totalProjects).toBe(3);
-    expect(result.byStatus.aprobado).toBe(2);
-    expect(result.byStatus.bloqueado).toBe(1);
-    expect(result.byStatus.no_iniciado).toBe(0);
+    expect(result.byStatus.aprobado).toBe(1);
+    expect(result.byStatus.en_progreso).toBe(1);
+    expect(result.byStatus.no_iniciado).toBe(1);
   });
 });
 
 describe("getBlueprintHealth", () => {
-  it("agrega Blueprints de todos los Proyectos (fan-out) y detecta bloqueados", async () => {
+  it("agrupa los Proyectos por el nombre del Blueprint que usan", async () => {
     vi.mocked(listProjects).mockResolvedValue([
-      baseNode({ id: "p1", name: "Proyecto Uno" }),
-      baseNode({ id: "p2", name: "Proyecto Dos" }),
+      project({ id: "p1", blueprintSnapshot: { name: "Blueprint A", roadmap: [] } }),
+      project({ id: "p2", blueprintSnapshot: { name: "Blueprint A", roadmap: [] } }),
+      project({ id: "p3", blueprintSnapshot: { name: "Blueprint B", roadmap: [] } }),
     ] as never);
-
-    vi.mocked(listBlueprints).mockImplementation(async (ref) => {
-      const projectId = (ref as { projectId: string }).projectId;
-      if (projectId === "p1") {
-        return [baseNode({ id: "b1", name: "Blueprint A", progressStatus: "aprobado" })] as never;
-      }
-      return [baseNode({ id: "b2", name: "Blueprint B", progressStatus: "bloqueado" })] as never;
-    });
 
     const result = await getBlueprintHealth("org1");
 
-    expect(result.totalBlueprints).toBe(2);
-    expect(result.byStatus.aprobado).toBe(1);
-    expect(result.byStatus.bloqueado).toBe(1);
-    expect(result.blocked).toEqual([
-      { projectName: "Proyecto Dos", blueprintName: "Blueprint B", progressStatus: "bloqueado" },
+    expect(result.totalProjects).toBe(3);
+    expect(result.byBlueprint).toEqual([
+      { blueprintName: "Blueprint A", projectCount: 2 },
+      { blueprintName: "Blueprint B", projectCount: 1 },
     ]);
   });
 });

@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -9,29 +8,28 @@ import {
   type WidgetControlProps,
 } from "@/components/features/mission-control/widget-shell";
 import { getMissionControlWidgetConfig } from "@/config/mission-control-widgets";
-import { useNavigator } from "@/hooks/use-navigator";
 import { listProjects } from "@/services/projects";
 import type { Project } from "@/types/domain";
 
+/**
+ * Sprint 13: navegar a un Proyecto (abrir su Roadmap) todavia no tiene
+ * pantalla propia - se reconstruye en el Sprint 14. Por ahora el widget
+ * solo lista los Proyectos de forma informativa (sin click-to-navigate).
+ * `navigable` se mantiene como prop para no romper su uso de solo lectura
+ * en el resumen de organizaciones ajenas del Panel de Super Admin.
+ */
 export function ProjectsWidget({
   orgId,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- se acepta por compatibilidad de la prop, la navegacion real vuelve en el Sprint 14.
   navigable = true,
   ...controls
 }: { orgId: string; navigable?: boolean } & WidgetControlProps) {
   const config = getMissionControlWidgetConfig("projects");
-  const { setActiveProject } = useNavigator();
-  const router = useRouter();
   const [projects, setProjects] = useState<Project[] | null>(null);
 
   useEffect(() => {
     listProjects(orgId).then(setProjects);
   }, [orgId]);
-
-  function handleOpen(project: Project) {
-    if (!navigable) return;
-    setActiveProject(project.id, project.name);
-    router.push("/workspace");
-  }
 
   return (
     <WidgetShell label={config.label} icon={config.icon} {...controls}>
@@ -41,15 +39,13 @@ export function ProjectsWidget({
       )}
       <div className="flex flex-col gap-2">
         {projects?.slice(0, 6).map((project) => (
-          <button
+          <div
             key={project.id}
-            onClick={() => handleOpen(project)}
-            disabled={!navigable}
-            className="hover:bg-muted flex items-center justify-between gap-2 rounded-md px-1.5 py-1 text-left disabled:cursor-default disabled:hover:bg-transparent"
+            className="flex items-center justify-between gap-2 rounded-md px-1.5 py-1"
           >
             <span className="text-small truncate">{project.name}</span>
-            <Badge variant="outline">{project.progressStatus}</Badge>
-          </button>
+            <Badge variant="outline">{project.blueprintSnapshot.name}</Badge>
+          </div>
         ))}
       </div>
     </WidgetShell>

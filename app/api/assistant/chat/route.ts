@@ -10,13 +10,12 @@ import {
   buildTools,
   extractSources,
   fetchKnowledgeContext,
-  fetchWorkspaceCardsContext,
+  fetchStepContext,
   type NavigatorSelectionInput,
 } from "@/lib/ai/assistant-context";
 import type { AiChatMessage } from "@/lib/ai/types";
 import type {
   AssistantMode,
-  CreateCardActionPayload,
   CreateDocumentActionPayload,
   ProposedAction,
   ProposedActionType,
@@ -74,7 +73,7 @@ export async function POST(request: Request) {
 
   // Context Engine
   const hierarchyContext = buildHierarchyContext(selection);
-  const workspaceCardsContext = selection ? await fetchWorkspaceCardsContext(orgId, selection) : "";
+  const stepContext = selection ? await fetchStepContext(orgId, selection) : "";
 
   // Knowledge Engine
   const { contextText: knowledgeContext, candidates } = await fetchKnowledgeContext(orgId, message);
@@ -82,7 +81,7 @@ export async function POST(request: Request) {
   // Prompt Engine
   const systemPrompt = buildSystemPrompt(
     mode,
-    [hierarchyContext, workspaceCardsContext].filter(Boolean).join("\n\n"),
+    [hierarchyContext, stepContext].filter(Boolean).join("\n\n"),
     knowledgeContext,
   );
 
@@ -96,7 +95,7 @@ export async function POST(request: Request) {
     .reverse()
     .map((doc) => ({ role: doc.data().role, content: doc.data().content }));
 
-  const tools = buildTools(Boolean(selection?.workspaceId));
+  const tools = buildTools();
 
   let completion;
   try {
@@ -112,20 +111,6 @@ export async function POST(request: Request) {
 
   const sources = extractSources(completion.text, candidates);
   const proposedActions: ProposedAction[] = completion.toolCalls.map((call) => {
-    if (call.name === "propose_create_card") {
-      const input = call.input as Partial<CreateCardActionPayload>;
-      return {
-        id: randomUUID(),
-        type: "create_card" as ProposedActionType,
-        summary: `Crear Card "${input.title}"`,
-        payload: {
-          cardType: input.cardType,
-          title: input.title,
-          objective: input.objective ?? "",
-          content: input.content,
-        } as CreateCardActionPayload,
-      };
-    }
     const input = call.input as Partial<CreateDocumentActionPayload>;
     return {
       id: randomUUID(),

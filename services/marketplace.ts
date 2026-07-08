@@ -10,22 +10,9 @@ import {
   where,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
-import {
-  createBlueprint,
-  createChapter,
-  createModule,
-  createPhase,
-  listChapters,
-  listModules,
-  listPhases,
-} from "@/services/blueprints";
-import { createWorkspace, listWorkspaces } from "@/services/workspaces";
-import { createCard, listCards } from "@/services/cards";
 import { createDocument, getDocumentById, updateDocument } from "@/services/documents";
 import { createKnowledgeItemFromSnapshot, getKnowledgeItem } from "@/services/knowledge";
-import type { BlueprintRef, ProjectRef } from "@/lib/firestore-hierarchy";
 import type {
-  BlueprintResourceSnapshot,
   DocumentResourceSnapshot,
   KnowledgeItemResourceSnapshot,
   MarketplaceResource,
@@ -34,11 +21,14 @@ import type {
 } from "@/types/domain";
 
 /**
- * Marketplace (Sprint 10): coleccion top-level `marketplaceResources` (no
- * anidada bajo organizations/{orgId} - ver comentario en firestore.rules).
- * "Incorporar" siempre lee el snapshot y crea copias nuevas via los
- * servicios ya existentes (createBlueprint/createDocument/etc.) - nunca
- * modifica el recurso publicado.
+ * Marketplace: coleccion top-level `marketplaceResources` (no anidada bajo
+ * organizations/{orgId} - ver comentario en firestore.rules). "Incorporar"
+ * siempre lee el snapshot y crea copias nuevas via los servicios ya
+ * existentes - nunca modifica el recurso publicado. Sprint 13: los
+ * Blueprints ya no se publican/incorporan via Marketplace (su autoria es
+ * exclusiva de Super Admin, y su descubrimiento es directo via
+ * services/blueprints.ts#listPublishedBlueprints) - el Marketplace queda
+ * para Documentos y Knowledge Items.
  */
 
 const COLLECTION = "marketplaceResources";
@@ -68,7 +58,7 @@ async function publish(
   orgId: string,
   resourceType: MarketplaceResourceType,
   meta: PublishMeta,
-  snapshot: BlueprintResourceSnapshot | DocumentResourceSnapshot | KnowledgeItemResourceSnapshot,
+  snapshot: DocumentResourceSnapshot | KnowledgeItemResourceSnapshot,
 ): Promise<string> {
   const user = auth.currentUser;
   if (!user) throw new Error("No hay sesión activa.");
@@ -88,77 +78,6 @@ async function publish(
     updatedAt: serverTimestamp(),
   });
   return ref.id;
-}
-
-/**
- * Lee recursivamente el arbol completo (Fases->Modulos->Capitulos->Workspaces->Cards)
- * para publicarlo. Exportada (Sprint 11) para poder probar la recursividad
- * con datos mockeados sin depender de una organizacion real.
- */
-export async function buildBlueprintSnapshot(
-  ref: BlueprintRef,
-): Promise<BlueprintResourceSnapshot> {
-  const phases = await listPhases(ref);
-  const phaseSnapshots = await Promise.all(
-    phases.map(async (phase) => {
-      const phaseRef = { ...ref, phaseId: phase.id };
-      const modules = await listModules(phaseRef);
-      const moduleSnapshots = await Promise.all(
-        modules.map(async (mod) => {
-          const moduleRef = { ...phaseRef, moduleId: mod.id };
-          const chapters = await listChapters(moduleRef);
-          const chapterSnapshots = await Promise.all(
-            chapters.map(async (chapter) => {
-              const chapterRef = { ...moduleRef, chapterId: chapter.id };
-              const workspaces = await listWorkspaces(chapterRef);
-              const workspaceSnapshots = await Promise.all(
-                workspaces.map(async (workspace) => {
-                  const workspaceRef = { ...chapterRef, workspaceId: workspace.id };
-                  const cards = await listCards(workspaceRef);
-                  return {
-                    name: workspace.name,
-                    description: workspace.description,
-                    order: workspace.order,
-                    cards: cards.map((c) => ({
-                      type: c.type,
-                      title: c.title,
-                      objective: c.objective,
-                      content: c.content,
-                      order: c.order,
-                    })),
-                  };
-                }),
-              );
-              return {
-                name: chapter.name,
-                description: chapter.description,
-                order: chapter.order,
-                workspaces: workspaceSnapshots,
-              };
-            }),
-          );
-          return {
-            name: mod.name,
-            description: mod.description,
-            order: mod.order,
-            chapters: chapterSnapshots,
-          };
-        }),
-      );
-      return {
-        name: phase.name,
-        description: phase.description,
-        order: phase.order,
-        modules: moduleSnapshots,
-      };
-    }),
-  );
-  return { phases: phaseSnapshots };
-}
-
-export async function publishBlueprint(ref: BlueprintRef, meta: PublishMeta): Promise<string> {
-  const snapshot = await buildBlueprintSnapshot(ref);
-  return publish(ref.orgId, "blueprint", meta, snapshot);
 }
 
 export async function publishDocument(
@@ -226,64 +145,6 @@ export async function archiveMarketplaceResource(resourceId: string): Promise<vo
     status: "archivado",
     updatedAt: serverTimestamp(),
   });
-}
-
-/** Recrea el arbol completo dentro de un Proyecto destino - nunca modifica el recurso publicado. */
-export async function importBlueprint(
-  resource: MarketplaceResource,
-  targetProjectRef: ProjectRef,
-  title: string,
-): Promise<string> {
-  const snapshot = resource.snapshot as BlueprintResourceSnapshot;
-  const blueprintId = await createBlueprint(targetProjectRef, {
-    name: title,
-    description: resource.description,
-  });
-  const blueprintRef: BlueprintRef = { ...targetProjectRef, blueprintId };
-
-  for (const phase of snapshot.phases) {
-    const phaseId = await createPhase(blueprintRef, {
-      name: phase.name,
-      description: phase.description,
-      order: phase.order,
-    });
-    const phaseRef = { ...blueprintRef, phaseId };
-    for (const mod of phase.modules) {
-      const moduleId = await createModule(phaseRef, {
-        name: mod.name,
-        description: mod.description,
-        order: mod.order,
-      });
-      const moduleRef = { ...phaseRef, moduleId };
-      for (const chapter of mod.chapters) {
-        const chapterId = await createChapter(moduleRef, {
-          name: chapter.name,
-          description: chapter.description,
-          order: chapter.order,
-        });
-        const chapterRef = { ...moduleRef, chapterId };
-        for (const workspace of chapter.workspaces) {
-          const workspaceId = await createWorkspace(chapterRef, {
-            name: workspace.name,
-            description: workspace.description,
-            order: workspace.order,
-          });
-          const workspaceRef = { ...chapterRef, workspaceId };
-          for (const card of workspace.cards) {
-            await createCard(workspaceRef, {
-              type: card.type,
-              title: card.title,
-              objective: card.objective,
-              content: card.content,
-              order: card.order,
-            });
-          }
-        }
-      }
-    }
-  }
-
-  return blueprintId;
 }
 
 export async function importDocument(

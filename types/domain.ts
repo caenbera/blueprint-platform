@@ -1,6 +1,11 @@
 /**
  * Contratos de dominio compartidos entre services/, hooks/ y componentes.
- * Ver docs/blueprint-master-spec.md para el modelo completo.
+ * Ver docs/blueprint-master-spec.md para el modelo original y
+ * "json explicacion.md" (compartido por el usuario, Sprint 13) para el
+ * motor unico Blueprint -> Roadmap -> Fase -> Step -> Content -> Resources
+ * que reemplaza por completo la jerarquia anterior (Project -> Blueprint ->
+ * Phase -> Module -> Chapter -> Workspace -> Card). Corte limpio (Sprint
+ * 13): no quedan tipos de la jerarquia vieja.
  */
 
 export type Role = "owner" | "administrator" | "manager" | "editor" | "collaborator" | "viewer";
@@ -43,120 +48,236 @@ export interface SupportAccessGrant {
   superAdminEmail?: string;
 }
 
-/**
- * Jerarquia de dominio: Organization -> Project -> Blueprint -> Phase ->
- * Module -> Chapter -> Workspace -> Card (docs/blueprint-master-spec.md §2/§8).
- */
-
-/** Estado de progreso/navegacion (nodos del Navigator). Distinto del
- * estado de ciclo de vida de contenido (ver CardLifecycleStatus). */
-export type ProgressStatus = "no_iniciado" | "en_progreso" | "revisado" | "aprobado" | "bloqueado";
-
-/** Soft delete universal (Prompt 11 §"Soft Delete"): nunca borrado fisico. */
+/** Soft delete universal: nunca borrado fisico. */
 export type DeletionStatus = "active" | "archived" | "deleted";
 
-interface HierarchyNodeBase {
-  id: string;
-  name: string;
-  description: string;
-  order: number;
-  progressStatus: ProgressStatus;
-  deletionStatus: DeletionStatus;
-  createdAt: string;
-  createdBy: string;
-  updatedAt: string;
-}
+/** Estado de progreso calculado (nunca almacenado - ver ProjectStepState/calculateProjectProgress en services/step-state.ts). */
+export type ProgressStatus = "no_iniciado" | "en_progreso" | "aprobado";
 
-export interface Project extends HierarchyNodeBase {
-  orgId: string;
-}
+/**
+ * ---------------------------------------------------------------------
+ * Motor Blueprint (Sprint 13): un unico motor universal de ejecucion de
+ * procesos. Jerarquia oficial: Blueprint -> Roadmap -> Fase -> Step ->
+ * Content -> Resources. No existen mas niveles - toda la inteligencia
+ * vive en el Step.
+ * ---------------------------------------------------------------------
+ */
 
-export interface Blueprint extends HierarchyNodeBase {
-  orgId: string;
-  projectId: string;
-}
+export type BlueprintStatus = "draft" | "published" | "archived";
+export type BlueprintDifficulty = "beginner" | "intermediate" | "advanced";
 
-export interface Phase extends HierarchyNodeBase {
-  orgId: string;
-  projectId: string;
-  blueprintId: string;
-}
+/** El tipo del Step define su ciclo de vida, nunca su estructura. */
+export type StepType =
+  | "one_time"
+  | "daily"
+  | "weekly"
+  | "monthly"
+  | "quarterly"
+  | "semester"
+  | "yearly"
+  | "milestone"
+  | "custom";
 
-export interface Module extends HierarchyNodeBase {
-  orgId: string;
-  projectId: string;
-  blueprintId: string;
-  phaseId: string;
-}
+export type StepDifficulty = "easy" | "medium" | "hard";
+export type StepPriority = "low" | "normal" | "high";
 
-export interface Chapter extends HierarchyNodeBase {
-  orgId: string;
-  projectId: string;
-  blueprintId: string;
-  phaseId: string;
-  moduleId: string;
-}
-
-export interface Workspace extends HierarchyNodeBase {
-  orgId: string;
-  projectId: string;
-  blueprintId: string;
-  phaseId: string;
-  moduleId: string;
-  chapterId: string;
-}
-
-/** Catalogo de 20 tipos oficiales de Card (Prompt 9). */
-export type CardType =
-  | "informacion"
-  | "objetivo"
-  | "pregunta"
-  | "respuesta"
-  | "checklist"
-  | "formulario"
-  | "documento"
-  | "archivo"
-  | "imagen"
+/** Catalogo de tipos de Resource (Content Engine) - motor universal, todos comparten la misma estructura, solo cambia `type`. */
+export type StepResourceType =
+  | "pdf"
+  | "word"
+  | "excel"
+  | "powerpoint"
+  | "google_docs"
+  | "google_sheets"
+  | "google_drive"
+  | "dropbox"
+  | "onedrive"
+  | "firebase_storage"
+  | "aws_s3"
+  | "cloudflare"
+  | "youtube"
+  | "vimeo"
+  | "loom"
+  | "spotify"
+  | "podcast"
+  | "image"
   | "video"
   | "audio"
-  | "tabla"
-  | "timeline"
-  | "kpi"
-  | "canvas"
-  | "ia"
-  | "resumen"
-  | "comparacion"
-  | "proceso"
-  | "plantilla";
+  | "zip"
+  | "code"
+  | "website"
+  | "api"
+  | "form"
+  | "template"
+  | "presentation"
+  | "manual"
+  | "other";
 
-/** Estado de ciclo de vida de contenido de una Card (Prompt 9), distinto
- * del ProgressStatus de navegacion. */
-export type CardLifecycleStatus =
-  "borrador" | "en_edicion" | "en_revision" | "aprobada" | "publicada" | "archivada" | "bloqueada";
+export type StepResourceVisibility = "public" | "organization";
 
-export interface Card {
+/** Regla 4: nunca se almacenan archivos binarios dentro del Blueprint, solo referencias externas. */
+export interface StepResource {
   id: string;
-  orgId: string;
-  projectId: string;
-  blueprintId: string;
-  phaseId: string;
-  moduleId: string;
-  chapterId: string;
-  workspaceId: string;
-  type: CardType;
+  type: StepResourceType;
   title: string;
-  objective: string;
-  /** Forma exacta depende de `type`; se define al construir el Card System (Sprint 5). */
-  content: unknown;
-  lifecycleStatus: CardLifecycleStatus;
-  deletionStatus: DeletionStatus;
+  description: string;
+  provider: string;
+  previewUrl: string;
+  downloadUrl: string;
+  embedUrl: string;
+  thumbnailUrl: string;
+  mimeType: string;
+  extension: string;
+  size: number;
+  metadata: {
+    pages: number | null;
+    duration: number | null;
+    language: string;
+  };
+  tags: string[];
+  visibility: StepResourceVisibility;
+}
+
+export interface StepChecklistItem {
+  id: string;
+  task: string;
+}
+
+/** Define cuando un Step puede darse por terminado - el motor las usa automaticamente. */
+export interface StepCompletionRules {
+  requiredChecklist: boolean;
+  requiredResources: boolean;
+  requiredApproval: boolean;
+  requiredQuiz: boolean;
+}
+
+export interface StepAssistantConfig {
+  systemPrompt: string;
+  context: string;
+  suggestions: string[];
+}
+
+/** Todo el conocimiento del Step vive aqui, nunca fuera. */
+export interface StepContent {
+  overview: { title: string; summary: string; body: string };
+  objective: { description: string };
+  checklist: StepChecklistItem[];
+  resources: StepResource[];
+  assistant: StepAssistantConfig;
+  /** Referencias a KnowledgeItem.id (organizations/{orgId}/knowledgeItems) - reutilizables, no pertenecen solo a este Step. */
+  knowledge: string[];
+}
+
+/** El objeto mas importante de la plataforma: una unica accion ejecutable. */
+export interface BlueprintStep {
+  id: string;
+  title: string;
+  description: string;
   order: number;
-  createdAt: string;
+  type: StepType;
+  estimatedHours: number;
+  difficulty: StepDifficulty;
+  priority: StepPriority;
+  /** IDs de otros Steps que deben completarse antes de poder iniciar este. */
+  dependencies: string[];
+  completionRules: StepCompletionRules;
+  content: StepContent;
+}
+
+/** Las Fases solo agrupan Steps visualmente - nunca contienen comportamiento propio. */
+export interface BlueprintPhase {
+  id: string;
+  title: string;
+  description: string;
+  order: number;
+  steps: BlueprintStep[];
+}
+
+export interface BlueprintSettings {
+  allowComments: boolean;
+  allowAssistant: boolean;
+  allowKnowledge: boolean;
+  allowExport: boolean;
+  allowMarketplace: boolean;
+}
+
+/**
+ * Representa una metodologia completa (Blueprint). Coleccion top-level
+ * `blueprints/{id}` - autoria exclusiva de Super Admin (ver
+ * firestore.rules). Solo contiene informacion general y el Roadmap, nunca
+ * logica de ejecucion propia de una organizacion (eso vive en Project).
+ */
+export interface Blueprint {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  category: string;
+  industry: string;
+  version: string;
+  author: string;
+  language: string;
+  difficulty: BlueprintDifficulty;
+  estimatedDuration: string;
+  tags: string[];
+  coverImage: string;
+  icon: string;
+  status: BlueprintStatus;
+  settings: BlueprintSettings;
+  roadmap: BlueprintPhase[];
   createdBy: string;
+  createdAt: string;
   updatedAt: string;
 }
 
-/** Comentario libre sobre una Card (Prompt 8/9 — sin menciones todavia, Sprint 4). */
+/**
+ * Instancia de un Blueprint para una organizacion (subcoleccion
+ * `organizations/{orgId}/projects/{id}`). `blueprintSnapshot` congela el
+ * Blueprint completo al momento de iniciar (mismo principio "copia no
+ * destructiva" ya usado en Knowledge/Documents/Marketplace) - si el
+ * Blueprint original cambia despues, este Proyecto no se ve afectado.
+ */
+export interface Project {
+  id: string;
+  orgId: string;
+  blueprintId: string;
+  blueprintSnapshot: Blueprint;
+  name: string;
+  icon: string;
+  deletionStatus: DeletionStatus;
+  createdBy: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export type StepStatus = "pending" | "in_progress" | "completed" | "blocked";
+
+/**
+ * El unico lugar donde vive progreso real (subcoleccion
+ * `organizations/{orgId}/projects/{projectId}/stepStates/{stepId}`). El %
+ * de avance nunca se guarda - siempre se calcula a partir de estos
+ * documentos (ver services/step-state.ts#calculateProjectProgress).
+ */
+export interface ProjectStepState {
+  stepId: string;
+  status: StepStatus;
+  /** IDs de StepChecklistItem ya marcados como hechos. */
+  checklistDone: string[];
+  timeInvestedMinutes: number;
+  completedAt: string | null;
+  completedBy: string | null;
+  updatedAt: string;
+}
+
+/** Nota privada del usuario sobre un Step - solo el autor puede verla. */
+export interface StepNote {
+  id: string;
+  authorUid: string;
+  text: string;
+  createdAt: string;
+}
+
+/** Comentario colaborativo sobre un Step, visible para toda la organizacion. */
 export interface Comment {
   id: string;
   authorUid: string;
@@ -165,86 +286,7 @@ export interface Comment {
   createdAt: string;
 }
 
-/**
- * Snapshot de una Card justo ANTES de aplicarse un cambio (Prompt 11
- * "Soft Delete"/"Versionado": nunca sobrescribir informacion). Se escribe
- * automaticamente desde `services/cards.ts#updateCard`.
- */
-export interface CardVersion {
-  id: string;
-  title: string;
-  objective: string;
-  content: unknown;
-  savedBy: string;
-  createdAt: string;
-}
-
-/**
- * Formas de `Card.content` por tipo (Card System, Sprint 5). `content`
- * sigue siendo `unknown` a nivel de dominio - cada renderer en
- * components/features/workspace/card-content/ valida/castea localmente.
- */
-
-export interface ChecklistItem {
-  id: string;
-  text: string;
-  done: boolean;
-}
-export type ChecklistContent = ChecklistItem[];
-
-export interface TableContent {
-  headers: string[];
-  rows: string[][];
-}
-
-export interface TimelineEntry {
-  id: string;
-  date: string;
-  title: string;
-  description: string;
-}
-export type TimelineContent = TimelineEntry[];
-
-export interface KpiContent {
-  value: string;
-  target: string;
-  unit: string;
-  trend: "up" | "down" | "flat";
-}
-
-export interface ComparisonRow {
-  id: string;
-  aspect: string;
-  optionA: string;
-  optionB: string;
-}
-export interface ComparisonContent {
-  labelA: string;
-  labelB: string;
-  rows: ComparisonRow[];
-}
-
-export interface FormField {
-  id: string;
-  label: string;
-  answer: string;
-}
-export type FormContent = FormField[];
-
-/** Usado por los tipos "archivo" e "imagen" (Firebase Storage). */
-export interface FileContent {
-  url: string;
-  fileName: string;
-  contentType: string;
-  sizeBytes: number;
-}
-
-/** Usado por los tipos "video" y "audio" (URL externa, sin subida). */
-export interface MediaContent {
-  url: string;
-}
-
-/** Catalogo de categorias de la Knowledge Base (Prompt 4.5), extensible. */
+/** Catalogo de categorias de la Knowledge Base, extensible. */
 export type KnowledgeCategory =
   | "estrategia"
   | "finanzas"
@@ -259,14 +301,12 @@ export type KnowledgeCategory =
   | "plantillas"
   | "documentos";
 
-/** Estado de publicacion de un Knowledge Item (Prompt 4.5) - solo lo
- * "aprobado" es reutilizable por defecto. Distinto de CardLifecycleStatus. */
+/** Estado de publicacion de un Knowledge Item - solo lo "aprobado" es reutilizable por defecto. */
 export type KnowledgeItemStatus = "borrador" | "en_revision" | "aprobado" | "archivado";
 
 /**
- * Elemento de la Knowledge Base (Prompt 4.5/9): copia (snapshot) del
- * contenido de una Card promovida en el momento de la promocion - no una
- * referencia viva (ver plan Sprint 6).
+ * Elemento de la Knowledge Base: copia (snapshot) del contenido de origen
+ * en el momento de la promocion - no una referencia viva.
  */
 export interface KnowledgeItem {
   id: string;
@@ -275,8 +315,9 @@ export interface KnowledgeItem {
   summary: string;
   category: KnowledgeCategory;
   tags: string[];
-  sourceCardId: string;
-  sourceCardTitle: string;
+  /** ID/titulo de lo que se promovio (un Step, un snapshot de Marketplace, etc.) - vacio si no aplica. */
+  sourceId: string;
+  sourceTitle: string;
   content: unknown;
   status: KnowledgeItemStatus;
   relatedItemIds: string[];
@@ -285,7 +326,7 @@ export interface KnowledgeItem {
   updatedAt: string;
 }
 
-/** Catalogo de plantillas del Documents Center (Prompt 4.6). */
+/** Catalogo de plantillas del Documents Center. */
 export type DocumentTemplateType =
   | "plan_negocio"
   | "modelo_negocio"
@@ -299,14 +340,13 @@ export type DocumentTemplateType =
   | "reporte_financiero"
   | "personalizado";
 
-/** Estado de un documento (Prompt 4.6), distinto de CardLifecycleStatus/KnowledgeItemStatus. */
+/** Estado de un documento, distinto de KnowledgeItemStatus. */
 export type DocumentStatus =
   "borrador" | "en_edicion" | "en_revision" | "aprobado" | "publicado" | "archivado";
 
 /**
  * Seccion de un documento: copia (snapshot) de un Knowledge Item, o texto
- * libre. Reordenar/ocultar/quitar una seccion nunca modifica la fuente
- * (Prompt 4.6: "constructor no destructivo").
+ * libre. Reordenar/ocultar/quitar una seccion nunca modifica la fuente.
  */
 export interface DocumentSection {
   id: string;
@@ -341,7 +381,7 @@ export interface DocumentExportRecord {
   createdAt: string;
 }
 
-/** Los 6 modos de comportamiento del Blueprint AI Engine (Prompt 10) — un unico motor. */
+/** Los 6 modos de comportamiento del Blueprint AI Engine - un unico motor. */
 export type AssistantMode =
   "consultor" | "redactor" | "analista" | "investigador" | "estratega" | "presentador";
 
@@ -352,15 +392,8 @@ export interface KnowledgeSourceRef {
   category: KnowledgeCategory;
 }
 
-/** Acciones que el Action/Document Engine puede proponer (Prompt 10) — nunca se ejecutan solas. */
-export type ProposedActionType = "create_card" | "create_document";
-
-export interface CreateCardActionPayload {
-  cardType: CardType;
-  title: string;
-  objective: string;
-  content: string;
-}
+/** Acciones que el Action/Document Engine puede proponer - nunca se ejecutan solas. */
+export type ProposedActionType = "create_document";
 
 export interface CreateDocumentActionPayload {
   title: string;
@@ -372,7 +405,7 @@ export interface ProposedAction {
   id: string;
   type: ProposedActionType;
   summary: string;
-  payload: CreateCardActionPayload | CreateDocumentActionPayload;
+  payload: CreateDocumentActionPayload;
 }
 
 /** Mensaje de la conversacion continua con el Assistant (una por usuario por organizacion). */
@@ -387,18 +420,20 @@ export interface AiMessage {
   createdAt: string;
 }
 
-/** Eventos que alimentan el Activity Log de Mission Control (Prompt 12, Sprint 9) - alcance minimo: solo los de mayor valor, no cada edicion menor. */
+/** Eventos que alimentan el Activity Log de Mission Control - alcance minimo: solo los de mayor valor. */
 export type ActivityAction =
-  "card_created" | "knowledge_promoted" | "document_created" | "document_exported";
+  | "project_created"
+  | "step_completed"
+  | "knowledge_promoted"
+  | "document_created"
+  | "document_exported";
 
-/** Referencia minima (solo IDs) para que "Continuar Trabajando" pueda saltar al Workspace de origen - sin nombres, para no encarecer cada escritura del Activity Log. */
-export interface ActivityWorkspaceRef {
+/** Referencia minima para que "Continuar Trabajando" pueda saltar al Proyecto/Step de origen. */
+export interface ActivityProjectRef {
   projectId: string;
-  blueprintId: string;
-  phaseId: string;
-  moduleId: string;
-  chapterId: string;
-  workspaceId: string;
+  projectName?: string;
+  stepId?: string;
+  stepTitle?: string;
 }
 
 export interface ActivityLogEntry {
@@ -407,62 +442,27 @@ export interface ActivityLogEntry {
   summary: string;
   actorUid: string;
   actorName: string;
-  workspaceRef?: ActivityWorkspaceRef;
+  projectRef?: ActivityProjectRef;
   createdAt: string;
 }
 
-/** Recomendacion generada bajo demanda por el Assistant Recommendations widget (Sprint 9), cacheada para no llamar al proveedor de IA en cada carga de Mission Control. */
+/** Recomendacion generada bajo demanda por el Assistant Recommendations widget, cacheada. */
 export interface AssistantRecommendation {
   text: string;
   generatedAt: string;
 }
 
 /**
- * Marketplace (Sprint 10, Prompt "Marketplace"): recursos reutilizables con
- * alcance Publico o Biblioteca Privada de Empresa. "Incorporar" siempre crea
- * una copia nueva a partir del snapshot - nunca modifica el original ni el
- * recurso publicado (mismo principio ya usado en Card->KnowledgeItem y
- * KnowledgeItem->Document Section).
+ * Marketplace: recursos reutilizables con alcance Publico o Biblioteca
+ * Privada de Empresa. "Incorporar" siempre crea una copia nueva a partir
+ * del snapshot - nunca modifica el original. Los Blueprints ya no se
+ * publican via Marketplace (Sprint 13): su autoria es exclusiva de Super
+ * Admin y su descubrimiento es directo via services/blueprints.ts - el
+ * Marketplace queda para Documentos y Knowledge Items.
  */
-export type MarketplaceResourceType = "blueprint" | "document" | "knowledge_item";
+export type MarketplaceResourceType = "document" | "knowledge_item";
 export type MarketplaceVisibility = "public" | "organization";
 export type MarketplaceResourceStatus = "publicado" | "archivado";
-
-export interface BlueprintSnapshotCard {
-  type: CardType;
-  title: string;
-  objective: string;
-  content: unknown;
-  order: number;
-}
-export interface BlueprintSnapshotWorkspace {
-  name: string;
-  description: string;
-  order: number;
-  cards: BlueprintSnapshotCard[];
-}
-export interface BlueprintSnapshotChapter {
-  name: string;
-  description: string;
-  order: number;
-  workspaces: BlueprintSnapshotWorkspace[];
-}
-export interface BlueprintSnapshotModule {
-  name: string;
-  description: string;
-  order: number;
-  chapters: BlueprintSnapshotChapter[];
-}
-export interface BlueprintSnapshotPhase {
-  name: string;
-  description: string;
-  order: number;
-  modules: BlueprintSnapshotModule[];
-}
-/** Snapshot recursivo del arbol completo de un Blueprint (Fases->Modulos->Capitulos->Workspaces->Cards). */
-export interface BlueprintResourceSnapshot {
-  phases: BlueprintSnapshotPhase[];
-}
 
 export interface DocumentResourceSnapshot {
   templateType: DocumentTemplateType;
@@ -487,7 +487,7 @@ export interface MarketplaceResource {
   publishedBy: string;
   publishedByName: string;
   status: MarketplaceResourceStatus;
-  snapshot: BlueprintResourceSnapshot | DocumentResourceSnapshot | KnowledgeItemResourceSnapshot;
+  snapshot: DocumentResourceSnapshot | KnowledgeItemResourceSnapshot;
   createdAt: string;
   updatedAt: string;
 }

@@ -64,26 +64,21 @@ describe("extractSources", () => {
 
 describe("buildHierarchyContext", () => {
   it("indica que no hay seleccion cuando selection es null", () => {
-    expect(buildHierarchyContext(null)).toMatch(/no tiene ningun nodo/);
+    expect(buildHierarchyContext(null)).toMatch(/no tiene ningun Proyecto/);
   });
 
   it("incluye los nombres presentes en la seleccion", () => {
     const text = buildHierarchyContext({
       projectId: "p1",
-      blueprintId: "b1",
-      workspaceName: "Mi Workspace",
+      stepTitle: "Mi Step",
     });
-    expect(text).toContain("Mi Workspace");
+    expect(text).toContain("Mi Step");
   });
 });
 
 describe("buildTools", () => {
-  it("solo incluye propose_create_card cuando hay Workspace activo", () => {
-    expect(buildTools(false).map((t) => t.name)).toEqual(["propose_create_document"]);
-    expect(buildTools(true).map((t) => t.name)).toEqual([
-      "propose_create_document",
-      "propose_create_card",
-    ]);
+  it("siempre incluye propose_create_document", () => {
+    expect(buildTools().map((t) => t.name)).toEqual(["propose_create_document"]);
   });
 });
 

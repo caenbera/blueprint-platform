@@ -160,7 +160,7 @@ export function KnowledgeItemDetail({
 
         <div className="flex flex-col gap-1.5">
           <p className="text-caption text-muted-foreground">
-            Contenido (origen: {item.sourceCardTitle})
+            Contenido (origen: {item.sourceTitle || "incorporación"})
           </p>
           <p className="text-body bg-muted rounded-md p-2 whitespace-pre-wrap">
             {typeof item.content === "string"

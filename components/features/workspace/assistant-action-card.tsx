@@ -3,81 +3,39 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { Check, FileText, Layers, X } from "lucide-react";
+import { Check, FileText, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { createCard } from "@/services/cards";
 import { createDocument, updateDocument } from "@/services/documents";
-import type { NavigatorSelection } from "@/providers/navigator-provider";
-import type {
-  CreateCardActionPayload,
-  CreateDocumentActionPayload,
-  ProposedAction,
-} from "@/types/domain";
+import type { CreateDocumentActionPayload, ProposedAction } from "@/types/domain";
 
 /**
- * Tarjeta de "Accion propuesta" del Assistant (Action/Document Engine,
- * Prompt 10). El modelo NUNCA ejecuta nada por si mismo - solo al presionar
- * "Aprobar" se invoca el servicio real correspondiente.
+ * Tarjeta de "Accion propuesta" del Assistant (Action/Document Engine). El
+ * modelo NUNCA ejecuta nada por si mismo - solo al presionar "Aprobar" se
+ * invoca el servicio real correspondiente. Desde el Sprint 13 la unica
+ * accion propuesta es crear un Documento (crear Steps quedo retirado junto
+ * con el Card System viejo).
  */
-export function AssistantActionCard({
-  action,
-  orgId,
-  selection,
-}: {
-  action: ProposedAction;
-  orgId: string;
-  selection: NavigatorSelection | null;
-}) {
+export function AssistantActionCard({ action, orgId }: { action: ProposedAction; orgId: string }) {
   const [status, setStatus] = useState<"pending" | "applying" | "done" | "discarded">("pending");
   const router = useRouter();
 
   async function handleApprove() {
     setStatus("applying");
     try {
-      if (action.type === "create_card") {
-        const payload = action.payload as CreateCardActionPayload;
-        if (
-          !selection?.workspaceId ||
-          !selection.chapterId ||
-          !selection.moduleId ||
-          !selection.phaseId
-        ) {
-          throw new Error("No hay un Workspace seleccionado para crear la Card.");
-        }
-        await createCard(
-          {
-            orgId,
-            projectId: selection.projectId,
-            blueprintId: selection.blueprintId,
-            phaseId: selection.phaseId,
-            moduleId: selection.moduleId,
-            chapterId: selection.chapterId,
-            workspaceId: selection.workspaceId,
-          },
-          {
-            type: payload.cardType,
-            title: payload.title,
-            objective: payload.objective,
-            content: payload.content,
-          },
-        );
-        toast.success(`Card "${payload.title}" creada`);
-      } else {
-        const payload = action.payload as CreateDocumentActionPayload;
-        const docId = await createDocument(orgId, payload.title, payload.templateType);
-        await updateDocument(orgId, docId, {
-          sections: payload.sections.map((s, i) => ({
-            id: crypto.randomUUID(),
-            title: s.title,
-            content: s.content,
-            sourceKnowledgeItemId: null,
-            hidden: false,
-            order: i,
-          })),
-        });
-        toast.success(`Documento "${payload.title}" creado`);
-        router.push("/documents");
-      }
+      const payload = action.payload as CreateDocumentActionPayload;
+      const docId = await createDocument(orgId, payload.title, payload.templateType);
+      await updateDocument(orgId, docId, {
+        sections: payload.sections.map((s, i) => ({
+          id: crypto.randomUUID(),
+          title: s.title,
+          content: s.content,
+          sourceKnowledgeItemId: null,
+          hidden: false,
+          order: i,
+        })),
+      });
+      toast.success(`Documento "${payload.title}" creado`);
+      router.push("/documents");
       setStatus("done");
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "No se pudo aplicar la acción.");
@@ -85,12 +43,10 @@ export function AssistantActionCard({
     }
   }
 
-  const Icon = action.type === "create_card" ? Layers : FileText;
-
   return (
     <div className="bg-muted/50 flex flex-col gap-2 rounded-lg border p-3">
       <div className="flex items-center gap-2">
-        <Icon className="text-muted-foreground h-4 w-4 shrink-0" />
+        <FileText className="text-muted-foreground h-4 w-4 shrink-0" />
         <span className="text-small font-medium">{action.summary}</span>
       </div>
 

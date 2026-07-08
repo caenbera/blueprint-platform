@@ -5,36 +5,19 @@ import type { AiToolDefinition } from "@/lib/ai/types";
 import type { AssistantMode, KnowledgeSourceRef } from "@/types/domain";
 
 /**
- * Context/Knowledge/Prompt Engine (Sprint 8) - logica pura extraida de
- * app/api/assistant/chat/route.ts (Sprint 11) para que sea testeable sin
- * depender de las convenciones de exportacion de un Route Handler de
- * Next.js. Mismo comportamiento, solo se movio de archivo.
+ * Context/Knowledge/Prompt Engine - logica pura extraida de
+ * app/api/assistant/chat/route.ts para que sea testeable sin depender de
+ * las convenciones de exportacion de un Route Handler de Next.js. Sprint
+ * 13: adaptado al motor de datos nuevo (Proyecto -> Step), ya no hay
+ * Workspace/Cards.
  */
 
 export interface NavigatorSelectionInput {
   projectId: string;
-  blueprintId: string;
-  phaseId?: string;
-  phaseName?: string;
-  moduleId?: string;
-  moduleName?: string;
-  chapterId?: string;
-  chapterName?: string;
-  workspaceId?: string;
-  workspaceName?: string;
+  projectName?: string;
+  stepId?: string;
+  stepTitle?: string;
 }
-
-/** Tipos de Card cuyo contenido es texto plano (ver TEXT_TYPES en card-content-renderer.tsx) - los unicos proponibles por el Action Engine, ya que ProposedAction.payload.content es un string. */
-export const TEXT_CARD_TYPES = [
-  "informacion",
-  "objetivo",
-  "pregunta",
-  "respuesta",
-  "documento",
-  "resumen",
-  "proceso",
-  "plantilla",
-];
 
 export const DOCUMENT_TEMPLATE_TYPES = [
   "plan_negocio",
@@ -52,8 +35,8 @@ export const DOCUMENT_TEMPLATE_TYPES = [
 
 export const MAX_KB_CANDIDATES = 8;
 
-export function buildTools(hasWorkspace: boolean): AiToolDefinition[] {
-  const tools: AiToolDefinition[] = [
+export function buildTools(): AiToolDefinition[] {
+  return [
     {
       name: "propose_create_document",
       description:
@@ -79,60 +62,56 @@ export function buildTools(hasWorkspace: boolean): AiToolDefinition[] {
       },
     },
   ];
-
-  if (hasWorkspace) {
-    tools.push({
-      name: "propose_create_card",
-      description:
-        "Propone crear una nueva Card de tipo texto dentro del Workspace actualmente seleccionado. Nunca se ejecuta automaticamente: el usuario debe aprobarlo explicitamente.",
-      inputSchema: {
-        type: "object",
-        properties: {
-          cardType: { type: "string", enum: TEXT_CARD_TYPES },
-          title: { type: "string" },
-          objective: { type: "string" },
-          content: { type: "string" },
-        },
-        required: ["cardType", "title", "content"],
-      },
-    });
-  }
-
-  return tools;
 }
 
 export function buildHierarchyContext(selection: NavigatorSelectionInput | null): string {
-  if (!selection) return "El usuario no tiene ningun nodo del Navigator seleccionado actualmente.";
-  const parts = [
-    `Proyecto/Blueprint activos (IDs internos, no mostrar): ${selection.projectId}/${selection.blueprintId}`,
-  ];
-  if (selection.phaseName) parts.push(`Fase: ${selection.phaseName}`);
-  if (selection.moduleName) parts.push(`Modulo: ${selection.moduleName}`);
-  if (selection.chapterName) parts.push(`Capitulo: ${selection.chapterName}`);
-  if (selection.workspaceName) parts.push(`Workspace actual: ${selection.workspaceName}`);
+  if (!selection) return "El usuario no tiene ningun Proyecto ni Step seleccionado actualmente.";
+  const parts = [`Proyecto activo (ID interno, no mostrar): ${selection.projectId}`];
+  if (selection.projectName) parts.push(`Proyecto: ${selection.projectName}`);
+  if (selection.stepTitle) parts.push(`Step actual: ${selection.stepTitle}`);
   return parts.join("\n");
 }
 
-export async function fetchWorkspaceCardsContext(
+/** Busca un Step por ID dentro de un roadmap (estructura cruda de Firestore, sin tipar). */
+function findStepInRoadmap(
+  roadmap: unknown,
+  stepId: string,
+): {
+  title?: string;
+  content?: { objective?: { description?: string }; overview?: { summary?: string } };
+} | null {
+  if (!Array.isArray(roadmap)) return null;
+  for (const phase of roadmap) {
+    const steps = (phase as { steps?: unknown[] })?.steps;
+    if (!Array.isArray(steps)) continue;
+    const step = steps.find((s) => (s as { id?: string })?.id === stepId);
+    if (step) return step as ReturnType<typeof findStepInRoadmap>;
+  }
+  return null;
+}
+
+/** Trae contexto adicional del Step activo (objetivo/resumen) desde el snapshot congelado del Proyecto. */
+export async function fetchStepContext(
   orgId: string,
   selection: NavigatorSelectionInput,
 ): Promise<string> {
-  if (!selection.workspaceId || !selection.chapterId || !selection.moduleId || !selection.phaseId) {
-    return "";
+  if (!selection.projectId || !selection.stepId) return "";
+
+  const snap = await adminDb.doc(`organizations/${orgId}/projects/${selection.projectId}`).get();
+  if (!snap.exists) return "";
+
+  const blueprintSnapshot = snap.data()?.blueprintSnapshot;
+  const step = findStepInRoadmap(blueprintSnapshot?.roadmap, selection.stepId);
+  if (!step) return "";
+
+  const lines = [`Step actual: "${step.title ?? selection.stepTitle ?? ""}"`];
+  if (step.content?.objective?.description) {
+    lines.push(`Objetivo: ${step.content.objective.description}`);
   }
-  const cardsPath =
-    `organizations/${orgId}/projects/${selection.projectId}/blueprints/${selection.blueprintId}` +
-    `/phases/${selection.phaseId}/modules/${selection.moduleId}/chapters/${selection.chapterId}` +
-    `/workspaces/${selection.workspaceId}/cards`;
-
-  const snap = await adminDb.collection(cardsPath).limit(30).get();
-  if (snap.empty) return "El Workspace actual todavia no tiene Cards.";
-
-  const lines = snap.docs.map((doc) => {
-    const data = doc.data();
-    return `- [${doc.id}] (${data.type}) "${data.title}" - objetivo: ${data.objective || "(sin objetivo)"}`;
-  });
-  return `Cards existentes en el Workspace actual:\n${lines.join("\n")}`;
+  if (step.content?.overview?.summary) {
+    lines.push(`Resumen: ${step.content.overview.summary}`);
+  }
+  return lines.join("\n");
 }
 
 export interface KnowledgeCandidate {
@@ -215,7 +194,7 @@ export function buildSystemPrompt(
     "Eres el Blueprint AI Engine, el copiloto contextual de la plataforma Blueprint. NUNCA eres un chatbot generico.",
     "Reglas estrictas: (1) Nunca modificas contenido de la organizacion sin aprobacion explicita del usuario - para proponer una accion, usa SIEMPRE las herramientas disponibles, nunca describas la accion como si ya estuviera hecha. (2) Siempre explicas de donde proviene la informacion que usas, citando `[KB:id]` cuando la tomas de la Knowledge Base.",
     `Modo activo: ${modeConfig.label}. ${modeConfig.systemInstruction}`,
-    "Contexto de la jerarquia actual (Navigator):",
+    "Contexto del Proyecto/Step actual:",
     hierarchyContext,
     knowledgeContext,
   ].join("\n\n");

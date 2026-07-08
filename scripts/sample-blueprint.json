@@ -1,0 +1,173 @@
+{
+  "slug": "empresa-comercial",
+  "name": "Empresa Comercial",
+  "description": "Guía completa para crear y operar una empresa comercial de productos o servicios.",
+  "category": "Empresas",
+  "industry": "Comercio",
+  "version": "1.0.0",
+  "author": "Blueprint",
+  "language": "es",
+  "difficulty": "beginner",
+  "estimatedDuration": "8-12 semanas",
+  "tags": ["empresa", "comercial", "constitución"],
+  "coverImage": "",
+  "icon": "building-2",
+  "status": "published",
+  "settings": {
+    "allowComments": true,
+    "allowAssistant": true,
+    "allowKnowledge": true,
+    "allowExport": true,
+    "allowMarketplace": true
+  },
+  "roadmap": [
+    {
+      "id": "fase-constitucion",
+      "title": "Constitución",
+      "description": "Define la estructura legal y formaliza tu empresa.",
+      "order": 1,
+      "steps": [
+        {
+          "id": "step-tipo-empresa",
+          "title": "Definir tipo de empresa",
+          "description": "Elige el tipo de sociedad que mejor se adapte a tu modelo de negocio.",
+          "type": "one_time",
+          "status": "pending",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir tipo de empresa",
+              "summary": "Compara las estructuras legales disponibles.",
+              "body": "Antes de registrar tu empresa necesitas decidir qué tipo de sociedad se ajusta mejor a tu operación, responsabilidad patrimonial y carga fiscal."
+            },
+            "objective": {
+              "description": "Elegir la estructura legal correcta para tu empresa."
+            },
+            "checklist": [
+              {
+                "id": "chk-1",
+                "task": "Comparar al menos 2 tipos de sociedad",
+                "completed": false
+              },
+              { "id": "chk-2", "task": "Consultar con un asesor legal", "completed": false }
+            ],
+            "resources": [
+              {
+                "id": "res-1",
+                "type": "pdf",
+                "title": "Guía de tipos de sociedad",
+                "description": "Comparativo de estructuras legales disponibles.",
+                "provider": "Blueprint",
+                "previewUrl": "",
+                "downloadUrl": "",
+                "embedUrl": "",
+                "thumbnailUrl": "",
+                "mimeType": "application/pdf",
+                "extension": "pdf",
+                "size": 0,
+                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "tags": ["legal"],
+                "visibility": "organization"
+              }
+            ],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir el tipo de sociedad correcto para su empresa.",
+              "context": "El usuario está definiendo la estructura legal de una empresa comercial nueva.",
+              "suggestions": ["¿Qué tipo de sociedad conviene para un negocio pequeño?"]
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "step-registro-legal",
+          "title": "Registrar la empresa",
+          "description": "Completa el registro legal ante las autoridades correspondientes.",
+          "type": "one_time",
+          "status": "pending",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-tipo-empresa"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Registrar la empresa",
+              "summary": "Formaliza tu empresa ante el registro correspondiente.",
+              "body": "Con el tipo de sociedad definido, el siguiente paso es completar el trámite de registro legal."
+            },
+            "objective": { "description": "Obtener el registro legal de la empresa." },
+            "checklist": [
+              { "id": "chk-1", "task": "Reunir los documentos requeridos", "completed": false },
+              { "id": "chk-2", "task": "Presentar el trámite de registro", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario con el proceso de registro legal de su empresa.",
+              "context": "El usuario ya eligió el tipo de sociedad y ahora necesita registrarla.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "fase-marketing",
+      "title": "Marketing y Ventas",
+      "description": "Plan de marketing y estrategia comercial.",
+      "order": 2,
+      "steps": [
+        {
+          "id": "step-cliente-ideal",
+          "title": "Definir cliente ideal",
+          "description": "Define a quién le hablas y cuáles son sus necesidades, dolores y deseos.",
+          "type": "one_time",
+          "status": "pending",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir cliente ideal",
+              "summary": "Construye el perfil de tu cliente ideal.",
+              "body": "Conocer a tu cliente ideal te permite enfocar tus esfuerzos de marketing y ventas donde realmente generan resultado."
+            },
+            "objective": { "description": "Tener un perfil claro del cliente ideal." },
+            "checklist": [
+              { "id": "chk-1", "task": "Describir el perfil demográfico", "completed": false },
+              { "id": "chk-2", "task": "Identificar sus principales dolores", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a definir su cliente ideal.",
+              "context": "El usuario está construyendo su plan de marketing.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        }
+      ]
+    }
+  ]
+}

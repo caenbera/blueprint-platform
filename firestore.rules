@@ -69,6 +69,18 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    // Blueprints (Sprint 13, motor de datos nuevo): coleccion top-level
+    // (no anidada bajo organizations/{orgId}) - un Blueprint es una
+    // plantilla de plataforma, autoria exclusiva de Super Admin. Cualquier
+    // usuario autenticado puede leer los publicados; el propio Super Admin
+    // tambien puede leer sus borradores.
+    match /blueprints/{blueprintId} {
+      allow read: if (isSignedIn() && resource.data.status == 'published') || isSuperAdmin();
+      allow create: if isSuperAdmin() && request.resource.data.createdBy == request.auth.uid;
+      allow update: if isSuperAdmin();
+      allow delete: if false;
+    }
+
     match /organizations/{orgId} {
       // Metadata de la organizacion (nombre, owner, fecha) - gestion de
       // plataforma, el Super Admin siempre puede leerla sin pedir permiso.
@@ -105,14 +117,12 @@ service cloud.firestore {
         allow delete: if false;
       }
 
-      // TODO Sprint 1 (posterior): cuando existan projects/blueprints/
-      // phases/modules/chapters/workspaces/cards/knowledgeItems/documents/
-      // aiConversations/activityLog como colecciones reales, aplican esta
-      // misma regla de aislamiento por organizacion. El Super Admin solo
-      // lee si tiene supportAccessGrant aprobado; nunca escribe contenido
-      // de negocio ajeno. Se refinara a permisos de 4 niveles
-      // (org/project/workspace/card) cuando se implemente el modelo
-      // completo de roles/permisos granular.
+      // Regla generica de aislamiento por organizacion (Sprint 13: cubre
+      // projects/{id}/stepStates/{id}/notes|comments, knowledgeItems,
+      // documents, aiConversations, activityLog - cualquier subcoleccion,
+      // a cualquier profundidad, gracias al wildcard multi-segmento
+      // {docId=**}). El Super Admin solo lee si tiene supportAccessGrant
+      // aprobado; nunca escribe contenido de negocio ajeno.
       //
       // IMPORTANTE: Firestore evalua todas las reglas que matchean una ruta
       // con semantica OR (si alguna permite, se permite). Este wildcard

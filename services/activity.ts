@@ -9,7 +9,7 @@ import {
   Timestamp,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
-import type { ActivityAction, ActivityLogEntry, ActivityWorkspaceRef } from "@/types/domain";
+import type { ActivityAction, ActivityLogEntry, ActivityProjectRef } from "@/types/domain";
 
 /**
  * Activity Log (Mission Control, Sprint 9): coleccion directa bajo la
@@ -35,7 +35,7 @@ function toIso(value: unknown): string {
  */
 export async function logActivity(
   orgId: string,
-  input: { action: ActivityAction; summary: string; workspaceRef?: ActivityWorkspaceRef },
+  input: { action: ActivityAction; summary: string; projectRef?: ActivityProjectRef },
 ): Promise<void> {
   const user = auth.currentUser;
   if (!user) return;
@@ -46,7 +46,7 @@ export async function logActivity(
       summary: input.summary,
       actorUid: user.uid,
       actorName: user.displayName || user.email || "Usuario",
-      ...(input.workspaceRef ? { workspaceRef: input.workspaceRef } : {}),
+      ...(input.projectRef ? { projectRef: input.projectRef } : {}),
       createdAt: serverTimestamp(),
     });
   } catch {
@@ -66,7 +66,7 @@ export async function listRecentActivity(orgId: string, max = 20): Promise<Activ
       summary: data.summary,
       actorUid: data.actorUid,
       actorName: data.actorName,
-      workspaceRef: data.workspaceRef,
+      projectRef: data.projectRef,
       createdAt: toIso(data.createdAt),
     };
   });

@@ -11,23 +11,17 @@ import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 
 /**
- * Breadcrumb sincronizado con el Navigator (Prompt 6):
- * Organizacion > Proyecto > Blueprint > Fase > Modulo > Capitulo > Workspace.
- * Solo muestra los niveles que existen en la seleccion actual.
+ * Breadcrumb sincronizado con el Navigator (Sprint 13 - motor de datos
+ * nuevo): Organizacion > Proyecto > Step. Solo muestra los niveles que
+ * existen en la seleccion actual.
  */
 export function BreadcrumbTrail() {
   const { membership } = useAuth();
-  const { activeProjectName, activeBlueprintName, selection } = useNavigator();
+  const { activeProjectName, selection } = useNavigator();
 
-  const crumbs = [
-    membership?.organizationName,
-    activeProjectName,
-    activeBlueprintName,
-    selection?.phaseName,
-    selection?.moduleName,
-    selection?.chapterName,
-    selection?.workspaceName,
-  ].filter((c): c is string => Boolean(c));
+  const crumbs = [membership?.organizationName, activeProjectName, selection?.stepTitle].filter(
+    (c): c is string => Boolean(c),
+  );
 
   if (crumbs.length === 0) return null;
 

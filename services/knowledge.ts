@@ -12,7 +12,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
 import { logActivity } from "@/services/activity";
-import type { Card, KnowledgeCategory, KnowledgeItem } from "@/types/domain";
+import type { KnowledgeCategory, KnowledgeItem } from "@/types/domain";
 
 /**
  * Knowledge Base (Prompt 4.5/9): coleccion directa bajo la organizacion
@@ -39,27 +39,34 @@ function fromFirestore(id: string, data: Record<string, unknown>): KnowledgeItem
   } as KnowledgeItem;
 }
 
-export interface PromoteCardInput {
-  card: Card;
+export interface PromoteToKnowledgeInput {
+  title: string;
   summary: string;
   category: KnowledgeCategory;
   tags: string[];
+  content: unknown;
+  /** ID/titulo de lo que se promueve (un Step, una nota, etc.). */
+  sourceId: string;
+  sourceTitle: string;
 }
 
-/** Crea un Knowledge Item como copia (snapshot) del contenido de una Card. */
-export async function createKnowledgeItem(orgId: string, input: PromoteCardInput): Promise<string> {
+/** Crea un Knowledge Item como copia (snapshot) de contenido de origen (un Step, una nota, etc.). */
+export async function createKnowledgeItem(
+  orgId: string,
+  input: PromoteToKnowledgeInput,
+): Promise<string> {
   const user = auth.currentUser;
   if (!user) throw new Error("No hay sesión activa.");
 
   const ref = await addDoc(collection(db, knowledgeItemsPath(orgId)), {
     orgId,
-    title: input.card.title,
+    title: input.title,
     summary: input.summary,
     category: input.category,
     tags: input.tags,
-    sourceCardId: input.card.id,
-    sourceCardTitle: input.card.title,
-    content: input.card.content,
+    sourceId: input.sourceId,
+    sourceTitle: input.sourceTitle,
+    content: input.content,
     status: "borrador",
     relatedItemIds: [],
     createdBy: user.uid,
@@ -68,16 +75,16 @@ export async function createKnowledgeItem(orgId: string, input: PromoteCardInput
   });
   void logActivity(orgId, {
     action: "knowledge_promoted",
-    summary: `Card promovida a Knowledge Base: "${input.card.title}"`,
+    summary: `Promovido a Knowledge Base: "${input.title}"`,
   });
   return ref.id;
 }
 
 /**
- * Crea un Knowledge Item a partir de un snapshot del Marketplace (Sprint 10)
- * - a diferencia de `createKnowledgeItem`, no exige una Card de origen real
- * (nunca existio en esta organizacion). `sourceCardId` queda vacio como
- * marcador de que el origen fue una incorporacion, no una promocion.
+ * Crea un Knowledge Item a partir de un snapshot del Marketplace - a
+ * diferencia de `createKnowledgeItem`, no exige un origen real (nunca
+ * existio en esta organizacion). `sourceId` queda vacio como marcador de
+ * que el origen fue una incorporacion, no una promocion.
  */
 export async function createKnowledgeItemFromSnapshot(
   orgId: string,
@@ -98,8 +105,8 @@ export async function createKnowledgeItemFromSnapshot(
     summary: input.summary,
     category: input.category,
     tags: input.tags,
-    sourceCardId: "",
-    sourceCardTitle: "",
+    sourceId: "",
+    sourceTitle: "",
     content: input.content,
     status: "borrador",
     relatedItemIds: [],

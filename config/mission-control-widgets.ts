@@ -37,7 +37,7 @@ export const MISSION_CONTROL_WIDGETS: MissionControlWidgetConfig[] = [
   { id: "notifications", label: "Notificaciones", icon: Bell },
   { id: "progressOverview", label: "Resumen de Progreso", icon: PieChart },
   { id: "projects", label: "Proyectos", icon: FolderKanban },
-  { id: "blueprintHealth", label: "Salud de Blueprints", icon: Workflow },
+  { id: "blueprintHealth", label: "Blueprints en Uso", icon: Workflow },
   { id: "assistantRecommendations", label: "Recomendaciones del Assistant", icon: Sparkles },
   { id: "knowledgeInsights", label: "Knowledge Insights", icon: BookOpen },
   { id: "documentsCenter", label: "Documents Center", icon: FileText },

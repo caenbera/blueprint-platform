@@ -21,24 +21,21 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { MARKETPLACE_RESOURCE_TYPES, MARKETPLACE_VISIBILITY_LABELS } from "@/config/marketplace";
-import { listProjects } from "@/services/projects";
-import { listBlueprints } from "@/services/blueprints";
 import { listDocuments } from "@/services/documents";
 import { listKnowledgeItems } from "@/services/knowledge";
-import { publishBlueprint, publishDocument, publishKnowledgeItem } from "@/services/marketplace";
+import { publishDocument, publishKnowledgeItem } from "@/services/marketplace";
 import type {
   BlueprintDocument,
   KnowledgeItem,
   MarketplaceResourceType,
   MarketplaceVisibility,
-  Project,
-  Blueprint,
 } from "@/types/domain";
 
 /**
- * Punto unico de publicacion al Marketplace (Sprint 10): elegir tipo →
- * elegir la fuente concreta → titulo/descripcion/visibilidad. Centralizado
- * aqui en vez de repartir un boton "Publicar" en Documentos/Knowledge/Navigator.
+ * Punto unico de publicacion al Marketplace: elegir tipo → elegir la
+ * fuente concreta → titulo/descripcion/visibilidad. Sprint 13: el tipo
+ * "blueprint" se retiro (autoria exclusiva de Super Admin) - queda
+ * Documentos y Knowledge Items.
  */
 export function PublishResourceDialog({
   orgId,
@@ -60,11 +57,6 @@ export function PublishResourceDialog({
   const [publishing, setPublishing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [projects, setProjects] = useState<Project[] | null>(null);
-  const [selectedProjectId, setSelectedProjectId] = useState("");
-  const [blueprints, setBlueprints] = useState<Blueprint[] | null>(null);
-  const [selectedBlueprintId, setSelectedBlueprintId] = useState("");
-
   const [documents, setDocuments] = useState<BlueprintDocument[] | null>(null);
   const [selectedDocumentId, setSelectedDocumentId] = useState("");
 
@@ -73,9 +65,6 @@ export function PublishResourceDialog({
 
   useEffect(() => {
     if (!open) return;
-    if (resourceType === "blueprint" && projects === null) {
-      listProjects(orgId).then(setProjects);
-    }
     if (resourceType === "document" && documents === null) {
       listDocuments(orgId).then(setDocuments);
     }
@@ -87,24 +76,12 @@ export function PublishResourceDialog({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, resourceType]);
 
-  useEffect(() => {
-    if (!selectedProjectId) {
-      // Reset deliberado: sin Proyecto elegido no hay Blueprints que listar.
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setBlueprints(null);
-      return;
-    }
-    listBlueprints({ orgId, projectId: selectedProjectId }).then(setBlueprints);
-  }, [orgId, selectedProjectId]);
-
   function reset() {
     setResourceType("knowledge_item");
     setTitle("");
     setDescription("");
     setVisibility("organization");
     setError(null);
-    setSelectedProjectId("");
-    setSelectedBlueprintId("");
     setSelectedDocumentId("");
     setSelectedKnowledgeItemId("");
   }
@@ -115,14 +92,7 @@ export function PublishResourceDialog({
     setError(null);
     try {
       const meta = { title: title.trim(), description, visibility, orgName };
-      if (resourceType === "blueprint") {
-        if (!selectedProjectId || !selectedBlueprintId)
-          throw new Error("Elige un Proyecto y un Blueprint.");
-        await publishBlueprint(
-          { orgId, projectId: selectedProjectId, blueprintId: selectedBlueprintId },
-          meta,
-        );
-      } else if (resourceType === "document") {
+      if (resourceType === "document") {
         if (!selectedDocumentId) throw new Error("Elige un Documento.");
         await publishDocument(orgId, selectedDocumentId, meta);
       } else {
@@ -141,11 +111,7 @@ export function PublishResourceDialog({
 
   const canPublish =
     title.trim().length > 0 &&
-    (resourceType === "blueprint"
-      ? Boolean(selectedProjectId && selectedBlueprintId)
-      : resourceType === "document"
-        ? Boolean(selectedDocumentId)
-        : Boolean(selectedKnowledgeItemId));
+    (resourceType === "document" ? Boolean(selectedDocumentId) : Boolean(selectedKnowledgeItemId));
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -172,43 +138,6 @@ export function PublishResourceDialog({
               ))}
             </div>
           </div>
-
-          {resourceType === "blueprint" && (
-            <div className="flex flex-col gap-2">
-              <div className="flex flex-col gap-1.5">
-                <Label>Proyecto</Label>
-                <Select value={selectedProjectId} onValueChange={setSelectedProjectId}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Selecciona un Proyecto" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {projects?.map((p) => (
-                      <SelectItem key={p.id} value={p.id}>
-                        {p.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              {selectedProjectId && (
-                <div className="flex flex-col gap-1.5">
-                  <Label>Blueprint</Label>
-                  <Select value={selectedBlueprintId} onValueChange={setSelectedBlueprintId}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Selecciona un Blueprint" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {blueprints?.map((b) => (
-                        <SelectItem key={b.id} value={b.id}>
-                          {b.name}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              )}
-            </div>
-          )}
 
           {resourceType === "document" && (
             <div className="flex flex-col gap-1.5">

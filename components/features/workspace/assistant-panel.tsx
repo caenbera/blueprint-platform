@@ -167,12 +167,7 @@ export function AssistantPanel({
               </div>
             )}
             {message.proposedActions?.map((action) => (
-              <AssistantActionCard
-                key={action.id}
-                action={action}
-                orgId={orgId ?? ""}
-                selection={selection}
-              />
+              <AssistantActionCard key={action.id} action={action} orgId={orgId ?? ""} />
             ))}
             {message.role === "assistant" && message.mode && (
               <span className="text-small text-muted-foreground">

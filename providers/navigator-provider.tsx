@@ -3,33 +3,25 @@
 import { createContext, useState, type ReactNode } from "react";
 
 /**
- * Nodo actualmente seleccionado en el arbol. Puede ser tan profundo como
- * un Workspace o tan superficial como una Fase - el breadcrumb (Prompt 6)
- * refleja exactamente hasta donde llega esta seleccion.
+ * Seleccion actual del usuario (Sprint 13 - motor de datos nuevo): a lo
+ * sumo un Proyecto activo y, dentro de el, un Step activo. Reemplaza la
+ * seleccion de 7 niveles (Project/Blueprint/Phase/Module/Chapter/Workspace)
+ * del modelo viejo - el nuevo motor solo tiene Proyecto -> Fase -> Step.
  */
 export interface NavigatorSelection {
   projectId: string;
-  blueprintId: string;
-  phaseId?: string;
-  phaseName?: string;
-  moduleId?: string;
-  moduleName?: string;
-  chapterId?: string;
-  chapterName?: string;
-  workspaceId?: string;
-  workspaceName?: string;
+  projectName?: string;
+  stepId?: string;
+  stepTitle?: string;
 }
 
 export interface NavigatorContextValue {
   activeProjectId: string | null;
   activeProjectName: string | null;
   setActiveProject: (id: string | null, name: string | null) => void;
-  activeBlueprintId: string | null;
-  activeBlueprintName: string | null;
-  setActiveBlueprint: (id: string | null, name: string | null) => void;
   selection: NavigatorSelection | null;
   setSelection: (selection: NavigatorSelection | null) => void;
-  /** Modo Focus (Prompt 2/8): oculta Navigator + Assistant Panel, deja solo breadcrumb + Cards. */
+  /** Modo Focus: oculta paneles secundarios, deja solo el breadcrumb + contenido. */
   focusMode: boolean;
   setFocusMode: (value: boolean) => void;
 }
@@ -39,8 +31,6 @@ export const NavigatorContext = createContext<NavigatorContextValue | null>(null
 export function NavigatorProvider({ children }: { children: ReactNode }) {
   const [activeProjectId, setActiveProjectId] = useState<string | null>(null);
   const [activeProjectName, setActiveProjectName] = useState<string | null>(null);
-  const [activeBlueprintId, setActiveBlueprintId] = useState<string | null>(null);
-  const [activeBlueprintName, setActiveBlueprintName] = useState<string | null>(null);
   const [selection, setSelection] = useState<NavigatorSelection | null>(null);
   const [focusMode, setFocusMode] = useState(false);
 
@@ -52,12 +42,6 @@ export function NavigatorProvider({ children }: { children: ReactNode }) {
         setActiveProject: (id, name) => {
           setActiveProjectId(id);
           setActiveProjectName(name);
-        },
-        activeBlueprintId,
-        activeBlueprintName,
-        setActiveBlueprint: (id, name) => {
-          setActiveBlueprintId(id);
-          setActiveBlueprintName(name);
         },
         selection,
         setSelection,

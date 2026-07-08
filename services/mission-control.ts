@@ -1,18 +1,20 @@
 import { listProjects } from "@/services/projects";
-import { listBlueprints } from "@/services/blueprints";
+import { calculateProjectProgress, listStepStates } from "@/services/step-state";
 import { listKnowledgeItems } from "@/services/knowledge";
 import { listDocuments } from "@/services/documents";
 import type { DocumentStatus, KnowledgeItemStatus, ProgressStatus } from "@/types/domain";
 
 /**
- * Agregaciones de solo lectura para los widgets de Mission Control
- * (Sprint 9). Reutiliza los servicios ya existentes de Projects/Blueprints/
- * Knowledge/Documents en vez de crear una coleccion o indice nuevo - el
- * unico dato nuevo real de este sprint es el Activity Log (services/activity.ts).
+ * Agregaciones de solo lectura para los widgets de Mission Control.
+ * Reutiliza los servicios ya existentes de Projects/StepState/Knowledge/
+ * Documents en vez de crear una coleccion o indice nuevo. Sprint 13: el
+ * progreso ya no se lee de un campo `progressStatus` guardado - se calcula
+ * a partir de ProjectStepState (ver services/step-state.ts), consistente
+ * con la regla del motor Blueprint "el progreso nunca se guarda".
  */
 
 function emptyProgressCounts(): Record<ProgressStatus, number> {
-  return { no_iniciado: 0, en_progreso: 0, revisado: 0, aprobado: 0, bloqueado: 0 };
+  return { no_iniciado: 0, en_progreso: 0, aprobado: 0 };
 }
 
 export interface ProgressOverview {
@@ -20,48 +22,41 @@ export interface ProgressOverview {
   byStatus: Record<ProgressStatus, number>;
 }
 
+/** Fan-out acotado (Projects suelen ser pocos) - mismo patron ya usado en otras pestanas de Mission Control. */
 export async function getProgressOverview(orgId: string): Promise<ProgressOverview> {
   const projects = await listProjects(orgId);
   const byStatus = emptyProgressCounts();
-  for (const p of projects) byStatus[p.progressStatus]++;
+  for (const project of projects) {
+    const stepStates = await listStepStates(orgId, project.id);
+    const { status } = calculateProjectProgress(project, stepStates);
+    byStatus[status]++;
+  }
   return { totalProjects: projects.length, byStatus };
 }
 
-export interface BlueprintHealthEntry {
-  projectName: string;
+export interface BlueprintUsageEntry {
   blueprintName: string;
-  progressStatus: ProgressStatus;
+  projectCount: number;
 }
 
 export interface BlueprintHealth {
-  totalBlueprints: number;
-  byStatus: Record<ProgressStatus, number>;
-  blocked: BlueprintHealthEntry[];
+  totalProjects: number;
+  byBlueprint: BlueprintUsageEntry[];
 }
 
-/** Fan-out acotado (Projects suelen ser pocos) - mismo patron ya usado en la pestana Exports del Documents Center. */
+/** Que metodologias (Blueprints) esta usando realmente la organizacion, y cuantos Proyectos activos tiene cada una. */
 export async function getBlueprintHealth(orgId: string): Promise<BlueprintHealth> {
   const projects = await listProjects(orgId);
-  const byStatus = emptyProgressCounts();
-  const blocked: BlueprintHealthEntry[] = [];
-  let totalBlueprints = 0;
-
+  const counts = new Map<string, number>();
   for (const project of projects) {
-    const blueprints = await listBlueprints({ orgId, projectId: project.id });
-    for (const bp of blueprints) {
-      totalBlueprints++;
-      byStatus[bp.progressStatus]++;
-      if (bp.progressStatus === "bloqueado") {
-        blocked.push({
-          projectName: project.name,
-          blueprintName: bp.name,
-          progressStatus: bp.progressStatus,
-        });
-      }
-    }
+    const name = project.blueprintSnapshot.name;
+    counts.set(name, (counts.get(name) ?? 0) + 1);
   }
+  const byBlueprint = Array.from(counts.entries())
+    .map(([blueprintName, projectCount]) => ({ blueprintName, projectCount }))
+    .sort((a, b) => b.projectCount - a.projectCount);
 
-  return { totalBlueprints, byStatus, blocked };
+  return { totalProjects: projects.length, byBlueprint };
 }
 
 export interface KnowledgeInsights {
