@@ -39,6 +39,17 @@ export async function POST(request: Request) {
     );
   }
 
+  // Configuracion Global (Sprint 18): el Super Admin puede cerrar el
+  // registro de organizaciones nuevas desde /admin/settings. Se aplica
+  // aqui, en el unico lugar que crea organizaciones, no solo en la UI.
+  const generalSettingsSnap = await adminDb.doc("platformConfig/general").get();
+  if (generalSettingsSnap.data()?.allowNewRegistrations === false) {
+    return NextResponse.json(
+      { error: "El registro de nuevas organizaciones está cerrado temporalmente." },
+      { status: 403 },
+    );
+  }
+
   const existingIndex = await adminDb.collection("userOrgIndex").doc(uid).get();
   if (existingIndex.exists) {
     return NextResponse.json(

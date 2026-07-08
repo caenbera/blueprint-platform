@@ -97,6 +97,18 @@ service cloud.firestore {
       allow update, delete: if false;
     }
 
+    // Configuracion global de plataforma (Sprint 18): coleccion top-level
+    // con documentos como `general` (nombre de plataforma, registro
+    // abierto/cerrado, modo mantenimiento) y `aiSettings` (proveedor de IA
+    // activo). Cualquier usuario autenticado puede leerla (se usa para
+    // decidir si bloquear el acceso por mantenimiento, y para mostrar el
+    // proveedor de IA activo de forma transparente) - solo Super Admin
+    // puede escribirla.
+    match /platformConfig/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isSuperAdmin();
+    }
+
     match /organizations/{orgId} {
       // Metadata de la organizacion (nombre, owner, fecha) - gestion de
       // plataforma, el Super Admin siempre puede leerla sin pedir permiso.
@@ -105,11 +117,12 @@ service cloud.firestore {
       // app/api/organizations/route.ts (Admin SDK), nunca directo del cliente.
       allow create: if false;
       // Un miembro puede editar los datos de su propia organizacion
-      // (Configuracion, Sprint 15). Un Super Admin SOLO puede tocar el
-      // campo `status` de una organizacion ajena (Suspender/Reactivar,
-      // Sprint 16) - nunca su nombre ni ningun otro dato de negocio.
+      // (Configuracion, Sprint 15). Un Super Admin SOLO puede tocar los
+      // campos `status` (Suspender/Reactivar, Sprint 16) y `plan`
+      // (Suscripciones, Sprint 18) de una organizacion ajena - nunca su
+      // nombre ni ningun otro dato de negocio.
       allow update: if isOrgMember(orgId) ||
-        (isSuperAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']));
+        (isSuperAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'plan']));
       allow delete: if false;
 
       match /users/{userId} {

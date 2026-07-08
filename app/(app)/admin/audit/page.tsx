@@ -14,6 +14,7 @@ const ACTION_META: Record<
 > = {
   organization_suspended: { label: "Organización suspendida", variant: "destructive" },
   organization_reactivated: { label: "Organización reactivada", variant: "success" },
+  organization_plan_changed: { label: "Plan de organización cambiado", variant: "secondary" },
   support_access_approved: { label: "Acceso de soporte aprobado", variant: "success" },
   support_access_denied: { label: "Acceso de soporte denegado", variant: "warning" },
   support_access_revoked: { label: "Acceso de soporte revocado", variant: "secondary" },

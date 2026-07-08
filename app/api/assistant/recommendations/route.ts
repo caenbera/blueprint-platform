@@ -75,7 +75,8 @@ export async function POST(request: Request) {
 
   let completion;
   try {
-    completion = await getAiProvider().complete({
+    const provider = await getAiProvider();
+    completion = await provider.complete({
       systemPrompt:
         "Eres el Blueprint AI Engine en modo Estratega. Da 1 o 2 recomendaciones breves y accionables (2-3 frases en total) basadas en el estado actual de la organización que te resumen a continuación. No inventes datos que no te dieron. No uses listas ni markdown, solo texto plano.",
       messages: [{ role: "user", content: summary }],

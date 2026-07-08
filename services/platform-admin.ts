@@ -16,6 +16,7 @@ import { logPlatformAction } from "@/services/platform-audit";
 import type {
   Membership,
   Organization,
+  OrganizationPlan,
   OrganizationStatus,
   SupportAccessGrant,
   SupportAccessStatus,
@@ -59,6 +60,7 @@ export interface OrganizationSummary {
   createdAt: string;
   myGrantStatus: SupportAccessStatus | "none";
   status: OrganizationStatus;
+  plan: OrganizationPlan;
 }
 
 /**
@@ -97,6 +99,7 @@ export async function listAllOrganizations(): Promise<OrganizationSummary[]> {
           ? (grantSnap.data().status as SupportAccessStatus)
           : "none",
         status: org.status ?? "active",
+        plan: org.plan ?? "gratuito",
       };
     }),
   );
@@ -126,6 +129,21 @@ export async function reactivateOrganization(orgId: string, orgName: string): Pr
   void logPlatformAction({
     action: "organization_reactivated",
     summary: `Organización reactivada: "${orgName}"`,
+    targetOrgId: orgId,
+    targetOrgName: orgName,
+  });
+}
+
+/** Suscripciones (Sprint 18): sin cobro real todavía - el Super Admin asigna el plan manualmente. */
+export async function updateOrganizationPlan(
+  orgId: string,
+  orgName: string,
+  plan: OrganizationPlan,
+): Promise<void> {
+  await updateDoc(doc(db, "organizations", orgId), { plan });
+  void logPlatformAction({
+    action: "organization_plan_changed",
+    summary: `Plan de "${orgName}" cambiado a ${plan}`,
     targetOrgId: orgId,
     targetOrgName: orgName,
   });

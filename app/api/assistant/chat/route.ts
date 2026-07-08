@@ -99,7 +99,8 @@ export async function POST(request: Request) {
 
   let completion;
   try {
-    completion = await getAiProvider().complete({
+    const provider = await getAiProvider();
+    completion = await provider.complete({
       systemPrompt,
       messages: [...history, { role: "user", content: message }],
       tools,

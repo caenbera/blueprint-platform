@@ -13,6 +13,9 @@ export type Role = "owner" | "administrator" | "manager" | "editor" | "collabora
 /** Ausente = "active" (organizaciones creadas antes del Sprint 16). */
 export type OrganizationStatus = "active" | "suspended";
 
+/** Ausente = "gratuito". Sin cobro real todavía (Sprint 18) - el Super Admin lo asigna manualmente desde Suscripciones. */
+export type OrganizationPlan = "gratuito" | "basico" | "profesional" | "empresarial";
+
 export interface Organization {
   id: string;
   name: string;
@@ -23,6 +26,8 @@ export interface Organization {
   industry?: string;
   /** Suspensión de plataforma (Sprint 16) - solo Super Admin puede escribir este campo (ver firestore.rules). */
   status?: OrganizationStatus;
+  /** Suscripción de plataforma (Sprint 18) - solo Super Admin puede escribir este campo. */
+  plan?: OrganizationPlan;
 }
 
 export interface Membership {
@@ -80,6 +85,7 @@ export interface SupportAccessGrant {
 export type PlatformAuditAction =
   | "organization_suspended"
   | "organization_reactivated"
+  | "organization_plan_changed"
   | "support_access_approved"
   | "support_access_denied"
   | "support_access_revoked";
@@ -99,6 +105,36 @@ export interface PlatformAuditLogEntry {
   targetOrgId?: string;
   targetOrgName?: string;
   createdAt: string;
+}
+
+export type AiProviderName = "anthropic" | "openai" | "google";
+
+/**
+ * Configuración global del AI Engine (Sprint 18, coleccion top-level
+ * `platformConfig`, doc `aiSettings`). Reemplaza la variable de entorno
+ * `AI_PROVIDER` como fuente principal - si este documento no existe,
+ * `lib/ai/index.ts#getAiProvider` sigue usando la env var como respaldo,
+ * asi que nunca rompe un deploy que todavia no configuro esto desde la UI.
+ */
+export interface PlatformAiSettings {
+  provider: AiProviderName;
+  updatedBy: string;
+  updatedAt: string;
+}
+
+/**
+ * Configuración general de plataforma (Sprint 18, coleccion top-level
+ * `platformConfig`, doc `general`). `allowNewRegistrations` se aplica de
+ * verdad en app/api/organizations/route.ts; `maintenanceMode` bloquea el
+ * acceso de cualquier usuario que no sea Super Admin (mismo patron que la
+ * suspension de una organizacion especifica, Sprint 16).
+ */
+export interface PlatformGeneralSettings {
+  platformName: string;
+  allowNewRegistrations: boolean;
+  maintenanceMode: boolean;
+  updatedBy: string;
+  updatedAt: string;
 }
 
 /** Soft delete universal: nunca borrado fisico. */

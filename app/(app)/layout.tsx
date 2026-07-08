@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2, ShieldAlert } from "lucide-react";
+import { Loader2, ShieldAlert, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
 import { AssistantPanel } from "@/components/features/workspace/assistant-panel";
@@ -11,6 +11,7 @@ import { NavigatorProvider } from "@/providers/navigator-provider";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { signOutUser } from "@/services/auth";
+import { getGeneralSettings } from "@/services/platform-config";
 import { ADMIN_NAV_GROUPS } from "@/config/admin-nav";
 import { SUPER_ADMIN_NAV_GROUPS } from "@/config/super-admin-nav";
 import { ROLE_LABELS } from "@/config/roles";
@@ -77,6 +78,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   const { user, membership, isSuperAdmin, loading } = useAuth();
   const router = useRouter();
+  const [maintenanceMode, setMaintenanceMode] = useState<boolean | null>(null);
 
   useEffect(() => {
     if (!loading && !user) {
@@ -84,10 +86,38 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     }
   }, [loading, user, router]);
 
-  if (loading || !user) {
+  useEffect(() => {
+    if (!user) return;
+    getGeneralSettings().then((settings) => setMaintenanceMode(settings.maintenanceMode));
+  }, [user]);
+
+  if (loading || !user || maintenanceMode === null) {
     return (
       <div className="flex min-h-screen flex-1 items-center justify-center">
         <Loader2 className="text-muted-foreground h-6 w-6 animate-spin" />
+      </div>
+    );
+  }
+
+  // Modo Mantenimiento (Sprint 18, Configuracion Global): mismo patron que
+  // la suspension de una organizacion especifica, pero se aplica a
+  // CUALQUIER usuario que no sea Super Admin, sin importar su organizacion.
+  if (maintenanceMode && !isSuperAdmin) {
+    return (
+      <div className="flex min-h-screen flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
+        <div className="bg-warning/10 flex h-14 w-14 items-center justify-center rounded-full">
+          <Wrench className="text-warning h-7 w-7" />
+        </div>
+        <h1 className="text-h3">Blueprint está en mantenimiento</h1>
+        <p className="text-body text-muted-foreground max-w-sm">
+          Estamos haciendo ajustes en la plataforma. Vuelve a intentarlo en unos minutos.
+        </p>
+        <Button
+          variant="outline"
+          onClick={() => signOutUser().then(() => router.replace("/login"))}
+        >
+          Cerrar sesión
+        </Button>
       </div>
     );
   }
