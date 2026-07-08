@@ -16,6 +16,7 @@ import { auth, db } from "@/lib/firebase/client";
 import { logActivity } from "@/services/activity";
 import type {
   Blueprint,
+  BlueprintPhase,
   BlueprintStep,
   Comment,
   ProgressStatus,
@@ -159,6 +160,44 @@ export function calculateProjectProgress(
   const status: ProgressStatus =
     completed === 0 ? "no_iniciado" : completed >= total && total > 0 ? "aprobado" : "en_progreso";
   return { total, completed, percent, status };
+}
+
+/** Igual que calculateProjectProgress pero acotado a una sola Fase (Roadmap/Vista de fase, Sprint 14). */
+export function calculatePhaseProgress(
+  phase: BlueprintPhase,
+  stepStates: ProjectStepState[],
+): ProjectProgress {
+  const stepIds = new Set(phase.steps.map((s) => s.id));
+  const relevant = stepStates.filter((s) => stepIds.has(s.stepId));
+  const total = phase.steps.length;
+  const completed = relevant.filter((s) => s.status === "completed").length;
+  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+  const status: ProgressStatus =
+    completed === 0 ? "no_iniciado" : completed >= total && total > 0 ? "aprobado" : "en_progreso";
+  return { total, completed, percent, status };
+}
+
+/** Un Step esta bloqueado si alguna de sus dependencias todavia no esta "completed". */
+export function isStepBlocked(step: BlueprintStep, stepStates: ProjectStepState[]): boolean {
+  if (step.dependencies.length === 0) return false;
+  const doneIds = new Set(stepStates.filter((s) => s.status === "completed").map((s) => s.stepId));
+  return step.dependencies.some((depId) => !doneIds.has(depId));
+}
+
+/** El primer Step no completado, en orden de Fase/Step (para "Siguiente paso" del Roadmap). */
+export function findNextStep(
+  blueprint: Blueprint,
+  stepStates: ProjectStepState[],
+): { phase: BlueprintPhase; step: BlueprintStep } | null {
+  const doneIds = new Set(stepStates.filter((s) => s.status === "completed").map((s) => s.stepId));
+  const sortedPhases = [...blueprint.roadmap].sort((a, b) => a.order - b.order);
+  for (const phase of sortedPhases) {
+    const sortedSteps = [...phase.steps].sort((a, b) => a.order - b.order);
+    for (const step of sortedSteps) {
+      if (!doneIds.has(step.id)) return { phase, step };
+    }
+  }
+  return null;
 }
 
 // --- Notas privadas ---

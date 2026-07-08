@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   WidgetShell,
   type WidgetControlProps,
@@ -11,18 +13,14 @@ import { useAuth } from "@/hooks/use-auth";
 import { listRecentActivity } from "@/services/activity";
 import type { ActivityLogEntry } from "@/types/domain";
 
-/**
- * Sprint 13: "Continuar" (saltar directo al Proyecto/Step de origen)
- * todavia no tiene pantalla propia - se reconstruye en el Sprint 14 sobre
- * Roadmap/Fase/Step. Por ahora el widget solo muestra la actividad
- * reciente del usuario, sin boton de navegacion.
- */
+/** Sprint 14: "Continuar" abre el Roadmap del Proyecto de origen (/projects/{id}). */
 export function ContinueWorkingWidget({
   orgId,
   ...controls
 }: { orgId: string } & WidgetControlProps) {
   const config = getMissionControlWidgetConfig("continueWorking");
   const { user } = useAuth();
+  const router = useRouter();
   const [entries, setEntries] = useState<ActivityLogEntry[] | null>(null);
 
   useEffect(() => {
@@ -39,8 +37,17 @@ export function ContinueWorkingWidget({
       )}
       <div className="flex flex-col gap-2">
         {entries?.map((entry) => (
-          <div key={entry.id} className="flex items-center gap-2">
+          <div key={entry.id} className="flex items-center justify-between gap-2">
             <span className="text-small truncate">{entry.summary}</span>
+            {entry.projectRef && (
+              <Button
+                size="sm"
+                variant="ghost"
+                onClick={() => router.push(`/projects/${entry.projectRef!.projectId}`)}
+              >
+                Continuar
+              </Button>
+            )}
           </div>
         ))}
       </div>

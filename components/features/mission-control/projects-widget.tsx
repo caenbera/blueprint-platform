@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,19 +13,17 @@ import { listProjects } from "@/services/projects";
 import type { Project } from "@/types/domain";
 
 /**
- * Sprint 13: navegar a un Proyecto (abrir su Roadmap) todavia no tiene
- * pantalla propia - se reconstruye en el Sprint 14. Por ahora el widget
- * solo lista los Proyectos de forma informativa (sin click-to-navigate).
- * `navigable` se mantiene como prop para no romper su uso de solo lectura
- * en el resumen de organizaciones ajenas del Panel de Super Admin.
+ * Sprint 14: abre el Roadmap real del Proyecto (/projects/{id}).
+ * `navigable=false` se usa para el resumen de solo lectura de una
+ * organizacion ajena en el Panel de Super Admin - ahi nunca debe navegar.
  */
 export function ProjectsWidget({
   orgId,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars -- se acepta por compatibilidad de la prop, la navegacion real vuelve en el Sprint 14.
   navigable = true,
   ...controls
 }: { orgId: string; navigable?: boolean } & WidgetControlProps) {
   const config = getMissionControlWidgetConfig("projects");
+  const router = useRouter();
   const [projects, setProjects] = useState<Project[] | null>(null);
 
   useEffect(() => {
@@ -39,13 +38,15 @@ export function ProjectsWidget({
       )}
       <div className="flex flex-col gap-2">
         {projects?.slice(0, 6).map((project) => (
-          <div
+          <button
             key={project.id}
-            className="flex items-center justify-between gap-2 rounded-md px-1.5 py-1"
+            onClick={() => navigable && router.push(`/projects/${project.id}`)}
+            disabled={!navigable}
+            className="hover:bg-muted flex items-center justify-between gap-2 rounded-md px-1.5 py-1 text-left disabled:cursor-default disabled:hover:bg-transparent"
           >
             <span className="text-small truncate">{project.name}</span>
             <Badge variant="outline">{project.blueprintSnapshot.name}</Badge>
-          </div>
+          </button>
         ))}
       </div>
     </WidgetShell>

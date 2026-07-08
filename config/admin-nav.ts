@@ -1,4 +1,11 @@
-import { BookOpen, FileText, LayoutDashboard, Store, type LucideIcon } from "lucide-react";
+import {
+  BookOpen,
+  FileText,
+  FolderKanban,
+  LayoutDashboard,
+  Store,
+  type LucideIcon,
+} from "lucide-react";
 
 export interface NavItem {
   href: string;
@@ -13,15 +20,17 @@ export interface NavGroup {
 
 /**
  * Sidebar del rol Administrador (usuario final de una organizacion), por
- * bloques desplegables (Sprint 12 - rediseno de layout). Sprint 13: se
- * retiro el link a "/workspace" (Card System viejo) - el Sprint 14
- * reconstruye la navegacion sobre Proyecto -> Fase -> Step (Roadmap) y
- * agrega su propio link aqui.
+ * bloques desplegables (Sprint 12 - rediseno de layout). Sprint 14: el
+ * link a "/workspace" (Card System viejo, retirado en el Sprint 13) se
+ * reemplaza por "/projects" (Roadmap -> Fase -> Step, motor de datos nuevo).
  */
 export const ADMIN_NAV_GROUPS: NavGroup[] = [
   {
     label: "General",
-    items: [{ href: "/dashboard", label: "Mission Control", icon: LayoutDashboard }],
+    items: [
+      { href: "/dashboard", label: "Mission Control", icon: LayoutDashboard },
+      { href: "/projects", label: "Mis Proyectos", icon: FolderKanban },
+    ],
   },
   {
     label: "Contenido",
