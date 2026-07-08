@@ -11,9 +11,12 @@ import {
   where,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
+import { listAllBlueprints } from "@/services/blueprints";
+import { logPlatformAction } from "@/services/platform-audit";
 import type {
   Membership,
   Organization,
+  OrganizationStatus,
   SupportAccessGrant,
   SupportAccessStatus,
 } from "@/types/domain";
@@ -55,6 +58,7 @@ export interface OrganizationSummary {
   memberCount: number;
   createdAt: string;
   myGrantStatus: SupportAccessStatus | "none";
+  status: OrganizationStatus;
 }
 
 /**
@@ -92,9 +96,107 @@ export async function listAllOrganizations(): Promise<OrganizationSummary[]> {
         myGrantStatus: grantSnap.exists()
           ? (grantSnap.data().status as SupportAccessStatus)
           : "none",
+        status: org.status ?? "active",
       };
     }),
   );
+}
+
+/**
+ * Suspender/reactivar una organizacion (Sprint 16): firestore.rules solo
+ * deja al Super Admin tocar el campo `status` de una organizacion ajena,
+ * nunca su nombre ni ningun otro dato de negocio.
+ */
+export async function suspendOrganization(orgId: string, orgName: string): Promise<void> {
+  await updateDoc(doc(db, "organizations", orgId), {
+    status: "suspended" satisfies OrganizationStatus,
+  });
+  void logPlatformAction({
+    action: "organization_suspended",
+    summary: `Organización suspendida: "${orgName}"`,
+    targetOrgId: orgId,
+    targetOrgName: orgName,
+  });
+}
+
+export async function reactivateOrganization(orgId: string, orgName: string): Promise<void> {
+  await updateDoc(doc(db, "organizations", orgId), {
+    status: "active" satisfies OrganizationStatus,
+  });
+  void logPlatformAction({
+    action: "organization_reactivated",
+    summary: `Organización reactivada: "${orgName}"`,
+    targetOrgId: orgId,
+    targetOrgName: orgName,
+  });
+}
+
+export interface PlatformUserRow extends Membership {
+  organizationName: string;
+}
+
+/**
+ * Directorio global de usuarios (Sprint 16): fan-out sobre todas las
+ * organizaciones y sus miembros - mismo patron y misma autorizacion ya
+ * usada por listAllOrganizations (el bloque `users/{userId}` de
+ * firestore.rules ya permite `isSuperAdmin()` sin condiciones, es gestion
+ * de plataforma, no contenido de negocio).
+ */
+export async function listAllUsers(): Promise<PlatformUserRow[]> {
+  const orgsSnap = await getDocs(collection(db, "organizations"));
+
+  const rows = await Promise.all(
+    orgsSnap.docs.map(async (orgDoc) => {
+      const org = orgDoc.data() as Organization;
+      const membersSnap = await getDocs(collection(db, "organizations", orgDoc.id, "users"));
+      return membersSnap.docs.map(
+        (m) => ({ ...(m.data() as Membership), organizationName: org.name }) as PlatformUserRow,
+      );
+    }),
+  );
+
+  return rows.flat();
+}
+
+export interface PlatformStats {
+  totalOrganizations: number;
+  activeOrganizations: number;
+  suspendedOrganizations: number;
+  totalUsers: number;
+  totalPublishedBlueprints: number;
+  pendingSupportRequests: number;
+  topOrganizationsByMembers: { name: string; memberCount: number }[];
+}
+
+/**
+ * Dashboard General (Sprint 16): agregaciones reales sobre datos que el
+ * Super Admin ya puede leer (metadata/membresia de organizaciones,
+ * Blueprints top-level). Deliberadamente NO incluye conteos de contenido
+ * de negocio (Proyectos, Steps, etc.) por organizacion - leerlos
+ * requeriria un supportAccessGrant aprobado por cada una (ver
+ * firestore.rules), asi que un total "de toda la plataforma" seria
+ * incompleto y enganoso. Ver docs/security-audit.md.
+ */
+export async function getPlatformStats(): Promise<PlatformStats> {
+  const [organizations, blueprints] = await Promise.all([
+    listAllOrganizations(),
+    listAllBlueprints(),
+  ]);
+
+  const topOrganizationsByMembers = [...organizations]
+    .sort((a, b) => b.memberCount - a.memberCount)
+    .slice(0, 5)
+    .map((o) => ({ name: o.name, memberCount: o.memberCount }));
+
+  return {
+    totalOrganizations: organizations.length,
+    activeOrganizations: organizations.filter((o) => o.status === "active").length,
+    suspendedOrganizations: organizations.filter((o) => o.status === "suspended").length,
+    totalUsers: organizations.reduce((sum, o) => sum + o.memberCount, 0),
+    totalPublishedBlueprints: blueprints.filter((b) => b.status === "published").length,
+    pendingSupportRequests: organizations.filter((o) => o.myGrantStatus === "pending").length,
+    topOrganizationsByMembers,
+  };
 }
 
 /** Solicita acceso de soporte a una organizacion (Sprint "Panel de Super Admin"). Siempre nace en "pending" - nunca se autoaprueba (impuesto por firestore.rules). */

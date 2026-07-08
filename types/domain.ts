@@ -10,6 +10,9 @@
 
 export type Role = "owner" | "administrator" | "manager" | "editor" | "collaborator" | "viewer";
 
+/** Ausente = "active" (organizaciones creadas antes del Sprint 16). */
+export type OrganizationStatus = "active" | "suspended";
+
 export interface Organization {
   id: string;
   name: string;
@@ -18,6 +21,8 @@ export interface Organization {
   /** Campos opcionales de Configuración (Sprint 15) - editables por cualquier miembro, sin validación de dominio externo. */
   website?: string;
   industry?: string;
+  /** Suspensión de plataforma (Sprint 16) - solo Super Admin puede escribir este campo (ver firestore.rules). */
+  status?: OrganizationStatus;
 }
 
 export interface Membership {
@@ -69,6 +74,31 @@ export interface SupportAccessGrant {
   /** Denormalizados al crear la solicitud, para mostrar sin fetch extra. */
   organizationName?: string;
   superAdminEmail?: string;
+}
+
+/** Acciones de Super Admin que quedan registradas en la Auditoría de plataforma (Sprint 16). */
+export type PlatformAuditAction =
+  | "organization_suspended"
+  | "organization_reactivated"
+  | "support_access_approved"
+  | "support_access_denied"
+  | "support_access_revoked";
+
+/**
+ * Bitácora de auditoría de plataforma (coleccion top-level
+ * `platformAuditLog`, solo Super Admin lee/escribe) - distinta del
+ * Activity Log de cada organización (services/activity.ts), que registra
+ * la actividad de negocio de sus propios miembros.
+ */
+export interface PlatformAuditLogEntry {
+  id: string;
+  action: PlatformAuditAction;
+  summary: string;
+  actorUid: string;
+  actorName: string;
+  targetOrgId?: string;
+  targetOrgName?: string;
+  createdAt: string;
 }
 
 /** Soft delete universal: nunca borrado fisico. */

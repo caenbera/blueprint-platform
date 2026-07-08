@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
-import { Loader2, ShieldCheck } from "lucide-react";
+import { Ban, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -25,7 +25,9 @@ import {
 import { EmptyState } from "@/components/ui/empty-state";
 import {
   listAllOrganizations,
+  reactivateOrganization,
   requestSupportAccess,
+  suspendOrganization,
   type OrganizationSummary,
 } from "@/services/platform-admin";
 import { OrganizationDetailDialog } from "@/components/features/admin/organization-detail-dialog";
@@ -46,11 +48,13 @@ const STATUS_META: Record<
  * inmediato sin necesitar ningun supportAccessGrant (ver
  * services/platform-admin.ts#listAllOrganizations). Solicitar acceso solo
  * crea la solicitud - nunca se autoaprueba (lo impide firestore.rules).
+ * Sprint 16: se agrega Suspender/Reactivar, tambien real sobre Firestore.
  */
 export function OrganizationDirectory() {
   const [organizations, setOrganizations] = useState<OrganizationSummary[] | null>(null);
   const [requestingOrg, setRequestingOrg] = useState<OrganizationSummary | null>(null);
   const [viewingOrg, setViewingOrg] = useState<OrganizationSummary | null>(null);
+  const [suspendTarget, setSuspendTarget] = useState<OrganizationSummary | null>(null);
   const [reason, setReason] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
@@ -73,6 +77,26 @@ export function OrganizationDirectory() {
       reload();
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "No se pudo solicitar el acceso.");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  async function handleToggleSuspend() {
+    if (!suspendTarget) return;
+    setSubmitting(true);
+    try {
+      if (suspendTarget.status === "suspended") {
+        await reactivateOrganization(suspendTarget.id, suspendTarget.name);
+        toast.success(`"${suspendTarget.name}" reactivada`);
+      } else {
+        await suspendOrganization(suspendTarget.id, suspendTarget.name);
+        toast.success(`"${suspendTarget.name}" suspendida`);
+      }
+      setSuspendTarget(null);
+      reload();
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "No se pudo actualizar el estado.");
     } finally {
       setSubmitting(false);
     }
@@ -105,6 +129,7 @@ export function OrganizationDirectory() {
             <TableHead>Owner</TableHead>
             <TableHead>Miembros</TableHead>
             <TableHead>Creada</TableHead>
+            <TableHead>Estado</TableHead>
             <TableHead>Acceso de soporte</TableHead>
             <TableHead />
           </TableRow>
@@ -122,6 +147,11 @@ export function OrganizationDirectory() {
               <TableCell>{org.memberCount}</TableCell>
               <TableCell>{new Date(org.createdAt).toLocaleDateString("es")}</TableCell>
               <TableCell>
+                <Badge variant={org.status === "suspended" ? "destructive" : "success"}>
+                  {org.status === "suspended" ? "Suspendida" : "Activa"}
+                </Badge>
+              </TableCell>
+              <TableCell>
                 {org.myGrantStatus === "none" ? (
                   <span className="text-small text-muted-foreground">Sin solicitar</span>
                 ) : (
@@ -131,16 +161,33 @@ export function OrganizationDirectory() {
                 )}
               </TableCell>
               <TableCell>
-                {org.myGrantStatus === "none" && (
-                  <Button size="sm" variant="outline" onClick={() => setRequestingOrg(org)}>
-                    <ShieldCheck className="h-3.5 w-3.5" /> Solicitar acceso
+                <div className="flex flex-wrap gap-1.5">
+                  {org.myGrantStatus === "none" && (
+                    <Button size="sm" variant="outline" onClick={() => setRequestingOrg(org)}>
+                      <ShieldCheck className="h-3.5 w-3.5" /> Solicitar acceso
+                    </Button>
+                  )}
+                  {org.myGrantStatus === "approved" && (
+                    <Button size="sm" onClick={() => setViewingOrg(org)}>
+                      Ver resumen
+                    </Button>
+                  )}
+                  <Button
+                    size="sm"
+                    variant={org.status === "suspended" ? "outline" : "destructive"}
+                    onClick={() => setSuspendTarget(org)}
+                  >
+                    {org.status === "suspended" ? (
+                      <>
+                        <CheckCircle2 className="h-3.5 w-3.5" /> Reactivar
+                      </>
+                    ) : (
+                      <>
+                        <Ban className="h-3.5 w-3.5" /> Suspender
+                      </>
+                    )}
                   </Button>
-                )}
-                {org.myGrantStatus === "approved" && (
-                  <Button size="sm" onClick={() => setViewingOrg(org)}>
-                    Ver resumen
-                  </Button>
-                )}
+                </div>
               </TableCell>
             </TableRow>
           ))}
@@ -169,6 +216,35 @@ export function OrganizationDirectory() {
             <Button onClick={handleRequestAccess} disabled={!reason.trim() || submitting}>
               {submitting && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
               Enviar solicitud
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog
+        open={suspendTarget !== null}
+        onOpenChange={(open) => !open && setSuspendTarget(null)}
+      >
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>
+              {suspendTarget?.status === "suspended" ? "Reactivar" : "Suspender"} &quot;
+              {suspendTarget?.name}&quot;
+            </DialogTitle>
+          </DialogHeader>
+          <p className="text-body text-muted-foreground">
+            {suspendTarget?.status === "suspended"
+              ? "Sus miembros van a recuperar el acceso a la plataforma."
+              : "Sus miembros no van a poder entrar a la plataforma hasta que la reactives."}
+          </p>
+          <DialogFooter>
+            <Button
+              variant={suspendTarget?.status === "suspended" ? "default" : "destructive"}
+              onClick={handleToggleSuspend}
+              disabled={submitting}
+            >
+              {submitting && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
+              Confirmar
             </Button>
           </DialogFooter>
         </DialogContent>

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { Loader2, ShieldAlert } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
 import { AssistantPanel } from "@/components/features/workspace/assistant-panel";
 import { CollapsibleSidebar } from "@/components/features/shell/collapsible-sidebar";
@@ -74,7 +75,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
  * Fase -> Step (Roadmap).
  */
 export default function AppLayout({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth();
+  const { user, membership, isSuperAdmin, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -87,6 +88,30 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     return (
       <div className="flex min-h-screen flex-1 items-center justify-center">
         <Loader2 className="text-muted-foreground h-6 w-6 animate-spin" />
+      </div>
+    );
+  }
+
+  // Suspension de plataforma (Sprint 16): un Super Admin siempre puede
+  // entrar (necesita revisar/reactivar la organizacion), pero sus propios
+  // miembros quedan bloqueados hasta que se reactive.
+  if (membership?.organizationStatus === "suspended" && !isSuperAdmin) {
+    return (
+      <div className="flex min-h-screen flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
+        <div className="bg-destructive/10 flex h-14 w-14 items-center justify-center rounded-full">
+          <ShieldAlert className="text-destructive h-7 w-7" />
+        </div>
+        <h1 className="text-h3">Tu organización está suspendida</h1>
+        <p className="text-body text-muted-foreground max-w-sm">
+          El acceso a {membership.organizationName} fue suspendido por un administrador de la
+          plataforma. Contacta a soporte si crees que esto es un error.
+        </p>
+        <Button
+          variant="outline"
+          onClick={() => signOutUser().then(() => router.replace("/login"))}
+        >
+          Cerrar sesión
+        </Button>
       </div>
     );
   }

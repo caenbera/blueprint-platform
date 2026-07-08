@@ -81,6 +81,17 @@ service cloud.firestore {
       allow delete: if false;
     }
 
+    // Auditoria de plataforma (Sprint 16): coleccion top-level, distinta
+    // del Activity Log de cada organizacion - solo registra acciones que
+    // el Super Admin toma sobre la plataforma (suspender organizacion,
+    // responder solicitudes de acceso de soporte, etc.). Nunca se edita ni
+    // se borra una vez creada.
+    match /platformAuditLog/{entryId} {
+      allow read: if isSuperAdmin();
+      allow create: if isSuperAdmin() && request.resource.data.actorUid == request.auth.uid;
+      allow update, delete: if false;
+    }
+
     match /organizations/{orgId} {
       // Metadata de la organizacion (nombre, owner, fecha) - gestion de
       // plataforma, el Super Admin siempre puede leerla sin pedir permiso.
@@ -88,7 +99,12 @@ service cloud.firestore {
       // La creacion de una organizacion nueva solo ocurre via
       // app/api/organizations/route.ts (Admin SDK), nunca directo del cliente.
       allow create: if false;
-      allow update: if isOrgMember(orgId);
+      // Un miembro puede editar los datos de su propia organizacion
+      // (Configuracion, Sprint 15). Un Super Admin SOLO puede tocar el
+      // campo `status` de una organizacion ajena (Suspender/Reactivar,
+      // Sprint 16) - nunca su nombre ni ningun otro dato de negocio.
+      allow update: if isOrgMember(orgId) ||
+        (isSuperAdmin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status']));
       allow delete: if false;
 
       match /users/{userId} {

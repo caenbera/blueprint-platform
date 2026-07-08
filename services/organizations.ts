@@ -1,9 +1,11 @@
 import { collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
-import type { Membership, Organization } from "@/types/domain";
+import type { Membership, Organization, OrganizationStatus } from "@/types/domain";
 
 export interface MembershipWithOrg extends Membership {
   organizationName: string;
+  /** Sprint 16: permite bloquear el acceso si el Super Admin suspendió la organización. */
+  organizationStatus: OrganizationStatus;
 }
 
 export async function createOrganization(name: string): Promise<{ orgId: string }> {
@@ -44,12 +46,13 @@ export async function getMyMembership(uid: string): Promise<MembershipWithOrg | 
   ]);
   if (!membershipSnap.exists()) return null;
 
-  const organizationName = orgSnap.exists() ? (orgSnap.data() as Organization).name : "";
+  const org = orgSnap.exists() ? (orgSnap.data() as Organization) : null;
 
   return {
     ...(membershipSnap.data() as Omit<Membership, "orgId">),
     orgId,
-    organizationName,
+    organizationName: org?.name ?? "",
+    organizationStatus: org?.status ?? "active",
   };
 }
 

@@ -40,6 +40,14 @@ export function CollapsibleSidebar({
     Object.fromEntries(groups.map((group) => [group.label, true])),
   );
 
+  // "Mas especifico gana": entre rutas anidadas (ej. "/admin" y
+  // "/admin/organizations"), solo la de href mas largo que matchea se
+  // resalta como activa - evita que ambas se vean resaltadas a la vez.
+  const allHrefs = groups.flatMap((g) => g.items.map((item) => item.href));
+  const activeHref = allHrefs
+    .filter((href) => pathname === href || pathname.startsWith(`${href}/`))
+    .sort((a, b) => b.length - a.length)[0];
+
   function toggleGroup(label: string) {
     setCollapsedGroups((prev) => ({ ...prev, [label]: !prev[label] }));
   }
@@ -73,7 +81,7 @@ export function CollapsibleSidebar({
                 <div className="mt-1 flex flex-col gap-0.5">
                   {group.items.map((item) => {
                     const Icon = item.icon;
-                    const active = pathname.startsWith(item.href);
+                    const active = item.href === activeHref;
                     return (
                       <Link
                         key={item.href}
