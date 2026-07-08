@@ -183,7 +183,7 @@ export interface PlatformStats {
   totalUsers: number;
   totalPublishedBlueprints: number;
   pendingSupportRequests: number;
-  topOrganizationsByMembers: { name: string; memberCount: number }[];
+  topOrganizationsByMembers: { id: string; name: string; memberCount: number }[];
 }
 
 /**
@@ -204,7 +204,7 @@ export async function getPlatformStats(): Promise<PlatformStats> {
   const topOrganizationsByMembers = [...organizations]
     .sort((a, b) => b.memberCount - a.memberCount)
     .slice(0, 5)
-    .map((o) => ({ name: o.name, memberCount: o.memberCount }));
+    .map((o) => ({ id: o.id, name: o.name, memberCount: o.memberCount }));
 
   return {
     totalOrganizations: organizations.length,

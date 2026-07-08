@@ -106,7 +106,7 @@ export default function AdminDashboardPage() {
                 )}
                 <div className="flex flex-col gap-2">
                   {stats.topOrganizationsByMembers.map((org) => (
-                    <div key={org.name} className="flex items-center justify-between gap-2">
+                    <div key={org.id} className="flex items-center justify-between gap-2">
                       <span className="text-body truncate">{org.name}</span>
                       <span className="text-small text-muted-foreground">
                         {org.memberCount} {org.memberCount === 1 ? "miembro" : "miembros"}
