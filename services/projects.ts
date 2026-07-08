@@ -80,11 +80,22 @@ export async function listProjects(orgId: string): Promise<Project[]> {
   );
   return snap.docs
     .map((d) => fromFirestore(d.id, d.data()))
-    .filter((p) => p.deletionStatus !== "deleted");
+    .filter((p) => p.deletionStatus !== "deleted" && isValidProject(p));
 }
 
 export async function getProject(orgId: string, projectId: string): Promise<Project | null> {
   const snap = await getDoc(doc(db, projectsPath(orgId), projectId));
   if (!snap.exists()) return null;
-  return fromFirestore(snap.id, snap.data());
+  const project = fromFirestore(snap.id, snap.data());
+  return isValidProject(project) ? project : null;
+}
+
+/**
+ * Descarta Proyectos sin `blueprintSnapshot` (datos huerfanos del modelo
+ * viejo, previos al corte limpio del Sprint 13 - esa migracion decidio no
+ * convertir datos existentes, ver plan de rediseno). Sin snapshot un
+ * Proyecto no tiene ni roadmap ni Steps, es irrecuperable.
+ */
+function isValidProject(project: Project): boolean {
+  return Boolean(project.blueprintSnapshot);
 }
