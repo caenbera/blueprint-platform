@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { ArrowLeft, Compass, Sparkles, SquarePen } from "lucide-react";
+import { ArrowLeft, ChevronRight, Compass, Sparkles, SquarePen } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PROJECT_CATEGORIES } from "@/config/project-categories";
 
@@ -19,12 +19,21 @@ export default function ProjectTypePage() {
 
   return (
     <div className="flex flex-1 flex-col overflow-y-auto p-4">
-      <Link
-        href="/dashboard"
-        className="text-body text-muted-foreground hover:text-foreground mb-4 flex w-fit items-center gap-1.5"
-      >
-        <ArrowLeft className="h-3.5 w-3.5" /> Inicio
-      </Link>
+      <div className="mb-4 flex items-center gap-3">
+        <Link
+          href="/dashboard"
+          className="hover:bg-muted flex h-8 w-8 shrink-0 items-center justify-center rounded-md border"
+        >
+          <ArrowLeft className="h-4 w-4" />
+        </Link>
+        <nav className="text-body flex items-center gap-1.5">
+          <Link href="/dashboard" className="text-muted-foreground hover:text-foreground">
+            Inicio
+          </Link>
+          <ChevronRight className="text-muted-foreground h-3.5 w-3.5" />
+          <span className="font-medium">Crear proyecto</span>
+        </nav>
+      </div>
 
       <div className="mx-auto flex w-full max-w-4xl flex-col items-center text-center">
         <div className="bg-primary/10 mb-3 flex h-12 w-12 items-center justify-center rounded-full">
