@@ -17,58 +17,27 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { cn } from "@/lib/utils";
+import { cn, formatEstimatedTime } from "@/lib/utils";
 import { resolveLucideIcon } from "@/lib/lucide-icon";
-import { PHASE_TILE_COLORS, PHASE_BADGE_COLORS, resolvePhaseIcon } from "@/lib/phase-icon";
+import {
+  PHASE_TILE_COLORS,
+  PHASE_BADGE_COLORS,
+  PHASE_STATUS_META,
+  resolvePhaseIcon,
+} from "@/lib/phase-icon";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { getProject } from "@/services/projects";
 import { listMembers } from "@/services/organizations";
 import {
   calculatePhaseProgress,
+  calculatePhaseStatus,
   calculateProjectProgress,
   countBlueprintResources,
   findNextStep,
-  isStepBlocked,
   listStepStates,
 } from "@/services/step-state";
-import type { BlueprintPhase, Membership, Project, ProjectStepState } from "@/types/domain";
-
-type PhaseStatus = "pendiente" | "disponible" | "en_progreso" | "completada" | "bloqueada";
-
-const PHASE_STATUS_META: Record<
-  PhaseStatus,
-  { label: string; variant: "secondary" | "warning" | "info" | "success" | "destructive" }
-> = {
-  pendiente: { label: "Pendiente", variant: "secondary" },
-  disponible: { label: "Disponible", variant: "warning" },
-  en_progreso: { label: "En progreso", variant: "info" },
-  completada: { label: "Completada", variant: "success" },
-  bloqueada: { label: "Bloqueada", variant: "destructive" },
-};
-
-function phaseStatus(
-  phase: BlueprintPhase,
-  stepStates: ProjectStepState[],
-  nextPhaseId: string | null,
-): PhaseStatus {
-  const progress = calculatePhaseProgress(phase, stepStates);
-  if (progress.status === "aprobado") return "completada";
-  if (progress.status === "en_progreso") return "en_progreso";
-  const allBlocked =
-    phase.steps.length > 0 && phase.steps.every((s) => isStepBlocked(s, stepStates));
-  if (allBlocked) return "bloqueada";
-  if (phase.id === nextPhaseId) return "disponible";
-  return "pendiente";
-}
-
-function formatEstimatedTime(hours: number): string {
-  if (hours <= 0) return "—";
-  if (hours < 1) return `${Math.round(hours * 60)} min`;
-  const whole = Math.floor(hours);
-  const minutes = Math.round((hours - whole) * 60);
-  return minutes > 0 ? `${whole}h ${minutes}min` : `${whole}h`;
-}
+import type { Membership, Project, ProjectStepState } from "@/types/domain";
 
 /**
  * Roadmap del Proyecto (mockup "06-roadmap.png", pantalla A6): el Centro de
@@ -177,7 +146,7 @@ export default function ProjectRoadmapPage() {
             <div className="flex flex-col divide-y">
               {sortedPhases.map((phase, i) => {
                 const phaseProgress = calculatePhaseProgress(phase, stepStates);
-                const status = phaseStatus(phase, stepStates, nextPhaseId);
+                const status = calculatePhaseStatus(phase, stepStates, nextPhaseId);
                 const statusMeta = PHASE_STATUS_META[status];
                 const Icon = resolvePhaseIcon(phase.title);
                 return (

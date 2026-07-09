@@ -9,6 +9,7 @@ import {
   Settings,
   type LucideIcon,
 } from "lucide-react";
+import type { PhaseRowStatus } from "@/services/step-state";
 
 /**
  * Icono decorativo por Fase (Roadmap del Proyecto, mockup "06-roadmap.png")
@@ -51,3 +52,14 @@ export const PHASE_BADGE_COLORS = [
   "bg-chart-3 text-white",
   "bg-chart-5 text-white",
 ];
+
+export const PHASE_STATUS_META: Record<
+  PhaseRowStatus,
+  { label: string; variant: "secondary" | "warning" | "info" | "success" | "destructive" }
+> = {
+  pendiente: { label: "Pendiente", variant: "secondary" },
+  disponible: { label: "Disponible", variant: "warning" },
+  en_progreso: { label: "En progreso", variant: "info" },
+  completada: { label: "Completada", variant: "success" },
+  bloqueada: { label: "Bloqueada", variant: "destructive" },
+};

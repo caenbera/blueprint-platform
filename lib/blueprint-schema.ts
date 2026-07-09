@@ -134,6 +134,8 @@ const phaseSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1, "Cada Fase necesita un titulo."),
   description: z.string().default(""),
+  objective: z.string().optional(),
+  resources: z.array(stepResourceSchema).default([]),
   order: z.number().optional(),
   steps: z.array(stepSchema).default([]),
 });

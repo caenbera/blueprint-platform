@@ -18,3 +18,12 @@ export function formatRelativeTime(iso: string): string {
   if (dayDiff > 1 && dayDiff < 7) return `${dayDiff} días atrás`;
   return date.toLocaleDateString("es", { day: "numeric", month: "short", year: "numeric" });
 }
+
+/** "25 min" / "1h 30min" / "3h" - Step.estimatedHours a texto legible (Roadmap, Vista de Fase). */
+export function formatEstimatedTime(hours: number): string {
+  if (hours <= 0) return "—";
+  if (hours < 1) return `${Math.round(hours * 60)} min`;
+  const whole = Math.floor(hours);
+  const minutes = Math.round((hours - whole) * 60);
+  return minutes > 0 ? `${whole}h ${minutes}min` : `${whole}h`;
+}

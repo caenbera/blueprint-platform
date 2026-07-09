@@ -278,6 +278,10 @@ export interface BlueprintPhase {
   id: string;
   title: string;
   description: string;
+  /** Resultado esperado al completar la fase (Vista de la Fase, mockup "07-vista-fase.png") - distinto de `description`. Opcional: si falta, la tarjeta "Objetivo de la fase" simplemente no se muestra. */
+  objective?: string;
+  /** Recursos generales de la fase completa (guías, plantillas, videos) - distintos de los recursos de cada Step, que viven en StepContent.resources. */
+  resources?: StepResource[];
   order: number;
   steps: BlueprintStep[];
 }

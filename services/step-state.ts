@@ -210,6 +210,44 @@ export function isStepBlocked(step: BlueprintStep, stepStates: ProjectStepState[
   return step.dependencies.some((depId) => !doneIds.has(depId));
 }
 
+export type PhaseRowStatus =
+  "pendiente" | "disponible" | "en_progreso" | "completada" | "bloqueada";
+
+/** Estado de una Fase (Roadmap/Vista de Fase, mockups "06"/"07"): calculado a partir de dependencias reales entre Steps, nunca guardado. */
+export function calculatePhaseStatus(
+  phase: BlueprintPhase,
+  stepStates: ProjectStepState[],
+  nextPhaseId: string | null,
+): PhaseRowStatus {
+  const progress = calculatePhaseProgress(phase, stepStates);
+  if (progress.status === "aprobado") return "completada";
+  if (progress.status === "en_progreso") return "en_progreso";
+  const allBlocked =
+    phase.steps.length > 0 && phase.steps.every((s) => isStepBlocked(s, stepStates));
+  if (allBlocked) return "bloqueada";
+  if (phase.id === nextPhaseId) return "disponible";
+  return "pendiente";
+}
+
+export type StepRowStatus = "completado" | "en_progreso" | "pendiente" | "bloqueado";
+
+/**
+ * Estado visual de un Step en la Vista de Fase (mockup "07-vista-fase.png"):
+ * "en_progreso" es EXCLUSIVO del Step que devuelve findNextStep - "solo
+ * puede existir un Step activo por fase".
+ */
+export function calculateStepRowStatus(
+  step: BlueprintStep,
+  stepStates: ProjectStepState[],
+  activeStepId: string | null,
+): StepRowStatus {
+  const state = stepStates.find((s) => s.stepId === step.id);
+  if (state?.status === "completed") return "completado";
+  if (step.id === activeStepId) return "en_progreso";
+  if (isStepBlocked(step, stepStates)) return "bloqueado";
+  return "pendiente";
+}
+
 /** El primer Step no completado, en orden de Fase/Step (para "Siguiente paso" del Roadmap). */
 export function findNextStep(
   blueprint: Blueprint,
