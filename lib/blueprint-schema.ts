@@ -115,6 +115,9 @@ const stepContentSchema = z.object({
   recommendedTools: z.array(stepRecommendedToolSchema).optional(),
   // Pestaña "Registro del Paso" - campos que cada Blueprint define.
   registroFields: z.array(stepRegistroFieldSchema).optional(),
+  // Pantalla "Paso Completado" (mockup "09-paso-completado.png") - ambos opcionales.
+  learnings: z.array(z.object({ title: z.string(), description: z.string() })).optional(),
+  inspirationalQuote: z.string().optional(),
 });
 
 const stepSchema = z.object({

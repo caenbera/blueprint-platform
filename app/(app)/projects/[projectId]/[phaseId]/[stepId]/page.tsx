@@ -1,25 +1,29 @@
 "use client";
 
 import { createElement, useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import {
   AlertTriangle,
   ArrowLeft,
   ArrowRight,
+  BarChart3,
+  Check,
   CheckCircle2,
   ChevronRight,
   Clock,
   ExternalLink,
   FileText,
+  Flag,
   Gem,
   Lightbulb,
   Loader2,
   Lock,
   Map,
-  PartyPopper,
   Send,
   Sparkles,
+  Star,
   Target,
   ThumbsUp,
   Wrench,
@@ -47,6 +51,7 @@ import { useNavigator } from "@/hooks/use-navigator";
 import { getProject } from "@/services/projects";
 import {
   addComment,
+  calculateProjectProgress,
   findNextStep,
   findStepById,
   isStepBlocked,
@@ -57,6 +62,7 @@ import {
   updateStepRegistroField,
 } from "@/services/step-state";
 import type {
+  BlueprintStep,
   Comment,
   Project,
   ProjectStepState,
@@ -70,6 +76,14 @@ function initials(name: string): string {
     .slice(0, 2)
     .map((p) => p[0]?.toUpperCase())
     .join("");
+}
+
+function priorityLabel(priority: BlueprintStep["priority"]): string {
+  return priority === "high" ? "Alta" : priority === "low" ? "Baja" : "Normal";
+}
+
+function difficultyLabel(difficulty: BlueprintStep["difficulty"]): string {
+  return difficulty === "hard" ? "Difícil" : difficulty === "easy" ? "Fácil" : "Media";
 }
 
 const STEP_STATUS_META: Record<
@@ -252,39 +266,243 @@ export default function StepView() {
 
   if (isCompleted && justCompleted) {
     const next = findNextStep(project.blueprintSnapshot, allStepStates);
+    const projectProgress = calculateProjectProgress(project, allStepStates);
+    const completedAt = stepState?.completedAt ? new Date(stepState.completedAt) : new Date();
+    const firstName = (user?.displayName || user?.email || "").trim().split(/\s+/)[0] || "";
+    const completedSortedPhaseSteps = [...phase.steps].sort((a, b) => a.order - b.order);
+    const completedStepPosition = completedSortedPhaseSteps.findIndex((s) => s.id === stepId) + 1;
+    const learnings = step.content.learnings ?? [];
+    const learningIcons = [Target, Lightbulb, BarChart3];
+    const learningColors = [
+      "bg-success/10 text-success",
+      "bg-chart-2/10 text-chart-2",
+      "bg-warning/10 text-warning",
+    ];
+    const nextStepPosition = next
+      ? [...next.phase.steps]
+          .sort((a, b) => a.order - b.order)
+          .findIndex((s) => s.id === next.step.id) + 1
+      : 0;
+
     return (
-      <div className="flex flex-1 items-center justify-center p-6">
-        <div className="flex max-w-md flex-col items-center gap-3 text-center">
-          <div className="bg-success/10 flex h-14 w-14 items-center justify-center rounded-full">
-            <PartyPopper className="text-success h-7 w-7" />
-          </div>
-          <h1 className="text-h3">¡Paso completado!</h1>
-          <p className="text-body text-muted-foreground">
-            Completaste &quot;{step.title}&quot; en la fase {phase.title}.
-          </p>
-          {next ? (
-            <>
-              <div className="mt-2 w-full rounded-lg border p-4 text-left">
-                <p className="text-small text-muted-foreground">Siguiente paso</p>
-                <p className="text-body font-medium">{next.step.title}</p>
-              </div>
-              <Button
-                className="w-full"
-                onClick={() =>
-                  router.push(`/projects/${projectId}/${next.phase.id}/${next.step.id}`)
-                }
-              >
-                Continuar con el siguiente paso <ArrowRight className="h-4 w-4" />
-              </Button>
-            </>
-          ) : (
-            <p className="text-body text-success font-medium">
-              ¡Completaste todos los pasos de este Blueprint!
-            </p>
-          )}
-          <Link href={`/projects/${projectId}/${phaseId}`} className="text-body text-primary">
-            Volver a la fase
+      <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4">
+        <div className="flex items-center gap-1.5">
+          <Map className="text-primary h-5 w-5" />
+          <Link
+            href={`/projects/${projectId}`}
+            className="text-body text-muted-foreground hover:text-foreground"
+          >
+            Roadmap
           </Link>
+          <ChevronRight className="text-muted-foreground h-3.5 w-3.5" />
+          <Link
+            href={`/projects/${projectId}/${phaseId}`}
+            className="text-body text-muted-foreground hover:text-foreground"
+          >
+            {phase.title}
+          </Link>
+          <ChevronRight className="text-muted-foreground h-3.5 w-3.5" />
+          <span className="text-body text-muted-foreground">{step.title}</span>
+          <ChevronRight className="text-muted-foreground h-3.5 w-3.5" />
+          <span className="text-body font-medium">Paso completado</span>
+        </div>
+
+        <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-[1fr_20rem]">
+          <div className="flex flex-col gap-4">
+            <div className="bg-success/5 border-success/20 relative overflow-hidden rounded-lg border p-8 text-center">
+              <div className="relative mx-auto flex h-20 w-20 items-center justify-center">
+                <Star className="text-warning absolute -top-1 left-1 h-4 w-4" />
+                <Star className="text-chart-2 absolute top-3 -right-3 h-3 w-3" />
+                <Star className="text-primary absolute bottom-0 -left-4 h-3.5 w-3.5" />
+                <div className="bg-success flex h-16 w-16 items-center justify-center rounded-full">
+                  <Check className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              <h1 className="text-h2 mt-4">¡Paso completado!</h1>
+              <p className="text-body text-muted-foreground mt-1">
+                Has completado el paso {completedStepPosition} de {completedSortedPhaseSteps.length}{" "}
+                en la fase {phase.title}.
+              </p>
+            </div>
+
+            <div className="rounded-lg border p-4">
+              <div className="flex items-start gap-3">
+                <div className="bg-success/10 text-success flex h-12 w-12 shrink-0 items-center justify-center rounded-lg">
+                  {createElement(resolveStepIcon(step.title), { className: "h-6 w-6" })}
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-h4">{step.title}</p>
+                  <p className="text-small text-muted-foreground mt-0.5">{step.description}</p>
+                </div>
+                <div className="flex shrink-0 flex-col items-end gap-1">
+                  <Badge variant="success">Completado</Badge>
+                  <span className="text-small text-muted-foreground">
+                    {completedAt.toLocaleDateString("es", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </span>
+                </div>
+              </div>
+              <div className="text-small text-muted-foreground mt-3 flex items-center gap-1.5">
+                <Clock className="h-3.5 w-3.5" />{" "}
+                {formatEstimatedTime((stepState?.timeInvestedMinutes ?? 0) / 60)} invertidos
+              </div>
+            </div>
+
+            {learnings.length > 0 && (
+              <div>
+                <p className="text-h4 mb-2 flex items-center gap-1.5">
+                  <CheckCircle2 className="text-success h-4 w-4" /> ¿Qué aprendiste en este paso?
+                </p>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+                  {learnings.map((learning, i) => {
+                    const LearningIcon = learningIcons[i % learningIcons.length];
+                    return (
+                      <div key={i} className="rounded-lg border p-3">
+                        <div
+                          className={cn(
+                            "flex h-9 w-9 items-center justify-center rounded-full",
+                            learningColors[i % learningColors.length],
+                          )}
+                        >
+                          <LearningIcon className="h-4 w-4" />
+                        </div>
+                        <p className="text-body mt-2 font-medium">{learning.title}</p>
+                        <p className="text-small text-muted-foreground mt-0.5">
+                          {learning.description}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
+            {step.content.inspirationalQuote && (
+              <div className="bg-success/5 relative overflow-hidden rounded-lg border p-5">
+                <p className="text-body max-w-md italic">
+                  &quot;{step.content.inspirationalQuote}&quot;
+                </p>
+                <Image
+                  src="/illustrations/empresa-comercial-01.png"
+                  alt=""
+                  width={140}
+                  height={100}
+                  className="pointer-events-none absolute right-2 bottom-0 hidden h-20 w-auto object-contain select-none sm:block"
+                />
+              </div>
+            )}
+          </div>
+
+          <aside className="flex flex-col gap-4">
+            <div className="rounded-lg border p-4">
+              <div className="flex items-center gap-1.5">
+                <Flag className="text-muted-foreground h-3.5 w-3.5" />
+                <p className="text-h4">Siguiente paso</p>
+              </div>
+              {next ? (
+                <>
+                  <div className="mt-2.5 flex items-start gap-2.5">
+                    <span className="bg-primary text-primary-foreground text-small flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-semibold">
+                      {nextStepPosition}
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-small text-muted-foreground">
+                        de {next.phase.steps.length}
+                      </p>
+                      <p className="text-body font-medium">{next.step.title}</p>
+                    </div>
+                  </div>
+                  <p className="text-small text-muted-foreground mt-2 line-clamp-2">
+                    {next.step.description}
+                  </p>
+                  <div className="text-small text-muted-foreground mt-2 flex flex-col gap-1">
+                    <span>Tiempo estimado: {formatEstimatedTime(next.step.estimatedHours)}</span>
+                    <span>Importancia: {priorityLabel(next.step.priority)}</span>
+                    <span>Dificultad: {difficultyLabel(next.step.difficulty)}</span>
+                  </div>
+                  <Button
+                    className="mt-3 w-full"
+                    onClick={() =>
+                      router.push(`/projects/${projectId}/${next.phase.id}/${next.step.id}`)
+                    }
+                  >
+                    Continuar con el siguiente paso <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </>
+              ) : (
+                <p className="text-body text-success mt-2 font-medium">
+                  ¡Completaste todos los pasos de este Blueprint!
+                </p>
+              )}
+              <Button
+                variant="outline"
+                className="mt-2 w-full"
+                onClick={() => router.push(`/projects/${projectId}/${phaseId}`)}
+              >
+                Volver a la fase
+              </Button>
+            </div>
+
+            <div className="rounded-lg border p-4">
+              <p className="text-h4">¿Qué puedes hacer ahora?</p>
+              <div className="mt-2 flex flex-col">
+                <Link
+                  href={`/projects/${projectId}`}
+                  className="hover:bg-muted flex items-center gap-2.5 rounded-md px-1.5 py-1.5"
+                >
+                  <Map className="text-muted-foreground h-4 w-4 shrink-0" />
+                  <div>
+                    <p className="text-body">Revisar el roadmap</p>
+                    <p className="text-small text-muted-foreground">Ver tu progreso general</p>
+                  </div>
+                </Link>
+                <Link
+                  href="/documents"
+                  className="hover:bg-muted flex items-center gap-2.5 rounded-md px-1.5 py-1.5"
+                >
+                  <FileText className="text-muted-foreground h-4 w-4 shrink-0" />
+                  <div>
+                    <p className="text-body">Ver mis documentos</p>
+                    <p className="text-small text-muted-foreground">Accede a tus documentos</p>
+                  </div>
+                </Link>
+                <button
+                  onClick={() => setAssistantCollapsed(false)}
+                  className="hover:bg-muted flex items-center gap-2.5 rounded-md px-1.5 py-1.5 text-left"
+                >
+                  <Sparkles className="text-muted-foreground h-4 w-4 shrink-0" />
+                  <div>
+                    <p className="text-body">Consultar con la IA</p>
+                    <p className="text-small text-muted-foreground">
+                      Hazle preguntas sobre el siguiente paso
+                    </p>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-between gap-4 rounded-lg border p-4">
+          <div>
+            <p className="text-body font-medium">
+              ¡Vas muy bien{firstName ? `, ${firstName}` : ""}! 🚀
+            </p>
+            <p className="text-small text-muted-foreground">
+              Cada paso te acerca más a construir la empresa que imaginas.
+            </p>
+          </div>
+          <div className="text-right">
+            <p className="text-small text-muted-foreground">Progreso del proyecto</p>
+            <p className="text-h3 text-primary">{projectProgress.percent}%</p>
+            <Progress value={projectProgress.percent} className="mt-1 w-40" />
+            <p className="text-small text-muted-foreground mt-1">
+              {projectProgress.completed} de {projectProgress.total} pasos completados
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -380,19 +598,11 @@ export default function StepView() {
           </div>
           <div className="rounded-lg border p-3">
             <span className="text-small text-muted-foreground">Importancia</span>
-            <p className="text-body mt-0.5 font-medium capitalize">
-              {step.priority === "high" ? "Alta" : step.priority === "low" ? "Baja" : "Normal"}
-            </p>
+            <p className="text-body mt-0.5 font-medium">{priorityLabel(step.priority)}</p>
           </div>
           <div className="rounded-lg border p-3">
             <span className="text-small text-muted-foreground">Dificultad</span>
-            <p className="text-body mt-0.5 font-medium">
-              {step.difficulty === "hard"
-                ? "Difícil"
-                : step.difficulty === "easy"
-                  ? "Fácil"
-                  : "Media"}
-            </p>
+            <p className="text-body mt-0.5 font-medium">{difficultyLabel(step.difficulty)}</p>
           </div>
           <div className="rounded-lg border p-3">
             <span className="text-small text-muted-foreground">Dependencias</span>

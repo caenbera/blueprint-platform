@@ -288,6 +288,10 @@ export interface StepContent {
   recommendedTools?: StepRecommendedTool[];
   /** Campos del "Registro del Paso" (pestaña 2) - vacio/ausente = la pestaña muestra un estado vacio. */
   registroFields?: StepRegistroField[];
+  /** Pantalla "Paso Completado" (mockup "09-paso-completado.png") - que gano el usuario al terminar este Step. Opcional: si falta, esa seccion no se muestra. */
+  learnings?: { title: string; description: string }[];
+  /** Frase inspiradora mostrada al completar el Step - no todos los Blueprints la tienen. */
+  inspirationalQuote?: string;
 }
 
 /** El objeto mas importante de la plataforma: una unica accion ejecutable. */
