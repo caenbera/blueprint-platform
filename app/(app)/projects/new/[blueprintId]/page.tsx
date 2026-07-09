@@ -1,6 +1,7 @@
 "use client";
 
 import { createElement, useEffect, useState } from "react";
+import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 import {
   ArrowLeft,
@@ -209,6 +210,13 @@ export default function BlueprintSummaryPage() {
             </div>
           </div>
         </div>
+        <Image
+          src="/illustrations/empresa-comercial.png"
+          alt=""
+          width={220}
+          height={150}
+          className="pointer-events-none absolute right-4 bottom-0 hidden h-32 w-auto object-contain select-none md:block"
+        />
       </div>
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">

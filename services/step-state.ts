@@ -77,6 +77,14 @@ export function countBlueprintSteps(blueprint: Blueprint): number {
   return blueprint.roadmap.reduce((sum, phase) => sum + phase.steps.length, 0);
 }
 
+/** Total de recursos (StepResource) adjuntos en todos los Steps del Blueprint - "Documentos" en los mockups de A4/A5/A6. */
+export function countBlueprintResources(blueprint: Blueprint): number {
+  return blueprint.roadmap.reduce(
+    (sum, phase) => sum + phase.steps.reduce((s, step) => s + step.content.resources.length, 0),
+    0,
+  );
+}
+
 export async function listStepStates(
   orgId: string,
   projectId: string,
@@ -149,13 +157,31 @@ export interface ProjectProgress {
   status: ProgressStatus;
 }
 
+/**
+ * El porcentaje de avance (Roadmap del Proyecto, mockup "06-roadmap.png")
+ * representa unicamente Steps tipo "one_time" - los recurrentes (daily,
+ * weekly, monthly, quarterly, semester, yearly) nunca "terminan", asi que
+ * incluirlos en el denominador haria que el proyecto nunca llegue a 100%.
+ */
+function isCountableStep(step: BlueprintStep): boolean {
+  return step.type === "one_time";
+}
+
 /** El progreso nunca se guarda - siempre se calcula a partir de los ProjectStepState existentes. */
 export function calculateProjectProgress(
   project: Project,
   stepStates: ProjectStepState[],
 ): ProjectProgress {
-  const total = countBlueprintSteps(project.blueprintSnapshot);
-  const completed = stepStates.filter((s) => s.status === "completed").length;
+  const countableIds = new Set(
+    project.blueprintSnapshot.roadmap
+      .flatMap((phase) => phase.steps)
+      .filter(isCountableStep)
+      .map((s) => s.id),
+  );
+  const total = countableIds.size;
+  const completed = stepStates.filter(
+    (s) => s.status === "completed" && countableIds.has(s.stepId),
+  ).length;
   const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
   const status: ProgressStatus =
     completed === 0 ? "no_iniciado" : completed >= total && total > 0 ? "aprobado" : "en_progreso";
@@ -167,9 +193,9 @@ export function calculatePhaseProgress(
   phase: BlueprintPhase,
   stepStates: ProjectStepState[],
 ): ProjectProgress {
-  const stepIds = new Set(phase.steps.map((s) => s.id));
-  const relevant = stepStates.filter((s) => stepIds.has(s.stepId));
-  const total = phase.steps.length;
+  const countableIds = new Set(phase.steps.filter(isCountableStep).map((s) => s.id));
+  const relevant = stepStates.filter((s) => countableIds.has(s.stepId));
+  const total = countableIds.size;
   const completed = relevant.filter((s) => s.status === "completed").length;
   const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
   const status: ProgressStatus =

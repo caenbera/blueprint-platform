@@ -7,22 +7,23 @@ import { Button } from "@/components/ui/button";
 import { BreadcrumbTrail } from "@/components/features/navigator/breadcrumb-trail";
 import { AssistantPanel } from "@/components/features/workspace/assistant-panel";
 import { CollapsibleSidebar } from "@/components/features/shell/collapsible-sidebar";
+import { ProjectSwitcher } from "@/components/features/shell/project-switcher";
 import { NavigatorProvider } from "@/providers/navigator-provider";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { signOutUser } from "@/services/auth";
 import { getGeneralSettings } from "@/services/platform-config";
-import { ADMIN_NAV_GROUPS } from "@/config/admin-nav";
+import { getAdminNavGroups } from "@/config/admin-nav";
 import { SUPER_ADMIN_NAV_GROUPS } from "@/config/super-admin-nav";
 import { ROLE_LABELS } from "@/config/roles";
 
 function AppShell({ children }: { children: React.ReactNode }) {
   const { membership, user, isSuperAdmin } = useAuth();
-  const { focusMode, selection } = useNavigator();
-  const [assistantCollapsed, setAssistantCollapsed] = useState(false);
+  const { focusMode, selection, activeProjectId, assistantCollapsed, setAssistantCollapsed } =
+    useNavigator();
   const router = useRouter();
 
-  const navGroups = isSuperAdmin ? SUPER_ADMIN_NAV_GROUPS : ADMIN_NAV_GROUPS;
+  const navGroups = isSuperAdmin ? SUPER_ADMIN_NAV_GROUPS : getAdminNavGroups(activeProjectId);
   const roleLabel = isSuperAdmin
     ? "Super Admin"
     : (membership && ROLE_LABELS[membership.role]) || "";
@@ -37,6 +38,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
       <CollapsibleSidebar
         groups={navGroups}
         brandSubtitle={membership?.organizationName ?? "Construye tu empresa paso a paso"}
+        topSlot={!isSuperAdmin && activeProjectId && <ProjectSwitcher />}
         footerTop={
           !isSuperAdmin && (
             <div className="rounded-lg border p-3">

@@ -32,6 +32,7 @@ function initials(name: string): string {
 export function CollapsibleSidebar({
   groups,
   brandSubtitle,
+  topSlot,
   footerTop,
   userName,
   userRoleLabel,
@@ -39,6 +40,8 @@ export function CollapsibleSidebar({
 }: {
   groups: NavGroup[];
   brandSubtitle: string;
+  /** Contenido extra debajo del logo, sobre el menu (ej. selector "Proyecto actual"). */
+  topSlot?: ReactNode;
   /** Contenido extra sobre el chip de usuario (ej. acceso rapido al Asistente IA). */
   footerTop?: ReactNode;
   userName: string;
@@ -71,6 +74,8 @@ export function CollapsibleSidebar({
           <p className="text-caption text-muted-foreground mt-1 truncate">{brandSubtitle}</p>
         </div>
       </div>
+
+      {topSlot}
 
       <nav className="flex-1 space-y-4 overflow-y-auto px-3 pb-4">
         {groups.map((group) => {

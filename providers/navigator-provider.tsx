@@ -24,6 +24,9 @@ export interface NavigatorContextValue {
   /** Modo Focus: oculta paneles secundarios, deja solo el breadcrumb + contenido. */
   focusMode: boolean;
   setFocusMode: (value: boolean) => void;
+  /** Colapso del Assistant Panel - vive aqui (no en AppShell) para que cualquier pagina pueda abrirlo (ej. "Acciones rapidas" del Roadmap). */
+  assistantCollapsed: boolean;
+  setAssistantCollapsed: (value: boolean | ((prev: boolean) => boolean)) => void;
 }
 
 export const NavigatorContext = createContext<NavigatorContextValue | null>(null);
@@ -33,6 +36,7 @@ export function NavigatorProvider({ children }: { children: ReactNode }) {
   const [activeProjectName, setActiveProjectName] = useState<string | null>(null);
   const [selection, setSelection] = useState<NavigatorSelection | null>(null);
   const [focusMode, setFocusMode] = useState(false);
+  const [assistantCollapsed, setAssistantCollapsed] = useState(false);
 
   return (
     <NavigatorContext.Provider
@@ -47,6 +51,8 @@ export function NavigatorProvider({ children }: { children: ReactNode }) {
         setSelection,
         focusMode,
         setFocusMode,
+        assistantCollapsed,
+        setAssistantCollapsed,
       }}
     >
       {children}
