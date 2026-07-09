@@ -230,6 +230,8 @@ export interface StepResource {
 export interface StepChecklistItem {
   id: string;
   task: string;
+  /** Subtitulo breve del item (Vista del Step, pestaña Checklist, mockup "08-vista-paso.png") - opcional. */
+  description?: string;
 }
 
 /** Define cuando un Step puede darse por terminado - el motor las usa automaticamente. */
@@ -246,6 +248,29 @@ export interface StepAssistantConfig {
   suggestions: string[];
 }
 
+/** Herramienta externa sugerida (pestaña "Guía del Paso") - Blueprint nunca reemplaza estas herramientas, solo las recomienda. */
+export interface StepRecommendedTool {
+  name: string;
+  url: string;
+}
+
+export type StepRegistroFieldType = "text" | "textarea" | "select" | "url";
+
+/**
+ * Campo del "Registro del Paso" (pestaña 2, Vista del Step): cada
+ * Blueprint define que campos necesita registrar en cada Step - Blueprint
+ * solo guarda informacion estrategica, nunca archivos.
+ */
+export interface StepRegistroField {
+  id: string;
+  label: string;
+  type: StepRegistroFieldType;
+  placeholder?: string;
+  helpText?: string;
+  options?: string[];
+  required?: boolean;
+}
+
 /** Todo el conocimiento del Step vive aqui, nunca fuera. */
 export interface StepContent {
   overview: { title: string; summary: string; body: string };
@@ -255,6 +280,14 @@ export interface StepContent {
   assistant: StepAssistantConfig;
   /** Referencias a KnowledgeItem.id (organizations/{orgId}/knowledgeItems) - reutilizables, no pertenecen solo a este Step. */
   knowledge: string[];
+  /** Campos opcionales de la pestaña "Guía del Paso" (mockup "08-vista-paso.png") - si faltan, esas tarjetas simplemente no se muestran. */
+  whyItMatters?: string;
+  bestPractices?: string[];
+  commonMistakes?: string[];
+  tip?: string;
+  recommendedTools?: StepRecommendedTool[];
+  /** Campos del "Registro del Paso" (pestaña 2) - vacio/ausente = la pestaña muestra un estado vacio. */
+  registroFields?: StepRegistroField[];
 }
 
 /** El objeto mas importante de la plataforma: una unica accion ejecutable. */
@@ -360,6 +393,8 @@ export interface ProjectStepState {
   completedAt: string | null;
   completedBy: string | null;
   updatedAt: string;
+  /** Respuestas del "Registro del Paso" (StepRegistroField.id -> valor) - Blueprint solo guarda informacion estrategica, nunca archivos. */
+  registroData?: Record<string, string>;
 }
 
 /** Nota privada del usuario sobre un Step - solo el autor puede verla. */

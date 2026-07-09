@@ -66,7 +66,23 @@ const stepResourceSchema = z.object({
 const stepChecklistItemSchema = z.object({
   id: z.string(),
   task: z.string(),
+  description: z.string().optional(),
   completed: z.boolean().optional(),
+});
+
+const stepRecommendedToolSchema = z.object({
+  name: z.string(),
+  url: z.string(),
+});
+
+const stepRegistroFieldSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  type: z.enum(["text", "textarea", "select", "url"]),
+  placeholder: z.string().optional(),
+  helpText: z.string().optional(),
+  options: z.array(z.string()).optional(),
+  required: z.boolean().optional(),
 });
 
 const stepContentSchema = z.object({
@@ -91,6 +107,14 @@ const stepContentSchema = z.object({
   // "notes"/"comments" del template quedan reservados a runtime (subcolecciones de ProjectStepState), no forman parte de la plantilla.
   notes: z.array(z.unknown()).optional(),
   comments: z.array(z.unknown()).optional(),
+  // Pestaña "Guía del Paso" (Vista del Step, mockup "08-vista-paso.png") - todos opcionales, si faltan la tarjeta correspondiente no se muestra.
+  whyItMatters: z.string().optional(),
+  bestPractices: z.array(z.string()).optional(),
+  commonMistakes: z.array(z.string()).optional(),
+  tip: z.string().optional(),
+  recommendedTools: z.array(stepRecommendedToolSchema).optional(),
+  // Pestaña "Registro del Paso" - campos que cada Blueprint define.
+  registroFields: z.array(stepRegistroFieldSchema).optional(),
 });
 
 const stepSchema = z.object({

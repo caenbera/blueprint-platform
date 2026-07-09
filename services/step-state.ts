@@ -61,6 +61,10 @@ function fromFirestore(id: string, data: Record<string, unknown>): ProjectStepSt
     completedAt: data.completedAt ? toIso(data.completedAt) : null,
     completedBy: (data.completedBy as string | null) ?? null,
     updatedAt: toIso(data.updatedAt),
+    registroData:
+      data.registroData && typeof data.registroData === "object"
+        ? (data.registroData as Record<string, string>)
+        : undefined,
   };
 }
 
@@ -144,6 +148,28 @@ export async function toggleChecklistItem(
     doc(db, stepStatesPath(orgId, projectId), stepId),
     {
       checklistDone: done ? arrayUnion(itemId) : arrayRemove(itemId),
+      updatedAt: serverTimestamp(),
+    },
+    { merge: true },
+  );
+}
+
+/**
+ * Guarda un unico campo del "Registro del Paso" (pestaña 2, Vista del
+ * Step) - notacion con punto para tocar solo esa clave del mapa
+ * `registroData` sin sobrescribir el resto de campos ya guardados.
+ */
+export async function updateStepRegistroField(
+  orgId: string,
+  projectId: string,
+  stepId: string,
+  fieldId: string,
+  value: string,
+): Promise<void> {
+  await setDoc(
+    doc(db, stepStatesPath(orgId, projectId), stepId),
+    {
+      [`registroData.${fieldId}`]: value,
       updatedAt: serverTimestamp(),
     },
     { merge: true },
