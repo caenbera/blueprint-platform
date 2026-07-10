@@ -2,10 +2,10 @@
   "id": "bp-asesoria-financiera",
   "slug": "asesoria-financiera",
   "name": "Asesoría Financiera",
-  "description": "Guía completa para crear y operar una firma de asesoría financiera, en 118 pasos repartidos en 8 bloques: desde la constitución legal hasta la captación y atención de tus primeros clientes.",
+  "description": "Guía completa para crear y operar una firma de asesoría financiera, en 120 pasos repartidos en 8 bloques: desde la constitución legal hasta la captación y atención de tus primeros clientes.",
   "category": "Servicios profesionales",
   "industry": "Finanzas",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Blueprint",
   "language": "es",
   "difficulty": "intermediate",
@@ -54,11 +54,104 @@
       ],
       "steps": [
         {
+          "id": "step-estructura-carpetas-drive",
+          "title": "Crear tu estructura de carpetas en Google Drive",
+          "description": "Organiza en un solo lugar gratuito todo lo que vas a producir durante este Blueprint.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Crear tu estructura de carpetas en Google Drive",
+              "summary": "Organiza en un solo lugar gratuito todo lo que vas a producir durante este Blueprint.",
+              "body": "Google Drive es gratuito y te permite tener un solo lugar centralizado para guardar cada documento, diseño y archivo que produzcas mientras construyes tu firma. Hoy Google Drive no ofrece una forma nativa de \"copiar\" la estructura de carpetas de otra persona con un clic - la manera más simple y confiable es crearla tú mismo siguiendo esta lista, una sola vez."
+            },
+            "objective": {
+              "description": "Crear una carpeta raíz en tu Google Drive con una subcarpeta para cada área de este Blueprint."
+            },
+            "checklist": [
+              {
+                "id": "chk-carpeta-01-legal",
+                "task": "Crear la carpeta \"01 - Legal y financiero\"",
+                "completed": false
+              },
+              {
+                "id": "chk-carpeta-02-cumplimiento",
+                "task": "Crear la carpeta \"02 - Cumplimiento y certificaciones\"",
+                "completed": false
+              },
+              {
+                "id": "chk-carpeta-03-servicios",
+                "task": "Crear la carpeta \"03 - Servicios y tarifas\"",
+                "completed": false
+              },
+              {
+                "id": "chk-carpeta-04-marca",
+                "task": "Crear la carpeta \"04 - Marca\"",
+                "completed": false
+              },
+              {
+                "id": "chk-carpeta-05-digital",
+                "task": "Crear la carpeta \"05 - Presencia digital\"",
+                "completed": false
+              },
+              {
+                "id": "chk-carpeta-06-herramientas",
+                "task": "Crear la carpeta \"06 - Herramientas y compras\"",
+                "completed": false
+              },
+              {
+                "id": "chk-carpeta-07-marketing",
+                "task": "Crear la carpeta \"07 - Marketing\"",
+                "completed": false
+              },
+              {
+                "id": "chk-carpeta-08-clientes",
+                "task": "Crear la carpeta \"08 - Clientes\" (con una subcarpeta por cada cliente nuevo)",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a organizar una estructura de carpetas clara en Google Drive para su firma de asesoría financiera.",
+              "context": "El usuario está iniciando su firma y quiere centralizar todos los archivos que va a producir.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Tener todo centralizado desde el primer día evita perder documentos importantes y facilita compartir información con tu contador, tu abogado o un futuro socio sin tener que buscar archivo por archivo.",
+            "tip": "Si te sientes cómodo con herramientas técnicas, puedes automatizar la creación de esta estructura con un script de Google Apps Script - pero crearla manualmente una sola vez, siguiendo esta lista, toma menos de 10 minutos y no requiere nada adicional.",
+            "recommendedTools": [
+              {
+                "name": "Google Drive",
+                "url": "https://drive.google.com"
+              }
+            ],
+            "registroFields": [
+              {
+                "id": "reg-carpeta-drive-raiz",
+                "label": "Enlace a tu carpeta raíz de Google Drive",
+                "type": "url",
+                "required": true,
+                "helpText": "Comparte la carpeta contigo mismo y pégala aquí - la vas a usar en los siguientes pasos para guardar cada archivo que produzcas."
+              }
+            ]
+          }
+        },
+        {
           "id": "step-elegir-nombre",
           "title": "Elegir el nombre comercial de la firma",
           "description": "Define el nombre bajo el cual tus clientes te van a conocer.",
           "icon": "type",
-          "order": 0,
+          "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -92,7 +185,17 @@
               "context": "El usuario está iniciando su firma y necesita definir el nombre comercial.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "El nombre es la base de tu marca, tu dominio y tus redes sociales - cambiarlo después de registrado implica rehacer papelería, sitio web y materiales.",
+            "tip": "Pronuncia el nombre en voz alta y pide a 2-3 personas que lo escriban de oído - si lo escriben mal, probablemente tus clientes también lo hagan.",
+            "registroFields": [
+              {
+                "id": "reg-nombre-elegido",
+                "label": "Nombre comercial elegido",
+                "type": "text",
+                "required": true
+              }
+            ]
           }
         },
         {
@@ -100,7 +203,7 @@
           "title": "Verificar disponibilidad del nombre comercial",
           "description": "Confirma que el nombre esté libre como marca, dominio y usuario en redes.",
           "icon": "search",
-          "order": 1,
+          "order": 2,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -134,7 +237,9 @@
               "context": "El usuario ya eligió un nombre y necesita confirmar que esté disponible.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Descubrir un conflicto de nombre después de invertir en marca y sitio web es mucho más costoso que verificarlo ahora.",
+            "tip": "Revisa también que el nombre no esté ya usado por otra firma de servicios financieros en tu país, aunque el dominio esté libre."
           }
         },
         {
@@ -142,7 +247,7 @@
           "title": "Comparar estructuras legales disponibles",
           "description": "Compara al menos dos figuras legales para tu firma.",
           "icon": "scale",
-          "order": 2,
+          "order": 3,
           "type": "one_time",
           "estimatedHours": 3,
           "difficulty": "medium",
@@ -232,7 +337,7 @@
           "title": "Definir si operarás solo o con socios",
           "description": "Decide la composición societaria inicial de la firma.",
           "icon": "handshake",
-          "order": 3,
+          "order": 4,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -266,7 +371,8 @@
               "context": "El usuario está definiendo la composición societaria de su firma nueva.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Aunque decidas operar solo, deja por escrito qué pasaría si en el futuro decides sumar un socio."
           }
         },
         {
@@ -274,7 +380,7 @@
           "title": "Redactar el acuerdo de socios (si aplica)",
           "description": "Documenta por escrito los acuerdos entre socios antes de registrar la firma.",
           "icon": "file-signature",
-          "order": 4,
+          "order": 5,
           "type": "one_time",
           "estimatedHours": 3,
           "difficulty": "medium",
@@ -317,7 +423,7 @@
           "title": "Elegir la estructura legal definitiva",
           "description": "Confirma por escrito la estructura legal bajo la cual se va a registrar la firma.",
           "icon": "scale",
-          "order": 5,
+          "order": 6,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -351,7 +457,15 @@
               "context": "El usuario ya comparó opciones y necesita confirmar la decisión final.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Esta decisión activa todos los trámites siguientes - una vez que registras bajo una estructura, cambiarla implica repetir gran parte del proceso legal.",
+            "registroFields": [
+              {
+                "id": "reg-estructura-elegida",
+                "label": "Estructura legal elegida",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -359,7 +473,7 @@
           "title": "Reunir los documentos requeridos para el registro",
           "description": "Ten listos todos los documentos que exige el trámite de registro mercantil.",
           "icon": "folder",
-          "order": 6,
+          "order": 7,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -393,7 +507,9 @@
               "context": "El usuario está preparando el trámite de registro legal.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un trámite rechazado por documentación incompleta puede atrasar semanas el resto del roadmap, ya que muchos pasos posteriores dependen del registro.",
+            "tip": "Haz una copia digital de cada documento y guárdala en tu carpeta de Google Drive antes de entregarlos - te van a pedir varios de estos mismos documentos después, en el banco y en el seguro."
           }
         },
         {
@@ -401,7 +517,7 @@
           "title": "Presentar el trámite de registro mercantil",
           "description": "Presenta y da seguimiento al trámite de registro legal de la firma.",
           "icon": "landmark",
-          "order": 7,
+          "order": 8,
           "type": "one_time",
           "estimatedHours": 6,
           "difficulty": "medium",
@@ -444,7 +560,7 @@
           "title": "Obtener el número de identificación tributaria",
           "description": "Obtén el número de identificación tributaria de la firma.",
           "icon": "receipt",
-          "order": 8,
+          "order": 9,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -478,7 +594,8 @@
               "context": "El usuario ya registró legalmente la firma.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Sin este número no puedes facturar legalmente ni abrir la cuenta bancaria empresarial - es el requisito que desbloquea casi todo lo demás."
           }
         },
         {
@@ -486,7 +603,7 @@
           "title": "Registrar la firma ante el municipio o autoridad local",
           "description": "Completa cualquier registro adicional exigido por la autoridad local.",
           "icon": "map-pin",
-          "order": 9,
+          "order": 10,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -520,7 +637,9 @@
               "context": "El usuario ya completó el registro mercantil nacional.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Operar sin el registro local exigido puede generar multas incluso si ya tienes en regla el registro nacional.",
+            "tip": "Confirma con la autoridad local si tu actividad de asesoría financiera requiere una licencia de funcionamiento específica, no solo el registro general de negocios."
           }
         },
         {
@@ -528,7 +647,7 @@
           "title": "Comparar bancos con cuentas para empresas de servicios profesionales",
           "description": "Compara al menos 2 bancos antes de elegir dónde abrir tu cuenta empresarial.",
           "icon": "landmark",
-          "order": 10,
+          "order": 11,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -562,7 +681,16 @@
               "context": "El usuario está por abrir la cuenta bancaria de su firma.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Las comisiones y el mal servicio bancario son de los costos silenciosos que más desgastan a una firma nueva mes a mes.",
+            "tip": "Pregunta específicamente por comisiones de transferencias internacionales si esperas cobrar a clientes en otro país.",
+            "registroFields": [
+              {
+                "id": "reg-banco-elegido",
+                "label": "Banco elegido",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -570,7 +698,7 @@
           "title": "Reunir los documentos requeridos por el banco",
           "description": "Ten listos los documentos de la firma que exige el banco.",
           "icon": "folder",
-          "order": 11,
+          "order": 12,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -604,7 +732,8 @@
               "context": "El usuario ya tiene su identificación tributaria y va a abrir la cuenta.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Llama antes al banco para confirmar la lista exacta de documentos - varía entre bancos y evita una segunda visita."
           }
         },
         {
@@ -612,7 +741,7 @@
           "title": "Abrir la cuenta bancaria empresarial",
           "description": "Abre la cuenta bancaria a nombre de la firma.",
           "icon": "wallet",
-          "order": 12,
+          "order": 13,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -655,7 +784,7 @@
           "title": "Activar la banca en línea",
           "description": "Activa el acceso a banca en línea de la cuenta empresarial.",
           "icon": "credit-card",
-          "order": 13,
+          "order": 14,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -689,7 +818,8 @@
               "context": "El usuario ya abrió la cuenta bancaria.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Activa también las notificaciones de movimientos - te van a ayudar a detectar cualquier cargo no autorizado de inmediato."
           }
         },
         {
@@ -697,7 +827,7 @@
           "title": "Elegir un software de contabilidad",
           "description": "Elige el software con el que vas a llevar la contabilidad de la firma.",
           "icon": "calculator",
-          "order": 14,
+          "order": 15,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -741,6 +871,14 @@
                 "name": "Xero",
                 "url": "https://www.xero.com"
               }
+            ],
+            "whyItMatters": "Un buen software de contabilidad ahorra horas cada mes y reduce errores en tus declaraciones de impuestos.",
+            "registroFields": [
+              {
+                "id": "reg-software-contabilidad",
+                "label": "Software de contabilidad elegido",
+                "type": "text"
+              }
             ]
           }
         },
@@ -749,7 +887,7 @@
           "title": "Configurar el software de contabilidad",
           "description": "Configura el software de contabilidad con las cuentas reales de la firma.",
           "icon": "calculator",
-          "order": 15,
+          "order": 16,
           "type": "one_time",
           "estimatedHours": 3,
           "difficulty": "medium",
@@ -783,7 +921,8 @@
               "context": "El usuario ya eligió su software de contabilidad y su cuenta bancaria está activa.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Configura las categorías de gasto antes de tu primera transacción - reclasificar meses de movimientos después es mucho más lento."
           }
         },
         {
@@ -791,7 +930,7 @@
           "title": "Cotizar seguros de responsabilidad profesional (E&O)",
           "description": "Cotiza al menos 2 aseguradoras que cubran servicios financieros.",
           "icon": "shield",
-          "order": 16,
+          "order": 17,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -825,7 +964,8 @@
               "context": "El usuario está por empezar a atender clientes y necesita protegerse frente a reclamos.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Los precios y coberturas de un seguro de responsabilidad profesional varían mucho entre aseguradoras - cotizar solo una te deja sin punto de comparación."
           }
         },
         {
@@ -833,7 +973,7 @@
           "title": "Contratar el seguro de responsabilidad profesional",
           "description": "Contrata la póliza antes de firmar tu primer contrato con un cliente.",
           "icon": "shield-check",
-          "order": 17,
+          "order": 18,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -871,6 +1011,18 @@
             "whyItMatters": "Sin esta cobertura, un solo reclamo de un cliente insatisfecho puede comprometer todo el patrimonio de la firma y el tuyo personal, dependiendo de tu estructura legal.",
             "commonMistakes": [
               "Empezar a atender clientes antes de tener la póliza activa, confiando en que 'nada va a pasar'."
+            ],
+            "registroFields": [
+              {
+                "id": "reg-aseguradora",
+                "label": "Aseguradora contratada",
+                "type": "text"
+              },
+              {
+                "id": "reg-poliza-drive",
+                "label": "Enlace a la póliza en Google Drive",
+                "type": "url"
+              }
             ]
           }
         },
@@ -879,7 +1031,7 @@
           "title": "Definir el presupuesto inicial de arranque",
           "description": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
           "icon": "piggy-bank",
-          "order": 18,
+          "order": 19,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "medium",
@@ -914,7 +1066,8 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Calcula al menos 6 meses de gastos fijos sin ingresos - la mayoría de las firmas de servicios profesionales tardan varios meses en conseguir sus primeros clientes pagos."
+            "tip": "Calcula al menos 6 meses de gastos fijos sin ingresos - la mayoría de las firmas de servicios profesionales tardan varios meses en conseguir sus primeros clientes pagos.",
+            "whyItMatters": "Sin un presupuesto claro es fácil subestimar cuánto capital necesitas y quedarte sin fondos antes de generar ingresos estables."
           }
         }
       ]
@@ -1009,7 +1162,8 @@
               "context": "El usuario ya identificó qué certificación necesita.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Muchos exámenes de certificación tienen cupos limitados o fechas fijas - inscribirte tarde puede atrasar meses tu certificación."
           }
         },
         {
@@ -1094,7 +1248,8 @@
               "context": "El usuario ya terminó de estudiar y va a presentar el examen.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Llega con anticipación y lleva contigo identificación oficial vigente - la mayoría de los centros de examen no permiten presentarlo sin ella."
           }
         },
         {
@@ -1136,7 +1291,15 @@
               "context": "El usuario ya aprobó su examen de certificación.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Este número es lo que un cliente o autoridad puede verificar para confirmar que estás autorizado a ejercer - tenlo visible en tu sitio web y materiales.",
+            "registroFields": [
+              {
+                "id": "reg-numero-registro",
+                "label": "Número de registro profesional",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -1200,7 +1363,15 @@
               "context": "El usuario necesita documentar cómo protege la información de sus clientes.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Una firma de asesoría financiera maneja información extremadamente sensible - no tener esta política documentada te expone legalmente y genera desconfianza.",
+            "registroFields": [
+              {
+                "id": "reg-politica-privacidad-drive",
+                "label": "Enlace al documento final en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -1242,7 +1413,8 @@
               "context": "El usuario ya definió su política de privacidad.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Activa la autenticación de dos factores en cualquier plataforma donde vayas a guardar información financiera de tus clientes."
           }
         },
         {
@@ -1284,7 +1456,8 @@
               "context": "El usuario está definiendo sus políticas de cumplimiento interno.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Identificar esto con honestidad desde el inicio es lo que te permite declarar un conflicto de interés antes de que un cliente lo descubra por su cuenta."
           }
         },
         {
@@ -1369,7 +1542,14 @@
               "context": "El usuario ya definió su proceso de declaración de conflictos.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-formato-conflicto-drive",
+                "label": "Enlace al formato en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -1411,7 +1591,8 @@
               "context": "El usuario está completando sus políticas de cumplimiento interno.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "La mayoría de los reguladores exigen conservar registros por un período mínimo - no tener esta política definida te deja expuesto en una auditoría."
           }
         },
         {
@@ -1453,7 +1634,8 @@
               "context": "El usuario ya obtuvo su certificación y necesita mantenerla vigente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Programa el recordatorio con al menos 60 días de anticipación - renovar una certificación a último minuto puede dejarte sin poder operar legalmente por unos días."
           }
         }
       ]
@@ -1505,7 +1687,8 @@
               "context": "El usuario está diseñando el catálogo de servicios de su firma nueva.",
               "suggestions": ["¿Qué tipos de servicios de asesoría financiera existen?"]
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "El listado inicial es el insumo para priorizar - si te saltas este paso sueles quedarte solo con las primeras ideas que se te ocurren, no con las mejores."
           }
         },
         {
@@ -1593,7 +1776,8 @@
               "context": "El usuario ya priorizó sus servicios principales.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Si un servicio no tiene un perfil de cliente claro, probablemente todavía no está listo para lanzarse."
           }
         },
         {
@@ -1635,7 +1819,8 @@
               "context": "El usuario está definiendo cómo va a cobrar por sus servicios.",
               "suggestions": ["¿Qué modelo de tarifas conviene para un asesor financiero nuevo?"]
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "El modelo de cobro que elijas determina qué tipo de cliente te va a buscar - no es solo una decisión de precio, es una decisión de posicionamiento."
           }
         },
         {
@@ -1677,7 +1862,8 @@
               "context": "El usuario ya comparó los modelos de cobro habituales.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Incluye en el cálculo el tiempo que dedicas a tareas no facturables (administración, marketing) - subestimarlo es el error más común al fijar tarifas."
           }
         },
         {
@@ -1795,7 +1981,8 @@
               "context": "El usuario ya definió su catálogo de servicios y su estructura de tarifas.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Los clientes deciden más rápido entre opciones claras que ante un servicio \"a la medida\" sin referencia de precio."
           }
         },
         {
@@ -1837,7 +2024,8 @@
               "context": "El usuario ya definió sus paquetes de asesoría.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Sé igual de explícito sobre lo que NO incluye cada paquete que sobre lo que sí incluye - ahí es donde suelen surgir los conflictos."
           }
         },
         {
@@ -1901,7 +2089,14 @@
               "context": "El usuario ya definió sus paquetes y tarifas.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-contrato-drive",
+                "label": "Enlace al borrador en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -1986,7 +2181,8 @@
               "context": "El usuario está terminando de definir las condiciones de su contrato.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Sin esta política clara, una cancelación conflictiva puede terminar en una disputa legal o en una mala reseña pública."
           }
         },
         {
@@ -2028,7 +2224,8 @@
               "context": "El usuario ya documentó sus tarifas y paquetes.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Publicar tarifas de referencia en el sitio filtra a los prospectos que no encajan con tu presupuesto antes de que agendes una reunión con ellos."
           }
         }
       ]
@@ -2080,7 +2277,8 @@
               "context": "El usuario está construyendo su identidad de marca.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Si usas tu nombre personal como marca, revisa que también esté disponible como usuario en tus redes principales."
           }
         },
         {
@@ -2122,7 +2320,8 @@
               "context": "El usuario está construyendo su identidad de marca.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un buen eslogan filtra en segundos si un visitante nuevo entiende qué haces - si tienes que explicarlo, probablemente no está funcionando."
           }
         },
         {
@@ -2164,7 +2363,8 @@
               "context": "El usuario está construyendo su identidad de marca.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "El color es lo primero que percibe el ojo antes de leer una palabra - en servicios financieros, los tonos asociados a estabilidad y confianza suelen funcionar mejor que los muy llamativos."
           }
         },
         {
@@ -2206,7 +2406,8 @@
               "context": "El usuario está construyendo su identidad de marca.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Elige tipografías que se vean bien tanto en pantalla como impresas - vas a necesitar ambas versiones."
           }
         },
         {
@@ -2248,7 +2449,15 @@
               "context": "El usuario ya definió su paleta de colores y tipografía.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "El logo va a aparecer en cada punto de contacto con un cliente potencial - en una firma de servicios financieros, un diseño que transmita seriedad ayuda especialmente a generar confianza.",
+            "registroFields": [
+              {
+                "id": "reg-logo-drive",
+                "label": "Enlace a los archivos del logo en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -2290,7 +2499,15 @@
               "context": "El usuario ya tiene el diseño principal de su logo.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Pide siempre el archivo en formato vectorial (SVG o AI) además del PNG - sin eso, cualquier ajuste futuro del logo requiere rehacerlo desde cero.",
+            "registroFields": [
+              {
+                "id": "reg-variantes-logo-drive",
+                "label": "Enlace a las variantes en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -2332,7 +2549,14 @@
               "context": "El usuario ya tiene su logo listo.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-tarjeta-drive",
+                "label": "Enlace al diseño en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -2374,7 +2598,14 @@
               "context": "El usuario ya tiene su logo listo.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-membrete-drive",
+                "label": "Enlace a la plantilla en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -2416,7 +2647,8 @@
               "context": "El usuario ya tiene su logo listo.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Incluye un enlace directo a tu herramienta de agendamiento de citas en la firma - reduce la fricción para que un prospecto reserve una reunión."
           }
         },
         {
@@ -2458,7 +2690,8 @@
               "context": "El usuario está construyendo su identidad de marca.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "El tono de comunicación es lo que hace que tu marca se sienta consistente, sin importar si el cliente te lee en el sitio web, en un correo o en una reunión."
           }
         },
         {
@@ -2543,7 +2776,15 @@
               "context": "El usuario necesita una biografía para su sitio web y sus perfiles profesionales.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Menciona una razón personal por la que haces este trabajo, no solo tus credenciales - genera más conexión que una lista de certificaciones.",
+            "registroFields": [
+              {
+                "id": "reg-biografia-drive",
+                "label": "Enlace a la biografía final en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         }
       ]
@@ -2595,7 +2836,8 @@
               "context": "El usuario ya verificó que su nombre comercial está disponible.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Registra el dominio por al menos 2 años y activa la renovación automática - perder tu dominio por un pago vencido puede tardar semanas en resolverse."
           }
         },
         {
@@ -2637,7 +2879,8 @@
               "context": "El usuario ya registró su dominio.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un sitio lento o caído en el momento en que un prospecto te busca puede costarte ese cliente potencial."
           }
         },
         {
@@ -2689,7 +2932,8 @@
                 "name": "WordPress",
                 "url": "https://wordpress.com"
               }
-            ]
+            ],
+            "tip": "Prioriza una plataforma que tú mismo puedas actualizar sin depender de un desarrollador para cada cambio de texto."
           }
         },
         {
@@ -2731,7 +2975,8 @@
               "context": "El usuario ya eligió la plataforma de su sitio web.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un mapa de sitio claro evita que un visitante se pierda buscando cómo contactarte - cada página debe tener un siguiente paso obvio."
           }
         },
         {
@@ -2773,7 +3018,8 @@
               "context": "El usuario está construyendo el contenido de su sitio web.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "El primer titular debe responder \"a quién ayudas y con qué\" en menos de 10 palabras - los visitantes deciden si se quedan en los primeros segundos."
           }
         },
         {
@@ -2815,7 +3061,14 @@
               "context": "El usuario ya definió sus paquetes de servicios.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-pagina-servicios-drive",
+                "label": "Enlace al borrador de contenido en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -2857,7 +3110,8 @@
               "context": "El usuario ya tiene su biografía profesional lista.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Acompaña el texto con tu fotografía profesional - las páginas \"Sobre mí\" con foto generan más confianza que las que solo tienen texto."
           }
         },
         {
@@ -2899,7 +3153,8 @@
               "context": "El usuario está terminando el contenido de su sitio web.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Cada paso adicional entre \"quiero contactarte\" y \"lo logré\" reduce las probabilidades de que un prospecto complete la acción."
           }
         },
         {
@@ -2941,7 +3196,8 @@
               "context": "El usuario ya redactó su política de privacidad.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Enlaza la política de privacidad desde el pie de página de todas las páginas del sitio, no solo desde una."
           }
         },
         {
@@ -2989,7 +3245,8 @@
               "context": "El usuario ya tiene todas las páginas de su sitio redactadas.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un sitio publicado con errores (enlaces rotos, formularios que no funcionan) daña más la credibilidad que no tener sitio todavía."
           }
         },
         {
@@ -3031,7 +3288,8 @@
               "context": "El usuario ya registró su dominio.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Configura también el correo en tu teléfono - vas a necesitar responder a prospectos rápido, no solo desde la computadora."
           }
         },
         {
@@ -3073,7 +3331,8 @@
               "context": "El usuario necesita fotos profesionales para su presencia digital.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Las fotos genéricas o de baja calidad son una de las señales más rápidas de que una firma no está bien establecida."
           }
         },
         {
@@ -3115,7 +3374,14 @@
               "context": "El usuario ya tiene su biografía y sus fotos profesionales listas.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-linkedin-url",
+                "label": "Enlace a tu perfil de LinkedIn",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3157,7 +3423,14 @@
               "context": "El usuario ya publicó su sitio web.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-google-business-url",
+                "label": "Enlace a tu perfil de Google Business",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3199,7 +3472,8 @@
               "context": "El usuario ya publicó su sitio web.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Prioriza los directorios que exigen verificación de credenciales - generan más confianza que los de registro abierto."
           }
         },
         {
@@ -3241,7 +3515,8 @@
               "context": "El usuario ya tiene su logo e identidad de marca lista.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Estar en una red donde tu cliente ideal no pasa tiempo es esfuerzo desperdiciado, sin importar qué tan buena sea tu presencia ahí."
           }
         },
         {
@@ -3283,7 +3558,8 @@
               "context": "El usuario ya publicó su sitio web.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Revisa los datos al menos una vez al mes - sin revisión periódica, tener la herramienta instalada no aporta ningún valor."
           }
         }
       ]
@@ -3297,11 +3573,92 @@
       "resources": [],
       "steps": [
         {
+          "id": "step-equipar-oficina",
+          "title": "Equipar tu oficina o espacio de trabajo",
+          "description": "Adquiere el equipo básico que necesitas para operar la firma día a día.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Equipar tu oficina o espacio de trabajo",
+              "summary": "Adquiere el equipo básico que necesitas para operar la firma día a día.",
+              "body": "Aunque una asesoría financiera no requiere tanto equipo físico como otros negocios, sí necesitas una base mínima confiable: una computadora adecuada, conexión a internet estable, y un espacio de trabajo donde puedas atender reuniones virtuales sin interrupciones."
+            },
+            "objective": {
+              "description": "Adquirir y organizar el equipo físico básico necesario para operar la firma."
+            },
+            "checklist": [
+              {
+                "id": "chk-equipo-computadora",
+                "task": "Comprar o acondicionar una computadora con buen rendimiento",
+                "completed": false
+              },
+              {
+                "id": "chk-equipo-internet",
+                "task": "Contratar una conexión a internet estable para videollamadas",
+                "completed": false
+              },
+              {
+                "id": "chk-equipo-espacio",
+                "task": "Definir tu espacio de trabajo (oficina propia, coworking o en casa)",
+                "completed": false
+              },
+              {
+                "id": "chk-equipo-impresora",
+                "task": "Comprar una impresora si vas a manejar documentos físicos",
+                "completed": false
+              },
+              {
+                "id": "chk-equipo-basicos",
+                "task": "Abastecer artículos básicos de oficina (papelería, café, agua)",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a definir qué equipo básico necesita para operar su firma de asesoría financiera.",
+              "context": "El usuario está equipando su espacio de trabajo antes de recibir a sus primeros clientes.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Un equipo confiable es indispensable para atender reuniones virtuales, construir planes financieros y proteger la información de tus clientes con software actualizado - una falla técnica en medio de una reunión con un cliente proyecta poca seriedad.",
+            "tip": "Prioriza una computadora con buena batería y una cámara y micrófono de calidad si la mayoría de tus reuniones van a ser virtuales - es más importante que la potencia bruta para la mayoría de firmas de servicios.",
+            "registroFields": [
+              {
+                "id": "reg-equipo-detalle",
+                "label": "Detalle de lo comprado",
+                "type": "textarea",
+                "helpText": "Lista lo que compraste (computadora, impresora, mobiliario, etc.)."
+              },
+              {
+                "id": "reg-equipo-costo-total",
+                "label": "Costo total invertido",
+                "type": "text"
+              },
+              {
+                "id": "reg-equipo-facturas-drive",
+                "label": "Enlace a las facturas en Google Drive",
+                "type": "url"
+              }
+            ]
+          }
+        },
+        {
           "id": "step-comparar-crm",
           "title": "Comparar opciones de CRM para firmas pequeñas",
           "description": "Compara al menos 2 opciones de CRM.",
           "icon": "search",
-          "order": 0,
+          "order": 1,
           "type": "one_time",
           "estimatedHours": 2,
           "difficulty": "easy",
@@ -3345,7 +3702,8 @@
                 "name": "Notion (como CRM ligero)",
                 "url": "https://www.notion.so"
               }
-            ]
+            ],
+            "whyItMatters": "Cambiar de CRM después de tener varios clientes cargados es mucho más costoso que comparar bien antes de elegir uno."
           }
         },
         {
@@ -3353,7 +3711,7 @@
           "title": "Elegir y contratar el CRM",
           "description": "Elige y contrata el CRM que vas a usar.",
           "icon": "users",
-          "order": 1,
+          "order": 2,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3387,7 +3745,14 @@
               "context": "El usuario ya comparó las opciones de CRM disponibles.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-crm-elegido",
+                "label": "CRM elegido",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -3395,7 +3760,7 @@
           "title": "Configurar el CRM con tus paquetes de servicios",
           "description": "Configura el CRM elegido con tus paquetes de servicios.",
           "icon": "wrench",
-          "order": 2,
+          "order": 3,
           "type": "one_time",
           "estimatedHours": 3,
           "difficulty": "medium",
@@ -3429,7 +3794,8 @@
               "context": "El usuario ya eligió su CRM y tiene sus paquetes de servicios definidos.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Configura al menos una automatización simple desde el inicio (por ejemplo, un recordatorio de seguimiento) - te ahorra tiempo desde el primer cliente."
           }
         },
         {
@@ -3437,7 +3803,7 @@
           "title": "Comparar software de planificación financiera",
           "description": "Compara opciones de software de planificación financiera.",
           "icon": "search",
-          "order": 3,
+          "order": 4,
           "type": "one_time",
           "estimatedHours": 3,
           "difficulty": "medium",
@@ -3471,7 +3837,8 @@
               "context": "El usuario está montando las herramientas operativas de su firma.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Esta herramienta es donde vas a pasar más tiempo trabajando con cada cliente - una interfaz confusa te va a costar horas cada semana."
           }
         },
         {
@@ -3479,7 +3846,7 @@
           "title": "Elegir y contratar el software de planificación financiera",
           "description": "Elige y contrata el software definitivo.",
           "icon": "line-chart",
-          "order": 4,
+          "order": 5,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3513,7 +3880,14 @@
               "context": "El usuario ya comparó las opciones disponibles.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-software-planificacion",
+                "label": "Software de planificación elegido",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -3521,7 +3895,7 @@
           "title": "Configurar una plantilla base de plan financiero",
           "description": "Configura una plantilla base de plan financiero.",
           "icon": "file-text",
-          "order": 5,
+          "order": 6,
           "type": "one_time",
           "estimatedHours": 4,
           "difficulty": "medium",
@@ -3555,7 +3929,14 @@
               "context": "El usuario ya eligió su software de planificación financiera.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-plantilla-plan-drive",
+                "label": "Enlace a la plantilla en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3563,7 +3944,7 @@
           "title": "Elegir una herramienta de agendamiento de citas",
           "description": "Elige una herramienta de agendamiento de citas.",
           "icon": "calendar",
-          "order": 6,
+          "order": 7,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3597,7 +3978,8 @@
               "context": "El usuario está montando las herramientas operativas de su firma.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Configura un tiempo de preparación (buffer) antes y después de cada reunión - agendar reuniones pegadas sin descanso reduce la calidad de cada una."
           }
         },
         {
@@ -3605,7 +3987,7 @@
           "title": "Conectar la herramienta de agendamiento a tu calendario",
           "description": "Conecta la herramienta de agendamiento a tu calendario personal.",
           "icon": "calendar-check",
-          "order": 7,
+          "order": 8,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3639,7 +4021,8 @@
               "context": "El usuario ya eligió su herramienta de agendamiento.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Sin esta conexión corres el riesgo real de agendar dos reuniones al mismo tiempo, algo que proyecta muy poco profesionalismo con un cliente nuevo."
           }
         },
         {
@@ -3647,7 +4030,7 @@
           "title": "Elegir una herramienta de firma electrónica",
           "description": "Elige una herramienta de firma electrónica para contratos.",
           "icon": "pen-tool",
-          "order": 8,
+          "order": 9,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3681,7 +4064,8 @@
               "context": "El usuario está montando las herramientas operativas de su firma.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido que uno que depende de imprimir y escanear."
           }
         },
         {
@@ -3689,7 +4073,7 @@
           "title": "Elegir una herramienta de almacenamiento seguro de documentos",
           "description": "Elige dónde vas a almacenar los documentos de tus clientes.",
           "icon": "cloud",
-          "order": 9,
+          "order": 10,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3723,7 +4107,8 @@
               "context": "El usuario ya definió su política de almacenamiento de información.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Verifica que la herramienta que elijas cumpla con estándares de cifrado reconocidos - estás guardando información financiera sensible de tus clientes."
           }
         },
         {
@@ -3731,7 +4116,7 @@
           "title": "Configurar las carpetas de almacenamiento por cliente",
           "description": "Configura la estructura de carpetas que vas a usar con cada cliente.",
           "icon": "folder",
-          "order": 10,
+          "order": 11,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3765,7 +4150,14 @@
               "context": "El usuario ya eligió su herramienta de almacenamiento.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-estructura-carpetas-cliente",
+                "label": "Estructura de carpetas definida por cliente",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -3773,7 +4165,7 @@
           "title": "Contratar una línea telefónica profesional",
           "description": "Contrata una línea telefónica separada de tu número personal.",
           "icon": "phone",
-          "order": 11,
+          "order": 12,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3807,7 +4199,8 @@
               "context": "El usuario está montando las herramientas operativas de su firma.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Configura un buzón de voz profesional desde el primer día - muchos prospectos llaman antes de escribir."
           }
         },
         {
@@ -3815,7 +4208,7 @@
           "title": "Documentar los pasos del proceso de análisis financiero",
           "description": "Documenta un proceso de análisis financiero repetible.",
           "icon": "search",
-          "order": 12,
+          "order": 13,
           "type": "one_time",
           "estimatedHours": 3,
           "difficulty": "medium",
@@ -3858,7 +4251,7 @@
           "title": "Definir el formato del entregable final para el cliente",
           "description": "Define el formato final del plan que le entregas al cliente.",
           "icon": "file-check",
-          "order": 13,
+          "order": 14,
           "type": "one_time",
           "estimatedHours": 1,
           "difficulty": "easy",
@@ -3892,7 +4285,14 @@
               "context": "El usuario ya documentó su proceso de análisis financiero.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-formato-entregable-drive",
+                "label": "Enlace a la plantilla final en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         }
       ]
@@ -3987,7 +4387,8 @@
               "context": "El usuario ya definió el perfil demográfico de su cliente ideal.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Entrevista a 2-3 clientes potenciales reales antes de asumir cuáles son sus dolores - las suposiciones sin validar suelen estar equivocadas."
           }
         },
         {
@@ -4029,7 +4430,8 @@
               "context": "El usuario ya tiene perfiles en redes sociales creados.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Publicar en muchos canales de forma inconsistente genera menos resultado que publicar en uno solo de forma constante."
           }
         },
         {
@@ -4071,7 +4473,8 @@
               "context": "El usuario ya eligió su canal principal de contenido.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Planea el mes completo de una sola vez - crear contenido sobre la marcha, semana a semana, es la razón más común por la que la gente deja de publicar."
           }
         },
         {
@@ -4113,7 +4516,8 @@
               "context": "El usuario ya tiene su calendario de contenido planeado.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Tu primer contenido no tiene que ser perfecto - tiene que existir, porque es lo que te obliga a publicar el segundo."
           }
         },
         {
@@ -4200,7 +4604,8 @@
               "context": "El usuario está construyendo su estrategia de networking profesional.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Prioriza asociaciones donde tu cliente ideal también participa, no solo las más grandes o conocidas del sector."
           }
         },
         {
@@ -4242,7 +4647,14 @@
               "context": "El usuario ya identificó las asociaciones relevantes.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-asociacion-drive",
+                "label": "Enlace al comprobante de afiliación en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -4284,7 +4696,8 @@
               "context": "El usuario ya tiene su perfil de Google Business creado.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "La mayoría de los prospectos revisan reseñas antes de agendar una primera reunión, incluso en servicios profesionales."
           }
         },
         {
@@ -4326,7 +4739,8 @@
               "context": "El usuario ya tiene sus perfiles en sitios de reseñas listos.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Facilita el proceso enviando el enlace directo para dejar la reseña - entre más pasos tenga que dar la persona, menos probable es que la complete."
           }
         },
         {
@@ -4368,7 +4782,14 @@
               "context": "El usuario ya tiene su identidad de marca y sus paquetes de servicios listos.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-folleto-drive",
+                "label": "Enlace al archivo final en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -4410,7 +4831,8 @@
               "context": "El usuario ya identificó los dolores y metas de su cliente ideal.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un webinar bien enfocado en un solo tema específico convierte mejor que uno que intenta cubrir todos tus servicios a la vez."
           }
         },
         {
@@ -4452,7 +4874,8 @@
               "context": "El usuario ya definió el formato y tema de su evento.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Envía un recordatorio 1 hora antes del evento - reduce significativamente la tasa de ausentismo de los inscritos."
           }
         }
       ]
@@ -4504,7 +4927,8 @@
               "context": "El usuario está a punto de recibir a sus primeros clientes.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un proceso de bienvenida claro reduce la ansiedad natural de un cliente nuevo y proyecta profesionalismo antes de la primera reunión."
           }
         },
         {
@@ -4568,7 +4992,14 @@
               "context": "El usuario está preparando su proceso de onboarding de clientes.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-cuestionario-drive",
+                "label": "Enlace a la plantilla en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -4632,7 +5063,14 @@
               "context": "El usuario está a punto de recibir a sus primeros clientes.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-paquete-bienvenida-drive",
+                "label": "Enlace al paquete en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -4674,7 +5112,8 @@
               "context": "El usuario tiene un prospecto interesado y necesita agendar la primera reunión.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Confirma la reunión un día antes - reduce el ausentismo, especialmente con clientes que agendaron con varias semanas de anticipación."
           }
         },
         {
@@ -4716,7 +5155,8 @@
               "context": "El usuario ya agendó la primera reunión con un prospecto.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un cliente que llega a la reunión ya habiendo reflexionado sobre sus finanzas aprovecha mucho mejor el tiempo que uno que responde las preguntas por primera vez en vivo."
           }
         },
         {
@@ -4758,7 +5198,8 @@
               "context": "El usuario ya agendó la primera reunión.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Mantén la agenda a menos de 5 puntos - una lista demasiado larga genera ansiedad en vez de claridad."
           }
         },
         {
@@ -4946,7 +5387,14 @@
               "context": "El usuario ya tuvo la primera reunión con el cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-resumen-drive",
+                "label": "Enlace al resumen en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -4988,7 +5436,8 @@
               "context": "El usuario necesita documentos adicionales para construir el plan financiero.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Da un plazo concreto para recibir los documentos (ej. 5 días hábiles) - sin fecha límite, es común que se retrasen semanas."
           }
         },
         {
@@ -5030,7 +5479,8 @@
               "context": "El usuario ya tuvo la primera reunión con el cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Un expediente completo y organizado desde el inicio es lo que te permite dar un servicio consistente incluso si el cliente vuelve después de meses sin contacto."
           }
         },
         {
@@ -5138,7 +5588,8 @@
               "context": "El usuario ya construyó el plan financiero del cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Deja pasar al menos un día entre terminar el plan y revisarlo - revisar inmediatamente después de escribirlo hace más fácil pasar por alto errores."
           }
         },
         {
@@ -5180,7 +5631,8 @@
               "context": "El usuario ya revisó el plan financiero del cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Agenda esta reunión con al menos 45 minutos - presentar un plan financiero completo toma más tiempo que una reunión de seguimiento normal."
           }
         },
         {
@@ -5222,7 +5674,14 @@
               "context": "El usuario ya tiene el plan financiero terminado y revisado.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "registroFields": [
+              {
+                "id": "reg-plan-final-drive",
+                "label": "Enlace al plan financiero entregado en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5264,7 +5723,8 @@
               "context": "El usuario ya presentó el plan financiero al cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Tener el plan formalmente aceptado por escrito evita ambigüedad sobre qué se acordó si surge una diferencia de opinión más adelante."
           }
         },
         {
@@ -5306,7 +5766,8 @@
               "context": "El usuario ya formalizó el plan financiero con el cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Programa los próximos 3 seguimientos de una sola vez, no uno a la vez - reduce el riesgo de que se pierda el ritmo del acompañamiento."
           }
         },
         {
@@ -5402,7 +5863,8 @@
               "context": "El usuario lleva al menos un trimestre trabajando con el cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "tip": "Haz esta pregunta directamente: \"¿qué es lo que menos te ha gustado del servicio?\" - da información mucho más útil que preguntar en general cómo va todo."
           }
         },
         {
@@ -5444,7 +5906,8 @@
               "context": "El usuario ya recibió retroalimentación positiva del cliente.",
               "suggestions": []
             },
-            "knowledge": []
+            "knowledge": [],
+            "whyItMatters": "Pedir una referencia en el momento en que el cliente está más satisfecho (justo después de una buena retroalimentación) es cuando tiene más probabilidad de decir que sí."
           }
         }
       ]
