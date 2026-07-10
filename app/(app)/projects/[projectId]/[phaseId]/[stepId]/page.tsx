@@ -4,6 +4,7 @@ import { createElement, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { toast } from "sonner";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -211,31 +212,60 @@ export default function StepView() {
     (depId) => findStepById(project.blueprintSnapshot, depId)?.title ?? depId,
   );
 
-  async function handleToggleChecklist(itemId: string, done: boolean) {
-    await toggleChecklistItem(orgId!, projectId, stepId, itemId, done);
-    setAllStepStates((prev) =>
-      (prev ?? []).map((s) =>
-        s.stepId === stepId
+  /**
+   * Actualiza (o crea) la entrada local de este Step dentro de
+   * `allStepStates`. Necesario porque un Step recien tocado por primera
+   * vez todavia no tiene un ProjectStepState en Firestore ni en el estado
+   * local - sin este upsert, `.map()` no encuentra ninguna entrada que
+   * coincida y el cambio (checklist, registro) nunca se refleja en
+   * pantalla aunque la escritura en Firestore si haya funcionado.
+   */
+  function upsertLocalStepState(patch: (current: ProjectStepState) => Partial<ProjectStepState>) {
+    setAllStepStates((prev) => {
+      const list = prev ?? [];
+      const idx = list.findIndex((s) => s.stepId === stepId);
+      const base: ProjectStepState =
+        idx === -1
           ? {
-              ...s,
-              checklistDone: done
-                ? [...s.checklistDone, itemId]
-                : s.checklistDone.filter((id) => id !== itemId),
+              stepId,
+              status: "pending",
+              checklistDone: [],
+              timeInvestedMinutes: 0,
+              completedAt: null,
+              completedBy: null,
+              updatedAt: new Date().toISOString(),
             }
-          : s,
-      ),
-    );
+          : list[idx];
+      const updated = { ...base, ...patch(base) };
+      if (idx === -1) return [...list, updated];
+      const next = [...list];
+      next[idx] = updated;
+      return next;
+    });
+  }
+
+  async function handleToggleChecklist(itemId: string, done: boolean) {
+    try {
+      await toggleChecklistItem(orgId!, projectId, stepId, itemId, done);
+      upsertLocalStepState((current) => ({
+        checklistDone: done
+          ? [...current.checklistDone, itemId]
+          : current.checklistDone.filter((id) => id !== itemId),
+      }));
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "No se pudo actualizar el checklist.");
+    }
   }
 
   async function handleSaveRegistroField(fieldId: string, value: string) {
-    await updateStepRegistroField(orgId!, projectId, stepId, fieldId, value);
-    setAllStepStates((prev) =>
-      (prev ?? []).map((s) =>
-        s.stepId === stepId
-          ? { ...s, registroData: { ...(s.registroData ?? {}), [fieldId]: value } }
-          : s,
-      ),
-    );
+    try {
+      await updateStepRegistroField(orgId!, projectId, stepId, fieldId, value);
+      upsertLocalStepState((current) => ({
+        registroData: { ...(current.registroData ?? {}), [fieldId]: value },
+      }));
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "No se pudo guardar el registro.");
+    }
   }
 
   async function handleComplete() {

@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { FolderKanban, Loader2, Plus } from "lucide-react";
+import { toast } from "sonner";
+import { FolderKanban, Loader2, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { EmptyState } from "@/components/ui/empty-state";
 import { useAuth } from "@/hooks/use-auth";
-import { listProjects } from "@/services/projects";
+import { deleteProject, listProjects } from "@/services/projects";
 import { calculateProjectProgress, listStepStates } from "@/services/step-state";
 import type { Project } from "@/types/domain";
 import type { ProjectProgress } from "@/services/step-state";
@@ -28,7 +29,7 @@ export default function ProjectsPage() {
   const orgId = membership?.orgId ?? null;
   const [rows, setRows] = useState<ProjectRow[] | null>(null);
 
-  useEffect(() => {
+  function reload() {
     if (!orgId) return;
     listProjects(orgId).then(async (projects) => {
       const withProgress = await Promise.all(
@@ -39,7 +40,20 @@ export default function ProjectsPage() {
       );
       setRows(withProgress);
     });
-  }, [orgId]);
+  }
+
+  useEffect(reload, [orgId]);
+
+  async function handleDelete(project: Project) {
+    if (!orgId) return;
+    if (
+      !window.confirm(`¿Eliminar el proyecto "${project.name}"? Esta acción no se puede deshacer.`)
+    )
+      return;
+    await deleteProject(orgId, project.id);
+    toast.success(`"${project.name}" eliminado.`);
+    reload();
+  }
 
   if (!orgId || rows === null) {
     return (
@@ -77,22 +91,36 @@ export default function ProjectsPage() {
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {rows.map(({ project, progress }) => (
-          <Link
+          <div
             key={project.id}
-            href={`/projects/${project.id}`}
             className="hover:border-primary/50 flex flex-col gap-3 rounded-lg border p-4 transition-colors"
           >
-            <div className="flex items-center justify-between gap-2">
-              <span className="text-h4 truncate">{project.name}</span>
-              <Badge variant="outline">{project.blueprintSnapshot.name}</Badge>
+            <div className="flex items-start justify-between gap-2">
+              <Link
+                href={`/projects/${project.id}`}
+                className="text-h4 line-clamp-2 min-w-0 flex-1 hover:underline"
+              >
+                {project.name}
+              </Link>
+              <div className="flex shrink-0 items-center gap-1">
+                <Badge variant="outline">{project.blueprintSnapshot.name}</Badge>
+                <Button
+                  variant="ghost"
+                  size="icon-sm"
+                  aria-label={`Eliminar "${project.name}"`}
+                  onClick={() => handleDelete(project)}
+                >
+                  <Trash2 className="text-muted-foreground h-3.5 w-3.5" />
+                </Button>
+              </div>
             </div>
-            <div className="flex flex-col gap-1.5">
+            <Link href={`/projects/${project.id}`} className="flex flex-col gap-1.5">
               <Progress value={progress.percent} />
               <span className="text-small text-muted-foreground">
                 {progress.percent}% · {progress.completed} de {progress.total} pasos
               </span>
-            </div>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     </div>
