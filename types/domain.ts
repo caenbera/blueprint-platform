@@ -154,6 +154,14 @@ export type ProgressStatus = "no_iniciado" | "en_progreso" | "aprobado";
 
 export type BlueprintStatus = "draft" | "published" | "archived";
 export type BlueprintDifficulty = "beginner" | "intermediate" | "advanced";
+/**
+ * "construction": tiene principio y fin, el progreso llega a 100% (motor
+ * de hoy, calculateProjectProgress). "operations": ciclo recurrente sin
+ * fin (Strategy/Operations/Business/Customers semanal) - mismo motor de
+ * Step, pero el progreso se mide por periodo actual, nunca llega a 100%.
+ * Opcional y default "construction" para no romper Blueprints existentes.
+ */
+export type BlueprintType = "construction" | "operations";
 
 /** El tipo del Step define su ciclo de vida, nunca su estructura. */
 export type StepType =
@@ -353,6 +361,8 @@ export interface Blueprint {
   coverImage: string;
   icon: string;
   status: BlueprintStatus;
+  /** Ver BlueprintType. Opcional para compatibilidad con Blueprints existentes - ausente se trata como "construction". */
+  blueprintType?: BlueprintType;
   settings: BlueprintSettings;
   roadmap: BlueprintPhase[];
   createdBy: string;

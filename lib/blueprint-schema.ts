@@ -184,6 +184,8 @@ export const blueprintJsonSchema = z.object({
   coverImage: z.string().default(""),
   icon: z.string().default(""),
   status: z.enum(["draft", "published", "archived"]).default("draft"),
+  // Ver types/domain.ts#BlueprintType. Ausente = "construction" (compatibilidad con Blueprints existentes).
+  blueprintType: z.enum(["construction", "operations"]).optional(),
   settings: z
     .object({
       allowComments: z.boolean().default(true),
