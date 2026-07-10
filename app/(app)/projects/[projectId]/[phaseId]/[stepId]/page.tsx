@@ -272,7 +272,18 @@ export default function StepView() {
     setCompleting(true);
     try {
       await setStepStatus(orgId!, projectId, step!, "completed");
+      // Sin esto, findNextStep (usado en la pantalla "Paso Completado" de
+      // abajo) sigue viendo este mismo Step como pendiente en el estado
+      // local y "Continuar con el siguiente paso" apunta de vuelta a el
+      // mismo paso en el que ya estas.
+      upsertLocalStepState(() => ({
+        status: "completed",
+        completedAt: new Date().toISOString(),
+        completedBy: user?.uid ?? null,
+      }));
       setJustCompleted(true);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "No se pudo completar el paso.");
     } finally {
       setCompleting(false);
     }
