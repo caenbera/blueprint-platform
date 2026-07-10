@@ -83,7 +83,10 @@ service cloud.firestore {
       allow read: if (isSignedIn() && resource.data.status == 'published') || isSuperAdmin();
       allow create: if isSuperAdmin() && request.resource.data.createdBy == request.auth.uid;
       allow update: if isSuperAdmin();
-      allow delete: if false;
+      // Los Proyectos ya creados congelan una copia propia (blueprintSnapshot)
+      // al momento de iniciar - eliminar la plantilla nunca afecta un
+      // Proyecto en curso, por eso el borrado real es seguro aqui.
+      allow delete: if isSuperAdmin();
     }
 
     // Auditoria de plataforma (Sprint 16): coleccion top-level, distinta

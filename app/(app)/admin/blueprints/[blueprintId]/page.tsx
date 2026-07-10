@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { ArrowLeft, Loader2, Pencil } from "lucide-react";
+import { ArrowLeft, Loader2, Pencil, Trash2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/select";
 import { SuperAdminGuard } from "@/components/features/admin/super-admin-guard";
 import {
+  deleteBlueprint,
   getBlueprint,
   updateBlueprintMeta,
   updateBlueprintRoadmap,
@@ -110,6 +111,18 @@ export default function BlueprintEditorPage() {
     }
   }
 
+  async function handleDelete() {
+    if (
+      !window.confirm(
+        `¿Eliminar "${blueprint!.name}"? Esta acción no se puede deshacer. Los proyectos ya creados a partir de este Blueprint no se ven afectados.`,
+      )
+    )
+      return;
+    await deleteBlueprint(blueprintId);
+    toast.success(`"${blueprint!.name}" eliminado.`);
+    router.push("/admin/blueprints");
+  }
+
   async function persistRoadmap(nextRoadmap: BlueprintPhase[]) {
     await updateBlueprintRoadmap(blueprintId, nextRoadmap);
     setBlueprint((prev) => (prev ? { ...prev, roadmap: nextRoadmap } : prev));
@@ -190,6 +203,9 @@ export default function BlueprintEditorPage() {
                 Archivar
               </Button>
             )}
+            <Button size="sm" variant="ghost" onClick={handleDelete}>
+              <Trash2 className="h-3.5 w-3.5" /> Eliminar
+            </Button>
           </div>
         </div>
 

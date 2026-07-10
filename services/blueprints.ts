@@ -1,6 +1,7 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -61,15 +62,29 @@ export async function getBlueprint(blueprintId: string): Promise<Blueprint | nul
 
 /**
  * Valida un archivo JSON contra el schema oficial (lib/blueprint-schema.ts)
- * y crea el Blueprint completo de una sola vez - flujo priorizado del
- * Constructor de Blueprints (Sprint 17: "importar JSON primero"). El `id`
- * del template se ignora; Firestore asigna su propio ID de documento.
+ * y crea o actualiza el Blueprint - flujo priorizado del Constructor de
+ * Blueprints (Sprint 17: "importar JSON primero"). Si ya existe un
+ * Blueprint con el mismo `slug` se actualiza ese documento en vez de crear
+ * uno nuevo (mismo criterio de "upsert por slug" que ya usaba
+ * scripts/seed-blueprint.cjs) - reimportar el mismo archivo mientras se
+ * ajusta contenido nunca genera duplicados. El `id` del template se
+ * ignora; Firestore asigna su propio ID de documento la primera vez.
  */
 export async function importBlueprintFromJson(json: unknown): Promise<string> {
   const user = auth.currentUser;
   if (!user) throw new Error("No hay sesión activa.");
 
   const blueprint = validateBlueprintJson(json);
+
+  const existing = await getDocs(
+    query(collection(db, COLLECTION), where("slug", "==", blueprint.slug)),
+  );
+  if (!existing.empty) {
+    const existingRef = existing.docs[0].ref;
+    await updateDoc(existingRef, { ...blueprint, updatedAt: serverTimestamp() });
+    return existingRef.id;
+  }
+
   const ref = await addDoc(collection(db, COLLECTION), {
     ...blueprint,
     createdBy: user.uid,
@@ -77,6 +92,17 @@ export async function importBlueprintFromJson(json: unknown): Promise<string> {
     updatedAt: serverTimestamp(),
   });
   return ref.id;
+}
+
+/**
+ * Borrado real (no soft-delete): los Blueprints son plantillas de
+ * plataforma sin datos de usuario propios, y cada Proyecto ya creado
+ * congela su propia copia (blueprintSnapshot) al iniciar - eliminar la
+ * plantilla nunca afecta un Proyecto en curso. Ver firestore.rules
+ * (`allow delete: if isSuperAdmin()`).
+ */
+export async function deleteBlueprint(blueprintId: string): Promise<void> {
+  await deleteDoc(doc(db, COLLECTION, blueprintId));
 }
 
 export async function updateBlueprintStatus(

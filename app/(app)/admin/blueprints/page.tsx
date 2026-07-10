@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Layers, ListChecks, Loader2, Upload } from "lucide-react";
+import { toast } from "sonner";
+import { Layers, ListChecks, Loader2, Trash2, Upload } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
 import { SuperAdminGuard } from "@/components/features/admin/super-admin-guard";
 import { ImportBlueprintJsonDialog } from "@/components/features/admin/import-blueprint-json-dialog";
-import { listAllBlueprints } from "@/services/blueprints";
+import { deleteBlueprint, listAllBlueprints } from "@/services/blueprints";
 import type { Blueprint, BlueprintStatus } from "@/types/domain";
 
 const STATUS_META: Record<
@@ -36,6 +37,18 @@ export default function AdminBlueprintsPage() {
   useEffect(() => {
     reload();
   }, []);
+
+  async function handleDelete(blueprint: Blueprint) {
+    if (
+      !window.confirm(
+        `¿Eliminar "${blueprint.name}"? Esta acción no se puede deshacer. Los proyectos ya creados a partir de este Blueprint no se ven afectados.`,
+      )
+    )
+      return;
+    await deleteBlueprint(blueprint.id);
+    toast.success(`"${blueprint.name}" eliminado.`);
+    reload();
+  }
 
   return (
     <SuperAdminGuard>
@@ -71,29 +84,45 @@ export default function AdminBlueprintsPage() {
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {blueprints?.map((blueprint) => (
-            <Link
+            <div
               key={blueprint.id}
-              href={`/admin/blueprints/${blueprint.id}`}
               className="hover:border-primary/50 flex flex-col gap-2 rounded-lg border p-4 transition-colors"
             >
               <div className="flex items-center justify-between gap-2">
-                <span className="text-h4 truncate">{blueprint.name}</span>
-                <Badge variant={STATUS_META[blueprint.status].variant}>
-                  {STATUS_META[blueprint.status].label}
-                </Badge>
+                <Link
+                  href={`/admin/blueprints/${blueprint.id}`}
+                  className="text-h4 truncate hover:underline"
+                >
+                  {blueprint.name}
+                </Link>
+                <div className="flex shrink-0 items-center gap-1">
+                  <Badge variant={STATUS_META[blueprint.status].variant}>
+                    {STATUS_META[blueprint.status].label}
+                  </Badge>
+                  <Button
+                    variant="ghost"
+                    size="icon-sm"
+                    aria-label={`Eliminar "${blueprint.name}"`}
+                    onClick={() => handleDelete(blueprint)}
+                  >
+                    <Trash2 className="text-muted-foreground h-3.5 w-3.5" />
+                  </Button>
+                </div>
               </div>
-              <p className="text-body text-muted-foreground line-clamp-2">
-                {blueprint.description}
-              </p>
-              <div className="text-small text-muted-foreground mt-1 flex items-center gap-3">
-                <span className="flex items-center gap-1">
-                  <Layers className="h-3.5 w-3.5" /> {blueprint.roadmap.length} fases
-                </span>
-                <span className="flex items-center gap-1">
-                  <ListChecks className="h-3.5 w-3.5" /> {countSteps(blueprint)} pasos
-                </span>
-              </div>
-            </Link>
+              <Link href={`/admin/blueprints/${blueprint.id}`} className="contents">
+                <p className="text-body text-muted-foreground line-clamp-2">
+                  {blueprint.description}
+                </p>
+                <div className="text-small text-muted-foreground mt-1 flex items-center gap-3">
+                  <span className="flex items-center gap-1">
+                    <Layers className="h-3.5 w-3.5" /> {blueprint.roadmap.length} fases
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <ListChecks className="h-3.5 w-3.5" /> {countSteps(blueprint)} pasos
+                  </span>
+                </div>
+              </Link>
+            </div>
           ))}
         </div>
 
