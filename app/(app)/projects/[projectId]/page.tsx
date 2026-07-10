@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import {
   ArrowRight,
   CheckCircle2,
+  ChevronDown,
   Clock,
   FileText,
   Flag,
@@ -27,6 +28,7 @@ import {
   PHASE_STATUS_META,
   resolvePhaseIcon,
 } from "@/lib/phase-icon";
+import { BLUEPRINT_BLOCKS } from "@/lib/phase-block";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { getProject, syncProjectBlueprint } from "@/services/projects";
@@ -40,7 +42,13 @@ import {
   findNextStep,
   listStepStates,
 } from "@/services/step-state";
-import type { Blueprint, Membership, Project, ProjectStepState } from "@/types/domain";
+import type {
+  Blueprint,
+  BlueprintPhase,
+  Membership,
+  Project,
+  ProjectStepState,
+} from "@/types/domain";
 
 /**
  * Roadmap del Proyecto (mockup "06-roadmap.png", pantalla A6): el Centro de
@@ -60,6 +68,7 @@ export default function ProjectRoadmapPage() {
   const [members, setMembers] = useState<Membership[] | null>(null);
   const [latestBlueprint, setLatestBlueprint] = useState<Blueprint | null>(null);
   const [syncing, setSyncing] = useState(false);
+  const [collapsedBlocks, setCollapsedBlocks] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     if (!orgId) return;
@@ -127,6 +136,64 @@ export default function ProjectRoadmapPage() {
         .findIndex((s) => s.id === next.step.id) + 1
     : 0;
 
+  function toggleBlock(value: string) {
+    setCollapsedBlocks((prev) => ({ ...prev, [value]: !prev[value] }));
+  }
+
+  function renderPhaseRow(phase: BlueprintPhase, i: number) {
+    const phaseProgress = calculatePhaseProgress(phase, stepStates!);
+    const status = calculatePhaseStatus(phase, stepStates!, nextPhaseId);
+    const statusMeta = PHASE_STATUS_META[status];
+    const Icon = resolvePhaseIcon(phase.title);
+    return (
+      <Link
+        key={phase.id}
+        href={`/projects/${project!.id}/${phase.id}`}
+        className="hover:bg-muted/50 flex items-center gap-3 px-4 py-3"
+      >
+        <span
+          className={cn(
+            "text-small flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-semibold",
+            PHASE_BADGE_COLORS[i % PHASE_BADGE_COLORS.length],
+          )}
+        >
+          {i + 1}
+        </span>
+        <div
+          className={cn(
+            "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
+            PHASE_TILE_COLORS[i % PHASE_TILE_COLORS.length],
+          )}
+        >
+          <Icon className="h-5 w-5" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="text-body font-medium">{phase.title}</p>
+          <p className="text-small text-muted-foreground truncate">{phase.description}</p>
+          <div className="mt-1.5 flex items-center gap-2">
+            <Progress value={phaseProgress.percent} className="max-w-40 flex-1" />
+            <span className="text-small text-muted-foreground shrink-0">
+              {phaseProgress.percent}% · {phaseProgress.completed} de {phaseProgress.total} Steps
+            </span>
+          </div>
+        </div>
+        <Badge variant={statusMeta.variant} className="shrink-0">
+          {statusMeta.label}
+        </Badge>
+      </Link>
+    );
+  }
+
+  // Agrupa las Fases en los 4 bloques universales (Strategy/Operations/
+  // Business/Customers) solo si el Blueprint las etiquetó - retrocompatible
+  // con Blueprints que no usan `block` (se ve como lista plana, igual que antes).
+  const phaseGroups = BLUEPRINT_BLOCKS.map((meta) => ({
+    meta,
+    phases: sortedPhases.filter((p) => p.block === meta.value),
+  })).filter((g) => g.phases.length > 0);
+  const ungroupedPhases = sortedPhases.filter((p) => !p.block);
+  const hasBlocks = phaseGroups.length > 0;
+
   return (
     <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4">
       <div className="mb-1 flex items-center gap-2">
@@ -191,54 +258,73 @@ export default function ProjectRoadmapPage() {
               <p className="text-h4">Fases del proyecto</p>
               <span className="text-small text-muted-foreground">{sortedPhases.length} fases</span>
             </div>
-            <div className="flex flex-col divide-y">
-              {sortedPhases.map((phase, i) => {
-                const phaseProgress = calculatePhaseProgress(phase, stepStates);
-                const status = calculatePhaseStatus(phase, stepStates, nextPhaseId);
-                const statusMeta = PHASE_STATUS_META[status];
-                const Icon = resolvePhaseIcon(phase.title);
-                return (
-                  <Link
-                    key={phase.id}
-                    href={`/projects/${project.id}/${phase.id}`}
-                    className="hover:bg-muted/50 flex items-center gap-3 px-4 py-3"
-                  >
-                    <span
-                      className={cn(
-                        "text-small flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-semibold",
-                        PHASE_BADGE_COLORS[i % PHASE_BADGE_COLORS.length],
-                      )}
-                    >
-                      {i + 1}
-                    </span>
-                    <div
-                      className={cn(
-                        "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
-                        PHASE_TILE_COLORS[i % PHASE_TILE_COLORS.length],
-                      )}
-                    >
-                      <Icon className="h-5 w-5" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-body font-medium">{phase.title}</p>
-                      <p className="text-small text-muted-foreground truncate">
-                        {phase.description}
-                      </p>
-                      <div className="mt-1.5 flex items-center gap-2">
-                        <Progress value={phaseProgress.percent} className="max-w-40 flex-1" />
-                        <span className="text-small text-muted-foreground shrink-0">
-                          {phaseProgress.percent}% · {phaseProgress.completed} de{" "}
-                          {phaseProgress.total} Steps
+
+            {hasBlocks ? (
+              <div className="flex flex-col divide-y">
+                {phaseGroups.map(({ meta, phases }) => {
+                  const BlockIcon = meta.icon;
+                  const blockCompleted = phases.reduce(
+                    (sum, p) => sum + calculatePhaseProgress(p, stepStates).completed,
+                    0,
+                  );
+                  const blockTotal = phases.reduce(
+                    (sum, p) => sum + calculatePhaseProgress(p, stepStates).total,
+                    0,
+                  );
+                  const blockPercent =
+                    blockTotal === 0 ? 0 : Math.round((blockCompleted / blockTotal) * 100);
+                  const collapsed = collapsedBlocks[meta.value] ?? false;
+                  return (
+                    <div key={meta.value}>
+                      <button
+                        type="button"
+                        onClick={() => toggleBlock(meta.value)}
+                        className="hover:bg-muted/30 flex w-full items-center gap-2.5 px-4 py-2.5"
+                      >
+                        <div
+                          className={cn(
+                            "flex h-7 w-7 shrink-0 items-center justify-center rounded-md",
+                            meta.tileColor,
+                          )}
+                        >
+                          <BlockIcon className="h-4 w-4" />
+                        </div>
+                        <span className="text-small flex-1 text-left font-semibold tracking-wide uppercase">
+                          {meta.label}
                         </span>
-                      </div>
+                        <span className="text-small text-muted-foreground">
+                          {blockPercent}% · {blockCompleted} de {blockTotal} Steps
+                        </span>
+                        <ChevronDown
+                          className={cn(
+                            "text-muted-foreground h-3.5 w-3.5 shrink-0 transition-transform",
+                            collapsed && "-rotate-90",
+                          )}
+                        />
+                      </button>
+                      {!collapsed && (
+                        <div className="divide-y border-t">
+                          {phases.map((phase) =>
+                            renderPhaseRow(phase, sortedPhases.indexOf(phase)),
+                          )}
+                        </div>
+                      )}
                     </div>
-                    <Badge variant={statusMeta.variant} className="shrink-0">
-                      {statusMeta.label}
-                    </Badge>
-                  </Link>
-                );
-              })}
-            </div>
+                  );
+                })}
+                {ungroupedPhases.length > 0 && (
+                  <div className="divide-y">
+                    {ungroupedPhases.map((phase) =>
+                      renderPhaseRow(phase, sortedPhases.indexOf(phase)),
+                    )}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="flex flex-col divide-y">
+                {sortedPhases.map((phase, i) => renderPhaseRow(phase, i))}
+              </div>
+            )}
           </div>
         </div>
 

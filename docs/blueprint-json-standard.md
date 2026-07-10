@@ -122,6 +122,7 @@ para ambos casos. Solo cambia cómo se interpreta el avance:
   "description": "...",
   "objective": "Resultado esperado al completar la fase (opcional).",
   "resources": [/* StepResource[], recursos generales de toda la fase, opcional */],
+  "block": "strategy | operations | business | customers",
   "order": 0,
   "steps": [/* Step[] */]
 }
@@ -131,6 +132,22 @@ para ambos casos. Solo cambia cómo se interpreta el avance:
 (`validateBlueprintJson` lo normaliza). `objective` y `resources` son
 opcionales: si faltan, la tarjeta correspondiente simplemente no se
 muestra en la Vista de la Fase — nunca se inventa contenido de relleno.
+
+`block` es opcional y agrupa visualmente las Fases en el Roadmap del
+Proyecto bajo 4 secciones universales (`lib/phase-block.ts`): **Estrategia**
+(qué se ofrece y a qué valor), **Operaciones** (cumplimiento y
+herramientas internas), **Negocio** (trámites legales/bancarios de
+arranque) y **Clientes** (todo lo de cara al mercado, incluida su
+atención). Si ninguna Fase de un Blueprint trae `block`, el Roadmap
+muestra la lista plana de siempre - retrocompatible.
+
+**Qué Fases va en cuál bloque es una decisión de contenido por Blueprint,
+no parte del estándar universal** - varía según el rubro (una clínica, un
+restaurante o un SaaS agrupan sus Fases distinto). Los 4 bloques en sí son
+fijos y compartidos entre todos los Blueprints (incluidos los de
+`blueprintType: "operations"` cuando se construya ese módulo, ver "Fuera
+de alcance" más abajo) - lo que cambia por industria es solo a cuál de
+los 4 pertenece cada Fase.
 
 ### Steps
 

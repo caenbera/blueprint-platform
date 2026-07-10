@@ -1070,7 +1070,8 @@
             "whyItMatters": "Sin un presupuesto claro es fácil subestimar cuánto capital necesitas y quedarte sin fondos antes de generar ingresos estables."
           }
         }
-      ]
+      ],
+      "block": "business"
     },
     {
       "id": "fase-cumplimiento",
@@ -1638,7 +1639,8 @@
             "tip": "Programa el recordatorio con al menos 60 días de anticipación - renovar una certificación a último minuto puede dejarte sin poder operar legalmente por unos días."
           }
         }
-      ]
+      ],
+      "block": "operations"
     },
     {
       "id": "fase-servicios",
@@ -2228,7 +2230,8 @@
             "tip": "Publicar tarifas de referencia en el sitio filtra a los prospectos que no encajan con tu presupuesto antes de que agendes una reunión con ellos."
           }
         }
-      ]
+      ],
+      "block": "strategy"
     },
     {
       "id": "fase-marca",
@@ -2787,7 +2790,8 @@
             ]
           }
         }
-      ]
+      ],
+      "block": "customers"
     },
     {
       "id": "fase-presencia-digital",
@@ -3562,7 +3566,8 @@
             "tip": "Revisa los datos al menos una vez al mes - sin revisión periódica, tener la herramienta instalada no aporta ningún valor."
           }
         }
-      ]
+      ],
+      "block": "customers"
     },
     {
       "id": "fase-operacion",
@@ -4295,7 +4300,8 @@
             ]
           }
         }
-      ]
+      ],
+      "block": "operations"
     },
     {
       "id": "fase-marketing",
@@ -4878,7 +4884,8 @@
             "tip": "Envía un recordatorio 1 hora antes del evento - reduce significativamente la tasa de ausentismo de los inscritos."
           }
         }
-      ]
+      ],
+      "block": "customers"
     },
     {
       "id": "fase-primeros-clientes",
@@ -5910,7 +5917,8 @@
             "whyItMatters": "Pedir una referencia en el momento en que el cliente está más satisfecho (justo después de una buena retroalimentación) es cuando tiene más probabilidad de decir que sí."
           }
         }
-      ]
+      ],
+      "block": "customers"
     }
   ]
 }

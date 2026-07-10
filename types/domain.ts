@@ -162,6 +162,13 @@ export type BlueprintDifficulty = "beginner" | "intermediate" | "advanced";
  * Opcional y default "construction" para no romper Blueprints existentes.
  */
 export type BlueprintType = "construction" | "operations";
+/**
+ * Los 4 bloques universales que agrupan Fases (Roadmap del Proyecto) -
+ * organizan tanto Blueprints de construccion como, mas adelante, los de
+ * operacion (mismo vocabulario en ambos). Opcional: una Fase sin `block`
+ * simplemente no se agrupa visualmente.
+ */
+export type BlueprintBlock = "strategy" | "operations" | "business" | "customers";
 
 /** El tipo del Step define su ciclo de vida, nunca su estructura. */
 export type StepType =
@@ -329,6 +336,8 @@ export interface BlueprintPhase {
   objective?: string;
   /** Recursos generales de la fase completa (guías, plantillas, videos) - distintos de los recursos de cada Step, que viven en StepContent.resources. */
   resources?: StepResource[];
+  /** Ver BlueprintBlock. Opcional: agrupa esta Fase visualmente en el Roadmap del Proyecto (lib/phase-block.ts). */
+  block?: BlueprintBlock;
   order: number;
   steps: BlueprintStep[];
 }

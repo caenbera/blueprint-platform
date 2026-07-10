@@ -165,6 +165,8 @@ const phaseSchema = z.object({
   description: z.string().default(""),
   objective: z.string().optional(),
   resources: z.array(stepResourceSchema).default([]),
+  // Ver types/domain.ts#BlueprintBlock. Opcional: agrupa la Fase visualmente en el Roadmap del Proyecto.
+  block: z.enum(["strategy", "operations", "business", "customers"]).optional(),
   order: z.number().optional(),
   steps: z.array(stepSchema).default([]),
 });
