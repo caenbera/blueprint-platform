@@ -121,3 +121,28 @@ export async function deleteProject(orgId: string, projectId: string): Promise<v
     updatedAt: serverTimestamp(),
   });
 }
+
+/**
+ * Reemplaza `blueprintSnapshot` por la version actual del Blueprint
+ * (Roadmap del Proyecto - boton "Sincronizar con Blueprint"). El progreso
+ * real nunca vive en el snapshot, sino en la subcoleccion `stepStates`
+ * (indexada por `stepId`, ver services/step-state.ts), asi que sincronizar
+ * nunca lo pierde: los Steps cuyo id se mantiene entre versiones conservan
+ * su estado tal cual; los que cambiaron de id empiezan como pendientes;
+ * los que se eliminaron del Blueprint simplemente dejan de contarse (los
+ * calculos de progreso solo consideran Steps presentes en el snapshot
+ * actual).
+ */
+export async function syncProjectBlueprint(orgId: string, projectId: string): Promise<void> {
+  const projectSnap = await getDoc(doc(db, projectsPath(orgId), projectId));
+  if (!projectSnap.exists()) throw new Error("El proyecto no existe.");
+  const blueprintId = (projectSnap.data() as Project).blueprintId;
+
+  const blueprint = await getBlueprint(blueprintId);
+  if (!blueprint) throw new Error("El Blueprint original ya no existe.");
+
+  await updateDoc(doc(db, projectsPath(orgId), projectId), {
+    blueprintSnapshot: blueprint,
+    updatedAt: serverTimestamp(),
+  });
+}

@@ -4,6 +4,7 @@ import { createElement, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { toast } from "sonner";
 import {
   ArrowRight,
   CheckCircle2,
@@ -12,6 +13,7 @@ import {
   Flag,
   Loader2,
   Map,
+  RefreshCw,
   Sparkles,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -27,7 +29,8 @@ import {
 } from "@/lib/phase-icon";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
-import { getProject } from "@/services/projects";
+import { getProject, syncProjectBlueprint } from "@/services/projects";
+import { getBlueprint } from "@/services/blueprints";
 import { listMembers } from "@/services/organizations";
 import {
   calculatePhaseProgress,
@@ -37,7 +40,7 @@ import {
   findNextStep,
   listStepStates,
 } from "@/services/step-state";
-import type { Membership, Project, ProjectStepState } from "@/types/domain";
+import type { Blueprint, Membership, Project, ProjectStepState } from "@/types/domain";
 
 /**
  * Roadmap del Proyecto (mockup "06-roadmap.png", pantalla A6): el Centro de
@@ -55,6 +58,8 @@ export default function ProjectRoadmapPage() {
   const [project, setProject] = useState<Project | null>(null);
   const [stepStates, setStepStates] = useState<ProjectStepState[] | null>(null);
   const [members, setMembers] = useState<Membership[] | null>(null);
+  const [latestBlueprint, setLatestBlueprint] = useState<Blueprint | null>(null);
+  const [syncing, setSyncing] = useState(false);
 
   useEffect(() => {
     if (!orgId) return;
@@ -71,10 +76,36 @@ export default function ProjectRoadmapPage() {
         // Tarjeta "Continuar proyecto" del Inicio (mockup "02-inicio.png"):
         // recuerda el ultimo Proyecto abierto por este usuario en este navegador.
         window.localStorage.setItem(`blueprint:lastProjectId:${orgId}`, p.id);
+        // Compara contra la version viva del Blueprint para saber si el
+        // snapshot congelado de este Proyecto quedo desactualizado.
+        getBlueprint(p.blueprintId).then(setLatestBlueprint);
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orgId, projectId]);
+
+  const isStale = Boolean(
+    project && latestBlueprint && latestBlueprint.updatedAt !== project.blueprintSnapshot.updatedAt,
+  );
+
+  async function handleSync() {
+    if (!orgId) return;
+    setSyncing(true);
+    try {
+      await syncProjectBlueprint(orgId, projectId);
+      const [p, states] = await Promise.all([
+        getProject(orgId, projectId),
+        listStepStates(orgId, projectId),
+      ]);
+      setProject(p);
+      setStepStates(states);
+      toast.success("Proyecto sincronizado con la última versión del Blueprint.");
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "No se pudo sincronizar.");
+    } finally {
+      setSyncing(false);
+    }
+  }
 
   if (!orgId || project === null || stepStates === null || members === null) {
     return (
@@ -102,6 +133,23 @@ export default function ProjectRoadmapPage() {
         <Map className="text-primary h-5 w-5" />
         <span className="text-h4">Roadmap</span>
       </div>
+
+      {isStale && (
+        <div className="border-primary/30 bg-primary/5 flex items-center justify-between gap-3 rounded-lg border px-4 py-3">
+          <p className="text-body">
+            Hay una versión más reciente del Blueprint &ldquo;{project.blueprintSnapshot.name}
+            &rdquo; disponible.
+          </p>
+          <Button size="sm" variant="outline" onClick={handleSync} disabled={syncing}>
+            {syncing ? (
+              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+            ) : (
+              <RefreshCw className="h-3.5 w-3.5" />
+            )}
+            Sincronizar con Blueprint
+          </Button>
+        </div>
+      )}
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1fr_20rem]">
         <div className="flex flex-col gap-4">
