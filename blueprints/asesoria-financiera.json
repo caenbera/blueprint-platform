@@ -43,7 +43,11 @@
           "mimeType": "",
           "extension": "",
           "size": 0,
-          "metadata": { "pages": null, "duration": null, "language": "es" },
+          "metadata": {
+            "pages": null,
+            "duration": null,
+            "language": "es"
+          },
           "tags": ["legal"],
           "visibility": "organization"
         }
@@ -53,6 +57,7 @@
           "id": "step-elegir-nombre",
           "title": "Elegir el nombre comercial de la firma",
           "description": "Define el nombre bajo el cual tus clientes te van a conocer.",
+          "icon": "type",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 1,
@@ -71,7 +76,9 @@
               "summary": "Define el nombre bajo el cual tus clientes te van a conocer.",
               "body": "El nombre comercial es la base de toda tu marca y tu presencia digital - elígelo antes de avanzar con el registro legal, el dominio o el logo."
             },
-            "objective": { "description": "Definir el nombre comercial de la firma." },
+            "objective": {
+              "description": "Definir el nombre comercial de la firma."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -86,6 +93,7 @@
           "id": "step-verificar-nombre",
           "title": "Verificar disponibilidad del nombre comercial",
           "description": "Confirma que el nombre esté libre como marca, dominio y usuario en redes.",
+          "icon": "search",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
@@ -121,6 +129,7 @@
           "id": "step-comparar-estructuras",
           "title": "Comparar estructuras legales disponibles",
           "description": "Compara al menos dos figuras legales para tu firma.",
+          "icon": "scale",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 3,
@@ -168,7 +177,11 @@
                 "mimeType": "",
                 "extension": "",
                 "size": 0,
-                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "metadata": {
+                  "pages": null,
+                  "duration": null,
+                  "language": "es"
+                },
                 "tags": ["legal"],
                 "visibility": "organization"
               }
@@ -191,8 +204,14 @@
             ],
             "tip": "Si todavía no estás seguro de tener suficientes clientes para justificar una sociedad formal, muchas jurisdicciones permiten empezar como persona natural con negocio y migrar después.",
             "recommendedTools": [
-              { "name": "Cámara de Comercio local", "url": "" },
-              { "name": "Contador o asesor legal", "url": "" }
+              {
+                "name": "Cámara de Comercio local",
+                "url": ""
+              },
+              {
+                "name": "Contador o asesor legal",
+                "url": ""
+              }
             ]
           }
         },
@@ -200,6 +219,7 @@
           "id": "step-definir-socios",
           "title": "Definir si operarás solo o con socios",
           "description": "Decide la composición societaria inicial de la firma.",
+          "icon": "handshake",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 1,
@@ -235,6 +255,7 @@
           "id": "step-acuerdo-socios",
           "title": "Redactar el acuerdo de socios (si aplica)",
           "description": "Documenta por escrito los acuerdos entre socios antes de registrar la firma.",
+          "icon": "file-signature",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 3,
@@ -271,6 +292,7 @@
           "id": "step-elegir-estructura",
           "title": "Elegir la estructura legal definitiva",
           "description": "Confirma por escrito la estructura legal bajo la cual se va a registrar la firma.",
+          "icon": "scale",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 1,
@@ -306,6 +328,7 @@
           "id": "step-reunir-documentos-registro",
           "title": "Reunir los documentos requeridos para el registro",
           "description": "Ten listos todos los documentos que exige el trámite de registro mercantil.",
+          "icon": "folder",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 2,
@@ -341,6 +364,7 @@
           "id": "step-tramite-registro",
           "title": "Presentar el trámite de registro mercantil",
           "description": "Presenta y da seguimiento al trámite de registro legal de la firma.",
+          "icon": "landmark",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 6,
@@ -377,6 +401,7 @@
           "id": "step-id-tributaria",
           "title": "Obtener el número de identificación tributaria",
           "description": "Obtén el número de identificación tributaria de la firma.",
+          "icon": "receipt",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 2,
@@ -412,6 +437,7 @@
           "id": "step-registro-local",
           "title": "Registrar la firma ante el municipio o autoridad local",
           "description": "Completa cualquier registro adicional exigido por la autoridad local.",
+          "icon": "map-pin",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 2,
@@ -447,6 +473,7 @@
           "id": "step-comparar-bancos",
           "title": "Comparar bancos con cuentas para empresas de servicios profesionales",
           "description": "Compara al menos 2 bancos antes de elegir dónde abrir tu cuenta empresarial.",
+          "icon": "landmark",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 2,
@@ -482,6 +509,7 @@
           "id": "step-documentos-banco",
           "title": "Reunir los documentos requeridos por el banco",
           "description": "Ten listos los documentos de la firma que exige el banco.",
+          "icon": "folder",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 1,
@@ -517,6 +545,7 @@
           "id": "step-abrir-cuenta",
           "title": "Abrir la cuenta bancaria empresarial",
           "description": "Abre la cuenta bancaria a nombre de la firma.",
+          "icon": "wallet",
           "order": 12,
           "type": "one_time",
           "estimatedHours": 2,
@@ -535,7 +564,9 @@
               "summary": "Abre la cuenta bancaria a nombre de la firma.",
               "body": "Separa las finanzas de la firma de tus finanzas personales desde el primer día - esto es especialmente importante en una asesoría financiera, donde tu propia operación debe ser un ejemplo de orden."
             },
-            "objective": { "description": "Abrir la cuenta bancaria a nombre de la firma." },
+            "objective": {
+              "description": "Abrir la cuenta bancaria a nombre de la firma."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -551,6 +582,7 @@
           "id": "step-banca-linea",
           "title": "Activar la banca en línea",
           "description": "Activa el acceso a banca en línea de la cuenta empresarial.",
+          "icon": "credit-card",
           "order": 13,
           "type": "one_time",
           "estimatedHours": 1,
@@ -586,6 +618,7 @@
           "id": "step-elegir-contabilidad",
           "title": "Elegir un software de contabilidad",
           "description": "Elige el software con el que vas a llevar la contabilidad de la firma.",
+          "icon": "calculator",
           "order": 14,
           "type": "one_time",
           "estimatedHours": 2,
@@ -616,8 +649,14 @@
             },
             "knowledge": [],
             "recommendedTools": [
-              { "name": "QuickBooks", "url": "https://quickbooks.intuit.com" },
-              { "name": "Xero", "url": "https://www.xero.com" }
+              {
+                "name": "QuickBooks",
+                "url": "https://quickbooks.intuit.com"
+              },
+              {
+                "name": "Xero",
+                "url": "https://www.xero.com"
+              }
             ]
           }
         },
@@ -625,6 +664,7 @@
           "id": "step-configurar-contabilidad",
           "title": "Configurar el software de contabilidad",
           "description": "Configura el software de contabilidad con las cuentas reales de la firma.",
+          "icon": "calculator",
           "order": 15,
           "type": "one_time",
           "estimatedHours": 3,
@@ -660,6 +700,7 @@
           "id": "step-cotizar-seguro",
           "title": "Cotizar seguros de responsabilidad profesional (E&O)",
           "description": "Cotiza al menos 2 aseguradoras que cubran servicios financieros.",
+          "icon": "shield",
           "order": 16,
           "type": "one_time",
           "estimatedHours": 2,
@@ -695,6 +736,7 @@
           "id": "step-contratar-seguro",
           "title": "Contratar el seguro de responsabilidad profesional",
           "description": "Contrata la póliza antes de firmar tu primer contrato con un cliente.",
+          "icon": "shield-check",
           "order": 17,
           "type": "one_time",
           "estimatedHours": 1,
@@ -734,6 +776,7 @@
           "id": "step-presupuesto-inicial",
           "title": "Definir el presupuesto inicial de arranque",
           "description": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
+          "icon": "piggy-bank",
           "order": 18,
           "type": "one_time",
           "estimatedHours": 2,
@@ -780,6 +823,7 @@
           "id": "step-investigar-requisitos",
           "title": "Investigar qué certificación exige el regulador de tu país",
           "description": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
+          "icon": "search",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 4,
@@ -816,6 +860,7 @@
           "id": "step-inscribir-examen",
           "title": "Inscribirte al examen o proceso de certificación",
           "description": "Completa la inscripción al examen o proceso de certificación correspondiente.",
+          "icon": "clipboard-list",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
@@ -851,6 +896,7 @@
           "id": "step-estudiar-examen",
           "title": "Estudiar para el examen de certificación",
           "description": "Prepárate con el material de estudio oficial del examen.",
+          "icon": "book-open",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 40,
@@ -887,6 +933,7 @@
           "id": "step-presentar-examen",
           "title": "Presentar el examen de certificación",
           "description": "Presenta el examen o proceso de evaluación de la certificación.",
+          "icon": "graduation-cap",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 4,
@@ -922,6 +969,7 @@
           "id": "step-obtener-registro",
           "title": "Obtener el número de registro profesional",
           "description": "Obtén tu número de certificación o registro profesional oficial.",
+          "icon": "badge-check",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 1,
@@ -957,6 +1005,7 @@
           "id": "step-redactar-politica-privacidad",
           "title": "Redactar la política de confidencialidad y manejo de datos",
           "description": "Documenta cómo proteges la información financiera de tus clientes.",
+          "icon": "file-text",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 3,
@@ -993,7 +1042,11 @@
                 "mimeType": "",
                 "extension": "",
                 "size": 0,
-                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "metadata": {
+                  "pages": null,
+                  "duration": null,
+                  "language": "es"
+                },
                 "tags": ["legal", "cumplimiento"],
                 "visibility": "organization"
               }
@@ -1010,6 +1063,7 @@
           "id": "step-definir-almacenamiento",
           "title": "Definir dónde y cómo se almacenará la información de los clientes",
           "description": "Define la plataforma y el proceso de almacenamiento seguro de información.",
+          "icon": "cloud",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1045,6 +1099,7 @@
           "id": "step-listar-fuentes-ingreso",
           "title": "Listar tus fuentes de ingreso relacionadas con recomendaciones a clientes",
           "description": "Identifica todas tus fuentes de ingreso que puedan representar un conflicto de interés.",
+          "icon": "list-checks",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1080,6 +1135,7 @@
           "id": "step-proceso-declaracion-conflicto",
           "title": "Definir el proceso de declaración de conflictos de interés",
           "description": "Define cómo vas a declarar un conflicto de interés a un cliente.",
+          "icon": "scale",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1116,6 +1172,7 @@
           "id": "step-formato-conflicto",
           "title": "Crear el formato de declaración de conflicto de interés",
           "description": "Ten un formato estándar listo para declarar un conflicto de interés.",
+          "icon": "file-text",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1151,6 +1208,7 @@
           "id": "step-politica-retencion",
           "title": "Definir tu política de retención de registros",
           "description": "Define cuánto tiempo y cómo vas a conservar los registros de cada cliente.",
+          "icon": "archive",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1186,6 +1244,7 @@
           "id": "step-calendario-renovacion",
           "title": "Configurar el calendario de renovación de certificaciones",
           "description": "Programa recordatorios para renovar tu certificación.",
+          "icon": "calendar-clock",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1231,6 +1290,7 @@
           "id": "step-catalogo-servicios",
           "title": "Listar todos los servicios de asesoría que podrías ofrecer",
           "description": "Elabora un listado completo de posibles servicios.",
+          "icon": "list-checks",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1266,6 +1326,7 @@
           "id": "step-priorizar-servicios",
           "title": "Priorizar los servicios principales para lanzar",
           "description": "Prioriza entre 1 y 3 servicios principales para lanzar primero.",
+          "icon": "flag",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1305,6 +1366,7 @@
           "id": "step-perfil-por-servicio",
           "title": "Definir el perfil de cliente para cada servicio",
           "description": "Define a qué perfil de cliente va dirigido cada servicio priorizado.",
+          "icon": "user-check",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1340,6 +1402,7 @@
           "id": "step-comparar-modelos-cobro",
           "title": "Comparar los modelos de cobro habituales del sector",
           "description": "Compara tarifa fija, AUM, por hora y retainer mensual.",
+          "icon": "percent",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1375,6 +1438,7 @@
           "id": "step-calcular-tarifa",
           "title": "Calcular tu tarifa objetivo",
           "description": "Calcula la tarifa objetivo según tus costos y el tiempo estimado por cliente.",
+          "icon": "calculator",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1410,6 +1474,7 @@
           "id": "step-documentar-tarifas",
           "title": "Documentar la estructura de tarifas final",
           "description": "Define y documenta el modelo de tarifas de la firma.",
+          "icon": "dollar-sign",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1479,6 +1544,7 @@
           "id": "step-definir-paquetes",
           "title": "Definir entre 2 y 4 paquetes de asesoría",
           "description": "Empaqueta tus servicios y tarifas en ofertas claras.",
+          "icon": "package",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1514,6 +1580,7 @@
           "id": "step-alcance-paquetes",
           "title": "Documentar el alcance de cada paquete",
           "description": "Documenta qué incluye y qué no incluye cada paquete.",
+          "icon": "clipboard-list",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1532,7 +1599,9 @@
               "summary": "Documenta qué incluye y qué no incluye cada paquete.",
               "body": "Deja claro por escrito qué incluye y qué no incluye cada paquete, para evitar malentendidos con los clientes más adelante."
             },
-            "objective": { "description": "Documentar qué incluye y qué no incluye cada paquete." },
+            "objective": {
+              "description": "Documentar qué incluye y qué no incluye cada paquete."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -1547,6 +1616,7 @@
           "id": "step-borrador-contrato",
           "title": "Redactar el borrador del contrato de servicios",
           "description": "Redacta el borrador del contrato de servicios estándar.",
+          "icon": "file-signature",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 3,
@@ -1583,7 +1653,11 @@
                 "mimeType": "",
                 "extension": "",
                 "size": 0,
-                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "metadata": {
+                  "pages": null,
+                  "duration": null,
+                  "language": "es"
+                },
                 "tags": ["legal", "contrato"],
                 "visibility": "organization"
               }
@@ -1600,6 +1674,7 @@
           "id": "step-revision-abogado-contrato",
           "title": "Hacer revisar el contrato por un abogado",
           "description": "Obtén la revisión legal final del contrato de servicios.",
+          "icon": "scale",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1636,6 +1711,7 @@
           "id": "step-politica-cancelacion",
           "title": "Redactar la política de cancelación y reembolsos",
           "description": "Define y documenta tu política de cancelación y reembolsos.",
+          "icon": "file-text",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1671,6 +1747,7 @@
           "id": "step-tabla-tarifas-web",
           "title": "Crear la tabla de tarifas para publicar en el sitio web",
           "description": "Prepara la tabla de tarifas y paquetes lista para publicar.",
+          "icon": "table",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1716,6 +1793,7 @@
           "id": "step-nombre-publico",
           "title": "Definir el nombre comercial visible al público",
           "description": "Confirma si usarás tu nombre personal o un nombre de marca distinto.",
+          "icon": "type",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1751,6 +1829,7 @@
           "id": "step-eslogan",
           "title": "Escribir el eslogan de la firma",
           "description": "Redacta una frase corta que resuma tu propuesta de valor.",
+          "icon": "message-circle",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1786,6 +1865,7 @@
           "id": "step-paleta-colores",
           "title": "Definir la paleta de colores de marca",
           "description": "Elige los colores oficiales de tu marca.",
+          "icon": "palette",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1804,7 +1884,9 @@
               "summary": "Elige los colores oficiales de tu marca.",
               "body": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo, y documenta sus códigos exactos."
             },
-            "objective": { "description": "Elegir los colores oficiales de tu marca." },
+            "objective": {
+              "description": "Elegir los colores oficiales de tu marca."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -1819,6 +1901,7 @@
           "id": "step-tipografia",
           "title": "Elegir la tipografía de marca",
           "description": "Elige las fuentes tipográficas oficiales de tu marca.",
+          "icon": "type",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 1,
@@ -1854,6 +1937,7 @@
           "id": "step-disenar-logo",
           "title": "Diseñar el logo",
           "description": "Ten un logo profesional listo para usar en todos tus materiales.",
+          "icon": "palette",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 6,
@@ -1889,6 +1973,7 @@
           "id": "step-variantes-logo",
           "title": "Definir las variantes del logo",
           "description": "Ten las variantes necesarias del logo para distintos usos.",
+          "icon": "layers",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1924,6 +2009,7 @@
           "id": "step-tarjeta-presentacion",
           "title": "Diseñar la tarjeta de presentación",
           "description": "Ten tarjetas de presentación profesionales listas para imprimir.",
+          "icon": "contact",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1959,6 +2045,7 @@
           "id": "step-membrete",
           "title": "Diseñar el membrete",
           "description": "Ten una plantilla de membrete lista para documentos oficiales.",
+          "icon": "file-text",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 2,
@@ -1994,6 +2081,7 @@
           "id": "step-firma-correo",
           "title": "Configurar la firma de correo electrónico de marca",
           "description": "Ten una firma de correo profesional y consistente con tu marca.",
+          "icon": "mail",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2029,6 +2117,7 @@
           "id": "step-tono-comunicacion",
           "title": "Definir el tono de comunicación de la marca",
           "description": "Define cómo se comunica tu marca.",
+          "icon": "message-circle",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2064,6 +2153,7 @@
           "id": "step-elevator-pitch",
           "title": "Redactar el guion de presentación de 30 segundos",
           "description": "Ten un discurso breve y claro para presentarte en cualquier contexto.",
+          "icon": "mic",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2100,6 +2190,7 @@
           "id": "step-biografia",
           "title": "Escribir tu biografía profesional",
           "description": "Ten una biografía profesional lista para tu sitio web y tus perfiles.",
+          "icon": "user",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2145,6 +2236,7 @@
           "id": "step-registrar-dominio",
           "title": "Registrar el dominio del sitio web",
           "description": "Registra el dominio oficial de tu sitio web.",
+          "icon": "globe",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2163,7 +2255,9 @@
               "summary": "Registra el dominio oficial de tu sitio web.",
               "body": "Registra el dominio .com (o el más adecuado en tu país) con el nombre de tu firma."
             },
-            "objective": { "description": "Registrar el dominio oficial de tu sitio web." },
+            "objective": {
+              "description": "Registrar el dominio oficial de tu sitio web."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -2178,6 +2272,7 @@
           "id": "step-contratar-hosting",
           "title": "Contratar el hosting del sitio web",
           "description": "Contrata el servicio de hosting donde vivirá tu sitio web.",
+          "icon": "server",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2213,6 +2308,7 @@
           "id": "step-elegir-plataforma-web",
           "title": "Elegir la plataforma para construir el sitio web",
           "description": "Elige la plataforma con la que vas a construir tu sitio web.",
+          "icon": "monitor",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2243,8 +2339,14 @@
             },
             "knowledge": [],
             "recommendedTools": [
-              { "name": "Webflow", "url": "https://webflow.com" },
-              { "name": "WordPress", "url": "https://wordpress.com" }
+              {
+                "name": "Webflow",
+                "url": "https://webflow.com"
+              },
+              {
+                "name": "WordPress",
+                "url": "https://wordpress.com"
+              }
             ]
           }
         },
@@ -2252,6 +2354,7 @@
           "id": "step-mapa-sitio",
           "title": "Definir el mapa del sitio",
           "description": "Define las páginas principales que va a tener tu sitio web.",
+          "icon": "compass",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2287,6 +2390,7 @@
           "id": "step-pagina-inicio",
           "title": "Redactar el contenido de la página de inicio",
           "description": "Redacta el contenido de la página principal del sitio.",
+          "icon": "home",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 3,
@@ -2322,6 +2426,7 @@
           "id": "step-pagina-servicios",
           "title": "Redactar la página de Servicios",
           "description": "Redacta el contenido de la página con tus paquetes y tarifas.",
+          "icon": "list-checks",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 3,
@@ -2357,6 +2462,7 @@
           "id": "step-pagina-sobre-mi",
           "title": "Redactar la página Sobre mí / Nosotros",
           "description": "Redacta el contenido de la página que presenta a la firma.",
+          "icon": "user",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2392,6 +2498,7 @@
           "id": "step-pagina-contacto",
           "title": "Redactar la página de contacto",
           "description": "Redacta el contenido de la página de contacto.",
+          "icon": "mail",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2410,7 +2517,9 @@
               "summary": "Redacta el contenido de la página de contacto.",
               "body": "Incluye un formulario simple, tu correo, teléfono y un llamado a la acción claro (ej. 'Agenda tu primera consulta')."
             },
-            "objective": { "description": "Redactar el contenido de la página de contacto." },
+            "objective": {
+              "description": "Redactar el contenido de la página de contacto."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -2425,6 +2534,7 @@
           "id": "step-publicar-privacidad-web",
           "title": "Publicar la política de privacidad en el sitio",
           "description": "Publica tu política de privacidad y manejo de datos en el sitio web.",
+          "icon": "shield",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2460,6 +2570,7 @@
           "id": "step-publicar-sitio",
           "title": "Publicar el sitio web",
           "description": "Publica el sitio web completo y verifica que funcione correctamente.",
+          "icon": "rocket",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2501,6 +2612,7 @@
           "id": "step-correo-profesional",
           "title": "Configurar el correo electrónico profesional",
           "description": "Configura tu cuenta de correo con el dominio de la firma.",
+          "icon": "mail",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2536,6 +2648,7 @@
           "id": "step-fotos-profesionales",
           "title": "Tomar fotografías profesionales",
           "description": "Ten fotografías profesionales tuyas listas para usar.",
+          "icon": "camera",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 3,
@@ -2571,6 +2684,7 @@
           "id": "step-linkedin",
           "title": "Crear o actualizar tu perfil de LinkedIn",
           "description": "Ten un perfil de LinkedIn profesional y actualizado.",
+          "icon": "briefcase",
           "order": 12,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2606,6 +2720,7 @@
           "id": "step-google-business",
           "title": "Crear el perfil de Google Business Profile",
           "description": "Crea y verifica tu perfil de Google Business Profile.",
+          "icon": "map-pin",
           "order": 13,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2641,6 +2756,7 @@
           "id": "step-directorios",
           "title": "Registrar la firma en directorios profesionales del sector",
           "description": "Registra tu firma en los directorios profesionales relevantes.",
+          "icon": "book-open",
           "order": 14,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2676,6 +2792,7 @@
           "id": "step-redes-sociales",
           "title": "Crear el perfil en redes sociales principales",
           "description": "Crea los perfiles de la firma en las redes donde está tu cliente ideal.",
+          "icon": "share-2",
           "order": 15,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2711,6 +2828,7 @@
           "id": "step-analytics",
           "title": "Configurar una herramienta de medición del sitio",
           "description": "Configura Google Analytics u otra herramienta para medir las visitas.",
+          "icon": "line-chart",
           "order": 16,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2756,6 +2874,7 @@
           "id": "step-comparar-crm",
           "title": "Comparar opciones de CRM para firmas pequeñas",
           "description": "Compara al menos 2 opciones de CRM.",
+          "icon": "search",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 2,
@@ -2786,8 +2905,14 @@
             },
             "knowledge": [],
             "recommendedTools": [
-              { "name": "HubSpot CRM", "url": "https://www.hubspot.com/products/crm" },
-              { "name": "Notion (como CRM ligero)", "url": "https://www.notion.so" }
+              {
+                "name": "HubSpot CRM",
+                "url": "https://www.hubspot.com/products/crm"
+              },
+              {
+                "name": "Notion (como CRM ligero)",
+                "url": "https://www.notion.so"
+              }
             ]
           }
         },
@@ -2795,6 +2920,7 @@
           "id": "step-elegir-crm",
           "title": "Elegir y contratar el CRM",
           "description": "Elige y contrata el CRM que vas a usar.",
+          "icon": "users",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2813,7 +2939,9 @@
               "summary": "Elige y contrata el CRM que vas a usar.",
               "body": "Con la comparación hecha, elige y contrata el CRM definitivo."
             },
-            "objective": { "description": "Elegir y contratar el CRM definitivo." },
+            "objective": {
+              "description": "Elegir y contratar el CRM definitivo."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -2828,6 +2956,7 @@
           "id": "step-configurar-crm",
           "title": "Configurar el CRM con tus paquetes de servicios",
           "description": "Configura el CRM elegido con tus paquetes de servicios.",
+          "icon": "wrench",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 3,
@@ -2863,6 +2992,7 @@
           "id": "step-comparar-planificacion",
           "title": "Comparar software de planificación financiera",
           "description": "Compara opciones de software de planificación financiera.",
+          "icon": "search",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 3,
@@ -2898,6 +3028,7 @@
           "id": "step-elegir-planificacion",
           "title": "Elegir y contratar el software de planificación financiera",
           "description": "Elige y contrata el software definitivo.",
+          "icon": "line-chart",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2933,6 +3064,7 @@
           "id": "step-plantilla-plan",
           "title": "Configurar una plantilla base de plan financiero",
           "description": "Configura una plantilla base de plan financiero.",
+          "icon": "file-text",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 4,
@@ -2968,6 +3100,7 @@
           "id": "step-agendamiento",
           "title": "Elegir una herramienta de agendamiento de citas",
           "description": "Elige una herramienta de agendamiento de citas.",
+          "icon": "calendar",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 1,
@@ -2986,7 +3119,9 @@
               "summary": "Elige una herramienta de agendamiento de citas.",
               "body": "Una herramienta de agendamiento le permite a tus clientes reservar reuniones contigo sin ir y venir por correo."
             },
-            "objective": { "description": "Elegir una herramienta de agendamiento de citas." },
+            "objective": {
+              "description": "Elegir una herramienta de agendamiento de citas."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -3001,6 +3136,7 @@
           "id": "step-conectar-calendario",
           "title": "Conectar la herramienta de agendamiento a tu calendario",
           "description": "Conecta la herramienta de agendamiento a tu calendario personal.",
+          "icon": "calendar-check",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3036,6 +3172,7 @@
           "id": "step-firma-electronica",
           "title": "Elegir una herramienta de firma electrónica",
           "description": "Elige una herramienta de firma electrónica para contratos.",
+          "icon": "pen-tool",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3071,6 +3208,7 @@
           "id": "step-almacenamiento-seguro",
           "title": "Elegir una herramienta de almacenamiento seguro de documentos",
           "description": "Elige dónde vas a almacenar los documentos de tus clientes.",
+          "icon": "cloud",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3106,6 +3244,7 @@
           "id": "step-carpetas-cliente",
           "title": "Configurar las carpetas de almacenamiento por cliente",
           "description": "Configura la estructura de carpetas que vas a usar con cada cliente.",
+          "icon": "folder",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3141,6 +3280,7 @@
           "id": "step-linea-telefonica",
           "title": "Contratar una línea telefónica profesional",
           "description": "Contrata una línea telefónica separada de tu número personal.",
+          "icon": "phone",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3176,6 +3316,7 @@
           "id": "step-proceso-analisis",
           "title": "Documentar los pasos del proceso de análisis financiero",
           "description": "Documenta un proceso de análisis financiero repetible.",
+          "icon": "search",
           "order": 12,
           "type": "one_time",
           "estimatedHours": 3,
@@ -3212,6 +3353,7 @@
           "id": "step-formato-entregable",
           "title": "Definir el formato del entregable final para el cliente",
           "description": "Define el formato final del plan que le entregas al cliente.",
+          "icon": "file-check",
           "order": 13,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3257,6 +3399,7 @@
           "id": "step-cliente-ideal-perfil",
           "title": "Describir el perfil demográfico de tu cliente ideal",
           "description": "Construye el perfil del cliente al que mejor puedes servir.",
+          "icon": "target",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 2,
@@ -3293,6 +3436,7 @@
           "id": "step-dolores-metas",
           "title": "Identificar los principales dolores y metas de tu cliente ideal",
           "description": "Identifica los dolores y metas financieras de tu cliente ideal.",
+          "icon": "target",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3328,6 +3472,7 @@
           "id": "step-canales-contenido",
           "title": "Definir en qué canales vas a publicar contenido de forma constante",
           "description": "Elige el canal principal donde vas a publicar contenido.",
+          "icon": "megaphone",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3363,6 +3508,7 @@
           "id": "step-calendario-contenido",
           "title": "Crear el calendario de contenido del primer mes",
           "description": "Planea las publicaciones del primer mes.",
+          "icon": "calendar",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 2,
@@ -3398,6 +3544,7 @@
           "id": "step-primer-articulo",
           "title": "Escribir el primer artículo o publicación educativa",
           "description": "Publica tu primera pieza de contenido educativo.",
+          "icon": "pen-tool",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 3,
@@ -3416,7 +3563,9 @@
               "summary": "Publica tu primera pieza de contenido educativo.",
               "body": "El contenido educativo (explicar conceptos financieros en lenguaje simple) suele funcionar mejor que el contenido promocional para generar confianza en este sector."
             },
-            "objective": { "description": "Publicar tu primera pieza de contenido educativo." },
+            "objective": {
+              "description": "Publicar tu primera pieza de contenido educativo."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -3431,6 +3580,7 @@
           "id": "step-programa-referidos",
           "title": "Definir tu programa de referidos",
           "description": "Define cómo vas a pedir y recompensar referidos.",
+          "icon": "gift",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3469,6 +3619,7 @@
           "id": "step-identificar-asociaciones",
           "title": "Identificar asociaciones o cámaras profesionales para afiliarte",
           "description": "Identifica asociaciones relevantes de tu sector.",
+          "icon": "users",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3504,6 +3655,7 @@
           "id": "step-afiliarte-asociacion",
           "title": "Afiliarte a una asociación o cámara profesional",
           "description": "Completa tu afiliación a la asociación elegida.",
+          "icon": "badge-check",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 2,
@@ -3539,6 +3691,7 @@
           "id": "step-sitios-resenas",
           "title": "Registrar tu firma en sitios de reseñas relevantes del sector",
           "description": "Registra tu firma en sitios de reseñas relevantes.",
+          "icon": "star",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3574,6 +3727,7 @@
           "id": "step-primera-resena",
           "title": "Solicitar tu primera reseña a un contacto de confianza",
           "description": "Solicita tu primera reseña.",
+          "icon": "star",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3609,6 +3763,7 @@
           "id": "step-folleto",
           "title": "Diseñar un folleto o material de presentación descargable",
           "description": "Diseña un folleto o PDF de presentación de tu firma.",
+          "icon": "file-text",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 3,
@@ -3644,6 +3799,7 @@
           "id": "step-estrategia-webinar",
           "title": "Definir tu estrategia de eventos o webinars introductorios",
           "description": "Define el formato y tema de tu primer evento introductorio.",
+          "icon": "presentation",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 2,
@@ -3679,6 +3835,7 @@
           "id": "step-primer-webinar",
           "title": "Planear tu primer webinar o evento introductorio",
           "description": "Planea la logística de tu primer evento.",
+          "icon": "presentation",
           "order": 12,
           "type": "one_time",
           "estimatedHours": 4,
@@ -3724,6 +3881,7 @@
           "id": "step-pasos-onboarding",
           "title": "Definir los pasos del proceso de bienvenida",
           "description": "Diseña la experiencia de bienvenida para un cliente nuevo.",
+          "icon": "user-plus",
           "order": 0,
           "type": "one_time",
           "estimatedHours": 2,
@@ -3759,6 +3917,7 @@
           "id": "step-cuestionario-descubrimiento",
           "title": "Preparar el cuestionario de descubrimiento financiero",
           "description": "Prepara el cuestionario que envías antes de la primera reunión.",
+          "icon": "clipboard-list",
           "order": 1,
           "type": "one_time",
           "estimatedHours": 3,
@@ -3795,7 +3954,11 @@
                 "mimeType": "",
                 "extension": "",
                 "size": 0,
-                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "metadata": {
+                  "pages": null,
+                  "duration": null,
+                  "language": "es"
+                },
                 "tags": ["clientes", "descubrimiento"],
                 "visibility": "organization"
               }
@@ -3812,6 +3975,7 @@
           "id": "step-paquete-bienvenida",
           "title": "Preparar el paquete de bienvenida para clientes nuevos",
           "description": "Prepara el material que recibe un cliente nuevo al firmar.",
+          "icon": "gift",
           "order": 2,
           "type": "one_time",
           "estimatedHours": 2,
@@ -3848,7 +4012,11 @@
                 "mimeType": "",
                 "extension": "",
                 "size": 0,
-                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "metadata": {
+                  "pages": null,
+                  "duration": null,
+                  "language": "es"
+                },
                 "tags": ["clientes"],
                 "visibility": "organization"
               }
@@ -3865,6 +4033,7 @@
           "id": "step-agendar-primera-reunion",
           "title": "Agendar la primera reunión con el prospecto",
           "description": "Agenda la primera reunión con un cliente potencial.",
+          "icon": "calendar",
           "order": 3,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3883,7 +4052,9 @@
               "summary": "Agenda la primera reunión con un cliente potencial.",
               "body": "Usa tu herramienta de agendamiento para coordinar la fecha y hora de la primera reunión."
             },
-            "objective": { "description": "Agendar la primera reunión con el prospecto." },
+            "objective": {
+              "description": "Agendar la primera reunión con el prospecto."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -3898,6 +4069,7 @@
           "id": "step-enviar-cuestionario-previo",
           "title": "Enviar el cuestionario financiero previo a la reunión",
           "description": "Envía el cuestionario de descubrimiento antes de la reunión.",
+          "icon": "send",
           "order": 4,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3933,6 +4105,7 @@
           "id": "step-enviar-agenda",
           "title": "Enviar la agenda de la primera reunión",
           "description": "Envía al cliente lo que se va a cubrir en la reunión.",
+          "icon": "send",
           "order": 5,
           "type": "one_time",
           "estimatedHours": 1,
@@ -3951,7 +4124,9 @@
               "summary": "Envía al cliente lo que se va a cubrir en la reunión.",
               "body": "Enviar la agenda con anticipación reduce la incertidumbre del cliente y proyecta organización."
             },
-            "objective": { "description": "Enviar la agenda de la primera reunión al cliente." },
+            "objective": {
+              "description": "Enviar la agenda de la primera reunión al cliente."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -3966,6 +4141,7 @@
           "id": "step-primera-reunion-financiera",
           "title": "Realizar la primera reunión financiera con el cliente",
           "description": "Conoce la situación financiera completa del cliente y establece expectativas claras.",
+          "icon": "users",
           "order": 6,
           "type": "one_time",
           "estimatedHours": 2,
@@ -4023,7 +4199,11 @@
                 "mimeType": "",
                 "extension": "",
                 "size": 0,
-                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "metadata": {
+                  "pages": null,
+                  "duration": null,
+                  "language": "es"
+                },
                 "tags": ["clientes"],
                 "visibility": "organization"
               }
@@ -4049,7 +4229,10 @@
             ],
             "tip": "Graba (con permiso del cliente) o toma notas detalladas durante la reunión - vas a necesitar esa información exacta para el plan financiero que entregarás después.",
             "recommendedTools": [
-              { "name": "Herramienta de videollamada con grabación", "url": "" }
+              {
+                "name": "Herramienta de videollamada con grabación",
+                "url": ""
+              }
             ],
             "registroFields": [
               {
@@ -4076,7 +4259,11 @@
                   "Retainer mensual"
                 ]
               },
-              { "id": "reg-notas-reunion", "label": "Notas de la reunión", "type": "textarea" },
+              {
+                "id": "reg-notas-reunion",
+                "label": "Notas de la reunión",
+                "type": "textarea"
+              },
               {
                 "id": "reg-proxima-reunion",
                 "label": "Fecha acordada para la próxima reunión",
@@ -4100,6 +4287,7 @@
           "id": "step-enviar-resumen-reunion",
           "title": "Enviar el resumen y notas de la primera reunión",
           "description": "Envía un resumen escrito de lo conversado.",
+          "icon": "send",
           "order": 7,
           "type": "one_time",
           "estimatedHours": 1,
@@ -4135,6 +4323,7 @@
           "id": "step-solicitar-documentos-cliente",
           "title": "Solicitar los documentos financieros del cliente",
           "description": "Solicita los documentos necesarios para construir el plan.",
+          "icon": "folder",
           "order": 8,
           "type": "one_time",
           "estimatedHours": 1,
@@ -4170,6 +4359,7 @@
           "id": "step-organizar-expediente-cliente",
           "title": "Crear el expediente digital del cliente en el CRM",
           "description": "Registra al cliente en el CRM con toda su información.",
+          "icon": "folder",
           "order": 9,
           "type": "one_time",
           "estimatedHours": 1,
@@ -4205,6 +4395,7 @@
           "id": "step-construir-plan",
           "title": "Construir el plan financiero del cliente",
           "description": "Traduce la información recopilada en un plan financiero claro y accionable.",
+          "icon": "line-chart",
           "order": 10,
           "type": "one_time",
           "estimatedHours": 6,
@@ -4241,7 +4432,11 @@
                 "mimeType": "",
                 "extension": "",
                 "size": 0,
-                "metadata": { "pages": null, "duration": null, "language": "es" },
+                "metadata": {
+                  "pages": null,
+                  "duration": null,
+                  "language": "es"
+                },
                 "tags": ["clientes", "plan financiero"],
                 "visibility": "organization"
               }
@@ -4260,6 +4455,7 @@
           "id": "step-revisar-plan",
           "title": "Revisar el plan financiero antes de presentarlo",
           "description": "Revisa el plan antes de la reunión de presentación.",
+          "icon": "clipboard-check",
           "order": 11,
           "type": "one_time",
           "estimatedHours": 2,
@@ -4295,6 +4491,7 @@
           "id": "step-agendar-presentacion-plan",
           "title": "Agendar la reunión de presentación del plan",
           "description": "Agenda la reunión donde vas a presentar el plan.",
+          "icon": "calendar",
           "order": 12,
           "type": "one_time",
           "estimatedHours": 1,
@@ -4330,6 +4527,7 @@
           "id": "step-presentar-plan",
           "title": "Presentar el plan financiero al cliente",
           "description": "Presenta el plan financiero completo al cliente.",
+          "icon": "presentation",
           "order": 13,
           "type": "one_time",
           "estimatedHours": 2,
@@ -4348,7 +4546,9 @@
               "summary": "Presenta el plan financiero completo al cliente.",
               "body": "Preséntalo en una reunión, no solo por correo - el plan se entiende mejor cuando lo explicas en voz alta y respondes preguntas en el momento."
             },
-            "objective": { "description": "Presentar el plan financiero completo al cliente." },
+            "objective": {
+              "description": "Presentar el plan financiero completo al cliente."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {
@@ -4363,6 +4563,7 @@
           "id": "step-firma-plan-acordado",
           "title": "Recopilar la firma del cliente sobre el plan acordado",
           "description": "Obtén la confirmación formal del cliente sobre el plan.",
+          "icon": "pen-tool",
           "order": 14,
           "type": "one_time",
           "estimatedHours": 1,
@@ -4398,6 +4599,7 @@
           "id": "step-programar-seguimiento",
           "title": "Programar el primer seguimiento mensual",
           "description": "Programa la primera reunión de seguimiento con el cliente.",
+          "icon": "calendar-clock",
           "order": 15,
           "type": "one_time",
           "estimatedHours": 1,
@@ -4433,6 +4635,7 @@
           "id": "step-seguimiento-mensual",
           "title": "Seguimiento mensual con el cliente",
           "description": "Acompaña al cliente en la ejecución de su plan y ajusta según cambien sus circunstancias.",
+          "icon": "repeat",
           "order": 16,
           "type": "monthly",
           "estimatedHours": 1,
@@ -4486,6 +4689,7 @@
           "id": "step-retro-trimestral",
           "title": "Solicitar retroalimentación al cliente tras el primer trimestre",
           "description": "Pide retroalimentación honesta sobre el servicio recibido.",
+          "icon": "message-circle",
           "order": 17,
           "type": "quarterly",
           "estimatedHours": 1,
@@ -4521,6 +4725,7 @@
           "id": "step-solicitar-referido-cliente",
           "title": "Solicitar una referencia al cliente satisfecho",
           "description": "Pide al cliente que te refiera con alguien que conozca.",
+          "icon": "gift",
           "order": 18,
           "type": "quarterly",
           "estimatedHours": 1,
@@ -4539,7 +4744,9 @@
               "summary": "Pide al cliente que te refiera con alguien que conozca.",
               "body": "Si la retroalimentación del cliente fue positiva, es el mejor momento para pedirle una referencia siguiendo tu programa de referidos."
             },
-            "objective": { "description": "Solicitar una referencia a un cliente satisfecho." },
+            "objective": {
+              "description": "Solicitar una referencia a un cliente satisfecho."
+            },
             "checklist": [],
             "resources": [],
             "assistant": {

@@ -307,6 +307,8 @@ export interface BlueprintStep {
   id: string;
   title: string;
   description: string;
+  /** Nombre de icono de lucide-react en kebab-case (ej. "scale", "landmark"). Opcional: si falta, se infiere por palabra clave del titulo (ver lib/step-icon.ts). */
+  icon?: string;
   order: number;
   type: StepType;
   estimatedHours: number;

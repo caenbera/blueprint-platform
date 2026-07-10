@@ -328,7 +328,7 @@ export default function StepView() {
             <div className="rounded-lg border p-4">
               <div className="flex items-start gap-3">
                 <div className="bg-success/10 text-success flex h-12 w-12 shrink-0 items-center justify-center rounded-lg">
-                  {createElement(resolveStepIcon(step.title), { className: "h-6 w-6" })}
+                  {createElement(resolveStepIcon(step), { className: "h-6 w-6" })}
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="text-h4">{step.title}</p>
@@ -576,7 +576,7 @@ export default function StepView() {
       <div className="rounded-lg border p-5">
         <div className="flex items-start gap-4">
           <div className="bg-primary/10 text-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-xl">
-            {createElement(resolveStepIcon(step.title), { className: "h-7 w-7" })}
+            {createElement(resolveStepIcon(step), { className: "h-7 w-7" })}
           </div>
           <div className="min-w-0 flex-1">
             <p className="text-small text-muted-foreground">

@@ -124,6 +124,8 @@ const stepSchema = z.object({
   id: z.string().min(1),
   title: z.string().min(1, "Cada Step necesita un titulo."),
   description: z.string().default(""),
+  // Nombre de icono de lucide-react en kebab-case (ver types/domain.ts#BlueprintStep). Ausente = se infiere por palabra clave del titulo.
+  icon: z.string().optional(),
   order: z.number().optional(),
   type: z.enum([
     "one_time",

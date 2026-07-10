@@ -193,7 +193,7 @@ export default function PhaseView() {
                 {sortedSteps.map((step, i) => {
                   const rowStatus = calculateStepRowStatus(step, stepStates, activeStepId);
                   const rowMeta = STEP_STATUS_META[rowStatus];
-                  const StepIcon = resolveStepIcon(step.title);
+                  const StepIcon = resolveStepIcon(step);
                   const blocked = rowStatus === "bloqueado";
                   return (
                     <button

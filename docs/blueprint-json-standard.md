@@ -142,6 +142,7 @@ sobre por qué). Campos:
   "id": "step-definir-servicios",
   "title": "Definir el catálogo de servicios",
   "description": "Descripción corta, 1-2 líneas.",
+  "icon": "list-checks",
   "order": 0,
   "type": "one_time | daily | weekly | monthly | quarterly | semester | yearly | milestone | custom",
   "estimatedHours": 2,
@@ -157,6 +158,14 @@ sobre por qué). Campos:
   "content": {/* ver abajo */}
 }
 ```
+
+`icon` es opcional: el nombre de un icono de `lucide-react` en kebab-case
+(mismo formato que el `icon` del Blueprint, ej. `"scale"`, `"landmark"`,
+`"line-chart"` — ver [lucide.dev/icons](https://lucide.dev/icons) para el
+catálogo completo). Si el nombre no existe en `lucide-react`, o si el
+campo falta, `lib/step-icon.ts#resolveStepIcon` cae a una inferencia por
+palabra clave del título, y si tampoco hay coincidencia usa un icono
+genérico (`Target`) - nunca falla el import por un icono inválido.
 
 `type` define el ciclo de vida del Step, nunca su estructura — un Step
 `weekly` tiene exactamente la misma forma que uno `one_time`. Solo
