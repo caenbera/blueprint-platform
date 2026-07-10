@@ -65,7 +65,7 @@
           "priority": "high",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -79,7 +79,13 @@
             "objective": {
               "description": "Definir el nombre comercial de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-elegir-nombre",
+                "task": "Definir el nombre comercial de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir un nombre comercial memorable y profesional para su firma de asesoría financiera.",
@@ -101,7 +107,7 @@
           "priority": "high",
           "dependencies": ["step-elegir-nombre"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -115,7 +121,13 @@
             "objective": {
               "description": "Confirmar que el nombre elegido esté disponible legalmente y como dominio/usuario digital."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-verificar-nombre",
+                "task": "Confirmar que el nombre elegido esté disponible legalmente y como dominio/usuario digital.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a verificar la disponibilidad de un nombre comercial.",
@@ -227,7 +239,7 @@
           "priority": "normal",
           "dependencies": ["step-comparar-estructuras"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -241,7 +253,13 @@
             "objective": {
               "description": "Definir si vas a operar solo o con socios, y en qué proporción."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-definir-socios",
+                "task": "Definir si vas a operar solo o con socios, y en qué proporción.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a evaluar si conviene operar solo o con socios.",
@@ -263,7 +281,7 @@
           "priority": "normal",
           "dependencies": ["step-definir-socios"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -277,7 +295,13 @@
             "objective": {
               "description": "Tener un acuerdo de socios por escrito, si la firma se constituye con más de un socio."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-acuerdo-socios",
+                "task": "Tener un acuerdo de socios por escrito, si la firma se constituye con más de un socio.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a estructurar las cláusulas clave de un acuerdo de socios.",
@@ -300,7 +324,7 @@
           "priority": "high",
           "dependencies": ["step-acuerdo-socios"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -314,7 +338,13 @@
             "objective": {
               "description": "Confirmar por escrito la estructura legal bajo la cual se va a registrar la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-elegir-estructura",
+                "task": "Confirmar por escrito la estructura legal bajo la cual se va a registrar la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a confirmar su decisión final de estructura legal.",
@@ -336,7 +366,7 @@
           "priority": "high",
           "dependencies": ["step-elegir-estructura"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -350,7 +380,13 @@
             "objective": {
               "description": "Tener listos todos los documentos que exige el trámite de registro mercantil."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-reunir-documentos-registro",
+                "task": "Tener listos todos los documentos que exige el trámite de registro mercantil.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar qué documentos necesita para el registro mercantil de su firma.",
@@ -372,7 +408,7 @@
           "priority": "high",
           "dependencies": ["step-reunir-documentos-registro"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -386,7 +422,13 @@
             "objective": {
               "description": "Presentar y dar seguimiento al trámite de registro legal de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-tramite-registro",
+                "task": "Presentar y dar seguimiento al trámite de registro legal de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario con el proceso de registro legal de su firma.",
@@ -409,7 +451,7 @@
           "priority": "high",
           "dependencies": ["step-tramite-registro"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -423,7 +465,13 @@
             "objective": {
               "description": "Obtener el número de identificación tributaria de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-id-tributaria",
+                "task": "Obtener el número de identificación tributaria de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a tramitar la identificación tributaria de su firma.",
@@ -445,7 +493,7 @@
           "priority": "normal",
           "dependencies": ["step-tramite-registro"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -459,7 +507,13 @@
             "objective": {
               "description": "Completar cualquier registro adicional exigido por la autoridad local o municipal."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-registro-local",
+                "task": "Completar cualquier registro adicional exigido por la autoridad local o municipal.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar si necesita un registro local adicional.",
@@ -481,7 +535,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -495,7 +549,13 @@
             "objective": {
               "description": "Comparar al menos 2 bancos con cuentas empresariales adecuadas para una firma de servicios profesionales."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-comparar-bancos",
+                "task": "Comparar al menos 2 bancos con cuentas empresariales adecuadas para una firma de servicios profesionales.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a comparar bancos para una cuenta empresarial.",
@@ -517,7 +577,7 @@
           "priority": "normal",
           "dependencies": ["step-id-tributaria"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -531,7 +591,13 @@
             "objective": {
               "description": "Tener listos los documentos de la firma que exige el banco para abrir la cuenta."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-documentos-banco",
+                "task": "Tener listos los documentos de la firma que exige el banco para abrir la cuenta.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a preparar los documentos para abrir una cuenta bancaria empresarial.",
@@ -553,7 +619,7 @@
           "priority": "normal",
           "dependencies": ["step-documentos-banco", "step-comparar-bancos"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -567,7 +633,13 @@
             "objective": {
               "description": "Abrir la cuenta bancaria a nombre de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-abrir-cuenta",
+                "task": "Abrir la cuenta bancaria a nombre de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a completar el proceso de apertura de cuenta bancaria empresarial.",
@@ -590,7 +662,7 @@
           "priority": "normal",
           "dependencies": ["step-abrir-cuenta"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -604,7 +676,13 @@
             "objective": {
               "description": "Activar el acceso a banca en línea de la cuenta empresarial."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-banca-linea",
+                "task": "Activar el acceso a banca en línea de la cuenta empresarial.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a activar y configurar la banca en línea de su cuenta empresarial.",
@@ -626,7 +704,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -640,7 +718,13 @@
             "objective": {
               "description": "Elegir el software con el que vas a llevar la contabilidad de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-elegir-contabilidad",
+                "task": "Elegir el software con el que vas a llevar la contabilidad de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir un software de contabilidad adecuado para una firma pequeña de servicios profesionales.",
@@ -672,7 +756,7 @@
           "priority": "normal",
           "dependencies": ["step-elegir-contabilidad", "step-abrir-cuenta"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -686,7 +770,13 @@
             "objective": {
               "description": "Configurar el software de contabilidad con las cuentas reales de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-configurar-contabilidad",
+                "task": "Configurar el software de contabilidad con las cuentas reales de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a configurar su software de contabilidad por primera vez.",
@@ -708,7 +798,7 @@
           "priority": "high",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -722,7 +812,13 @@
             "objective": {
               "description": "Cotizar al menos 2 aseguradoras que cubran servicios financieros."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-cotizar-seguro",
+                "task": "Cotizar al menos 2 aseguradoras que cubran servicios financieros.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a entender qué cubre un seguro de responsabilidad profesional para asesores financieros.",
@@ -744,7 +840,7 @@
           "priority": "high",
           "dependencies": ["step-cotizar-seguro"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -758,7 +854,13 @@
             "objective": {
               "description": "Contratar la póliza de responsabilidad profesional antes de firmar tu primer contrato con un cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-contratar-seguro",
+                "task": "Contratar la póliza de responsabilidad profesional antes de firmar tu primer contrato con un cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir entre las cotizaciones de seguro de responsabilidad profesional que reunió.",
@@ -784,7 +886,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -798,7 +900,13 @@
             "objective": {
               "description": "Calcular cuánto capital necesitas para operar la firma hasta generar ingresos estables."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-presupuesto-inicial",
+                "task": "Calcular cuánto capital necesitas para operar la firma hasta generar ingresos estables.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a calcular el presupuesto inicial de arranque de su firma.",
@@ -831,7 +939,7 @@
           "priority": "high",
           "dependencies": ["step-elegir-estructura"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -845,7 +953,13 @@
             "objective": {
               "description": "Identificar qué certificación o registro profesional es obligatorio para ejercer legalmente en tu país."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-investigar-requisitos",
+                "task": "Identificar qué certificación o registro profesional es obligatorio para ejercer legalmente en tu país.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar qué certificaciones profesionales necesita para ejercer como asesor financiero en su país.",
@@ -868,7 +982,7 @@
           "priority": "high",
           "dependencies": ["step-investigar-requisitos"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -882,7 +996,13 @@
             "objective": {
               "description": "Completar la inscripción al examen o proceso de certificación correspondiente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-inscribir-examen",
+                "task": "Completar la inscripción al examen o proceso de certificación correspondiente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a completar su inscripción a un examen de certificación profesional.",
@@ -904,7 +1024,7 @@
           "priority": "high",
           "dependencies": ["step-inscribir-examen"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -918,7 +1038,13 @@
             "objective": {
               "description": "Prepararte con el material de estudio oficial del examen de certificación."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-estudiar-examen",
+                "task": "Prepararte con el material de estudio oficial del examen de certificación.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a organizar un plan de estudio para su examen de certificación.",
@@ -941,7 +1067,7 @@
           "priority": "high",
           "dependencies": ["step-estudiar-examen"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -955,7 +1081,13 @@
             "objective": {
               "description": "Presentar el examen o proceso de evaluación de la certificación."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-presentar-examen",
+                "task": "Presentar el examen o proceso de evaluación de la certificación.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a organizar los últimos detalles antes de presentar su examen de certificación.",
@@ -977,7 +1109,7 @@
           "priority": "high",
           "dependencies": ["step-presentar-examen"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -991,7 +1123,13 @@
             "objective": {
               "description": "Obtener tu número de certificación o registro profesional oficial."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-obtener-registro",
+                "task": "Obtener tu número de certificación o registro profesional oficial.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a completar el trámite final para obtener su registro profesional.",
@@ -1013,7 +1151,7 @@
           "priority": "high",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": true,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1027,7 +1165,13 @@
             "objective": {
               "description": "Tener una política de confidencialidad y manejo de datos documentada."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-redactar-politica-privacidad",
+                "task": "Tener una política de confidencialidad y manejo de datos documentada.",
+                "completed": false
+              }
+            ],
             "resources": [
               {
                 "id": "res-plantilla-privacidad",
@@ -1071,7 +1215,7 @@
           "priority": "normal",
           "dependencies": ["step-redactar-politica-privacidad"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1085,7 +1229,13 @@
             "objective": {
               "description": "Definir la plataforma y el proceso de almacenamiento seguro de la información de clientes."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-definir-almacenamiento",
+                "task": "Definir la plataforma y el proceso de almacenamiento seguro de la información de clientes.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir un proceso seguro de almacenamiento de información de clientes.",
@@ -1107,7 +1257,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1121,7 +1271,13 @@
             "objective": {
               "description": "Identificar todas tus fuentes de ingreso que puedan representar un conflicto de interés."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-listar-fuentes-ingreso",
+                "task": "Identificar todas tus fuentes de ingreso que puedan representar un conflicto de interés.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar posibles conflictos de interés en su modelo de negocio como asesor financiero.",
@@ -1143,7 +1299,7 @@
           "priority": "normal",
           "dependencies": ["step-listar-fuentes-ingreso"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1157,7 +1313,13 @@
             "objective": {
               "description": "Definir cómo vas a declarar un conflicto de interés a un cliente cuando ocurra."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-proceso-declaracion-conflicto",
+                "task": "Definir cómo vas a declarar un conflicto de interés a un cliente cuando ocurra.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a diseñar un proceso claro de declaración de conflictos de interés.",
@@ -1180,7 +1342,7 @@
           "priority": "normal",
           "dependencies": ["step-proceso-declaracion-conflicto"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1194,7 +1356,13 @@
             "objective": {
               "description": "Tener un formato estándar listo para declarar un conflicto de interés cuando se presente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-formato-conflicto",
+                "task": "Tener un formato estándar listo para declarar un conflicto de interés cuando se presente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar un formato de declaración de conflicto de interés.",
@@ -1216,7 +1384,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1230,7 +1398,13 @@
             "objective": {
               "description": "Definir cuánto tiempo y cómo vas a conservar los registros y comunicaciones con cada cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-politica-retencion",
+                "task": "Definir cuánto tiempo y cómo vas a conservar los registros y comunicaciones con cada cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir su política de retención de registros.",
@@ -1252,7 +1426,7 @@
           "priority": "normal",
           "dependencies": ["step-obtener-registro"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1266,7 +1440,13 @@
             "objective": {
               "description": "Programar recordatorios para renovar tu certificación y cumplir con la educación continua exigida."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-calendario-renovacion",
+                "task": "Programar recordatorios para renovar tu certificación y cumplir con la educación continua exigida.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a organizar el calendario de renovación de su certificación profesional.",
@@ -1298,7 +1478,7 @@
           "priority": "high",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1312,7 +1492,13 @@
             "objective": {
               "description": "Elaborar un listado completo de los servicios de asesoría que podrías ofrecer."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-catalogo-servicios",
+                "task": "Elaborar un listado completo de los servicios de asesoría que podrías ofrecer.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a hacer una lluvia de ideas de posibles servicios de asesoría financiera.",
@@ -1334,7 +1520,7 @@
           "priority": "high",
           "dependencies": ["step-catalogo-servicios"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1348,7 +1534,13 @@
             "objective": {
               "description": "Priorizar entre 1 y 3 servicios principales para lanzar primero."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-priorizar-servicios",
+                "task": "Priorizar entre 1 y 3 servicios principales para lanzar primero.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a priorizar los servicios con los que debería lanzar su firma.",
@@ -1374,7 +1566,7 @@
           "priority": "normal",
           "dependencies": ["step-priorizar-servicios"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1388,7 +1580,13 @@
             "objective": {
               "description": "Definir a qué perfil de cliente va dirigido cada servicio priorizado."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-perfil-por-servicio",
+                "task": "Definir a qué perfil de cliente va dirigido cada servicio priorizado.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el perfil de cliente ideal para cada uno de sus servicios.",
@@ -1410,7 +1608,7 @@
           "priority": "high",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1424,7 +1622,13 @@
             "objective": {
               "description": "Comparar los modelos de cobro habituales en asesoría financiera."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-comparar-modelos-cobro",
+                "task": "Comparar los modelos de cobro habituales en asesoría financiera.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a comparar los modelos de cobro habituales en asesoría financiera.",
@@ -1446,7 +1650,7 @@
           "priority": "high",
           "dependencies": ["step-comparar-modelos-cobro"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1460,7 +1664,13 @@
             "objective": {
               "description": "Calcular la tarifa objetivo según tus costos y el tiempo estimado por cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-calcular-tarifa",
+                "task": "Calcular la tarifa objetivo según tus costos y el tiempo estimado por cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a calcular su tarifa objetivo como asesor financiero.",
@@ -1482,7 +1692,7 @@
           "priority": "high",
           "dependencies": ["step-calcular-tarifa"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1496,7 +1706,13 @@
             "objective": {
               "description": "Definir y documentar el modelo de tarifas de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-documentar-tarifas",
+                "task": "Definir y documentar el modelo de tarifas de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a documentar su estructura de tarifas final.",
@@ -1552,7 +1768,7 @@
           "priority": "normal",
           "dependencies": ["step-documentar-tarifas", "step-priorizar-servicios"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1566,7 +1782,13 @@
             "objective": {
               "description": "Definir paquetes de asesoría concretos y fáciles de vender."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-definir-paquetes",
+                "task": "Definir paquetes de asesoría concretos y fáciles de vender.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a empaquetar sus servicios de asesoría financiera en ofertas claras.",
@@ -1588,7 +1810,7 @@
           "priority": "normal",
           "dependencies": ["step-definir-paquetes"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1602,7 +1824,13 @@
             "objective": {
               "description": "Documentar qué incluye y qué no incluye cada paquete."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-alcance-paquetes",
+                "task": "Documentar qué incluye y qué no incluye cada paquete.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a documentar el alcance detallado de cada paquete de servicios.",
@@ -1624,7 +1852,7 @@
           "priority": "high",
           "dependencies": ["step-alcance-paquetes"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": true,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1638,7 +1866,13 @@
             "objective": {
               "description": "Redactar el borrador del contrato de servicios estándar."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-borrador-contrato",
+                "task": "Redactar el borrador del contrato de servicios estándar.",
+                "completed": false
+              }
+            ],
             "resources": [
               {
                 "id": "res-plantilla-contrato",
@@ -1682,7 +1916,7 @@
           "priority": "high",
           "dependencies": ["step-borrador-contrato"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1696,7 +1930,13 @@
             "objective": {
               "description": "Obtener la revisión legal final del contrato de servicios."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-revision-abogado-contrato",
+                "task": "Obtener la revisión legal final del contrato de servicios.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a preparar las preguntas clave para la revisión legal de su contrato.",
@@ -1719,7 +1959,7 @@
           "priority": "normal",
           "dependencies": ["step-alcance-paquetes"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1733,7 +1973,13 @@
             "objective": {
               "description": "Definir y documentar tu política de cancelación y reembolsos."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-politica-cancelacion",
+                "task": "Definir y documentar tu política de cancelación y reembolsos.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar una política de cancelación y reembolsos justa y clara.",
@@ -1755,7 +2001,7 @@
           "priority": "normal",
           "dependencies": ["step-documentar-tarifas"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1769,7 +2015,13 @@
             "objective": {
               "description": "Preparar la tabla de tarifas y paquetes lista para publicar en tu sitio web."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-tabla-tarifas-web",
+                "task": "Preparar la tabla de tarifas y paquetes lista para publicar en tu sitio web.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a presentar su tabla de tarifas de forma clara para el sitio web.",
@@ -1801,7 +2053,7 @@
           "priority": "normal",
           "dependencies": ["step-elegir-nombre"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1815,7 +2067,13 @@
             "objective": {
               "description": "Decidir el nombre bajo el cual te vas a presentar públicamente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-nombre-publico",
+                "task": "Decidir el nombre bajo el cual te vas a presentar públicamente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a decidir su nombre de marca público.",
@@ -1837,7 +2095,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1851,7 +2109,13 @@
             "objective": {
               "description": "Redactar una frase corta que resuma tu propuesta de valor."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-eslogan",
+                "task": "Redactar una frase corta que resuma tu propuesta de valor.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar un eslogan claro y memorable para su firma.",
@@ -1873,7 +2137,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1887,7 +2151,13 @@
             "objective": {
               "description": "Elegir los colores oficiales de tu marca."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-paleta-colores",
+                "task": "Elegir los colores oficiales de tu marca.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir una paleta de colores profesional para una firma financiera.",
@@ -1909,7 +2179,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1923,7 +2193,13 @@
             "objective": {
               "description": "Elegir las fuentes tipográficas oficiales de tu marca."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-tipografia",
+                "task": "Elegir las fuentes tipográficas oficiales de tu marca.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir una tipografía profesional para su marca.",
@@ -1945,7 +2221,7 @@
           "priority": "high",
           "dependencies": ["step-paleta-colores", "step-tipografia"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1959,7 +2235,13 @@
             "objective": {
               "description": "Tener un logo profesional listo para usar en todos tus materiales."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-disenar-logo",
+                "task": "Tener un logo profesional listo para usar en todos tus materiales.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el brief de diseño de su logo.",
@@ -1981,7 +2263,7 @@
           "priority": "normal",
           "dependencies": ["step-disenar-logo"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -1995,7 +2277,13 @@
             "objective": {
               "description": "Tener las variantes necesarias del logo (horizontal, ícono, monocromático) para distintos usos."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-variantes-logo",
+                "task": "Tener las variantes necesarias del logo (horizontal, ícono, monocromático) para distintos usos.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir qué variantes de logo necesita.",
@@ -2017,7 +2305,7 @@
           "priority": "normal",
           "dependencies": ["step-disenar-logo"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2031,7 +2319,13 @@
             "objective": {
               "description": "Tener tarjetas de presentación profesionales listas para imprimir."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-tarjeta-presentacion",
+                "task": "Tener tarjetas de presentación profesionales listas para imprimir.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el contenido de su tarjeta de presentación.",
@@ -2053,7 +2347,7 @@
           "priority": "normal",
           "dependencies": ["step-disenar-logo"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2067,7 +2361,13 @@
             "objective": {
               "description": "Tener una plantilla de membrete lista para documentos oficiales."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-membrete",
+                "task": "Tener una plantilla de membrete lista para documentos oficiales.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a diseñar una plantilla de membrete profesional.",
@@ -2089,7 +2389,7 @@
           "priority": "normal",
           "dependencies": ["step-disenar-logo"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2103,7 +2403,13 @@
             "objective": {
               "description": "Tener una firma de correo profesional y consistente con tu marca."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-firma-correo",
+                "task": "Tener una firma de correo profesional y consistente con tu marca.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a diseñar una firma de correo profesional.",
@@ -2125,7 +2431,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2139,7 +2445,13 @@
             "objective": {
               "description": "Definir cómo se comunica tu marca (formal, cercana, técnica, etc.)."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-tono-comunicacion",
+                "task": "Definir cómo se comunica tu marca (formal, cercana, técnica, etc.).",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el tono de comunicación de su marca.",
@@ -2161,7 +2473,7 @@
           "priority": "normal",
           "dependencies": ["step-priorizar-servicios"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2175,7 +2487,13 @@
             "objective": {
               "description": "Tener un discurso breve y claro para presentarte en cualquier contexto."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-elevator-pitch",
+                "task": "Tener un discurso breve y claro para presentarte en cualquier contexto.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar un elevator pitch claro y natural.",
@@ -2198,7 +2516,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2212,7 +2530,13 @@
             "objective": {
               "description": "Tener una biografía profesional lista para tu sitio web y tus perfiles."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-biografia",
+                "task": "Tener una biografía profesional lista para tu sitio web y tus perfiles.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar una biografía profesional convincente.",
@@ -2244,7 +2568,7 @@
           "priority": "high",
           "dependencies": ["step-verificar-nombre"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2258,7 +2582,13 @@
             "objective": {
               "description": "Registrar el dominio oficial de tu sitio web."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-registrar-dominio",
+                "task": "Registrar el dominio oficial de tu sitio web.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir y registrar el dominio de su sitio web.",
@@ -2280,7 +2610,7 @@
           "priority": "high",
           "dependencies": ["step-registrar-dominio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2294,7 +2624,13 @@
             "objective": {
               "description": "Contratar el servicio de hosting donde vivirá tu sitio web."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-contratar-hosting",
+                "task": "Contratar el servicio de hosting donde vivirá tu sitio web.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir un servicio de hosting adecuado.",
@@ -2316,7 +2652,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2330,7 +2666,13 @@
             "objective": {
               "description": "Elegir la plataforma con la que vas a construir tu sitio web."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-elegir-plataforma-web",
+                "task": "Elegir la plataforma con la que vas a construir tu sitio web.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir la plataforma más adecuada para construir su sitio web.",
@@ -2362,7 +2704,7 @@
           "priority": "normal",
           "dependencies": ["step-elegir-plataforma-web"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2376,7 +2718,13 @@
             "objective": {
               "description": "Definir las páginas principales que va a tener tu sitio web."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-mapa-sitio",
+                "task": "Definir las páginas principales que va a tener tu sitio web.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el mapa de páginas de su sitio web.",
@@ -2398,7 +2746,7 @@
           "priority": "high",
           "dependencies": ["step-mapa-sitio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2412,7 +2760,13 @@
             "objective": {
               "description": "Redactar el contenido de la página principal del sitio."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-pagina-inicio",
+                "task": "Redactar el contenido de la página principal del sitio.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar el contenido de la página de inicio de su sitio web.",
@@ -2434,7 +2788,7 @@
           "priority": "high",
           "dependencies": ["step-mapa-sitio", "step-alcance-paquetes"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2448,7 +2802,13 @@
             "objective": {
               "description": "Redactar el contenido de la página de Servicios con tus paquetes y tarifas."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-pagina-servicios",
+                "task": "Redactar el contenido de la página de Servicios con tus paquetes y tarifas.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar la página de Servicios de su sitio web.",
@@ -2470,7 +2830,7 @@
           "priority": "normal",
           "dependencies": ["step-mapa-sitio", "step-biografia"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2484,7 +2844,13 @@
             "objective": {
               "description": "Redactar el contenido de la página que presenta a la firma y a su fundador."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-pagina-sobre-mi",
+                "task": "Redactar el contenido de la página que presenta a la firma y a su fundador.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar la página Sobre mí de su sitio web.",
@@ -2506,7 +2872,7 @@
           "priority": "normal",
           "dependencies": ["step-mapa-sitio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2520,7 +2886,13 @@
             "objective": {
               "description": "Redactar el contenido de la página de contacto."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-pagina-contacto",
+                "task": "Redactar el contenido de la página de contacto.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar una página de contacto efectiva.",
@@ -2542,7 +2914,7 @@
           "priority": "normal",
           "dependencies": ["step-redactar-politica-privacidad", "step-mapa-sitio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2556,7 +2928,13 @@
             "objective": {
               "description": "Publicar tu política de privacidad y manejo de datos en el sitio web."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-publicar-privacidad-web",
+                "task": "Publicar tu política de privacidad y manejo de datos en el sitio web.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a publicar su política de privacidad en su sitio web.",
@@ -2584,7 +2962,7 @@
             "step-contratar-hosting"
           ],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2598,7 +2976,13 @@
             "objective": {
               "description": "Publicar el sitio web completo y verificar que funcione correctamente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-publicar-sitio",
+                "task": "Publicar el sitio web completo y verificar que funcione correctamente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a hacer una última revisión antes de publicar su sitio web.",
@@ -2620,7 +3004,7 @@
           "priority": "normal",
           "dependencies": ["step-registrar-dominio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2634,7 +3018,13 @@
             "objective": {
               "description": "Configurar tu cuenta de correo electrónico con el dominio de la firma."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-correo-profesional",
+                "task": "Configurar tu cuenta de correo electrónico con el dominio de la firma.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a configurar un correo electrónico profesional con su propio dominio.",
@@ -2656,7 +3046,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2670,7 +3060,13 @@
             "objective": {
               "description": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-fotos-profesionales",
+                "task": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a planear una sesión de fotos profesional.",
@@ -2692,7 +3088,7 @@
           "priority": "normal",
           "dependencies": ["step-biografia", "step-fotos-profesionales"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2706,7 +3102,13 @@
             "objective": {
               "description": "Tener un perfil de LinkedIn profesional y actualizado."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-linkedin",
+                "task": "Tener un perfil de LinkedIn profesional y actualizado.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a optimizar su perfil de LinkedIn como asesor financiero.",
@@ -2728,7 +3130,7 @@
           "priority": "normal",
           "dependencies": ["step-publicar-sitio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2742,7 +3144,13 @@
             "objective": {
               "description": "Crear y verificar tu perfil de Google Business Profile."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-google-business",
+                "task": "Crear y verificar tu perfil de Google Business Profile.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a crear y optimizar su perfil de Google Business.",
@@ -2764,7 +3172,7 @@
           "priority": "normal",
           "dependencies": ["step-publicar-sitio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2778,7 +3186,13 @@
             "objective": {
               "description": "Registrar tu firma en los directorios profesionales relevantes de tu sector."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-directorios",
+                "task": "Registrar tu firma en los directorios profesionales relevantes de tu sector.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar directorios profesionales relevantes para asesores financieros.",
@@ -2800,7 +3214,7 @@
           "priority": "normal",
           "dependencies": ["step-disenar-logo"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2814,7 +3228,13 @@
             "objective": {
               "description": "Crear los perfiles de la firma en las redes sociales donde está tu cliente ideal."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-redes-sociales",
+                "task": "Crear los perfiles de la firma en las redes sociales donde está tu cliente ideal.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a decidir en qué redes sociales debería tener presencia su firma.",
@@ -2836,7 +3256,7 @@
           "priority": "normal",
           "dependencies": ["step-publicar-sitio"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2850,7 +3270,13 @@
             "objective": {
               "description": "Configurar Google Analytics u otra herramienta para medir las visitas de tu sitio."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-analytics",
+                "task": "Configurar Google Analytics u otra herramienta para medir las visitas de tu sitio.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a configurar Google Analytics en su sitio web.",
@@ -2882,7 +3308,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2896,7 +3322,13 @@
             "objective": {
               "description": "Comparar al menos 2 opciones de CRM adecuadas para firmas pequeñas."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-comparar-crm",
+                "task": "Comparar al menos 2 opciones de CRM adecuadas para firmas pequeñas.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a comparar opciones de CRM para una firma de asesoría financiera pequeña.",
@@ -2928,7 +3360,7 @@
           "priority": "normal",
           "dependencies": ["step-comparar-crm"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2942,7 +3374,13 @@
             "objective": {
               "description": "Elegir y contratar el CRM definitivo."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-elegir-crm",
+                "task": "Elegir y contratar el CRM definitivo.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a tomar la decisión final sobre su CRM.",
@@ -2964,7 +3402,7 @@
           "priority": "normal",
           "dependencies": ["step-elegir-crm", "step-alcance-paquetes"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -2978,7 +3416,13 @@
             "objective": {
               "description": "Configurar el CRM elegido con tus paquetes de servicios."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-configurar-crm",
+                "task": "Configurar el CRM elegido con tus paquetes de servicios.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a configurar su CRM para una firma de asesoría financiera.",
@@ -3000,7 +3444,7 @@
           "priority": "high",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3014,7 +3458,13 @@
             "objective": {
               "description": "Comparar opciones de software de planificación financiera."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-comparar-planificacion",
+                "task": "Comparar opciones de software de planificación financiera.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a comparar opciones de software de planificación financiera.",
@@ -3036,7 +3486,7 @@
           "priority": "high",
           "dependencies": ["step-comparar-planificacion"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3050,7 +3500,13 @@
             "objective": {
               "description": "Elegir y contratar el software de planificación financiera definitivo."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-elegir-planificacion",
+                "task": "Elegir y contratar el software de planificación financiera definitivo.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a tomar la decisión final sobre su software de planificación financiera.",
@@ -3072,7 +3528,7 @@
           "priority": "normal",
           "dependencies": ["step-elegir-planificacion"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3086,7 +3542,13 @@
             "objective": {
               "description": "Tener una plantilla base de plan financiero configurada."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-plantilla-plan",
+                "task": "Tener una plantilla base de plan financiero configurada.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a estructurar una plantilla base de plan financiero.",
@@ -3108,7 +3570,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3122,7 +3584,13 @@
             "objective": {
               "description": "Elegir una herramienta de agendamiento de citas."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-agendamiento",
+                "task": "Elegir una herramienta de agendamiento de citas.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir una herramienta de agendamiento de citas.",
@@ -3144,7 +3612,7 @@
           "priority": "normal",
           "dependencies": ["step-agendamiento"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3158,7 +3626,13 @@
             "objective": {
               "description": "Conectar la herramienta de agendamiento a tu calendario personal."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-conectar-calendario",
+                "task": "Conectar la herramienta de agendamiento a tu calendario personal.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a conectar su herramienta de agendamiento con su calendario.",
@@ -3180,7 +3654,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3194,7 +3668,13 @@
             "objective": {
               "description": "Elegir una herramienta de firma electrónica para contratos."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-firma-electronica",
+                "task": "Elegir una herramienta de firma electrónica para contratos.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir una herramienta de firma electrónica.",
@@ -3216,7 +3696,7 @@
           "priority": "normal",
           "dependencies": ["step-definir-almacenamiento"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3230,7 +3710,13 @@
             "objective": {
               "description": "Elegir la herramienta de almacenamiento seguro de documentos."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-almacenamiento-seguro",
+                "task": "Elegir la herramienta de almacenamiento seguro de documentos.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir una herramienta de almacenamiento seguro de documentos.",
@@ -3252,7 +3738,7 @@
           "priority": "normal",
           "dependencies": ["step-almacenamiento-seguro"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3266,7 +3752,13 @@
             "objective": {
               "description": "Configurar la estructura de carpetas estándar por cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-carpetas-cliente",
+                "task": "Configurar la estructura de carpetas estándar por cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir una estructura de carpetas estándar por cliente.",
@@ -3288,7 +3780,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3302,7 +3794,13 @@
             "objective": {
               "description": "Contratar una línea telefónica profesional separada de tu número personal."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-linea-telefonica",
+                "task": "Contratar una línea telefónica profesional separada de tu número personal.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir una solución de línea telefónica profesional.",
@@ -3324,7 +3822,7 @@
           "priority": "normal",
           "dependencies": ["step-plantilla-plan"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3338,7 +3836,13 @@
             "objective": {
               "description": "Documentar los pasos del proceso de análisis financiero."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-proceso-analisis",
+                "task": "Documentar los pasos del proceso de análisis financiero.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a diseñar un proceso interno consistente de análisis financiero.",
@@ -3361,7 +3865,7 @@
           "priority": "normal",
           "dependencies": ["step-proceso-analisis"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3375,7 +3879,13 @@
             "objective": {
               "description": "Definir el formato del entregable final para el cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-formato-entregable",
+                "task": "Definir el formato del entregable final para el cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el formato de su entregable final para clientes.",
@@ -3407,7 +3917,7 @@
           "priority": "high",
           "dependencies": ["step-priorizar-servicios"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3421,7 +3931,13 @@
             "objective": {
               "description": "Describir el perfil demográfico y financiero de tu cliente ideal."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-cliente-ideal-perfil",
+                "task": "Describir el perfil demográfico y financiero de tu cliente ideal.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el perfil de su cliente ideal como asesor financiero.",
@@ -3444,7 +3960,7 @@
           "priority": "normal",
           "dependencies": ["step-cliente-ideal-perfil"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3458,7 +3974,13 @@
             "objective": {
               "description": "Identificar los principales dolores y metas financieras de tu cliente ideal."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-dolores-metas",
+                "task": "Identificar los principales dolores y metas financieras de tu cliente ideal.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar los dolores y metas de su cliente ideal.",
@@ -3480,7 +4002,7 @@
           "priority": "normal",
           "dependencies": ["step-redes-sociales"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3494,7 +4016,13 @@
             "objective": {
               "description": "Definir en qué canales vas a publicar contenido de forma constante."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-canales-contenido",
+                "task": "Definir en qué canales vas a publicar contenido de forma constante.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a elegir el canal de contenido más adecuado para su cliente ideal.",
@@ -3516,7 +4044,7 @@
           "priority": "normal",
           "dependencies": ["step-canales-contenido"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3530,7 +4058,13 @@
             "objective": {
               "description": "Planear las publicaciones de contenido del primer mes."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-calendario-contenido",
+                "task": "Planear las publicaciones de contenido del primer mes.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a planear un calendario de contenido educativo para su primer mes.",
@@ -3552,7 +4086,7 @@
           "priority": "normal",
           "dependencies": ["step-calendario-contenido"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3566,7 +4100,13 @@
             "objective": {
               "description": "Publicar tu primera pieza de contenido educativo."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-primer-articulo",
+                "task": "Publicar tu primera pieza de contenido educativo.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar su primera publicación de contenido educativo.",
@@ -3588,7 +4128,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3602,7 +4142,13 @@
             "objective": {
               "description": "Definir cómo vas a pedir y recompensar referidos de clientes actuales."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-programa-referidos",
+                "task": "Definir cómo vas a pedir y recompensar referidos de clientes actuales.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a diseñar un programa de referidos simple y efectivo.",
@@ -3627,7 +4173,7 @@
           "priority": "normal",
           "dependencies": [],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3641,7 +4187,13 @@
             "objective": {
               "description": "Identificar asociaciones o cámaras profesionales relevantes para afiliarte."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-identificar-asociaciones",
+                "task": "Identificar asociaciones o cámaras profesionales relevantes para afiliarte.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar asociaciones profesionales relevantes en su sector.",
@@ -3663,7 +4215,7 @@
           "priority": "normal",
           "dependencies": ["step-identificar-asociaciones"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3677,7 +4229,13 @@
             "objective": {
               "description": "Completar tu afiliación a una asociación o cámara profesional."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-afiliarte-asociacion",
+                "task": "Completar tu afiliación a una asociación o cámara profesional.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a completar el proceso de afiliación a una asociación profesional.",
@@ -3699,7 +4257,7 @@
           "priority": "normal",
           "dependencies": ["step-google-business"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3713,7 +4271,13 @@
             "objective": {
               "description": "Registrar tu firma en los sitios de reseñas relevantes de tu sector."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-sitios-resenas",
+                "task": "Registrar tu firma en los sitios de reseñas relevantes de tu sector.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a identificar sitios de reseñas relevantes para asesores financieros.",
@@ -3735,7 +4299,7 @@
           "priority": "normal",
           "dependencies": ["step-sitios-resenas"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3749,7 +4313,13 @@
             "objective": {
               "description": "Solicitar tu primera reseña a un contacto de confianza."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-primera-resena",
+                "task": "Solicitar tu primera reseña a un contacto de confianza.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar una solicitud de reseña efectiva.",
@@ -3771,7 +4341,7 @@
           "priority": "normal",
           "dependencies": ["step-disenar-logo", "step-alcance-paquetes"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3785,7 +4355,13 @@
             "objective": {
               "description": "Diseñar un folleto o material de presentación descargable."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-folleto",
+                "task": "Diseñar un folleto o material de presentación descargable.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a estructurar el contenido de un folleto de presentación profesional.",
@@ -3807,7 +4383,7 @@
           "priority": "normal",
           "dependencies": ["step-dolores-metas"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3821,7 +4397,13 @@
             "objective": {
               "description": "Definir el formato y tema de tu primer evento o webinar introductorio."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-estrategia-webinar",
+                "task": "Definir el formato y tema de tu primer evento o webinar introductorio.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a definir el formato y tema de su primer webinar introductorio.",
@@ -3843,7 +4425,7 @@
           "priority": "normal",
           "dependencies": ["step-estrategia-webinar"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3857,7 +4439,13 @@
             "objective": {
               "description": "Planear la logística de tu primer webinar o evento introductorio."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-primer-webinar",
+                "task": "Planear la logística de tu primer webinar o evento introductorio.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a planear la logística de su primer webinar introductorio.",
@@ -3889,7 +4477,7 @@
           "priority": "normal",
           "dependencies": ["step-revision-abogado-contrato"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3903,7 +4491,13 @@
             "objective": {
               "description": "Definir los pasos del proceso de bienvenida para un cliente nuevo."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-pasos-onboarding",
+                "task": "Definir los pasos del proceso de bienvenida para un cliente nuevo.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a diseñar un proceso de onboarding profesional para clientes nuevos.",
@@ -3925,7 +4519,7 @@
           "priority": "high",
           "dependencies": ["step-pasos-onboarding"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": true,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3939,7 +4533,13 @@
             "objective": {
               "description": "Preparar el cuestionario de descubrimiento financiero."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-cuestionario-descubrimiento",
+                "task": "Preparar el cuestionario de descubrimiento financiero.",
+                "completed": false
+              }
+            ],
             "resources": [
               {
                 "id": "res-cuestionario-financiero",
@@ -3983,7 +4583,7 @@
           "priority": "normal",
           "dependencies": ["step-pasos-onboarding"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": true,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -3997,7 +4597,13 @@
             "objective": {
               "description": "Preparar el paquete de bienvenida para clientes nuevos."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-paquete-bienvenida",
+                "task": "Preparar el paquete de bienvenida para clientes nuevos.",
+                "completed": false
+              }
+            ],
             "resources": [
               {
                 "id": "res-paquete-bienvenida",
@@ -4041,7 +4647,7 @@
           "priority": "high",
           "dependencies": ["step-paquete-bienvenida"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4055,7 +4661,13 @@
             "objective": {
               "description": "Agendar la primera reunión con el prospecto."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-agendar-primera-reunion",
+                "task": "Agendar la primera reunión con el prospecto.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a coordinar la primera reunión con un prospecto.",
@@ -4077,7 +4689,7 @@
           "priority": "high",
           "dependencies": ["step-agendar-primera-reunion", "step-cuestionario-descubrimiento"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4091,7 +4703,13 @@
             "objective": {
               "description": "Enviar el cuestionario financiero previo a la reunión."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-enviar-cuestionario-previo",
+                "task": "Enviar el cuestionario financiero previo a la reunión.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar el mensaje para enviar el cuestionario previo a la reunión.",
@@ -4113,7 +4731,7 @@
           "priority": "normal",
           "dependencies": ["step-agendar-primera-reunion"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4127,7 +4745,13 @@
             "objective": {
               "description": "Enviar la agenda de la primera reunión al cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-enviar-agenda",
+                "task": "Enviar la agenda de la primera reunión al cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar la agenda de la primera reunión con un cliente.",
@@ -4295,7 +4919,7 @@
           "priority": "normal",
           "dependencies": ["step-primera-reunion-financiera"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4309,7 +4933,13 @@
             "objective": {
               "description": "Enviar un resumen escrito de la primera reunión al cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-enviar-resumen-reunion",
+                "task": "Enviar un resumen escrito de la primera reunión al cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar un resumen claro de la primera reunión con un cliente.",
@@ -4331,7 +4961,7 @@
           "priority": "normal",
           "dependencies": ["step-enviar-cuestionario-previo"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4345,7 +4975,13 @@
             "objective": {
               "description": "Solicitar los documentos financieros necesarios del cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-solicitar-documentos-cliente",
+                "task": "Solicitar los documentos financieros necesarios del cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar la solicitud de documentos financieros a un cliente.",
@@ -4367,7 +5003,7 @@
           "priority": "normal",
           "dependencies": ["step-primera-reunion-financiera"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4381,7 +5017,13 @@
             "objective": {
               "description": "Crear el expediente digital completo del cliente en el CRM."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-organizar-expediente-cliente",
+                "task": "Crear el expediente digital completo del cliente en el CRM.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a organizar el expediente digital de un cliente nuevo.",
@@ -4403,7 +5045,7 @@
           "priority": "high",
           "dependencies": ["step-enviar-resumen-reunion", "step-solicitar-documentos-cliente"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": true,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4417,7 +5059,13 @@
             "objective": {
               "description": "Construir el plan financiero del cliente con diagnóstico, metas y recomendaciones."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-construir-plan",
+                "task": "Construir el plan financiero del cliente con diagnóstico, metas y recomendaciones.",
+                "completed": false
+              }
+            ],
             "resources": [
               {
                 "id": "res-plantilla-plan-financiero",
@@ -4463,7 +5111,7 @@
           "priority": "high",
           "dependencies": ["step-construir-plan"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4477,7 +5125,13 @@
             "objective": {
               "description": "Revisar el plan financiero antes de presentarlo al cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-revisar-plan",
+                "task": "Revisar el plan financiero antes de presentarlo al cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a hacer una revisión final de un plan financiero antes de presentarlo.",
@@ -4499,7 +5153,7 @@
           "priority": "normal",
           "dependencies": ["step-revisar-plan"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4513,7 +5167,13 @@
             "objective": {
               "description": "Agendar la reunión de presentación del plan financiero."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-agendar-presentacion-plan",
+                "task": "Agendar la reunión de presentación del plan financiero.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a coordinar la reunión de presentación del plan financiero.",
@@ -4535,7 +5195,7 @@
           "priority": "high",
           "dependencies": ["step-agendar-presentacion-plan"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4549,7 +5209,13 @@
             "objective": {
               "description": "Presentar el plan financiero completo al cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-presentar-plan",
+                "task": "Presentar el plan financiero completo al cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a preparar la presentación de un plan financiero a un cliente.",
@@ -4571,7 +5237,7 @@
           "priority": "normal",
           "dependencies": ["step-presentar-plan"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4585,7 +5251,13 @@
             "objective": {
               "description": "Obtener la confirmación formal del cliente sobre el plan acordado."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-firma-plan-acordado",
+                "task": "Obtener la confirmación formal del cliente sobre el plan acordado.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a formalizar la aceptación del plan financiero por parte del cliente.",
@@ -4607,7 +5279,7 @@
           "priority": "normal",
           "dependencies": ["step-firma-plan-acordado"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4621,7 +5293,13 @@
             "objective": {
               "description": "Programar la primera reunión de seguimiento mensual con el cliente."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-programar-seguimiento",
+                "task": "Programar la primera reunión de seguimiento mensual con el cliente.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a programar el calendario de seguimiento con un cliente nuevo.",
@@ -4697,7 +5375,7 @@
           "priority": "normal",
           "dependencies": ["step-seguimiento-mensual"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4711,7 +5389,13 @@
             "objective": {
               "description": "Solicitar retroalimentación honesta al cliente sobre el servicio recibido."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-retro-trimestral",
+                "task": "Solicitar retroalimentación honesta al cliente sobre el servicio recibido.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a redactar preguntas de retroalimentación honesta para un cliente activo.",
@@ -4733,7 +5417,7 @@
           "priority": "normal",
           "dependencies": ["step-retro-trimestral"],
           "completionRules": {
-            "requiredChecklist": false,
+            "requiredChecklist": true,
             "requiredResources": false,
             "requiredApproval": false,
             "requiredQuiz": false
@@ -4747,7 +5431,13 @@
             "objective": {
               "description": "Solicitar una referencia a un cliente satisfecho."
             },
-            "checklist": [],
+            "checklist": [
+              {
+                "id": "chk-solicitar-referido-cliente",
+                "task": "Solicitar una referencia a un cliente satisfecho.",
+                "completed": false
+              }
+            ],
             "resources": [],
             "assistant": {
               "systemPrompt": "Ayuda al usuario a pedir una referencia de forma natural a un cliente satisfecho.",
