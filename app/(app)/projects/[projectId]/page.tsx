@@ -7,6 +7,7 @@ import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
   ArrowRight,
+  BellRing,
   CheckCircle2,
   ChevronDown,
   Clock,
@@ -202,12 +203,20 @@ export default function ProjectRoadmapPage() {
       </div>
 
       {isStale && (
-        <div className="border-primary/30 bg-primary/5 flex items-center justify-between gap-3 rounded-lg border px-4 py-3">
-          <p className="text-body">
-            Hay una versión más reciente del Blueprint &ldquo;{project.blueprintSnapshot.name}
-            &rdquo; disponible.
-          </p>
-          <Button size="sm" variant="outline" onClick={handleSync} disabled={syncing}>
+        <div className="border-warning bg-warning/10 ring-warning/30 flex items-center justify-between gap-3 rounded-lg border-2 px-4 py-3 ring-4">
+          <div className="flex items-center gap-2.5">
+            <BellRing className="text-warning h-5 w-5 shrink-0 animate-pulse" />
+            <p className="text-body text-warning font-medium">
+              Hay una versión más reciente del Blueprint &ldquo;{project.blueprintSnapshot.name}
+              &rdquo; disponible.
+            </p>
+          </div>
+          <Button
+            size="sm"
+            className="bg-warning hover:bg-warning/90 shrink-0 text-white"
+            onClick={handleSync}
+            disabled={syncing}
+          >
             {syncing ? (
               <Loader2 className="h-3.5 w-3.5 animate-spin" />
             ) : (
