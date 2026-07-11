@@ -78,10 +78,23 @@ const stepRecommendedToolSchema = z.object({
 const stepRegistroFieldSchema = z.object({
   id: z.string(),
   label: z.string(),
-  type: z.enum(["text", "textarea", "select", "url"]),
+  type: z.enum([
+    "text",
+    "textarea",
+    "select",
+    "url",
+    "number",
+    "date",
+    "checkbox",
+    "email",
+    "phone",
+    "multiselect",
+    "color",
+  ]),
   placeholder: z.string().optional(),
   helpText: z.string().optional(),
   options: z.array(z.string()).optional(),
+  unit: z.string().optional(),
   required: z.boolean().optional(),
 });
 

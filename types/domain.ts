@@ -269,12 +269,24 @@ export interface StepRecommendedTool {
   url: string;
 }
 
-export type StepRegistroFieldType = "text" | "textarea" | "select" | "url";
+export type StepRegistroFieldType =
+  | "text"
+  | "textarea"
+  | "select"
+  | "url"
+  | "number"
+  | "date"
+  | "checkbox"
+  | "email"
+  | "phone"
+  | "multiselect"
+  | "color";
 
 /**
  * Campo del "Registro del Paso" (pestaña 2, Vista del Step): cada
  * Blueprint define que campos necesita registrar en cada Step - Blueprint
- * solo guarda informacion estrategica, nunca archivos.
+ * solo guarda informacion estrategica, nunca archivos (para adjuntar algo
+ * existente se usa el tipo "url", nunca una subida binaria).
  */
 export interface StepRegistroField {
   id: string;
@@ -282,7 +294,10 @@ export interface StepRegistroField {
   type: StepRegistroFieldType;
   placeholder?: string;
   helpText?: string;
+  /** Opciones fijas - aplica a "select" (una) y "multiselect" (varias). */
   options?: string[];
+  /** Sufijo mostrado junto al valor - solo aplica a "number" (ej. "USD", "%", "horas"). */
+  unit?: string;
   required?: boolean;
 }
 

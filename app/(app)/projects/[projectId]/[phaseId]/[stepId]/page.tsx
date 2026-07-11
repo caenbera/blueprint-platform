@@ -22,12 +22,14 @@ import {
   Loader2,
   Lock,
   Map,
+  Plus,
   Send,
   Sparkles,
   Star,
   Target,
   ThumbsUp,
   Wrench,
+  X,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -68,6 +70,7 @@ import type {
   Project,
   ProjectStepState,
   StepRegistroField,
+  StepRegistroFieldType,
   StepStatus,
 } from "@/types/domain";
 
@@ -1064,6 +1067,22 @@ function GuideCard({
   );
 }
 
+/** Convierte un valor de tipo "number"/"date"/"email"/"phone" al `type` nativo del `<input>` - "text"/"url" quedan como texto simple. */
+function nativeInputType(fieldType: StepRegistroFieldType): string {
+  switch (fieldType) {
+    case "number":
+      return "number";
+    case "date":
+      return "date";
+    case "email":
+      return "email";
+    case "phone":
+      return "tel";
+    default:
+      return "text";
+  }
+}
+
 function RegistroField({
   field,
   value,
@@ -1074,6 +1093,77 @@ function RegistroField({
   onSave: (value: string) => void;
 }) {
   const [localValue, setLocalValue] = useState(value);
+
+  if (field.type === "checkbox") {
+    const checked = localValue === "true";
+    return (
+      <div className="flex flex-col gap-1.5">
+        <label className="flex items-center gap-2">
+          <Checkbox
+            checked={checked}
+            onCheckedChange={(c) => {
+              const next = c === true ? "true" : "false";
+              setLocalValue(next);
+              onSave(next);
+            }}
+          />
+          <span className="text-body">
+            {field.label}
+            {field.required && <span className="text-destructive"> *</span>}
+          </span>
+        </label>
+        {field.helpText && <p className="text-caption text-muted-foreground">{field.helpText}</p>}
+      </div>
+    );
+  }
+
+  if (field.type === "multiselect") {
+    const selected = new Set(localValue ? localValue.split(",") : []);
+    function toggleOption(opt: string) {
+      const next = new Set(selected);
+      if (next.has(opt)) next.delete(opt);
+      else next.add(opt);
+      const joined = Array.from(next).join(",");
+      setLocalValue(joined);
+      onSave(joined);
+    }
+    return (
+      <div className="flex flex-col gap-1.5">
+        <Label>
+          {field.label}
+          {field.required && <span className="text-destructive"> *</span>}
+        </Label>
+        <div className="flex flex-col gap-1.5">
+          {(field.options ?? []).map((opt) => (
+            <label key={opt} className="flex items-center gap-2">
+              <Checkbox checked={selected.has(opt)} onCheckedChange={() => toggleOption(opt)} />
+              <span className="text-body">{opt}</span>
+            </label>
+          ))}
+        </div>
+        {field.helpText && <p className="text-caption text-muted-foreground">{field.helpText}</p>}
+      </div>
+    );
+  }
+
+  if (field.type === "color") {
+    return (
+      <div className="flex flex-col gap-1.5 md:col-span-2">
+        <Label>
+          {field.label}
+          {field.required && <span className="text-destructive"> *</span>}
+        </Label>
+        <ColorListField
+          value={localValue}
+          onChange={(next) => {
+            setLocalValue(next);
+            onSave(next);
+          }}
+        />
+        {field.helpText && <p className="text-caption text-muted-foreground">{field.helpText}</p>}
+      </div>
+    );
+  }
 
   return (
     <div className={cn("flex flex-col gap-1.5", field.type === "textarea" && "md:col-span-2")}>
@@ -1116,15 +1206,72 @@ function RegistroField({
           </SelectContent>
         </Select>
       ) : (
-        <Input
-          id={field.id}
-          value={localValue}
-          placeholder={field.placeholder}
-          onChange={(e) => setLocalValue(e.target.value)}
-          onBlur={() => onSave(localValue)}
-        />
+        <div className="flex items-center gap-2">
+          <Input
+            id={field.id}
+            type={nativeInputType(field.type)}
+            value={localValue}
+            placeholder={field.placeholder}
+            onChange={(e) => setLocalValue(e.target.value)}
+            onBlur={() => onSave(localValue)}
+          />
+          {field.type === "number" && field.unit && (
+            <span className="text-small text-muted-foreground shrink-0">{field.unit}</span>
+          )}
+        </div>
       )}
       {field.helpText && <p className="text-caption text-muted-foreground">{field.helpText}</p>}
+    </div>
+  );
+}
+
+/** Lista de colores HEX con vista previa (Registro del Paso, campo tipo "color") - guarda como string separado por comas en registroData, igual que "multiselect". */
+function ColorListField({ value, onChange }: { value: string; onChange: (value: string) => void }) {
+  const colors = value ? value.split(",").filter(Boolean) : [];
+  const isValidHex = (hex: string) => /^#[0-9a-fA-F]{6}$/.test(hex);
+
+  function updateColor(index: number, hex: string) {
+    const next = [...colors];
+    next[index] = hex;
+    onChange(next.join(","));
+  }
+  function removeColor(index: number) {
+    onChange(colors.filter((_, i) => i !== index).join(","));
+  }
+  function addColor() {
+    onChange([...colors, "#2563EB"].join(","));
+  }
+
+  return (
+    <div className="flex flex-col gap-2">
+      {colors.map((hex, i) => (
+        <div key={i} className="flex items-center gap-2">
+          <input
+            type="color"
+            value={isValidHex(hex) ? hex : "#000000"}
+            onChange={(e) => updateColor(i, e.target.value)}
+            className="h-8 w-8 shrink-0 cursor-pointer rounded border"
+            aria-label={`Color ${i + 1}`}
+          />
+          <Input
+            value={hex}
+            placeholder="#2563EB"
+            className="font-mono"
+            onChange={(e) => updateColor(i, e.target.value)}
+          />
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            aria-label="Quitar color"
+            onClick={() => removeColor(i)}
+          >
+            <X className="h-3.5 w-3.5" />
+          </Button>
+        </div>
+      ))}
+      <Button variant="outline" size="sm" className="self-start" onClick={addColor}>
+        <Plus className="h-3.5 w-3.5" /> Agregar color
+      </Button>
     </div>
   );
 }

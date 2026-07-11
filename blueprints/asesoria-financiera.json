@@ -239,7 +239,14 @@
             },
             "knowledge": [],
             "whyItMatters": "Descubrir un conflicto de nombre después de invertir en marca y sitio web es mucho más costoso que verificarlo ahora.",
-            "tip": "Revisa también que el nombre no esté ya usado por otra firma de servicios financieros en tu país, aunque el dominio esté libre."
+            "tip": "Revisa también que el nombre no esté ya usado por otra firma de servicios financieros en tu país, aunque el dominio esté libre.",
+            "registroFields": [
+              {
+                "id": "reg-verificacion-dominio-drive",
+                "label": "Enlace a verificación de disponibilidad",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -372,7 +379,22 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Aunque decidas operar solo, deja por escrito qué pasaría si en el futuro decides sumar un socio."
+            "tip": "Aunque decidas operar solo, deja por escrito qué pasaría si en el futuro decides sumar un socio.",
+            "registroFields": [
+              {
+                "id": "reg-solo-o-con-socios",
+                "label": "¿Operarás solo o con socios?",
+                "type": "select",
+                "options": ["Solo", "Con socios"],
+                "required": true
+              },
+              {
+                "id": "reg-composicion-societaria",
+                "label": "Composición societaria",
+                "type": "textarea",
+                "helpText": "Detalle de porcentajes y roles, si aplica."
+              }
+            ]
           }
         },
         {
@@ -415,7 +437,20 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Aunque empieces con un socio de mucha confianza, documenta desde el inicio qué pasa si alguno quiere salir - evita conflictos costosos después."
+            "tip": "Aunque empieces con un socio de mucha confianza, documenta desde el inicio qué pasa si alguno quiere salir - evita conflictos costosos después.",
+            "registroFields": [
+              {
+                "id": "reg-requiere-acuerdo-socios",
+                "label": "¿Se requiere acuerdo de socios?",
+                "type": "checkbox"
+              },
+              {
+                "id": "reg-resumen-acuerdo-socios",
+                "label": "Resumen del acuerdo",
+                "type": "textarea",
+                "helpText": "Cláusulas principales documentadas."
+              }
+            ]
           }
         },
         {
@@ -552,7 +587,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Los tiempos de respuesta de las autoridades varían mucho según el país - inicia este trámite lo antes posible, ya que varios pasos siguientes dependen de tenerlo listo."
+            "tip": "Los tiempos de respuesta de las autoridades varían mucho según el país - inicia este trámite lo antes posible, ya que varios pasos siguientes dependen de tenerlo listo.",
+            "registroFields": [
+              {
+                "id": "reg-fecha-constitucion",
+                "label": "Fecha de constitución legal",
+                "type": "date"
+              }
+            ]
           }
         },
         {
@@ -595,7 +637,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Sin este número no puedes facturar legalmente ni abrir la cuenta bancaria empresarial - es el requisito que desbloquea casi todo lo demás."
+            "whyItMatters": "Sin este número no puedes facturar legalmente ni abrir la cuenta bancaria empresarial - es el requisito que desbloquea casi todo lo demás.",
+            "registroFields": [
+              {
+                "id": "reg-fecha-id-tributaria",
+                "label": "Fecha de obtención de la identificación tributaria",
+                "type": "date"
+              }
+            ]
           }
         },
         {
@@ -639,7 +688,14 @@
             },
             "knowledge": [],
             "whyItMatters": "Operar sin el registro local exigido puede generar multas incluso si ya tienes en regla el registro nacional.",
-            "tip": "Confirma con la autoridad local si tu actividad de asesoría financiera requiere una licencia de funcionamiento específica, no solo el registro general de negocios."
+            "tip": "Confirma con la autoridad local si tu actividad de asesoría financiera requiere una licencia de funcionamiento específica, no solo el registro general de negocios.",
+            "registroFields": [
+              {
+                "id": "reg-requiere-licencia-municipal",
+                "label": "¿Requiere licencia municipal específica?",
+                "type": "checkbox"
+              }
+            ]
           }
         },
         {
@@ -1067,7 +1123,16 @@
             },
             "knowledge": [],
             "tip": "Calcula al menos 6 meses de gastos fijos sin ingresos - la mayoría de las firmas de servicios profesionales tardan varios meses en conseguir sus primeros clientes pagos.",
-            "whyItMatters": "Sin un presupuesto claro es fácil subestimar cuánto capital necesitas y quedarte sin fondos antes de generar ingresos estables."
+            "whyItMatters": "Sin un presupuesto claro es fácil subestimar cuánto capital necesitas y quedarte sin fondos antes de generar ingresos estables.",
+            "registroFields": [
+              {
+                "id": "reg-capital-arranque",
+                "label": "Capital de arranque calculado",
+                "type": "number",
+                "placeholder": "Ej. 15000",
+                "helpText": "Incluye la moneda en las notas si lo prefieres (USD, COP, MXN, etc.)."
+              }
+            ]
           }
         }
       ],
@@ -1164,7 +1229,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Muchos exámenes de certificación tienen cupos limitados o fechas fijas - inscribirte tarde puede atrasar meses tu certificación."
+            "whyItMatters": "Muchos exámenes de certificación tienen cupos limitados o fechas fijas - inscribirte tarde puede atrasar meses tu certificación.",
+            "registroFields": [
+              {
+                "id": "reg-inscripcion-examen-drive",
+                "label": "Enlace al comprobante de inscripción",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -1299,6 +1371,11 @@
                 "id": "reg-numero-registro",
                 "label": "Número de registro profesional",
                 "type": "text"
+              },
+              {
+                "id": "reg-fecha-certificacion",
+                "label": "Fecha de certificación profesional",
+                "type": "date"
               }
             ]
           }
@@ -1415,7 +1492,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Activa la autenticación de dos factores en cualquier plataforma donde vayas a guardar información financiera de tus clientes."
+            "tip": "Activa la autenticación de dos factores en cualquier plataforma donde vayas a guardar información financiera de tus clientes.",
+            "registroFields": [
+              {
+                "id": "reg-proceso-almacenamiento",
+                "label": "Plataforma y proceso de almacenamiento",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -1458,7 +1542,19 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Identificar esto con honestidad desde el inicio es lo que te permite declarar un conflicto de interés antes de que un cliente lo descubra por su cuenta."
+            "whyItMatters": "Identificar esto con honestidad desde el inicio es lo que te permite declarar un conflicto de interés antes de que un cliente lo descubra por su cuenta.",
+            "registroFields": [
+              {
+                "id": "reg-recibe-comisiones-terceros",
+                "label": "¿Recibes comisiones de terceros?",
+                "type": "checkbox"
+              },
+              {
+                "id": "reg-fuentes-ingreso-texto",
+                "label": "Fuentes de ingreso identificadas",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -1501,7 +1597,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "La regla más simple: si dudas si algo es un conflicto de interés, decláralo. La transparencia siempre construye más confianza que el silencio."
+            "tip": "La regla más simple: si dudas si algo es un conflicto de interés, decláralo. La transparencia siempre construye más confianza que el silencio.",
+            "registroFields": [
+              {
+                "id": "reg-proceso-declaracion-texto",
+                "label": "Proceso de declaración definido",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -1593,7 +1696,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "La mayoría de los reguladores exigen conservar registros por un período mínimo - no tener esta política definida te deja expuesto en una auditoría."
+            "whyItMatters": "La mayoría de los reguladores exigen conservar registros por un período mínimo - no tener esta política definida te deja expuesto en una auditoría.",
+            "registroFields": [
+              {
+                "id": "reg-politica-retencion-texto",
+                "label": "Política de retención documentada",
+                "type": "textarea",
+                "helpText": "Períodos y métodos de conservación de registros."
+              }
+            ]
           }
         },
         {
@@ -1636,7 +1747,19 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Programa el recordatorio con al menos 60 días de anticipación - renovar una certificación a último minuto puede dejarte sin poder operar legalmente por unos días."
+            "tip": "Programa el recordatorio con al menos 60 días de anticipación - renovar una certificación a último minuto puede dejarte sin poder operar legalmente por unos días.",
+            "registroFields": [
+              {
+                "id": "reg-fecha-proxima-renovacion",
+                "label": "Fecha de próxima renovación",
+                "type": "date"
+              },
+              {
+                "id": "reg-calendario-renovacion-drive",
+                "label": "Enlace al recordatorio programado",
+                "type": "url"
+              }
+            ]
           }
         }
       ],
@@ -1690,7 +1813,15 @@
               "suggestions": ["¿Qué tipos de servicios de asesoría financiera existen?"]
             },
             "knowledge": [],
-            "whyItMatters": "El listado inicial es el insumo para priorizar - si te saltas este paso sueles quedarte solo con las primeras ideas que se te ocurren, no con las mejores."
+            "whyItMatters": "El listado inicial es el insumo para priorizar - si te saltas este paso sueles quedarte solo con las primeras ideas que se te ocurren, no con las mejores.",
+            "registroFields": [
+              {
+                "id": "reg-listado-servicios-considerados",
+                "label": "Listado de servicios considerados",
+                "type": "textarea",
+                "helpText": "Escribe aquí todos los servicios que evaluaste, aunque no los ofrezcas todos desde el inicio."
+              }
+            ]
           }
         },
         {
@@ -1736,6 +1867,14 @@
             "whyItMatters": "Un catálogo demasiado amplio desde el inicio hace que sea difícil comunicar tu propuesta de valor y que los clientes no sepan exactamente por qué contratarte a ti.",
             "commonMistakes": [
               "Copiar el catálogo de servicios de una firma grande sin adaptarlo a tu capacidad real como firma nueva."
+            ],
+            "registroFields": [
+              {
+                "id": "reg-numero-servicios-lanzar",
+                "label": "Número de servicios a lanzar",
+                "type": "select",
+                "options": ["1 servicio", "2 servicios", "3 servicios"]
+              }
             ]
           }
         },
@@ -2027,7 +2166,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Sé igual de explícito sobre lo que NO incluye cada paquete que sobre lo que sí incluye - ahí es donde suelen surgir los conflictos."
+            "tip": "Sé igual de explícito sobre lo que NO incluye cada paquete que sobre lo que sí incluye - ahí es donde suelen surgir los conflictos.",
+            "registroFields": [
+              {
+                "id": "reg-alcance-detallado-paquetes",
+                "label": "Alcance detallado por paquete",
+                "type": "textarea",
+                "helpText": "Qué incluye y qué NO incluye cada paquete."
+              }
+            ]
           }
         },
         {
@@ -2184,7 +2331,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Sin esta política clara, una cancelación conflictiva puede terminar en una disputa legal o en una mala reseña pública."
+            "whyItMatters": "Sin esta política clara, una cancelación conflictiva puede terminar en una disputa legal o en una mala reseña pública.",
+            "registroFields": [
+              {
+                "id": "reg-politica-cancelacion-texto",
+                "label": "Política de cancelación documentada",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -2281,7 +2435,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Si usas tu nombre personal como marca, revisa que también esté disponible como usuario en tus redes principales."
+            "tip": "Si usas tu nombre personal como marca, revisa que también esté disponible como usuario en tus redes principales.",
+            "registroFields": [
+              {
+                "id": "reg-nombre-publico-elegido",
+                "label": "Nombre público de marca",
+                "type": "text",
+                "helpText": "Si es distinto al nombre comercial registrado legalmente."
+              }
+            ]
           }
         },
         {
@@ -2324,7 +2486,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un buen eslogan filtra en segundos si un visitante nuevo entiende qué haces - si tienes que explicarlo, probablemente no está funcionando."
+            "whyItMatters": "Un buen eslogan filtra en segundos si un visitante nuevo entiende qué haces - si tienes que explicarlo, probablemente no está funcionando.",
+            "registroFields": [
+              {
+                "id": "reg-eslogan-final",
+                "label": "Eslogan de la firma",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -2367,7 +2536,16 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "El color es lo primero que percibe el ojo antes de leer una palabra - en servicios financieros, los tonos asociados a estabilidad y confianza suelen funcionar mejor que los muy llamativos."
+            "whyItMatters": "El color es lo primero que percibe el ojo antes de leer una palabra - en servicios financieros, los tonos asociados a estabilidad y confianza suelen funcionar mejor que los muy llamativos.",
+            "registroFields": [
+              {
+                "id": "reg-paleta-colores-hex",
+                "label": "Colores de marca (HEX)",
+                "type": "color",
+                "required": true,
+                "helpText": "Agrega cada color oficial de tu marca. Usa el selector o escribe el código HEX."
+              }
+            ]
           }
         },
         {
@@ -2410,7 +2588,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Elige tipografías que se vean bien tanto en pantalla como impresas - vas a necesitar ambas versiones."
+            "tip": "Elige tipografías que se vean bien tanto en pantalla como impresas - vas a necesitar ambas versiones.",
+            "registroFields": [
+              {
+                "id": "reg-tipografias-elegidas",
+                "label": "Tipografías elegidas",
+                "type": "text",
+                "placeholder": "Ej. Inter, Georgia"
+              }
+            ]
           }
         },
         {
@@ -2694,7 +2880,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "El tono de comunicación es lo que hace que tu marca se sienta consistente, sin importar si el cliente te lee en el sitio web, en un correo o en una reunión."
+            "whyItMatters": "El tono de comunicación es lo que hace que tu marca se sienta consistente, sin importar si el cliente te lee en el sitio web, en un correo o en una reunión.",
+            "registroFields": [
+              {
+                "id": "reg-tono-marca",
+                "label": "Tono de comunicación definido",
+                "type": "text",
+                "placeholder": "Ej. cercano y educativo"
+              }
+            ]
           }
         },
         {
@@ -2737,7 +2931,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Practícalo en voz alta hasta que suene natural - un buen elevator pitch no debe sonar memorizado."
+            "tip": "Practícalo en voz alta hasta que suene natural - un buen elevator pitch no debe sonar memorizado.",
+            "registroFields": [
+              {
+                "id": "reg-elevator-pitch-texto",
+                "label": "Guion del elevator pitch",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -2937,7 +3138,14 @@
                 "url": "https://wordpress.com"
               }
             ],
-            "tip": "Prioriza una plataforma que tú mismo puedas actualizar sin depender de un desarrollador para cada cambio de texto."
+            "tip": "Prioriza una plataforma que tú mismo puedas actualizar sin depender de un desarrollador para cada cambio de texto.",
+            "registroFields": [
+              {
+                "id": "reg-plataforma-web-elegida",
+                "label": "Plataforma web elegida",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -3023,7 +3231,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "El primer titular debe responder \"a quién ayudas y con qué\" en menos de 10 palabras - los visitantes deciden si se quedan en los primeros segundos."
+            "tip": "El primer titular debe responder \"a quién ayudas y con qué\" en menos de 10 palabras - los visitantes deciden si se quedan en los primeros segundos.",
+            "registroFields": [
+              {
+                "id": "reg-pagina-inicio-drive",
+                "label": "Enlace al borrador de contenido en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3115,7 +3330,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Acompaña el texto con tu fotografía profesional - las páginas \"Sobre mí\" con foto generan más confianza que las que solo tienen texto."
+            "tip": "Acompaña el texto con tu fotografía profesional - las páginas \"Sobre mí\" con foto generan más confianza que las que solo tienen texto.",
+            "registroFields": [
+              {
+                "id": "reg-pagina-sobre-mi-drive",
+                "label": "Enlace al borrador de contenido en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3158,7 +3380,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Cada paso adicional entre \"quiero contactarte\" y \"lo logré\" reduce las probabilidades de que un prospecto complete la acción."
+            "whyItMatters": "Cada paso adicional entre \"quiero contactarte\" y \"lo logré\" reduce las probabilidades de que un prospecto complete la acción.",
+            "registroFields": [
+              {
+                "id": "reg-pagina-contacto-drive",
+                "label": "Enlace al borrador de contenido en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3250,7 +3479,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un sitio publicado con errores (enlaces rotos, formularios que no funcionan) daña más la credibilidad que no tener sitio todavía."
+            "whyItMatters": "Un sitio publicado con errores (enlaces rotos, formularios que no funcionan) daña más la credibilidad que no tener sitio todavía.",
+            "registroFields": [
+              {
+                "id": "reg-sitio-publicado-url",
+                "label": "URL final del sitio publicado",
+                "type": "url",
+                "required": true
+              }
+            ]
           }
         },
         {
@@ -3293,7 +3530,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Configura también el correo en tu teléfono - vas a necesitar responder a prospectos rápido, no solo desde la computadora."
+            "tip": "Configura también el correo en tu teléfono - vas a necesitar responder a prospectos rápido, no solo desde la computadora.",
+            "registroFields": [
+              {
+                "id": "reg-correo-profesional-configurado",
+                "label": "Correo profesional configurado",
+                "type": "email"
+              }
+            ]
           }
         },
         {
@@ -3336,7 +3580,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Las fotos genéricas o de baja calidad son una de las señales más rápidas de que una firma no está bien establecida."
+            "whyItMatters": "Las fotos genéricas o de baja calidad son una de las señales más rápidas de que una firma no está bien establecida.",
+            "registroFields": [
+              {
+                "id": "reg-fotos-profesionales-drive",
+                "label": "Enlace a las fotos en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3520,7 +3771,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Estar en una red donde tu cliente ideal no pasa tiempo es esfuerzo desperdiciado, sin importar qué tan buena sea tu presencia ahí."
+            "whyItMatters": "Estar en una red donde tu cliente ideal no pasa tiempo es esfuerzo desperdiciado, sin importar qué tan buena sea tu presencia ahí.",
+            "registroFields": [
+              {
+                "id": "reg-redes-sociales-urls",
+                "label": "Enlaces a los perfiles creados",
+                "type": "textarea",
+                "helpText": "Un enlace por línea, uno por cada red social."
+              }
+            ]
           }
         },
         {
@@ -3563,7 +3822,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Revisa los datos al menos una vez al mes - sin revisión periódica, tener la herramienta instalada no aporta ningún valor."
+            "tip": "Revisa los datos al menos una vez al mes - sin revisión periódica, tener la herramienta instalada no aporta ningún valor.",
+            "registroFields": [
+              {
+                "id": "reg-analytics-dashboard-url",
+                "label": "Enlace al dashboard de métricas",
+                "type": "url"
+              }
+            ]
           }
         }
       ],
@@ -3648,7 +3914,8 @@
               {
                 "id": "reg-equipo-costo-total",
                 "label": "Costo total invertido",
-                "type": "text"
+                "type": "number",
+                "placeholder": "Ej. 2500"
               },
               {
                 "id": "reg-equipo-facturas-drive",
@@ -3800,7 +4067,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Configura al menos una automatización simple desde el inicio (por ejemplo, un recordatorio de seguimiento) - te ahorra tiempo desde el primer cliente."
+            "tip": "Configura al menos una automatización simple desde el inicio (por ejemplo, un recordatorio de seguimiento) - te ahorra tiempo desde el primer cliente.",
+            "registroFields": [
+              {
+                "id": "reg-configuracion-crm-drive",
+                "label": "Enlace a la configuración documentada del CRM",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -3984,7 +4258,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Configura un tiempo de preparación (buffer) antes y después de cada reunión - agendar reuniones pegadas sin descanso reduce la calidad de cada una."
+            "tip": "Configura un tiempo de preparación (buffer) antes y después de cada reunión - agendar reuniones pegadas sin descanso reduce la calidad de cada una.",
+            "registroFields": [
+              {
+                "id": "reg-herramienta-agendamiento",
+                "label": "Herramienta de agendamiento elegida",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -4027,7 +4308,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Sin esta conexión corres el riesgo real de agendar dos reuniones al mismo tiempo, algo que proyecta muy poco profesionalismo con un cliente nuevo."
+            "whyItMatters": "Sin esta conexión corres el riesgo real de agendar dos reuniones al mismo tiempo, algo que proyecta muy poco profesionalismo con un cliente nuevo.",
+            "registroFields": [
+              {
+                "id": "reg-verificacion-calendario-conectado",
+                "label": "Nota de verificación de la conexión",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -4070,7 +4358,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido que uno que depende de imprimir y escanear."
+            "whyItMatters": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido que uno que depende de imprimir y escanear.",
+            "registroFields": [
+              {
+                "id": "reg-herramienta-firma-electronica",
+                "label": "Herramienta de firma electrónica elegida",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -4113,7 +4408,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Verifica que la herramienta que elijas cumpla con estándares de cifrado reconocidos - estás guardando información financiera sensible de tus clientes."
+            "tip": "Verifica que la herramienta que elijas cumpla con estándares de cifrado reconocidos - estás guardando información financiera sensible de tus clientes.",
+            "registroFields": [
+              {
+                "id": "reg-plataforma-almacenamiento",
+                "label": "Plataforma de almacenamiento elegida",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -4205,7 +4507,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Configura un buzón de voz profesional desde el primer día - muchos prospectos llaman antes de escribir."
+            "tip": "Configura un buzón de voz profesional desde el primer día - muchos prospectos llaman antes de escribir.",
+            "registroFields": [
+              {
+                "id": "reg-numero-linea-profesional",
+                "label": "Número de línea profesional",
+                "type": "phone"
+              }
+            ]
           }
         },
         {
@@ -4248,7 +4557,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un proceso estandarizado es lo que te permite crecer sin que la calidad del servicio dependa únicamente de tu memoria o de tu disponibilidad en cada caso."
+            "whyItMatters": "Un proceso estandarizado es lo que te permite crecer sin que la calidad del servicio dependa únicamente de tu memoria o de tu disponibilidad en cada caso.",
+            "registroFields": [
+              {
+                "id": "reg-proceso-analisis-texto",
+                "label": "Proceso de análisis financiero documentado",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -4296,6 +4612,11 @@
                 "id": "reg-formato-entregable-drive",
                 "label": "Enlace a la plantilla final en Google Drive",
                 "type": "url"
+              },
+              {
+                "id": "reg-formato-entregable-descripcion",
+                "label": "Descripción del entregable final",
+                "type": "textarea"
               }
             ]
           }
@@ -4351,7 +4672,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un mensaje de marketing dirigido a 'cualquiera que necesite asesoría financiera' no le habla realmente a nadie. Entre más específico sea tu cliente ideal, más efectivo será cada peso que inviertas en atraerlo."
+            "whyItMatters": "Un mensaje de marketing dirigido a 'cualquiera que necesite asesoría financiera' no le habla realmente a nadie. Entre más específico sea tu cliente ideal, más efectivo será cada peso que inviertas en atraerlo.",
+            "registroFields": [
+              {
+                "id": "reg-nombre-arquetipo-cliente",
+                "label": "Nombre del arquetipo de cliente ideal",
+                "type": "text",
+                "placeholder": "Ej. Profesional independiente en crecimiento"
+              }
+            ]
           }
         },
         {
@@ -4394,7 +4723,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Entrevista a 2-3 clientes potenciales reales antes de asumir cuáles son sus dolores - las suposiciones sin validar suelen estar equivocadas."
+            "tip": "Entrevista a 2-3 clientes potenciales reales antes de asumir cuáles son sus dolores - las suposiciones sin validar suelen estar equivocadas.",
+            "registroFields": [
+              {
+                "id": "reg-dolores-metas-texto",
+                "label": "Dolores y metas del cliente ideal",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -4437,7 +4773,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Publicar en muchos canales de forma inconsistente genera menos resultado que publicar en uno solo de forma constante."
+            "whyItMatters": "Publicar en muchos canales de forma inconsistente genera menos resultado que publicar en uno solo de forma constante.",
+            "registroFields": [
+              {
+                "id": "reg-canales-contenido-elegidos",
+                "label": "Canales donde vas a publicar",
+                "type": "multiselect",
+                "options": ["LinkedIn", "Instagram", "YouTube", "Blog", "Podcast", "TikTok"]
+              }
+            ]
           }
         },
         {
@@ -4480,7 +4824,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Planea el mes completo de una sola vez - crear contenido sobre la marcha, semana a semana, es la razón más común por la que la gente deja de publicar."
+            "tip": "Planea el mes completo de una sola vez - crear contenido sobre la marcha, semana a semana, es la razón más común por la que la gente deja de publicar.",
+            "registroFields": [
+              {
+                "id": "reg-calendario-contenido-texto",
+                "label": "Calendario del primer mes",
+                "type": "textarea"
+              }
+            ]
           }
         },
         {
@@ -4523,7 +4874,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Tu primer contenido no tiene que ser perfecto - tiene que existir, porque es lo que te obliga a publicar el segundo."
+            "whyItMatters": "Tu primer contenido no tiene que ser perfecto - tiene que existir, porque es lo que te obliga a publicar el segundo.",
+            "registroFields": [
+              {
+                "id": "reg-primer-articulo-url",
+                "label": "URL del primer contenido publicado",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -4568,6 +4926,14 @@
             "knowledge": [],
             "bestPractices": [
               "Pide referidos de forma explícita a tus clientes satisfechos - la mayoría no lo hace por iniciativa propia, pero sí acepta cuando se lo pides."
+            ],
+            "registroFields": [
+              {
+                "id": "reg-programa-referidos-texto",
+                "label": "Programa de referidos definido",
+                "type": "textarea",
+                "helpText": "Cómo se piden y recompensan las referencias."
+              }
             ]
           }
         },
@@ -4838,7 +5204,15 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un webinar bien enfocado en un solo tema específico convierte mejor que uno que intenta cubrir todos tus servicios a la vez."
+            "whyItMatters": "Un webinar bien enfocado en un solo tema específico convierte mejor que uno que intenta cubrir todos tus servicios a la vez.",
+            "registroFields": [
+              {
+                "id": "reg-estrategia-webinar-texto",
+                "label": "Estrategia de webinar definida",
+                "type": "textarea",
+                "helpText": "Formato, temas y enfoque."
+              }
+            ]
           }
         },
         {
@@ -4881,7 +5255,19 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Envía un recordatorio 1 hora antes del evento - reduce significativamente la tasa de ausentismo de los inscritos."
+            "tip": "Envía un recordatorio 1 hora antes del evento - reduce significativamente la tasa de ausentismo de los inscritos.",
+            "registroFields": [
+              {
+                "id": "reg-fecha-webinar",
+                "label": "Fecha del evento",
+                "type": "date"
+              },
+              {
+                "id": "reg-primer-webinar-drive",
+                "label": "Enlace al evento",
+                "type": "url"
+              }
+            ]
           }
         }
       ],
@@ -5163,7 +5549,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un cliente que llega a la reunión ya habiendo reflexionado sobre sus finanzas aprovecha mucho mejor el tiempo que uno que responde las preguntas por primera vez en vivo."
+            "whyItMatters": "Un cliente que llega a la reunión ya habiendo reflexionado sobre sus finanzas aprovecha mucho mejor el tiempo que uno que responde las preguntas por primera vez en vivo.",
+            "registroFields": [
+              {
+                "id": "reg-cuestionario-enviado-drive",
+                "label": "Evidencia de envío en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5206,7 +5599,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Mantén la agenda a menos de 5 puntos - una lista demasiado larga genera ansiedad en vez de claridad."
+            "tip": "Mantén la agenda a menos de 5 puntos - una lista demasiado larga genera ansiedad en vez de claridad.",
+            "registroFields": [
+              {
+                "id": "reg-agenda-enviada-drive",
+                "label": "Evidencia de envío en Google Drive",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5340,6 +5740,18 @@
                 "id": "reg-proxima-reunion",
                 "label": "Fecha acordada para la próxima reunión",
                 "type": "text"
+              },
+              {
+                "id": "reg-patrimonio-cliente",
+                "label": "Patrimonio total del cliente",
+                "type": "number",
+                "placeholder": "Ej. 50000"
+              },
+              {
+                "id": "reg-ingresos-mensuales-cliente",
+                "label": "Ingresos mensuales del cliente",
+                "type": "number",
+                "placeholder": "Ej. 4000"
               }
             ],
             "learnings": [
@@ -5444,7 +5856,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Da un plazo concreto para recibir los documentos (ej. 5 días hábiles) - sin fecha límite, es común que se retrasen semanas."
+            "tip": "Da un plazo concreto para recibir los documentos (ej. 5 días hábiles) - sin fecha límite, es común que se retrasen semanas.",
+            "registroFields": [
+              {
+                "id": "reg-documentos-cliente-drive",
+                "label": "Carpeta con documentos del cliente",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5487,7 +5906,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Un expediente completo y organizado desde el inicio es lo que te permite dar un servicio consistente incluso si el cliente vuelve después de meses sin contacto."
+            "whyItMatters": "Un expediente completo y organizado desde el inicio es lo que te permite dar un servicio consistente incluso si el cliente vuelve después de meses sin contacto.",
+            "registroFields": [
+              {
+                "id": "reg-expediente-cliente-crm",
+                "label": "Enlace al expediente en el CRM",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5553,7 +5979,14 @@
             },
             "knowledge": [],
             "whyItMatters": "El primer plan es la prueba tangible del valor de tu asesoría - es lo que convierte una conversación en un cliente que confía en pagar por tu servicio de forma continua.",
-            "tip": "No sobrecargues el plan con demasiadas recomendaciones a la vez. Prioriza entre 3 y 5 acciones concretas que el cliente pueda empezar a implementar de inmediato."
+            "tip": "No sobrecargues el plan con demasiadas recomendaciones a la vez. Prioriza entre 3 y 5 acciones concretas que el cliente pueda empezar a implementar de inmediato.",
+            "registroFields": [
+              {
+                "id": "reg-plan-en-construccion-drive",
+                "label": "Enlace al plan en construcción",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5596,7 +6029,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Deja pasar al menos un día entre terminar el plan y revisarlo - revisar inmediatamente después de escribirlo hace más fácil pasar por alto errores."
+            "tip": "Deja pasar al menos un día entre terminar el plan y revisarlo - revisar inmediatamente después de escribirlo hace más fácil pasar por alto errores.",
+            "registroFields": [
+              {
+                "id": "reg-plan-revisado-drive",
+                "label": "Enlace al plan ya revisado",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5639,7 +6079,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Agenda esta reunión con al menos 45 minutos - presentar un plan financiero completo toma más tiempo que una reunión de seguimiento normal."
+            "tip": "Agenda esta reunión con al menos 45 minutos - presentar un plan financiero completo toma más tiempo que una reunión de seguimiento normal.",
+            "registroFields": [
+              {
+                "id": "reg-reunion-presentacion-agendada",
+                "label": "Confirmación de la cita agendada",
+                "type": "text"
+              }
+            ]
           }
         },
         {
@@ -5731,7 +6178,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Tener el plan formalmente aceptado por escrito evita ambigüedad sobre qué se acordó si surge una diferencia de opinión más adelante."
+            "whyItMatters": "Tener el plan formalmente aceptado por escrito evita ambigüedad sobre qué se acordó si surge una diferencia de opinión más adelante.",
+            "registroFields": [
+              {
+                "id": "reg-plan-firmado-drive",
+                "label": "Enlace al documento firmado",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5774,7 +6228,19 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Programa los próximos 3 seguimientos de una sola vez, no uno a la vez - reduce el riesgo de que se pierda el ritmo del acompañamiento."
+            "tip": "Programa los próximos 3 seguimientos de una sola vez, no uno a la vez - reduce el riesgo de que se pierda el ritmo del acompañamiento.",
+            "registroFields": [
+              {
+                "id": "reg-fecha-primer-seguimiento",
+                "label": "Fecha del primer seguimiento",
+                "type": "date"
+              },
+              {
+                "id": "reg-programar-seguimiento-drive",
+                "label": "Enlace al calendario de seguimientos",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5828,7 +6294,14 @@
             },
             "knowledge": [],
             "whyItMatters": "El valor de una asesoría financiera no está solo en el plan inicial, sino en el acompañamiento continuo - la vida del cliente cambia y el plan debe adaptarse.",
-            "tip": "Programa estos seguimientos con anticipación en el calendario del cliente para que se conviertan en un hábito, no en una excepción."
+            "tip": "Programa estos seguimientos con anticipación en el calendario del cliente para que se conviertan en un hábito, no en una excepción.",
+            "registroFields": [
+              {
+                "id": "reg-notas-seguimiento-drive",
+                "label": "Enlace a las notas de este seguimiento",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5871,7 +6344,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "tip": "Haz esta pregunta directamente: \"¿qué es lo que menos te ha gustado del servicio?\" - da información mucho más útil que preguntar en general cómo va todo."
+            "tip": "Haz esta pregunta directamente: \"¿qué es lo que menos te ha gustado del servicio?\" - da información mucho más útil que preguntar en general cómo va todo.",
+            "registroFields": [
+              {
+                "id": "reg-retroalimentacion-drive",
+                "label": "Enlace al documento de retroalimentación",
+                "type": "url"
+              }
+            ]
           }
         },
         {
@@ -5914,7 +6394,14 @@
               "suggestions": []
             },
             "knowledge": [],
-            "whyItMatters": "Pedir una referencia en el momento en que el cliente está más satisfecho (justo después de una buena retroalimentación) es cuando tiene más probabilidad de decir que sí."
+            "whyItMatters": "Pedir una referencia en el momento en que el cliente está más satisfecho (justo después de una buena retroalimentación) es cuando tiene más probabilidad de decir que sí.",
+            "registroFields": [
+              {
+                "id": "reg-contacto-referido",
+                "label": "Contacto referido",
+                "type": "text"
+              }
+            ]
           }
         }
       ],

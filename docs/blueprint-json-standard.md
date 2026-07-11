@@ -213,7 +213,52 @@ no se muestra, nunca se rellena con texto genérico):
 Opcionales — pestaña "Registro del Paso" (campos que el usuario llena al
 ejecutar el Step, ej. datos de una reunión con cliente):
 
-- `registroFields: [{ id, label, type: "text"|"textarea"|"select"|"url", placeholder?, helpText?, options?, required? }]`
+- `registroFields: StepRegistroField[]`
+
+```ts
+{
+  id: string;
+  label: string;
+  type: "text" | "textarea" | "select" | "url" | "number" | "date" |
+        "checkbox" | "email" | "phone" | "multiselect" | "color";
+  placeholder?: string;
+  helpText?: string;
+  options?: string[];   // "select" (una opción) y "multiselect" (varias)
+  unit?: string;        // solo "number", ej. "USD", "%", "horas"
+  required?: boolean;
+}
+```
+
+Los 11 tipos:
+
+| Tipo          | Qué captura                                                                | Ejemplo                                     |
+| ------------- | -------------------------------------------------------------------------- | ------------------------------------------- |
+| `text`        | Texto corto de una línea                                                   | Nombre comercial elegido                    |
+| `textarea`    | Texto largo/multilínea                                                     | Notas de una reunión, política documentada  |
+| `select`      | Una opción de una lista fija (`options`)                                   | Modelo de tarifa: Fija / AUM / Por hora     |
+| `multiselect` | Varias opciones de una lista fija (`options`)                              | Canales de contenido: LinkedIn, Blog        |
+| `url`         | Un enlace                                                                  | Enlace a un archivo en Google Drive         |
+| `number`      | Un valor numérico, con `unit` opcional                                     | Capital de arranque, patrimonio del cliente |
+| `date`        | Una fecha                                                                  | Fecha de constitución legal                 |
+| `checkbox`    | Sí/No                                                                      | ¿Recibes comisiones de terceros?            |
+| `email`       | Un correo electrónico                                                      | Correo profesional configurado              |
+| `phone`       | Un teléfono                                                                | Número de línea profesional                 |
+| `color`       | Uno o varios colores en HEX, con vista previa y botón "+" para agregar más | Paleta de colores de marca                  |
+
+**Convención de almacenamiento** (`ProjectStepState.registroData: Record<string, string>` -
+nunca cambia de forma, todo se guarda como string, sin importar el tipo):
+
+- `checkbox` → `"true"` / `"false"`.
+- `multiselect` y `color` (ambos multivalor) → valores separados por coma, ej.
+  `"LinkedIn,Blog"` o `"#2563EB,#F59E0B"`.
+- El resto → el valor tal cual; solo cambia qué `<input type="...">` usa el
+  navegador para capturarlo (numérico, fecha, correo, teléfono).
+
+**Por qué no existe un tipo `file`**: Blueprint nunca guarda archivos
+binarios, solo referencias (mismo principio que `StepResource`, ver más
+abajo). Para "adjuntar" un logo, una foto o un documento, se usa `url`
+apuntando a donde el usuario ya lo guardó (ej. su carpeta de Google
+Drive) - nunca una subida directa.
 
 Opcionales — pantalla "Paso Completado":
 
