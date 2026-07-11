@@ -8,14 +8,18 @@ import { toast } from "sonner";
 import {
   ArrowRight,
   BellRing,
+  Check,
   CheckCircle2,
   ChevronDown,
+  ChevronRight,
   Clock,
   FileText,
   Flag,
+  Hammer,
   Loader2,
   Map,
   RefreshCw,
+  Repeat,
   Sparkles,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -23,29 +27,34 @@ import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { cn, formatEstimatedTime } from "@/lib/utils";
 import { resolveLucideIcon } from "@/lib/lucide-icon";
-import {
-  PHASE_TILE_COLORS,
-  PHASE_BADGE_COLORS,
-  PHASE_STATUS_META,
-  resolvePhaseIcon,
-} from "@/lib/phase-icon";
-import { BLUEPRINT_BLOCKS } from "@/lib/phase-block";
+import { PHASE_STATUS_META, resolvePhaseIcon } from "@/lib/phase-icon";
+import { resolveStepIcon, STEP_STATUS_META } from "@/lib/step-icon";
+import { periodLabel } from "@/lib/period";
 import { useAuth } from "@/hooks/use-auth";
 import { useNavigator } from "@/hooks/use-navigator";
 import { getProject, syncProjectBlueprint } from "@/services/projects";
 import { getBlueprint } from "@/services/blueprints";
 import { listMembers } from "@/services/organizations";
 import {
-  calculatePhaseProgress,
+  buildRoadmapTree,
   calculatePhaseStatus,
   calculateProjectProgress,
+  calculateStepRowStatus,
   countBlueprintResources,
   findNextStep,
+  isCountableStep,
+  isStepDoneNow,
   listStepStates,
 } from "@/services/step-state";
 import type {
+  RoadmapTreeBlockNode,
+  RoadmapTreeKind,
+  RoadmapTreePhaseNode,
+  RoadmapTreeTypeNode,
+} from "@/services/step-state";
+import type {
   Blueprint,
-  BlueprintPhase,
+  BlueprintStep,
   Membership,
   Project,
   ProjectStepState,
@@ -69,7 +78,9 @@ export default function ProjectRoadmapPage() {
   const [members, setMembers] = useState<Membership[] | null>(null);
   const [latestBlueprint, setLatestBlueprint] = useState<Blueprint | null>(null);
   const [syncing, setSyncing] = useState(false);
-  const [collapsedBlocks, setCollapsedBlocks] = useState<Record<string, boolean>>({});
+  // Arbol de 4 niveles (Tipo -> Bloque -> Fase -> Pasos): todo cerrado por
+  // defecto - una clave ausente en este mapa significa "cerrado".
+  const [openKeys, setOpenKeys] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     if (!orgId) return;
@@ -131,69 +142,255 @@ export default function ProjectRoadmapPage() {
   const nextPhaseId = next?.phase.id ?? null;
   const totalResources = countBlueprintResources(project.blueprintSnapshot);
 
+  const countableNextPhaseSteps = next
+    ? next.phase.steps.filter(isCountableStep).sort((a, b) => a.order - b.order)
+    : [];
   const nextStepPosition = next
-    ? [...next.phase.steps]
-        .sort((a, b) => a.order - b.order)
-        .findIndex((s) => s.id === next.step.id) + 1
+    ? countableNextPhaseSteps.findIndex((s) => s.id === next.step.id) + 1
     : 0;
 
-  function toggleBlock(value: string) {
-    setCollapsedBlocks((prev) => ({ ...prev, [value]: !prev[value] }));
+  const tree = buildRoadmapTree(project, stepStates);
+
+  function toggleKey(key: string) {
+    setOpenKeys((prev) => ({ ...prev, [key]: !prev[key] }));
   }
 
-  function renderPhaseRow(phase: BlueprintPhase, i: number) {
-    const phaseProgress = calculatePhaseProgress(phase, stepStates!);
-    const status = calculatePhaseStatus(phase, stepStates!, nextPhaseId);
-    const statusMeta = PHASE_STATUS_META[status];
-    const Icon = resolvePhaseIcon(phase.title);
+  function StepRow({
+    step,
+    phaseId,
+    status,
+    caption,
+  }: {
+    step: BlueprintStep;
+    phaseId: string;
+    status: "completado" | "en_progreso" | "pendiente" | "bloqueado";
+    caption?: string;
+  }) {
+    const StepIcon = resolveStepIcon(step);
+    const rowMeta = STEP_STATUS_META[status];
     return (
       <Link
-        key={phase.id}
-        href={`/projects/${project!.id}/${phase.id}`}
-        className="hover:bg-muted/50 flex items-center gap-3 px-4 py-3"
+        href={`/projects/${projectId}/${phaseId}/${step.id}`}
+        className={cn(
+          "flex items-center gap-3 py-2.5 pr-4 pl-16",
+          status === "en_progreso" ? "bg-info/5" : "hover:bg-muted/50",
+        )}
       >
         <span
           className={cn(
-            "text-small flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-semibold",
-            PHASE_BADGE_COLORS[i % PHASE_BADGE_COLORS.length],
+            "flex h-6 w-6 shrink-0 items-center justify-center rounded-full",
+            status === "completado" && "bg-success text-white",
+            status === "en_progreso" && "bg-info text-white",
+            (status === "pendiente" || status === "bloqueado") && "bg-muted text-muted-foreground",
           )}
         >
-          {i + 1}
+          {status === "completado" ? (
+            <Check className="h-3.5 w-3.5" />
+          ) : (
+            <StepIcon className="h-3.5 w-3.5" />
+          )}
         </span>
-        <div
-          className={cn(
-            "flex h-10 w-10 shrink-0 items-center justify-center rounded-lg",
-            PHASE_TILE_COLORS[i % PHASE_TILE_COLORS.length],
-          )}
-        >
-          <Icon className="h-5 w-5" />
-        </div>
         <div className="min-w-0 flex-1">
-          <p className="text-body font-medium">{phase.title}</p>
-          <p className="text-small text-muted-foreground truncate">{phase.description}</p>
-          <div className="mt-1.5 flex items-center gap-2">
-            <Progress value={phaseProgress.percent} className="max-w-40 flex-1" />
-            <span className="text-small text-muted-foreground shrink-0">
-              {phaseProgress.percent}% · {phaseProgress.completed} de {phaseProgress.total} Steps
-            </span>
-          </div>
+          <p className="text-small font-medium">{step.title}</p>
+          {caption && <p className="text-caption text-muted-foreground">{caption}</p>}
         </div>
-        <Badge variant={statusMeta.variant} className="shrink-0">
-          {statusMeta.label}
+        <Badge variant={rowMeta.variant} className="shrink-0">
+          {rowMeta.label}
         </Badge>
+        <ChevronRight className="text-muted-foreground h-3.5 w-3.5 shrink-0" />
       </Link>
     );
   }
 
-  // Agrupa las Fases en los 4 bloques universales (Strategy/Operations/
-  // Business/Customers) solo si el Blueprint las etiquetó - retrocompatible
-  // con Blueprints que no usan `block` (se ve como lista plana, igual que antes).
-  const phaseGroups = BLUEPRINT_BLOCKS.map((meta) => ({
-    meta,
-    phases: sortedPhases.filter((p) => p.block === meta.value),
-  })).filter((g) => g.phases.length > 0);
-  const ungroupedPhases = sortedPhases.filter((p) => !p.block);
-  const hasBlocks = phaseGroups.length > 0;
+  function renderPhaseNode(node: RoadmapTreePhaseNode, kind: RoadmapTreeKind, key: string) {
+    const open = openKeys[key] ?? false;
+    const PhaseIcon = resolvePhaseIcon(node.phase.title);
+    const statusMeta =
+      kind === "construction"
+        ? PHASE_STATUS_META[calculatePhaseStatus(node.phase, stepStates!, nextPhaseId)]
+        : null;
+    const activeStepId =
+      kind === "construction" && next && next.phase.id === node.phase.id ? next.step.id : null;
+
+    return (
+      <div key={key} className="border-t">
+        <div className="flex items-center">
+          <button
+            type="button"
+            onClick={() => toggleKey(key)}
+            className={cn(
+              "hover:bg-muted/30 flex flex-1 items-center gap-3 py-2.5 pr-2 pl-10 text-left",
+              node.hasNextStep && "ring-primary/30 ring-2 ring-inset",
+            )}
+          >
+            <div className="bg-muted text-muted-foreground flex h-8 w-8 shrink-0 items-center justify-center rounded-lg">
+              <PhaseIcon className="h-4 w-4" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-body font-medium">{node.phase.title}</p>
+              <span className="text-caption text-muted-foreground">
+                {node.progress.percent}% · {node.progress.completed} de {node.progress.total} pasos
+              </span>
+            </div>
+            {node.hasNextStep && (
+              <Badge variant="info" className="shrink-0">
+                Aquí
+              </Badge>
+            )}
+            {statusMeta && (
+              <Badge variant={statusMeta.variant} className="shrink-0">
+                {statusMeta.label}
+              </Badge>
+            )}
+            <ChevronDown
+              className={cn(
+                "text-muted-foreground h-3.5 w-3.5 shrink-0 transition-transform",
+                !open && "-rotate-90",
+              )}
+            />
+          </button>
+          <Link
+            href={`/projects/${projectId}/${node.phase.id}`}
+            className="text-caption text-muted-foreground hover:text-foreground shrink-0 pr-4"
+          >
+            Ver fase
+          </Link>
+        </div>
+        {open && (
+          <div className="divide-y">
+            {node.steps.map((step) => {
+              const status =
+                kind === "construction"
+                  ? calculateStepRowStatus(step, stepStates!, activeStepId)
+                  : isStepDoneNow(
+                        step,
+                        stepStates!.find((s) => s.stepId === step.id),
+                      )
+                    ? "completado"
+                    : "pendiente";
+              return (
+                <StepRow
+                  key={step.id}
+                  step={step}
+                  phaseId={node.phase.id}
+                  status={status}
+                  caption={kind === "operations" ? periodLabel(step.type) : undefined}
+                />
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  function renderBlockNode(block: RoadmapTreeBlockNode, kind: RoadmapTreeKind, keyPrefix: string) {
+    const key = `${keyPrefix}:${block.meta.value}`;
+    const open = openKeys[key] ?? false;
+    const BlockIcon = block.meta.icon;
+    return (
+      <div key={key} className="border-t">
+        <button
+          type="button"
+          onClick={() => toggleKey(key)}
+          className={cn(
+            "hover:bg-muted/30 flex w-full items-center gap-2.5 py-2.5 pr-4 pl-7 text-left",
+            block.hasNextStep && "ring-primary/20 ring-2 ring-inset",
+          )}
+        >
+          <div
+            className={cn(
+              "flex h-7 w-7 shrink-0 items-center justify-center rounded-md",
+              block.meta.tileColor,
+            )}
+          >
+            <BlockIcon className="h-4 w-4" />
+          </div>
+          <span className="text-small flex-1 text-left font-semibold tracking-wide uppercase">
+            {block.meta.label}
+          </span>
+          <span className="text-small text-muted-foreground shrink-0">
+            {block.progress.percent}% · {block.progress.completed} de {block.progress.total}
+          </span>
+          <ChevronDown
+            className={cn(
+              "text-muted-foreground h-3.5 w-3.5 shrink-0 transition-transform",
+              !open && "-rotate-90",
+            )}
+          />
+        </button>
+        {open && (
+          <div className="divide-y">
+            {block.phases.map((p) => renderPhaseNode(p, kind, `${key}:${p.phase.id}`))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  function renderTypeNode(typeNode: RoadmapTreeTypeNode) {
+    const key = typeNode.kind;
+    const open = openKeys[key] ?? false;
+    const isConstruction = typeNode.kind === "construction";
+    return (
+      <div key={key}>
+        <button
+          type="button"
+          onClick={() => toggleKey(key)}
+          className={cn(
+            "flex w-full items-center gap-3 px-4 py-3 text-left",
+            isConstruction
+              ? "bg-primary/5 hover:bg-primary/10"
+              : "bg-warning/5 hover:bg-warning/10",
+          )}
+        >
+          <div
+            className={cn(
+              "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg",
+              isConstruction ? "bg-primary/15 text-primary" : "bg-warning/15 text-warning",
+            )}
+          >
+            {isConstruction ? (
+              <Hammer className="h-4.5 w-4.5" />
+            ) : (
+              <Repeat className="h-4.5 w-4.5" />
+            )}
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className={cn("text-h4", isConstruction ? "text-primary" : "text-warning")}>
+              {isConstruction ? "Construcción" : "Operación"}
+            </p>
+            <span className="text-caption text-muted-foreground">
+              {isConstruction ? "Pasos que se hacen una sola vez" : "Tareas que se repiten"}
+            </span>
+          </div>
+          {typeNode.hasNextStep && (
+            <Badge variant={isConstruction ? "info" : "warning"} className="shrink-0">
+              {isConstruction ? "Siguiente paso aquí" : "Pendiente este período"}
+            </Badge>
+          )}
+          <span className="text-small text-muted-foreground shrink-0">
+            {typeNode.progress.percent}% · {typeNode.progress.completed} de{" "}
+            {typeNode.progress.total}
+          </span>
+          <ChevronDown
+            className={cn(
+              "text-muted-foreground h-4 w-4 shrink-0 transition-transform",
+              !open && "-rotate-90",
+            )}
+          />
+        </button>
+        {open && (
+          <div className="divide-y">
+            {typeNode.blocks.map((b) => renderBlockNode(b, typeNode.kind, key))}
+            {typeNode.ungroupedPhases.map((p) =>
+              renderPhaseNode(p, typeNode.kind, `${key}:${p.phase.id}`),
+            )}
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4">
@@ -264,76 +461,13 @@ export default function ProjectRoadmapPage() {
 
           <div className="rounded-lg border">
             <div className="flex items-center justify-between gap-2 border-b px-4 py-3">
-              <p className="text-h4">Fases del proyecto</p>
+              <p className="text-h4">Estructura del proyecto</p>
               <span className="text-small text-muted-foreground">{sortedPhases.length} fases</span>
             </div>
-
-            {hasBlocks ? (
-              <div className="flex flex-col divide-y">
-                {phaseGroups.map(({ meta, phases }) => {
-                  const BlockIcon = meta.icon;
-                  const blockCompleted = phases.reduce(
-                    (sum, p) => sum + calculatePhaseProgress(p, stepStates).completed,
-                    0,
-                  );
-                  const blockTotal = phases.reduce(
-                    (sum, p) => sum + calculatePhaseProgress(p, stepStates).total,
-                    0,
-                  );
-                  const blockPercent =
-                    blockTotal === 0 ? 0 : Math.round((blockCompleted / blockTotal) * 100);
-                  const collapsed = collapsedBlocks[meta.value] ?? false;
-                  return (
-                    <div key={meta.value}>
-                      <button
-                        type="button"
-                        onClick={() => toggleBlock(meta.value)}
-                        className="hover:bg-muted/30 flex w-full items-center gap-2.5 px-4 py-2.5"
-                      >
-                        <div
-                          className={cn(
-                            "flex h-7 w-7 shrink-0 items-center justify-center rounded-md",
-                            meta.tileColor,
-                          )}
-                        >
-                          <BlockIcon className="h-4 w-4" />
-                        </div>
-                        <span className="text-small flex-1 text-left font-semibold tracking-wide uppercase">
-                          {meta.label}
-                        </span>
-                        <span className="text-small text-muted-foreground">
-                          {blockPercent}% · {blockCompleted} de {blockTotal} Steps
-                        </span>
-                        <ChevronDown
-                          className={cn(
-                            "text-muted-foreground h-3.5 w-3.5 shrink-0 transition-transform",
-                            collapsed && "-rotate-90",
-                          )}
-                        />
-                      </button>
-                      {!collapsed && (
-                        <div className="divide-y border-t">
-                          {phases.map((phase) =>
-                            renderPhaseRow(phase, sortedPhases.indexOf(phase)),
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-                {ungroupedPhases.length > 0 && (
-                  <div className="divide-y">
-                    {ungroupedPhases.map((phase) =>
-                      renderPhaseRow(phase, sortedPhases.indexOf(phase)),
-                    )}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <div className="flex flex-col divide-y">
-                {sortedPhases.map((phase, i) => renderPhaseRow(phase, i))}
-              </div>
-            )}
+            <div className="flex flex-col divide-y">
+              {renderTypeNode(tree.construction)}
+              {tree.operations.progress.total > 0 && renderTypeNode(tree.operations)}
+            </div>
           </div>
         </div>
 

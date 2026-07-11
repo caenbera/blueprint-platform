@@ -15,6 +15,7 @@ import {
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
 import { getCurrentPeriodKey } from "@/lib/period";
+import { BLUEPRINT_BLOCKS, type BlockMeta } from "@/lib/phase-block";
 import { logActivity } from "@/services/activity";
 import type {
   Blueprint,
@@ -233,8 +234,21 @@ export interface ProjectProgress {
  * weekly, monthly, quarterly, semester, yearly) nunca "terminan", asi que
  * incluirlos en el denominador haria que el proyecto nunca llegue a 100%.
  */
-function isCountableStep(step: BlueprintStep): boolean {
+export function isCountableStep(step: BlueprintStep): boolean {
   return step.type === "one_time";
+}
+
+/** Un Step pertenece a la rama "Operacion" del arbol del Roadmap si tiene un periodo actual definido (ver lib/period.ts) - milestone/custom quedan fuera de ambas ramas, no son ni de construccion ni periodicos. */
+function isPeriodicStep(step: BlueprintStep): boolean {
+  return getCurrentPeriodKey(step.type) !== null;
+}
+
+function deriveProgressStatus(completed: number, total: number): ProgressStatus {
+  return completed === 0
+    ? "no_iniciado"
+    : completed >= total && total > 0
+      ? "aprobado"
+      : "en_progreso";
 }
 
 /** El progreso nunca se guarda - siempre se calcula a partir de los ProjectStepState existentes. */
@@ -271,6 +285,27 @@ export function calculatePhaseProgress(
   const status: ProgressStatus =
     completed === 0 ? "no_iniciado" : completed >= total && total > 0 ? "aprobado" : "en_progreso";
   return { total, completed, percent, status };
+}
+
+/**
+ * Equivalente a calculatePhaseProgress pero para la rama "Operacion" del
+ * arbol del Roadmap: cuenta los Steps periodicos (weekly/monthly/...) de
+ * la fase y cuantos ya estan completados para el periodo ACTUAL (nunca
+ * el historico) - ver isStepDoneNow.
+ */
+export function calculatePhaseOperationsProgress(
+  phase: BlueprintPhase,
+  stepStates: ProjectStepState[],
+  now: Date = new Date(),
+): ProjectProgress {
+  const periodicSteps = phase.steps.filter(isPeriodicStep);
+  const total = periodicSteps.length;
+  const completed = periodicSteps.filter((step) => {
+    const state = stepStates.find((s) => s.stepId === step.id);
+    return isStepDoneNow(step, state, now);
+  }).length;
+  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+  return { total, completed, percent, status: deriveProgressStatus(completed, total) };
 }
 
 /** Un Step esta bloqueado si alguna de sus dependencias todavia no esta "completed". */
@@ -356,6 +391,108 @@ export function findNextStep(
     }
   }
   return null;
+}
+
+// --- Arbol de 4 niveles del Roadmap (Tipo -> Bloque -> Fase -> Pasos) ---
+
+export type RoadmapTreeKind = "construction" | "operations";
+
+export interface RoadmapTreePhaseNode {
+  phase: BlueprintPhase;
+  steps: BlueprintStep[];
+  progress: ProjectProgress;
+  /** true si findNextStep (rama construccion) o un Step pendiente del periodo actual (rama operacion) cae en esta Fase - "codigo visual de posicion" aunque el desplegable este cerrado. */
+  hasNextStep: boolean;
+}
+
+export interface RoadmapTreeBlockNode {
+  meta: BlockMeta;
+  phases: RoadmapTreePhaseNode[];
+  progress: ProjectProgress;
+  hasNextStep: boolean;
+}
+
+export interface RoadmapTreeTypeNode {
+  kind: RoadmapTreeKind;
+  blocks: RoadmapTreeBlockNode[];
+  /** Fases sin `block` asignado - retrocompatible, igual que en el Roadmap plano. */
+  ungroupedPhases: RoadmapTreePhaseNode[];
+  progress: ProjectProgress;
+  hasNextStep: boolean;
+}
+
+function aggregateProgress(nodes: { progress: ProjectProgress }[]): ProjectProgress {
+  const total = nodes.reduce((sum, n) => sum + n.progress.total, 0);
+  const completed = nodes.reduce((sum, n) => sum + n.progress.completed, 0);
+  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+  return { total, completed, percent, status: deriveProgressStatus(completed, total) };
+}
+
+/**
+ * Arma el arbol completo Tipo (Construccion/Operacion) -> Bloque -> Fase ->
+ * Pasos para el Roadmap del Proyecto. Una misma Fase puede aparecer en las
+ * dos ramas si tiene Steps de ambos tipos - cada rama solo lista los
+ * Steps que le corresponden (nunca ramas ni Fases vacias).
+ */
+export function buildRoadmapTree(
+  project: Project,
+  stepStates: ProjectStepState[],
+  now: Date = new Date(),
+): { construction: RoadmapTreeTypeNode; operations: RoadmapTreeTypeNode } {
+  const next = findNextStep(project.blueprintSnapshot, stepStates);
+  const nextStepId = next?.step.id ?? null;
+  const sortedPhases = [...project.blueprintSnapshot.roadmap].sort((a, b) => a.order - b.order);
+
+  function buildTypeNode(kind: RoadmapTreeKind): RoadmapTreeTypeNode {
+    const phaseNodes: RoadmapTreePhaseNode[] = [];
+    for (const phase of sortedPhases) {
+      const steps = [...phase.steps]
+        .filter(kind === "construction" ? isCountableStep : isPeriodicStep)
+        .sort((a, b) => a.order - b.order);
+      if (steps.length === 0) continue;
+
+      const progress =
+        kind === "construction"
+          ? calculatePhaseProgress(phase, stepStates)
+          : calculatePhaseOperationsProgress(phase, stepStates, now);
+
+      const hasNextStep =
+        kind === "construction"
+          ? steps.some((s) => s.id === nextStepId)
+          : steps.some((s) => {
+              const state = stepStates.find((st) => st.stepId === s.id);
+              return !isStepDoneNow(s, state, now);
+            });
+
+      phaseNodes.push({ phase, steps, progress, hasNextStep });
+    }
+
+    const blocks: RoadmapTreeBlockNode[] = BLUEPRINT_BLOCKS.map((meta) => {
+      const phases = phaseNodes.filter((n) => n.phase.block === meta.value);
+      return {
+        meta,
+        phases,
+        progress: aggregateProgress(phases),
+        hasNextStep: phases.some((p) => p.hasNextStep),
+      };
+    }).filter((b) => b.phases.length > 0);
+
+    const ungroupedPhases = phaseNodes.filter((n) => !n.phase.block);
+    const allPhases = [...blocks.flatMap((b) => b.phases), ...ungroupedPhases];
+
+    return {
+      kind,
+      blocks,
+      ungroupedPhases,
+      progress: aggregateProgress(allPhases),
+      hasNextStep: allPhases.some((p) => p.hasNextStep),
+    };
+  }
+
+  return {
+    construction: buildTypeNode("construction"),
+    operations: buildTypeNode("operations"),
+  };
 }
 
 // --- Notas privadas ---
