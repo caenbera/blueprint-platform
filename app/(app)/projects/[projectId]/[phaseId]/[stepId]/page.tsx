@@ -1,6 +1,6 @@
 "use client";
 
-import { createElement, useEffect, useState } from "react";
+import { createElement, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
@@ -260,14 +260,17 @@ export default function StepView() {
     }
   }
 
-  async function handleSaveRegistroField(fieldId: string, value: string) {
+  /** Devuelve true solo si el guardado tuvo éxito - RegistroField lo usa para mostrar el indicador "Guardado" únicamente cuando de verdad se guardó. */
+  async function handleSaveRegistroField(fieldId: string, value: string): Promise<boolean> {
     try {
       await updateStepRegistroField(orgId!, projectId, stepId, fieldId, value);
       upsertLocalStepState((current) => ({
         registroData: { ...(current.registroData ?? {}), [fieldId]: value },
       }));
+      return true;
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "No se pudo guardar el registro.");
+      return false;
     }
   }
 
@@ -1090,28 +1093,58 @@ function RegistroField({
 }: {
   field: StepRegistroField;
   value: string;
-  onSave: (value: string) => void;
+  onSave: (value: string) => Promise<boolean>;
 }) {
   const [localValue, setLocalValue] = useState(value);
+  const [showSaved, setShowSaved] = useState(false);
+  const savedTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (savedTimeoutRef.current) clearTimeout(savedTimeoutRef.current);
+    };
+  }, []);
+
+  async function handleSave(next: string) {
+    const ok = await onSave(next);
+    if (!ok) return;
+    setShowSaved(true);
+    if (savedTimeoutRef.current) clearTimeout(savedTimeoutRef.current);
+    savedTimeoutRef.current = setTimeout(() => setShowSaved(false), 2000);
+  }
+
+  const savedBadge = (
+    <span
+      className={cn(
+        "text-caption text-success ml-2 inline-flex items-center gap-1 transition-opacity duration-300",
+        showSaved ? "opacity-100" : "opacity-0",
+      )}
+    >
+      <Check className="h-3 w-3" /> Guardado
+    </span>
+  );
 
   if (field.type === "checkbox") {
     const checked = localValue === "true";
     return (
       <div className="flex flex-col gap-1.5">
-        <label className="flex items-center gap-2">
-          <Checkbox
-            checked={checked}
-            onCheckedChange={(c) => {
-              const next = c === true ? "true" : "false";
-              setLocalValue(next);
-              onSave(next);
-            }}
-          />
-          <span className="text-body">
-            {field.label}
-            {field.required && <span className="text-destructive"> *</span>}
-          </span>
-        </label>
+        <div className="flex items-center">
+          <label className="flex items-center gap-2">
+            <Checkbox
+              checked={checked}
+              onCheckedChange={(c) => {
+                const next = c === true ? "true" : "false";
+                setLocalValue(next);
+                void handleSave(next);
+              }}
+            />
+            <span className="text-body">
+              {field.label}
+              {field.required && <span className="text-destructive"> *</span>}
+            </span>
+          </label>
+          {savedBadge}
+        </div>
         {field.helpText && <p className="text-caption text-muted-foreground">{field.helpText}</p>}
       </div>
     );
@@ -1125,14 +1158,17 @@ function RegistroField({
       else next.add(opt);
       const joined = Array.from(next).join(",");
       setLocalValue(joined);
-      onSave(joined);
+      void handleSave(joined);
     }
     return (
       <div className="flex flex-col gap-1.5">
-        <Label>
-          {field.label}
-          {field.required && <span className="text-destructive"> *</span>}
-        </Label>
+        <div className="flex items-center">
+          <Label>
+            {field.label}
+            {field.required && <span className="text-destructive"> *</span>}
+          </Label>
+          {savedBadge}
+        </div>
         <div className="flex flex-col gap-1.5">
           {(field.options ?? []).map((opt) => (
             <label key={opt} className="flex items-center gap-2">
@@ -1149,15 +1185,18 @@ function RegistroField({
   if (field.type === "color") {
     return (
       <div className="flex flex-col gap-1.5 md:col-span-2">
-        <Label>
-          {field.label}
-          {field.required && <span className="text-destructive"> *</span>}
-        </Label>
+        <div className="flex items-center">
+          <Label>
+            {field.label}
+            {field.required && <span className="text-destructive"> *</span>}
+          </Label>
+          {savedBadge}
+        </div>
         <ColorListField
           value={localValue}
           onChange={(next) => {
             setLocalValue(next);
-            onSave(next);
+            void handleSave(next);
           }}
         />
         {field.helpText && <p className="text-caption text-muted-foreground">{field.helpText}</p>}
@@ -1167,10 +1206,13 @@ function RegistroField({
 
   return (
     <div className={cn("flex flex-col gap-1.5", field.type === "textarea" && "md:col-span-2")}>
-      <Label htmlFor={field.id}>
-        {field.label}
-        {field.required && <span className="text-destructive"> *</span>}
-      </Label>
+      <div className="flex items-center">
+        <Label htmlFor={field.id}>
+          {field.label}
+          {field.required && <span className="text-destructive"> *</span>}
+        </Label>
+        {savedBadge}
+      </div>
       {field.type === "textarea" ? (
         <>
           <Textarea
@@ -1180,7 +1222,7 @@ function RegistroField({
             maxLength={1000}
             className="min-h-24"
             onChange={(e) => setLocalValue(e.target.value)}
-            onBlur={() => onSave(localValue)}
+            onBlur={() => void handleSave(localValue)}
           />
           <span className="text-caption text-muted-foreground self-end">
             {localValue.length}/1000
@@ -1191,7 +1233,7 @@ function RegistroField({
           value={localValue}
           onValueChange={(v) => {
             setLocalValue(v);
-            onSave(v);
+            void handleSave(v);
           }}
         >
           <SelectTrigger className="w-full">
@@ -1213,7 +1255,7 @@ function RegistroField({
             value={localValue}
             placeholder={field.placeholder}
             onChange={(e) => setLocalValue(e.target.value)}
-            onBlur={() => onSave(localValue)}
+            onBlur={() => void handleSave(localValue)}
           />
           {field.type === "number" && field.unit && (
             <span className="text-small text-muted-foreground shrink-0">{field.unit}</span>
