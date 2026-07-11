@@ -435,6 +435,13 @@ export interface ProjectStepState {
   updatedAt: string;
   /** Respuestas del "Registro del Paso" (StepRegistroField.id -> valor) - Blueprint solo guarda informacion estrategica, nunca archivos. */
   registroData?: Record<string, string>;
+  /**
+   * Completado por periodo para Steps recurrentes (weekly/monthly/etc,
+   * ver lib/period.ts#getCurrentPeriodKey) - clave = periodKey (ej.
+   * "2026-W28", "2026-07"). Steps `one_time` nunca usan este campo,
+   * siguen usando status/completedAt/completedBy de arriba.
+   */
+  periodCompletions?: Record<string, { completedAt: string; completedBy: string }>;
 }
 
 /** Nota privada del usuario sobre un Step - solo el autor puede verla. */

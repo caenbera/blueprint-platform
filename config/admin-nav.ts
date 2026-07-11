@@ -5,6 +5,7 @@ import {
   Home,
   Map,
   Package,
+  Repeat,
   Settings,
   TrendingUp,
   Users,
@@ -59,6 +60,11 @@ export function getAdminNavGroups(activeProjectId: string | null): NavGroup[] {
       items: [
         { href: "/dashboard", label: "Inicio", icon: Home },
         { href: `/projects/${activeProjectId}`, label: "Roadmap", icon: Map },
+        {
+          href: `/projects/${activeProjectId}/operacion`,
+          label: "Operación",
+          icon: Repeat,
+        },
         {
           href: `/projects/${activeProjectId}/progress`,
           label: "Mi progreso",

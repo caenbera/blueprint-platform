@@ -3,6 +3,7 @@ import {
   arrayRemove,
   arrayUnion,
   collection,
+  deleteField,
   doc,
   getDoc,
   getDocs,
@@ -13,6 +14,7 @@ import {
   Timestamp,
 } from "firebase/firestore";
 import { auth, db } from "@/lib/firebase/client";
+import { getCurrentPeriodKey } from "@/lib/period";
 import { logActivity } from "@/services/activity";
 import type {
   Blueprint,
@@ -64,6 +66,20 @@ function fromFirestore(id: string, data: Record<string, unknown>): ProjectStepSt
     registroData:
       data.registroData && typeof data.registroData === "object"
         ? (data.registroData as Record<string, string>)
+        : undefined,
+    periodCompletions:
+      data.periodCompletions && typeof data.periodCompletions === "object"
+        ? Object.fromEntries(
+            Object.entries(
+              data.periodCompletions as Record<
+                string,
+                { completedAt: unknown; completedBy: string }
+              >,
+            ).map(([key, val]) => [
+              key,
+              { completedAt: toIso(val.completedAt), completedBy: val.completedBy },
+            ]),
+          )
         : undefined,
   };
 }
@@ -176,6 +192,34 @@ export async function updateStepRegistroField(
   );
 }
 
+/**
+ * Marca (o desmarca) un Step recurrente como completado para un periodo
+ * especifico (modulo Operacion, ver lib/period.ts#getCurrentPeriodKey).
+ * A diferencia de setStepStatus, esto nunca toca `status`/`completedAt`
+ * de nivel superior - esos siguen siendo exclusivos de Steps `one_time`.
+ */
+export async function togglePeriodCompletion(
+  orgId: string,
+  projectId: string,
+  stepId: string,
+  periodKey: string,
+  done: boolean,
+): Promise<void> {
+  const user = auth.currentUser;
+  if (!user) throw new Error("No hay sesión activa.");
+
+  await setDoc(
+    doc(db, stepStatesPath(orgId, projectId), stepId),
+    {
+      [`periodCompletions.${periodKey}`]: done
+        ? { completedAt: serverTimestamp(), completedBy: user.uid }
+        : deleteField(),
+      updatedAt: serverTimestamp(),
+    },
+    { merge: true },
+  );
+}
+
 export interface ProjectProgress {
   total: number;
   completed: number;
@@ -255,6 +299,23 @@ export function calculatePhaseStatus(
   return "pendiente";
 }
 
+/**
+ * Si un Step ya esta "hecho" en este momento: para `one_time` (y
+ * `milestone`/`custom`) es el status de siempre; para Steps recurrentes
+ * (weekly/monthly/...) es si el periodo ACTUAL ya fue completado - un
+ * periodo pasado completado no cuenta, por eso vuelve a verse pendiente
+ * cuando cambia la semana/mes sin necesidad de ningun reinicio manual.
+ */
+export function isStepDoneNow(
+  step: BlueprintStep,
+  stepState: ProjectStepState | undefined,
+  now: Date = new Date(),
+): boolean {
+  const periodKey = getCurrentPeriodKey(step.type, now);
+  if (periodKey === null) return stepState?.status === "completed";
+  return Boolean(stepState?.periodCompletions?.[periodKey]);
+}
+
 export type StepRowStatus = "completado" | "en_progreso" | "pendiente" | "bloqueado";
 
 /**
@@ -268,13 +329,20 @@ export function calculateStepRowStatus(
   activeStepId: string | null,
 ): StepRowStatus {
   const state = stepStates.find((s) => s.stepId === step.id);
-  if (state?.status === "completed") return "completado";
+  if (isStepDoneNow(step, state)) return "completado";
   if (step.id === activeStepId) return "en_progreso";
   if (isStepBlocked(step, stepStates)) return "bloqueado";
   return "pendiente";
 }
 
-/** El primer Step no completado, en orden de Fase/Step (para "Siguiente paso" del Roadmap). */
+/**
+ * El primer Step `one_time` no completado, en orden de Fase/Step (para
+ * "Siguiente paso" del Roadmap). Los Steps recurrentes se excluyen a
+ * proposito - igual que en calculateProjectProgress, nunca "terminan",
+ * asi que si se contaran aqui, en cuanto el resto del Blueprint estuviera
+ * completo, "Continuar con el siguiente paso" apuntaria para siempre al
+ * mismo Step recurrente en vez de reconocer el Blueprint como terminado.
+ */
 export function findNextStep(
   blueprint: Blueprint,
   stepStates: ProjectStepState[],
@@ -284,7 +352,7 @@ export function findNextStep(
   for (const phase of sortedPhases) {
     const sortedSteps = [...phase.steps].sort((a, b) => a.order - b.order);
     for (const step of sortedSteps) {
-      if (!doneIds.has(step.id)) return { phase, step };
+      if (step.type === "one_time" && !doneIds.has(step.id)) return { phase, step };
     }
   }
   return null;

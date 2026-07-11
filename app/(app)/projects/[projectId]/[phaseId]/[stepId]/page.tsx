@@ -58,12 +58,15 @@ import {
   findNextStep,
   findStepById,
   isStepBlocked,
+  isStepDoneNow,
   listComments,
   listStepStates,
   setStepStatus,
+  togglePeriodCompletion,
   toggleChecklistItem,
   updateStepRegistroField,
 } from "@/services/step-state";
+import { getCurrentPeriodKey, periodLabel } from "@/lib/period";
 import type {
   BlueprintStep,
   Comment,
@@ -182,7 +185,9 @@ export default function StepView() {
   const stepState = allStepStates.find((s) => s.stepId === stepId);
   const checklistDone = new Set(stepState?.checklistDone ?? []);
   const blocked = isStepBlocked(step, allStepStates);
-  const isCompleted = stepState?.status === "completed" || justCompleted;
+  const currentPeriodKey = getCurrentPeriodKey(step.type);
+  const isRecurring = currentPeriodKey !== null;
+  const isCompleted = isStepDoneNow(step, stepState) || justCompleted;
 
   if (blocked) {
     return (
@@ -277,16 +282,29 @@ export default function StepView() {
   async function handleComplete() {
     setCompleting(true);
     try {
-      await setStepStatus(orgId!, projectId, step!, "completed");
-      // Sin esto, findNextStep (usado en la pantalla "Paso Completado" de
-      // abajo) sigue viendo este mismo Step como pendiente en el estado
-      // local y "Continuar con el siguiente paso" apunta de vuelta a el
-      // mismo paso en el que ya estas.
-      upsertLocalStepState(() => ({
-        status: "completed",
-        completedAt: new Date().toISOString(),
-        completedBy: user?.uid ?? null,
-      }));
+      if (isRecurring && currentPeriodKey) {
+        await togglePeriodCompletion(orgId!, projectId, stepId, currentPeriodKey, true);
+        upsertLocalStepState((current) => ({
+          periodCompletions: {
+            ...(current.periodCompletions ?? {}),
+            [currentPeriodKey]: {
+              completedAt: new Date().toISOString(),
+              completedBy: user?.uid ?? "",
+            },
+          },
+        }));
+      } else {
+        await setStepStatus(orgId!, projectId, step!, "completed");
+        // Sin esto, findNextStep (usado en la pantalla "Paso Completado" de
+        // abajo) sigue viendo este mismo Step como pendiente en el estado
+        // local y "Continuar con el siguiente paso" apunta de vuelta a el
+        // mismo paso en el que ya estas.
+        upsertLocalStepState(() => ({
+          status: "completed",
+          completedAt: new Date().toISOString(),
+          completedBy: user?.uid ?? null,
+        }));
+      }
       setJustCompleted(true);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "No se pudo completar el paso.");
@@ -930,7 +948,13 @@ export default function StepView() {
                   ) : (
                     <CheckCircle2 className="h-4 w-4" />
                   )}
-                  {isCompleted ? "Paso completado" : "Marcar paso como completado"}
+                  {isCompleted
+                    ? isRecurring
+                      ? `Completado ${periodLabel(step.type)}`
+                      : "Paso completado"
+                    : isRecurring
+                      ? `Marcar completado ${periodLabel(step.type)}`
+                      : "Marcar paso como completado"}
                 </Button>
               </div>
             </div>
