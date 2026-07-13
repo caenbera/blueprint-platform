@@ -1,0 +1,4059 @@
+{
+  "id": "bp-asesoria-financiera-v2",
+  "slug": "asesoria-financiera-v2",
+  "name": "Asesoría Financiera",
+  "description": "Guía completa para crear y operar una firma de asesoría financiera profesional. Tareas únicas y recurrentes organizadas en 7 áreas temáticas: desde la definición de la misión y gobernanza hasta la atención y seguimiento de clientes.",
+  "category": "Servicios Financieros",
+  "industry": "Finanzas",
+  "version": "2.0.0",
+  "author": "Blueprint",
+  "language": "es",
+  "difficulty": "intermediate",
+  "estimatedDuration": "10-16 semanas",
+  "tags": ["finanzas", "asesoría", "consultoría", "servicios profesionales", "firma"],
+  "coverImage": "",
+  "icon": "line-chart",
+  "status": "published",
+  "blueprintType": "construction",
+  "settings": {
+    "allowComments": true,
+    "allowAssistant": true,
+    "allowKnowledge": true,
+    "allowExport": true,
+    "allowMarketplace": true
+  },
+  "roadmap": [
+    {
+      "id": "v2-fase-estrategia",
+      "title": "Estrategia / Progreso del Plan",
+      "description": "Define la misión, visión, gobernanza y métricas de éxito de tu firma.",
+      "objective": "Establecer la dirección estratégica de la firma con una misión clara, un modelo de gobernanza definido y los KPIs que medirán el éxito a lo largo del tiempo.",
+      "order": 0,
+      "resources": [],
+      "steps": [
+        {
+          "id": "v2-step-mision-vision",
+          "title": "Definir la Misión y Visión de la Firma",
+          "description": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir la Misión y Visión de la Firma",
+              "summary": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
+              "body": "Redacta una declaración clara que defina tu propósito como asesor financiero.\n\nEjemplo: \"Ser el brazo administrativo y estratégico que potencia la rentabilidad y sostenibilidad financiera de cada cliente que confía en nosotros\".\n\nLa misión debe comunicar claramente:\n- A quién ayudas\n- Qué problema resuelves\n- Cómo lo haces de forma única\n\nPublícala en un lugar donde puedas revisarla regularmente."
+            },
+            "objective": {
+              "description": "¿Cuál es el propósito fundamental de tu firma de asesoría financiera?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-mision-01",
+                "task": "Redactar declaración de misión clara y concisa",
+                "completed": false
+              },
+              { "id": "v2-chk-mision-02", "task": "Definir visión a 3-5 años", "completed": false },
+              {
+                "id": "v2-chk-mision-03",
+                "task": "Establecer valores fundamentales",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-mision-04",
+                "task": "Documentar propuesta de valor única",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-mision-05",
+                "task": "Validar misión con 2-3 colegas de confianza",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a redactar la misión, visión y valores fundamentales de su firma de asesoría financiera.",
+              "context": "El usuario está definiendo el propósito y la dirección estratégica de su firma.",
+              "suggestions": [
+                "¿Cómo redacto una declaración de misión para una firma de asesoría financiera?"
+              ]
+            },
+            "knowledge": [],
+            "tip": "Publica la misión en un lugar donde la veas con frecuencia — te va a servir como brújula cuando tengas que tomar decisiones difíciles.",
+            "registroFields": [
+              {
+                "id": "v2-reg-mision",
+                "label": "Declaración de misión redactada",
+                "type": "textarea",
+                "required": true
+              },
+              {
+                "id": "v2-reg-vision",
+                "label": "Visión a 3-5 años",
+                "type": "textarea",
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-gobernanza",
+          "title": "Establecer el Modelo de Gobernanza",
+          "description": "Define la relación de independencia y reporte con clientes y stakeholders.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-mision-vision"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Establecer el Modelo de Gobernanza",
+              "summary": "Define la relación de independencia y reporte con clientes y stakeholders.",
+              "body": "Define la relación de independencia y reporte con clientes y stakeholders.\n\nEste modelo debe incluir:\n- Estructura de toma de decisiones\n- Mecanismos de transparencia\n- Protocolos de reporte a clientes\n- Definición de responsabilidades\n\nDefine si operarás solo o con socios, y en qué proporción participa cada uno."
+            },
+            "objective": {
+              "description": "¿Cómo se toman las decisiones y quién es responsable?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-gov-01",
+                "task": "Crear documento de gobernanza",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-gov-02",
+                "task": "Definir mecanismos de toma de decisiones",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-gov-03",
+                "task": "Establecer protocolos de reporte",
+                "completed": false
+              },
+              { "id": "v2-chk-gov-04", "task": "Documentar responsabilidades", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a definir el modelo de gobernanza de su firma de asesoría financiera.",
+              "context": "El usuario ya tiene su misión y visión definidas y necesita establecer cómo se tomarán las decisiones.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Un modelo de gobernanza claro evita conflictos internos y transmite transparencia a los clientes — especialmente importante en el sector financiero donde la confianza es el activo más valioso.",
+            "registroFields": [
+              {
+                "id": "v2-reg-gobernanza-drive",
+                "label": "Enlace al documento de gobernanza",
+                "type": "url"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-kpis",
+          "title": "Desarrollar los KPIs Estratégicos",
+          "description": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": ["v2-step-gobernanza"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Desarrollar los KPIs Estratégicos",
+              "summary": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
+              "body": "Los KPIs te permiten medir objetivamente el desempeño de tu firma y tomar decisiones basadas en datos.\n\nEjemplos de KPIs para asesoría financiera:\n- % de clientes que utilizan servicios recurrentemente\n- Tiempo promedio de resolución de consultas\n- Número de planes financieros entregados\n- Tasa de retención de clientes\n- Ingresos recurrentes mensuales (MRR)"
+            },
+            "objective": {
+              "description": "¿Qué métricas medirán el éxito de tu firma?"
+            },
+            "checklist": [
+              { "id": "v2-chk-kpi-01", "task": "Definir métricas de clientes", "completed": false },
+              {
+                "id": "v2-chk-kpi-02",
+                "task": "Establecer métricas financieras",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-kpi-03",
+                "task": "Crear dashboard de seguimiento",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-kpi-04",
+                "task": "Documentar frecuencia de revisión",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a definir los KPIs más relevantes para una firma de asesoría financiera.",
+              "context": "El usuario está estableciendo las métricas que usará para medir el éxito de su firma.",
+              "suggestions": [
+                "¿Cuáles son los KPIs más importantes para una firma de asesoría financiera?"
+              ]
+            },
+            "knowledge": [],
+            "whyItMatters": "Sin métricas claras no sabrás si tus esfuerzos están funcionando — los KPIs convierten la intuición en decisiones basadas en datos."
+          }
+        },
+        {
+          "id": "v2-step-encuesta-necesidades",
+          "title": "Realizar Encuesta de Necesidades del Mercado",
+          "description": "Entiende qué necesidades financieras tienen tus clientes potenciales antes de lanzar.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Realizar Encuesta de Necesidades del Mercado",
+              "summary": "Entiende qué necesidades financieras tienen tus clientes potenciales antes de lanzar.",
+              "body": "Antes de lanzar, entiende qué necesidades financieras tienen tus clientes potenciales.\n\nPreguntar:\n- \"¿Cuáles son sus mayores desafíos financieros?\"\n- \"¿En qué área necesita más ayuda?\"\n- \"¿Qué servicios de asesoría ha utilizado antes?\"\n\nEsta información te permitirá enfocar tus servicios en lo que realmente necesita el mercado."
+            },
+            "objective": {
+              "description": "¿Qué necesitan realmente tus clientes potenciales?"
+            },
+            "checklist": [
+              { "id": "v2-chk-enc-01", "task": "Crear formulario de encuesta", "completed": false },
+              {
+                "id": "v2-chk-enc-02",
+                "task": "Enviar a clientes potenciales",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-enc-03",
+                "task": "Analizar resultados y priorizar servicios",
+                "completed": false
+              },
+              { "id": "v2-chk-enc-04", "task": "Documentar hallazgos clave", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a diseñar y analizar una encuesta de necesidades para clientes potenciales de asesoría financiera.",
+              "context": "El usuario quiere validar qué servicios necesita el mercado antes de definir su oferta.",
+              "suggestions": ["¿Qué preguntas incluir en una encuesta de necesidades financieras?"]
+            },
+            "knowledge": [],
+            "tip": "Habla con al menos 10-15 personas — con menos de eso los patrones que encuentres pueden ser coincidencias.",
+            "registroFields": [
+              {
+                "id": "v2-reg-encuesta-drive",
+                "label": "Enlace a los resultados de la encuesta",
+                "type": "url"
+              }
+            ]
+          }
+        }
+      ],
+      "block": "strategy"
+    },
+    {
+      "id": "v2-fase-negocio",
+      "title": "Negocio",
+      "description": "Constituye legalmente la firma, abre la cuenta bancaria y establece el presupuesto de arranque.",
+      "objective": "Formalizar la existencia legal de la firma, separar las finanzas del negocio de las personales, y tener claridad sobre el capital necesario para operar hasta generar ingresos estables.",
+      "order": 1,
+      "resources": [],
+      "steps": [
+        {
+          "id": "v2-step-entidad-juridica",
+          "title": "Definir la Entidad Jurídica de la Firma",
+          "description": "Elige la estructura legal que mejor protege tu patrimonio y se adapta a tu modelo de operación.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir la Entidad Jurídica de la Firma",
+              "summary": "Elige la estructura legal que mejor protege tu patrimonio y se adapta a tu modelo de operación.",
+              "body": "La estructura legal determina:\n- Cuánto respondes con tu patrimonio personal\n- Cómo pagas impuestos\n- Qué tan fácil es sumar socios\n\nOpciones: Persona natural, SRL, SAS, SA.\n\nConsultar con un abogado o contador especializado antes de decidir.\n\nCambiar la estructura legal después cuesta tiempo y dinero."
+            },
+            "objective": {
+              "description": "¿Qué estructura legal mejor protege tu patrimonio?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-entidad-01",
+                "task": "Comparar al menos 2 estructuras legales",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-entidad-02",
+                "task": "Consultar con abogado especializado",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-entidad-03",
+                "task": "Seleccionar estructura legal definitiva",
+                "completed": false
+              },
+              { "id": "v2-chk-entidad-04", "task": "Documentar la decisión", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir la estructura legal correcta para su firma de asesoría financiera.",
+              "context": "El usuario está iniciando una firma de asesoría financiera y necesita decidir su estructura legal.",
+              "suggestions": [
+                "¿Qué estructura legal conviene para una asesoría financiera unipersonal?"
+              ]
+            },
+            "knowledge": [],
+            "whyItMatters": "La estructura legal que elijas hoy determina cuánto respondes con tu patrimonio personal si algo sale mal, cómo pagas impuestos, y qué tan fácil es sumar socios o inversionistas más adelante.",
+            "tip": "Si todavía no estás seguro de tener suficientes clientes para justificar una sociedad formal, muchas jurisdicciones permiten empezar como persona natural con negocio y migrar después.",
+            "registroFields": [
+              {
+                "id": "v2-reg-estructura-elegida",
+                "label": "Estructura legal elegida",
+                "type": "text",
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-nombre-comercial",
+          "title": "Registrar Nombre Comercial",
+          "description": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-entidad-juridica"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Registrar Nombre Comercial",
+              "summary": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.",
+              "body": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.\n\nRegistra la marca comercial si aplica."
+            },
+            "objective": {
+              "description": "¿Cómo se llamará tu firma ante el público?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-nombre-01",
+                "task": "Verificar disponibilidad en registro mercantil",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-nombre-02",
+                "task": "Verificar disponibilidad de dominio web",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-nombre-03",
+                "task": "Verificar disponibilidad en redes sociales",
+                "completed": false
+              },
+              { "id": "v2-chk-nombre-04", "task": "Registrar marca comercial", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir y verificar la disponibilidad del nombre comercial de su firma de asesoría financiera.",
+              "context": "El usuario necesita definir el nombre bajo el cual sus clientes lo conocerán.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "El nombre es la base de tu marca, tu dominio y tus redes sociales — cambiarlo después de registrado implica rehacer papelería, sitio web y materiales.",
+            "tip": "Pronuncia el nombre en voz alta y pide a 2-3 personas que lo escriban de oído — si lo escriben mal, probablemente tus clientes también lo hagan.",
+            "registroFields": [
+              {
+                "id": "v2-reg-nombre-elegido",
+                "label": "Nombre comercial elegido",
+                "type": "text",
+                "required": true
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-registro-mercantil",
+          "title": "Realizar Registro Mercantil",
+          "description": "Presenta toda la documentación ante la cámara de comercio y obtén el certificado de existencia.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 6,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-nombre-comercial"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Realizar Registro Mercantil",
+              "summary": "Presenta toda la documentación ante la cámara de comercio y obtén el certificado de existencia.",
+              "body": "Presenta toda la documentación ante la cámara de comercio y obtén certificado de existencia.\n\nObtener identificación tributaria (NIT/RFC/RUT) para operar fiscalmente."
+            },
+            "objective": {
+              "description": "¿Ya formalizaste legalmente la existencia de la firma?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-reg-01",
+                "task": "Preparar documentación requerida",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-reg-02",
+                "task": "Presentar trámite ante cámara de comercio",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-reg-03",
+                "task": "Obtener certificado de existencia",
+                "completed": false
+              },
+              { "id": "v2-chk-reg-04", "task": "Obtener NIT/RFC/RUT", "completed": false },
+              {
+                "id": "v2-chk-reg-05",
+                "task": "Obtener resolución de facturación electrónica",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario con el proceso de registro legal de su firma de asesoría financiera.",
+              "context": "El usuario ya eligió nombre y estructura legal y va a presentar el trámite.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Sin el registro mercantil no puedes facturar legalmente ni abrir la cuenta bancaria empresarial — es el trámite que desbloquea casi todo lo demás.",
+            "tip": "Los tiempos de respuesta de las autoridades varían mucho según el país — inicia este trámite lo antes posible.",
+            "registroFields": [
+              {
+                "id": "v2-reg-fecha-constitucion",
+                "label": "Fecha de constitución legal",
+                "type": "date"
+              },
+              {
+                "id": "v2-reg-num-tributario",
+                "label": "Número de identificación tributaria (NIT/RFC/RUT)",
+                "type": "text"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-cuenta-bancaria",
+          "title": "Abrir Cuenta Bancaria Empresarial",
+          "description": "Separa las finanzas de la firma de tus finanzas personales desde el primer día.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-registro-mercantil"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Abrir Cuenta Bancaria Empresarial",
+              "summary": "Separa las finanzas de la firma de tus finanzas personales desde el primer día.",
+              "body": "Esto es crucial para:\n- Seguimiento claro de ingresos y gastos\n- Separación patrimonial\n- Facilitar la contabilidad\n- Proyectar profesionalismo\n\nCompara al menos 2 bancos: comisiones, integración con software contable, banca en línea.\n\nEn una asesoría financiera, tu propia operación debe ser un ejemplo de orden."
+            },
+            "objective": {
+              "description": "¿Separaste las finanzas personales de las del negocio?"
+            },
+            "checklist": [
+              { "id": "v2-chk-banco-01", "task": "Comparar al menos 2 bancos", "completed": false },
+              {
+                "id": "v2-chk-banco-02",
+                "task": "Reunir documentos requeridos",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-banco-03",
+                "task": "Abrir cuenta bancaria empresarial",
+                "completed": false
+              },
+              { "id": "v2-chk-banco-04", "task": "Configurar banca en línea", "completed": false },
+              {
+                "id": "v2-chk-banco-05",
+                "task": "Solicitar tarjetas corporativas",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a comparar y elegir el banco adecuado para abrir la cuenta empresarial de su firma.",
+              "context": "El usuario ya completó el registro mercantil y necesita abrir la cuenta bancaria.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Mezclar finanzas personales y del negocio es uno de los errores más comunes y más costosos — dificulta la contabilidad, la declaración de impuestos y la evaluación real de si tu firma es rentable.",
+            "tip": "Pregunta específicamente por comisiones de transferencias internacionales si esperas cobrar a clientes en otro país.",
+            "registroFields": [
+              { "id": "v2-reg-banco-elegido", "label": "Banco elegido", "type": "text" }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-presupuesto",
+          "title": "Elaborar Presupuesto Inicial de Operación",
+          "description": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Elaborar Presupuesto Inicial de Operación",
+              "summary": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
+              "body": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.\n\nIncluye:\n- Costos de constitución legal\n- Salarios (incluyendo el tuyo)\n- Licencias de software\n- Equipos\n- Marketing inicial\n- Fondo de contingencia (mínimo 6 meses)\n\nLa mayoría de firmas tardan varios meses en conseguir sus primeros clientes pagos."
+            },
+            "objective": {
+              "description": "¿Cuánto capital necesitas para operar hasta generar ingresos estables?"
+            },
+            "checklist": [
+              { "id": "v2-chk-ppto-01", "task": "Listar costos de arranque", "completed": false },
+              {
+                "id": "v2-chk-ppto-02",
+                "task": "Calcular gastos operativos mensuales",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ppto-03",
+                "task": "Incluir salario personal mínimo",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ppto-04",
+                "task": "Establecer fondo de contingencia",
+                "completed": false
+              },
+              { "id": "v2-chk-ppto-05", "task": "Documentar presupuesto total", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a calcular el presupuesto inicial de arranque de su firma de asesoría financiera.",
+              "context": "El usuario está planeando el capital que necesita antes de tener clientes.",
+              "suggestions": ["¿Cuánto capital inicial necesita una firma de asesoría financiera?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Sin un presupuesto claro es fácil subestimar cuánto capital necesitas y quedarte sin fondos antes de generar ingresos estables.",
+            "tip": "Calcula al menos 6 meses de gastos fijos sin ingresos — la mayoría de las firmas de servicios profesionales tardan varios meses en conseguir sus primeros clientes pagos.",
+            "registroFields": [
+              {
+                "id": "v2-reg-capital-arranque",
+                "label": "Capital de arranque calculado",
+                "type": "number",
+                "helpText": "Incluye la moneda en las notas si lo prefieres (USD, COP, MXN, etc.)."
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-punto-equilibrio",
+          "title": "Determinar el Punto de Equilibrio",
+          "description": "Calcula cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales.",
+          "order": 5,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-presupuesto"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Determinar el Punto de Equilibrio",
+              "summary": "Calcula cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales.",
+              "body": "Esta es la cantidad que la firma debe generar para pagar gastos del negocio y personales.\n\nEste es el objetivo más importante que tu firma debe alcanzar.\n\nQuedarte por debajo requiere usar ahorros o crédito. Cuando esto se agote, tu negocio fracasará.\n\n¿Hay gastos que puedas reducir o eliminar para bajar este número?\n\nAjusta por estacionalidad."
+            },
+            "objective": {
+              "description": "¿Cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-eq-01",
+                "task": "Calcular gastos fijos mensuales del negocio",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-eq-02",
+                "task": "Calcular gastos personales mínimos",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-eq-03",
+                "task": "Sumar para encontrar ingresos de equilibrio",
+                "completed": false
+              },
+              { "id": "v2-chk-eq-04", "task": "Identificar gastos reducibles", "completed": false },
+              {
+                "id": "v2-chk-eq-05",
+                "task": "Completar tabla de ingresos mensuales objetivo",
+                "completed": false
+              },
+              { "id": "v2-chk-eq-06", "task": "Ajustar por estacionalidad", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a calcular su punto de equilibrio financiero mensual.",
+              "context": "El usuario ya tiene el presupuesto de arranque y necesita saber cuánto debe facturar cada mes.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Conocer tu punto de equilibrio convierte el objetivo de 'generar ingresos' en un número concreto que puedes perseguir todos los meses.",
+            "registroFields": [
+              {
+                "id": "v2-reg-punto-equilibrio",
+                "label": "Punto de equilibrio mensual calculado",
+                "type": "number",
+                "helpText": "Ingresa el monto mínimo mensual requerido."
+              }
+            ]
+          }
+        }
+      ],
+      "block": "business"
+    },
+    {
+      "id": "v2-fase-legal",
+      "title": "Legal y Cumplimiento",
+      "description": "Obtén certificaciones profesionales y establece las políticas y seguros que exige el sector.",
+      "objective": "Cumplir con los requisitos regulatorios y de certificación necesarios para asesorar legalmente, proteger la información de los clientes y resguardar el patrimonio de la firma ante posibles reclamos.",
+      "order": 2,
+      "resources": [],
+      "steps": [
+        {
+          "id": "v2-step-investigar-cert",
+          "title": "Investigar Requisitos de Certificación",
+          "description": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Investigar Requisitos de Certificación",
+              "summary": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
+              "body": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.\n\nVerifica licencias necesarias para asesorar y requisitos de educación continua.\n\nProfesionales exigen horas de educación continua y renovación periódica — agenda los recordatorios desde ahora."
+            },
+            "objective": {
+              "description": "¿Qué certificación exige el regulador de tu país?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-cert-01",
+                "task": "Investigar requisitos regulatorios locales",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cert-02",
+                "task": "Verificar licencias necesarias",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cert-03",
+                "task": "Documentar requisitos de educación continua",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cert-04",
+                "task": "Identificar autoridad regulatoria principal",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a identificar qué certificaciones profesionales necesita para ejercer como asesor financiero en su país.",
+              "context": "El usuario está formalizando su firma y necesita saber qué certificación es obligatoria en su jurisdicción.",
+              "suggestions": ["¿Qué certificaciones existen para asesores financieros?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Ejercer sin la certificación o el registro exigido puede exponerte a sanciones legales y que tus clientes no puedan confiar en que estás autorizado para asesorarlos."
+          }
+        },
+        {
+          "id": "v2-step-inscribir-examen",
+          "title": "Inscribirte al Examen de Certificación",
+          "description": "Completa la inscripción al examen o proceso de certificación correspondiente.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-investigar-cert"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Inscribirte al Examen de Certificación",
+              "summary": "Completa la inscripción al examen o proceso de certificación correspondiente.",
+              "body": "Completa la inscripción al examen o proceso de certificación correspondiente."
+            },
+            "objective": {
+              "description": "¿Completaste la inscripción al proceso de certificación?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-inscr-01",
+                "task": "Inscribirse en programa de certificación",
+                "completed": false
+              },
+              { "id": "v2-chk-inscr-02", "task": "Pagar derechos de examen", "completed": false },
+              { "id": "v2-chk-inscr-03", "task": "Agendar fecha de examen", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a completar el proceso de inscripción al examen de certificación profesional.",
+              "context": "El usuario ya identificó el examen requerido y necesita inscribirse.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-estudiar-examen",
+          "title": "Estudiar para el Examen de Certificación",
+          "description": "Reserva tiempo constante cada semana para prepararte para el examen.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 40,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["v2-step-inscribir-examen"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Estudiar para el Examen de Certificación",
+              "summary": "Reserva tiempo constante cada semana para prepararte para el examen.",
+              "body": "Reserva tiempo constante cada semana para estudiar — la mayoría de estas certificaciones requieren varias semanas o meses de preparación."
+            },
+            "objective": {
+              "description": "¿Dedicaste el tiempo necesario para prepararte?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-est-01",
+                "task": "Crear plan de estudio semanal",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-est-02",
+                "task": "Completar material de estudio oficial",
+                "completed": false
+              },
+              { "id": "v2-chk-est-03", "task": "Realizar exámenes de práctica", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a crear un plan de estudio efectivo para el examen de certificación financiera.",
+              "context": "El usuario se inscribió al examen y necesita prepararse.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Haz un examen de práctica en condiciones reales (tiempo limitado, sin consultar) — es el mejor indicador de cuánto más necesitas estudiar."
+          }
+        },
+        {
+          "id": "v2-step-presentar-examen",
+          "title": "Presentar y Aprobar el Examen",
+          "description": "Llega con anticipación y lleva identificación oficial vigente.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["v2-step-estudiar-examen"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Presentar y Aprobar el Examen",
+              "summary": "Llega con anticipación y lleva identificación oficial vigente.",
+              "body": "Llega con anticipación y lleva identificación oficial vigente."
+            },
+            "objective": {
+              "description": "¿Aprobaste el examen de certificación?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-exam-01",
+                "task": "Presentar examen de certificación",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-exam-02",
+                "task": "Obtener resultado aprobatorio",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a prepararse mentalmente y logísticamente para presentar el examen de certificación.",
+              "context": "El usuario está listo para presentar el examen.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-registro-profesional",
+          "title": "Obtener Número de Registro Profesional",
+          "description": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-presentar-examen"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Obtener Número de Registro Profesional",
+              "summary": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.",
+              "body": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.\n\nPublica tus credenciales en tu sitio web y materiales de marketing."
+            },
+            "objective": {
+              "description": "¿Ya tienes tu número de registro oficial?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-regprof-01",
+                "task": "Tramitar número de registro profesional",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-regprof-02",
+                "task": "Obtener certificado oficial",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-regprof-03",
+                "task": "Publicar credenciales en sitio web",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a completar el trámite de registro profesional después de aprobar el examen.",
+              "context": "El usuario aprobó el examen y necesita obtener su número de registro oficial.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Publicar tus credenciales oficiales genera confianza inmediata en clientes potenciales que aún no te conocen.",
+            "registroFields": [
+              {
+                "id": "v2-reg-num-profesional",
+                "label": "Número de registro profesional",
+                "type": "text"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-politica-confidencialidad",
+          "title": "Redactar Política de Confidencialidad",
+          "description": "Define cómo proteges la información sensible de tus clientes.",
+          "order": 5,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Redactar Política de Confidencialidad",
+              "summary": "Define cómo proteges la información sensible de tus clientes.",
+              "body": "Una firma de asesoría maneja información extremadamente sensible: estados de cuenta, declaraciones de impuestos, información patrimonial, datos familiares.\n\nEste documento es clave para generar confianza. Debe ser firmado por todo el personal y por cada cliente.\n\nIncluir:\n- Qué información es confidencial\n- Cómo se protege\n- Quién tiene acceso\n- Cuánto tiempo se conserva"
+            },
+            "objective": {
+              "description": "¿Cómo proteges la información sensible de tus clientes?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-conf-01",
+                "task": "Redactar política de confidencialidad",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-conf-02",
+                "task": "Definir manejo de datos sensibles",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-conf-03",
+                "task": "Crear acuerdo para firma por clientes",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-conf-04",
+                "task": "Establecer tiempos de retención",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-conf-05",
+                "task": "Documentar protocolo de brecha",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a redactar una política de confidencialidad sólida para una firma de asesoría financiera.",
+              "context": "El usuario necesita proteger la información financiera sensible de sus clientes.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "La confidencialidad es la base de la confianza en asesoría financiera — un solo incidente de filtración de información puede destruir la reputación de la firma."
+          }
+        },
+        {
+          "id": "v2-step-kyc-aml",
+          "title": "Implementar Políticas KYC/AML",
+          "description": "Como asesor financiero, estás obligado a implementar políticas de conocimiento del cliente y anti-lavado.",
+          "order": 6,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["v2-step-politica-confidencialidad"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Implementar Políticas KYC/AML",
+              "summary": "Como asesor financiero, estás obligado a implementar políticas de conocimiento del cliente y anti-lavado.",
+              "body": "Como asesor financiero, estás obligado a implementar KYC y AML.\n\nIncluye: verificación de identidad, origen de fondos, monitoreo de transacciones inusuales, reporte de operaciones sospechosas.\n\nEl incumplimiento puede resultar en sanciones legales severas."
+            },
+            "objective": {
+              "description": "¿Cumples con regulaciones anti-lavado?"
+            },
+            "checklist": [
+              { "id": "v2-chk-kyc-01", "task": "Crear procedimiento KYC", "completed": false },
+              {
+                "id": "v2-chk-kyc-02",
+                "task": "Implementar verificación de identidad",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-kyc-03",
+                "task": "Documentar reporte de operaciones sospechosas",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-kyc-04",
+                "task": "Capacitar equipo en políticas AML",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a entender e implementar los procedimientos KYC y AML requeridos para una firma de asesoría financiera.",
+              "context": "El usuario necesita cumplir con regulaciones anti-lavado de dinero.",
+              "suggestions": ["¿Qué es KYC y AML en asesoría financiera?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "El incumplimiento de normas AML puede resultar en sanciones regulatorias severas, incluyendo la cancelación de licencias y responsabilidad penal.",
+            "commonMistakes": [
+              "Creer que KYC/AML solo aplica a bancos — cualquier firma que maneje o asesore sobre activos financieros está sujeta a estas obligaciones."
+            ]
+          }
+        },
+        {
+          "id": "v2-step-conflictos-interes",
+          "title": "Definir Política de Conflictos de Interés",
+          "description": "Gestiona transparentemente posibles conflictos de interés con tus clientes.",
+          "order": 7,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-kyc-aml"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir Política de Conflictos de Interés",
+              "summary": "Gestiona transparentemente posibles conflictos de interés con tus clientes.",
+              "body": "Si recibes comisiones de terceros necesitas identificarlo y declararlo.\n\nLa regla más simple: si dudas si algo es un conflicto, decláralo. La transparencia siempre construye más confianza.\n\nCrea un formato estándar y úsalo consistentemente."
+            },
+            "objective": {
+              "description": "¿Gestionas transparentemente posibles conflictos?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-ci-01",
+                "task": "Listar fuentes de ingreso con conflicto",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ci-02",
+                "task": "Definir proceso de declaración",
+                "completed": false
+              },
+              { "id": "v2-chk-ci-03", "task": "Crear formato estándar", "completed": false },
+              {
+                "id": "v2-chk-ci-04",
+                "task": "Documentar política por escrito",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a identificar y gestionar conflictos de interés en una firma de asesoría financiera.",
+              "context": "El usuario necesita definir cómo manejará situaciones donde sus intereses puedan afectar sus recomendaciones.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "La transparencia en conflictos de interés es una obligación regulatoria en la mayoría de jurisdicciones y el pilar de la relación fiduciaria con el cliente."
+          }
+        },
+        {
+          "id": "v2-step-seguro-eo",
+          "title": "Contratar Seguro de Responsabilidad Profesional (E&O)",
+          "description": "Protege la firma contra errores u omisiones en tus recomendaciones.",
+          "order": 8,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-entidad-juridica"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Contratar Seguro de Responsabilidad Profesional (E&O)",
+              "summary": "Protege la firma contra errores u omisiones en tus recomendaciones.",
+              "body": "Un seguro E&O te protege si un cliente reclama que una recomendación tuya le causó pérdida financiera.\n\nCotiza al menos 2 aseguradoras que cubran servicios financieros.\n\nSin esta cobertura, un solo reclamo puede comprometer todo el patrimonio de la firma.\n\nRevisa con cuidado los montos de cobertura y las exclusiones antes de contratar."
+            },
+            "objective": {
+              "description": "¿Protegiste la firma contra errores u omisiones?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-eo-01",
+                "task": "Cotizar al menos 2 aseguradoras",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-eo-02",
+                "task": "Comparar coberturas y exclusiones",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-eo-03",
+                "task": "Contratar póliza antes del primer cliente",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-eo-04",
+                "task": "Documentar póliza en carpeta segura",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a entender qué cubre un seguro de responsabilidad profesional para asesores financieros y cómo elegir la mejor póliza.",
+              "context": "El usuario está por empezar a atender clientes y necesita protegerse frente a reclamos.",
+              "suggestions": ["¿Qué cubre un seguro E&O para asesores financieros?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Sin esta cobertura, un solo reclamo de un cliente insatisfecho puede comprometer todo el patrimonio de la firma y el tuyo personal.",
+            "commonMistakes": [
+              "Empezar a atender clientes antes de tener la póliza activa, confiando en que 'nada va a pasar'."
+            ],
+            "registroFields": [
+              { "id": "v2-reg-aseguradora", "label": "Aseguradora contratada", "type": "text" },
+              {
+                "id": "v2-reg-poliza-drive",
+                "label": "Enlace a la póliza en almacenamiento seguro",
+                "type": "url"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-calendario-renovacion",
+          "title": "Configurar Calendario de Renovación",
+          "description": "Programa recordatorios para renovar certificaciones y pólizas antes de su vencimiento.",
+          "order": 9,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": ["v2-step-registro-profesional", "v2-step-seguro-eo"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Configurar Calendario de Renovación",
+              "summary": "Programa recordatorios para renovar certificaciones y pólizas antes de su vencimiento.",
+              "body": "Profesionales exigen horas de educación continua y renovación periódica.\n\nAgenda los recordatorios desde ahora para no perder vigencia."
+            },
+            "objective": {
+              "description": "¿Programaste recordatorios para renovar certificaciones?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-cal-01",
+                "task": "Programar recordatorios de renovación",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cal-02",
+                "task": "Agendar horas de educación continua",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cal-03",
+                "task": "Configurar alertas 60 días antes de vencimiento",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a configurar un calendario de renovaciones para certificaciones y pólizas.",
+              "context": "El usuario ya obtuvo su certificación y contrató el seguro y necesita programar sus renovaciones.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Configura los recordatorios con 60 días de anticipación — te da tiempo suficiente para completar la educación continua requerida sin carreras de último momento."
+          }
+        }
+      ],
+      "block": "compliance"
+    },
+    {
+      "id": "v2-fase-finanzas",
+      "title": "Finanzas y Contabilidad",
+      "description": "Define el catálogo de servicios, las tarifas, los paquetes y el software contable.",
+      "objective": "Tener un catálogo de servicios claro con precios definidos, contratos listos y la herramienta contable configurada antes de atender al primer cliente.",
+      "order": 3,
+      "resources": [],
+      "steps": [
+        {
+          "id": "v2-step-catalogo-servicios",
+          "title": "Diseñar el Catálogo de Servicios",
+          "description": "Define qué servicios específicos ofrecerá tu firma y cuáles priorizarás al lanzar.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-encuesta-necesidades"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Diseñar el Catálogo de Servicios",
+              "summary": "Define qué servicios específicos ofrecerá tu firma y cuáles priorizarás al lanzar.",
+              "body": "Escribe todos los servicios posibles:\n- Planeación financiera integral\n- Gestión de inversiones\n- Planeación de retiro\n- Planeación fiscal\n- Planeación sucesoria\n- Análisis de seguros\n- Gestión de deuda\n\nIntentar ofrecer todo desde el día uno diluye tu propuesta de valor — prioriza 1-3 servicios para lanzar."
+            },
+            "objective": {
+              "description": "¿Qué servicios específicos ofrecerá tu firma?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-cat-01",
+                "task": "Listar todos los servicios posibles",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cat-02",
+                "task": "Priorizar 1-3 servicios para lanzar",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cat-03",
+                "task": "Definir perfil de cliente por servicio",
+                "completed": false
+              },
+              { "id": "v2-chk-cat-04", "task": "Documentar catálogo final", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a definir y priorizar el catálogo de servicios de su firma de asesoría financiera.",
+              "context": "El usuario necesita decidir qué servicios ofrecerá para lanzar su firma.",
+              "suggestions": ["¿Qué servicios ofrece típicamente una firma de asesoría financiera?"]
+            },
+            "knowledge": [],
+            "bestPractices": [
+              "Inicia con 1-3 servicios que realmente domines — es mejor ser excelente en pocos que mediocre en muchos.",
+              "Define claramente el perfil de cliente ideal para cada servicio."
+            ]
+          }
+        },
+        {
+          "id": "v2-step-tarifas",
+          "title": "Definir Estructura de Tarifas",
+          "description": "Define cómo cobrarás por tus servicios y calcula tu tarifa objetivo.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-catalogo-servicios"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir Estructura de Tarifas",
+              "summary": "Define cómo cobrarás por tus servicios y calcula tu tarifa objetivo.",
+              "body": "Modelos habituales:\n- Tarifa fija por servicio\n- Porcentaje de activos gestionados (AUM)\n- Cobro por hora\n- Retainer mensual\n\nEl modelo que elijas afecta qué tipo de cliente atraes.\n\nCalcula tu tarifa a partir de costos fijos, tiempo por cliente y tarifas de referencia.\n\nIncluye el tiempo no facturable (administración, marketing) — subestimarlo es el error más común.\n\nRevisa tarifas de al menos 3 firmas comparables."
+            },
+            "objective": {
+              "description": "¿Cómo cobrarás por tus servicios?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-tar-01",
+                "task": "Comparar modelos de cobro del sector",
+                "completed": false
+              },
+              { "id": "v2-chk-tar-02", "task": "Calcular tarifa objetivo", "completed": false },
+              { "id": "v2-chk-tar-03", "task": "Documentar estructura final", "completed": false },
+              {
+                "id": "v2-chk-tar-04",
+                "task": "Crear tabla de tarifas para sitio web",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a definir una estructura de tarifas adecuada para su firma de asesoría financiera.",
+              "context": "El usuario ya tiene el catálogo de servicios y necesita definir cómo cobrar por ellos.",
+              "suggestions": ["¿Cuánto cobra normalmente un asesor financiero?"]
+            },
+            "knowledge": [],
+            "commonMistakes": [
+              "Subestimar el tiempo no facturable (administración, marketing, gestión) al calcular la tarifa."
+            ],
+            "tip": "Revisa tarifas de al menos 3 firmas comparables en tu mercado — te ayuda a calibrar si estás muy por debajo o por encima."
+          }
+        },
+        {
+          "id": "v2-step-paquetes",
+          "title": "Diseñar Paquetes de Asesoría",
+          "description": "Arma paquetes concretos fáciles de explicar y vender.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": ["v2-step-tarifas"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Diseñar Paquetes de Asesoría",
+              "summary": "Arma paquetes concretos fáciles de explicar y vender.",
+              "body": "Arma paquetes concretos fáciles de explicar y vender.\n\nEjemplo: \"Plan Financiero Inicial\", \"Acompañamiento Anual\".\n\nDeja claro por escrito qué incluye y qué no incluye cada paquete."
+            },
+            "objective": {
+              "description": "¿Empaquetaste tus servicios en ofertas claras?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-paq-01",
+                "task": "Diseñar 2-4 paquetes con diferente alcance",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-paq-02",
+                "task": "Documentar alcance de cada paquete",
+                "completed": false
+              },
+              { "id": "v2-chk-paq-03", "task": "Definir qué NO incluye", "completed": false },
+              {
+                "id": "v2-chk-paq-04",
+                "task": "Establecer precios por paquete",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a diseñar paquetes de asesoría financiera atractivos y fáciles de explicar.",
+              "context": "El usuario ya tiene los servicios y tarifas definidos y necesita empaquetarlos.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Especificar qué NO incluye un paquete es tan importante como especificar qué incluye — evita malentendidos costosos con clientes."
+          }
+        },
+        {
+          "id": "v2-step-contrato",
+          "title": "Redactar Contrato de Servicios",
+          "description": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["v2-step-paquetes"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Redactar Contrato de Servicios",
+              "summary": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.",
+              "body": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.\n\nHacer revisar por abogado especializado."
+            },
+            "objective": {
+              "description": "¿Tienes un contrato legal listo para clientes?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-cont-01",
+                "task": "Redactar borrador del contrato",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cont-02",
+                "task": "Incluir cláusulas de confidencialidad",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cont-03",
+                "task": "Definir política de cancelación",
+                "completed": false
+              },
+              { "id": "v2-chk-cont-04", "task": "Hacer revisar por abogado", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a estructurar las cláusulas clave de un contrato de servicios de asesoría financiera.",
+              "context": "El usuario necesita un contrato legal listo antes de firmar con su primer cliente.",
+              "suggestions": ["¿Qué cláusulas debe incluir un contrato de asesoría financiera?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Un contrato bien redactado protege tanto al cliente como a tu firma — define expectativas claras y evita disputas costosas.",
+            "registroFields": [
+              {
+                "id": "v2-reg-contrato-drive",
+                "label": "Enlace al contrato en almacenamiento seguro",
+                "type": "url"
+              }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-software-contable",
+          "title": "Elegir y Configurar Software Contable",
+          "description": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": ["v2-step-cuenta-bancaria"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Elegir y Configurar Software Contable",
+              "summary": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.",
+              "body": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.\n\nOpciones: QuickBooks, Xero, ContaPyme.\n\nUn buen software ahorra horas cada mes y reduce errores en declaraciones.\n\nConecta tu cuenta bancaria y configura categorías antes de tu primera transacción."
+            },
+            "objective": {
+              "description": "¿Tienes herramienta para gestionar la contabilidad?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-sw-01",
+                "task": "Elegir software de contabilidad",
+                "completed": false
+              },
+              { "id": "v2-chk-sw-02", "task": "Configurar plan de cuentas", "completed": false },
+              { "id": "v2-chk-sw-03", "task": "Conectar con cuenta bancaria", "completed": false },
+              {
+                "id": "v2-chk-sw-04",
+                "task": "Configurar categorías de ingresos y gastos",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir y configurar el software de contabilidad más adecuado para su firma.",
+              "context": "El usuario tiene cuenta bancaria activa y necesita una herramienta contable.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Un buen software de contabilidad ahorra horas cada mes y reduce errores en tus declaraciones de impuestos.",
+            "tip": "Configura las categorías de gasto antes de tu primera transacción — reclasificar meses de movimientos después es mucho más lento.",
+            "recommendedTools": [
+              { "name": "QuickBooks", "url": "https://quickbooks.intuit.com" },
+              { "name": "Xero", "url": "https://www.xero.com" }
+            ]
+          }
+        }
+      ],
+      "block": "finances"
+    },
+    {
+      "id": "v2-fase-tecnologia",
+      "title": "Tecnología y Sistemas",
+      "description": "Implementa las herramientas tecnológicas core de la firma: CRM, software de planificación, agendamiento, firma electrónica y almacenamiento seguro.",
+      "objective": "Tener todas las herramientas tecnológicas operativas antes de atender al primer cliente, con al menos una automatización configurada en el CRM.",
+      "order": 4,
+      "resources": [],
+      "steps": [
+        {
+          "id": "v2-step-crm",
+          "title": "Elegir CRM para la Firma",
+          "description": "Un CRM te permite llevar el historial de cada cliente, reuniones y documentos en un solo lugar.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Elegir CRM para la Firma",
+              "summary": "Un CRM te permite llevar el historial de cada cliente, reuniones y documentos en un solo lugar.",
+              "body": "Un CRM te permite llevar el historial de cada cliente, reuniones y documentos en un solo lugar.\n\nOpciones: HubSpot CRM, Notion, Salesforce Essentials, Zoho CRM.\n\nCambiar de CRM después de tener clientes cargados es mucho más costoso que comparar bien antes.\n\nConfigura al menos una automatización simple desde el inicio."
+            },
+            "objective": {
+              "description": "¿Dónde gestionas las relaciones con tus clientes?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-crm-01",
+                "task": "Comparar al menos 2 opciones de CRM",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-crm-02",
+                "task": "Elegir y contratar CRM definitivo",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-crm-03",
+                "task": "Configurar con paquetes de servicios",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-crm-04",
+                "task": "Implementar al menos una automatización",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a comparar y elegir el CRM más adecuado para una firma de asesoría financiera.",
+              "context": "El usuario necesita una herramienta para gestionar las relaciones con sus clientes.",
+              "suggestions": ["¿Qué CRM es mejor para una firma de asesoría financiera pequeña?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Cambiar de CRM después de tener clientes cargados implica migrar datos, reentrenar el equipo y perder automatizaciones — comparar bien al inicio es mucho más barato.",
+            "recommendedTools": [
+              { "name": "HubSpot CRM", "url": "https://www.hubspot.com/products/crm" },
+              { "name": "Zoho CRM", "url": "https://www.zoho.com/crm/" }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-software-planificacion",
+          "title": "Elegir Software de Planificación Financiera",
+          "description": "Esta herramienta es el corazón de tu operación: ahí vas a proyectar escenarios y calcular metas.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Elegir Software de Planificación Financiera",
+              "summary": "Esta herramienta es el corazón de tu operación: ahí vas a proyectar escenarios y calcular metas.",
+              "body": "Esta herramienta es el corazón de tu operación: ahí vas a proyectar escenarios y calcular metas.\n\nUna interfaz confusa te va a costar horas cada semana.\n\nCrea una plantilla base que vas a reutilizar con cada cliente nuevo."
+            },
+            "objective": {
+              "description": "¿Cuál es tu herramienta core de asesoría?"
+            },
+            "checklist": [
+              { "id": "v2-chk-sp-01", "task": "Comparar opciones de software", "completed": false },
+              { "id": "v2-chk-sp-02", "task": "Elegir y contratar software", "completed": false },
+              {
+                "id": "v2-chk-sp-03",
+                "task": "Configurar plantilla base de plan financiero",
+                "completed": false
+              },
+              { "id": "v2-chk-sp-04", "task": "Capacitarse en uso avanzado", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir el software de planificación financiera más adecuado para su firma.",
+              "context": "El usuario necesita la herramienta principal para crear planes financieros para sus clientes.",
+              "suggestions": ["¿Qué software usan los asesores financieros para planificación?"]
+            },
+            "knowledge": [],
+            "tip": "Crea la plantilla base antes de tu primer cliente — así cada plan nuevo tarda menos y tiene una estructura consistente."
+          }
+        },
+        {
+          "id": "v2-step-agendamiento",
+          "title": "Implementar Herramienta de Agendamiento",
+          "description": "Permite a tus clientes reservar reuniones sin ir y venir por correo.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Implementar Herramienta de Agendamiento",
+              "summary": "Permite a tus clientes reservar reuniones sin ir y venir por correo.",
+              "body": "Permite a tus clientes reservar reuniones sin ir y venir por correo.\n\nOpciones: Calendly, Acuity, Microsoft Bookings.\n\nConecta tu calendario para evitar dobles reservas.\n\nConfigura un tiempo buffer antes y después de cada reunión."
+            },
+            "objective": {
+              "description": "¿Cómo reservan citas tus clientes?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-ag-01",
+                "task": "Elegir herramienta de agendamiento",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ag-02",
+                "task": "Conectar con calendario personal",
+                "completed": false
+              },
+              { "id": "v2-chk-ag-03", "task": "Configurar tiempos buffer", "completed": false },
+              {
+                "id": "v2-chk-ag-04",
+                "task": "Configurar tipos de reunión y duración",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a configurar una herramienta de agendamiento profesional.",
+              "context": "El usuario necesita que sus clientes puedan agendar reuniones de forma autónoma.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "recommendedTools": [{ "name": "Calendly", "url": "https://calendly.com" }]
+          }
+        },
+        {
+          "id": "v2-step-firma-electronica",
+          "title": "Implementar Firma Electrónica",
+          "description": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-contrato"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Implementar Firma Electrónica",
+              "summary": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido.",
+              "body": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido.\n\nOpciones: DocuSign, Adobe Sign, HelloSign.\n\nPrueba el proceso con un documento de prueba antes de usarlo con clientes reales."
+            },
+            "objective": {
+              "description": "¿Cómo agilizas la contratación?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-fe-01",
+                "task": "Elegir herramienta de firma electrónica",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-fe-02",
+                "task": "Configurar plantillas de contratos",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-fe-03",
+                "task": "Probar con documento de prueba",
+                "completed": false
+              },
+              { "id": "v2-chk-fe-04", "task": "Documentar proceso", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a implementar un proceso de firma electrónica para sus contratos de servicio.",
+              "context": "El usuario tiene el contrato redactado y necesita una forma eficiente de firmarlo con clientes.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "recommendedTools": [
+              { "name": "DocuSign", "url": "https://www.docusign.com" },
+              { "name": "Adobe Sign", "url": "https://acrobat.adobe.com/us/en/sign.html" }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-almacenamiento-seguro",
+          "title": "Configurar Almacenamiento Seguro",
+          "description": "Elige una plataforma con buenos controles de acceso y cifrado para los documentos de clientes.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Configurar Almacenamiento Seguro",
+              "summary": "Elige una plataforma con buenos controles de acceso y cifrado para los documentos de clientes.",
+              "body": "Elige una plataforma con buenos controles de acceso y cifrado.\n\nVerifica que cumpla estándares de cifrado reconocidos.\n\nDefine una estructura de carpetas estándar: Contrato, Cuestionario, Plan, Comunicaciones.\n\nActiva autenticación de dos factores."
+            },
+            "objective": {
+              "description": "¿Dónde guardas los documentos financieros de tus clientes?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-alm-01",
+                "task": "Elegir plataforma con cifrado",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-alm-02",
+                "task": "Configurar estructura de carpetas por cliente",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-alm-03",
+                "task": "Implementar controles de acceso",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-alm-04",
+                "task": "Activar autenticación de dos factores",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-alm-05",
+                "task": "Configurar respaldos automáticos",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir y configurar una solución de almacenamiento seguro para documentos financieros de clientes.",
+              "context": "El usuario maneja información financiera sensible de clientes y necesita protegerla adecuadamente.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Los documentos financieros de tus clientes son extremadamente sensibles — un acceso no autorizado o pérdida de datos puede destruir la reputación de la firma y exponerte a responsabilidad legal."
+          }
+        },
+        {
+          "id": "v2-step-linea-profesional",
+          "title": "Contratar Línea Telefónica Profesional",
+          "description": "Separa tu número personal del profesional para mayor control sobre tu disponibilidad.",
+          "order": 5,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Contratar Línea Telefónica Profesional",
+              "summary": "Separa tu número personal del profesional para mayor control sobre tu disponibilidad.",
+              "body": "Separar tu número personal del profesional te da más control sobre tu disponibilidad y proyecta mayor formalidad.\n\nConfigura buzón de voz profesional."
+            },
+            "objective": {
+              "description": "¿Separaste tu número personal del profesional?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-tel-01",
+                "task": "Contratar línea profesional separada",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-tel-02",
+                "task": "Configurar buzón de voz profesional",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-tel-03",
+                "task": "Comunicar número en materiales",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a configurar una línea telefónica profesional para su firma.",
+              "context": "El usuario necesita separar su comunicación personal de la profesional.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Un servicio VoIP como Google Voice te permite tener un número profesional sin necesitar un teléfono físico adicional."
+          }
+        }
+      ],
+      "block": "technology"
+    },
+    {
+      "id": "v2-fase-marketing",
+      "title": "Marketing y Ventas",
+      "description": "Construye la identidad de marca, presencia digital y estrategia de contenido y referidos.",
+      "objective": "Tener una marca visual consistente, presencia digital activa y una estrategia de contenido y referidos para atraer a los primeros clientes.",
+      "order": 5,
+      "resources": [],
+      "steps": [
+        {
+          "id": "v2-step-paleta-colores",
+          "title": "Definir Paleta de Colores",
+          "description": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir Paleta de Colores",
+              "summary": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.",
+              "body": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.\n\nEn servicios financieros, los tonos asociados a estabilidad suelen funcionar mejor que los muy llamativos.\n\nDocumenta los códigos exactos (HEX)."
+            },
+            "objective": { "description": "¿Qué colores representan tu marca?" },
+            "checklist": [
+              {
+                "id": "v2-chk-col-01",
+                "task": "Seleccionar 2-4 colores de marca",
+                "completed": false
+              },
+              { "id": "v2-chk-col-02", "task": "Documentar códigos HEX", "completed": false },
+              {
+                "id": "v2-chk-col-03",
+                "task": "Definir color primario y secundarios",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir una paleta de colores profesional para su firma de asesoría financiera.",
+              "context": "El usuario está construyendo la identidad visual de su marca.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-tipografia",
+          "title": "Elegir Tipografía",
+          "description": "Elige 1-2 tipografías consistentes para toda la comunicación de la firma.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": ["v2-step-paleta-colores"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Elegir Tipografía",
+              "summary": "Elige 1-2 tipografías consistentes para toda la comunicación de la firma.",
+              "body": "Elige 1-2 tipografías consistentes. Verifica legibilidad en pantalla e impreso.\n\nUsa un máximo de 3 fuentes diferentes por material impreso."
+            },
+            "objective": { "description": "¿Qué fuentes usará tu marca?" },
+            "checklist": [
+              { "id": "v2-chk-tip-01", "task": "Elegir tipografías", "completed": false },
+              { "id": "v2-chk-tip-02", "task": "Verificar legibilidad", "completed": false },
+              {
+                "id": "v2-chk-tip-03",
+                "task": "Adquirir licencias si necesario",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir tipografías profesionales para su firma de asesoría financiera.",
+              "context": "El usuario está definiendo los elementos visuales de su marca.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-eslogan",
+          "title": "Escribir el Eslogan",
+          "description": "Redacta una frase que resuma tu propuesta de valor en pocas palabras.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": ["v2-step-mision-vision"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Escribir el Eslogan",
+              "summary": "Redacta una frase que resuma tu propuesta de valor en pocas palabras.",
+              "body": "Un buen eslogan comunica en pocas palabras qué haces y para quién.\n\nSi tienes que explicarlo, probablemente no está funcionando."
+            },
+            "objective": { "description": "¿Qué frase resume tu propuesta de valor?" },
+            "checklist": [
+              {
+                "id": "v2-chk-esl-01",
+                "task": "Redactar 3-5 opciones de eslogan",
+                "completed": false
+              },
+              { "id": "v2-chk-esl-02", "task": "Seleccionar eslogan final", "completed": false },
+              { "id": "v2-chk-esl-03", "task": "Documentar en manual de marca", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a crear un eslogan memorable y claro para su firma de asesoría financiera.",
+              "context": "El usuario necesita un eslogan que comunique su propuesta de valor en pocas palabras.",
+              "suggestions": ["¿Cómo escribo un eslogan para una firma de asesoría financiera?"]
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-logo",
+          "title": "Diseñar el Logo",
+          "description": "Con la paleta y tipografía definidas, diseña el logo de la firma.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-tipografia"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Diseñar el Logo",
+              "summary": "Con la paleta y tipografía definidas, diseña el logo de la firma.",
+              "body": "Con la paleta y tipografía definidas, diseña el logo de la firma.\n\nUn diseño que transmita seriedad ayuda a generar confianza en servicios financieros.\n\nNecesitas: versión horizontal, solo ícono, versión monocromática.\n\nPide siempre el archivo vectorial (SVG o AI) además del PNG."
+            },
+            "objective": { "description": "¿Tienes un logo profesional listo?" },
+            "checklist": [
+              { "id": "v2-chk-logo-01", "task": "Diseñar logo principal", "completed": false },
+              {
+                "id": "v2-chk-logo-02",
+                "task": "Crear variantes (horizontal, ícono, monocromático)",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-logo-03",
+                "task": "Obtener archivos vectoriales",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-logo-04",
+                "task": "Probar en diferentes fondos y tamaños",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a conceptualizar el logo de su firma de asesoría financiera.",
+              "context": "El usuario tiene paleta de colores y tipografía definidas y necesita diseñar su logo.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Siempre pide el archivo vectorial (SVG o AI) al diseñador — el PNG se pixela cuando lo amplías, el vectorial no."
+          }
+        },
+        {
+          "id": "v2-step-biografia",
+          "title": "Escribir tu Biografía Profesional",
+          "description": "Redacta versión corta (2 oraciones) y larga (1 párrafo) incluyendo certificaciones y experiencia.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": ["v2-step-registro-profesional"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Escribir tu Biografía Profesional",
+              "summary": "Redacta versión corta y larga incluyendo certificaciones y experiencia.",
+              "body": "Redacta versión corta (2 oraciones) y larga (1 párrafo).\n\nIncluye certificaciones y experiencia."
+            },
+            "objective": { "description": "¿Tienes biografía lista para materiales?" },
+            "checklist": [
+              {
+                "id": "v2-chk-bio-01",
+                "task": "Redactar versión corta (2 oraciones)",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-bio-02",
+                "task": "Redactar versión larga (1 párrafo)",
+                "completed": false
+              },
+              { "id": "v2-chk-bio-03", "task": "Incluir certificaciones", "completed": false },
+              {
+                "id": "v2-chk-bio-04",
+                "task": "Mencionar razón personal del trabajo",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a redactar una biografía profesional convincente para un asesor financiero.",
+              "context": "El usuario necesita una biografía para su sitio web, LinkedIn y materiales de marketing.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-dominio-hosting",
+          "title": "Registrar Dominio y Contratar Hosting",
+          "description": "Asegura tu presencia online con un dominio y plataforma web profesionales.",
+          "order": 5,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-nombre-comercial"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Registrar Dominio y Contratar Hosting",
+              "summary": "Asegura tu presencia online con un dominio y plataforma web profesionales.",
+              "body": "Compra dominio .com o extensión local. Registra por mínimo 2 años.\n\nElige plataforma web: WordPress, Webflow, etc.\n\nConfigura SSL y seguridad básica."
+            },
+            "objective": { "description": "¿Aseguraste tu presencia online?" },
+            "checklist": [
+              { "id": "v2-chk-dom-01", "task": "Comprar dominio", "completed": false },
+              {
+                "id": "v2-chk-dom-02",
+                "task": "Contratar hosting/plataforma web",
+                "completed": false
+              },
+              { "id": "v2-chk-dom-03", "task": "Configurar SSL", "completed": false },
+              {
+                "id": "v2-chk-dom-04",
+                "task": "Configurar correo profesional con dominio propio",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir y configurar su dominio y hosting web.",
+              "context": "El usuario necesita establecer su presencia en línea.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Un correo con dominio propio (nombre@tufirma.com) proyecta mucha más credibilidad que uno genérico (@gmail.com).",
+            "registroFields": [
+              { "id": "v2-reg-dominio", "label": "Dominio registrado", "type": "text" }
+            ]
+          }
+        },
+        {
+          "id": "v2-step-mapa-sitio",
+          "title": "Definir Mapa del Sitio",
+          "description": "Define las páginas principales del sitio web y las llamadas a la acción por página.",
+          "order": 6,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": ["v2-step-dominio-hosting"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Definir Mapa del Sitio",
+              "summary": "Define las páginas principales del sitio web y las llamadas a la acción por página.",
+              "body": "Define páginas principales: inicio, servicios, sobre mí, contacto.\n\nPlanear llamadas a la acción por página."
+            },
+            "objective": { "description": "¿Qué páginas tendrá tu sitio web?" },
+            "checklist": [
+              { "id": "v2-chk-map-01", "task": "Definir páginas principales", "completed": false },
+              {
+                "id": "v2-chk-map-02",
+                "task": "Crear estructura de navegación",
+                "completed": false
+              },
+              { "id": "v2-chk-map-03", "task": "Planear llamadas a la acción", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a definir la estructura y navegación de su sitio web de asesoría financiera.",
+              "context": "El usuario tiene el dominio y necesita planificar qué páginas tendrá el sitio.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-contenido-inicio",
+          "title": "Redactar Contenido de Página de Inicio",
+          "description": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.",
+          "order": 7,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-mapa-sitio"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Redactar Contenido de Página de Inicio",
+              "summary": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.",
+              "body": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.\n\nEl contenido debe ser claro, conciso y con llamado a la acción."
+            },
+            "objective": { "description": "¿Tu página de inicio comunica quién eres en segundos?" },
+            "checklist": [
+              {
+                "id": "v2-chk-ci-home-01",
+                "task": "Redactar propuesta de valor visible",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ci-home-02",
+                "task": "Incluir llamada a la acción clara",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ci-home-03",
+                "task": "Agregar información de contacto",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a redactar el contenido de la página de inicio de su sitio web de asesoría financiera.",
+              "context": "El usuario necesita un texto convincente para la página principal de su sitio.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-publicar-sitio",
+          "title": "Publicar el Sitio Web",
+          "description": "Revisa todos los enlaces, formularios y la versión móvil antes de publicar.",
+          "order": 8,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-contenido-inicio"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Publicar el Sitio Web",
+              "summary": "Revisa todos los enlaces, formularios y la versión móvil antes de publicar.",
+              "body": "Revisa todos los enlaces, formularios y la versión móvil antes de publicar.\n\nUn sitio publicado con errores daña más la credibilidad que no tener sitio todavía."
+            },
+            "objective": { "description": "¿Verificaste todo antes de publicar?" },
+            "checklist": [
+              {
+                "id": "v2-chk-pub-01",
+                "task": "Revisar todos los enlaces y formularios",
+                "completed": false
+              },
+              { "id": "v2-chk-pub-02", "task": "Verificar versión móvil", "completed": false },
+              { "id": "v2-chk-pub-03", "task": "Probar velocidad de carga", "completed": false },
+              {
+                "id": "v2-chk-pub-04",
+                "task": "Publicar sitio definitivamente",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a hacer el checklist final antes de publicar su sitio web.",
+              "context": "El usuario está listo para publicar su sitio web.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-linkedin",
+          "title": "Crear Perfil de LinkedIn",
+          "description": "Completa el perfil con foto, biografía, certificaciones y servicios de la firma.",
+          "order": 9,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-biografia"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Crear Perfil de LinkedIn",
+              "summary": "Completa el perfil con foto, biografía, certificaciones y servicios de la firma.",
+              "body": "Completa perfil con foto, biografía, certificaciones y servicios de la firma.\n\nConecta con colegas y potenciales clientes."
+            },
+            "objective": { "description": "¿Estableciste presencia profesional?" },
+            "checklist": [
+              { "id": "v2-chk-li-01", "task": "Completar perfil profesional", "completed": false },
+              { "id": "v2-chk-li-02", "task": "Agregar certificaciones", "completed": false },
+              { "id": "v2-chk-li-03", "task": "Publicar servicios", "completed": false },
+              { "id": "v2-chk-li-04", "task": "Conectar con red", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a optimizar su perfil de LinkedIn para una firma de asesoría financiera.",
+              "context": "El usuario necesita establecer presencia profesional en LinkedIn.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "LinkedIn es el canal más efectivo para asesores financieros — tus clientes potenciales van a buscar tu perfil antes de agendar una primera reunión."
+          }
+        },
+        {
+          "id": "v2-step-google-business",
+          "title": "Crear Google Business Profile",
+          "description": "Un perfil verificado ayuda a que te encuentren en búsquedas locales.",
+          "order": 10,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": ["v2-step-publicar-sitio"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Crear Google Business Profile",
+              "summary": "Un perfil verificado ayuda a que te encuentren en búsquedas locales.",
+              "body": "Un perfil verificado ayuda a que te encuentren en búsquedas locales y permite recibir reseñas."
+            },
+            "objective": { "description": "¿Te encuentran en búsquedas locales?" },
+            "checklist": [
+              {
+                "id": "v2-chk-gb-01",
+                "task": "Crear perfil de Google Business",
+                "completed": false
+              },
+              { "id": "v2-chk-gb-02", "task": "Verificar perfil", "completed": false },
+              { "id": "v2-chk-gb-03", "task": "Completar toda la información", "completed": false },
+              { "id": "v2-chk-gb-04", "task": "Agregar fotos y horarios", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a crear y optimizar su perfil de Google Business.",
+              "context": "El usuario necesita aparecer en búsquedas locales de asesoría financiera.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-redes-sociales",
+          "title": "Crear Perfiles en Redes Sociales",
+          "description": "Elige 1 o 2 redes donde realmente esté tu cliente ideal.",
+          "order": 11,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": ["v2-step-logo"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Crear Perfiles en Redes Sociales",
+              "summary": "Elige 1 o 2 redes donde realmente esté tu cliente ideal.",
+              "body": "No te registres en todas las redes — elige 1 o 2 donde realmente esté tu cliente ideal.\n\nElige un solo canal principal al inicio y hazlo bien."
+            },
+            "objective": { "description": "¿Estás donde está tu cliente ideal?" },
+            "checklist": [
+              {
+                "id": "v2-chk-rs-soc-01",
+                "task": "Elegir 1-2 redes según cliente ideal",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-rs-soc-02",
+                "task": "Crear perfiles con identidad de marca",
+                "completed": false
+              },
+              { "id": "v2-chk-rs-soc-03", "task": "Optimizar perfiles", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a elegir las redes sociales más adecuadas para su firma de asesoría financiera.",
+              "context": "El usuario necesita decidir en qué redes sociales tendrá presencia.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Estar en muchas redes de forma inconsistente genera menos resultado que estar en una sola de forma constante."
+          }
+        },
+        {
+          "id": "v2-step-fotos-profesionales",
+          "title": "Tomar Fotografías Profesionales",
+          "description": "Contrata a un fotógrafo o toma fotos con buena iluminación para sitio web y materiales.",
+          "order": 12,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Tomar Fotografías Profesionales",
+              "summary": "Contrata a un fotógrafo o toma fotos con buena iluminación para sitio web y materiales.",
+              "body": "Contrata a un fotógrafo o toma fotos con buena iluminación.\n\nVas a usarlas en sitio web, LinkedIn y materiales de marketing."
+            },
+            "objective": { "description": "¿Tienes material visual de calidad?" },
+            "checklist": [
+              { "id": "v2-chk-foto-01", "task": "Agendar sesión fotográfica", "completed": false },
+              {
+                "id": "v2-chk-foto-02",
+                "task": "Obtener fotos para web y redes",
+                "completed": false
+              },
+              { "id": "v2-chk-foto-03", "task": "Organizar banco de imágenes", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a planificar una sesión de fotografía profesional.",
+              "context": "El usuario necesita material visual de calidad para su marca.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Una foto profesional de perfil aumenta significativamente la tasa de respuesta en LinkedIn y la credibilidad en el sitio web."
+          }
+        },
+        {
+          "id": "v2-step-calendario-contenido",
+          "title": "Crear Calendario de Contenido",
+          "description": "Planifica qué publicar y cuándo para mantener presencia consistente.",
+          "order": 13,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": ["v2-step-redes-sociales"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Crear Calendario de Contenido",
+              "summary": "Planifica qué publicar y cuándo para mantener presencia consistente.",
+              "body": "Publicar en muchos canales de forma inconsistente genera menos resultado que publicar en uno de forma constante.\n\nEl contenido educativo funciona mejor que el promocional para generar confianza en este sector."
+            },
+            "objective": { "description": "¿Planificaste qué publicar y cuándo?" },
+            "checklist": [
+              {
+                "id": "v2-chk-cc-cal-01",
+                "task": "Definir temas de contenido educativo",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cc-cal-02",
+                "task": "Crear calendario del primer mes",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cc-cal-03",
+                "task": "Escribir primera publicación",
+                "completed": false
+              },
+              { "id": "v2-chk-cc-cal-04", "task": "Establecer frecuencia", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a crear un calendario de contenido educativo para su firma de asesoría financiera.",
+              "context": "El usuario necesita una estrategia de contenido consistente para atraer clientes.",
+              "suggestions": ["¿Sobre qué temas debería publicar un asesor financiero?"]
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-programa-referidos",
+          "title": "Implementar Programa de Referidos",
+          "description": "Diseña un mecanismo para generar clientes por recomendación.",
+          "order": 14,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Implementar Programa de Referidos",
+              "summary": "Diseña un mecanismo para generar clientes por recomendación.",
+              "body": "Diseña mecanismo de referidos y prepara mensaje para pedir referidos a clientes satisfechos.\n\nFacilita el proceso enviando el enlace directo — entre más pasos tenga que dar la persona, menos probable es que lo haga."
+            },
+            "objective": {
+              "description": "¿Tienes un sistema para generar clientes por recomendación?"
+            },
+            "checklist": [
+              {
+                "id": "v2-chk-ref-01",
+                "task": "Diseñar mecanismo de referidos",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ref-02",
+                "task": "Crear mensaje para pedir referidos",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-ref-03",
+                "task": "Implementar seguimiento de referidos",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a diseñar un programa de referidos efectivo para su firma de asesoría financiera.",
+              "context": "El usuario quiere generar nuevos clientes a través de recomendaciones.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Los referidos son la fuente de clientes más rentable para una firma de asesoría financiera — un cliente referido llega con confianza previa y cierra más rápido."
+          }
+        },
+        {
+          "id": "v2-step-sitios-resenas",
+          "title": "Registrar en Sitios de Reseñas",
+          "description": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.",
+          "order": 15,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": ["v2-step-google-business"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Registrar en Sitios de Reseñas",
+              "summary": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.",
+              "body": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.\n\nSolicita tu primera reseña a un contacto de confianza."
+            },
+            "objective": { "description": "¿Tienes perfiles en sitios de reseñas del sector?" },
+            "checklist": [
+              {
+                "id": "v2-chk-res-01",
+                "task": "Identificar sitios de reseñas relevantes",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-res-02",
+                "task": "Registrar firma en 3-5 sitios",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-res-03",
+                "task": "Solicitar primera reseña a contacto de confianza",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a identificar y registrarse en los sitios de reseñas más relevantes para su firma.",
+              "context": "El usuario necesita construir credibilidad social a través de reseñas.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        }
+      ],
+      "block": "marketing"
+    },
+    {
+      "id": "v2-fase-clientes",
+      "title": "Clientes",
+      "description": "Diseña el proceso de onboarding, el cuestionario de descubrimiento y el flujo completo del plan financiero.",
+      "objective": "Tener un proceso de onboarding profesional y un flujo completo de plan financiero listo para el primer cliente.",
+      "order": 6,
+      "resources": [],
+      "steps": [
+        {
+          "id": "v2-step-onboarding",
+          "title": "Diseñar Proceso de Onboarding",
+          "description": "Define cómo recibe tu firma a un cliente nuevo desde el primer contacto hasta el primer seguimiento.",
+          "order": 0,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-contrato", "v2-step-firma-electronica"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Diseñar Proceso de Onboarding",
+              "summary": "Define cómo recibe tu firma a un cliente nuevo desde el primer contacto hasta el primer seguimiento.",
+              "body": "Un onboarding claro reduce la ansiedad natural de empezar a trabajar con un asesor financiero nuevo y proyecta profesionalismo desde el primer contacto.\n\nPasos:\n1. Reunión inicial de diagnóstico\n2. Firma de acuerdo y confidencialidad\n3. Cuestionario de descubrimiento\n4. Recopilación de documentación\n5. Configuración en sistemas\n6. Construcción del plan\n7. Presentación del plan\n8. Programación de seguimientos"
+            },
+            "objective": { "description": "¿Cómo recibe tu firma a un cliente nuevo?" },
+            "checklist": [
+              {
+                "id": "v2-chk-on-01",
+                "task": "Definir pasos del proceso de bienvenida",
+                "completed": false
+              },
+              { "id": "v2-chk-on-02", "task": "Crear checklist de onboarding", "completed": false },
+              {
+                "id": "v2-chk-on-03",
+                "task": "Preparar paquete de bienvenida",
+                "completed": false
+              },
+              { "id": "v2-chk-on-04", "task": "Documentar flujo completo", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a diseñar un proceso de onboarding profesional para nuevos clientes de asesoría financiera.",
+              "context": "El usuario necesita un proceso claro para recibir a sus primeros clientes.",
+              "suggestions": ["¿Cómo es un buen proceso de onboarding para asesoría financiera?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "La primera experiencia del cliente con tu firma determina en gran medida si te recomienda o no — un onboarding profesional genera confianza desde el primer minuto."
+          }
+        },
+        {
+          "id": "v2-step-cuestionario",
+          "title": "Preparar Cuestionario de Descubrimiento Financiero",
+          "description": "Define las preguntas clave que harás en la primera reunión.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-onboarding"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Preparar Cuestionario de Descubrimiento Financiero",
+              "summary": "Define las preguntas clave que harás en la primera reunión.",
+              "body": "Sé explícito sobre tarifas y alcance del servicio desde el primer minuto.\n\nPreguntas clave:\n- Situación financiera actual (ingresos, gastos, activos, pasivos)\n- Metas financieras de corto, mediano y largo plazo\n- Tolerancia al riesgo\n- Experiencia previa con asesoría financiera\n\nGraba (con permiso) o toma notas detalladas — vas a necesitar esa información exacta para el plan financiero."
+            },
+            "objective": { "description": "¿Qué preguntas harás en la primera reunión?" },
+            "checklist": [
+              {
+                "id": "v2-chk-cues-01",
+                "task": "Diseñar preguntas clave de descubrimiento",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cues-02",
+                "task": "Crear formulario estructurado",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cues-03",
+                "task": "Incluir sección de metas financieras",
+                "completed": false
+              },
+              { "id": "v2-chk-cues-04", "task": "Probar con cliente de prueba", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a diseñar un cuestionario de descubrimiento financiero completo y efectivo.",
+              "context": "El usuario necesita entender a fondo la situación financiera de sus clientes en la primera reunión.",
+              "suggestions": [
+                "¿Qué preguntas debo hacerle a un nuevo cliente en la primera reunión de asesoría financiera?"
+              ]
+            },
+            "knowledge": [],
+            "tip": "Graba la reunión (con permiso del cliente) — te permite estar completamente presente en la conversación en vez de tomar notas constantemente."
+          }
+        },
+        {
+          "id": "v2-step-primera-reunion",
+          "title": "Preparar Primera Reunión Financiera",
+          "description": "Practica el guion de la primera reunión y define los próximos pasos concretos.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-cuestionario", "v2-step-agendamiento"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Preparar Primera Reunión Financiera",
+              "summary": "Practica el guion de la primera reunión y define los próximos pasos concretos.",
+              "body": "Practica el guion de la primera reunión.\n\nErrores comunes:\n- Empezar a dar recomendaciones antes de entender el panorama completo\n- Dejar el tema de tarifas para después\n\nCierra con próximos pasos concretos y fecha para la siguiente sesión."
+            },
+            "objective": { "description": "¿Estás listo para conducir reuniones profesionales?" },
+            "checklist": [
+              { "id": "v2-chk-pr-01", "task": "Practicar guion de reunión", "completed": false },
+              {
+                "id": "v2-chk-pr-02",
+                "task": "Preparar agenda de primera reunión",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-pr-03",
+                "task": "Preparar explicación de tarifas y alcance",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-pr-04",
+                "task": "Definir próximos pasos concretos",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a preparar el guion y la agenda de la primera reunión con un cliente de asesoría financiera.",
+              "context": "El usuario necesita estar preparado para conducir reuniones iniciales con clientes.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "commonMistakes": [
+              "Dar recomendaciones financieras antes de terminar el cuestionario de descubrimiento.",
+              "No hablar de tarifas hasta el final — provoca incomodidad y expectativas mal calibradas."
+            ]
+          }
+        },
+        {
+          "id": "v2-step-construir-plan",
+          "title": "Construir el Plan Financiero del Cliente",
+          "description": "Construye el diagnóstico de la situación actual, las metas priorizadas y las recomendaciones concretas.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 6,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["v2-step-primera-reunion", "v2-step-software-planificacion"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Construir el Plan Financiero del Cliente",
+              "summary": "Construye el diagnóstico de la situación actual, las metas priorizadas y las recomendaciones concretas.",
+              "body": "Construye el diagnóstico de la situación actual del cliente, sus metas priorizadas y recomendaciones concretas, usando tu plantilla base.\n\nDeja pasar al menos un día entre terminar el plan y revisarlo — revisar inmediatamente después de escribirlo hace más fácil pasar por alto errores."
+            },
+            "objective": { "description": "¿Tradujiste la información en un plan accionable?" },
+            "checklist": [
+              {
+                "id": "v2-chk-cp-01",
+                "task": "Construir diagnóstico de situación actual",
+                "completed": false
+              },
+              { "id": "v2-chk-cp-02", "task": "Priorizar metas del cliente", "completed": false },
+              {
+                "id": "v2-chk-cp-03",
+                "task": "Definir recomendaciones concretas",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-cp-04",
+                "task": "Usar plantilla base personalizada",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a estructurar y construir un plan financiero completo para su cliente.",
+              "context": "El usuario ya tiene la información del cuestionario de descubrimiento y necesita construir el plan.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "tip": "Deja pasar al menos un día entre terminar el plan y revisarlo — te permite verlo con ojos frescos y detectar errores que no viste al escribirlo."
+          }
+        },
+        {
+          "id": "v2-step-revisar-plan",
+          "title": "Revisar el Plan Financiero",
+          "description": "Verifica datos, coherencia de recomendaciones y que el plan sea accionable antes de presentarlo.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-construir-plan"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Revisar el Plan Financiero",
+              "summary": "Verifica datos, coherencia de recomendaciones y que el plan sea accionable antes de presentarlo.",
+              "body": "Verifica datos, coherencia de recomendaciones y que el plan sea accionable.\n\nHaz que un colega revise el plan si es posible — una segunda mirada siempre encuentra lo que tú pasaste por alto."
+            },
+            "objective": { "description": "¿Revisaste el plan antes de presentarlo?" },
+            "checklist": [
+              { "id": "v2-chk-rp-01", "task": "Verificar datos y cálculos", "completed": false },
+              {
+                "id": "v2-chk-rp-02",
+                "task": "Revisar coherencia de recomendaciones",
+                "completed": false
+              },
+              {
+                "id": "v2-chk-rp-03",
+                "task": "Validar que el plan sea accionable",
+                "completed": false
+              },
+              { "id": "v2-chk-rp-04", "task": "Corregir errores encontrados", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a hacer la revisión final del plan financiero antes de presentarlo al cliente.",
+              "context": "El usuario terminó de construir el plan y necesita revisarlo antes de presentarlo.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-presentar-plan",
+          "title": "Presentar el Plan al Cliente",
+          "description": "Presenta el plan financiero al cliente en una reunión dedicada y responde sus preguntas.",
+          "order": 5,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["v2-step-revisar-plan"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Presentar el Plan al Cliente",
+              "summary": "Presenta el plan financiero al cliente en una reunión dedicada y responde sus preguntas.",
+              "body": "Presenta el plan financiero al cliente en una reunión dedicada.\n\nExplica cada recomendación y su justificación.\n\nResponde preguntas y ajusta según feedback del cliente."
+            },
+            "objective": { "description": "¿Presentaste el plan de forma clara y profesional?" },
+            "checklist": [
+              {
+                "id": "v2-chk-pp-01",
+                "task": "Presentar plan en reunión dedicada",
+                "completed": false
+              },
+              { "id": "v2-chk-pp-02", "task": "Explicar cada recomendación", "completed": false },
+              {
+                "id": "v2-chk-pp-03",
+                "task": "Responder preguntas del cliente",
+                "completed": false
+              },
+              { "id": "v2-chk-pp-04", "task": "Documentar ajustes acordados", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a preparar y ejecutar una presentación efectiva del plan financiero al cliente.",
+              "context": "El usuario está listo para presentar el plan financiero a su cliente.",
+              "suggestions": []
+            },
+            "knowledge": []
+          }
+        },
+        {
+          "id": "v2-step-firma-plan",
+          "title": "Recopilar Firma del Cliente sobre el Plan",
+          "description": "Usa tu herramienta de firma electrónica para que el cliente confirme formalmente el plan acordado.",
+          "order": 6,
+          "type": "one_time",
+          "estimatedHours": 1,
+          "difficulty": "easy",
+          "priority": "high",
+          "dependencies": ["v2-step-presentar-plan"],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Recopilar Firma del Cliente sobre el Plan",
+              "summary": "Usa tu herramienta de firma electrónica para que el cliente confirme formalmente el plan acordado.",
+              "body": "Usa tu herramienta de firma electrónica para que el cliente confirme formalmente el plan acordado.\n\nEsta confirmación protege a ambas partes y establece compromiso."
+            },
+            "objective": { "description": "¿Obtuviste confirmación formal?" },
+            "checklist": [
+              {
+                "id": "v2-chk-fp-01",
+                "task": "Enviar plan para firma electrónica",
+                "completed": false
+              },
+              { "id": "v2-chk-fp-02", "task": "Obtener firma del cliente", "completed": false },
+              { "id": "v2-chk-fp-03", "task": "Archivar documento firmado", "completed": false },
+              {
+                "id": "v2-chk-fp-04",
+                "task": "Programar seguimientos mensuales",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Ayuda al usuario a formalizar el acuerdo sobre el plan financiero con su cliente.",
+              "context": "El cliente aprobó el plan en la reunión y ahora necesita formalizarlo por escrito.",
+              "suggestions": []
+            },
+            "knowledge": [],
+            "whyItMatters": "Un plan firmado por el cliente establece un compromiso mutuo y sirve como referencia para evaluar el progreso en los seguimientos futuros."
+          }
+        }
+      ],
+      "block": "customers"
+    }
+  ],
+  "recurringTasks": {
+    "weekly": [
+      {
+        "id": "v2-rec-reunion-semanal",
+        "title": "Realizar Reunión Semanal de Equipo",
+        "description": "Repasa tareas, asigna prioridades y comparte aprendizajes.",
+        "category": "operaciones",
+        "order": 0,
+        "type": "weekly",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Realizar Reunión Semanal de Equipo",
+            "summary": "Repasa tareas, asigna prioridades y comparte aprendizajes.",
+            "body": "Repasa tareas, asigna prioridades y comparte aprendizajes.\n\nAgenda:\n- Revisión de tareas completadas\n- Identificación de bloqueos\n- Prioridades para la semana\n- Recordatorios de fechas importantes\n\nMantén la reunión enfocada y máximo 1 hora."
+          },
+          "objective": { "description": "¿Sincronizaste al equipo esta semana?" },
+          "checklist": [
+            { "id": "v2-chk-rsem-01", "task": "Preparar agenda de la reunión", "completed": false },
+            {
+              "id": "v2-chk-rsem-02",
+              "task": "Revisar avances de la semana anterior",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rsem-03",
+              "task": "Asignar prioridades de la semana",
+              "completed": false
+            },
+            { "id": "v2-chk-rsem-04", "task": "Documentar acuerdos y tareas", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a facilitar reuniones semanales de equipo efectivas.",
+            "context": "El usuario necesita sincronizar al equipo y establecer prioridades semanales.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "tip": "Mantén la reunión a la misma hora todos los lunes — la rutina hace que todos lleguen preparados."
+        }
+      },
+      {
+        "id": "v2-rec-backups",
+        "title": "Realizar Copias de Seguridad",
+        "description": "Verifica respaldos automáticos y revisa integridad de datos.",
+        "category": "tecnologia",
+        "order": 1,
+        "type": "weekly",
+        "estimatedHours": 0.5,
+        "difficulty": "easy",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Realizar Copias de Seguridad",
+            "summary": "Verifica respaldos automáticos y revisa integridad de datos.",
+            "body": "Establece rutina de backups automáticos para todos los sistemas.\n\nUn backup que no se puede restaurar no es un backup — prueba el proceso al menos una vez al mes."
+          },
+          "objective": { "description": "¿Protegiste los datos de la firma y clientes?" },
+          "checklist": [
+            { "id": "v2-chk-bk-01", "task": "Verificar respaldos automáticos", "completed": false },
+            { "id": "v2-chk-bk-02", "task": "Revisar integridad de datos", "completed": false },
+            {
+              "id": "v2-chk-bk-03",
+              "task": "Organizar carpetas de clientes nuevos",
+              "completed": false
+            },
+            { "id": "v2-chk-bk-04", "task": "Probar restauración", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a establecer y verificar rutinas de respaldo de datos.",
+            "context": "El usuario necesita asegurar que los datos de clientes estén protegidos.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-contenido-semanal",
+        "title": "Publicar Contenido Educativo",
+        "description": "Publica según calendario y responde comentarios y mensajes.",
+        "category": "marketing",
+        "order": 2,
+        "type": "weekly",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Publicar Contenido Educativo",
+            "summary": "Publica según calendario y responde comentarios y mensajes.",
+            "body": "Publica según calendario. Responde comentarios y mensajes.\n\nEl contenido educativo genera más confianza que el promocional en este sector."
+          },
+          "objective": { "description": "¿Mantuviste presencia esta semana?" },
+          "checklist": [
+            { "id": "v2-chk-pc-01", "task": "Publicar según calendario", "completed": false },
+            {
+              "id": "v2-chk-pc-02",
+              "task": "Responder comentarios y mensajes",
+              "completed": false
+            },
+            { "id": "v2-chk-pc-03", "task": "Interactuar con comunidad", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a mantener una presencia digital consistente en redes sociales.",
+            "context": "El usuario necesita publicar contenido de forma regular para atraer clientes.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      }
+    ],
+    "monthly": [
+      {
+        "id": "v2-rec-kpis-mensual",
+        "title": "Revisión Mensual de KPIs",
+        "description": "Analiza métricas clave y compara con objetivos.",
+        "category": "estrategia",
+        "order": 0,
+        "type": "monthly",
+        "estimatedHours": 2,
+        "difficulty": "medium",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Revisión Mensual de KPIs",
+            "summary": "Analiza métricas clave y compara con objetivos.",
+            "body": "Analiza métricas clave y compara con objetivos.\n\nSin datos no vas a saber si tus esfuerzos están funcionando."
+          },
+          "objective": { "description": "¿Analizaste las métricas del mes?" },
+          "checklist": [
+            { "id": "v2-chk-km-01", "task": "Analizar métricas del mes", "completed": false },
+            { "id": "v2-chk-km-02", "task": "Comparar con objetivos", "completed": false },
+            { "id": "v2-chk-km-03", "task": "Identificar áreas de mejora", "completed": false },
+            { "id": "v2-chk-km-04", "task": "Ajustar estrategia", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a analizar sus KPIs mensuales y tomar decisiones basadas en datos.",
+            "context": "El usuario necesita revisar el desempeño de su firma del mes anterior.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-cierre-contable",
+        "title": "Realizar Cierre Contable",
+        "description": "Conciliación bancaria, registro de gastos e ingresos, generación de estado de resultados.",
+        "category": "finanzas",
+        "order": 1,
+        "type": "monthly",
+        "estimatedHours": 3,
+        "difficulty": "medium",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Realizar Cierre Contable",
+            "summary": "Conciliación bancaria, registro de gastos e ingresos, generación de estado de resultados.",
+            "body": "Conciliación bancaria, registro de gastos e ingresos, generación de estado de resultados.\n\nHaz la conciliación dentro de los primeros 5 días hábiles del mes siguiente."
+          },
+          "objective": { "description": "¿Mantienes las finanzas en orden?" },
+          "checklist": [
+            { "id": "v2-chk-cc-01", "task": "Conciliar cuentas bancarias", "completed": false },
+            { "id": "v2-chk-cc-02", "task": "Registrar ingresos y gastos", "completed": false },
+            { "id": "v2-chk-cc-03", "task": "Clasificar transacciones", "completed": false },
+            { "id": "v2-chk-cc-04", "task": "Generar estado de resultados", "completed": false },
+            { "id": "v2-chk-cc-05", "task": "Comparar con presupuesto", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a completar el cierre contable mensual de su firma.",
+            "context": "El usuario necesita cerrar la contabilidad del mes anterior.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "tip": "Haz la conciliación dentro de los primeros 5 días hábiles del mes siguiente — entre más tarde, más difícil es recordar el contexto de cada transacción."
+        }
+      },
+      {
+        "id": "v2-rec-conciliacion-bancaria",
+        "title": "Conciliación Bancaria",
+        "description": "Verifica movimientos, identifica transacciones pendientes y corrige discrepancias.",
+        "category": "finanzas",
+        "order": 2,
+        "type": "monthly",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Conciliación Bancaria",
+            "summary": "Verifica movimientos, identifica transacciones pendientes y corrige discrepancias.",
+            "body": "Verifica movimientos, identifica transacciones pendientes y corrige discrepancias."
+          },
+          "objective": { "description": "¿Verificaste movimientos bancarios?" },
+          "checklist": [
+            { "id": "v2-chk-cb-01", "task": "Verificar movimientos bancarios", "completed": false },
+            {
+              "id": "v2-chk-cb-02",
+              "task": "Identificar transacciones pendientes",
+              "completed": false
+            },
+            { "id": "v2-chk-cb-03", "task": "Corregir discrepancias", "completed": false },
+            { "id": "v2-chk-cb-04", "task": "Documentar conciliación", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a completar la conciliación bancaria mensual.",
+            "context": "El usuario necesita verificar que los registros contables coincidan con los movimientos bancarios.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-actualizaciones-software",
+        "title": "Actualizar Herramientas",
+        "description": "Las actualizaciones corrigen vulnerabilidades de seguridad y mejoran rendimiento.",
+        "category": "tecnologia",
+        "order": 3,
+        "type": "monthly",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Actualizar Herramientas",
+            "summary": "Las actualizaciones corrigen vulnerabilidades de seguridad y mejoran rendimiento.",
+            "body": "Las actualizaciones corrigen vulnerabilidades de seguridad y mejoran rendimiento."
+          },
+          "objective": { "description": "¿Instalaste actualizaciones pendientes?" },
+          "checklist": [
+            {
+              "id": "v2-chk-au-01",
+              "task": "Instalar actualizaciones pendientes",
+              "completed": false
+            },
+            { "id": "v2-chk-au-02", "task": "Verificar compatibilidad", "completed": false },
+            { "id": "v2-chk-au-03", "task": "Documentar cambios", "completed": false },
+            {
+              "id": "v2-chk-au-04",
+              "task": "Probar herramientas post-actualización",
+              "completed": false
+            }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a gestionar las actualizaciones de software de su firma.",
+            "context": "El usuario necesita mantener sus herramientas actualizadas.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-boletin-mensual",
+        "title": "Enviar Boletín a Clientes",
+        "description": "Incluye recordatorios fiscales, consejos de gestión, casos de éxito y próximos eventos.",
+        "category": "marketing",
+        "order": 4,
+        "type": "monthly",
+        "estimatedHours": 2,
+        "difficulty": "medium",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Enviar Boletín a Clientes",
+            "summary": "Incluye recordatorios fiscales, consejos de gestión, casos de éxito y próximos eventos.",
+            "body": "Incluye: recordatorios fiscales, consejos de gestión, casos de éxito, próximos eventos.\n\nEnvía de forma consistente el mismo día cada mes."
+          },
+          "objective": { "description": "¿Mantuviste informados a tus clientes?" },
+          "checklist": [
+            { "id": "v2-chk-bl-01", "task": "Redactar boletín mensual", "completed": false },
+            { "id": "v2-chk-bl-02", "task": "Incluir recordatorios fiscales", "completed": false },
+            { "id": "v2-chk-bl-03", "task": "Enviar a lista de clientes", "completed": false },
+            { "id": "v2-chk-bl-04", "task": "Monitorear tasas de apertura", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a redactar un boletín mensual valioso para sus clientes de asesoría financiera.",
+            "context": "El usuario quiere mantener a sus clientes informados y reforzar la relación.",
+            "suggestions": [
+              "¿Qué contenido incluir en un boletín mensual para clientes de asesoría financiera?"
+            ]
+          },
+          "knowledge": [],
+          "tip": "Envía el boletín siempre el mismo día del mes — la consistencia mejora las tasas de apertura porque los clientes lo esperan."
+        }
+      },
+      {
+        "id": "v2-rec-metricas-marketing",
+        "title": "Analizar Métricas de Marketing",
+        "description": "Revisa Analytics, engagement en redes y ajusta estrategia.",
+        "category": "marketing",
+        "order": 5,
+        "type": "monthly",
+        "estimatedHours": 1,
+        "difficulty": "medium",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Analizar Métricas de Marketing",
+            "summary": "Revisa Analytics, engagement en redes y ajusta estrategia.",
+            "body": "Revisa Analytics, engagement en redes y ajusta estrategia.\n\nNo inviertas más en lo que no funciona."
+          },
+          "objective": { "description": "¿Evaluaste el desempeño de tus esfuerzos?" },
+          "checklist": [
+            { "id": "v2-chk-mm-01", "task": "Revisar Google Analytics", "completed": false },
+            { "id": "v2-chk-mm-02", "task": "Analizar engagement en redes", "completed": false },
+            { "id": "v2-chk-mm-03", "task": "Calcular CAC y ROI", "completed": false },
+            { "id": "v2-chk-mm-04", "task": "Ajustar estrategia según datos", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a analizar sus métricas de marketing y tomar decisiones basadas en datos.",
+            "context": "El usuario necesita evaluar si sus esfuerzos de marketing están funcionando.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-seguimiento-clientes",
+        "title": "Seguimiento Mensual con Clientes",
+        "description": "Revisa avances hacia metas, actualiza cambios y ajusta el plan.",
+        "category": "clientes",
+        "order": 6,
+        "type": "monthly",
+        "estimatedHours": 1,
+        "difficulty": "medium",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Seguimiento Mensual con Clientes",
+            "summary": "Revisa avances hacia metas, actualiza cambios y ajusta el plan.",
+            "body": "Revisa avances hacia metas, actualiza cambios y ajusta el plan.\n\nEl valor de la asesoría no está solo en el plan inicial, sino en el acompañamiento continuo.\n\nAgenda los próximos 3 seguimientos de una sola vez."
+          },
+          "objective": { "description": "¿Acompañaste a tus clientes este mes?" },
+          "checklist": [
+            {
+              "id": "v2-chk-sc-01",
+              "task": "Revisar avances hacia metas financieras",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-sc-02",
+              "task": "Actualizar cambios en situación del cliente",
+              "completed": false
+            },
+            { "id": "v2-chk-sc-03", "task": "Ajustar plan si es necesario", "completed": false },
+            { "id": "v2-chk-sc-04", "task": "Documentar notas de seguimiento", "completed": false },
+            { "id": "v2-chk-sc-05", "task": "Programar próximo seguimiento", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a estructurar y ejecutar seguimientos mensuales efectivos con sus clientes.",
+            "context": "El usuario necesita mantener el acompañamiento regular de sus clientes.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "tip": "Agenda los próximos 3 seguimientos de una sola vez al final de cada reunión — reduce la fricción de coordinar fechas cada mes."
+        }
+      }
+    ],
+    "quarterly": [
+      {
+        "id": "v2-rec-informe-trimestral",
+        "title": "Presentar Informe Trimestral",
+        "description": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre.",
+        "category": "estrategia",
+        "order": 0,
+        "type": "quarterly",
+        "estimatedHours": 3,
+        "difficulty": "medium",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Presentar Informe Trimestral",
+            "summary": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre.",
+            "body": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre."
+          },
+          "objective": { "description": "¿Comunicaste resultados a stakeholders?" },
+          "checklist": [
+            { "id": "v2-chk-it-01", "task": "Preparar informe con KPIs", "completed": false },
+            { "id": "v2-chk-it-02", "task": "Incluir estado financiero", "completed": false },
+            { "id": "v2-chk-it-03", "task": "Presentar a stakeholders", "completed": false },
+            { "id": "v2-chk-it-04", "task": "Recopilar retroalimentación", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a preparar y presentar el informe trimestral de su firma.",
+            "context": "El usuario necesita comunicar los resultados del trimestre a socios o directivos.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-revision-estrategia",
+        "title": "Revisar y Ajustar Estrategia",
+        "description": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras.",
+        "category": "estrategia",
+        "order": 1,
+        "type": "quarterly",
+        "estimatedHours": 2,
+        "difficulty": "medium",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Revisar y Ajustar Estrategia",
+            "summary": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras.",
+            "body": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras."
+          },
+          "objective": { "description": "¿Sigue siendo relevante tu oferta?" },
+          "checklist": [
+            { "id": "v2-chk-re-01", "task": "Analizar servicios más usados", "completed": false },
+            { "id": "v2-chk-re-02", "task": "Evaluar feedback de clientes", "completed": false },
+            { "id": "v2-chk-re-03", "task": "Proponer nuevos servicios", "completed": false },
+            { "id": "v2-chk-re-04", "task": "Documentar cambios estratégicos", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a evaluar y ajustar la estrategia de su firma de asesoría financiera.",
+            "context": "El usuario necesita revisar si su oferta sigue siendo relevante para el mercado.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-encuestas-satisfaccion",
+        "title": "Encuestas de Satisfacción",
+        "description": "Pregunta directamente qué le ha gustado y qué no del servicio.",
+        "category": "operaciones",
+        "order": 2,
+        "type": "quarterly",
+        "estimatedHours": 2,
+        "difficulty": "easy",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Encuestas de Satisfacción",
+            "summary": "Pregunta directamente qué le ha gustado y qué no del servicio.",
+            "body": "Pregunta directamente: \"¿qué es lo que menos te ha gustado del servicio?\" — da información más útil que preguntar en general."
+          },
+          "objective": { "description": "¿Mediste la calidad percibida?" },
+          "checklist": [
+            { "id": "v2-chk-es-01", "task": "Diseñar encuesta trimestral", "completed": false },
+            { "id": "v2-chk-es-02", "task": "Enviar a clientes activos", "completed": false },
+            { "id": "v2-chk-es-03", "task": "Analizar resultados", "completed": false },
+            {
+              "id": "v2-chk-es-04",
+              "task": "Implementar cambios según feedback",
+              "completed": false
+            }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a diseñar y analizar encuestas de satisfacción para sus clientes.",
+            "context": "El usuario necesita medir la satisfacción de sus clientes con el servicio.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-revision-margenes",
+        "title": "Revisar Márgenes de Rentabilidad",
+        "description": "Analiza rentabilidad por servicio y ajusta precios si es necesario.",
+        "category": "finanzas",
+        "order": 3,
+        "type": "quarterly",
+        "estimatedHours": 2,
+        "difficulty": "medium",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Revisar Márgenes de Rentabilidad",
+            "summary": "Analiza rentabilidad por servicio y ajusta precios si es necesario.",
+            "body": "Analiza rentabilidad por servicio, compara con proyecciones y ajusta precios si es necesario."
+          },
+          "objective": { "description": "¿Son rentables tus servicios?" },
+          "checklist": [
+            {
+              "id": "v2-chk-rm-01",
+              "task": "Analizar rentabilidad por servicio",
+              "completed": false
+            },
+            { "id": "v2-chk-rm-02", "task": "Comparar con proyecciones", "completed": false },
+            { "id": "v2-chk-rm-03", "task": "Ajustar precios si es necesario", "completed": false },
+            { "id": "v2-chk-rm-04", "task": "Documentar decisiones", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a analizar la rentabilidad de sus servicios de asesoría financiera.",
+            "context": "El usuario necesita evaluar si sus servicios están generando los márgenes esperados.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-revision-contratos",
+        "title": "Revisar Contratos Vigentes",
+        "description": "Revisa contratos vigentes, identifica renovaciones y actualiza términos si aplica.",
+        "category": "legal",
+        "order": 4,
+        "type": "quarterly",
+        "estimatedHours": 2,
+        "difficulty": "medium",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Revisar Contratos Vigentes",
+            "summary": "Revisa contratos vigentes, identifica renovaciones y actualiza términos si aplica.",
+            "body": "Revisa contratos vigentes, identifica renovaciones y actualiza términos si aplica."
+          },
+          "objective": { "description": "¿Están actualizados tus contratos?" },
+          "checklist": [
+            { "id": "v2-chk-rc-cont-01", "task": "Revisar contratos vigentes", "completed": false },
+            {
+              "id": "v2-chk-rc-cont-02",
+              "task": "Identificar renovaciones próximas",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rc-cont-03",
+              "task": "Actualizar términos si aplica",
+              "completed": false
+            },
+            { "id": "v2-chk-rc-cont-04", "task": "Documentar cambios", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a revisar y actualizar los contratos de servicio vigentes.",
+            "context": "El usuario necesita asegurarse de que sus contratos estén actualizados y al día.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-auditoria-accesos",
+        "title": "Auditoría de Accesos",
+        "description": "Revisa permisos de usuarios, verifica accesos activos y elimina los innecesarios.",
+        "category": "tecnologia",
+        "order": 5,
+        "type": "quarterly",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Auditoría de Accesos",
+            "summary": "Revisa permisos de usuarios, verifica accesos activos y elimina los innecesarios.",
+            "body": "Revisa permisos de usuarios, verifica accesos activos y elimina los innecesarios."
+          },
+          "objective": { "description": "¿Quién tiene acceso a información sensible?" },
+          "checklist": [
+            { "id": "v2-chk-aa-01", "task": "Revisar permisos de usuarios", "completed": false },
+            { "id": "v2-chk-aa-02", "task": "Verificar accesos activos", "completed": false },
+            { "id": "v2-chk-aa-03", "task": "Eliminar accesos innecesarios", "completed": false },
+            { "id": "v2-chk-aa-04", "task": "Documentar auditoría", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a realizar una auditoría de accesos a sistemas y documentos sensibles.",
+            "context": "El usuario necesita verificar que solo las personas correctas tengan acceso a información de clientes.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "whyItMatters": "Los accesos no revocados de ex-empleados o colaboradores son una de las principales causas de brechas de seguridad en firmas de servicios profesionales."
+        }
+      },
+      {
+        "id": "v2-rec-taller-webinar",
+        "title": "Organizar Taller o Webinar",
+        "description": "Un webinar o evento introductorio gratuito es efectivo para que varios prospectos te conozcan a la vez.",
+        "category": "marketing",
+        "order": 6,
+        "type": "quarterly",
+        "estimatedHours": 4,
+        "difficulty": "medium",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Organizar Taller o Webinar",
+            "summary": "Un webinar o evento introductorio gratuito es efectivo para que varios prospectos te conozcan a la vez.",
+            "body": "Un webinar o evento introductorio gratuito es efectivo para que varios prospectos te conozcan a la vez.\n\nEnvía recordatorio 1 hora antes — reduce significativamente el ausentismo."
+          },
+          "objective": { "description": "¿Generaste autoridad este trimestre?" },
+          "checklist": [
+            { "id": "v2-chk-tw-01", "task": "Definir tema del taller", "completed": false },
+            { "id": "v2-chk-tw-02", "task": "Preparar material", "completed": false },
+            { "id": "v2-chk-tw-03", "task": "Ejecutar taller", "completed": false },
+            { "id": "v2-chk-tw-04", "task": "Seguimiento a asistentes", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a organizar un taller o webinar de asesoría financiera.",
+            "context": "El usuario quiere generar autoridad y atraer nuevos prospectos.",
+            "suggestions": ["¿Sobre qué tema hacer un webinar de asesoría financiera?"]
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-retroalimentacion",
+        "title": "Solicitar Retroalimentación al Cliente",
+        "description": "Cada trimestre, pregunta qué le está funcionando y qué no del servicio.",
+        "category": "clientes",
+        "order": 7,
+        "type": "quarterly",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Solicitar Retroalimentación al Cliente",
+            "summary": "Cada trimestre, pregunta qué le está funcionando y qué no del servicio.",
+            "body": "Cada trimestre, pregunta qué le está funcionando y qué no del servicio.\n\nEsto te permite mejorar tu proceso y detectar riesgos de cancelación a tiempo."
+          },
+          "objective": { "description": "¿Sabes qué le funciona y qué no al cliente?" },
+          "checklist": [
+            {
+              "id": "v2-chk-rt-01",
+              "task": "Solicitar retroalimentación honesta",
+              "completed": false
+            },
+            { "id": "v2-chk-rt-02", "task": "Analizar comentarios recibidos", "completed": false },
+            { "id": "v2-chk-rt-03", "task": "Implementar mejoras", "completed": false },
+            { "id": "v2-chk-rt-04", "task": "Documentar feedback", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a solicitar y procesar retroalimentación de sus clientes de asesoría financiera.",
+            "context": "El usuario necesita entender qué tan satisfechos están sus clientes con el servicio.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-referidos-trimestral",
+        "title": "Solicitar Referidos a Clientes Satisfechos",
+        "description": "Pide al cliente que te refiera con alguien que conozca.",
+        "category": "clientes",
+        "order": 8,
+        "type": "quarterly",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Solicitar Referidos a Clientes Satisfechos",
+            "summary": "Pide al cliente que te refiera con alguien que conozca.",
+            "body": "Pide al cliente que te refiera con alguien que conozca.\n\nFacilita el proceso haciendo la solicitud directa y específica."
+          },
+          "objective": { "description": "¿Pediste referidos este trimestre?" },
+          "checklist": [
+            {
+              "id": "v2-chk-rft-01",
+              "task": "Identificar clientes satisfechos",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rft-02",
+              "task": "Pedir referidos de forma directa",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rft-03",
+              "task": "Dar seguimiento a referidos recibidos",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rft-04",
+              "task": "Agradecer a clientes que refieren",
+              "completed": false
+            }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a pedir referidos de forma natural y efectiva a sus clientes.",
+            "context": "El usuario quiere crecer su base de clientes a través de recomendaciones.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "whyItMatters": "Pedir una referencia en el momento en que el cliente está más satisfecho es cuando tiene más probabilidad de decir que sí."
+        }
+      }
+    ],
+    "semiannual": [
+      {
+        "id": "v2-rec-auditoria-cumplimiento",
+        "title": "Auditoría de Cumplimiento",
+        "description": "Revisa cumplimiento normativo, verifica certificaciones y actualiza políticas.",
+        "category": "legal",
+        "order": 0,
+        "type": "semiannual",
+        "estimatedHours": 4,
+        "difficulty": "hard",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Auditoría de Cumplimiento",
+            "summary": "Revisa cumplimiento normativo, verifica certificaciones y actualiza políticas.",
+            "body": "Revisa cumplimiento normativo, verifica certificaciones y actualiza políticas."
+          },
+          "objective": { "description": "¿Cumple la firma con todas las regulaciones?" },
+          "checklist": [
+            { "id": "v2-chk-ac-01", "task": "Revisar cumplimiento normativo", "completed": false },
+            {
+              "id": "v2-chk-ac-02",
+              "task": "Verificar certificaciones vigentes",
+              "completed": false
+            },
+            { "id": "v2-chk-ac-03", "task": "Actualizar políticas si aplica", "completed": false },
+            { "id": "v2-chk-ac-04", "task": "Documentar auditoría", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a realizar una auditoría de cumplimiento regulatorio para su firma de asesoría financiera.",
+            "context": "El usuario necesita verificar que la firma cumple con todas las regulaciones aplicables.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "whyItMatters": "Las regulaciones del sector financiero cambian con frecuencia — una auditoría semestral te permite detectar y corregir incumplimientos antes de que se conviertan en problemas."
+        }
+      },
+      {
+        "id": "v2-rec-revision-licencias",
+        "title": "Revisar Licencias de Software",
+        "description": "Revisa licencias, evalúa uso de herramientas y cancela servicios no utilizados.",
+        "category": "tecnologia",
+        "order": 1,
+        "type": "semiannual",
+        "estimatedHours": 1,
+        "difficulty": "easy",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Revisar Licencias de Software",
+            "summary": "Revisa licencias, evalúa uso de herramientas y cancela servicios no utilizados.",
+            "body": "Revisa licencias, evalúa uso de herramientas y cancela servicios no utilizados."
+          },
+          "objective": { "description": "¿Estás pagando por lo que realmente usas?" },
+          "checklist": [
+            { "id": "v2-chk-rl-01", "task": "Revisar licencias de software", "completed": false },
+            { "id": "v2-chk-rl-02", "task": "Evaluar uso de herramientas", "completed": false },
+            {
+              "id": "v2-chk-rl-03",
+              "task": "Cancelar servicios no utilizados",
+              "completed": false
+            },
+            { "id": "v2-chk-rl-04", "task": "Negociar mejores tarifas", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a revisar y optimizar las licencias de software de su firma.",
+            "context": "El usuario quiere reducir costos eliminando herramientas que no usa.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      }
+    ],
+    "annual": [
+      {
+        "id": "v2-rec-declaracion-impuestos",
+        "title": "Declaración Anual de Impuestos",
+        "description": "Reúne documentación fiscal, trabaja con contador y presenta declaraciones.",
+        "category": "finanzas",
+        "order": 0,
+        "type": "annual",
+        "estimatedHours": 6,
+        "difficulty": "hard",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Declaración Anual de Impuestos",
+            "summary": "Reúne documentación fiscal, trabaja con contador y presenta declaraciones.",
+            "body": "Reúne documentación fiscal, trabaja con contador y presenta declaraciones."
+          },
+          "objective": { "description": "¿Cumpliste con obligaciones fiscales?" },
+          "checklist": [
+            {
+              "id": "v2-chk-di-01",
+              "task": "Reunir documentación fiscal del año",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-di-02",
+              "task": "Trabajar con contador en declaración",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-di-03",
+              "task": "Presentar declaraciones en plazo",
+              "completed": false
+            },
+            { "id": "v2-chk-di-04", "task": "Pagar impuestos correspondientes", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a prepararse para la declaración anual de impuestos de su firma.",
+            "context": "El usuario necesita cumplir con sus obligaciones fiscales anuales.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "tip": "No esperes a diciembre para organizar los documentos del año — hazlo mes a mes y la declaración anual será mucho más rápida."
+        }
+      },
+      {
+        "id": "v2-rec-renovar-certificaciones",
+        "title": "Renovar Certificaciones Profesionales",
+        "description": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
+        "category": "legal",
+        "order": 1,
+        "type": "annual",
+        "estimatedHours": 8,
+        "difficulty": "medium",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Renovar Certificaciones Profesionales",
+            "summary": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
+            "body": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones."
+          },
+          "objective": { "description": "¿Mantienes tu certificación vigente?" },
+          "checklist": [
+            {
+              "id": "v2-chk-rcert-01",
+              "task": "Verificar fechas de vencimiento",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rcert-02",
+              "task": "Completar horas de educación continua",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rcert-03",
+              "task": "Renovar certificaciones profesionales",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rcert-04",
+              "task": "Actualizar credenciales en materiales",
+              "completed": false
+            }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a gestionar la renovación de sus certificaciones profesionales.",
+            "context": "El usuario necesita mantener vigentes sus certificaciones de asesor financiero.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "whyItMatters": "Una certificación vencida te impide ejercer legalmente y destruye la credibilidad construida con tus clientes."
+        }
+      },
+      {
+        "id": "v2-rec-plan-marketing-anual",
+        "title": "Planificar Marketing del Año",
+        "description": "Define objetivos anuales, presupuesta actividades y establece métricas de éxito.",
+        "category": "marketing",
+        "order": 2,
+        "type": "annual",
+        "estimatedHours": 4,
+        "difficulty": "medium",
+        "priority": "normal",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Planificar Marketing del Año",
+            "summary": "Define objetivos anuales, presupuesta actividades y establece métricas de éxito.",
+            "body": "Define objetivos anuales, presupuesta actividades y establece métricas de éxito."
+          },
+          "objective": { "description": "¿Definiste estrategia anual?" },
+          "checklist": [
+            {
+              "id": "v2-chk-pma-01",
+              "task": "Definir objetivos anuales de marketing",
+              "completed": false
+            },
+            { "id": "v2-chk-pma-02", "task": "Presupuestar actividades", "completed": false },
+            { "id": "v2-chk-pma-03", "task": "Establecer métricas de éxito", "completed": false },
+            { "id": "v2-chk-pma-04", "task": "Documentar plan anual", "completed": false }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a crear un plan de marketing anual para su firma de asesoría financiera.",
+            "context": "El usuario necesita planificar sus esfuerzos de marketing para el año siguiente.",
+            "suggestions": []
+          },
+          "knowledge": []
+        }
+      },
+      {
+        "id": "v2-rec-revision-planes-clientes",
+        "title": "Revisión Anual de Planes Financieros",
+        "description": "Revisa planes de todos los clientes, actualiza proyecciones y ajusta metas.",
+        "category": "clientes",
+        "order": 3,
+        "type": "annual",
+        "estimatedHours": 2,
+        "difficulty": "medium",
+        "priority": "high",
+        "completionRules": {
+          "requiredChecklist": true,
+          "requiredResources": false,
+          "requiredApproval": false,
+          "requiredQuiz": false
+        },
+        "content": {
+          "overview": {
+            "title": "Revisión Anual de Planes Financieros",
+            "summary": "Revisa planes de todos los clientes, actualiza proyecciones y ajusta metas.",
+            "body": "Revisa planes de todos los clientes, actualiza proyecciones y ajusta metas según cambios en su vida."
+          },
+          "objective": { "description": "¿Actualizaste los planes de todos tus clientes?" },
+          "checklist": [
+            {
+              "id": "v2-chk-rpa-01",
+              "task": "Revisar planes de todos los clientes activos",
+              "completed": false
+            },
+            {
+              "id": "v2-chk-rpa-02",
+              "task": "Actualizar proyecciones financieras",
+              "completed": false
+            },
+            { "id": "v2-chk-rpa-03", "task": "Ajustar metas según cambios", "completed": false },
+            {
+              "id": "v2-chk-rpa-04",
+              "task": "Documentar revisiones realizadas",
+              "completed": false
+            }
+          ],
+          "resources": [],
+          "assistant": {
+            "systemPrompt": "Ayuda al usuario a realizar la revisión anual de todos los planes financieros de sus clientes.",
+            "context": "El usuario necesita actualizar los planes financieros de todos sus clientes una vez al año.",
+            "suggestions": []
+          },
+          "knowledge": [],
+          "whyItMatters": "La revisión anual es uno de los momentos de mayor valor percibido para el cliente — es cuando ven el progreso hacia sus metas y refuerzan la decisión de continuar contigo."
+        }
+      }
+    ]
+  }
+}

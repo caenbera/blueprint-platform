@@ -99,6 +99,9 @@ export const BLUEPRINT_CATEGORY_GROUPS: BlueprintCategoryGroupOption[] = [
       "seguridad",
       "recursos humanos",
       "call center",
+      "asesoría",
+      "asesoria",
+      "finanzas",
     ],
   },
   {
