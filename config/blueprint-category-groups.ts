@@ -102,6 +102,9 @@ export const BLUEPRINT_CATEGORY_GROUPS: BlueprintCategoryGroupOption[] = [
       "asesoría",
       "asesoria",
       "finanzas",
+      "financier",
+      "financiero",
+      "servicios",
     ],
   },
   {
