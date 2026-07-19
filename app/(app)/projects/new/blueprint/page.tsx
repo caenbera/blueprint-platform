@@ -240,7 +240,7 @@ function ChooseBlueprintContent() {
         />
       )}
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((blueprint, i) => {
           const Icon = resolveLucideIcon(blueprint.icon);
           const badge = blueprintBadge(blueprint);
@@ -248,28 +248,41 @@ function ChooseBlueprintContent() {
             <Link
               key={blueprint.id}
               href={`/projects/new/${blueprint.id}`}
-              className="hover:border-primary/50 relative flex flex-col gap-3 rounded-lg border p-4 transition-colors"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border/80 bg-gradient-to-br from-card to-card/60 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-md"
             >
               {badge && (
-                <Badge variant={badge.variant} className="absolute top-3 right-3">
+                <Badge variant={badge.variant} className="absolute top-4 right-4">
                   {badge.label}
                 </Badge>
               )}
-              <div
-                className={cn(
-                  "flex h-12 w-12 items-center justify-center rounded-lg",
-                  TILE_COLORS[i % TILE_COLORS.length],
-                )}
-              >
-                <Icon className="h-6 w-6" />
+              
+              {/* Header with Icon */}
+              <div className="mb-4 flex items-start justify-between">
+                <div
+                  className={cn(
+                    "flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-105 shadow-inner",
+                    TILE_COLORS[i % TILE_COLORS.length],
+                  )}
+                >
+                  <Icon className="h-5.5 w-5.5" />
+                </div>
               </div>
-              <div>
-                <span className="text-h4">{blueprint.name}</span>
-                <p className="text-body text-muted-foreground line-clamp-2">
+
+              {/* Title & Description */}
+              <div className="mb-4 flex-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80 block mb-1">
+                  {blueprint.category}
+                </span>
+                <h3 className="text-h4 font-semibold leading-snug text-foreground group-hover:text-primary transition-colors line-clamp-1">
+                  {blueprint.name}
+                </h3>
+                <p className="text-body text-muted-foreground mt-1.5 line-clamp-2">
                   {blueprint.description}
                 </p>
               </div>
-              <div className="text-small text-muted-foreground mt-auto flex items-center gap-3">
+
+              {/* Stats Footer */}
+              <div className="mt-auto pt-3 border-t border-border/40 text-[11px] text-muted-foreground flex items-center gap-3">
                 <span className="flex items-center gap-1">
                   <Layers className="h-3.5 w-3.5" /> {blueprint.roadmap.length} fases
                 </span>

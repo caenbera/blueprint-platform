@@ -3,16 +3,26 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { toast } from "sonner";
-import { FolderKanban, Loader2, Plus, Trash2 } from "lucide-react";
+import { FolderKanban, Layers, Loader2, Plus, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { EmptyState } from "@/components/ui/empty-state";
 import { useAuth } from "@/hooks/use-auth";
+import { cn } from "@/lib/utils";
+import { resolveLucideIcon } from "@/lib/lucide-icon";
 import { deleteProject, listProjects } from "@/services/projects";
 import { calculateProjectProgress, listStepStates } from "@/services/step-state";
 import type { Project } from "@/types/domain";
 import type { ProjectProgress } from "@/services/step-state";
+
+const TILE_COLORS = [
+  "bg-primary/10 text-primary",
+  "bg-success/10 text-success",
+  "bg-chart-2/10 text-chart-2",
+  "bg-warning/10 text-warning",
+  "bg-chart-3/10 text-chart-3",
+];
 
 interface ProjectRow {
   project: Project;
@@ -89,39 +99,65 @@ export default function ProjectsPage() {
         />
       )}
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {rows.map(({ project, progress }) => (
-          <div
-            key={project.id}
-            className="hover:border-primary/50 flex flex-col gap-3 rounded-lg border p-4 transition-colors"
-          >
-            <div className="flex items-start justify-between gap-2">
-              <Link
-                href={`/projects/${project.id}`}
-                className="text-h4 line-clamp-2 min-w-0 flex-1 hover:underline"
-              >
-                {project.name}
-              </Link>
-              <div className="flex shrink-0 items-center gap-1">
-                <Badge variant="outline">{project.blueprintSnapshot.name}</Badge>
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {rows.map(({ project, progress }, i) => {
+          const Icon = resolveLucideIcon(project.blueprintSnapshot.icon);
+          return (
+            <div
+              key={project.id}
+              className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-border/80 bg-gradient-to-br from-card to-card/60 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/45 hover:shadow-md"
+            >
+              {/* Header with Icon and Action button */}
+              <div className="mb-4 flex items-start justify-between gap-4">
+                <div
+                  className={cn(
+                    "flex h-11 w-11 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-105 shadow-inner",
+                    TILE_COLORS[i % TILE_COLORS.length],
+                  )}
+                >
+                  <Icon className="h-5.5 w-5.5" />
+                </div>
+                
                 <Button
                   variant="ghost"
                   size="icon-sm"
                   aria-label={`Eliminar "${project.name}"`}
                   onClick={() => handleDelete(project)}
+                  className="text-muted-foreground opacity-60 hover:text-destructive hover:opacity-100 transition-all rounded-lg h-8 w-8"
                 >
-                  <Trash2 className="text-muted-foreground h-3.5 w-3.5" />
+                  <Trash2 className="h-4 w-4" />
                 </Button>
               </div>
+
+              {/* Blueprint & Project Names (No conflicts, stacked vertically) */}
+              <div className="mb-4 flex-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80 block mb-1">
+                  {project.blueprintSnapshot.name}
+                </span>
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="text-h4 font-semibold leading-snug text-foreground hover:text-primary transition-colors block line-clamp-2"
+                >
+                  {project.name}
+                </Link>
+              </div>
+
+              {/* Progress Bar and Indicator */}
+              <div className="mt-auto pt-3 border-t border-border/40">
+                <Link href={`/projects/${project.id}`} className="flex flex-col gap-2">
+                  <div className="flex items-center justify-between text-[11px] font-medium text-muted-foreground">
+                    <span>Progreso</span>
+                    <span className="text-foreground font-semibold">{progress.percent}%</span>
+                  </div>
+                  <Progress value={progress.percent} className="h-2 rounded-full bg-muted/65" />
+                  <span className="text-[11px] text-muted-foreground mt-0.5">
+                    {progress.completed} de {progress.total} pasos completados
+                  </span>
+                </Link>
+              </div>
             </div>
-            <Link href={`/projects/${project.id}`} className="flex flex-col gap-1.5">
-              <Progress value={progress.percent} />
-              <span className="text-small text-muted-foreground">
-                {progress.percent}% · {progress.completed} de {progress.total} pasos
-              </span>
-            </Link>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
