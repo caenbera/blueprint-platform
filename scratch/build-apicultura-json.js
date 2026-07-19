@@ -2340,45 +2340,169 @@ const blueprint = {
     allowMarketplace: true
   },
   roadmap: [
+    // --- ESTRATEGIA ---
     {
-      id: "v2-fase-estr-vision-mision",
-      title: "ESTRATEGIA",
-      description: "Dirección, viabilidad e identidad de tu apiario.",
-      objective: "Definir qué hacemos, para quién y cómo logramos que sea rentable el apiario.",
+      id: "fase-str-finanzas",
+      title: "Finanzas y Viabilidad",
+      description: "Punto de equilibrio, estacionalidad, metas y KPIs del apiario.",
+      objective: "Asegurar la viabilidad financiera del proyecto.",
       resources: [],
       block: "strategy",
       order: 0,
-      steps: allSteps.filter((s) => s.id.startsWith("step-str-"))
+      steps: allSteps.filter((s) => ["step-str-fin-equilibrio", "step-str-fin-estacionalidad", "step-str-fin-kpis", "step-str-val-revision"].includes(s.id))
     },
     {
-      id: "v2-fase-oper-carpetas-cliente",
-      title: "OPERACIONES",
-      description: "Adquisiciones, equipamiento, seguridad y maestría técnica apícola.",
-      objective: "Cómo ejecutas y entregas miel de excelencia técnica cuidando la salud de las colmenas.",
+      id: "fase-str-mercado",
+      title: "Identidad y Enfoque de Mercado",
+      description: "Definición de misión, visión, valores éticos, cliente ideal, raza de abejas, flora y agua.",
+      objective: "Definir quiénes somos y cuál es nuestro ecosistema apícola.",
+      resources: [],
+      block: "strategy",
+      order: 1,
+      steps: allSteps.filter((s) => ["step-str-id-mision", "step-str-id-vision", "step-str-id-valores", "step-str-id-cliente", "step-str-id-raza", "step-str-id-flora", "step-str-id-agua", "step-str-id-riesgos", "step-str-id-servicios"].includes(s.id))
+    },
+    {
+      id: "fase-str-valores",
+      title: "Propuesta de Valor y Tarifas",
+      description: "Precios minoristas y mayoristas, envíos, garantías y radio de trashumancia.",
+      objective: "Definir la oferta comercial y tarifas del apiario.",
+      resources: [],
+      block: "strategy",
+      order: 2,
+      steps: allSteps.filter((s) => ["step-str-val-precios-min", "step-str-val-precios-may", "step-str-val-envio", "step-str-val-garantias", "step-str-val-trashumancia-radio"].includes(s.id))
+    },
+    // --- OPERACIONES ---
+    {
+      id: "fase-ope-adquisiciones",
+      title: "Adquisiciones y Suministros",
+      description: "Compra de abejas núcleos, cajas Langstroth, herramientas de manejo, protección y extractores.",
+      objective: "Adquirir el equipamiento biológico y mecánico necesario.",
       resources: [],
       block: "operations",
-      order: 1,
-      steps: allSteps.filter((s) => s.id.startsWith("step-ope-"))
+      order: 3,
+      steps: allSteps.filter((s) => ["step-ope-adq-proveedor-nucleos", "step-ope-adq-cajas", "step-ope-adq-herramientas", "step-ope-adq-indumentaria", "step-ope-adq-maquinaria-extraccion"].includes(s.id))
     },
     {
-      id: "v2-fase-nego-entidad-juridica",
-      title: "NEGOCIO",
-      description: "Formalización jurídica, infraestructura administrativa, banca y reportes contables.",
-      objective: "Dar soporte legal, administrativo y de control a las finanzas del apiario.",
+      id: "fase-ope-logistica",
+      title: "Organización y Logística en Campo",
+      description: "Disposición espacial, control de cuadros vacíos y bebederos de agua seguros.",
+      objective: "Organizar y adecuar físicamente el apiario de producción.",
+      resources: [],
+      block: "operations",
+      order: 4,
+      steps: allSteps.filter((s) => ["step-ope-org-disposicion", "step-ope-org-almacen-cera", "step-ope-org-bebederos"].includes(s.id))
+    },
+    {
+      id: "fase-ope-seguridad",
+      title: "Gestión de Riesgos y Seguridad",
+      description: "Hojas MSDS, botiquín antialérgico, señalización perimetral e idoneidad de transporte.",
+      objective: "Mitigar riesgos físicos y de salud del apiario.",
+      resources: [],
+      block: "operations",
+      order: 5,
+      steps: allSteps.filter((s) => ["step-ope-seg-msds", "step-ope-seg-alergias", "step-ope-seg-advertencia", "step-ope-seg-trashumancia-log"].includes(s.id))
+    },
+    {
+      id: "fase-ope-sanidad",
+      title: "Capacitación y Sanidad Apícola",
+      description: "Cursos biológicos, inspección del nido, diagnóstico de enfermedades y testeo de Varroa.",
+      objective: "Garantizar la salud del apiario mediante monitoreo constante de Varroasis y plagas.",
+      resources: [],
+      block: "operations",
+      order: 6,
+      steps: allSteps.filter((s) => ["step-ope-tra-biologia", "step-ope-tra-mentor", "step-ope-tra-inspeccion", "step-ope-tra-enfermedades", "step-ope-tra-monitoreo-varroa", "step-ope-tra-tratamiento-varroa"].includes(s.id))
+    },
+    {
+      id: "fase-ope-nutricion",
+      title: "Nutrición y Manejo de Colmenas",
+      description: "Preparación de jarabes 1:1 de estimulación, 2:1 de reservas, tortas de proteína y enjambrazón.",
+      objective: "Manejar la alimentación suplementaria y división de colonias.",
+      resources: [],
+      block: "operations",
+      order: 7,
+      steps: allSteps.filter((s) => ["step-ope-tra-jarabe-estimulacion", "step-ope-tra-jarabe-reserva", "step-ope-tra-torta-proteica", "step-ope-tra-enjambrazon", "step-ope-tra-fusion"].includes(s.id))
+    },
+    {
+      id: "fase-ope-cosecha",
+      title: "Cosecha, Procesamiento y Mantenimiento",
+      description: "Extracción higiénica, desoperculación, extracción, decantación natural y envasado de miel.",
+      objective: "Obtener miel pura de abejas y mantener la higiene y control de insumos.",
+      resources: [],
+      block: "operations",
+      order: 8,
+      steps: allSteps.filter((s) => ["step-ope-tra-cosecha", "step-ope-reg-desoperculacion", "step-ope-reg-extraccion", "step-ope-reg-decantacion", "step-ope-reg-envasado", "step-ope-mantenimiento-semanal", "step-ope-inventario-insumos"].includes(s.id))
+    },
+    // --- NEGOCIO ---
+    {
+      id: "fase-bus-legal",
+      title: "Estructura Legal y Sanitaria",
+      description: "Registro mercantil, pecuario, permisos sanitarios, contratos de tierras y seguros.",
+      objective: "Constituir formalmente el apiario ante entidades gubernamentales y de salud.",
       resources: [],
       block: "business",
-      order: 2,
-      steps: allSteps.filter((s) => s.id.startsWith("step-bus-"))
+      order: 9,
+      steps: allSteps.filter((s) => ["step-bus-leg-registro", "step-bus-leg-registro-pecuario", "step-bus-leg-permisos-sanitarios", "step-bus-leg-contrato-terreno", "step-bus-leg-seguro-responsabilidad", "step-bus-leg-seguro-colmenas"].includes(s.id))
     },
     {
-      id: "v2-fase-clie-definicion-cliente",
-      title: "CLIENTES",
-      description: "Empaquetado de marca, activos promocionales, vitrina digital y máquina de adquisición de clientes.",
-      objective: "Proyectar una imagen comercial fuerte y crear un motor científico de captación de clientes de miel.",
+      id: "fase-bus-infraestructura",
+      title: "Infraestructura Financiera y Tecnológica",
+      description: "Cuentas bancarias, tarjetas comerciales, pasarelas de pago, software de apiario y respaldos.",
+      objective: "Configurar herramientas y sistemas contables y de control digital.",
+      resources: [],
+      block: "business",
+      order: 10,
+      steps: allSteps.filter((s) => ["step-bus-inf-cuenta-banco", "step-bus-inf-tarjeta", "step-bus-inf-pasarelas", "step-bus-inf-software-registro", "step-bus-inf-software-contable", "step-bus-inf-respaldos"].includes(s.id))
+    },
+    {
+      id: "fase-bus-sistemas",
+      title: "Sistemas y Rutinas Administrativas",
+      description: "Guiones de atención, trazabilidad y conciliación financiera semanal.",
+      objective: "Garantizar rutinas de oficina eficientes y trazabilidad de lotes de miel.",
+      resources: [],
+      block: "business",
+      order: 11,
+      steps: allSteps.filter((s) => ["step-bus-adm-guiones", "step-bus-adm-trazabilidad", "step-bus-adm-conciliacion"].includes(s.id))
+    },
+    // --- CLIENTES ---
+    {
+      id: "fase-cli-branding",
+      title: "Branding y Empaquetado de Marca",
+      description: "Logotipo, paleta de colores oficiales, vehículos y diseño de etiquetas.",
+      objective: "Crear una marca atractiva y un empaque profesional.",
       resources: [],
       block: "customers",
-      order: 3,
-      steps: allSteps.filter((s) => s.id.startsWith("step-cli-"))
+      order: 12,
+      steps: allSteps.filter((s) => ["step-cli-bra-logo", "step-cli-bra-colores", "step-cli-bra-vehiculo", "step-cli-evi-etiquetas"].includes(s.id))
+    },
+    {
+      id: "fase-cli-evidencia",
+      title: "Materiales y Evidencia de Venta",
+      description: "Sesiones de fotos en apiario, folletos educativos e imanes de nevera.",
+      objective: "Generar confianza y recordación del contacto del apiario.",
+      resources: [],
+      block: "customers",
+      order: 13,
+      steps: allSteps.filter((s) => ["step-cli-evi-fotos", "step-cli-evi-folleto", "step-cli-evi-imanes"].includes(s.id))
+    },
+    {
+      id: "fase-cli-digital",
+      title: "Presencia y Vitrina Digital",
+      description: "Dominios web, landing pages, posicionamiento SEO local y fichas de Google Business.",
+      objective: "Establecer los canales digitales para captación orgánica local.",
+      resources: [],
+      block: "customers",
+      order: 14,
+      steps: allSteps.filter((s) => ["step-cli-web-dominio", "step-cli-web-sitio", "step-cli-web-seo", "step-cli-web-google-business"].includes(s.id))
+    },
+    {
+      id: "fase-cli-adquisicion",
+      title: "Adquisición y Fidelización de Clientes",
+      description: "Canales mayoristas de tiendas naturistas, mercados campesinos, rastreo y recompensa por envases.",
+      objective: "Activar el motor comercial del apiario y la lealtad post-venta.",
+      resources: [],
+      block: "customers",
+      order: 15,
+      steps: allSteps.filter((s) => ["step-cli-adq-alianzas", "step-cli-adq-mercados", "step-cli-adq-rastreo", "step-cli-adq-programa-envases"].includes(s.id))
     }
   ]
 };

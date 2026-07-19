@@ -31,10 +31,10 @@
   },
   "roadmap": [
     {
-      "id": "v2-fase-estr-vision-mision",
-      "title": "ESTRATEGIA",
-      "description": "Dirección, viabilidad e identidad de tu apiario.",
-      "objective": "Definir qué hacemos, para quién y cómo logramos que sea rentable el apiario.",
+      "id": "fase-str-finanzas",
+      "title": "Finanzas y Viabilidad",
+      "description": "Punto de equilibrio, estacionalidad, metas y KPIs del apiario.",
+      "objective": "Asegurar la viabilidad financiera del proyecto.",
       "resources": [],
       "block": "strategy",
       "order": 0,
@@ -296,6 +296,87 @@
             ]
           }
         },
+        {
+          "id": "step-str-val-revision",
+          "title": "Revisión Trimestral de Márgenes y Estacionalidad",
+          "description": "Evaluar periódicamente los costos reales frente a las proyecciones y ajustar los precios de venta.",
+          "icon": "refresh-cw",
+          "order": 17,
+          "type": "quarterly",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Revisión Trimestral de Márgenes y Estacionalidad",
+              "summary": "Evaluar periódicamente los costos reales frente a las proyecciones y ajustar los precios de venta.",
+              "body": "Cada tres meses, revisa detalladamente tu rentabilidad. Compara los costos reales de los tratamientos, cera y envases con el presupuesto estimado. Si detectas un desvío o alza de costos, recalcula tu punto de equilibrio y ajusta las tarifas de venta si es necesario."
+            },
+            "objective": {
+              "description": "¿Mis márgenes reales siguen alineados con los objetivos iniciales o necesito ajustar precios?"
+            },
+            "checklist": [
+              {
+                "id": "chk-str-val-revision-01",
+                "task": "Revisar el registro de gastos reales del último trimestre.",
+                "completed": false
+              },
+              {
+                "id": "chk-str-val-revision-02",
+                "task": "Comparar costo variable por unidad de miel producida contra la proyección inicial.",
+                "completed": false
+              },
+              {
+                "id": "chk-str-val-revision-03",
+                "task": "Efectuar ajustes de precio de venta en listas mayoristas/minoristas si aplica.",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Actúa como asesor experto en apicultura y agronegocios para el paso: Revisión Trimestral de Márgenes y Estacionalidad.",
+              "context": "El usuario está ejecutando el paso 'Revisión Trimestral de Márgenes y Estacionalidad' del emprendimiento de apicultura.",
+              "suggestions": [
+                "¿Cómo realizo con éxito el paso: Revisión Trimestral de Márgenes y Estacionalidad?",
+                "Dame una plantilla o guía detallada para Revisión Trimestral de Márgenes y Estacionalidad.",
+                "¿Cuáles son los riesgos más grandes en Revisión Trimestral de Márgenes y Estacionalidad?"
+              ]
+            },
+            "knowledge": [],
+            "whyItMatters": "Evita que incrementos paulatinos en insumos menores (como el flete o las etiquetas) eliminen tu rentabilidad sin que te des cuenta.",
+            "bestPractices": [],
+            "commonMistakes": [],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-apic-obs-marginales",
+                "label": "Notas de la Revisión Marginal del Trimestre",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Describe los desvíos hallados y las decisiones tomadas sobre precios.",
+                "placeholder": "Los envases de vidrio subieron 10%. Se determinó mantener el precio minorista..."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "fase-str-mercado",
+      "title": "Identidad y Enfoque de Mercado",
+      "description": "Definición de misión, visión, valores éticos, cliente ideal, raza de abejas, flora y agua.",
+      "objective": "Definir quiénes somos y cuál es nuestro ecosistema apícola.",
+      "resources": [],
+      "block": "strategy",
+      "order": 1,
+      "steps": [
         {
           "id": "step-str-id-mision",
           "title": "Declaración de Propósito y Misión del Apiario",
@@ -943,7 +1024,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-str-valores",
+      "title": "Propuesta de Valor y Tarifas",
+      "description": "Precios minoristas y mayoristas, envíos, garantías y radio de trashumancia.",
+      "objective": "Definir la oferta comercial y tarifas del apiario.",
+      "resources": [],
+      "block": "strategy",
+      "order": 2,
+      "steps": [
         {
           "id": "step-str-val-precios-min",
           "title": "Fijación de Precios de Miel al Por Menor",
@@ -1293,87 +1385,17 @@
               }
             ]
           }
-        },
-        {
-          "id": "step-str-val-revision",
-          "title": "Revisión Trimestral de Márgenes y Estacionalidad",
-          "description": "Evaluar periódicamente los costos reales frente a las proyecciones y ajustar los precios de venta.",
-          "icon": "refresh-cw",
-          "order": 17,
-          "type": "quarterly",
-          "estimatedHours": 3,
-          "difficulty": "medium",
-          "priority": "high",
-          "dependencies": [],
-          "completionRules": {
-            "requiredChecklist": true,
-            "requiredResources": false,
-            "requiredApproval": false,
-            "requiredQuiz": false
-          },
-          "content": {
-            "overview": {
-              "title": "Revisión Trimestral de Márgenes y Estacionalidad",
-              "summary": "Evaluar periódicamente los costos reales frente a las proyecciones y ajustar los precios de venta.",
-              "body": "Cada tres meses, revisa detalladamente tu rentabilidad. Compara los costos reales de los tratamientos, cera y envases con el presupuesto estimado. Si detectas un desvío o alza de costos, recalcula tu punto de equilibrio y ajusta las tarifas de venta si es necesario."
-            },
-            "objective": {
-              "description": "¿Mis márgenes reales siguen alineados con los objetivos iniciales o necesito ajustar precios?"
-            },
-            "checklist": [
-              {
-                "id": "chk-str-val-revision-01",
-                "task": "Revisar el registro de gastos reales del último trimestre.",
-                "completed": false
-              },
-              {
-                "id": "chk-str-val-revision-02",
-                "task": "Comparar costo variable por unidad de miel producida contra la proyección inicial.",
-                "completed": false
-              },
-              {
-                "id": "chk-str-val-revision-03",
-                "task": "Efectuar ajustes de precio de venta en listas mayoristas/minoristas si aplica.",
-                "completed": false
-              }
-            ],
-            "resources": [],
-            "assistant": {
-              "systemPrompt": "Actúa como asesor experto en apicultura y agronegocios para el paso: Revisión Trimestral de Márgenes y Estacionalidad.",
-              "context": "El usuario está ejecutando el paso 'Revisión Trimestral de Márgenes y Estacionalidad' del emprendimiento de apicultura.",
-              "suggestions": [
-                "¿Cómo realizo con éxito el paso: Revisión Trimestral de Márgenes y Estacionalidad?",
-                "Dame una plantilla o guía detallada para Revisión Trimestral de Márgenes y Estacionalidad.",
-                "¿Cuáles son los riesgos más grandes en Revisión Trimestral de Márgenes y Estacionalidad?"
-              ]
-            },
-            "knowledge": [],
-            "whyItMatters": "Evita que incrementos paulatinos en insumos menores (como el flete o las etiquetas) eliminen tu rentabilidad sin que te des cuenta.",
-            "bestPractices": [],
-            "commonMistakes": [],
-            "recommendedTools": [],
-            "registroFields": [
-              {
-                "id": "reg-apic-obs-marginales",
-                "label": "Notas de la Revisión Marginal del Trimestre",
-                "type": "textarea",
-                "required": true,
-                "helpText": "Describe los desvíos hallados y las decisiones tomadas sobre precios.",
-                "placeholder": "Los envases de vidrio subieron 10%. Se determinó mantener el precio minorista..."
-              }
-            ]
-          }
         }
       ]
     },
     {
-      "id": "v2-fase-oper-carpetas-cliente",
-      "title": "OPERACIONES",
-      "description": "Adquisiciones, equipamiento, seguridad y maestría técnica apícola.",
-      "objective": "Cómo ejecutas y entregas miel de excelencia técnica cuidando la salud de las colmenas.",
+      "id": "fase-ope-adquisiciones",
+      "title": "Adquisiciones y Suministros",
+      "description": "Compra de abejas núcleos, cajas Langstroth, herramientas de manejo, protección y extractores.",
+      "objective": "Adquirir el equipamiento biológico y mecánico necesario.",
       "resources": [],
       "block": "operations",
-      "order": 1,
+      "order": 3,
       "steps": [
         {
           "id": "step-ope-adq-proveedor-nucleos",
@@ -1732,7 +1754,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-ope-logistica",
+      "title": "Organización y Logística en Campo",
+      "description": "Disposición espacial, control de cuadros vacíos y bebederos de agua seguros.",
+      "objective": "Organizar y adecuar físicamente el apiario de producción.",
+      "resources": [],
+      "block": "operations",
+      "order": 4,
+      "steps": [
         {
           "id": "step-ope-org-disposicion",
           "title": "Distribución Espacial y Nivelación de Colmenas",
@@ -1942,7 +1975,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-ope-seguridad",
+      "title": "Gestión de Riesgos y Seguridad",
+      "description": "Hojas MSDS, botiquín antialérgico, señalización perimetral e idoneidad de transporte.",
+      "objective": "Mitigar riesgos físicos y de salud del apiario.",
+      "resources": [],
+      "block": "operations",
+      "order": 5,
+      "steps": [
         {
           "id": "step-ope-seg-msds",
           "title": "Carpeta MSDS de Tratamientos Sanitarios",
@@ -2212,7 +2256,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-ope-sanidad",
+      "title": "Capacitación y Sanidad Apícola",
+      "description": "Cursos biológicos, inspección del nido, diagnóstico de enfermedades y testeo de Varroa.",
+      "objective": "Garantizar la salud del apiario mediante monitoreo constante de Varroasis y plagas.",
+      "resources": [],
+      "block": "operations",
+      "order": 6,
+      "steps": [
         {
           "id": "step-ope-tra-biologia",
           "title": "Curso de Biología y Comportamiento de la Abeja",
@@ -2632,7 +2687,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-ope-nutricion",
+      "title": "Nutrición y Manejo de Colmenas",
+      "description": "Preparación de jarabes 1:1 de estimulación, 2:1 de reservas, tortas de proteína y enjambrazón.",
+      "objective": "Manejar la alimentación suplementaria y división de colonias.",
+      "resources": [],
+      "block": "operations",
+      "order": 7,
+      "steps": [
         {
           "id": "step-ope-tra-jarabe-estimulacion",
           "title": "Alimentación Estimulante de Primavera (1:1)",
@@ -2982,7 +3048,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-ope-cosecha",
+      "title": "Cosecha, Procesamiento y Mantenimiento",
+      "description": "Extracción higiénica, desoperculación, extracción, decantación natural y envasado de miel.",
+      "objective": "Obtener miel pura de abejas y mantener la higiene y control de insumos.",
+      "resources": [],
+      "block": "operations",
+      "order": 8,
+      "steps": [
         {
           "id": "step-ope-tra-cosecha",
           "title": "Cosecha Higiénica de Alzas Melíferas",
@@ -3476,13 +3553,13 @@
       ]
     },
     {
-      "id": "v2-fase-nego-entidad-juridica",
-      "title": "NEGOCIO",
-      "description": "Formalización jurídica, infraestructura administrativa, banca y reportes contables.",
-      "objective": "Dar soporte legal, administrativo y de control a las finanzas del apiario.",
+      "id": "fase-bus-legal",
+      "title": "Estructura Legal y Sanitaria",
+      "description": "Registro mercantil, pecuario, permisos sanitarios, contratos de tierras y seguros.",
+      "objective": "Constituir formalmente el apiario ante entidades gubernamentales y de salud.",
       "resources": [],
       "block": "business",
-      "order": 2,
+      "order": 9,
       "steps": [
         {
           "id": "step-bus-leg-registro",
@@ -3904,7 +3981,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-bus-infraestructura",
+      "title": "Infraestructura Financiera y Tecnológica",
+      "description": "Cuentas bancarias, tarjetas comerciales, pasarelas de pago, software de apiario y respaldos.",
+      "objective": "Configurar herramientas y sistemas contables y de control digital.",
+      "resources": [],
+      "block": "business",
+      "order": 10,
+      "steps": [
         {
           "id": "step-bus-inf-cuenta-banco",
           "title": "Apertura de Cuenta Bancaria Comercial Exclusiva",
@@ -4310,7 +4398,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-bus-sistemas",
+      "title": "Sistemas y Rutinas Administrativas",
+      "description": "Guiones de atención, trazabilidad y conciliación financiera semanal.",
+      "objective": "Garantizar rutinas de oficina eficientes y trazabilidad de lotes de miel.",
+      "resources": [],
+      "block": "business",
+      "order": 11,
+      "steps": [
         {
           "id": "step-bus-adm-guiones",
           "title": "Estandarización de Guiones de Atención",
@@ -4519,13 +4618,13 @@
       ]
     },
     {
-      "id": "v2-fase-clie-definicion-cliente",
-      "title": "CLIENTES",
-      "description": "Empaquetado de marca, activos promocionales, vitrina digital y máquina de adquisición de clientes.",
-      "objective": "Proyectar una imagen comercial fuerte y crear un motor científico de captación de clientes de miel.",
+      "id": "fase-cli-branding",
+      "title": "Branding y Empaquetado de Marca",
+      "description": "Logotipo, paleta de colores oficiales, vehículos y diseño de etiquetas.",
+      "objective": "Crear una marca atractiva y un empaque profesional.",
       "resources": [],
       "block": "customers",
-      "order": 3,
+      "order": 12,
       "steps": [
         {
           "id": "step-cli-bra-logo",
@@ -4738,6 +4837,87 @@
           }
         },
         {
+          "id": "step-cli-evi-etiquetas",
+          "title": "Diseño de Etiquetas Legales y Nutricionales",
+          "description": "Diseñar las etiquetas para los frascos cumpliendo con la normativa obligatoria de etiquetado de alimentos.",
+          "icon": "bookmark",
+          "order": 68,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": {
+            "requiredChecklist": true,
+            "requiredResources": false,
+            "requiredApproval": false,
+            "requiredQuiz": false
+          },
+          "content": {
+            "overview": {
+              "title": "Diseño de Etiquetas Legales y Nutricionales",
+              "summary": "Diseñar las etiquetas para los frascos cumpliendo con la normativa obligatoria de etiquetado de alimentos.",
+              "body": "Diseña las etiquetas de tus frascos. Asegúrate de cumplir con las normas de etiquetado de tu país: - Nombre claro: 'Miel 100% Pura de Abeja'. - Peso neto expresado en gramos. - Información de contacto y dirección del apicultor. - Código de lote y fecha de vencimiento. - Advertencia obligatoria: 'No consumir en menores de 1 año' (riesgo de botulismo infantil)."
+            },
+            "objective": {
+              "description": "¿La etiqueta de mi producto cumple con todos los requisitos legales para la venta comercial?"
+            },
+            "checklist": [
+              {
+                "id": "chk-cli-evi-etiquetas-01",
+                "task": "Consultar la ley de etiquetado de alimentos de tu país.",
+                "completed": false
+              },
+              {
+                "id": "chk-cli-evi-etiquetas-02",
+                "task": "Diseñar la etiqueta frontal (marca) y la etiqueta posterior (nutricional, advertencias, lote).",
+                "completed": false
+              },
+              {
+                "id": "chk-cli-evi-etiquetas-03",
+                "task": "Aprobar la impresión final en papel adhesivo resistente a salpicaduras.",
+                "completed": false
+              }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Actúa como asesor experto en apicultura y agronegocios para el paso: Diseño de Etiquetas Legales y Nutricionales.",
+              "context": "El usuario está ejecutando el paso 'Diseño de Etiquetas Legales y Nutricionales' del emprendimiento de apicultura.",
+              "suggestions": [
+                "¿Cómo realizo con éxito el paso: Diseño de Etiquetas Legales y Nutricionales?",
+                "Dame una plantilla o guía detallada para Diseño de Etiquetas Legales y Nutricionales.",
+                "¿Cuáles son los riesgos más grandes en Diseño de Etiquetas Legales y Nutricionales?"
+              ]
+            },
+            "knowledge": [],
+            "whyItMatters": "Sin una etiqueta que cumpla los requisitos legales de alimentos, las tiendas naturistas y cadenas no podrán comercializar tu miel.",
+            "bestPractices": [],
+            "commonMistakes": [],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-apic-etiqueta-url",
+                "label": "Enlace a Diseño Final de la Etiqueta (PDF/Imagen)",
+                "type": "url",
+                "required": true,
+                "helpText": "Sube y pega el enlace de tu etiqueta aprobada.",
+                "placeholder": "https://drive.google.com/..."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "fase-cli-evidencia",
+      "title": "Materiales y Evidencia de Venta",
+      "description": "Sesiones de fotos en apiario, folletos educativos e imanes de nevera.",
+      "objective": "Generar confianza y recordación del contacto del apiario.",
+      "resources": [],
+      "block": "customers",
+      "order": 13,
+      "steps": [
+        {
           "id": "step-cli-evi-fotos",
           "title": "Sesión Fotográfica del Apiario y Cosecha",
           "description": "Tomar fotografías de alta resolución trabajando en las colmenas y de la miel decantando.",
@@ -4878,76 +5058,6 @@
           }
         },
         {
-          "id": "step-cli-evi-etiquetas",
-          "title": "Diseño de Etiquetas Legales y Nutricionales",
-          "description": "Diseñar las etiquetas para los frascos cumpliendo con la normativa obligatoria de etiquetado de alimentos.",
-          "icon": "bookmark",
-          "order": 68,
-          "type": "one_time",
-          "estimatedHours": 4,
-          "difficulty": "medium",
-          "priority": "high",
-          "dependencies": [],
-          "completionRules": {
-            "requiredChecklist": true,
-            "requiredResources": false,
-            "requiredApproval": false,
-            "requiredQuiz": false
-          },
-          "content": {
-            "overview": {
-              "title": "Diseño de Etiquetas Legales y Nutricionales",
-              "summary": "Diseñar las etiquetas para los frascos cumpliendo con la normativa obligatoria de etiquetado de alimentos.",
-              "body": "Diseña las etiquetas de tus frascos. Asegúrate de cumplir con las normas de etiquetado de tu país: - Nombre claro: 'Miel 100% Pura de Abeja'. - Peso neto expresado en gramos. - Información de contacto y dirección del apicultor. - Código de lote y fecha de vencimiento. - Advertencia obligatoria: 'No consumir en menores de 1 año' (riesgo de botulismo infantil)."
-            },
-            "objective": {
-              "description": "¿La etiqueta de mi producto cumple con todos los requisitos legales para la venta comercial?"
-            },
-            "checklist": [
-              {
-                "id": "chk-cli-evi-etiquetas-01",
-                "task": "Consultar la ley de etiquetado de alimentos de tu país.",
-                "completed": false
-              },
-              {
-                "id": "chk-cli-evi-etiquetas-02",
-                "task": "Diseñar la etiqueta frontal (marca) y la etiqueta posterior (nutricional, advertencias, lote).",
-                "completed": false
-              },
-              {
-                "id": "chk-cli-evi-etiquetas-03",
-                "task": "Aprobar la impresión final en papel adhesivo resistente a salpicaduras.",
-                "completed": false
-              }
-            ],
-            "resources": [],
-            "assistant": {
-              "systemPrompt": "Actúa como asesor experto en apicultura y agronegocios para el paso: Diseño de Etiquetas Legales y Nutricionales.",
-              "context": "El usuario está ejecutando el paso 'Diseño de Etiquetas Legales y Nutricionales' del emprendimiento de apicultura.",
-              "suggestions": [
-                "¿Cómo realizo con éxito el paso: Diseño de Etiquetas Legales y Nutricionales?",
-                "Dame una plantilla o guía detallada para Diseño de Etiquetas Legales y Nutricionales.",
-                "¿Cuáles son los riesgos más grandes en Diseño de Etiquetas Legales y Nutricionales?"
-              ]
-            },
-            "knowledge": [],
-            "whyItMatters": "Sin una etiqueta que cumpla los requisitos legales de alimentos, las tiendas naturistas y cadenas no podrán comercializar tu miel.",
-            "bestPractices": [],
-            "commonMistakes": [],
-            "recommendedTools": [],
-            "registroFields": [
-              {
-                "id": "reg-apic-etiqueta-url",
-                "label": "Enlace a Diseño Final de la Etiqueta (PDF/Imagen)",
-                "type": "url",
-                "required": true,
-                "helpText": "Sube y pega el enlace de tu etiqueta aprobada.",
-                "placeholder": "https://drive.google.com/..."
-              }
-            ]
-          }
-        },
-        {
           "id": "step-cli-evi-imanes",
           "title": "Adquisición de Imanes de Nevera Promocionales",
           "description": "Adquirir imanes promocionales con el logotipo y contacto del apiario para fidelización.",
@@ -5016,7 +5126,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-cli-digital",
+      "title": "Presencia y Vitrina Digital",
+      "description": "Dominios web, landing pages, posicionamiento SEO local y fichas de Google Business.",
+      "objective": "Establecer los canales digitales para captación orgánica local.",
+      "resources": [],
+      "block": "customers",
+      "order": 14,
+      "steps": [
         {
           "id": "step-cli-web-dominio",
           "title": "Compra del Dominio Web del Apiario",
@@ -5296,7 +5417,18 @@
               }
             ]
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "fase-cli-adquisicion",
+      "title": "Adquisición y Fidelización de Clientes",
+      "description": "Canales mayoristas de tiendas naturistas, mercados campesinos, rastreo y recompensa por envases.",
+      "objective": "Activar el motor comercial del apiario y la lealtad post-venta.",
+      "resources": [],
+      "block": "customers",
+      "order": 15,
+      "steps": [
         {
           "id": "step-cli-adq-alianzas",
           "title": "Alianzas de Distribución y Tiendas Locales",
