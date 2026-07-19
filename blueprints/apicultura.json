@@ -130,6 +130,30 @@
                 "required": true,
                 "helpText": "Cantidad de kilogramos que debes cosechar/vender.",
                 "placeholder": "500"
+              },
+              {
+                "id": "reg-apic-costo-vida-personal",
+                "label": "Costo de Vida Personal Mensual Mínimo",
+                "type": "number",
+                "required": true,
+                "helpText": "Tu retiro mensual esperado para cubrir gastos personales.",
+                "placeholder": "1500"
+              },
+              {
+                "id": "reg-apic-costo-variable-kilo",
+                "label": "Costo Variable Unitario por Kilo de Miel",
+                "type": "number",
+                "required": true,
+                "helpText": "Insumos consumidos por cada kilo cosechado.",
+                "placeholder": "4"
+              },
+              {
+                "id": "reg-apic-ingresos-punto-equilibrio",
+                "label": "Punto de Equilibrio en Ingresos Totales",
+                "type": "number",
+                "required": true,
+                "helpText": "Cifra de ventas totales necesarias.",
+                "placeholder": "18000"
               }
             ]
           }
@@ -221,6 +245,36 @@
                   "Diciembre"
                 ],
                 "placeholder": "Selecciona meses..."
+              },
+              {
+                "id": "reg-apic-costo-alimentacion-suplementaria",
+                "label": "Costo Estimado de Alimentación Suplementaria en Escasez",
+                "type": "number",
+                "required": true,
+                "helpText": "Presupuesto para azúcar y tortas proteicas en época seca o invernal.",
+                "placeholder": "1500"
+              },
+              {
+                "id": "reg-apic-flora-meses-abundantes",
+                "label": "Meses de Floración Abundante (Cosecha Principal)",
+                "type": "multiselect",
+                "required": true,
+                "helpText": "Selecciona los meses en que se produce la cosecha principal.",
+                "options": [
+                  "Enero",
+                  "Febrero",
+                  "Marzo",
+                  "Abril",
+                  "Mayo",
+                  "Junio",
+                  "Julio",
+                  "Agosto",
+                  "Septiembre",
+                  "Octubre",
+                  "Noviembre",
+                  "Diciembre"
+                ],
+                "placeholder": "Selecciona meses..."
               }
             ]
           }
@@ -292,6 +346,22 @@
                 "required": true,
                 "helpText": "Cantidad promedio de kilos que esperas obtener por colmena al año.",
                 "placeholder": "30"
+              },
+              {
+                "id": "reg-apic-kpi-supervivencia",
+                "label": "Meta de Tasa de Supervivencia de Colmenas (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Porcentaje de colmenas activas que esperas mantengan su población en invierno.",
+                "placeholder": "85"
+              },
+              {
+                "id": "reg-apic-kpi-costo-prod-limite",
+                "label": "Costo de Producción Límite Aceptable por Kilo",
+                "type": "number",
+                "required": true,
+                "helpText": "El costo variable máximo que tolerará el negocio.",
+                "placeholder": "5"
               }
             ]
           }
@@ -362,6 +432,14 @@
                 "required": true,
                 "helpText": "Describe los desvíos hallados y las decisiones tomadas sobre precios.",
                 "placeholder": "Los envases de vidrio subieron 10%. Se determinó mantener el precio minorista..."
+              },
+              {
+                "id": "reg-apic-desvio-costos",
+                "label": "Porcentaje de Variación de Costos Reales vs. Proyección",
+                "type": "number",
+                "required": true,
+                "helpText": "Porcentaje de desvío presupuestal (+ o -).",
+                "placeholder": "5"
               }
             ]
           }
@@ -443,6 +521,14 @@
                 "required": true,
                 "helpText": "Escribe aquí la declaración de misión de tu apiario.",
                 "placeholder": "Nuestra misión es producir miel cruda 100% pura y local, protegiendo las poblaciones de abejas..."
+              },
+              {
+                "id": "reg-apic-valores-centrales",
+                "label": "Valores Ecológicos y Comerciales Centrales",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Principios de sustentabilidad e impacto social del apiario.",
+                "placeholder": "Respeto por la biodiversidad, precio justo al productor, no uso de agroquímicos."
               }
             ]
           }
@@ -513,6 +599,27 @@
                 "required": true,
                 "helpText": "Describe detalladamente dónde quieres que esté el apiario en 5 años.",
                 "placeholder": "Convertirnos en un apiario de 150 colmenas con sala de extracción certificada..."
+              },
+              {
+                "id": "reg-apic-meta-max-colmenas",
+                "label": "Cantidad Máxima de Colmenas a Manejar",
+                "type": "number",
+                "required": true,
+                "helpText": "Tu capacidad límite física de manejo.",
+                "placeholder": "50"
+              },
+              {
+                "id": "reg-apic-requiere-ayudantes",
+                "label": "¿Requerirá Contratación de Ayudantes a Futuro?",
+                "type": "select",
+                "required": true,
+                "helpText": "Define tu modelo de crecimiento de personal.",
+                "options": [
+                  "Sí, ayudantes temporales en cosecha",
+                  "Sí, personal fijo en apiario",
+                  "No, manejo 100% familiar/individual"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -578,6 +685,19 @@
                 "required": true,
                 "helpText": "Enumera las reglas fundamentales que respetarás en el cuidado de tus colmenas.",
                 "placeholder": "1. Dejar siempre al menos un alza de miel de reserva para el invierno...\n2. No usar insecticidas..."
+              },
+              {
+                "id": "reg-apic-politica-tratamientos",
+                "label": "Política de Tratamientos Fitosanitarios",
+                "type": "select",
+                "required": true,
+                "helpText": "Tu enfoque para controlar Varroa y plagas de forma ética.",
+                "options": [
+                  "100% Orgánicos (ácido oxálico/fórmico/timol)",
+                  "Mixto (químicos autorizados en emergencias)",
+                  "Químicos convencionales"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -648,6 +768,22 @@
                 "required": true,
                 "helpText": "Describe a tus clientes ideales principales.",
                 "placeholder": "Consumidor minorista de 25-50 años que valora la miel local y cruda para uso terapéutico..."
+              },
+              {
+                "id": "reg-apic-motivaciones-compra",
+                "label": "Motivaciones de Compra de tus Clientes",
+                "type": "textarea",
+                "required": true,
+                "helpText": "¿Por qué prefieren tu miel? (ej. terapéutico, salud, origen local).",
+                "placeholder": "Buscan miel cruda y sin filtrar por sus propiedades antibacterianas y de control de alergias."
+              },
+              {
+                "id": "reg-apic-tamano-mercado",
+                "label": "Estimación del Tamaño del Mercado Local",
+                "type": "text",
+                "required": true,
+                "helpText": "Número estimado de familias u organizaciones compradoras en tu radio comercial.",
+                "placeholder": "Aprox. 1,200 familias consumidoras en el sector norte de la ciudad."
               }
             ]
           }
@@ -726,6 +862,14 @@
                   "Buckfast (Híbrido)"
                 ],
                 "placeholder": "Selecciona raza..."
+              },
+              {
+                "id": "reg-apic-raza-evaluacion",
+                "label": "Evaluación de Pros y Contras de Razas Locales",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Justificación de por qué elegiste esta genética para tu apiario.",
+                "placeholder": "Se eligió Carniola por su alta docilidad y buen comportamiento frente al invierno frío de la zona."
               }
             ]
           }
@@ -796,6 +940,22 @@
                 "required": true,
                 "helpText": "Cantidad máxima de colmenas a albergar en este apiario según la flora disponible.",
                 "placeholder": "30"
+              },
+              {
+                "id": "reg-apic-especies-meliferas",
+                "label": "Especies Melíferas Identificadas (Flora Principal)",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Mapeo de plantas en un radio de 3 km.",
+                "placeholder": "Abundante floración de Eucalipto (Julio-Agosto), Acacia (Abril) y trébol silvestre en potreros."
+              },
+              {
+                "id": "reg-apic-mapa-floral-link",
+                "label": "Enlace al Mapa Floral o Documento del Apiario",
+                "type": "url",
+                "required": false,
+                "helpText": "Enlace de Drive con el plano o fotos aéreas florales.",
+                "placeholder": "https://drive.google.com/..."
               }
             ]
           }
@@ -873,6 +1033,14 @@
                   "Ninguna (Se debe instalar bebedero de forma obligatoria)"
                 ],
                 "placeholder": "Selecciona fuente..."
+              },
+              {
+                "id": "reg-apic-bebedero-diseno",
+                "label": "Descripción del Sistema de Flotación Seguro",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Describe cómo evitarás que las abejas se ahoguen al beber agua.",
+                "placeholder": "Tanque plástico de 100L cortado a la mitad, lleno de corchos de vino flotantes y ramas secas."
               }
             ]
           }
@@ -943,6 +1111,14 @@
                 "required": true,
                 "helpText": "Describe qué cultivos cercanos representan un riesgo y cómo te comunicarás con sus dueños.",
                 "placeholder": "Cultivo de maíz a 1.5 km aplica insecticidas en mayo. Contacto: Sr. Juan Pérez..."
+              },
+              {
+                "id": "reg-apic-plan-contingencia-pesticidas",
+                "label": "Plan de Contingencia ante Fumigaciones",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Acciones a tomar cuando un vecino anuncie aplicaciones de venenos.",
+                "placeholder": "Colocar mallas de transporte en piqueras a las 5:00 am del día de fumigación y mojar la colmena por fuera."
               }
             ]
           }
@@ -1021,6 +1197,14 @@
                   "Servicios de Polinización"
                 ],
                 "placeholder": "Selecciona productos..."
+              },
+              {
+                "id": "reg-apic-servicios-justificacion",
+                "label": "Justificación del Portafolio y Catálogo Core",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Por qué elegiste vender estos productos e ignorar otros en esta fase.",
+                "placeholder": "Se inicia con miel y propóleo por facilidad de envasado; polen requiere secador y mercado maduro."
               }
             ]
           }
@@ -1102,6 +1286,28 @@
                 "required": true,
                 "helpText": "Escribe el precio final de venta al público en moneda local.",
                 "placeholder": "12000"
+              },
+              {
+                "id": "reg-apic-costo-envasado-500g",
+                "label": "Costo de Producción y Envasado por Frasco de 500g",
+                "type": "number",
+                "required": true,
+                "helpText": "Frasco + tapa + etiqueta + miel + amortización.",
+                "placeholder": "5.50"
+              },
+              {
+                "id": "reg-apic-precio-250g",
+                "label": "Precio Minorista Sugerido para Frasco de 250g",
+                "type": "number",
+                "required": true,
+                "placeholder": "8000"
+              },
+              {
+                "id": "reg-apic-precio-1000g",
+                "label": "Precio Minorista Sugerido para Frasco de 1000g",
+                "type": "number",
+                "required": true,
+                "placeholder": "22000"
               }
             ]
           }
@@ -1172,6 +1378,22 @@
                 "required": true,
                 "helpText": "Porcentaje que se descontará a comercios mayoristas (ej. 35).",
                 "placeholder": "35"
+              },
+              {
+                "id": "reg-apic-minimo-unidades-mayorista",
+                "label": "Cantidad Mínima de Unidades para Compra Mayorista",
+                "type": "number",
+                "required": true,
+                "helpText": "Unidades mínimas de pedido por caja.",
+                "placeholder": "12"
+              },
+              {
+                "id": "reg-apic-tarifario-may-url",
+                "label": "Enlace al Tarifario Mayorista en PDF",
+                "type": "url",
+                "required": false,
+                "helpText": "Sube tu tarifario y comparte el enlace de acceso comercial.",
+                "placeholder": "https://drive.google.com/..."
               }
             ]
           }
@@ -1242,6 +1464,22 @@
                 "required": true,
                 "helpText": "Monto de compra mínima en moneda local para no cobrar envío.",
                 "placeholder": "60000"
+              },
+              {
+                "id": "reg-apic-costo-promedio-envio",
+                "label": "Costo Promedio por Entrega",
+                "type": "number",
+                "required": true,
+                "helpText": "Costo de combustible o mensajero contratado.",
+                "placeholder": "3000"
+              },
+              {
+                "id": "reg-apic-tarifas-envio-zonas",
+                "label": "Tarifas de Envío por Zonas Geográficas",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Escribe las tarifas acordadas por sector comercial.",
+                "placeholder": "Sector Centro: $3000. Sector Norte/Sur: $5000. Zona rural: $8000."
               }
             ]
           }
@@ -1312,6 +1550,14 @@
                 "required": true,
                 "helpText": "Texto corto para etiquetas o web.",
                 "placeholder": "Garantizamos miel 100% pura de abeja, cruda y sin procesos de pasteurización..."
+              },
+              {
+                "id": "reg-apic-politica-devolucion",
+                "label": "Política de Devoluciones y Reemplazos por Calidad",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Qué harás si un cliente indica que su miel está en mal estado.",
+                "placeholder": "Reemplazo inmediato sin costo de cualquier frasco que presente filtraciones o defectos de sellado."
               }
             ]
           }
@@ -1382,6 +1628,27 @@
                 "required": true,
                 "helpText": "Distancia máxima en km para mover colmenas desde tu base de operaciones.",
                 "placeholder": "50"
+              },
+              {
+                "id": "reg-apic-tipo-explotacion",
+                "label": "Tipo de Explotación del Apiario",
+                "type": "select",
+                "required": true,
+                "helpText": "¿Moverás colmenas o mantendrás apiarios fijos?",
+                "options": [
+                  "Fijo / Estático",
+                  "Trashumante (Traslado por floración)",
+                  "Mixto"
+                ],
+                "placeholder": "Selecciona..."
+              },
+              {
+                "id": "reg-apic-costo-km-transporte",
+                "label": "Costo de Transporte por Kilómetro",
+                "type": "number",
+                "required": true,
+                "helpText": "Gasto de transporte vehicular en el apiario.",
+                "placeholder": "150"
               }
             ]
           }
@@ -1463,6 +1730,21 @@
                 "required": true,
                 "helpText": "Nombre de la empresa o apicultor de genética.",
                 "placeholder": "Criadero Genético Las Abejas"
+              },
+              {
+                "id": "reg-apic-criadero-reinas-raza",
+                "label": "Raza y Procedencia de las Reinas",
+                "type": "text",
+                "required": true,
+                "helpText": "Genética e hibridación de reinas seleccionadas.",
+                "placeholder": "Italiana pura del Criadero Las Abejas"
+              },
+              {
+                "id": "reg-apic-deposito-reserva",
+                "label": "Monto de Depósito de Reserva de Núcleos",
+                "type": "number",
+                "required": true,
+                "placeholder": "300"
               }
             ]
           }
@@ -1534,6 +1816,22 @@
                 "required": true,
                 "helpText": "Número de cajas Langstroth para poblar.",
                 "placeholder": "10"
+              },
+              {
+                "id": "reg-apic-cera-kilos-adquiridos",
+                "label": "Láminas de Cera Adquiridas (Kilos)",
+                "type": "number",
+                "required": true,
+                "helpText": "Cera estampada pura adquirida en bodega.",
+                "placeholder": "15"
+              },
+              {
+                "id": "reg-apic-pintura-tipo",
+                "label": "Tipo y Color de Pintura Utilizado en Cajas",
+                "type": "text",
+                "required": true,
+                "helpText": "Pintura protectora exterior no tóxica.",
+                "placeholder": "Pintura látex acrílica blanca base agua"
               }
             ]
           }
@@ -1610,6 +1908,14 @@
                   "Combustible de ahumador (viruta/sacos)"
                 ],
                 "placeholder": "Selecciona..."
+              },
+              {
+                "id": "reg-apic-herramientas-costo",
+                "label": "Costo de Adquisición del Kit de Campo",
+                "type": "number",
+                "required": true,
+                "helpText": "Costo total de ahumador, palanca y cepillo.",
+                "placeholder": "120"
               }
             ]
           }
@@ -1681,6 +1987,19 @@
                 "required": true,
                 "helpText": "Cantidad de trajes de protección listos para ti y tus acompañantes.",
                 "placeholder": "2"
+              },
+              {
+                "id": "reg-apic-guantes-tipo",
+                "label": "Tipo de Guantes de Protección",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Cuero de cabra (Recomendado)",
+                  "Lona gruesa",
+                  "Nitrilo grueso/químico",
+                  "Otro"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -1751,6 +2070,25 @@
                 "required": true,
                 "helpText": "Cantidad de cuadros que puede centrifugar a la vez el extractor.",
                 "placeholder": "4"
+              },
+              {
+                "id": "reg-apic-material-extractor",
+                "label": "Material de Construcción del Extractor",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Acero Inoxidable 304 Grado Alimenticio",
+                  "Acero Galvanizado (No recomendado)",
+                  "Plástico grado alimentario"
+                ],
+                "placeholder": "Selecciona..."
+              },
+              {
+                "id": "reg-apic-decantadores-capacidad",
+                "label": "Capacidad Total de Decantación (Litros)",
+                "type": "number",
+                "required": true,
+                "placeholder": "200"
               }
             ]
           }
@@ -1832,6 +2170,26 @@
                 "required": true,
                 "helpText": "Espacio entre colmenas para evitar confusión de las abejas al volver a su caja (deriva).",
                 "placeholder": "1.5"
+              },
+              {
+                "id": "reg-apic-orientacion-piqueras",
+                "label": "Orientación de Piqueras del Apiario",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Este (Recomendado)",
+                  "Sureste",
+                  "Sur",
+                  "Norte/Oeste"
+                ],
+                "placeholder": "Selecciona..."
+              },
+              {
+                "id": "reg-apic-caballetes-material",
+                "label": "Material Utilizado en Caballetes/Soportes",
+                "type": "text",
+                "required": true,
+                "placeholder": "Caballetes de tubo de acero galvanizado con grasa antifitosanitaria"
               }
             ]
           }
@@ -1902,6 +2260,14 @@
                 "required": true,
                 "helpText": "Método utilizado en tu bodega de almacenamiento de cuadros.",
                 "placeholder": "Conservación por ventilación y Bacillus thuringiensis"
+              },
+              {
+                "id": "reg-apic-cuadros-almacenados-cant",
+                "label": "Cantidad de Cuadros de Cera Almacenados",
+                "type": "number",
+                "required": true,
+                "helpText": "Cuadros construidos en stock listos para alzas.",
+                "placeholder": "120"
               }
             ]
           }
@@ -1972,6 +2338,14 @@
                 "required": true,
                 "helpText": "Suma de litros de tus fuentes de agua artificiales.",
                 "placeholder": "50"
+              },
+              {
+                "id": "reg-apic-bebedero-flotador-tipo",
+                "label": "Tipo de Flotador Seguro Instalado",
+                "type": "text",
+                "required": true,
+                "helpText": "Insumo de flotación (ej. corchos de vino, listones de madera).",
+                "placeholder": "Corchos de vino flotantes y rejilla de plástico"
               }
             ]
           }
@@ -2048,6 +2422,20 @@
                 "required": true,
                 "helpText": "Copia el enlace a tu Drive donde guardas los PDF de MSDS.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-msds-lista",
+                "label": "Hojas MSDS Incluidas en Carpeta",
+                "type": "multiselect",
+                "required": true,
+                "options": [
+                  "Ácido Oxálico",
+                  "Ácido Fórmico",
+                  "Timol / Apilife",
+                  "Amitraz",
+                  "Combustibles/Otros"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -2118,6 +2506,14 @@
                 "required": true,
                 "helpText": "La epinefrina expira rápidamente. Registra la fecha para su renovación anual.",
                 "placeholder": "2025-12-31"
+              },
+              {
+                "id": "reg-apic-botiquin-antihistaminico",
+                "label": "Nombre del Antihistamínico en Botiquín",
+                "type": "text",
+                "required": true,
+                "helpText": "Medicamento oral antihistamínico de rescate rápido.",
+                "placeholder": "Cetirizina 10mg / Loratadina"
               }
             ]
           }
@@ -2183,6 +2579,13 @@
                 "required": true,
                 "helpText": "Cantidad de letreros colocados en el apiario.",
                 "placeholder": "3"
+              },
+              {
+                "id": "reg-apic-distancia-carteles",
+                "label": "Distancia Promedio de Carteles a las Colmenas (Metros)",
+                "type": "number",
+                "required": true,
+                "placeholder": "50"
               }
             ]
           }
@@ -2253,6 +2656,25 @@
                 "required": true,
                 "helpText": "Número de correas de amarre listas para sujeción en camión.",
                 "placeholder": "4"
+              },
+              {
+                "id": "reg-apic-transporte-tipo-vehiculo",
+                "label": "Vehículo Utilizado para Transporte de Colmenas",
+                "type": "text",
+                "required": true,
+                "placeholder": "Camioneta Pickup 4x4 con estacas"
+              },
+              {
+                "id": "reg-apic-transporte-seguridad-mallas",
+                "label": "¿Cuenta con mallas de transporte de colmenas completas?",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Sí, malla perimetral de carga",
+                  "Sí, mallas individuales de piquera/tapa",
+                  "No"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -2334,6 +2756,13 @@
                 "required": true,
                 "helpText": "Título de la formación apícola completada.",
                 "placeholder": "Curso Básico de Apicultura Práctica"
+              },
+              {
+                "id": "reg-apic-entidad-capacitacion",
+                "label": "Entidad u Organización que Impartió el Curso",
+                "type": "text",
+                "required": true,
+                "placeholder": "Federación Nacional de Apicultores / SENA"
               }
             ]
           }
@@ -2404,6 +2833,20 @@
                 "required": true,
                 "helpText": "Persona experta que te guió en tus prácticas.",
                 "placeholder": "Don Carlos González"
+              },
+              {
+                "id": "reg-apic-mentor-horas-campo",
+                "label": "Horas de Práctica Acumuladas con el Mentor",
+                "type": "number",
+                "required": true,
+                "placeholder": "12"
+              },
+              {
+                "id": "reg-apic-mentor-aprendizajes",
+                "label": "Principales Consejos del Mentor en Campo",
+                "type": "textarea",
+                "required": true,
+                "placeholder": "Ahumar siempre de espaldas al viento, no abrir cajas en días nublados o fríos..."
               }
             ]
           }
@@ -2474,6 +2917,30 @@
                 "required": true,
                 "helpText": "Registrar fecha de la última inspección.",
                 "placeholder": "2024-05-15"
+              },
+              {
+                "id": "reg-apic-inspeccion-patron-cria",
+                "label": "Patrón de Cría Mayoritario",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Compacto / Sano (Excelente)",
+                  "En salpicaduras (Reina vieja/enferma)",
+                  "Escasa cría (Falta alimento)"
+                ],
+                "placeholder": "Selecciona..."
+              },
+              {
+                "id": "reg-apic-postura-huevos-detectada",
+                "label": "¿Postura de huevos de menos de 3 días detectada?",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Sí, en todas las colmenas",
+                  "Parcialmente",
+                  "No (Requiere atención urgente)"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -2544,6 +3011,14 @@
                 "required": true,
                 "helpText": "Anota si has visto celdas sospechosas de Loque o presencia de cría de yeso.",
                 "placeholder": "Apiario libre de Loque. Se observó un cuadro con cría de yeso leve que ya se ventiló..."
+              },
+              {
+                "id": "reg-apic-protocolo-desinfeccion",
+                "label": "Desinfectante Utilizado para Herramientas",
+                "type": "text",
+                "required": true,
+                "helpText": "Método para evitar contagios de esporas de Loque entre cajas.",
+                "placeholder": "Llama directa de soplete de gas en palanca apícola"
               }
             ]
           }
@@ -2614,6 +3089,18 @@
                 "required": true,
                 "helpText": "Porcentaje calculado en la última prueba mensual.",
                 "placeholder": "2"
+              },
+              {
+                "id": "reg-apic-varroa-metodo-test",
+                "label": "Método de Monitoreo de Varroa",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Lavado de alcohol (Test del frasco)",
+                  "Azúcar glass (Método no destructivo)",
+                  "Piso adhesivo (Caída natural)"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -2684,6 +3171,19 @@
                 "required": true,
                 "helpText": "Nombre y activo del producto (ej. Ácido Oxálico goteado).",
                 "placeholder": "Ácido Oxálico sublimado"
+              },
+              {
+                "id": "reg-apic-tratamiento-fecha-aplicacion",
+                "label": "Fecha de Inicio del Tratamiento contra Varroa",
+                "type": "date",
+                "required": true
+              },
+              {
+                "id": "reg-apic-tratamiento-duracion",
+                "label": "Duración del Tratamiento (Días)",
+                "type": "number",
+                "required": true,
+                "placeholder": "15"
               }
             ]
           }
@@ -2765,6 +3265,13 @@
                 "required": true,
                 "helpText": "Litros de jarabe 1:1 promedio suministrados.",
                 "placeholder": "2"
+              },
+              {
+                "id": "reg-apic-jarabe-1-1-azucar-kilos",
+                "label": "Kilos de Azúcar Utilizados en Jarabe 1:1",
+                "type": "number",
+                "required": true,
+                "placeholder": "20"
               }
             ]
           }
@@ -2835,6 +3342,13 @@
                 "required": true,
                 "helpText": "Cantidad total de azúcar comprado para reservas del apiario.",
                 "placeholder": "50"
+              },
+              {
+                "id": "reg-apic-reserva-litros-total",
+                "label": "Litros de Jarabe 2:1 Suministrados al Apiario",
+                "type": "number",
+                "required": true,
+                "placeholder": "40"
               }
             ]
           }
@@ -2905,6 +3419,13 @@
                 "required": true,
                 "helpText": "Número de tortas colocadas en el apiario.",
                 "placeholder": "15"
+              },
+              {
+                "id": "reg-apic-torta-formula",
+                "label": "Fórmula de Torta Proteica Utilizada",
+                "type": "text",
+                "required": true,
+                "placeholder": "Levadura de cerveza (40%) + Harina de soya desgrasada (40%) + Miel pura"
               }
             ]
           }
@@ -2975,6 +3496,18 @@
                 "required": true,
                 "helpText": "Cantidad de colmenas adicionales generadas de tus divisiones.",
                 "placeholder": "3"
+              },
+              {
+                "id": "reg-apic-enjambrazon-frecuencia",
+                "label": "Incidencia de Celdillas Reales de Enjambrazón",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Alta (Requiere división inmediata)",
+                  "Media (Se eliminaron celdas)",
+                  "Nula (Sin celdas de enjambrazón)"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -3045,6 +3578,13 @@
                 "required": true,
                 "helpText": "Cuántas uniones se efectuaron antes de la época fría.",
                 "placeholder": "2"
+              },
+              {
+                "id": "reg-apic-fusion-motivo",
+                "label": "Motivo de la Fusión de Colmenas",
+                "type": "text",
+                "required": true,
+                "placeholder": "Orfandad prolongada detectada en Colmena 4 en otoño"
               }
             ]
           }
@@ -3126,6 +3666,21 @@
                 "required": true,
                 "helpText": "Cantidad total de miel recolectada en esta cosecha.",
                 "placeholder": "240"
+              },
+              {
+                "id": "reg-apic-alzas-cosechadas-cant",
+                "label": "Cantidad de Alzas Melíferas Cosechadas",
+                "type": "number",
+                "required": true,
+                "placeholder": "12"
+              },
+              {
+                "id": "reg-apic-porcentaje-operculado",
+                "label": "Porcentaje de Celdillas Operculadas Promedio (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Meta de operculación para evitar humedad en la miel.",
+                "placeholder": "90"
               }
             ]
           }
@@ -3196,6 +3751,13 @@
                 "required": true,
                 "helpText": "Cantidad de marcos procesados en la mesa de desoperculación.",
                 "placeholder": "80"
+              },
+              {
+                "id": "reg-apic-cera-operculo-recuperada",
+                "label": "Cera de Opérculo Cosechada (Kilos)",
+                "type": "number",
+                "required": true,
+                "placeholder": "8"
               }
             ]
           }
@@ -3266,6 +3828,13 @@
                 "required": true,
                 "helpText": "Cantidad de miel líquida total centrifugada.",
                 "placeholder": "180"
+              },
+              {
+                "id": "reg-apic-tiempo-centrifugado",
+                "label": "Tiempo de Centrifugado por Carga (Minutos)",
+                "type": "number",
+                "required": true,
+                "placeholder": "10"
               }
             ]
           }
@@ -3336,6 +3905,14 @@
                 "required": true,
                 "helpText": "Cantidad de días que reposó la miel antes de embotellar.",
                 "placeholder": "14"
+              },
+              {
+                "id": "reg-apic-miel-humedad-refractometro",
+                "label": "Porcentaje de Humedad Final por Refractómetro (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Debe ser menor al 18% para evitar fermentación.",
+                "placeholder": "17.2"
               }
             ]
           }
@@ -3406,6 +3983,14 @@
                 "required": true,
                 "helpText": "Número de unidades de 500g listas para inventario de venta.",
                 "placeholder": "360"
+              },
+              {
+                "id": "reg-apic-unidades-envasadas-otras",
+                "label": "Cantidad de Frascos de Otras Presentaciones",
+                "type": "text",
+                "required": true,
+                "helpText": "Unidades envasadas de 250g o 1kg (ej: 80 frascos de 250g).",
+                "placeholder": "40 frascos de 250g y 20 frascos de 1kg"
               }
             ]
           }
@@ -3476,6 +4061,18 @@
                 "required": true,
                 "helpText": "Anota si viste comportamiento inusual (ej. defensividad alta, abejas lentas).",
                 "placeholder": "Vuelo normal en piqueras. Entrada abundante de polen amarillo. Se cortó maleza en Apiario 1..."
+              },
+              {
+                "id": "reg-apic-maint-pillaje-detectado",
+                "label": "¿Signos de Pillaje o Robos en Piqueras?",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "No, vuelo ordenado",
+                  "Leve (Peleas aisladas en piqueras)",
+                  "Grave (Alerta, pillaje generalizado)"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -3546,6 +4143,13 @@
                 "required": true,
                 "helpText": "Inventario físico de frascos listos para usar.",
                 "placeholder": "120"
+              },
+              {
+                "id": "reg-apic-inv-cera-panales-stock",
+                "label": "Láminas de Cera Estampada en Stock",
+                "type": "number",
+                "required": true,
+                "placeholder": "50"
               }
             ]
           }
@@ -3627,6 +4231,14 @@
                 "required": true,
                 "helpText": "Ingresa el código identificador de impuestos otorgado por la entidad gubernamental.",
                 "placeholder": "900.222.111-9"
+              },
+              {
+                "id": "reg-apic-nombre-comercial",
+                "label": "Nombre Comercial Registrado Oficialmente",
+                "type": "text",
+                "required": true,
+                "helpText": "El nombre legal oficial de tu empresa.",
+                "placeholder": "Apiario Oro Dulce S.A.S."
               }
             ]
           }
@@ -3697,6 +4309,13 @@
                 "required": true,
                 "helpText": "Código oficial pecuario asignado a tu predio.",
                 "placeholder": "REG-APIC-0092"
+              },
+              {
+                "id": "reg-apic-fecha-registro-pecuario",
+                "label": "Fecha de Expedición del Certificado Pecuario",
+                "type": "date",
+                "required": true,
+                "helpText": "Fecha de vigencia del registro apícola."
               }
             ]
           }
@@ -3768,6 +4387,13 @@
                 "required": true,
                 "helpText": "Código otorgado por la agencia de salud nacional.",
                 "placeholder": "RSA-009923-26"
+              },
+              {
+                "id": "reg-apic-fecha-vencimiento-sanitario",
+                "label": "Fecha de Vencimiento de la Licencia Sanitaria",
+                "type": "date",
+                "required": true,
+                "helpText": "Fecha de renovación del registro sanitario de alimentos."
               }
             ]
           }
@@ -3838,6 +4464,19 @@
                 "required": true,
                 "helpText": "Sube y pega el enlace del contrato firmado de tu apiario.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-propietario-nombre",
+                "label": "Nombre Completo del Propietario del Predio",
+                "type": "text",
+                "required": true,
+                "placeholder": "Roberto Pérez Gómez"
+              },
+              {
+                "id": "reg-apic-fecha-vencimiento-comodato",
+                "label": "Fecha de Vencimiento del Comodato",
+                "type": "date",
+                "required": true
               }
             ]
           }
@@ -3908,6 +4547,21 @@
                 "required": true,
                 "helpText": "Ingresa el número de póliza comercial contratado.",
                 "placeholder": "RC-APIC-99238"
+              },
+              {
+                "id": "reg-apic-seguro-rc-cobertura",
+                "label": "Suma Asegurada de Responsabilidad Civil",
+                "type": "number",
+                "required": true,
+                "helpText": "Suma asegurada máxima en póliza.",
+                "placeholder": "50000"
+              },
+              {
+                "id": "reg-apic-seguro-rc-aseguradora",
+                "label": "Compañía Aseguradora de Responsabilidad Civil",
+                "type": "text",
+                "required": true,
+                "placeholder": "Seguros del Estado"
               }
             ]
           }
@@ -3978,6 +4632,14 @@
                 "required": false,
                 "helpText": "Código de póliza si decides asegurar las colmenas físicamente.",
                 "placeholder": "AP-992381"
+              },
+              {
+                "id": "reg-apic-seguro-predial-cobertura",
+                "label": "Detalle de Cobertura Física Contratada",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Qué cubre la póliza (ej. robo de colmenas, incendios forestales).",
+                "placeholder": "Cubre robo de colmenas activas y daños físicos por vientos e incendios hasta $15000."
               }
             ]
           }
@@ -4059,6 +4721,13 @@
                 "required": true,
                 "helpText": "Ingresa el número de cuenta corriente o empresarial.",
                 "placeholder": "001-99238-23"
+              },
+              {
+                "id": "reg-apic-banco-nombre",
+                "label": "Nombre de la Entidad Bancaria",
+                "type": "text",
+                "required": true,
+                "placeholder": "Banco Agropecuario"
               }
             ]
           }
@@ -4124,6 +4793,14 @@
                 "required": true,
                 "helpText": "Referencia para tu conciliación contable.",
                 "placeholder": "9982"
+              },
+              {
+                "id": "reg-apic-tarjeta-cupo",
+                "label": "Cupo de Crédito de la Tarjeta Comercial",
+                "type": "number",
+                "required": true,
+                "helpText": "Límite de crédito asignado para compras del apiario.",
+                "placeholder": "3000"
               }
             ]
           }
@@ -4194,6 +4871,14 @@
                 "required": true,
                 "helpText": "Ej. Square Reader, Transferencia Bancaria, Stripe.",
                 "placeholder": "Square Reader"
+              },
+              {
+                "id": "reg-apic-pasarela-comision",
+                "label": "Porcentaje de Comisión Cobrado por Transacción",
+                "type": "number",
+                "required": true,
+                "helpText": "Comisión de Square/Stripe por cada venta.",
+                "placeholder": "3.5"
               }
             ]
           }
@@ -4265,6 +4950,18 @@
                 "required": true,
                 "helpText": "Nombre de la app o 'Hoja de Cálculo de Drive'.",
                 "placeholder": "Apiary Book"
+              },
+              {
+                "id": "reg-apic-qr-vinculados",
+                "label": "¿Colmenas Físicas Marcadas con Código QR/Identificador?",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Sí, todas",
+                  "Parcialmente",
+                  "No, uso numeración pintada"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -4330,6 +5027,23 @@
                 "required": true,
                 "helpText": "Ej. Wave, QuickBooks, Excel.",
                 "placeholder": "Wave Accounting"
+              },
+              {
+                "id": "reg-apic-cuentas-contables",
+                "label": "Cuentas de Gasto Activas Configuradas",
+                "type": "multiselect",
+                "required": true,
+                "helpText": "Categorías de gastos en tu software contable.",
+                "options": [
+                  "Alimentación",
+                  "Tratamientos sanitarios",
+                  "Combustible",
+                  "Envases",
+                  "Mano de obra",
+                  "Cera y alzas",
+                  "Otros"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -4395,6 +5109,19 @@
                 "required": true,
                 "helpText": "Enlace a la carpeta principal de tu almacenamiento en la nube.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-respaldos-frecuencia",
+                "label": "Frecuencia del Respaldo de Datos de Campo",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Diario",
+                  "Semanal",
+                  "Quincenal",
+                  "Mensual"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -4476,6 +5203,14 @@
                 "required": true,
                 "helpText": "Pega el texto que usarás para responder a los clientes.",
                 "placeholder": "Hola! Gracias por contactar a Apiario La Colmena. Ofrecemos miel 100% cruda cosechada localmente..."
+              },
+              {
+                "id": "reg-apic-propuesta-mayorista-texto",
+                "label": "Plantilla de Propuesta Mayorista para Comercios",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Propuesta comercial para enviar por correo/WhatsApp.",
+                "placeholder": "Ofrecemos cajas de miel de 500g con descuento del 35% por consignación..."
               }
             ]
           }
@@ -4541,6 +5276,22 @@
                 "required": true,
                 "helpText": "Escribe la estructura del código de lote que usarás.",
                 "placeholder": "LOTE-[APIARIO]-[AÑO][MES]"
+              },
+              {
+                "id": "reg-apic-trazabilidad-campos",
+                "label": "Variables registradas por Lote de Cosecha",
+                "type": "multiselect",
+                "required": true,
+                "helpText": "Datos anotados en cada lote envasado.",
+                "options": [
+                  "Apiario de origen",
+                  "Fecha de extracción",
+                  "Humedad de la miel (%)",
+                  "Color/Variedad floral",
+                  "Cantidad de frascos producidos",
+                  "Tratamientos previos de colmenas"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -4611,6 +5362,13 @@
                 "required": true,
                 "helpText": "Anota cualquier diferencia hallada o pago pendiente de registrar.",
                 "placeholder": "Semana conciliada. Se identificó un cobro duplicado de cera que ya se reclamó..."
+              },
+              {
+                "id": "reg-apic-ventas-semana-total",
+                "label": "Total de Ventas de la Semana Registradas",
+                "type": "number",
+                "required": true,
+                "placeholder": "1200"
               }
             ]
           }
@@ -4692,6 +5450,13 @@
                 "required": true,
                 "helpText": "Enlace a Google Drive con los archivos finales del logo.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-brand-nombre",
+                "label": "Nombre de Marca Registrado / Comercial",
+                "type": "text",
+                "required": true,
+                "placeholder": "Miel Oro de la Sierra"
               }
             ]
           }
@@ -4762,6 +5527,13 @@
                 "required": true,
                 "helpText": "Ej. #FFD700 (Dorado), #4A2711 (Marrón).",
                 "placeholder": "#FFD700, #4B3621"
+              },
+              {
+                "id": "reg-apic-fuentes-tipograficas",
+                "label": "Fuentes Tipográficas Oficiales (Títulos y Cuerpo)",
+                "type": "text",
+                "required": true,
+                "placeholder": "Outfit (Títulos) y Inter (Cuerpo y Tablas)"
               }
             ]
           }
@@ -4832,6 +5604,13 @@
                 "required": false,
                 "helpText": "Sube una foto de tu auto rotulado.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-uniforme-color",
+                "label": "Color y Estilo de Uniforme Elegido",
+                "type": "text",
+                "required": true,
+                "placeholder": "Camisa Polo amarilla con bordado verde y pantalón jean azul"
               }
             ]
           }
@@ -4902,6 +5681,13 @@
                 "required": true,
                 "helpText": "Sube y pega el enlace de tu etiqueta aprobada.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-etiqueta-dimensiones",
+                "label": "Dimensiones Físicas de la Etiqueta (Ancho x Alto mm)",
+                "type": "text",
+                "required": true,
+                "placeholder": "120 x 60 mm"
               }
             ]
           }
@@ -4983,6 +5769,13 @@
                 "required": true,
                 "helpText": "Enlace a Drive con tus fotos de producción.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-fotos-cantidad-total",
+                "label": "Cantidad Total de Fotos de Evidencia Organizadas",
+                "type": "number",
+                "required": true,
+                "placeholder": "24"
               }
             ]
           }
@@ -5053,6 +5846,13 @@
                 "required": true,
                 "helpText": "Sube tu archivo de diseño final.",
                 "placeholder": "https://drive.google.com/..."
+              },
+              {
+                "id": "reg-apic-folleto-imprenta-cant",
+                "label": "Cantidad de Folletos Impresos en Primera Edición",
+                "type": "number",
+                "required": true,
+                "placeholder": "200"
               }
             ]
           }
@@ -5123,6 +5923,13 @@
                 "required": true,
                 "helpText": "Cantidad total producida.",
                 "placeholder": "100"
+              },
+              {
+                "id": "reg-apic-imanes-costo-unitario",
+                "label": "Costo de Producir un Imán",
+                "type": "number",
+                "required": true,
+                "placeholder": "0.45"
               }
             ]
           }
@@ -5204,6 +6011,13 @@
                 "required": true,
                 "helpText": "Escribe la dirección web oficial (ej. www.mielpura.com).",
                 "placeholder": "www.mielpura.com"
+              },
+              {
+                "id": "reg-apic-dominio-registrador",
+                "label": "Compañía Registradora del Dominio",
+                "type": "text",
+                "required": true,
+                "placeholder": "Namecheap"
               }
             ]
           }
@@ -5274,6 +6088,13 @@
                 "required": true,
                 "helpText": "Pega la dirección web completa.",
                 "placeholder": "https://www.mielcolmena.com"
+              },
+              {
+                "id": "reg-apic-web-plataforma-hosting",
+                "label": "Plataforma de Hosting/CMS Utilizada",
+                "type": "text",
+                "required": true,
+                "placeholder": "Vercel / Next.js y TailwindCSS"
               }
             ]
           }
@@ -5344,6 +6165,18 @@
                 "required": true,
                 "helpText": "Ej. miel pura medellin, miel artesanal colombia.",
                 "placeholder": "miel pura [ciudad], apicultura [region]"
+              },
+              {
+                "id": "reg-apic-google-console-verificado",
+                "label": "¿Web verificada e indexada en Google Search Console?",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Sí",
+                  "En proceso",
+                  "No"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -5414,6 +6247,18 @@
                 "required": true,
                 "helpText": "Pega el enlace directo a tu perfil comercial de Google.",
                 "placeholder": "https://maps.app.goo.gl/..."
+              },
+              {
+                "id": "reg-apic-google-business-estado",
+                "label": "Estado de la Ficha de Google Business",
+                "type": "select",
+                "required": true,
+                "options": [
+                  "Activa y verificada públicamente",
+                  "Pendiente de verificación (carta/video)",
+                  "No creada"
+                ],
+                "placeholder": "Selecciona..."
               }
             ]
           }
@@ -5495,6 +6340,13 @@
                 "required": true,
                 "helpText": "Nombre y contacto de los comercios que ya tienen tu miel.",
                 "placeholder": "Tienda Natural Verde Vida - Tel: 555-99238\nFrutería Gourmet El Huerto..."
+              },
+              {
+                "id": "reg-apic-unidades-consignacion",
+                "label": "Total de Frascos Entregados a Consignación en Tiendas",
+                "type": "number",
+                "required": true,
+                "placeholder": "60"
               }
             ]
           }
@@ -5565,6 +6417,19 @@
                 "required": true,
                 "helpText": "Escribe dónde participarás.",
                 "placeholder": "Mercado Campesino de la Plaza Central"
+              },
+              {
+                "id": "reg-apic-feria-fecha",
+                "label": "Fecha de la Participación en Feria",
+                "type": "date",
+                "required": true
+              },
+              {
+                "id": "reg-apic-feria-ventas",
+                "label": "Ventas Totales Realizadas en el Día de Feria",
+                "type": "number",
+                "required": true,
+                "placeholder": "350"
               }
             ]
           }
@@ -5630,6 +6495,13 @@
                 "required": true,
                 "helpText": "El canal de donde llegó la mayor cantidad de clientes este mes.",
                 "placeholder": "Recomendados / Google Maps / Feria"
+              },
+              {
+                "id": "reg-apic-clientes-nuevos-mes",
+                "label": "Cantidad de Clientes Nuevos Captados en el Mes",
+                "type": "number",
+                "required": true,
+                "placeholder": "18"
               }
             ]
           }
@@ -5700,6 +6572,13 @@
                 "required": true,
                 "helpText": "Cantidad física de frascos que retornaron los clientes.",
                 "placeholder": "24"
+              },
+              {
+                "id": "reg-apic-envases-descuento-applied",
+                "label": "Monto de Descuentos Otorgados por Envases Devueltos",
+                "type": "number",
+                "required": true,
+                "placeholder": "120"
               }
             ]
           }

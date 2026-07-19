@@ -2315,6 +2315,17 @@ businessSteps.forEach((s) => { s.order = orderCounter++; allSteps.push(s); });
 operationsSteps.forEach((s) => { s.order = orderCounter++; allSteps.push(s); });
 customersSteps.forEach((s) => { s.order = orderCounter++; allSteps.push(s); });
 
+// Inject extra registration fields from extra-fields.js
+const extraFields = require("./extra-fields");
+allSteps.forEach((s) => {
+  if (extraFields[s.id]) {
+    if (!s.content.registroFields) {
+      s.content.registroFields = [];
+    }
+    s.content.registroFields.push(...extraFields[s.id]);
+  }
+});
+
 const blueprint = {
   id: "bp-apicultura-emprendimiento",
   slug: "apicultura-emprendimiento",
