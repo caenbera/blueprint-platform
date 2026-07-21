@@ -1,0 +1,162 @@
+{
+  "id": "fase-fases-recurrentes-clientes",
+  "title": "Fases Recurrentes de Clientes",
+  "block": "customers",
+  "steps": [
+    {
+      "id": "monthly-newsletter-market-updates",
+      "title": "Envío de Boletín Mensual con Actualizaciones de Mercado y Tips",
+      "type": "monthly",
+      "content": {
+        "overview": {
+          "title": "Envío de Boletín Mensual con Actualizaciones de Mercado y Tips",
+          "summary": "Redactar y enviar mensualmente un boletín (newsletter) curado que mantenga a los clientes y suscriptores informados sobre el mercado, cambios fiscales y consejos prácticos, reforzando tu autoridad.",
+          "body": "En la asesoría financiera, el silencio es interpretado como abandono o incompetencia. Un boletín mensual bien estructurado es la herramienta más eficaz para mantenerte en la mente de tus clientes (Top of Mind) entre las revisiones formales. No se trata de enviar noticias genéricas que ya leyeron en el periódico, sino de traducir los eventos macroeconómicos a lo que significan específicamente para su patrimonio."
+        },
+        "objective": {
+          "description": "Producir y distribuir el boletín mensual, seleccionando los temas más relevantes del mes y registrando el alcance y la tasa de apertura para medir el impacto."
+        },
+        "whyItMatters": "Un cliente que recibe valor constante y gratuito a través de tu boletín percibe un mayor retorno sobre su inversión (ROI) en tus honorarios. Además, es el canal perfecto para anunciar nuevos servicios, recordar la importancia de las revisiones anuales y mantener una comunicación de 'baja fricción' que previene que te contacten solo cuando hay una crisis.",
+        "bestPractices": [
+          "Estructura el boletín en 3 secciones fijas: 1) 'Lo que pasó este mes' (1 párrafo de contexto macro), 2) 'Qué significa para ti' (el impacto en su bolsillo), 3) 'Un consejo accionable' (algo que puedan hacer hoy).",
+          "Mantén el tono empático y educativo; evita el alarmismo o el sensacionalismo financiero ('¡El mercado se desploma!').",
+          "Incluye siempre un enlace directo para agendar una llamada rápida o responder al correo con dudas."
+        ],
+        "commonMistakes": [
+          "Copiar y pegar artículos de noticias financieras sin aportar tu análisis o visión única como asesor.",
+          "Enviar el boletín de forma inconsistente (ej. un mes sí, dos meses no), lo que hace que los suscriptores se den de baja por desinterés.",
+          "Hacer el boletín demasiado largo y técnico; los clientes ocupados lo archivarán sin leerlo si no captan su atención en los primeros 10 segundos."
+        ],
+        "tip": "Graba un video corto (Loom) de 3 minutos donde resumas el boletín del mes mirando a la cámara. Incrustar ese video en el correo aumenta la tasa de lectura y la conexión humana drásticamente en comparación con solo texto y gráficos.",
+        "recommendedTools": [
+          {
+            "name": "Mailchimp o ConvertKit (Para diseño, envío y analítica de boletines)",
+            "url": "https://mailchimp.com/"
+          },
+          {
+            "name": "Substack (Alternativa minimalista para boletines de opinión y análisis)",
+            "url": "https://substack.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "newsletter-month",
+            "label": "Mes y Año del Boletín Enviado",
+            "type": "text",
+            "placeholder": "Ej: Noviembre 2023",
+            "required": true
+          },
+          {
+            "id": "newsletter-topic",
+            "label": "Tema Central y Consejo Accionable del Mes",
+            "type": "textarea",
+            "placeholder": "Ej: 'Tema: Impacto de la nueva reforma fiscal en las deducciones de vivienda. Consejo: Revisar si tu hipoteca actual permite la portabilidad para aprovechar la nueva tasa antes de fin de año.'",
+            "required": true
+          },
+          {
+            "id": "subscribers-reached",
+            "label": "Número de Suscriptores Alcanzados y Tasa de Apertura (%)",
+            "type": "number",
+            "placeholder": "Ej: 450 suscriptores, 38% de apertura",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-newsletter-month",
+            "task": "Registrar el mes y año correspondiente a esta edición del boletín mensual.",
+            "registryFieldRef": "newsletter-month"
+          },
+          {
+            "id": "chk-define-newsletter-topic",
+            "task": "Redactar y registrar el tema central, el análisis de impacto y el consejo accionable del mes.",
+            "registryFieldRef": "newsletter-topic"
+          },
+          {
+            "id": "chk-track-newsletter-reach",
+            "task": "Enviar el boletín y registrar el alcance total y la tasa de apertura obtenida.",
+            "registryFieldRef": "subscribers-reached"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quarterly-satisfaction-nps-survey",
+      "title": "Encuesta Trimestral de Satisfacción y Net Promoter Score (NPS)",
+      "type": "quarterly",
+      "content": {
+        "overview": {
+          "title": "Encuesta Trimestral de Satisfacción y Net Promoter Score (NPS)",
+          "summary": "Medir cada 3 meses el nivel de satisfacción de los clientes activos y su probabilidad de recomendarte (NPS), identificando áreas de mejora antes de que se conviertan en cancelaciones.",
+          "body": "El Net Promoter Score (NPS) es la métrica reina de la lealtad en servicios profesionales. Responde a la pregunta: '¿Qué tan probable es que recomiendes nuestros servicios a un amigo o colega?'. Medirlo trimestralmente te permite detectar clientes 'detraigtores' (insatisfechos que hablan mal de ti) y convertir a los 'promotores' en tu principal motor de referidos."
+        },
+        "objective": {
+          "description": "Diseñar, enviar y analizar la encuesta trimestral de satisfacción, calculando el NPS y documentando los planes de acción para abordar el feedback recibido."
+        },
+        "whyItMatters": "En asesoría financiera, los clientes rara vez se quejan antes de irse; simplemente cancelan el retainer o cambian de asesor. Una encuesta trimestral te da una 'alerta temprana' si la satisfacción está cayendo. Además, demostrar que pides y actúas sobre su feedback refuerza la relación de confianza y el sentido de pertenencia del cliente.",
+        "bestPractices": [
+          "Mantén la encuesta extremadamente corta: 1 pregunta de NPS (escala 0-10), 1 pregunta de satisfacción general (1-5 estrellas) y 1 campo de texto abierto opcional ('¿Qué podemos hacer para mejorar?').",
+          "Llama personalmente a cualquier cliente que califique con 6 o menos (Detractores) en un plazo de 48 horas para entender su frustración y recuperarlo.",
+          "Comparte los resultados positivos y los cambios implementados gracias a su feedback en el boletín mensual siguiente."
+        ],
+        "commonMistakes": [
+          "Enviar encuestas largas de 20 preguntas que los clientes de alto patrimonio nunca tendrán tiempo de completar.",
+          "Pedir feedback pero no actuar sobre él ni comunicar los cambios realizados, lo que genera cinismo y frustración.",
+          "Medir el NPS solo una vez al año; los problemas de servicio deben detectarse y corregirse en tiempo real, no cuando ya es demasiado tarde."
+        ],
+        "tip": "Calcula tu NPS restando el porcentaje de Detractores (0-6) al porcentaje de Promotores (9-10). Un NPS superior a 50 es excelente en servicios financieros. Si tu NPS está estancado, enfócate en convertir a los clientes 'Pasivos' (7-8) en Promotores mediante pequeños detalles de experiencia del cliente (ej. un regalo sorpresa en su cumpleaños o una llamada proactiva sin motivo)."
+        ,
+        "recommendedTools": [
+          {
+            "name": "Typeform o SurveyMonkey (Para crear encuestas de NPS visuales y fáciles de responder desde el móvil)",
+            "url": "https://www.typeform.com/"
+          },
+          {
+            "name": "Delighted o Retently (Herramientas especializadas en métricas de experiencia del cliente y NPS)",
+            "url": "https://delighted.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "survey-quarter",
+            "label": "Trimestre y Año de la Encuesta",
+            "type": "text",
+            "placeholder": "Ej: T4 2023 (Octubre-Diciembre)",
+            "required": true
+          },
+          {
+            "id": "nps-score",
+            "label": "Puntuación NPS Obtenida (Promotores % - Detractores %)",
+            "type": "number",
+            "placeholder": "Ej: 65 (Escala de -100 a 100)",
+            "required": true
+          },
+          {
+            "id": "key-feedback-summary",
+            "label": "Resumen de Feedback Clave y Plan de Acción Derivado",
+            "type": "textarea",
+            "placeholder": "Ej: '3 clientes solicitaron más claridad en los informes de comisiones. Acción: Rediseñar la sección de 'Costos' en el portal del cliente para el próximo mes. 1 cliente detractor por demora en respuesta de emails. Acción: Implementar regla de respuesta en menos de 24h.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-survey-quarter",
+            "task": "Registrar el trimestre y año correspondiente a esta medición de satisfacción.",
+            "registryFieldRef": "survey-quarter"
+          },
+          {
+            "id": "chk-calculate-nps",
+            "task": "Enviar la encuesta, recopilar respuestas y calcular la puntuación NPS oficial del trimestre.",
+            "registryFieldRef": "nps-score"
+          },
+          {
+            "id": "chk-analyze-feedback",
+            "task": "Analizar los comentarios abiertos, contactar a los detractores y documentar el plan de acción de mejora.",
+            "registryFieldRef": "key-feedback-summary"
+          }
+        ]
+      }
+    }
+  ]
+}

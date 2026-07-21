@@ -1,0 +1,222 @@
+{
+  "id": "fase-constitucion-legal-cumplimiento",
+  "title": "Constitución Legal y Cumplimiento",
+  "block": "business",
+  "steps": [
+    {
+      "id": "step-constitucion-registro-mercantil",
+      "title": "Constitución y Registro Mercantil",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Constitución y Registro Mercantil",
+          "summary": "Formalizar legalmente la firma de asesoría financiera, registrando la sociedad, los estatutos y obteniendo la identificación fiscal oficial.",
+          "body": "Operar sin una estructura legal clara expone tu patrimonio personal a los riesgos del negocio y genera desconfianza inmediata en clientes corporativos o de alto patrimonio. Este paso convierte tu idea en una entidad legal reconocida, apta para firmar contratos, abrir cuentas bancarias a nombre de la empresa y emitir facturas legales."
+        },
+        "objective": {
+          "description": "Completar el registro mercantil de la sociedad, definir el objeto social específicamente para asesoría financiera y obtener el número de identificación fiscal (RUT, NIF, RUC, según el país)."
+        },
+        "whyItMatters": "Las entidades reguladoras financieras y los clientes institucionales exigen comprobar la existencia legal de la firma antes de cualquier relación comercial. Además, constituir una sociedad (como una S.A.S. o S.L.) protege tu patrimonio personal, separando las deudas y responsabilidades del negocio de tus bienes personales.",
+        "bestPractices": [
+          "Redacta un 'objeto social' amplio pero específico que incluya 'asesoría financiera', 'planificación patrimonial' y 'consultoría en inversiones', evitando términos que requieran licencias bancarias si no las tienes.",
+          "Verifica la disponibilidad del nombre comercial en el registro mercantil y como dominio web (.com o local) antes de iniciar el trámite.",
+          "Define claramente desde los estatutos las reglas de salida de socios y la distribución de utilidades para evitar conflictos futuros."
+        ],
+        "commonMistakes": [
+          "Usar un objeto social demasiado genérico (ej. 'consultoría general') que luego genera rechazos al abrir cuentas bancarias especializadas.",
+          "Constituir la empresa a nombre de un solo socio cuando operativamente será un esfuerzo conjunto, sin un acuerdo de accionistas previo.",
+          "Olvidar registrar la marca comercial en la oficina de propiedad intelectual, lo que permite que otro use tu nombre."
+        ],
+        "tip": "Antes de pagar los aranceles de registro, solicita a tu contador o abogado una 'simulación de carga tributaria' según el tipo de sociedad elegida. A veces, constituirse como persona jurídica con un régimen simplificado o especial es mucho más eficiente fiscalmente en los primeros 2 años que una sociedad anónima estándar.",
+        "recommendedTools": [
+          {
+            "name": "Cámara de Comercio o Registro Mercantil Local (Sitio oficial para verificación de nombres)",
+            "url": ""
+          },
+          {
+            "name": "LegalZoom o plataforma local de constitución de empresas en línea",
+            "url": "https://www.legalzoom.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "commercial-name",
+            "label": "Nombre Comercial y Razón Social Registrada",
+            "type": "text",
+            "placeholder": "Ej: Asesoría Financiera Integral S.A.S.",
+            "required": true
+          },
+          {
+            "id": "tax-id-number",
+            "label": "Número de Identificación Fiscal (RUT, NIF, RUC, EIN, etc.)",
+            "type": "text",
+            "placeholder": "Ej: 900.123.456-1",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-verify-name",
+            "task": "Verificar la disponibilidad del nombre comercial y reservarlo en el registro mercantil.",
+            "registryFieldRef": "commercial-name"
+          },
+          {
+            "id": "chk-draft-by-laws",
+            "task": "Redactar y firmar los estatutos sociales ante notario o cámara de comercio.",
+            "registryFieldRef": "commercial-name"
+          },
+          {
+            "id": "chk-obtain-tax-id",
+            "task": "Obtener y registrar el número de identificación fiscal oficial de la empresa.",
+            "registryFieldRef": "tax-id-number"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-registros-certificaciones-oficiales",
+      "title": "Registros y Certificaciones Oficiales",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Registros y Certificaciones Oficiales",
+          "summary": "Obtener las inscripciones, licencias o certificaciones profesionales obligatorias ante las entidades de vigilancia financiera o asociaciones del sector.",
+          "body": "A diferencia de otros servicios, la asesoría financiera está altamente regulada o autorregulada. Dependiendo de tu país y de si manejas activos directamente o solo das consejos, debes registrarte ante la entidad de vigilancia (ej. CNMV, SEC, Superfinanciera) o obtener certificaciones de prestigio (ej. CFP - Certified Financial Planner) que avalen tu competencia y te permitan operar legalmente."
+        },
+        "objective": {
+          "description": "Identificar los requisitos regulatorios específicos para tu modelo de negocio, iniciar el trámite de registro o certificación y documentar los códigos y fechas de vencimiento."
+        },
+        "whyItMatters": "Operar sin el registro o certificación requerida puede acarrear multas millonarias, el cierre inmediato del negocio e incluso responsabilidades penales. Además, mostrar un número de registro oficial en tu sitio web y contratos es el mayor generador de confianza para un cliente que va a entregarte su patrimonio.",
+        "bestPractices": [
+          "Consulta directamente con un abogado especialista en derecho financiero de tu país para determinar si tu modelo requiere registro de 'asesor de inversiones', 'distribuidor' o solo 'consultor'.",
+          "Si optas por certificaciones internacionales (como CFP), inicia el proceso de educación y examen con al menos 6 meses de anticipación.",
+          "Crea un calendario de renovaciones; estos registros no son eternos y requieren educación continua o pagos anuales."
+        ],
+        "commonMistakes": [
+          "Asumir que por no 'tocar el dinero' del cliente (solo dar consejos) no se necesita ningún registro. Muchas jurisdicciones exigen registro incluso para asesoría pura.",
+          "Usar títulos o siglas (ej. 'Asesor Financiero Certificado') sin tener la acreditación vigente, lo que constituye publicidad engañosa.",
+          "No notificar a la entidad reguladora sobre cambios en la dirección, socios o estructura de la empresa dentro de los plazos legales."
+        ],
+        "tip": "Mientras tramitas tu certificación o registro definitivo, opera bajo un modelo de 'Consultoría Educativa' (cobrando por enseñar al cliente a gestionar su dinero, no por recomendarle productos específicos), ya que este modelo suele tener menores barreras de entrada regulatorias en la mayoría de los países.",
+        "recommendedTools": [
+          {
+            "name": "CFP Board (Certified Financial Planner - Estándar global)",
+            "url": "https://www.cfp.net/"
+          },
+          {
+            "name": "Sitio web de la entidad reguladora financiera de tu país",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "regulatory-registration-code",
+            "label": "Código de Registro, Licencia o Certificación Profesional Obtenida",
+            "type": "text",
+            "placeholder": "Ej: Registro Nacional de Asesores de Inversión #A-12345 o CFP® #987654",
+            "required": true
+          },
+          {
+            "id": "registration-expiration-date",
+            "label": "Fecha de Vencimiento del Registro o Certificación",
+            "type": "date",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-identify-requirements",
+            "task": "Identificar y documentar los requisitos legales y certificaciones necesarias para operar en tu jurisdicción.",
+            "registryFieldRef": "regulatory-registration-code"
+          },
+          {
+            "id": "chk-submit-application",
+            "task": "Completar y enviar la solicitud de registro o certificación ante la entidad competente.",
+            "registryFieldRef": "regulatory-registration-code"
+          },
+          {
+            "id": "chk-log-expiration",
+            "task": "Registrar el código oficial otorgado y su fecha de vencimiento para programar su renovación.",
+            "registryFieldRef": "registration-expiration-date"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-estructura-contratos-legales",
+      "title": "Estructura de Contratos Legales",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Estructura de Contratos Legales",
+          "summary": "Redactar, revisar legalmente y estandarizar los contratos de prestación de servicios y acuerdos de confidencialidad (NDA) que protegerán a la firma y al cliente.",
+          "body": "En servicios financieros, un contrato no es solo un trámite de cobro; es tu principal herramienta de gestión de expectativas y protección legal. Debe dejar absolutamente claro qué servicios se prestan, cómo se cobra, qué NO se hace (limitación de responsabilidad) y cómo se protege la información del cliente."
+        },
+        "objective": {
+          "description": "Desarrollar y validar con un abogado las plantillas maestras de Contrato de Prestación de Servicios de Asesoría y Acuerdo de Confidencialidad (NDA)."
+        },
+        "whyItMatters": "Un contrato débil te deja expuesto a demandas si el mercado cae y el cliente culpa a tu asesoría, o si un empleado se va con tu cartera de clientes. Un contrato sólido delimita responsabilidades, establece el mecanismo de resolución de disputas (ej. arbitraje) y profesionaliza la relación desde el primer día.",
+        "bestPractices": [
+          "Incluye una cláusula explícita de 'No Garantía de Rendimiento', aclarando que las proyecciones son estimaciones basadas en supuestos y que los mercados conllevan riesgos.",
+          "Define claramente las condiciones de terminación del contrato: ¿cuánto aviso previo se necesita? ¿Qué pasa con los honorarios pagados por adelantado?",
+          "Utiliza firma electrónica con validez legal (ej. DocuSign) para agilizar el proceso y crear un rastro de auditoría inmutable."
+        ],
+        "commonMistakes": [
+          "Descargar una plantilla de contrato de internet sin adaptarla a la legislación local ni a la realidad específica de la asesoría financiera.",
+          "No incluir una cláusula de 'No Solicitación' que impida a un ex-empleado o socio contactarte a tus clientes para llevárselos.",
+          "Usar un lenguaje legal tan complejo que el cliente no lo entienda, lo que genera desconfianza en lugar de seguridad."
+        ],
+        "tip": "Crea dos versiones de tu contrato: una 'Versión Legal Completa' para tu archivo y respaldo, y una 'Carta de Compromiso' (Engagement Letter) de 2-3 páginas en lenguaje sencillo para el cliente, que resuma los puntos clave (alcance, honorarios, duración) y que se adjunta como anexo del contrato principal.",
+        "recommendedTools": [
+          {
+            "name": "DocuSign o Adobe Sign (Firma electrónica con validez legal)",
+            "url": "https://www.docusign.com/"
+          },
+          {
+            "name": "PandaDoc (Para creación y seguimiento de propuestas y contratos)",
+            "url": "https://www.pandadoc.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "contract-template-name",
+            "label": "Nombre de la Plantilla de Contrato Principal Validada",
+            "type": "text",
+            "placeholder": "Ej: Contrato Maestro de Prestación de Servicios de Asesoría Financiera v1.2",
+            "required": true
+          },
+          {
+            "id": "last-legal-review-date",
+            "label": "Fecha de la Última Revisión Legal por un Abogado Especialista",
+            "type": "date",
+            "required": true
+          },
+          {
+            "id": "contract-repository-url",
+            "label": "Enlace al Repositorio Seguro de Plantillas y Contratos Firmados",
+            "type": "url",
+            "placeholder": "Ej: https://drive.google.com/drive/folders/contratos-legales-firma",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-draft-contracts",
+            "task": "Redactar el borrador del contrato de servicios y el acuerdo de confidencialidad (NDA).",
+            "registryFieldRef": "contract-template-name"
+          },
+          {
+            "id": "chk-lawyer-validation",
+            "task": "Enviar los borradores a un abogado especialista para su revisión, ajuste a la ley local y validación final.",
+            "registryFieldRef": "last-legal-review-date"
+          },
+          {
+            "id": "chk-store-templates",
+            "task": "Guardar las plantillas finales aprobadas en un repositorio seguro y accesible solo para personal autorizado.",
+            "registryFieldRef": "contract-repository-url"
+          }
+        ]
+      }
+    }
+  ]
+}

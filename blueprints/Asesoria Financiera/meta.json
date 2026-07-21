@@ -1,0 +1,22 @@
+{
+  "slug": "asesoria-financiera-profesional",
+  "name": "Asesoría Financiera Profesional",
+  "description": "Blueprint metodológico para el diseño, constitución y operación de una firma de asesoría financiera. Cubre desde la definición estratégica y viabilidad, hasta el cumplimiento legal, la implementación de herramientas de trabajo seguras y las estrategias de captación y fidelización de clientes.",
+  "category": "Servicios Profesionales",
+  "industry": "Servicios",
+  "version": "1.0.0",
+  "author": "Carlos",
+  "language": "es",
+  "difficulty": "intermediate",
+  "estimatedDuration": "3 meses",
+  "tags": [
+    "finanzas",
+    "asesoria",
+    "consultoria",
+    "servicios",
+    "planificacion-financiera"
+  ],
+  "icon": "chart-line",
+  "status": "published",
+  "blueprintType": "construction"
+}

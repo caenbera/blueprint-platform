@@ -1,0 +1,158 @@
+{
+  "id": "fase-gestion-riesgos-proteccion",
+  "title": "Gestión de Riesgos y Protección",
+  "block": "business",
+  "steps": [
+    {
+      "id": "step-professional-liability-insurance",
+      "title": "Contratación de Seguro de Responsabilidad Civil Profesional (E&O)",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Contratación de Seguro de Responsabilidad Civil Profesional (E&O)",
+          "summary": "Asegurar la firma contra reclamaciones de clientes por negligencia, errores, omisiones o asesoramiento financiero inexacto que les cause pérdidas económicas.",
+          "body": "En la asesoría financiera, tu producto es el consejo. Si un mercado cae inesperadamente, es una cosa; pero si un cliente alega que le recomendaste un producto inadecuado para su perfil de riesgo o que cometiste un error en un cálculo fiscal, te enfrentarás a una demanda. El seguro de Errores y Omisiones (E&O) o Responsabilidad Civil Profesional es el escudo legal que protege el patrimonio de tu firma ante estos reclamos."
+        },
+        "objective": {
+          "description": "Evaluar, cotizar y contratar una póliza de seguro de responsabilidad civil profesional que cubra los riesgos específicos de la asesoría financiera, definiendo los límites de cobertura y las primas."
+        },
+        "whyItMatters": "Una sola demanda por mala praxis financiera puede superar fácilmente los ahorros de toda una vida de un asesor independiente, llevándolo a la bancarrota personal y al cierre de la empresa. Además, muchos clientes institucionales o de alto patrimonio exigen comprobar que su asesor cuenta con este seguro antes de firmar un contrato."
+        ,
+        "bestPractices": [
+          "Asegúrate de que la póliza cubra tanto el costo de la defensa legal (abogados) como las indemnizaciones o settlements. Los costos de defensa suelen ser más altos que el fallo mismo.",
+          "Revisa cuidadosamente las exclusiones: algunas pólizas no cubren disputas contractuales, fraudes o reclamos relacionados con criptoactivos si no están explícitamente incluidos.",
+          "Considera agregar un 'rider' (endoso) de responsabilidad cibernética, ya que una fuga de datos de clientes suele derivar en demandas por negligencia profesional."
+        ],
+        "commonMistakes": [
+          "Contratar un seguro de 'Responsabilidad Civil General' (que cubre si alguien se resbala en tu oficina) pensando que es lo mismo que 'Responsabilidad Civil Profesional' (que cubre errores en tu consejo financiero).",
+          "Subestimar el límite de cobertura por reclamo; en el sector financiero, los montos en disputa suelen ser altos (porcentajes del patrimonio del cliente).",
+          "Olvidar notificar a la aseguradora cuando la firma lanza un nuevo servicio o incorpora un nuevo socio, lo que podría anular la cobertura."
+        ],
+        "tip": "Exige a tu corredor de seguros que la póliza incluya una cláusula de 'Tail Coverage' (Cobertura de Cola o Período de Reporte Extendido). Esto te protege si cierras el negocio, te retiras o cambias de aseguradora, asegurando que sigas cubierto por consejos dados en el pasado que sean demandados en el futuro.",
+        "recommendedTools": [
+          {
+            "name": "Hiscox o Chubb (Aseguradoras especializadas en riesgos profesionales y financieros)",
+            "url": "https://www.hiscox.com/"
+          },
+          {
+            "name": "Corredor de Seguros Local Especializado en Riesgos Financieros",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "insurance-provider",
+            "label": "Aseguradora y Póliza de Responsabilidad Civil Profesional Seleccionada",
+            "type": "text",
+            "placeholder": "Ej: Hiscox - Póliza E&O para Asesores Financieros",
+            "required": true
+          },
+          {
+            "id": "insurance-policy-number",
+            "label": "Número de Póliza y Fecha de Vencimiento",
+            "type": "text",
+            "placeholder": "Ej: Póliza #E&O-987654, vence el 31 de diciembre de 2024",
+            "required": true
+          },
+          {
+            "id": "coverage-limit-amount",
+            "label": "Límite de Cobertura Contratado (Monto máximo por reclamo y agregado anual)",
+            "type": "number",
+            "placeholder": "Ej: 1000000 (Ej: 1,000,000 USD por reclamo / 2,000,000 USD agregado anual)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-evaluate-insurance",
+            "task": "Cotizar, evaluar y seleccionar la aseguradora y el tipo de póliza de Responsabilidad Civil Profesional (E&O).",
+            "registryFieldRef": "insurance-provider"
+          },
+          {
+            "id": "chk-register-policy",
+            "task": "Formalizar la contratación y registrar el número de póliza, fecha de vencimiento y el límite de cobertura financiera.",
+            "registryFieldRef": "insurance-policy-number"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-business-continuity-crisis-protocol",
+      "title": "Protocolo de Continuidad del Negocio y Gestión de Crisis",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Protocolo de Continuidad del Negocio y Gestión de Crisis",
+          "summary": "Diseñar un plan formal que garantice la protección de los activos y datos de los clientes, y la continuidad del servicio, en caso de que el asesor principal sufra una incapacidad, fallecimiento o crisis mayor.",
+          "body": "Las entidades reguladoras financieras (como la SEC en EE. UU. o equivalentes locales) exigen por ley que toda firma de asesoría tenga un Plan de Continuidad de Negocio (BCP). Este plan responde a la pregunta: 'Si el asesor principal tiene un accidente grave hoy, ¿quién se hace cargo de los clientes, dónde están sus contraseñas y cómo se protege su dinero?'. No tenerlo es una falta regulatoria grave."
+        },
+        "objective": {
+          "description": "Designar un asesor sucesor o contacto de confianza, documentar los protocolos de acceso de emergencia y redactar los planes de comunicación para clientes y reguladores en escenarios de crisis."
+        },
+        "whyItMatters": "Si te incapacitas y no hay un plan, los clientes entrarán en pánico, los reguladores congelarán las operaciones y tu familia enfrentará un caos legal para acceder a los activos del negocio. Un BCP sólido demuestra a los clientes que su patrimonio está protegido incluso si tú no estás, y es un requisito innegociable para pasar auditorías regulatorias."
+        ,
+        "bestPractices": [
+          "Designa un 'Asesor Sucesor' (otro profesional de confianza) que tenga la autoridad legal y técnica para acceder a las cuentas y contactar a los clientes en caso de tu fallecimiento o incapacidad.",
+          "Crea un 'Sobre de Emergencia' (físico o en una bóveda digital de alta seguridad) que contenga las contraseñas maestras, la ubicación de los archivos físicos de los clientes y los contratos legales.",
+          "Pre-redacta plantillas de comunicación para diferentes escenarios (ej. ciberataque, desastre natural, incapacidad médica) para no tener que redactarlas bajo presión."
+        ],
+        "commonMistakes": [
+          "Tener el plan de continuidad solo en tu cabeza o en un archivo de Word sin encriptar en tu escritorio, accesible para cualquier empleado o hacker.",
+          "Designar un sucesor sin haberle notificado, capacitado o firmado un acuerdo legal previo de asunción de responsabilidad.",
+          "Confundir un plan de respaldo de TI (backups) con un Plan de Continuidad de Negocio completo (que incluye aspectos legales, financieros y de comunicación)."
+        ],
+        "tip": "Utiliza la figura del 'Trusted Contact Person' (Persona de Contacto de Confianza) que exigen muchas regulaciones modernas. Es un familiar o socio de negocios designado por el cliente, a quien tienes permiso legal de contactar si detectas una anomalía en su cuenta o si tú sufres una emergencia y necesitas verificar el estado del cliente.",
+        "recommendedTools": [
+          {
+            "name": "FINRA / SEC Guidelines for Business Continuity Plans (Plantillas y guías de referencia)",
+            "url": "https://www.sec.gov/"
+          },
+          {
+            "name": "1Password Emergency Kit (Para generar y guardar el kit de acceso de emergencia físico)",
+            "url": "https://1password.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "successor-advisor-name",
+            "label": "Nombre del Asesor Sucesor o Contacto de Confianza Designado",
+            "type": "text",
+            "placeholder": "Ej: Lic. Juan Pérez (Firma XYZ) - Contacto en caso de incapacidad o fallecimiento",
+            "required": true
+          },
+          {
+            "id": "crisis-communication-plan",
+            "label": "Resumen del Plan de Comunicación de Crisis (Para clientes, empleados y reguladores)",
+            "type": "textarea",
+            "placeholder": "Ej: '1. En 24h, el sucesor enviará correo masivo desde servidor alternativo asegurando custodia de activos. 2. En 48h, se llamará a clientes de alto patrimonio. 3. Se notificará a la entidad reguladora en 72h según artículo X de la ley local.'",
+            "required": true
+          },
+          {
+            "id": "bcp-document-url",
+            "label": "Enlace al Documento Oficial del Plan de Continuidad de Negocio (BCP)",
+            "type": "url",
+            "placeholder": "Ej: https://drive.google.com/drive/folders/bcp-oficial-firma",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-designate-successor",
+            "task": "Identificar, contactar y formalizar legalmente al asesor sucesor o contacto de confianza de emergencia.",
+            "registryFieldRef": "successor-advisor-name"
+          },
+          {
+            "id": "chk-draft-communication",
+            "task": "Redactar las plantillas y el flujo de comunicación de crisis para clientes y entidades reguladoras.",
+            "registryFieldRef": "crisis-communication-plan"
+          },
+          {
+            "id": "chk-upload-bcp",
+            "task": "Consolidar todos los protocolos en el documento oficial de BCP y subirlo a un repositorio seguro y accesible para el sucesor.",
+            "registryFieldRef": "bcp-document-url"
+          }
+        ]
+      }
+    }
+  ]
+}

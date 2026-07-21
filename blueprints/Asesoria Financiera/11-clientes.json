@@ -1,0 +1,88 @@
+{
+  "id": "fase-branding-elementos-visuales",
+  "title": "Branding y Elementos Visuales",
+  "block": "customers",
+  "steps": [
+    {
+      "id": "step-diseno-logotipo-paleta-colores",
+      "title": "Diseño de Logotipo y Paleta de Colores",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Diseño de Logotipo y Paleta de Colores",
+          "summary": "Crear y documentar la identidad visual central de la firma (logotipo, colores y tipografías) para garantizar una imagen coherente, profesional y que inspire confianza en todos los puntos de contacto.",
+          "body": "En la asesoría financiera, la percepción de competencia comienza mucho antes de que el cliente revise tus números; comienza con lo que ve. Un logotipo amateur, colores estridentes o tipografías ilegibles en tus informes generan desconfianza subconsciente inmediata. Tu identidad visual debe comunicar estabilidad, claridad y profesionalismo, actuando como el uniforme de tu marca."
+        },
+        "objective": {
+          "description": "Definir, diseñar y documentar formalmente la paleta de colores corporativa (con códigos HEX), las tipografías oficiales y obtener los archivos finales del logotipo en formatos vectoriales y de alta resolución."
+        },
+        "whyItMatters": "La consistencia visual construye reconocimiento y credibilidad. Si tu sitio web usa un estilo, pero tus informes en PDF usan otro, y tus tarjetas de presentación un tercero, el cliente percibe desorganización. Un manual de marca básico asegura que cada documento, correo o presentación que salga de tu firma refuerce la misma sensación de seguridad y autoridad.",
+        "bestPractices": [
+          "Utiliza colores psicológicamente asociados a la confianza y las finanzas (ej. azules profundos, verdes bosque, grises pizarra) combinados con un color de acento para llamadas a la acción.",
+          "Asegúrate de que el logotipo funcione perfectamente en una sola tinta (blanco y negro) y sobre fondos oscuros, ya que se usará en membretes, sellos y firmas de correo.",
+          "Elige tipografías con alta legibilidad (sans-serif para cuerpos de texto en informes digitales) y limita la combinación a un máximo de dos familias tipográficas."
+        ],
+        "commonMistakes": [
+          "Usar iconos o imágenes de stock genéricos (ej. la típica moneda dorada o la mano estrechando otra mano) que hacen que tu firma se vea como una plantilla barata.",
+          "Sobrecargar el logotipo con demasiados detalles que se pierden cuando se reduce al tamaño de un favicon de sitio web o una foto de perfil en redes sociales.",
+          "No documentar los códigos de color exactos, lo que resulta en que cada proveedor (imprenta, diseñador web) use un tono ligeramente diferente, arruinando la consistencia."
+        ],
+        "tip": "Crea un 'Mini Manual de Marca' de una sola página. No necesitas un libro de 50 páginas. Solo necesitas una hoja que diga: 'Este es nuestro logo (y cómo NO deformarlo), estos son nuestros 3 colores con sus códigos HEX/RGB, y estas son nuestras dos fuentes para títulos y párrafos'. Comparte esta hoja con cualquiera que cree contenido para tu firma.",
+        "recommendedTools": [
+          {
+            "name": "Coolors.co (Generador de paletas de colores profesionales)",
+            "url": "https://coolors.co/"
+          },
+          {
+            "name": "Canva Pro o Adobe Illustrator (Para diseño de logotipo y manual de marca)",
+            "url": "https://www.canva.com/"
+          },
+          {
+            "name": "Google Fonts (Para seleccionar tipografías web legibles y gratuitas)",
+            "url": "https://fonts.google.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "brand-color-palette",
+            "label": "Paleta de Colores de Marca (Códigos HEX y uso asignado)",
+            "type": "textarea",
+            "placeholder": "Ej: Primario: #0A2540 (Azul profundo, para fondos y títulos). Secundario: #FFFFFF (Blanco, para espacios negativos). Acento: #00D084 (Verde esmeralda, solo para botones y gráficos de crecimiento).",
+            "required": true
+          },
+          {
+            "id": "brand-typography",
+            "label": "Tipografías Oficiales de la Marca",
+            "type": "textarea",
+            "placeholder": "Ej: Títulos y Logotipo: 'Montserrat' (Negrita). Cuerpo de texto e informes: 'Inter' o 'Open Sans' (Regular).",
+            "required": true
+          },
+          {
+            "id": "logo-assets-url",
+            "label": "Enlace al Repositorio con Archivos Finales del Logotipo",
+            "type": "url",
+            "placeholder": "Ej: https://drive.google.com/drive/folders/branding-assets-firma (Debe incluir formatos .SVG, .PNG fondo transparente y .JPG)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-colors",
+            "task": "Definir, validar y registrar la paleta de colores corporativa con sus códigos HEX exactos.",
+            "registryFieldRef": "brand-color-palette"
+          },
+          {
+            "id": "chk-select-typography",
+            "task": "Seleccionar y registrar las familias tipográficas oficiales para títulos y cuerpos de texto.",
+            "registryFieldRef": "brand-typography"
+          },
+          {
+            "id": "chk-upload-logo-assets",
+            "task": "Finalizar el diseño del logotipo y subir los archivos maestros (vectoriales y de alta resolución) al repositorio seguro.",
+            "registryFieldRef": "logo-assets-url"
+          }
+        ]
+      }
+    }
+  ]
+}

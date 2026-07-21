@@ -1,0 +1,181 @@
+{
+  "id": "fase-fases-recurrentes-negocios",
+  "title": "Fases Recurrentes de Negocios",
+  "block": "business",
+  "steps": [
+    {
+      "id": "monthly-tax-and-social-security-payment",
+      "title": "Declaración y Pago de Impuestos y Seguridad Social",
+      "type": "monthly",
+      "content": {
+        "overview": {
+          "title": "Declaración y Pago de Impuestos y Seguridad Social",
+          "summary": "Ejecutar mensualmente el cálculo, declaración y pago de los impuestos correspondientes a los ingresos del mes y las contribuciones de seguridad social del equipo.",
+          "body": "El cumplimiento fiscal mensual es la columna vertebral de la salud legal de tu firma. En la asesoría financiera, donde la reputación y la ética son tu producto, caer en mora con la entidad tributaria o con la seguridad social no solo genera multas e intereses, sino que mancha tu historial crediticio y profesional, poniendo en riesgo tus licencias regulatorias."
+        },
+        "objective": {
+          "description": "Conciliar los ingresos y gastos del mes, calcular los impuestos a pagar (IVA, retenciones, renta anticipos) y las contribuciones de seguridad social, realizando los pagos antes de las fechas límite."
+        },
+        "whyItMatters": "Las entidades reguladoras financieras y tributarias cruzan datos. Mantener los impuestos al día es requisito para licencias, créditos y contratos corporativos.",
+        "bestPractices": [
+          "Programa los pagos en tu calendario con al menos 5 días de anticipación a la fecha límite oficial para evitar olvidos o fallos en la pasarela de pagos bancarios.",
+          "Separa mentalmente el IVA o impuestos retenidos desde el momento en que recibes el pago del cliente; nunca los consideres como ingresos disponibles para operar.",
+          "Revisa mensualmente los cambios en los topes de cotización de la seguridad social para evitar pagar de menos o de más."
+        ],
+        "commonMistakes": [
+          "Pagar los impuestos con el flujo de caja operativo sin haber separado previamente el monto, generando descapitalización en momentos críticos.",
+          "Olvidar declarar los impuestos de los meses donde no hubo ingresos; en muchos regímenes, la declaración en cero (inactiva) es obligatoria y su omisión genera multas.",
+          "No conciliar los pagos de seguridad social con los contratos reales de los empleados o contratistas, exponiendo a la firma a demandas laborales."
+        ],
+        "tip": "Crea una 'Cuenta de Pasivos Fiscales' en tu banco. Cada vez que emites una factura, transfiere automáticamente el porcentaje exacto del impuesto (ej. 16% IVA + 10% retención) a esta cuenta. Trátala como si ese dinero ya no te perteneciera; es dinero del gobierno que tú solo estás custodiando temporalmente.",
+        "recommendedTools": [
+          {
+            "name": "Software Contable (QuickBooks, Xero) con módulo de impuestos integrado",
+            "url": "https://quickbooks.intuit.com/"
+          },
+          {
+            "name": "Portal oficial de la entidad tributaria de tu país (SAT, DIAN, IRS, AEAT)",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "tax-payment-month",
+            "label": "Mes y Año de la Declaración y Pago",
+            "type": "text",
+            "placeholder": "Ej: Octubre 2023",
+            "required": true
+          },
+          {
+            "id": "taxes-paid-amount",
+            "label": "Monto Total de Impuestos Pagados (IVA, Retenciones, Renta)",
+            "type": "number",
+            "placeholder": "Ej: 1250.00",
+            "required": true
+          },
+          {
+            "id": "social-security-paid-amount",
+            "label": "Monto Total de Seguridad Social Pagada (Empleador y Empleados)",
+            "type": "number",
+            "placeholder": "Ej: 450.00",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-tax-month",
+            "task": "Registrar el mes y año correspondiente a esta declaración fiscal mensual.",
+            "registryFieldRef": "tax-payment-month"
+          },
+          {
+            "id": "chk-calc-and-pay-taxes",
+            "task": "Calcular, declarar y realizar el pago de los impuestos del mes ante la entidad tributaria.",
+            "registryFieldRef": "taxes-paid-amount"
+          },
+          {
+            "id": "chk-calc-and-pay-social-security",
+            "task": "Calcular, planillar y pagar las contribuciones de seguridad social del equipo.",
+            "registryFieldRef": "social-security-paid-amount"
+          }
+        ]
+      }
+    },
+    {
+      "id": "yearly-mercantile-and-certification-renewal",
+      "title": "Renovación Anual de Matrículas Mercantiles y Certificaciones",
+      "type": "yearly",
+      "content": {
+        "overview": {
+          "title": "Renovación Anual de Matrículas Mercantiles y Certificaciones",
+          "summary": "Gestionar anualmente la renovación del registro mercantil de la empresa y las certificaciones o licencias profesionales obligatorias para operar en el sector financiero.",
+          "body": "Las licencias para operar no son eternas. La Cámara de Comercio, la entidad reguladora financiera y los organismos de certificación profesional (ej. CFP Board) exigen renovaciones anuales que implican el pago de aranceles, la presentación de estados financieros auditados o la comprobación de horas de educación continua. Dejar vencer estos registros paraliza tu capacidad legal de facturar y asesorar."
+        },
+        "objective": {
+          "description": "Ejecutar los trámites de renovación mercantil y profesional antes de las fechas de vencimiento, pagando los aranceles correspondientes y actualizando la información de la firma."
+        },
+        "whyItMatters": "Operar con el registro mercantil vencido puede impedirte renovar contratos bancarios, firmar nuevos contratos con clientes o acceder a licitaciones. Operar con certificaciones profesionales vencidas no solo es ilegal en muchos casos, sino que te expone a sanciones disciplinarias por parte de los colegios o juntas de reguladores, incluyendo la suspensión definitiva de tu licencia.",
+        "bestPractices": [
+          "Configura alertas en tu calendario 90 días antes de la fecha de vencimiento de cada registro; algunos trámites (como la auditoría de estados financieros) toman semanas de preparación.",
+          "Aprovecha la renovación anual para actualizar la información de la firma (dirección, socios, representantes legales) y evitar inconsistencias entre el registro mercantil y la entidad tributaria.",
+          "Lleva un registro digital organizado de los certificados de horas de educación continua (CPE/CE) aprobados para presentarlos en caso de auditoría aleatoria."
+        ],
+        "commonMistakes": [
+          "Dejar la renovación para la última semana, asumiendo que los trámites son inmediatos, y terminar pagando multas por extemporaneidad.",
+          "No completar las horas de educación continua requeridas durante el año, lo que resulta en la suspensión automática de la certificación profesional al momento de renovarla.",
+          "Olvidar renovar los permisos municipales o de funcionamiento de la oficina física, lo que puede resultar en el cierre temporal del local por parte de las autoridades."
+        ],
+        "tip": "Crea un 'Tablero de Cumplimiento Anual' (puede ser en Trello, Notion o Asana) con una tarjeta por cada licencia o registro. Cada tarjeta debe tener: Fecha de vencimiento, Costo de renovación, Requisitos previos (ej. auditoría, horas de educación) y el enlace al trámite en línea. Revisa este tablero en la primera semana de cada trimestre.",
+        "recommendedTools": [
+          {
+            "name": "Notion o Asana (Para crear el Tablero de Cumplimiento Anual)",
+            "url": "https://www.notion.so/"
+          },
+          {
+            "name": "Portal de la Cámara de Comercio o Registro Mercantil Local",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "renewal-year",
+            "label": "Año de la Renovación",
+            "type": "text",
+            "placeholder": "Ej: 2024",
+            "required": true
+          },
+          {
+            "id": "mercantile-renewal-status",
+            "label": "Estado de la Renovación Mercantil (Cámara de Comercio / Registro)",
+            "type": "select",
+            "options": [
+              "Renovado exitosamente y certificado descargado",
+              "En trámite (Pendiente de aprobación o pago)",
+              "No realizado (Requiere acción inmediata por vencimiento)"
+            ],
+            "required": true
+          },
+          {
+            "id": "certification-renewal-status",
+            "label": "Estado de la Renovación de Certificaciones Profesionales y Licencias Regulatorias",
+            "type": "select",
+            "options": [
+              "Renovado exitosamente (Horas CE/CPE validadas y aranceles pagados)",
+              "En trámite (Pendiente de validación de horas o pago)",
+              "No realizado (Requiere acción inmediata por vencimiento)"
+            ],
+            "required": true
+          },
+          {
+            "id": "renewal-costs-total",
+            "label": "Costo Total de las Renovaciones Anuales (Aranceles, auditorías, cursos)",
+            "type": "number",
+            "placeholder": "Ej: 1500.00",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-renewal-year",
+            "task": "Registrar el año correspondiente a este ciclo de renovaciones anuales.",
+            "registryFieldRef": "renewal-year"
+          },
+          {
+            "id": "chk-renew-mercantile",
+            "task": "Completar el trámite de renovación mercantil, pagar los aranceles y guardar el certificado actualizado.",
+            "registryFieldRef": "mercantile-renewal-status"
+          },
+          {
+            "id": "chk-renew-certifications",
+            "task": "Validar las horas de educación continua, pagar los aranceles y renovar las licencias y certificaciones profesionales.",
+            "registryFieldRef": "certification-renewal-status"
+          },
+          {
+            "id": "chk-calc-renewal-costs",
+            "task": "Sumar y registrar el costo total incurrido en todas las renovaciones anuales (aranceles, auditorías, cursos).",
+            "registryFieldRef": "renewal-costs-total"
+          }
+        ]
+      }
+    }
+  ]
+}

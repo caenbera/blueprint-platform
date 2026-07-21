@@ -1,0 +1,245 @@
+{
+  "id": "fase-fases-recurrentes-operaciones",
+  "title": "Fases Recurrentes de Operaciones",
+  "block": "operations",
+  "steps": [
+    {
+      "id": "weekly-portfolio-and-tasks-review",
+      "title": "Revisión Semanal de Cartera de Clientes y Tareas Pendientes",
+      "type": "weekly",
+      "content": {
+        "overview": {
+          "title": "Revisión Semanal de Cartera de Clientes y Tareas Pendientes",
+          "summary": "Dedicar un bloque de tiempo fijo cada semana para revisar el estado de la cartera de clientes, despejar tareas administrativas pendientes y planificar la semana entrante.",
+          "body": "En la asesoría financiera, la consistencia operativa es tan importante como el conocimiento técnico. Una revisión semanal estructurada evita que las solicitudes de los clientes se pierdan en el correo electrónico, que las fechas límite de implementación se venzan y que el asesor termine la semana sintiendo que 'no avanzó en nada importante'. Este ritual semanal es el motor de tu productividad."
+        },
+        "objective": {
+          "description": "Ejecutar una revisión sistemática de 1 a 2 horas cada semana para auditar el progreso de los planes activos, responder consultas pendientes y bloquear tiempo en la agenda para la semana siguiente."
+        },
+        "whyItMatters": "Sin un ritual semanal, las tareas urgentes pero no importantes (como responder correos triviales) devoran el tiempo destinado a tareas importantes pero no urgentes (como el análisis profundo de un plan o la prospección). La revisión semanal te devuelve el control de tu agenda y asegura que ningún cliente se sienta ignorado por más de 5 días hábiles.",
+        "bestPractices": [
+          "Bloquea un horario fijo e inamovible en tu calendario (ej. viernes de 4:00 PM a 5:30 PM) exclusivamente para esta revisión.",
+          "Utiliza un tablero Kanban (Por hacer, En progreso, Esperando al cliente, Completado) para visualizar el estado de cada cliente.",
+          "Aplica la regla de 'Cero Bandeja de Entrada': archiva, delega o responde cada correo relacionado con clientes antes de cerrar la semana."
+        ],
+        "commonMistakes": [
+          "Hacer la revisión 'cuando haya tiempo', lo que invariablemente significa que nunca se hace.",
+          "Mezclar esta revisión operativa con la prospección de nuevos clientes; son modos de trabajo diferentes y requieren enfoques distintos.",
+          "No registrar las acciones tomadas, lo que obliga a empezar de cero la semana siguiente sin recordar en qué punto quedó cada cliente."
+        ],
+        "tip": "Crea una plantilla de correo o mensaje pre-redactada para los clientes que están en la fase de 'Esperando al cliente' (ej. 'Hola [Nombre], solo recordándote amablemente que para avanzar con tu plan de jubilación necesito que me envíes el estado de cuenta de tu cuenta X antes del martes'). Copiar y pegar esto te ahorra 15 minutos por cliente.",
+        "recommendedTools": [
+          {
+            "name": "Trello o Asana (Para gestión visual de tareas por cliente)",
+            "url": "https://trello.com/"
+          },
+          {
+            "name": "TextExpander o Espacio de Trabajo de Gmail (Para respuestas rápidas y plantillas de seguimiento)",
+            "url": "https://textexpander.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "weekly-review-date",
+            "label": "Fecha de la Revisión Semanal",
+            "type": "date",
+            "required": true
+          },
+          {
+            "id": "pending-tasks-count",
+            "label": "Número de Tareas Pendientes o Clientes en 'Espera de Respuesta'",
+            "type": "number",
+            "placeholder": "Ej: 4",
+            "required": true
+          },
+          {
+            "id": "urgent-client-actions",
+            "label": "Acciones Urgentes o Bloqueos Detectados para la Próxima Semana",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Llamar a Cliente A para revisar cambios en su póliza de vida. 2. Enviar proyección actualizada a Cliente B antes del miércoles. 3. Renovar licencia de software de planificación.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-review-date",
+            "task": "Registrar la fecha en que se realizó la revisión semanal.",
+            "registryFieldRef": "weekly-review-date"
+          },
+          {
+            "id": "chk-count-pending",
+            "task": "Contabilizar y registrar el número de tareas o clientes que requieren acción inmediata.",
+            "registryFieldRef": "pending-tasks-count"
+          },
+          {
+            "id": "chk-list-urgent-actions",
+            "task": "Documentar las acciones urgentes y bloqueos que se deben resolver en los próximos 5 días hábiles.",
+            "registryFieldRef": "urgent-client-actions"
+          }
+        ]
+      }
+    },
+    {
+      "id": "monthly-market-and-knowledge-update",
+      "title": "Actualización Mensual de Conocimientos, Normativas y Tasas de Mercado",
+      "type": "monthly",
+      "content": {
+        "overview": {
+          "title": "Actualización Mensual de Conocimientos, Normativas y Tasas de Mercado",
+          "summary": "Dedicar tiempo cada mes a estudiar cambios en la regulación financiera, actualizaciones fiscales y tendencias de mercado para mantener la asesoría precisa y vigente.",
+          "body": "El entorno financiero es dinámico: las tasas de interés cambian, las leyes fiscales se reforman y aparecen nuevos vehículos de inversión. Un asesor que da consejos basados en la normativa o el mercado de hace un año no solo es ineficaz, sino que expone a su cliente a riesgos innecesarios y a la firma a responsabilidades legales. La educación continua mensual no es opcional, es parte del servicio."
+        },
+        "objective": {
+          "description": "Revisar y documentar mensualmente los cambios macroeconómicos, regulatorios o fiscales relevantes que impacten directamente las recomendaciones dadas a la cartera de clientes."
+        },
+        "whyItMatters": "La credibilidad de un asesor financiero se construye sobre la precisión y la actualidad de su conocimiento. Mantenerse actualizado te permite anticipar problemas para tus clientes (ej. 'La nueva reforma fiscal afecta tu deducción, hagamos este ajuste') y te posiciona como una autoridad proactiva, no reactiva, justificando tus honorarios.",
+        "bestPractices": [
+          "Suscríbete a boletines oficiales de las entidades reguladoras locales (ej. Comisión de Valores, Banco Central, Autoridad Tributaria).",
+          "Dedica al menos 2 horas al mes a leer análisis de fuentes primarias, no solo resúmenes de redes sociales.",
+          "Si hay un cambio regulatorio mayor, envía una comunicación proactiva y simplificada a todos tus clientes explicando cómo les afecta (o no les afecta)."
+        ],
+        "commonMistakes": [
+          "Confiar únicamente en noticias sensacionalistas o hilos de redes sociales para tomar decisiones que afectan el patrimonio de los clientes.",
+          "Ignorar las actualizaciones fiscales locales, asumiendo que 'la contabilidad es cosa del contador' (el asesor debe conocer el impacto fiscal de las inversiones).",
+          "No documentar las fuentes de la actualización, lo que dificulta respaldar una recomendación si un cliente o un auditor la cuestiona."
+        ],
+        "tip": "Crea una 'Matriz de Impacto' simple cada mes: Columna 1: El cambio (ej. 'Subida de tasa de referencia'). Columna 2: A quién afecta en mi cartera (ej. 'Clientes con deuda variable o bonos de largo plazo'). Columna 3: Acción recomendada (ej. 'Revisar refinanciamiento o rebalanceo'). Esto convierte la teoría en acción práctica.",
+        "recommendedTools": [
+          {
+            "name": "Bloomberg o Reuters (Para noticias financieras de primera mano)",
+            "url": "https://www.bloomberg.com/"
+          },
+          {
+            "name": "Sitio web oficial de la entidad reguladora financiera de tu país",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "monthly-update-month",
+            "label": "Mes y Año de la Actualización",
+            "type": "text",
+            "placeholder": "Ej: Octubre 2023",
+            "required": true
+          },
+          {
+            "id": "key-market-changes",
+            "label": "Principales Cambios de Mercado o Tasas Identificados",
+            "type": "textarea",
+            "placeholder": "Ej: 'La tasa de interés de referencia subió 0.5%. Los bonos del tesoro a 10 años rinden un 4.5%. Esto impacta las proyecciones de ingresos fijos de los clientes en fase de retiro.'",
+            "required": true
+          },
+          {
+            "id": "new-regulations-applied",
+            "label": "Nuevas Normativas o Cambios Fiscales que Requieren Ajuste en los Planes",
+            "type": "textarea",
+            "placeholder": "Ej: 'Nueva regulación sobre declaración de activos en el extranjero a partir del próximo año fiscal. Se debe agregar una sección de cumplimiento a los planes de los clientes con inversiones offshore.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-update-month",
+            "task": "Registrar el mes y año correspondiente a esta revisión de actualización.",
+            "registryFieldRef": "monthly-update-month"
+          },
+          {
+            "id": "chk-document-market-changes",
+            "task": "Documentar los cambios macroeconómicos o de mercado más relevantes del mes.",
+            "registryFieldRef": "key-market-changes"
+          },
+          {
+            "id": "chk-document-regulations",
+            "task": "Identificar y registrar cualquier cambio normativo o fiscal que requiera ajustar los planes de los clientes.",
+            "registryFieldRef": "new-regulations-applied"
+          }
+        ]
+      }
+    },
+    {
+      "id": "quarterly-security-and-data-audit",
+      "title": "Auditoría Trimestral de Seguridad de Datos, Accesos y Respaldos",
+      "type": "quarterly",
+      "content": {
+        "overview": {
+          "title": "Auditoría Trimestral de Seguridad de Datos, Accesos y Respaldos",
+          "summary": "Realizar una verificación profunda cada 3 meses para garantizar que los protocolos de seguridad, los respaldos en la nube y los controles de acceso a la información de los clientes funcionan correctamente.",
+          "body": "La seguridad informática no es un estado, es un proceso continuo. Las contraseñas se filtran, los empleados cambian, los software se actualizan y los respaldos pueden corromperse sin que nadie lo note hasta que es demasiado tarde. Esta auditoría trimestral es tu red de seguridad para asegurar que la 'caja fuerte' digital de tu firma está realmente cerrada con llave."
+        },
+        "objective": {
+          "description": "Ejecutar un checklist de verificación de seguridad, probar la restauración de un respaldo y auditar los permisos de acceso de todos los usuarios del sistema."
+        },
+        "whyItMatters": "Una brecha de datos en una asesoría financiera es catastrófica. Las multas regulatorias por mala gestión de datos personales son cuantiosas, pero el daño reputacional es peor: perderás a todos tus clientes. La auditoría trimestral detecta vulnerabilidades (ej. un ex-empleado que aún tiene acceso, o un respaldo que dejó de funcionar hace 2 meses) antes de que sean explotadas o causen una pérdida de datos.",
+        "bestPractices": [
+          "Realiza una prueba real de restauración de archivos: descarga un respaldo de la nube y verifica que los archivos se abran y no estén corruptos.",
+          "Revisa la lista de usuarios con acceso a tu software de planificación, CRM y correo; elimina inmediatamente a cualquier persona que ya no colabore contigo.",
+          "Cambia las contraseñas maestras de las cuentas de la firma cada 6 meses, y obliga a todo el equipo a usar autenticación de dos factores (2FA)."
+        ],
+        "commonMistakes": [
+          "Asumir que porque el software dice 'Respaldado', el respaldo es funcional. Los respaldos no verificados son tan útiles como no tener respaldo.",
+          "Compartir credenciales de administrador entre varios miembros del equipo, imposibilitando la trazabilidad de quién hizo un cambio o borró un archivo.",
+          "Ignorar las actualizaciones de seguridad del sistema operativo de las computadoras, dejando vulnerabilidades conocidas sin parchar."
+        ],
+        "tip": "Programa esta auditoría para la primera semana de cada trimestre (enero, abril, julio, octubre). Configura una alarma recurrente en tu calendario con el asunto '🚨 AUDITORÍA DE SEGURIDAD TRIMESTRAL - NO POSTERGAR' para asegurar que se convierta en un hábito innegociable.",
+        "recommendedTools": [
+          {
+            "name": "Have I Been Pwned (Para verificar si los correos de la firma fueron comprometidos en filtraciones)",
+            "url": "https://haveibeenpwned.com/"
+          },
+          {
+            "name": "LastPass o 1Password (Auditoría de salud de contraseñas del equipo)",
+            "url": "https://1password.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "audit-quarter",
+            "label": "Trimestre y Año de la Auditoría",
+            "type": "text",
+            "placeholder": "Ej: T3 2023 (Julio-Septiembre)",
+            "required": true
+          },
+          {
+            "id": "backup-restore-test-status",
+            "label": "Estado de la Prueba de Restauración de Respaldos",
+            "type": "select",
+            "options": [
+              "Exitoso: Archivos restaurados y verificados sin corrupción",
+              "Fallido: Requiere acción inmediata para corregir el sistema de respaldo",
+              "No realizado: Se pospone por fuerza mayor (debe reprogramarse en 48h)"
+            ],
+            "required": true
+          },
+          {
+            "id": "access-logs-reviewed",
+            "label": "Revisión de Permisos y Accesos de Usuarios",
+            "type": "select",
+            "options": [
+              "Sí, sin anomalías (Todos los accesos son de personal activo y autorizado)",
+              "Sí, con anomalías resueltas (Se revocaron accesos de ex-colaboradores o terceros)",
+              "No realizado: Requiere programación inmediata"
+            ],
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-audit-quarter",
+            "task": "Registrar el trimestre y año correspondiente a esta auditoría de seguridad.",
+            "registryFieldRef": "audit-quarter"
+          },
+          {
+            "id": "chk-test-backup-restore",
+            "task": "Ejecutar y registrar el resultado de una prueba real de restauración de archivos desde el respaldo en la nube.",
+            "registryFieldRef": "backup-restore-test-status"
+          },
+          {
+            "id": "chk-review-access-logs",
+            "task": "Auditar y validar que solo el personal activo y autorizado tenga acceso a los sistemas y datos de clientes.",
+            "registryFieldRef": "access-logs-reviewed"
+          }
+        ]
+      }
+    }
+  ]
+}

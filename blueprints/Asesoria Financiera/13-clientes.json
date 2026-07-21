@@ -1,0 +1,241 @@
+{
+  "id": "fase-estrategia-captacion-fidelizacion",
+  "title": "Estrategia de Captación y Fidelización",
+  "block": "customers",
+  "steps": [
+    {
+      "id": "step-creacion-material-educativo-lead-magnets",
+      "title": "Creación de Material Educativo y Lead Magnets",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Creación de Material Educativo y Lead Magnets",
+          "summary": "Diseñar y producir recursos de alto valor (calculadoras, guías, webinars) que resuelvan un dolor específico de tu nicho y te permitan capturar los datos de prospectos calificados.",
+          "body": "En la asesoría financiera, la gente no compra 'asesoría', compra 'tranquilidad' o 'claridad'. Un Lead Magnet efectivo (como una 'Calculadora de Años para la Jubilación' o una 'Guía para Proteger tu Patrimonio ante una Crisis') demuestra tu expertise antes de que te contraten, filtrando a los curiosos y atrayendo a los clientes serios que ya tienen un problema que resolver."
+        },
+        "objective": {
+          "description": "Producir al menos un Lead Magnet principal de alta calidad, configurar la página de aterrizaje (landing page) para su descarga y definir la métrica de conversión esperada."
+        },
+        "whyItMatters": "Intentar vender una asesoría financiera de alto ticket directamente a un desconocido es muy difícil. El Lead Magnet actúa como el 'primer paso' de baja fricción. Además, el contenido educativo te posiciona como una autoridad, haciendo que el cliente llegue a la primera reunión ya convencido de que eres la persona adecuada para ayudarle, reduciendo drásticamente tu ciclo de ventas."
+        ,
+        "bestPractices": [
+          "Resuelve un problema micro, no macro. En lugar de 'Cómo ser millonario', ofrece 'Los 5 errores fiscales que están costando dinero a los médicos independientes este año'.",
+          "Asegúrate de que el diseño del material coincida exactamente con tu manual de marca (colores, tipografías, tono profesional).",
+          "Incluye una 'llamada a la acción' (CTA) clara al final del material, invitando al lector a agendar una 'Sesión de Diagnóstico Gratuita de 15 minutos'."
+        ],
+        "commonMistakes": [
+          "Crear un Lead Magnet demasiado genérico (ej. '10 tips financieros') que podría haber escrito cualquiera, sin aportar tu visión única o datos específicos de tu nicho.",
+          "Pedir demasiados datos en el formulario de descarga (ej. pedir teléfono y dirección cuando solo se necesita el correo electrónico), lo que destruye la tasa de conversión.",
+          "No hacer seguimiento automatizado después de la descarga; el prospecto descarga el PDF y nunca más sabe de ti."
+        ],
+        "tip": "Las calculadoras interactivas (ej. '¿Cuánto necesitas ahorrar mensualmente para retirarte a los 60?') convierten hasta un 40% más que los PDFs estáticos. Herramientas como Outgrow o incluso fórmulas bien diseñadas en Typeform te permiten crear estas calculadoras y capturar el correo para enviar los resultados personalizados.",
+        "recommendedTools": [
+          {
+            "name": "Outgrow o Typeform (Para crear calculadoras financieras interactivas y cuestionarios)",
+            "url": "https://try.outgrow.co/"
+          },
+          {
+            "name": "Canva Pro (Para diseñar Ebooks, guías y plantillas de alto impacto visual)",
+            "url": "https://www.canva.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "lead-magnet-topic",
+            "label": "Tema y Formato del Lead Magnet Principal",
+            "type": "textarea",
+            "placeholder": "Ej: 'Calculadora Interactiva de Brecha de Jubilación' o 'Ebook: Guía de Protección Patrimonial para Emprendedores en 2024'.",
+            "required": true
+          },
+          {
+            "id": "lead-magnet-url",
+            "label": "Enlace a la Landing Page o Recurso Descargable",
+            "type": "url",
+            "placeholder": "Ej: https://tuasesoria.com/calculadora-jubilacion",
+            "required": true
+          },
+          {
+            "id": "expected-conversion-rate",
+            "label": "Tasa de Conversión Esperada del Lead Magnet (%)",
+            "type": "number",
+            "placeholder": "Ej: 15 (porcentaje de visitantes de la landing que dejan sus datos)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-lead-magnet",
+            "task": "Definir el tema, formato y valor central del Lead Magnet principal orientado al dolor del nicho.",
+            "registryFieldRef": "lead-magnet-topic"
+          },
+          {
+            "id": "chk-publish-landing-page",
+            "task": "Diseñar, configurar y publicar la landing page o recurso interactivo para la captura de datos.",
+            "registryFieldRef": "lead-magnet-url"
+          },
+          {
+            "id": "chk-set-conversion-goal",
+            "task": "Establecer y registrar la meta de tasa de conversión esperada para evaluar el éxito del recurso.",
+            "registryFieldRef": "expected-conversion-rate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-configuracion-crm-automatizacion-embudos",
+      "title": "Configuración de CRM y Automatización de Embudos de Venta",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Configuración de CRM y Automatización de Embudos de Venta",
+          "summary": "Implementar un sistema de gestión de relaciones con clientes (CRM) y diseñar las automatizaciones que guiarán al prospecto desde que descarga un recurso hasta que agenda una cita.",
+          "body": "Un asesor financiero que lleva sus prospectos en la cabeza, en post-its o en el correo personal está dejando dinero sobre la mesa y cometiendo errores de seguimiento. Un CRM te permite saber exactamente en qué etapa está cada prospecto, automatizar los correos de nutrición y asegurar que ninguna oportunidad de negocio se enfríe por falta de seguimiento."
+        },
+        "objective": {
+          "description": "Seleccionar e implementar un CRM, definir las etapas del embudo de ventas específicas para servicios financieros y configurar la secuencia de correos automatizada post-descarga."
+        },
+        "whyItMatters": "El seguimiento es donde se cierran los contratos de asesoría. Estadísticamente, se necesitan entre 5 y 8 puntos de contacto para que un cliente de alto patrimonio tome la decisión de contratarte. Sin un CRM y automatizaciones, es humanamente imposible mantener un seguimiento personalizado y constante con decenas de prospectos simultáneamente."
+        ,
+        "bestPractices": [
+          "Define etapas claras en tu embudo: 'Nuevo Lead', 'Recurso Descargado', 'Email de Nutrición Enviado', 'Cita Agendada', 'Diagnóstico Realizado', 'Propuesta Enviada', 'Cliente Ganado/Perdido'.",
+          "Configura una secuencia de 3 a 5 correos automatizados que se envíen en los días posteriores a la descarga del Lead Magnet, aportando valor y terminando con una invitación a agendar.",
+          "Integra tu CRM con tu calendario (ej. Calendly) para que, cuando el prospecto haga clic en 'Agendar', el sistema bloquee el horario y cree la tarea automáticamente."
+        ],
+        "commonMistakes": [
+          "Comprar un CRM demasiado complejo (como Salesforce) para un equipo de 1 o 2 personas, terminando por no usarlo por la curva de aprendizaje.",
+          "Configurar automatizaciones que suenan a 'robot corporativo' en lugar de usar un tono personal, empático y directo (ej. 'Hola [Nombre], vi que descargaste la guía...').",
+          "No definir un proceso claro para los leads que 'se quedan estancados' en una etapa intermedia (ej. ¿qué pasa si agendaron pero no asistieron?)."
+        ],
+        "tip": "Configura una 'Tarea de Oro' en tu CRM: Si un prospecto abre tu correo de seguimiento más de 3 veces o hace clic en el enlace de precios, el sistema debe enviarte una notificación inmediata a tu celular. Ese es el momento exacto en que están evaluando contratarte; llámalos o escríbeles en ese instante.",
+        "recommendedTools": [
+          {
+            "name": "HubSpot CRM (Excelente para automatización de marketing y embudos)",
+            "url": "https://www.hubspot.com/"
+          },
+          {
+            "name": "Wealthbox o Redtail (CRMs diseñados específicamente para asesores financieros)",
+            "url": "https://www.wealthbox.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "crm-software-selected",
+            "label": "Software CRM Seleccionado e Implementado",
+            "type": "text",
+            "placeholder": "Ej: HubSpot CRM / Wealthbox",
+            "required": true
+          },
+          {
+            "id": "sales-funnel-stages",
+            "label": "Etapas del Embudo de Ventas Definidas",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Lead Frío (Descargó recurso). 2. Lead Nutrido (Recibió secuencia de 4 emails). 3. Cita de Diagnóstico Agendada. 4. Plan Financiero Propuesto. 5. Cliente Activo (Firmó contrato).'",
+            "required": true
+          },
+          {
+            "id": "key-automation-configured",
+            "label": "Automatización Clave Configurada (Ej. Secuencia post-descarga)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Secuencia de 3 correos: Día 1 (Entrega del recurso + bienvenida). Día 3 (Caso de éxito de un cliente similar). Día 7 (Invitación directa a agendar diagnóstico de 15 min).'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-select-setup-crm",
+            "task": "Seleccionar, adquirir y configurar la cuenta del software CRM para la firma.",
+            "registryFieldRef": "crm-software-selected"
+          },
+          {
+            "id": "chk-define-funnel-stages",
+            "task": "Mapear y configurar las etapas del embudo de ventas en el CRM.",
+            "registryFieldRef": "sales-funnel-stages"
+          },
+          {
+            "id": "chk-configure-automation",
+            "task": "Diseñar y activar la secuencia de correos automatizada para la nutrición de leads.",
+            "registryFieldRef": "key-automation-configured"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-programa-referidos-fidelizacion",
+      "title": "Programa de Referidos y Fidelización de Clientes",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Programa de Referidos y Fidelización de Clientes",
+          "summary": "Diseñar un sistema formal y ético para incentivar a los clientes actuales a referir a nuevos clientes de su círculo de confianza, y establecer rituales de fidelización.",
+          "body": "En servicios financieros, el boca a boca es el canal de adquisición más poderoso y barato, pero no ocurre por inercia; hay que diseñarlo. Los clientes satisfechos quieren referirte, pero a menudo no lo hacen porque no saben cómo, les da pena 'hablar de dinero' con sus amigos, o no tienen un marco claro para hacerlo. Un programa de referidos estructurado elimina esa fricción."
+        },
+        "objective": {
+          "description": "Definir el incentivo para el cliente que refiere y para el nuevo cliente, establecer la mecánica de solicitud de referidos y diseñar el ritual anual de fidelización."
+        },
+        "whyItMatters": "Un cliente referido tiene un costo de adquisición (CAC) cercano a cero, un ciclo de venta más corto (porque llega con la confianza ya transferida) y una tasa de retención mucho mayor. Formalizar este proceso convierte a tus mejores clientes en una fuerza de ventas externa y altamente motivada."
+        ,
+        "bestPractices": [
+          "Ofrece incentivos que aporten valor real pero que no parezcan 'sobornos' (ej. una sesión de planificación fiscal avanzada gratuita, una donación a una obra de caridad a su nombre, o un libro de finanzas de alto valor). Evita dar efectivo directo, ya que puede tener implicaciones fiscales o éticas.",
+          "Facilita el trabajo del cliente: entrégale un 'Kit de Referidos' con un correo pre-redactado que él solo tenga que reenviar a su amigo, o un enlace único de invitación.",
+          "Pide referidos en el 'momento de mayor felicidad' del cliente (ej. justo después de entregarle un plan financiero exitoso o después de resolverle una crisis)."
+        ],
+        "commonMistakes": [
+          "Esperar a que los clientes te refieran espontáneamente sin haberles pedido explícitamente ni dado las herramientas para hacerlo.",
+          "Ofrecer descuentos en las tarifas del cliente existente por referir; en servicios financieros de alto nivel, los clientes no buscan descuentos, buscan exclusividad y valor añadido.",
+          "Olvidar agradecer y cerrar el ciclo; si un cliente te refiere y tú contratas a su amigo, el cliente que refiere DEBE ser notificado y agradecido personalmente."
+        ],
+        "tip": "Implementa la 'Regla de los 3 Nombres' en tu revisión anual con cada cliente. Al final de la sesión, cuando el cliente está satisfecho con su plan, dile: 'Me alegra mucho que estemos en el camino correcto. Para poder ayudar a más personas como tú, ¿hay 3 amigos o colegas de tu misma profesión que crees que también están preocupados por su jubilación y a quienes podrías presentarme?'. Anota los nombres ahí mismo.",
+        "recommendedTools": [
+          {
+            "name": "ReferralCandy o FirstPromoter (Para gestionar enlaces de referidos y recompensas)",
+            "url": "https://www.referralcandy.com/"
+          },
+          {
+            "name": "Bonusly (Para recompensas internas y donaciones a caridad)",
+            "url": "https://bonusly.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "referral-incentive",
+            "label": "Incentivo para el Cliente que Refiere y para el Nuevo Cliente",
+            "type": "textarea",
+            "placeholder": "Ej: 'Cliente que refiere: Sesión estratégica de optimización fiscal gratuita ($300 valor). Nuevo cliente: 50% de descuento en el fee de diagnóstico inicial. Alternativa: Donación de $100 a la ONG favorita del cliente que refiere.'",
+            "required": true
+          },
+          {
+            "id": "referral-mechanics",
+            "label": "Mecánica y Herramienta de Solicitud de Referidos",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Regla de los 3 Nombres en revisión anual. 2. Kit de correo pre-redactado enviado por email para que el cliente reenvíe a su red. 3. Enlace único de invitación generado por el CRM.'",
+            "required": true
+          },
+          {
+            "id": "loyalty-ritual",
+            "label": "Ritual Anual de Fidelización para Clientes Actuales",
+            "type": "textarea",
+            "placeholder": "Ej: 'Cena anual exclusiva para clientes (Networking + Conferencia de mercado). Regalo físico de fin de año de alta calidad (ej. agenda de cuero personalizada). Carta manuscrita de agradecimiento por su confianza.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-incentives",
+            "task": "Definir los incentivos éticos y de alto valor para el programa de referidos.",
+            "registryFieldRef": "referral-incentive"
+          },
+          {
+            "id": "chk-design-mechanics",
+            "task": "Diseñar la mecánica de solicitud y las herramientas (correos, enlaces) para facilitar los referidos.",
+            "registryFieldRef": "referral-mechanics"
+          },
+          {
+            "id": "chk-establish-loyalty-ritual",
+            "task": "Documentar el ritual anual de fidelización y agradecimiento para los clientes actuales.",
+            "registryFieldRef": "loyalty-ritual"
+          }
+        ]
+      }
+    }
+  ]
+}

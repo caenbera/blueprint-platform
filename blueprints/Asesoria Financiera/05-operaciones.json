@@ -1,0 +1,214 @@
+{
+  "id": "fase-metodologia-atencion-cliente",
+  "title": "Metodología de Atención al Cliente",
+  "block": "operations",
+  "steps": [
+    {
+      "id": "step-diseno-proceso-onboarding-diagnostico",
+      "title": "Diseño del Proceso de Onboarding y Diagnóstico Financiero Inicial",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Diseño del Proceso de Onboarding y Diagnóstico Financiero Inicial",
+          "summary": "Estructurar el flujo exacto desde que un prospecto firma el contrato hasta que se completa su radiografía financiera inicial, garantizando una experiencia impecable y segura.",
+          "body": "Los primeros 30 días de relación con un cliente financiero definen su nivel de confianza en ti para los próximos años. Si el onboarding es caótico, si le pides la misma información tres veces o si no hay claridad sobre qué sigue, el cliente sentirá que su patrimonio está en manos de alguien desorganizado. Este paso diseña una 'autopista' de incorporación que sea segura, profesional y respetuosa con el tiempo del cliente."
+        },
+        "objective": {
+          "description": "Mapear el flujo de onboarding paso a paso y diseñar el cuestionario de diagnóstico financiero inicial que se enviará antes de la primera sesión profunda."
+        },
+        "whyItMatters": "Un onboarding friccional genera ansiedad en el cliente (quien te está entregando datos extremadamente sensibles) y consume horas no facturables de tu equipo persiguiendo documentos por correo. Un proceso estandarizado y automatizado en la recolección de datos te permite llegar a la primera reunión de diagnóstico ya habiendo analizado los números, enfocando el tiempo en la estrategia y no en la recolección de datos.",
+        "bestPractices": [
+          "Envía un 'Paquete de Bienvenida' digital el mismo día de la firma del contrato, explicando exactamente qué esperar en las próximas 4 semanas.",
+          "Utiliza un portal seguro o formulario cifrado para que el cliente suba sus estados de cuenta y documentos; nunca los pidas por correo electrónico estándar.",
+          "Establece una 'Llamada de Alineación de Expectativas' de 15 minutos antes de la sesión de diagnóstico profundo para explicar cómo se usará la información.",
+          "Automatiza los recordatorios de documentos faltantes para no tener que enviar correos manuales de seguimiento."
+        ],
+        "commonMistakes": [
+          "Iniciar la sesión de diagnóstico profundo sin haber firmado el contrato de servicios y el acuerdo de confidencialidad (NDA) previamente.",
+          "Pedir al cliente que organice y resuma sus propios estados de cuenta; tu trabajo es analizarlos, no hacer su contabilidad básica.",
+          "No tener un checklist interno de 'Documentos Mínimos Requeridos', lo que resulta en sesiones de diagnóstico incompletas que requieren una segunda reunión solo para recabar datos."
+        ],
+        "tip": "Diseña un 'Cuestionario de Radiografía Financiera' digital de 15 minutos que el cliente deba completar obligatoriamente antes de la sesión de diagnóstico. Incluye preguntas sobre sus deudas, activos, seguros, testamentos y, lo más importante, sus 3 mayores miedos y 3 mayores metas financieras. Llegar a la reunión con esto leído te posiciona inmediatamente como un experto preparado.",
+        "recommendedTools": [
+          {
+            "name": "Typeform o Jotform (Para crear cuestionarios financieros seguros y con buena UX)",
+            "url": "https://www.typeform.com/"
+          },
+          {
+            "name": "Docusign o HelloSign (Para firma electrónica de contratos y NDAs)",
+            "url": "https://www.docusign.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "onboarding-flow-description",
+            "label": "Flujo de Onboarding Paso a Paso (Desde la firma hasta el diagnóstico)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Día 1: Envío de Paquete de Bienvenida y enlace a portal seguro. Días 2-7: Cliente completa Cuestionario de Radiografía y sube estados de cuenta. Día 10: Equipo revisa documentos y solicita faltantes. Día 14: Sesión de Diagnóstico Profundo (90 min). Día 15: Envío de resumen ejecutivo con hallazgos iniciales.'",
+            "required": true
+          },
+          {
+            "id": "initial-diagnosis-questionnaire",
+            "label": "Estructura del Cuestionario de Diagnóstico Financiero Inicial",
+            "type": "textarea",
+            "placeholder": "Ej: 'Sección 1: Datos demográficos y familiares. Sección 2: Ingresos y flujo de caja mensual. Sección 3: Inventario de activos (liquidez, inversiones, bienes raíces). Sección 4: Inventario de deudas y tasas de interés. Sección 5: Coberturas de seguros y planificación sucesoria. Sección 6: 3 Metas a corto, mediano y largo plazo.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-map-onboarding-flow",
+            "task": "Mapear y documentar el flujo de onboarding día por día, incluyendo los puntos de contacto y automatizaciones.",
+            "registryFieldRef": "onboarding-flow-description"
+          },
+          {
+            "id": "chk-design-diagnosis-questionnaire",
+            "task": "Diseñar la estructura y las secciones del cuestionario de diagnóstico financiero inicial que completará el cliente.",
+            "registryFieldRef": "initial-diagnosis-questionnaire"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-estandarizacion-entrega-planes",
+      "title": "Estandarización de la Entrega de Planes Financieros (Formatos y plantillas)",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Estandarización de la Entrega de Planes Financieros",
+          "summary": "Definir el formato, la estructura y el canal de entrega del plan financiero para garantizar consistencia, profesionalismo y máxima comprensión por parte del cliente.",
+          "body": "Un plan financiero brillante pero mal presentado es un plan inútil. Si entregas un archivo de Excel de 50 pestañas lleno de fórmulas macroeconómicas, el cliente se sentirá abrumado y no tomará acción. La estandarización de la entrega asegura que cada cliente reciba la misma calidad de experiencia, facilita la revisión por pares dentro de tu firma y convierte datos complejos en decisiones claras."
+        },
+        "objective": {
+          "description": "Seleccionar el formato y canal de entrega del plan, y documentar la estructura estándar (índice de secciones) que tendrá todo plan financiero emitido por la firma."
+        },
+        "whyItMatters": "La presentación del plan es el momento de la verdad donde el cliente decide si tu asesoría vale lo que pagó. Una entrega estandarizada y visualmente impecable justifica tus tarifas premium, reduce las objeciones y, lo más importante, aumenta drásticamente la probabilidad de que el cliente implemente tus recomendaciones porque las entiende.",
+        "bestPractices": [
+          "Aplica la 'Regla de las 3 Capas': 1) Resumen Ejecutivo de 1-2 páginas (para el cliente ocupado), 2) Análisis y Recomendaciones de 10-15 páginas (para el cliente curioso), 3) Anexos Técnicos y Proyecciones (para el cliente analítico o auditor).",
+          "Traduce cada recomendación técnica a un 'Siguiente Paso Accionable' con una fecha límite y el responsable (tú o el cliente).",
+          "Utiliza gráficos de embudo, gráficos de torta de asignación de activos y líneas de tiempo visuales en lugar de tablas gigantes de números."
+        ],
+        "commonMistakes": [
+          "Entregar el plan por correo electrónico sin agendar una sesión de revisión en vivo; el cliente malinterpretará los datos y generará objeciones innecesarias.",
+          "Usar plantillas genéricas de software que incluyen secciones irrelevantes para el nicho específico del cliente (ej. incluir planificación universitaria para un cliente sin hijos).",
+          "Olvidar incluir una sección de 'Riesgos y Supuestos' que proteja legalmente a la firma si las proyecciones de mercado no se cumplen."
+        ],
+        "tip": "Incluye al final del plan un 'Plan de Acción de los Próximos 90 Días'. Divide las recomendaciones en 3 categorías: 'Qué hacer esta semana' (ej. cambiar beneficiarios de seguro), 'Qué hacer este mes' (ej. abrir cuenta de inversión) y 'Qué hacer este trimestre' (ej. refinanciar deuda). Esto convierte un documento estático en una hoja de ruta dinámica."
+        ,
+        "recommendedTools": [
+          {
+            "name": "Canva o Adobe InDesign (Para diseñar plantillas de informes financieros de alto impacto visual)",
+            "url": "https://www.canva.com/"
+          },
+          {
+            "name": "Visme o Piktochart (Para crear infografías financieras y resúmenes ejecutivos)",
+            "url": "https://www.visme.co/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "plan-delivery-format",
+            "label": "Formato y Canal de Entrega del Plan Financiero",
+            "type": "select",
+            "options": [
+              "PDF Interactivo presentado en sesión de videollamada/privada",
+              "Portal Web Privado del Cliente (con acceso 24/7 al plan y documentos)",
+              "Presentación en Vivo (Diapositivas) sin entrega de documento físico inicial",
+              "Híbrido (Presentación en vivo + PDF de resumen + Portal para anexos técnicos)"
+            ],
+            "required": true
+          },
+          {
+            "id": "standardized-template-structure",
+            "label": "Estructura Estándar del Documento de Plan Financiero (Índice de Secciones)",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Carta de Bienvenida y Resumen Ejecutivo. 2. Análisis de la Situación Actual (Radiografía). 3. Brecha entre Situación Actual y Metas. 4. Estrategia y Recomendaciones Core. 5. Plan de Acción a 90 Días. 6. Proyecciones a 10/20/30 años. 7. Supuestos, Riesgos y Descargos de Responsabilidad.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-select-delivery-format",
+            "task": "Seleccionar y definir el formato y canal oficial de entrega del plan financiero al cliente.",
+            "registryFieldRef": "plan-delivery-format"
+          },
+          {
+            "id": "chk-define-template-structure",
+            "task": "Documentar la estructura estándar (índice de secciones) que tendrán todos los planes financieros emitidos por la firma.",
+            "registryFieldRef": "standardized-template-structure"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-protocolo-seguimiento-revisiones",
+      "title": "Protocolo de Seguimiento y Revisiones Periódicas con el Cliente",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Protocolo de Seguimiento y Revisiones Periódicas",
+          "summary": "Establecer la cadencia, el formato y las reglas de comunicación para las reuniones de seguimiento, asegurando que el plan financiero se mantenga vigente y adaptado a la vida del cliente.",
+          "body": "Un plan financiero no es un documento estático; la vida cambia (matrimonios, nacimientos, cambios de empleo, crisis de mercado, herencias). Sin un protocolo de seguimiento estructurado, el plan queda obsoleto en 6 meses, el cliente siente que pagó por algo que no le sirve a largo plazo y tu tasa de retención cae drásticamente. Este paso define cómo mantendrás el plan vivo."
+        },
+        "objective": {
+          "description": "Definir la cadencia oficial de revisiones formales (trimestrales, semestrales o anuales) y establecer el protocolo de comunicación y seguimiento entre estas revisiones."
+        },
+        "whyItMatters": "La retención de clientes es la métrica más importante para la rentabilidad a largo plazo de una asesoría financiera. Cuesta 5 veces más adquirir un cliente nuevo que retener uno existente. Un protocolo de seguimiento proactivo (donde tú llamas al cliente, no al revés) demuestra que te importa su éxito continuo, justifica el cobro de fees recurrentes (retainers) y genera referidos orgánicos.",
+        "bestPractices": [
+          "Agenda las revisiones anuales de los próximos 12 meses en la primera reunión de entrega del plan; no esperes a que el cliente te busque.",
+          "Envía un 'Recordatorio de Vida' 30 días antes de la revisión con un mini-cuestionario sobre cambios patrimoniales o familiares recientes.",
+          "Documenta cada reunión de seguimiento con un 'Acta de Acuerdos y Próximos Pasos' enviada por correo dentro de las 24 horas posteriores a la sesión."
+        ],
+        "commonMistakes": [
+          "Dejar que sea el cliente quien tenga que acordarse de agendar la revisión; la mayoría no lo hará hasta que ocurra una crisis.",
+          "No hacer seguimiento a las tareas asignadas al cliente en la reunión anterior (ej. '¿Ya abriste la cuenta de inversión que acordamos?').",
+          "Convertir la revisión anual en una clase de macroeconomía aburrida en lugar de enfocarla en los cambios personales y metas del cliente."
+        ],
+        "tip": "Implementa un 'Chequeo de Mitad de Año' por correo electrónico o video corto (Loom) de 5 minutos entre las revisiones formales. Solo necesitas decir: 'Hola [Nombre], revisé tu portafolio este mes, todo sigue en línea con tu plan, no necesitas hacer nada por ahora. Nos vemos en tu revisión anual en noviembre'. Ese mensaje de 5 minutos vale oro en tranquilidad y percepción de valor.",
+        "recommendedTools": [
+          {
+            "name": "Calendly o Acuity Scheduling (Para que los clientes agenden sus revisiones periódicas automáticamente)",
+            "url": "https://calendly.com/"
+          },
+          {
+            "name": "Loom (Para enviar actualizaciones de mercado o cheques de mitad de año en video personalizado)",
+            "url": "https://www.loom.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "review-cadence-policy",
+            "label": "Cadencia Oficial de Revisiones Periódicas con el Cliente",
+            "type": "select",
+            "options": [
+              "Trimestral (Cada 3 meses - Recomendado para clientes de alto patrimonio o en fase de acumulación agresiva)",
+              "Semestral (Cada 6 meses - Estándar para clientes en fase de mantenimiento)",
+              "Anual (Cada 12 meses - Solo para clientes con planes muy estables y bajo mantenimiento)",
+              "Híbrida (Revisiones formales anuales + Chequeos rápidos trimestrales por email/video)"
+            ],
+            "required": true
+          },
+          {
+            "id": "follow-up-communication-protocol",
+            "label": "Protocolo de Comunicación y Seguimiento entre Revisiones Formales",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Envío de boletín mensual con actualizaciones de mercado (no personalizado). 2. Chequeo de mitad de año por video corto (Loom) confirmando que todo sigue en línea. 3. Canal de WhatsApp/Email exclusivo para dudas urgentes con tiempo de respuesta garantizado de 24 horas hábiles. 4. Acta de acuerdos enviada en menos de 24h post-reunión.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-review-cadence",
+            "task": "Definir y seleccionar la cadencia oficial de revisiones formales que se aplicará según el paquete del cliente.",
+            "registryFieldRef": "review-cadence-policy"
+          },
+          {
+            "id": "chk-establish-communication-protocol",
+            "task": "Establecer y documentar el protocolo de comunicación, seguimiento y tiempos de respuesta entre revisiones formales.",
+            "registryFieldRef": "follow-up-communication-protocol"
+          }
+        ]
+      }
+    }
+  ]
+}
