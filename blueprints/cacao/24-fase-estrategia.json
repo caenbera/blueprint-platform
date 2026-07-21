@@ -1,0 +1,482 @@
+{
+  "block": "strategy",
+  "blockTitle": "Estrategia",
+  "phases": [
+    {
+      "phaseId": "feasibility-initial-planning",
+      "phaseTitle": "Viabilidad y Planificación Inicial",
+      "steps": [
+        {
+          "stepId": "land-agroclimatic-assessment",
+          "stepTitle": "Evaluación del Terreno y Condiciones Agroclimáticas",
+          "guide": {
+            "whyItMatters": "El cacao es un cultivo altamente sensible a las condiciones ambientales. Un error en la selección del terreno (pH inadecuado, encharcamiento, altitud incorrecta) condena el proyecto al fracaso antes de sembrar el primer árbol. En la agricultura orgánica, no se pueden corregir fácilmente los desequilibrios del suelo con químicos, por lo que la planificación agroclimática inicial es la base de la productividad y la salud del cultivo a largo plazo.",
+            "bestPractices": [
+              "Realiza un análisis de suelo completo (físico, químico y biológico) antes de cualquier decisión de compra o siembra",
+              "Verifica el historial de lluvias de la zona: el cacao requiere entre 1.500 y 2.500 mm anuales, bien distribuidos",
+              "Evalúa la topografía: pendientes mayores al 25% requieren obras de conservación de suelos (terrazas, barreras vivas)",
+              "Identifica fuentes de agua perennes para posibles sistemas de riego de auxilio en épocas secas",
+              "Inventario de árboles de sombrío nativos existentes que puedan integrarse al sistema agroforestal"
+            ],
+            "commonMistakes": [
+              "Sembrar en suelos con pH menor a 5.0 o mayor a 7.5 sin realizar enmiendas previas",
+              "Ignorar el riesgo de heladas o vientos fuertes en zonas de mayor altitud",
+              "Asumir que cualquier tierra 'tropical' es apta para cacao sin estudios técnicos",
+              "No considerar la logística de sacar la cosecha (caminos intransitables en invierno)",
+              "Comprar tierras con historial reciente de cultivos con alto uso de agroquímicos persistentes"
+            ],
+            "tip": "En Colombia, el rango ideal para cacao Fino de Aroma es entre 0 y 800 metros sobre el nivel del mar (msnm). El pH óptimo del suelo está entre 5.5 y 6.5. Si el suelo es muy ácido (<5.0), planifica una enmienda con cal dolomita o materia orgánica al menos 6 meses antes de la siembra. Un buen sistema agroforestal (SAF) debe incluir árboles maderables, frutales y leguminosas (como el Guamo o Poró) para fijar nitrógeno.",
+            "recommendedTools": [
+              {
+                "name": "Laboratorios de Suelos (ej. AGROSAVIA, ICA)",
+                "url": "https://www.agrosavia.co",
+                "description": "Para análisis físico-químicos y biológicos certificados del suelo"
+              },
+              {
+                "name": "IDEAM - Atlas Climatológico",
+                "url": "https://www.ideam.gov.co",
+                "description": "Datos históricos de precipitación y temperatura por municipio en Colombia"
+              },
+              {
+                "name": "Google Earth Pro / SIG",
+                "url": "https://www.google.com/earth",
+                "description": "Para evaluar topografía, pendientes y cobertura vegetal inicial"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "altitude-masm",
+                "label": "Altitud Promedio del Terreno (msnm)",
+                "type": "number",
+                "placeholder": "450",
+                "required": true
+              },
+              {
+                "fieldId": "avg-annual-rainfall",
+                "label": "Precipitación Promedio Anual (mm)",
+                "type": "number",
+                "placeholder": "2000",
+                "required": true
+              },
+              {
+                "fieldId": "soil-ph",
+                "label": "pH del Suelo (según análisis)",
+                "type": "number",
+                "placeholder": "6.0",
+                "required": true
+              },
+              {
+                "fieldId": "soil-type",
+                "label": "Tipo de Suelo Predominante",
+                "type": "select",
+                "options": ["Arcilloso", "Franco", "Franco-arenoso", "Arenoso", "Limoso"],
+                "required": true
+              },
+              {
+                "fieldId": "topography",
+                "label": "Topografía del Terreno",
+                "type": "select",
+                "options": ["Plana (0-7%)", "Ondulada (7-12%)", "Quebrada (12-25%)", "Muy quebrada (>25%)"],
+                "required": true
+              },
+              {
+                "fieldId": "water-source-available",
+                "label": "¿Cuenta con fuente de agua perenne en la finca?",
+                "type": "select",
+                "options": ["Sí, quebrada o río", "Sí, pozo", "No, dependencia de lluvia"],
+                "required": true
+              },
+              {
+                "fieldId": "native-shade-trees",
+                "label": "¿Existen árboles de sombrío nativos aprovechables?",
+                "type": "select",
+                "options": ["Sí, abundantes", "Sí, escasos", "No, terreno despejado"],
+                "required": true
+              },
+              {
+                "fieldId": "soil-analysis-date",
+                "label": "Fecha del Último Análisis de Suelo",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "soil-report-url",
+                "label": "Enlace al Informe de Análisis de Suelo (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Solicitar y recibir análisis de suelo completo (físico, químico, biológico)",
+            "Consultar datos históricos de precipitación y temperatura del IDEAM",
+            "Evaluar la topografía y definir si se requieren obras de conservación de suelos",
+            "Verificar la disponibilidad y calidad de fuentes de agua en la finca",
+            "Realizar inventario de la vegetación existente (árboles maderables, frutales, leguminosas)",
+            "Identificar riesgos climáticos locales (vientos fuertes, heladas, sequías prolongadas)",
+            "Evaluar el estado de las vías de acceso para la logística de insumos y cosecha",
+            "Archivar el informe de evaluación agroclimática en la carpeta de estrategia"
+          ]
+        },
+        {
+          "stepId": "preliminary-financial-viability",
+          "stepTitle": "Análisis de Viabilidad Financiera Preliminar",
+          "guide": {
+            "whyItMatters": "El cacao orgánico tiene un periodo de conversión de 36 meses donde no se puede vender con el sobreprecio de 'orgánico certificado', y los rendimientos son menores al inicio. Sin un flujo de caja proyectado que contemple este 'valle de la muerte' financiero, el emprendimiento puede quedarse sin capital de trabajo antes de alcanzar la rentabilidad. Una planificación financiera realista es crucial para dimensionar la inversión y buscar fuentes de financiación adecuadas.",
+            "bestPractices": [
+              "Proyecta un flujo de caja a 5 años, siendo conservador con los rendimientos (ej. 400-600 kg/ha/año desde el año 3-4)",
+              "Incluye en los costos la mano de obra intensiva que requiere el manejo orgánico (deshierbe manual, podas frecuentes)",
+              "Presupuesta los costos de certificación orgánica (auditorías anuales, trámites) desde el año 1",
+              "Considera un sobreprecio (premium) realista del 20-40% sobre el precio de la bolsa de Nueva York al proyectar ingresos",
+              "Establece un fondo de contingencia de al menos el 15% sobre la inversión total estimada"
+            ],
+            "commonMistakes": [
+              "Usar rendimientos de cacao convencional o de fincas altamente tecnificadas para las proyecciones",
+              "Olvidar presupuestar el costo de la mano de obra familiar o propia",
+              "Asumir que el precio del cacao se mantendrá estable, sin considerar la volatilidad del mercado",
+              "Subestimar los costos de infraestructura de beneficio (cajas de fermentación, secaderos)",
+              "No planificar el flujo de caja para cubrir los gastos de los primeros 3 años sin ingresos significativos"
+            ],
+            "tip": "Para una hectárea de cacao orgánico en Colombia, la inversión inicial (establecimiento, plantas, sombrío, infraestructura básica) oscila entre $15.000.000 y $25.000.000 COP. El punto de equilibrio operativo suele alcanzarse entre el año 4 y 5. Utiliza las plantillas de costos de producción de Fedecacao como línea base, pero ajusta los insumos químicos a cero y aumenta los rubros de materia orgánica y mano de obra.",
+            "recommendedTools": [
+              {
+                "name": "Fedecacao - Plantillas de Costos",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Estructuras de costos de producción de cacao actualizadas para Colombia"
+              },
+              {
+                "name": "Excel / Google Sheets",
+                "url": "https://www.google.com/sheets/about",
+                "description": "Para construir el modelo financiero de flujo de caja a 5 años"
+              },
+              {
+                "name": "Finagro - Calculadoras Financieras",
+                "url": "https://www.finagro.com.co",
+                "description": "Herramientas para simular créditos y tasas de interés para el sector agropecuario"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "total-initial-investment",
+                "label": "Inversión Inicial Total Estimada (COP)",
+                "type": "number",
+                "placeholder": "20000000",
+                "required": true
+              },
+              {
+                "fieldId": "annual-operating-cost-year3",
+                "label": "Costo Operativo Anual Estimado Año 3 (COP)",
+                "type": "number",
+                "placeholder": "8000000",
+                "required": true
+              },
+              {
+                "fieldId": "expected-yield-year4",
+                "label": "Rendimiento Esperado Año 4 (kg/ha/año)",
+                "type": "number",
+                "placeholder": "600",
+                "required": true
+              },
+              {
+                "fieldId": "expected-price-premium",
+                "label": "Sobreprecio (Premium) Esperado sobre Precio de Bolsa (%)",
+                "type": "number",
+                "placeholder": "30",
+                "required": true
+              },
+              {
+                "fieldId": "break-even-year",
+                "label": "Año Estimado de Punto de Equilibrio",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              },
+              {
+                "fieldId": "funding-sources",
+                "label": "Fuentes de Financiación Identificadas",
+                "type": "multiselect",
+                "options": [
+                  "Recursos propios",
+                  "Crédito bancario tradicional",
+                  "Línea de crédito Finagro",
+                  "Fondo Emprender / Inversión ángel",
+                  "Cooperativa de asociados"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "contingency-fund-percentage",
+                "label": "Porcentaje de Fondo de Contingencia Presupuestado (%)",
+                "type": "number",
+                "placeholder": "15",
+                "required": true
+              },
+              {
+                "fieldId": "financial-projection-url",
+                "label": "Enlace al Modelo de Flujo de Caja a 5 Años",
+                "type": "url",
+                "placeholder": "https://docs.google.com/spreadsheets/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Listar todos los costos de establecimiento (plantas, sombrío, infraestructura, mano de obra)",
+            "Construir un modelo de flujo de caja proyectado a 5 años",
+            "Ajustar los costos de insumos para reflejar exclusivamente prácticas orgánicas",
+            "Incluir los costos anuales de auditoría y mantenimiento de la certificación orgánica",
+            "Definir las fuentes de financiación y los requisitos para acceder a ellas",
+            "Calcular el punto de equilibrio en volumen (kg) y en tiempo (años)",
+            "Establecer un fondo de contingencia del 15% sobre la inversión total",
+            "Revisar el modelo financiero con un contador o asesor agropecuario",
+            "Archivar el modelo financiero aprobado en la carpeta de estrategia"
+          ]
+        }
+      ]
+    },
+    {
+      "phaseId": "business-model-market-definition",
+      "phaseTitle": "Definición del Modelo de Negocio y Mercado",
+      "steps": [
+        {
+          "stepId": "value-proposition-target-market",
+          "stepTitle": "Definición de la Propuesta de Valor y Segmento de Mercado",
+          "guide": {
+            "whyItMatters": "Decir 'vendo cacao orgánico' no es suficiente en un mercado global competitivo. Debes definir exactamente qué hace único a tu cacao (genética, territorio, impacto social) y a quién se lo vas a vender. Un chocolatero bean-to-bar busca perfiles de sabor exóticos y trazabilidad total; un industrial busca volumen y consistencia. Tu propuesta de valor dictará tus prácticas agronómicas, tu infraestructura y tu estrategia comercial.",
+            "bestPractices": [
+              "Define la variedad genética a sembrar o manejar (ej. Criollo, Trinitario, CCN-51) según tu objetivo de mercado",
+              "Identifica tu comprador ideal (Buyer Persona): chocolatería artesanal, industria nacional, exportador especializado",
+              "Articula 2-3 diferenciadores claros: origen único (terroir), prácticas regenerativas, empoderamiento de mujeres campesinas",
+              "Investiga los requisitos de calidad específicos de tu segmento (ej. porcentaje de fermentación, tamaño de grano)",
+              "Alinea tu capacidad de producción proyectada con la demanda mínima de tu segmento objetivo"
+            ],
+            "commonMistakes": [
+              "Sembrar variedades de alto rendimiento pero sabor plano (ej. algunos clones) si tu objetivo es el mercado bean-to-bar premium",
+              "Intentar vender a todos los segmentos simultáneamente, diluyendo el mensaje y los recursos",
+              "No investigar los volúmenes mínimos de compra que exigen los exportadores o chocolateros",
+              "Prometer volúmenes o calidades que la finca no puede entregar consistentemente",
+              "Ignorar las tendencias del mercado (ej. demanda creciente de cacao con huella de carbono neutra)"
+            ],
+            "tip": "Colombia es reconocida mundialmente por producir 'Cacao Fino de Aroma' (solo el 5-8% de la producción mundial). Si tu finca está en una zona con este potencial, tu propuesta de valor debe gritar 'calidad y origen', no 'commodity barato'. Define tu nicho: por ejemplo, 'Cacao Trinitario orgánico de la Amazonía, fermentado en cajas de madera, con notas frutales, producido por una asociación de mujeres'. Esto atrae a compradores dispuestos a pagar un premium del 40-60%.",
+            "recommendedTools": [
+              {
+                "name": "ProColombia - Perfil de Mercado de Cacao",
+                "url": "https://www.procolombia.co",
+                "description": "Información sobre tendencias, precios y requisitos de mercados internacionales"
+              },
+              {
+                "name": "Fine Cacao and Chocolate Institute (FCCI)",
+                "url": "https://www.finecacaoandchocolate.org",
+                "description": "Recursos sobre variedades de cacao fino y estándares de calidad"
+              },
+              {
+                "name": "Business Model Canvas",
+                "url": "https://www.google.com",
+                "description": "Plantilla para mapear visualmente todos los componentes del modelo de negocio"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "cacao-variety-focus",
+                "label": "Variedad de Cacao Principal a Producir",
+                "type": "select",
+                "options": ["Criollo", "Trinitario", "CCN-51", "Mezcla / Selección Masal", "Nativa / Silvestre"],
+                "required": true
+              },
+              {
+                "fieldId": "target-market-segment",
+                "label": "Segmento de Mercado Objetivo Principal",
+                "type": "select",
+                "options": [
+                  "Chocolateros Bean-to-Bar (Artesanal)",
+                  "Industria Chocolatera Nacional",
+                  "Exportadores Especializados",
+                  "Mercado de Ingredientes (Manteca/Polvo)",
+                  "Venta Directa al Consumidor"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "primary-value-proposition",
+                "label": "Propuesta de Valor Principal (Diferenciador)",
+                "type": "textarea",
+                "placeholder": "Ej: Cacao fino de aroma de origen único, con trazabilidad completa y prácticas agroecológicas regenerativas.",
+                "required": true
+              },
+              {
+                "fieldId": "secondary-value-proposition",
+                "label": "Propuesta de Valor Secundaria (Impacto)",
+                "type": "textarea",
+                "placeholder": "Ej: Generación de empleo rural y empoderamiento de mujeres cabeza de familia.",
+                "required": false
+              },
+              {
+                "fieldId": "minimum-quality-requirements",
+                "label": "Requisitos de Calidad Mínimos del Segmento",
+                "type": "multiselect",
+                "options": [
+                  "Mínimo 80% granos bien fermentados",
+                  "Humedad entre 6.5% y 7.5%",
+                  "Máximo 3% de defectos",
+                  "Tamaño de grano > 100 granos/100g",
+                  "Ausencia de olores a humo o moho"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "expected-annual-volume",
+                "label": "Volumen Anual de Venta Esperado a Mediano Plazo (kg)",
+                "type": "number",
+                "placeholder": "5000",
+                "required": true
+              },
+              {
+                "fieldId": "business-model-canvas-url",
+                "label": "Enlace al Business Model Canvas o Documento de Estrategia",
+                "type": "url",
+                "placeholder": "https://docs.google.com/document/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Seleccionar la variedad genética de cacao alineada con el mercado objetivo",
+            "Definir el perfil del comprador ideal (nacional o internacional)",
+            "Redactar la propuesta de valor principal y los diferenciadores competitivos",
+            "Investigar y listar los requisitos de calidad específicos del segmento elegido",
+            "Estimar el volumen de producción necesario para ser atractivo para ese segmento",
+            "Completar el Business Model Canvas del emprendimiento",
+            "Validar la estrategia con un experto del sector o potencial comprador",
+            "Archivar la documentación de la estrategia de mercado"
+          ]
+        }
+      ]
+    },
+    {
+      "phaseId": "organic-sustainability-philosophy",
+      "phaseTitle": "Filosofía Orgánica y Sostenibilidad",
+      "steps": [
+        {
+          "stepId": "conversion-agroecological-plan",
+          "stepTitle": "Diseño del Plan de Conversión y Manejo Agroecológico",
+          "guide": {
+            "whyItMatters": "La agricultura orgánica no es simplemente 'dejar de usar químicos'. Es un cambio de paradigma hacia la gestión de ecosistemas. El periodo de conversión (generalmente 36 meses) requiere prácticas activas para restaurar la microbiología del suelo, establecer el equilibrio biológico y cumplir con los estrictos estándares de los entes certificadores. Un plan de conversión mal diseñado resulta en colapso de la producción y rechazo de la certificación.",
+            "bestPractices": [
+              "Diseña un Sistema Agroforestal (SAF) diverso: combina cacao con maderables, frutales y leguminosas fijadoras de nitrógeno",
+              "Establece un protocolo de manejo de residuos: el 100% de las cáscaras de mazorca y podas deben retornar al suelo como materia orgánica",
+              "Diseña corredores biológicos para conectar fragmentos de bosque y promover la fauna benéfica (polinizadores, depredadores de plagas)",
+              "Prohíbe terminantemente la quema de residuos vegetales en la finca",
+              "Documenta todos los insumos permitidos según la norma orgánica que buscas (ej. USDA NOP, Reglamento UE)"
+            ],
+            "commonMistakes": [
+              "Talar todos los árboles existentes para 'limpiar' el terreno, violando principios de biodiversidad orgánica",
+              "Quemar las cáscaras de cacao después del beneficio, perdiendo nutrientes valiosos y contaminando el aire",
+              "Asumir que se puede obtener la certificación en menos de 36 meses desde la última aplicación de químico prohibido",
+              "No planificar la fuente de materia orgánica (compost, bocashi), quedando sin 'alimento' para el suelo",
+              "Ignorar las regulaciones específicas del país de destino (ej. la UE es más estricta con ciertos insumos que la norma nacional)"
+            ],
+            "tip": "La regla '30-40-30' es un excelente punto de partida para el diseño del sombrío en cacao: 30% árboles maderables/frutales de dosel alto, 40% cacao (el cultivo principal), y 30% leguminosas (como Guamo o Poró) para fijar nitrógeno y proporcionar sombra temporal. Inicia el compostaje de cáscaras de cacao desde el día 1; una mazorca contiene nutrientes equivalentes a un puñado de fertilizante químico, pero de liberación lenta y segura.",
+            "recommendedTools": [
+              {
+                "name": "ICA / Entes Certificadores - Listas de Insumos",
+                "url": "https://www.ica.gov.co",
+                "description": "Listas oficiales de sustancias permitidas y prohibidas en agricultura orgánica"
+              },
+              {
+                "name": "Manual de Sistemas Agroforestales con Cacao",
+                "url": "https://www.agrosavia.co",
+                "description": "Guías técnicas de AGROSAVIA para el diseño de SAF en Colombia"
+              },
+              {
+                "name": "Software de Diseño de Fincas (ej. QGIS)",
+                "url": "https://qgis.org",
+                "description": "Para mapear zonas de conservación, cultivo y corredores biológicos"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "target-certification-standard",
+                "label": "Norma de Certificación Orgánica Objetivo",
+                "type": "multiselect",
+                "options": [
+                  "Norma Nacional Colombiana",
+                  "USDA NOP (Estados Unidos)",
+                  "Reglamento de la Unión Europea (UE)",
+                  "JAS (Japón)",
+                  "Fair Trade (Comercio Justo)",
+                  "Rainforest Alliance"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "conversion-start-date",
+                "label": "Fecha de Inicio del Periodo de Conversión",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "agroforestry-design",
+                "label": "Diseño del Sistema Agroforestal (SAF)",
+                "type": "textarea",
+                "placeholder": "Ej: 30% maderables (Cedro, Caoba), 30% leguminosas (Guamo), 40% Cacao Trinitario.",
+                "required": true
+              },
+              {
+                "fieldId": "organic-matter-strategy",
+                "label": "Estrategia de Manejo de Materia Orgánica",
+                "type": "select",
+                "options": [
+                  "Compostaje de cáscaras y residuos",
+                  "Abonos verdes y coberturas",
+                  "Bocashi o lombricultura",
+                  "Combinación de las anteriores"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "biodiversity-corridors-planned",
+                "label": "¿Se han diseñado corredores biológicos en el mapa de la finca?",
+                "type": "select",
+                "options": ["Sí", "En planeación", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "chemical-ban-policy",
+                "label": "¿Existe una política escrita de prohibición total de agroquímicos sintéticos?",
+                "type": "select",
+                "options": ["Sí, firmada y socializada", "Sí, pero no socializada", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "organic-management-manual-url",
+                "label": "Enlace al Manual de Manejo Orgánico de la Finca",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Seleccionar la norma de certificación orgánica objetivo (nacional o internacional)",
+            "Definir la fecha oficial de inicio del periodo de conversión (y respetarla)",
+            "Diseñar el mapa de la finca con el Sistema Agroforestal (SAF) y corredores biológicos",
+            "Establecer el protocolo de compostaje y retorno de materia orgánica al suelo",
+            "Redactar y firmar la política de prohibición de agroquímicos sintéticos",
+            "Crear el Manual de Manejo Orgánico de la finca (prácticas permitidas y prohibidas)",
+            "Capacitar a todos los trabajadores y familiares en la filosofía y normas orgánicas",
+            "Archivar el mapa de la finca y el manual de manejo en la carpeta de estrategia"
+          ]
+        }
+      ]
+    }
+  ]
+}

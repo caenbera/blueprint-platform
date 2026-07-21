@@ -1,0 +1,1047 @@
+{
+  "block": "business",
+  "blockTitle": "Negocio",
+  "phases": [
+    {
+      "phaseId": "risk-management-strategic-growth",
+      "phaseTitle": "Gestión de Riesgos, Alianzas Estratégicas y Plan de Crecimiento",
+      "steps": [
+        {
+          "stepId": "risk-management-contingency",
+          "stepTitle": "Gestión de Riesgos y Plan de Contingencias",
+          "guide": {
+            "whyItMatters": "El cultivo de cacao orgánico está expuesto a múltiples riesgos que pueden amenazar la viabilidad del negocio: fenómenos climáticos extremos (sequías, inundaciones), plagas y enfermedades (moniliasis, escoba de bruja), volatilidad de precios internacionales, fluctuación cambiaria, problemas logísticos, y riesgos operativos. Sin un plan de gestión de riesgos y contingencias, un solo evento adverso puede generar pérdidas millonarias y poner en peligro años de inversión. Los compradores internacionales y entidades financieras exigen planes de contingencia documentados como requisito para contratos y créditos.",
+            "bestPractices": [
+              "Identifica y clasifica todos los riesgos potenciales: climáticos, fitosanitarios, de mercado, operativos, financieros",
+              "Desarrolla plan de contingencia escrito para cada riesgo crítico con protocolos de actuación",
+              "Implementa sistema de alerta temprana para monitoreo climático y fitosanitario",
+              "Diversifica fuentes de ingreso: cacao principal, pero también plántulas, turismo agrícola, subproductos",
+              "Mantiene fondo de emergencia equivalente a 6-12 meses de costos operativos",
+              "Establece protocolos de comunicación de crisis con compradores, trabajadores y comunidad",
+              "Realiza simulacros de contingencia al menos una vez al año",
+              "Documenta lecciones aprendidas de cada evento adverso para mejorar planes"
+            ],
+            "commonMistakes": [
+              "No identificar riesgos potenciales, operando sin preparación",
+              "Tener plan de contingencia solo en papel sin capacitar al equipo",
+              "No diversificar fuentes de ingreso, dependiendo 100% de venta de cacao",
+              "No mantener fondo de emergencia adecuado, quedando vulnerable ante crisis",
+              "No realizar simulacros, descubriendo fallos solo cuando ocurre emergencia real",
+              "No documentar lecciones aprendidas, repitiendo errores en cada crisis",
+              "Subestimar riesgos climáticos en zona tropical con alta variabilidad",
+              "No tener seguros adecuados para cubrir pérdidas por eventos catastróficos"
+            ],
+            "tip": "Para cacao orgánico en Colombia, los riesgos más críticos son: 1) Climáticos: sequía (pérdida 30-50% cosecha), exceso de lluvia (fermentación defectuosa, enfermedades), 2) Fitosanitarios: moniliasis (pérdida 40-100% si no se controla), escoba de bruja, 3) Mercado: caída de precio internacional (-30% en un año), 4) Logísticos: retrasos en exportación, deterioro en tránsito. Plan de contingencia mínimo debe incluir: protocolo de riego de emergencia (costo: $2.000.000-$5.000.000 COP), protocolo de control fitosanitario orgánico (costo: $1.500.000-$3.000.000 COP), protocolo de almacenamiento temporal si hay retrasos (costo: $500.000-$1.000.000 COP), fondo de emergencia mínimo: $30.000.000-$50.000.000 COP. Realiza simulacro anual con equipo: tiempo de respuesta objetivo <24 horas.",
+            "recommendedTools": [
+              {
+                "name": "IDEAM - Monitoreo Climático",
+                "url": "https://www.ideam.gov.co",
+                "description": "Instituto de Hidrología, Meteorología y Estudios Ambientales con alertas tempranas"
+              },
+              {
+                "name": "ICA - Alertas Fitosanitarias",
+                "url": "https://www.ica.gov.co",
+                "description": "Sistema de alerta temprana para plagas y enfermedades agrícolas"
+              },
+              {
+                "name": "Software de Gestión de Riesgos",
+                "url": "https://www.google.com",
+                "description": "Plataformas como RiskWatch o desarrollo personalizado en Airtable"
+              },
+              {
+                "name": "Federación Nacional de Cacaoteros - Alertas",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Alertas y recomendaciones técnicas para cacaoteros"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "risk_identification_completed",
+                "label": "¿Completó Identificación de Riesgos del Negocio?",
+                "type": "select",
+                "options": ["Sí, exhaustiva", "Sí, básica", "En proceso", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "risk_categories_identified",
+                "label": "Categorías de Riesgo Identificadas",
+                "type": "multiselect",
+                "options": [
+                  "Climáticos (sequía, inundación, granizo)",
+                  "Fitosanitarios (plagas, enfermedades)",
+                  "De mercado (volatilidad de precios)",
+                  "Cambiarios (fluctuación TRM)",
+                  "Logísticos (retrasos, deterioro)",
+                  "Operativos (fallas equipos, accidentes)",
+                  "Financieros (flujo de caja, crédito)",
+                  "Legales (cumplimiento normativo)",
+                  "Reputacionales (calidad, certificaciones)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "contingency_plan_documented",
+                "label": "¿Plan de Contingencia Documentado por Escrito?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, parcial", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "early_warning_system",
+                "label": "¿Sistema de Alerta Temprana Implementado?",
+                "type": "multiselect",
+                "options": [
+                  "Monitoreo climático (IDEAM)",
+                  "Alertas fitosanitarias (ICA)",
+                  "Monitoreo de precios internacionales",
+                  "Alertas de proveedores",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "income_diversification",
+                "label": "¿Diversificó Fuentes de Ingreso?",
+                "type": "multiselect",
+                "options": [
+                  "Venta de cacao (principal)",
+                  "Venta de plántulas",
+                  "Turismo agrícola",
+                  "Subproductos (pulpa, cáscara)",
+                  "Servicios de asistencia técnica",
+                  "Solo venta de cacao"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "emergency_fund_target",
+                "label": "Meta de Fondo de Emergencia (COP)",
+                "type": "number",
+                "placeholder": "40000000",
+                "required": true
+              },
+              {
+                "fieldId": "emergency_fund_current",
+                "label": "Fondo de Emergencia Actual (COP)",
+                "type": "number",
+                "placeholder": "25000000",
+                "required": true
+              },
+              {
+                "fieldId": "emergency_fund_months_coverage",
+                "label": "Meses de Costos Operativos Cubiertos por Fondo",
+                "type": "number",
+                "placeholder": "8",
+                "required": true
+              },
+              {
+                "fieldId": "crisis_communication_protocol",
+                "label": "¿Protocolo de Comunicación de Crisis Documentado?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "contingency_simulations_per_year",
+                "label": "Número de Simulacros de Contingencia al Año",
+                "type": "number",
+                "placeholder": "1",
+                "required": true
+              },
+              {
+                "fieldId": "last_simulation_date",
+                "label": "Fecha de Último Simulacro",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "average_response_time_hours",
+                "label": "Tiempo Promedio de Respuesta en Simulacro (horas)",
+                "type": "number",
+                "placeholder": "18",
+                "required": false
+              },
+              {
+                "fieldId": "lessons_learned_documented",
+                "label": "¿Lecciones Aprendidas de Crisis Documentadas?",
+                "type": "select",
+                "options": ["Sí, sistemáticamente", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "contingency_plan_url",
+                "label": "Enlace a Plan de Contingencia Completo",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Identificar exhaustivamente todos los riesgos potenciales del negocio",
+            "Clasificar riesgos por probabilidad e impacto (alto, medio, bajo)",
+            "Desarrollar plan de contingencia escrito para cada riesgo crítico",
+            "Implementar sistema de alerta temprana para monitoreo climático y fitosanitario",
+            "Diversificar fuentes de ingreso más allá de venta de cacao",
+            "Constituir fondo de emergencia equivalente a 6-12 meses de costos operativos",
+            "Establecer protocolo de comunicación de crisis con stakeholders",
+            "Realizar simulacro anual de contingencia con todo el equipo",
+            "Documentar lecciones aprendidas de cada evento adverso",
+            "Actualizar planes de contingencia anualmente según lecciones aprendidas",
+            "Capacitar a todo el equipo en protocolos de actuación ante emergencias",
+            "Establecer alianzas con vecinos y comunidad para respuesta coordinada",
+            "Mantener contactos de emergencia actualizados (bomberos, salud, proveedores)",
+            "Archivar plan de contingencia en carpeta física y digital accesible"
+          ]
+        },
+        {
+          "stepId": "strategic-alliances-networks",
+          "stepTitle": "Alianzas Estratégicas y Redes de Colaboración",
+          "guide": {
+            "whyItMatters": "Las alianzas estratégicas son fundamentales para escalar y fortalecer tu negocio de cacao orgánico. Ningún productor puede operar de forma aislada en un mercado global competitivo. Las alianzas con otros productores, cooperativas, universidades, centros de investigación, ONGs y entidades gubernamentales te permiten acceder a conocimientos, tecnología, financiamiento, mercados y recursos que serían imposibles de obtener individualmente. Además, los compradores internacionales valoran cada vez más las cadenas de suministro colaborativas y sostenibles.",
+            "bestPractices": [
+              "Afíliate a cooperativas o asociaciones de productores de cacao orgánico",
+              "Establece alianzas con universidades y centros de investigación (AGROSAVIA, Fedecacao)",
+              "Participa en redes internacionales de cacao orgánico (IFOAM, FiBL)",
+              "Desarrolla alianzas con ONGs especializadas en desarrollo rural sostenible",
+              "Colabora con otras fincas para compartir infraestructura (beneficio, secado)",
+              "Establece relaciones con proveedores estratégicos de insumos orgánicos",
+              "Participa en mesas de trabajo sectoriales con gobierno y gremios",
+              "Busca alianzas con chocolateros bean-to-bar para desarrollo conjunto de productos"
+            ],
+            "commonMistakes": [
+              "Operar de forma aislada sin buscar alianzas estratégicas",
+              "No afiliarse a cooperativas, perdiendo poder de negociación y acceso a recursos",
+              "No participar en redes internacionales, quedando fuera de tendencias globales",
+              "No colaborar con centros de investigación, perdiendo acceso a innovación",
+              "No compartir infraestructura con vecinos, duplicando inversiones",
+              "No participar en mesas sectoriales, perdiendo influencia en políticas públicas",
+              "Firmar alianzas sin definir claramente objetivos, roles y beneficios mutuos",
+              "No documentar acuerdos de colaboración, generando conflictos posteriores"
+            ],
+            "tip": "Para cacao orgánico en Colombia, las alianzas más valiosas son: 1) Cooperativas de productores (ej. Cacao Unión, Asoproca) para acceso a mercados y financiamiento, 2) Fedecacao para asistencia técnica y investigación, 3) AGROSAVIA para desarrollo de variedades y prácticas, 4) ONGs como Solidaridad, Heifer, o Rainforest Alliance para capacitación y certificaciones, 5) Universidades (Pontificia Universidad Javeriana, Universidad Nacional) para investigación aplicada. Beneficios típicos: acceso a créditos subsidiados (hasta 60% de tasa), asistencia técnica gratuita, acceso a mercados internacionales, compartir costos de infraestructura ($10.000.000-$30.000.000 COP ahorrados), participación en proyectos de investigación. Costo de afiliación a cooperativa: $500.000-$2.000.000 COP inicial + cuota anual $300.000-$800.000 COP.",
+            "recommendedTools": [
+              {
+                "name": "Fedecacao - Red Nacional de Cacaoteros",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Federación Nacional con programas de asistencia técnica e investigación"
+              },
+              {
+                "name": "AGROSAVIA - Investigación Agrícola",
+                "url": "https://www.agrosavia.co",
+                "description": "Corporación Colombiana de Investigación Agropecuaria con programas de cacao"
+              },
+              {
+                "name": "IFOAM - Organics International",
+                "url": "https://www.ifoam.bio",
+                "description": "Red global de agricultura orgánica con acceso a tendencias y mercados"
+              },
+              {
+                "name": "Solidaridad - Desarrollo Rural",
+                "url": "https://www.solidaridadnet.org",
+                "description": "ONG internacional con programas de cacao sostenible en Colombia"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "cooperative_affiliation",
+                "label": "¿Afiliado a Cooperativa o Asociación de Productores?",
+                "type": "select",
+                "options": ["Sí", "No, pero interesado", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "cooperative_name",
+                "label": "Nombre de la Cooperativa/Asociación",
+                "type": "text",
+                "placeholder": "Ej: Cacao Unión, Asoproca",
+                "required": false
+              },
+              {
+                "fieldId": "cooperative_affiliation_date",
+                "label": "Fecha de Afiliación",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "cooperative_annual_fee",
+                "label": "Cuota Anual de Afiliación (COP)",
+                "type": "number",
+                "placeholder": "500000",
+                "required": false
+              },
+              {
+                "fieldId": "research_alliances",
+                "label": "Alianzas con Centros de Investigación",
+                "type": "multiselect",
+                "options": [
+                  "Fedecacao",
+                  "AGROSAVIA",
+                  "Universidades nacionales",
+                  "Centros internacionales",
+                  "No tiene alianzas"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "international_networks",
+                "label": "Redes Internacionales donde Participa",
+                "type": "multiselect",
+                "options": [
+                  "IFOAM - Organics International",
+                  "FiBL - Instituto de Investigación Orgánica",
+                  "Fine Cacao and Chocolate Institute",
+                  "World Cocoa Foundation",
+                  "No participa en redes"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "ngo_partnerships",
+                "label": "Alianzas con ONGs para Desarrollo Rural",
+                "type": "multiselect",
+                "options": [
+                  "Solidaridad",
+                  "Heifer International",
+                  "Rainforest Alliance",
+                  "TechnoServe",
+                  "Otras ONGs",
+                  "No tiene alianzas"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "infrastructure_sharing",
+                "label": "¿Comparte Infraestructura con Otros Productores?",
+                "type": "multiselect",
+                "options": [
+                  "Beneficio de cacao",
+                  "Secaderos",
+                  "Bodegas de almacenamiento",
+                  "Equipos de transporte",
+                  "No comparte infraestructura"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "strategic_suppliers",
+                "label": "¿Tiene Proveedores Estratégicos de Insumos Orgánicos?",
+                "type": "select",
+                "options": ["Sí, varios", "Sí, algunos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sector_tables_participation",
+                "label": "¿Participa en Mesas de Trabajo Sectoriales?",
+                "type": "select",
+                "options": ["Sí, activamente", "Sí, ocasionalmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "bean_to_bar_partnerships",
+                "label": "¿Alianzas con Chocolateros Bean-to-Bar?",
+                "type": "select",
+                "options": ["Sí, varias", "Sí, algunas", "No, pero interesado", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "alliance_benefits_quantified",
+                "label": "¿Cuantifica Beneficios de Alianzas (ahorros, ingresos adicionales)?",
+                "type": "select",
+                "options": ["Sí, detalladamente", "Sí, básicamente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "annual_savings_from_alliances",
+                "label": "Ahorros Anuales por Alianzas (COP)",
+                "type": "number",
+                "placeholder": "15000000",
+                "required": false
+              },
+              {
+                "fieldId": "additional_income_from_alliances",
+                "label": "Ingresos Adicionales por Alianzas (COP/año)",
+                "type": "number",
+                "placeholder": "20000000",
+                "required": false
+              },
+              {
+                "fieldId": "alliance_agreements_documented",
+                "label": "¿Acuerdos de Alianza Documentados por Escrito?",
+                "type": "select",
+                "options": ["Sí, todos", "Sí, algunos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "alliance_portfolio_url",
+                "label": "Enlace a Portafolio de Alianzas Estratégicas",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Investigar cooperativas y asociaciones de productores de cacao orgánico en la región",
+            "Afiliarse a cooperativa o asociación más relevante",
+            "Establecer contacto con Fedecacao para asistencia técnica e investigación",
+            "Contactar AGROSAVIA para acceso a programas de investigación en cacao",
+            "Identificar y contactar universidades con programas de cacao",
+            "Registrarse en redes internacionales de cacao orgánico (IFOAM, FiBL)",
+            "Buscar alianzas con ONGs especializadas en desarrollo rural sostenible",
+            "Explorar posibilidades de compartir infraestructura con productores vecinos",
+            "Identificar y establecer relaciones con proveedores estratégicos de insumos orgánicos",
+            "Participar en mesas de trabajo sectoriales con gobierno y gremios",
+            "Buscar alianzas con chocolateros bean-to-bar para desarrollo de productos",
+            "Documentar todos los acuerdos de colaboración por escrito",
+            "Cuantificar beneficios de alianzas (ahorros, ingresos adicionales)",
+            "Programar reuniones trimestrales de seguimiento con aliados estratégicos",
+            "Evaluar anualmente efectividad de alianzas y ajustar según resultados",
+            "Archivar portafolio de alianzas en carpeta física y digital"
+          ]
+        },
+        {
+          "stepId": "scalability-growth-plan",
+          "stepTitle": "Plan de Escalabilidad y Crecimiento del Negocio",
+          "guide": {
+            "whyItMatters": "Un plan de escalabilidad define cómo tu negocio de cacao orgánico puede crecer de forma sostenible y rentable. Sin planificación, el crecimiento puede generar problemas de calidad, sobreextensión financiera, o pérdida de control operativo. Por el contrario, un plan bien estructurado te permite aprovechar oportunidades de mercado, acceder a financiamiento para expansión, y construir un negocio que pueda operar eficientemente a mayor escala. Los inversionistas y entidades financieras exigen planes de crecimiento claros antes de financiar expansión.",
+            "bestPractices": [
+              "Define metas de crecimiento realistas a 3, 5 y 10 años basadas en capacidad real",
+              "Planifica expansión por fases: consolidar operación actual antes de escalar",
+              "Considera diferentes modelos de crecimiento: expansión de área, intensificación, diversificación",
+              "Calcula inversión requerida para cada fase de crecimiento con flujo de caja proyectado",
+              "Identifica cuellos de botella que limitan crecimiento y planifica cómo resolverlos",
+              "Desarrolla modelo de negocio replicable que permita escalar sin perder calidad",
+              "Planifica estructura organizacional que soporte crecimiento (personal, sistemas)",
+              "Considera opciones de financiamiento: créditos agrícolas, inversionistas, crowdfunding"
+            ],
+            "commonMistakes": [
+              "Crecer sin plan, generando caos operativo y pérdida de calidad",
+              "Subestimar inversión requerida para crecimiento, quedándose sin capital",
+              "No identificar cuellos de botella, creando limitaciones inesperadas",
+              "Crecer demasiado rápido sin consolidar operación base",
+              "No planificar estructura organizacional, generando sobrecarga del fundador",
+              "No considerar opciones de financiamiento, limitando crecimiento",
+              "Perder control de calidad al escalar, dañando reputación",
+              "No documentar procesos, haciendo imposible replicar operación a mayor escala"
+            ],
+            "tip": "Para cacao orgánico en Colombia, las opciones de crecimiento más comunes son: 1) Expansión de área: de 10 a 30 hectáreas (inversión: $150.000.000-$300.000.000 COP incluyendo tierra, establecimiento, infraestructura), 2) Intensificación: aumentar rendimiento de 800 a 1200 kg/ha con mejor manejo (inversión: $30.000.000-$60.000.000 COP en tecnología, insumos, capacitación), 3) Diversificación vertical: procesar cacao en pasta, manteca, polvo (inversión: $200.000.000-$500.000.000 COP en equipos, permisos), 4) Diversificación horizontal: agregar productos complementarios (turismo agrícola, plántulas, subproductos). Tiempo típico para consolidar cada fase: 2-3 años. Fuentes de financiamiento: Finagro (tasas 8-12% anual), Fondo Emprender SENA (capital semilla hasta $150.000.000 COP), inversionistas de impacto (tasas 10-15%), crowdfunding agrícola.",
+            "recommendedTools": [
+              {
+                "name": "Finagro - Líneas de Crédito Agrícola",
+                "url": "https://www.finagro.com.co",
+                "description": "Financiamiento subsidiado para expansión de actividades agrícolas"
+              },
+              {
+                "name": "Fondo Emprender SENA",
+                "url": "https://www.sena.edu.co",
+                "description": "Capital semilla para emprendimientos con plan de crecimiento sólido"
+              },
+              {
+                "name": "Software de Proyección Financiera",
+                "url": "https://www.google.com",
+                "description": "Excel avanzado o herramientas como LivePlan para proyecciones a 5 años"
+              },
+              {
+                "name": "Consultoría en Planes de Negocio",
+                "url": "https://www.google.com",
+                "description": "Firmas especializadas en agronegocios para estructuración de planes de crecimiento"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "growth_model_selected",
+                "label": "Modelo de Crecimiento Seleccionado",
+                "type": "multiselect",
+                "options": [
+                  "Expansión de área (más hectáreas)",
+                  "Intensificación (mayor rendimiento/ha)",
+                  "Diversificación vertical (procesamiento)",
+                  "Diversificación horizontal (nuevos productos)",
+                  "Franquicia o replicación de modelo",
+                  "Crecimiento orgánico lento"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "current_hectares",
+                "label": "Hectáreas Actuales en Producción",
+                "type": "number",
+                "placeholder": "10",
+                "required": true
+              },
+              {
+                "fieldId": "target_hectares_5years",
+                "label": "Meta de Hectáreas a 5 Años",
+                "type": "number",
+                "placeholder": "30",
+                "required": true
+              },
+              {
+                "fieldId": "current_yield_per_hectare",
+                "label": "Rendimiento Actual (kg/ha/año)",
+                "type": "number",
+                "placeholder": "800",
+                "required": true
+              },
+              {
+                "fieldId": "target_yield_per_hectare_5years",
+                "label": "Meta de Rendimiento a 5 Años (kg/ha/año)",
+                "type": "number",
+                "placeholder": "1200",
+                "required": true
+              },
+              {
+                "fieldId": "current_annual_production_kg",
+                "label": "Producción Anual Actual (kg)",
+                "type": "number",
+                "placeholder": "8000",
+                "required": true
+              },
+              {
+                "fieldId": "target_annual_production_5years",
+                "label": "Meta de Producción Anual a 5 Años (kg)",
+                "type": "number",
+                "placeholder": "36000",
+                "required": true
+              },
+              {
+                "fieldId": "growth_phases_defined",
+                "label": "¿Fases de Crecimiento Definidas?",
+                "type": "select",
+                "options": ["Sí, 3 o más fases", "Sí, 2 fases", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "phase_1_duration_years",
+                "label": "Duración Fase 1 - Consolidación (años)",
+                "type": "number",
+                "placeholder": "2",
+                "required": true
+              },
+              {
+                "fieldId": "phase_2_duration_years",
+                "label": "Duración Fase 2 - Expansión (años)",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "bottlenecks_identified",
+                "label": "Cuellos de Botella Identificados que Limitan Crecimiento",
+                "type": "multiselect",
+                "options": [
+                  "Capacidad de infraestructura (fermentación, secado)",
+                  "Disponibilidad de mano de obra calificada",
+                  "Acceso a financiamiento",
+                  "Capacidad de almacenamiento",
+                  "Sistemas de gestión (contable, trazabilidad)",
+                  "Conocimiento técnico",
+                  "Acceso a mercados"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "investment_required_phase1",
+                "label": "Inversión Requerida Fase 1 (COP)",
+                "type": "number",
+                "placeholder": "50000000",
+                "required": true
+              },
+              {
+                "fieldId": "investment_required_phase2",
+                "label": "Inversión Requerida Fase 2 (COP)",
+                "type": "number",
+                "placeholder": "150000000",
+                "required": true
+              },
+              {
+                "fieldId": "financing_sources",
+                "label": "Fuentes de Financiamiento para Crecimiento",
+                "type": "multiselect",
+                "options": [
+                  "Recursos propios",
+                  "Crédito bancario tradicional",
+                  "Finagro (crédito subsidiado)",
+                  "Fondo Emprender SENA",
+                  "Inversionistas de impacto",
+                  "Crowdfunding agrícola",
+                  "Alianzas estratégicas"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "financial_projection_5years",
+                "label": "¿Proyección Financiera a 5 Años Elaborada?",
+                "type": "select",
+                "options": ["Sí, detallada", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "organizational_structure_planned",
+                "label": "¿Estructura Organizacional para Crecimiento Planificada?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "replicable_business_model",
+                "label": "¿Modelo de Negocio Documentado y Replicable?",
+                "type": "select",
+                "options": ["Sí, completamente", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "growth_plan_url",
+                "label": "Enlace a Plan de Crecimiento Completo",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Definir metas de crecimiento realistas a 3, 5 y 10 años",
+            "Seleccionar modelo de crecimiento (expansión, intensificación, diversificación)",
+            "Planificar fases de crecimiento con hitos claros",
+            "Identificar cuellos de botella que limitan crecimiento",
+            "Calcular inversión requerida para cada fase de crecimiento",
+            "Elaborar proyección financiera detallada a 5 años",
+            "Identificar fuentes de financiamiento disponibles (Finagro, SENA, inversionistas)",
+            "Diseñar estructura organizacional que soporte crecimiento",
+            "Documentar procesos operativos para hacer modelo replicable",
+            "Planificar expansión de infraestructura (fermentación, secado, almacenamiento)",
+            "Planificar contratación y capacitación de personal adicional",
+            "Establecer alianzas estratégicas para apoyar crecimiento",
+            "Implementar sistemas de gestión escalables (software, trazabilidad)",
+            "Definir indicadores de seguimiento del plan de crecimiento",
+            "Programar revisión trimestral de avances vs plan",
+            "Ajustar plan anualmente según resultados y condiciones de mercado"
+          ]
+        },
+        {
+          "stepId": "knowledge-management-training",
+          "stepTitle": "Gestión del Conocimiento y Capacitación Continua",
+          "guide": {
+            "whyItMatters": "El conocimiento es el activo más valioso de tu negocio de cacao orgánico. Sin sistemas para capturar, documentar y transferir conocimiento, cada vez que un trabajador clave se va, se pierde experiencia invaluable. Además, las prácticas agrícolas, técnicas de procesamiento y estándares de calidad evolucionan constantemente. Un sistema robusto de gestión del conocimiento y capacitación continua te permite mantener competitividad, asegurar consistencia de calidad, reducir errores, y escalar el negocio sin perder el know-how acumulado.",
+            "bestPractices": [
+              "Documenta todos los procesos operativos en manuales detallados con fotos y videos",
+              "Implementa sistema de capacitación continua para todos los trabajadores",
+              "Crea biblioteca de conocimiento accesible con mejores prácticas y lecciones aprendidas",
+              "Establece programa de mentoría donde trabajadores experimentados capaciten a nuevos",
+              "Realiza capacitaciones externas con expertos al menos 2 veces al año",
+              "Participa en intercambios de conocimiento con otras fincas y productores",
+              "Implementa sistema de gestión de lecciones aprendidas después de cada cosecha",
+              "Utiliza tecnología (videos, apps, realidad aumentada) para capacitación"
+            ],
+            "commonMistakes": [
+              "No documentar procesos, dependiendo de memoria de trabajadores experimentados",
+              "No capacitar continuamente, permitiendo que prácticas se vuelvan obsoletas",
+              "No crear biblioteca de conocimiento, reinventando soluciones a problemas ya resueltos",
+              "No establecer mentoría, perdiendo transferencia de conocimiento tácito",
+              "No participar en intercambios con otros productores, quedándose aislado",
+              "No documentar lecciones aprendidas, repitiendo errores",
+              "No utilizar tecnología para capacitación, limitando alcance y efectividad",
+              "No evaluar efectividad de capacitaciones, invirtiendo sin retorno"
+            ],
+            "tip": "Para gestión del conocimiento en cacao orgánico, los procesos críticos a documentar son: 1) Establecimiento del cultivo (preparación de terreno, siembra, distancias), 2) Manejo fitosanitario orgánico (identificación de plagas, preparación de bioinsumos, aplicación), 3) Cosecha (punto de madurez, técnica de corte, transporte), 4) Fermentación (llenado de cajas, volteos, monitoreo de temperatura), 5) Secado (extendido, volteos, control de humedad), 6) Empaque y almacenamiento. Costo de documentación inicial: $3.000.000-$8.000.000 COP incluyendo videos profesionales. Programa de capacitación anual: $5.000.000-$15.000.000 COP incluyendo capacitaciones externas, materiales, tiempo de trabajadores. Herramientas recomendadas: Loom para videos rápidos, Notion para biblioteca de conocimiento, WhatsApp grupos para comunicación diaria, Google Drive para almacenamiento centralizado.",
+            "recommendedTools": [
+              {
+                "name": "Loom - Grabación de Videos",
+                "url": "https://www.loom.com",
+                "description": "Herramienta para grabar videos de procedimientos operativos rápidamente"
+              },
+              {
+                "name": "Notion - Base de Conocimiento",
+                "url": "https://www.notion.so",
+                "description": "Plataforma para crear biblioteca de conocimiento colaborativa y accesible"
+              },
+              {
+                "name": "Google Drive - Almacenamiento Centralizado",
+                "url": "https://drive.google.com",
+                "description": "Almacenamiento en la nube para documentos, videos y materiales de capacitación"
+              },
+              {
+                "name": "SENAL - Capacitación Agrícola",
+                "url": "https://www.sena.edu.co",
+                "description": "SENA ofrece cursos gratuitos y certificados en agricultura y cacao"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "processes_documented",
+                "label": "¿Procesos Operativos Documentados en Manuales?",
+                "type": "multiselect",
+                "options": [
+                  "Establecimiento del cultivo",
+                  "Manejo fitosanitario orgánico",
+                  "Cosecha",
+                  "Fermentación",
+                  "Secado",
+                  "Empaque y almacenamiento",
+                  "Control de calidad",
+                  "Mantenimiento de equipos"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "manuals_format",
+                "label": "Formato de Manuales de Procedimientos",
+                "type": "multiselect",
+                "options": [
+                  "Documentos PDF con fotos",
+                  "Videos tutoriales",
+                  "Infografías",
+                  "Presentaciones",
+                  "Combinación de formatos"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "knowledge_library_platform",
+                "label": "Plataforma de Biblioteca de Conocimiento",
+                "type": "select",
+                "options": [
+                  "Notion",
+                  "Google Drive",
+                  "SharePoint",
+                  "Software especializado",
+                  "No implementada"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "training_program_annual",
+                "label": "¿Programa de Capacitación Anual Definido?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "internal_training_sessions_per_year",
+                "label": "Sesiones de Capacitación Interna al Año",
+                "type": "number",
+                "placeholder": "12",
+                "required": true
+              },
+              {
+                "fieldId": "external_training_sessions_per_year",
+                "label": "Capacitaciones Externas al Año",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              },
+              {
+                "fieldId": "mentorship_program",
+                "label": "¿Programa de Mentoría Implementado?",
+                "type": "select",
+                "options": ["Sí, formal", "Sí, informal", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "knowledge_exchange_visits",
+                "label": "Visitas de Intercambio de Conocimiento al Año",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "lessons_learned_system",
+                "label": "¿Sistema de Gestión de Lecciones Aprendidas?",
+                "type": "select",
+                "options": ["Sí, documentado", "Sí, informal", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "training_effectiveness_evaluated",
+                "label": "¿Efectividad de Capacitaciones Evaluada?",
+                "type": "select",
+                "options": ["Sí, con métricas", "Sí, informalmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "technology_used_for_training",
+                "label": "Tecnología Utilizada para Capacitación",
+                "type": "multiselect",
+                "options": [
+                  "Videos (Loom, YouTube)",
+                  "Apps móviles",
+                  "Realidad aumentada",
+                  "Plataformas e-learning",
+                  "WhatsApp grupos",
+                  "No se usa tecnología"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "annual_training_budget",
+                "label": "Presupuesto Anual de Capacitación (COP)",
+                "type": "number",
+                "placeholder": "10000000",
+                "required": true
+              },
+              {
+                "fieldId": "documentation_initial_cost",
+                "label": "Costo Inicial de Documentación de Procesos (COP)",
+                "type": "number",
+                "placeholder": "5000000",
+                "required": false
+              },
+              {
+                "fieldId": "knowledge_library_url",
+                "label": "Enlace a Biblioteca de Conocimiento",
+                "type": "url",
+                "placeholder": "https://notion.so/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Identificar todos los procesos operativos críticos a documentar",
+            "Crear manuales detallados con fotos y videos para cada proceso",
+            "Implementar plataforma de biblioteca de conocimiento (Notion, Google Drive)",
+            "Diseñar programa de capacitación anual con temas y fechas",
+            "Programar sesiones de capacitación interna mensual",
+            "Contratar capacitaciones externas con expertos al menos 2 veces al año",
+            "Establecer programa de mentoría formal entre trabajadores experimentados y nuevos",
+            "Programar visitas de intercambio de conocimiento con otras fincas",
+            "Implementar sistema de registro de lecciones aprendidas después de cada cosecha",
+            "Utilizar tecnología (videos, apps) para hacer capacitación más efectiva",
+            "Evaluar efectividad de capacitaciones con métricas claras",
+            "Actualizar manuales y materiales anualmente según nuevas prácticas",
+            "Capacitar a todos los trabajadores en uso de biblioteca de conocimiento",
+            "Asignar presupuesto anual para capacitación y documentación",
+            "Designar responsable de gestión del conocimiento en la organización",
+            "Programar revisión trimestral de avances en gestión del conocimiento"
+          ]
+        },
+        {
+          "stepId": "succession-sustainability",
+          "stepTitle": "Plan de Sucesión y Sostenibilidad del Negocio a Largo Plazo",
+          "guide": {
+            "whyItMatters": "La sostenibilidad a largo plazo de tu negocio de cacao orgánico requiere planificación de sucesión y visión más allá del fundador. Sin un plan claro, el negocio puede desintegrarse cuando el fundador se retire, enferme o fallezca, perdiendo años de inversión y desarrollo. Además, los compradores internacionales, inversionistas y entidades financieras valoran cada vez más la continuidad del negocio y la gobernanza corporativa. Un plan de sucesión bien estructurado protege el legado, asegura transición ordenada, y mantiene el valor del negocio para las siguientes generaciones o nuevos propietarios.",
+            "bestPractices": [
+              "Define visión a largo plazo del negocio (10-20 años) más allá del fundador",
+              "Identifica y desarrolla sucesores potenciales (familiares o externos) con anticipación",
+              "Implementa gobernanza corporativa formal: junta directiva, comités, políticas",
+              "Documenta estructura de propiedad y plan de transferencia (testamento, fideicomiso)",
+              "Desarrolla plan de retiro financiero para el fundador",
+              "Profesionaliza la gestión contratando talento externo si es necesario",
+              "Implementa sistemas de gestión que no dependan de personas específicas",
+              "Considera opciones de salida: venta a terceros, fusión, liquidación ordenada"
+            ],
+            "commonMistakes": [
+              "No pensar en sucesión, asumiendo que 'siempre estaré aquí'",
+              "No desarrollar sucesores, creando vacío de liderazgo cuando sea necesario",
+              "No implementar gobernanza corporativa, centralizando todas las decisiones",
+              "No documentar estructura de propiedad, generando conflictos familiares o legales",
+              "No planificar retiro financiero, quedando vulnerable económicamente",
+              "No profesionalizar gestión, limitando crecimiento y sostenibilidad",
+              "Crear dependencia excesiva del fundador en operaciones diarias",
+              "No considerar opciones de salida, perdiendo flexibilidad estratégica"
+            ],
+            "tip": "Para cacao orgánico en Colombia, las opciones de sucesión más comunes son: 1) Sucesión familiar: transferir a hijos/familiares (requiere 5-10 años de preparación, capacitación y transición gradual), 2) Venta a terceros: vender a otro productor, inversionista o fondo (valor típico: 5-8x EBITDA anual), 3) Modelo cooperativo: transferir a cooperativa de trabajadores o comunidad, 4) Liquidación ordenada: cerrar negocio de forma planada maximizando valor residual. Costo de planificación legal (testamento, fideicomiso, estructura corporativa): $5.000.000-$15.000.000 COP. Implementación de gobernanza corporativa (junta directiva, comités): $10.000.000-$30.000.000 COP anual. Plan de retiro financiero: acumular mínimo 20x gastos anuales personales antes de retiro. Inicia planificación de sucesión al menos 10 años antes de fecha objetivo de retiro.",
+            "recommendedTools": [
+              {
+                "name": "Asesoría Legal Especializada en Sucesiones",
+                "url": "https://www.google.com",
+                "description": "Abogados especializados en planificación sucesoral y estructura corporativa"
+              },
+              {
+                "name": "Consultoría en Gobernanza Corporativa",
+                "url": "https://www.google.com",
+                "description": "Firmas especializadas en implementación de juntas directivas y comités"
+              },
+              {
+                "name": "Asesoría Financiera para Plan de Retiro",
+                "url": "https://www.google.com",
+                "description": "Planificadores financieros para estructurar retiro sostenible"
+              },
+              {
+                "name": "Valuación de Negocios Agrícolas",
+                "url": "https://www.google.com",
+                "description": "Consultores especializados en valuación de fincas y agronegocios"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "long_term_vision_defined",
+                "label": "¿Visión a Largo Plazo del Negocio Definida (10-20 años)?",
+                "type": "select",
+                "options": ["Sí, documentada", "Sí, verbal", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "succession_plan_documented",
+                "label": "¿Plan de Sucesión Documentado por Escrito?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, básico", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "succession_model",
+                "label": "Modelo de Sucesión Seleccionado",
+                "type": "select",
+                "options": [
+                  "Sucesión familiar",
+                  "Venta a terceros",
+                  "Modelo cooperativo",
+                  "Liquidación ordenada",
+                  "No definido aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "potential_successors_identified",
+                "label": "¿Sucesores Potenciales Identificados?",
+                "type": "select",
+                "options": ["Sí, familiares", "Sí, externos", "Sí, mixto", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "successor_development_program",
+                "label": "¿Programa de Desarrollo de Sucesores Implementado?",
+                "type": "select",
+                "options": ["Sí, formal", "Sí, informal", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "target_retirement_age",
+                "label": "Edad Objetivo de Retiro del Fundador",
+                "type": "number",
+                "placeholder": "65",
+                "required": false
+              },
+              {
+                "fieldId": "years_until_retirement",
+                "label": "Años Restantes para Retiro",
+                "type": "number",
+                "placeholder": "15",
+                "required": false
+              },
+              {
+                "fieldId": "corporate_governance_implemented",
+                "label": "¿Gobernanza Corporativa Formal Implementada?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "board_of_directors",
+                "label": "¿Junta Directiva Constituida?",
+                "type": "select",
+                "options": ["Sí, con miembros externos", "Sí, solo familia", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "ownership_structure_documented",
+                "label": "¿Estructura de Propiedad Documentada Legalmente?",
+                "type": "select",
+                "options": ["Sí, con asesoría legal", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "will_or_trust_established",
+                "label": "¿Testamento o Fideicomiso Establecido?",
+                "type": "select",
+                "options": ["Sí, actualizado", "Sí, desactualizado", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "retirement_financial_plan",
+                "label": "¿Plan de Retiro Financiero del Fundador?",
+                "type": "select",
+                "options": ["Sí, cuantificado", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "retirement_savings_target",
+                "label": "Meta de Ahorro para Retiro (COP)",
+                "type": "number",
+                "placeholder": "2000000000",
+                "required": false
+              },
+              {
+                "fieldId": "retirement_savings_current",
+                "label": "Ahorro Actual para Retiro (COP)",
+                "type": "number",
+                "placeholder": "800000000",
+                "required": false
+              },
+              {
+                "fieldId": "business_valuation_performed",
+                "label": "¿Valuación del Negocio Realizada Recientemente?",
+                "type": "select",
+                "options": ["Sí, último año", "Sí, hace 2-3 años", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "current_business_valuation",
+                "label": "Valuación Actual del Negocio (COP)",
+                "type": "number",
+                "placeholder": "5000000000",
+                "required": false
+              },
+              {
+                "fieldId": "exit_options_considered",
+                "label": "¿Opciones de Salida Consideradas?",
+                "type": "multiselect",
+                "options": [
+                  "Venta a inversionista estratégico",
+                  "Venta a fondo de inversión",
+                  "Fusión con otro negocio",
+                  "Liquidación ordenada",
+                  "Transferencia a empleados",
+                  "Continuidad indefinida"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "succession_plan_legal_review",
+                "label": "¿Plan de Sucesión Revisado por Abogado?",
+                "type": "select",
+                "options": ["Sí, último año", "Sí, hace más tiempo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "succession_plan_url",
+                "label": "Enlace a Plan de Sucesión Completo",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Definir visión a largo plazo del negocio (10-20 años)",
+            "Seleccionar modelo de sucesión (familiar, venta, cooperativo, liquidación)",
+            "Identificar y evaluar sucesores potenciales (familiares o externos)",
+            "Desarrollar programa de capacitación y desarrollo para sucesores",
+            "Implementar gobernanza corporativa formal (junta directiva, comités)",
+            "Documentar estructura de propiedad con asesoría legal",
+            "Establecer testamento o fideicomiso para transferencia ordenada",
+            "Diseñar plan de retiro financiero cuantificado para el fundador",
+            "Realizar valuación actualizada del negocio",
+            "Considerar y evaluar opciones de salida estratégicas",
+            "Profesionalizar gestión contratando talento externo si es necesario",
+            "Implementar sistemas de gestión que no dependan de personas específicas",
+            "Planificar transición gradual de responsabilidades al sucesor",
+            "Comunicar plan de sucesión a stakeholders clave (familia, empleados, compradores)",
+            "Revisar y actualizar plan de sucesión anualmente con asesoría legal",
+            "Programar simulacro de transición para probar efectividad del plan"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,413 @@
+{
+  "block": "operations",
+  "blockTitle": "Operaciones",
+  "phases": [
+    {
+      "phaseId": "agronomic-management-soil-care",
+      "phaseTitle": "Manejo Agronómico Recurrente y Cuidado del Cultivo",
+      "steps": [
+        {
+          "stepId": "organic-fertilization-soil-management",
+          "stepTitle": "Fertilización Orgánica y Manejo de Suelos",
+          "guide": {
+            "whyItMatters": "En el cultivo de cacao orgánico, la nutrición no depende de fertilizantes químicos sintéticos, sino de la materia orgánica, la microbiología del suelo y los bioinsumos. Una fertilización orgánica deficiente o mal aplicada resulta en árboles débiles, baja producción, granos pequeños y alta susceptibilidad a enfermedades. Además, los certificadores orgánicos auditan estrictamente el origen y composición de los insumos aplicados al suelo.",
+            "bestPractices": [
+              "Utiliza Abono Orgánico Compuesto (AOC) elaborado con pulpa de cacao, cáscaras, gallinaza y residuos vegetales",
+              "Aplica bioinsumos líquidos (Biol, Sulfocálcico) vía foliar para correcciones rápidas de micronutrientes",
+              "Realiza la aplicación en la 'corona' del árbol o en surcos superficiales, aprovechando la humedad del suelo",
+              "Mantén el suelo cubierto con cobertura viva (leguminosas) o mulch para retener humedad y evitar erosión",
+              "Verifica que todos los insumos orgánicos estén certificados o aprobados por tu ente certificador",
+              "Lleva un registro estricto de las dosis y fechas para cumplir con el cuaderno de campo orgánico"
+            ],
+            "commonMistakes": [
+              "Aplicar abonos orgánicos en épocas de sequía extrema sin riego previo (no se mineralizan)",
+              "Mezclar bioinsumos biológicos (como Trichoderma) con cal o cobre, matando los microorganismos benéficos",
+              "Usar gallinaza cruda sin compostar, lo que quema las raíces y atrae plagas",
+              "Dejar los costales de insumos a la intemperie, perdiendo sus propiedades nutricionales",
+              "No registrar las aplicaciones, generando 'vacíos' en la trazabilidad del cuaderno de campo"
+            ],
+            "tip": "Para cacao orgánico en Colombia, la dosis recomendada de Abono Orgánico Compuesto (AOC) es de 2 a 4 kg por árbol/año, dividido en 2 o 3 aplicaciones (inicio de lluvias, mitad de lluvias, cierre de lluvias). Si usas pulpa de cacao para hacer compost, asegúrate de voltearla cada 7 días y verificar que la temperatura de la pila llegue a 55-60°C para eliminar patógenos y semillas de arvenses. Tiempo de compostaje: 60-90 días.",
+            "recommendedTools": [
+              {
+                "name": "Termómetro de Composta (Sonda larga)",
+                "url": "https://www.google.com",
+                "description": "Para monitorear la temperatura de las pilas de compost y asegurar la descomposición correcta"
+              },
+              {
+                "name": "Medidor de pH y Humedad de Suelo",
+                "url": "https://www.google.com",
+                "description": "Herramientas portátiles para verificar las condiciones del suelo antes de fertilizar"
+              },
+              {
+                "name": "Mochila Pulverizadora de 20L",
+                "url": "https://www.google.com",
+                "description": "Equipos manuales o de batería para aplicación foliar de bioinsumos líquidos"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "application-date",
+                "label": "Fecha de Aplicación",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "plot-or-zone",
+                "label": "Parcela o Zona de Aplicación",
+                "type": "text",
+                "placeholder": "Ej: Parcela 3 - Lote Amazónico",
+                "required": true
+              },
+              {
+                "fieldId": "input-type",
+                "label": "Tipo de Insumo Orgánico Aplicado",
+                "type": "select",
+                "options": [
+                  "Abono Orgánico Compuesto (AOC)",
+                  "Compost de pulpa de cacao",
+                  "Gallinaza compostada",
+                  "Biol (Foliar)",
+                  "Caldo Bordelés",
+                  "Trichoderma / Biocontrol",
+                  "Harina de rocas",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "input-batch-number",
+                "label": "Número de Lote del Insumo (Trazabilidad)",
+                "type": "text",
+                "placeholder": "Ej: Lote Compost Oct-23",
+                "required": true
+              },
+              {
+                "fieldId": "dose-per-tree-kg",
+                "label": "Dosis Aplicada por Árbol (kg o litros)",
+                "type": "number",
+                "placeholder": "2.5",
+                "required": true
+              },
+              {
+                "fieldId": "number-of-trees-treated",
+                "label": "Número de Árboles Tratados",
+                "type": "number",
+                "placeholder": "400",
+                "required": true
+              },
+              {
+                "fieldId": "soil-moisture-condition",
+                "label": "Condición de Humedad del Suelo al Aplicar",
+                "type": "select",
+                "options": ["Húmedo (Ideal)", "Seco (Requiere riego previo)", "Encharcado (No recomendado)"],
+                "required": true
+              },
+              {
+                "fieldId": "weather-conditions",
+                "label": "Condiciones Climáticas durante la Aplicación",
+                "type": "select",
+                "options": ["Soleado", "Nublado", "Llovizna", "Lluvia"],
+                "required": true
+              },
+              {
+                "fieldId": "applicator-name",
+                "label": "Nombre del Trabajador que Aplicó",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": true
+              },
+              {
+                "fieldId": "observations",
+                "label": "Observaciones de Campo",
+                "type": "textarea",
+                "placeholder": "Ej: Se notó deficiencia de nitrógeno en la zona baja, se aumentó dosis de biol.",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Verificar que el insumo orgánico esté certificado o aprobado para agricultura orgánica",
+            "Medir la humedad del suelo y asegurar que sea adecuada para la aplicación",
+            "Preparar la dosis exacta según el tamaño y edad de los árboles",
+            "Aplicar el abono en la corona o surco superficial evitando el contacto directo con el tronco",
+            "Si es aplicación foliar, hacer en horas de baja insolación (temprano o tarde)",
+            "Lavar y desinfectar los equipos de aplicación (mochilas) inmediatamente después de usar",
+            "Registrar la fecha, lote del insumo, dosis y área en el cuaderno de campo o app",
+            "Almacenar los sobrantes de insumos en bodega seca y ventilada"
+          ]
+        },
+        {
+          "stepId": "pruning-shade-management",
+          "stepTitle": "Poda de Cacao y Manejo de Sombrío Dinámico",
+          "guide": {
+            "whyItMatters": "La poda es la práctica cultural más crítica para el control de enfermedades (especialmente Moniliasis) y para mantener la productividad. Un árbol mal podado retiene humedad, se convierte en un 'nido' de hongos y agota su energía en madera improductiva. Además, el manejo del sombrío (árboles grandes que dan sombra) debe ser dinámico: en época seca se necesita más sombra para retener humedad, y en época lluviosa se necesita más luz y aireación para secar las mazorcas.",
+            "bestPractices": [
+              "Realiza podas de saneamiento (eliminación de ramas secas, enfermas y 'chupones') cada 2-3 meses",
+              "Ejecuta la poda de formación en los primeros 2 años para definir la estructura del árbol",
+              "Mantén un sombrío dinámico (ej. Guamos, Plátanos, Maderables) con un 30-40% de filtración de luz",
+              "Desinfecta las herramientas (tijeras, motosierra, serruchos) entre CADA árbol para no传播 (diseminar) enfermedades",
+              "Aplica 'pintura' o cicatrizante orgánico (cal, ceniza, bioles) en cortes grandes (>3 cm)",
+              "Tritura o entierra las ramas pequeñas; quema o saca de la finca las ramas infectadas con Moniliasis"
+            ],
+            "commonMistakes": [
+              "Podar intensamente en el pico de la época lluviosa, abriendo heridas que se infectan con hongos",
+              "No desinfectar las herramientas, pasando la escoba de bruja o moniliasis de árbol en árbol",
+              "Dejar 'muñones' o cortes irregulares que dificultan la cicatrización",
+              "Eliminar demasiado sombrío en verano, causando golpe de sol y caída de flores/mazorcas",
+              "Dejar mazorcas secas o ramas infectadas en el suelo, manteniendo el inóculo de la enfermedad"
+            ],
+            "tip": "La regla de oro para desinfectar herramientas de poda en campo es usar una solución de alcohol al 70% o hipoclorito de sodio al 10%, o simplemente pasar la llama de un soplete/machete caliente por la hoja de la tijera o serrucho cada vez que pases de un árbol sospechoso a uno sano. Para el sombrío, la meta es que al mediodía el suelo del cacaotal tenga un patrón de 'manchas de leopardo' (luz y sombra intercaladas), no sombra total ni sol directo.",
+            "recommendedTools": [
+              {
+                "name": "Serruchos de Poda y Tijeras de Bypass",
+                "url": "https://www.google.com",
+                "description": "Herramientas de corte limpio para no desgarar la corteza del cacao"
+              },
+              {
+                "name": "Sopladora/Mochila para Aplicación de Cal",
+                "url": "https://www.google.com",
+                "description": "Para aplicar cal o cicatrizantes en cortes grandes de forma rápida"
+              },
+              {
+                "name": "Luxómetro (Medidor de Luz)",
+                "url": "https://www.google.com",
+                "description": "Para medir objetivamente la filtración de luz del sombrío (ideal 3000-4000 lux en el suelo)"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "pruning-date",
+                "label": "Fecha de la Poda",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "plot-or-zone",
+                "label": "Parcela o Zona Podada",
+                "type": "text",
+                "placeholder": "Ej: Parcela 1 - Lote Criollo",
+                "required": true
+              },
+              {
+                "fieldId": "pruning-type",
+                "label": "Tipo de Poda Realizada",
+                "type": "select",
+                "options": [
+                  "Poda de Formación (Árboles jóvenes)",
+                  "Poda de Mantenimiento (Limpieza)",
+                  "Poda de Saneamiento (Enfermedades)",
+                  "Poda de Sombrío (Raleo)",
+                  "Poda de Recepa (Renovación drástica)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "number-of-trees-pruned",
+                "label": "Número de Árboles de Cacao Podados",
+                "type": "number",
+                "placeholder": "150",
+                "required": true
+              },
+              {
+                "fieldId": "shade-trees-pruned",
+                "label": "¿Se Realizó Poda de Árboles de Sombrío?",
+                "type": "select",
+                "options": ["Sí", "No", "No aplica"],
+                "required": true
+              },
+              {
+                "fieldId": "tools-disinfected",
+                "label": "¿Se Desinfectaron las Herramientas entre Árboles?",
+                "type": "select",
+                "options": ["Sí, rigurosamente", "Solo en árboles enfermos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "infected-material-destination",
+                "label": "Destino del Material Vegetal Infectado/Seco",
+                "type": "select",
+                "options": [
+                  "Enterrado en la misma parcela",
+                  "Triturado para compostaje",
+                  "Sacado de la finca y quemado",
+                  "Dejado en el suelo (No recomendado)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "wound-sealant-applied",
+                "label": "¿Se Aplicó Cicatrizante Orgánico en Cortes Grandes?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "labor-hours-invested",
+                "label": "Horas-Hombre Invertidas en la Poda",
+                "type": "number",
+                "placeholder": "16",
+                "required": true
+              },
+              {
+                "fieldId": "observations",
+                "label": "Observaciones de Campo",
+                "type": "textarea",
+                "placeholder": "Ej: Se encontró un foco de escoba de bruja en la esquina norte, se podó drásticamente.",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar el estado fitosanitario de la parcela antes de iniciar",
+            "Preparar y desinfectar todas las herramientas de corte (tijeras, serruchos)",
+            "Identificar y marcar los árboles que requieren poda de saneamiento",
+            "Ejecutar la poda respetando el ángulo de corte para facilitar el escurrimiento del agua",
+            "Aplicar cicatrizante orgánico (cal/ceniza) en cortes superiores a 3 cm",
+            "Recolectar todo el material vegetal infectado (mazorcas secas, ramas con hongos)",
+            "Definir el destino del material (enterrar, triturar o sacar de la finca)",
+            "Ajustar el sombrío según la época del año (más luz en invierno, más sombra en verano)",
+            "Registrar en el cuaderno de campo la zona, tipo de poda y horas invertidas",
+            "Lavar y engrasar las herramientas antes de guardarlas en la bodega"
+          ]
+        },
+        {
+          "stepId": "organic-phytosanitary-monitoring",
+          "stepTitle": "Monitoreo y Control Fitosanitario Orgánico Preventivo",
+          "guide": {
+            "whyItMatters": "En la agricultura orgánica no existen 'pesticidas de rescate' de acción rápida y amplio espectro. El control de plagas (como la moniliasis, la escoba de bruja o la mosca de los botones) debe ser 100% preventivo, cultural y biológico. Un monitoreo semanal riguroso te permite detectar los primeros síntomas y aplicar bioinsumos (como Trichoderma, Beauveria bassiana, caldos minerales) antes de que la plaga se descontrole y arruine la cosecha.",
+            "bestPractices": [
+              "Realiza recorridos de monitoreo (caminatas de observación) al menos una vez por semana",
+              "Muestrea un porcentaje representativo de árboles (ej. 10 árboles por hectárea) buscando síntomas",
+              "Aplica preventivamente Trichoderma o Metarhizium en épocas críticas (inicio de lluvias)",
+              "Utiliza caldos minerales (Bordelés, Sulfocálcico) para fortalecer las defensas de la planta",
+              "Promueve la biodiversidad: siembra plantas refugio para insectos benéficos (avispas parásitas, depredadores)",
+              "Mantén el registro de la incidencia de plagas para identificar patrones anuales y anticiparte"
+            ],
+            "commonMistakes": [
+              "Esperar a ver la plaga masivamente para actuar (en orgánico, si la ves, ya es tarde)",
+              "Aplicar biofungicidas (Trichoderma) en horas de alta radiación solar, matando los microorganismos",
+              "Mezclar bioinsumos con productos a base de cobre o azufre, anulando su efecto biológico",
+              "No hacer el monitoreo sistemático, dependiendo solo de la 'intuición' del trabajador",
+              "Ignorar el control de arvenses (malezas) que compiten por nutrientes y sirven de hospederas para plagas"
+            ],
+            "tip": "El calendario de aplicación de Trichoderma (hongo benéfico que compite con la Moniliasis y Phytophthora) debe ser cada 21 días durante toda la época lluviosa. La dosis típica es de 2-3 kg por hectárea diluidos en agua, aplicados al suelo y al follaje. **Regla crítica**: Nunca apliques Trichoderma el mismo día que apliques Caldo Bordelés o cobre; deja pasar al menos 10-15 días entre ambos, ya que el cobre mata al Trichoderma.",
+            "recommendedTools": [
+              {
+                "name": "Lupas de Bolsillo (10x-20x)",
+                "url": "https://www.google.com",
+                "description": "Para observar de cerca síntomas tempranos de hongos o insectos en hojas y mazorcas"
+              },
+              {
+                "name": "Trampas de Luz o Feromonas",
+                "url": "https://www.google.com",
+                "description": "Para monitoreo y captura masiva de polillas o gusanos de la mazorca"
+              },
+              {
+                "name": "Termohigrómetro de Campo",
+                "url": "https://www.google.com",
+                "description": "Para registrar temperatura y humedad ambiental durante el monitoreo"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "monitoring-date",
+                "label": "Fecha del Monitoreo",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "plot-or-zone",
+                "label": "Parcela o Zona Monitoreada",
+                "type": "text",
+                "placeholder": "Ej: Parcela 2 - Lote Trinitario",
+                "required": true
+              },
+              {
+                "fieldId": "trees-sampled",
+                "label": "Número de Árboles Muestreados",
+                "type": "number",
+                "placeholder": "20",
+                "required": true
+              },
+              {
+                "fieldId": "pest-or-disease-detected",
+                "label": "Plaga o Enfermedad Detectada",
+                "type": "multiselect",
+                "options": [
+                  "Moniliasis (Drorhizopus roreri)",
+                  "Escoba de Bruja (Moniliophthora perniciosa)",
+                  "Mazorca Negra (Phytophthora)",
+                  "Mosca de los Botones (Dasineura theobromae)",
+                  "Cochinillas / Chupadores",
+                  "Gorgojo descortezador",
+                  "Ninguna (Sano)",
+                  "Otra"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "incidence-percentage",
+                "label": "Porcentaje de Incidencia Estimado (%)",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "control-action-taken",
+                "label": "Acción de Control Orgánico Tomada",
+                "type": "select",
+                "options": [
+                  "Aplicación de Biofungicida (Trichoderma)",
+                  "Aplicación de Caldo Mineral (Bordelés/Sulfocálcico)",
+                  "Control Cultural (Poda y recolección manual)",
+                  "Aplicación de Bioinsecticida (Beauveria/Bt)",
+                  "Ninguna (Nivel bajo / Solo monitoreo)",
+                  "Otra"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "input-applied-name",
+                "label": "Nombre del Insumo Orgánico Aplicado",
+                "type": "text",
+                "placeholder": "Ej: Trichoderma harzianum cepa T-22",
+                "required": false
+              },
+              {
+                "fieldId": "weather-during-application",
+                "label": "Clima durante la Aplicación",
+                "type": "select",
+                "options": ["Soleado (Mañana/Tarde)", "Nublado", "Llovizna", "Lluvia"],
+                "required": false
+              },
+              {
+                "fieldId": "monitor-name",
+                "label": "Nombre del Técnico/Trabajador que Monitoreó",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Definir la ruta de monitoreo semanal y los árboles 'testigo' a revisar",
+            "Recorrer la finca observando follaje, flores, botones y mazorcas",
+            "Utilizar lupa para identificar síntomas tempranos o insectos benéficos/plaga",
+            "Registrar el porcentaje de incidencia de plagas o enfermedades por parcela",
+            "Si la incidencia supera el umbral, preparar el bioinsumo o caldo orgánico correspondiente",
+            "Aplicar el insumo en las horas adecuadas (evitando sol fuerte o lluvia inminente)",
+            "Verificar que no haya incompatibilidad con aplicaciones recientes (ej. cobre vs. biológicos)",
+            "Actualizar el cuaderno de campo con la fecha, insumo, dosis y observaciones",
+            "Programar la próxima fecha de seguimiento para evaluar la eficacia del control"
+          ]
+        }
+      ]
+    }
+  ]
+}

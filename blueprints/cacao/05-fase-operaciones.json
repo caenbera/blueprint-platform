@@ -1,0 +1,188 @@
+{
+  "block": "operations",
+  "phase": "Establecimiento del Cultivo",
+  "steps": [
+    {
+      "id": "step_2_1",
+      "title": "Ahoyado y Siembra de Plántulas",
+      "guide": {
+        "whyItMatters": "El trasplante es el momento de mayor estrés para la plántula de cacao. En un sistema 100% orgánico, no puedes depender de fertilizantes sintéticos de absorción rápida (como la urea) para 'reanimar' la planta. El éxito del establecimiento depende de un hoyo bien dimensionado que permita el desarrollo radicular inicial, una fertilización orgánica de fondo que nutra sin quemar las raíces, y una sincronización perfecta con el inicio de las lluvias. Un mal trasplante resulta en plantas 'enanas' que tardan años en recuperar su ciclo productivo o que mueren por estrés hídrico.",
+        "bestPractices": [
+          "Realizar el ahoyado al menos 15 días antes de la siembra. Esto permite que el suelo se airee y que la biología nativa comience a colonizar la zona removida.",
+          "Separar rigurosamente los primeros 15-20 cm de suelo (capa orgánica o 'topsoil') del subsuelo. La mezcla orgánica se hará exclusivamente con el 'topsoil'.",
+          "Las dimensiones ideales del hoyo en suelos tropicales son 40x40x40 cm o 50x50x50 cm. En suelos muy arcillosos, aumenta la profundidad a 60 cm para evitar encharcamientos que causen asfixia radicular.",
+          "La siembra debe coincidir con las primeras lluvias sostenidas de la temporada. Nunca siembres en seco a menos que tengas riego por goteo garantizado.",
+          "Aplicar inoculantes biológicos (micorrizas, Trichoderma) en el momento de la siembra. Estos hongos benéficos se adhieren a las raíces y multiplican por 100 la capacidad de absorción de agua y nutrientes de la plántula."
+        ],
+        "commonMistakes": [
+          "Sembrar la plántula más profundo de lo que estaba en la bolsa de vivero. Enterrar el cuello de la raíz provoca pudriciones fúngicas (Phytophthora) y la muerte de la planta.",
+          "Romper el cepellón (la bola de tierra de la bolsa) al trasplantar. Esto destruye las raíces finas y las micorrizas ya establecidas, causando un shock severo.",
+          "Dejar la bolsa de plástico negra dentro del hoyo. Además de contaminar el suelo (violando la certificación orgánica), asfixia las raíces a largo plazo.",
+          "Aplicar gallinaza o estiércol fresco directamente en el hoyo. La fermentación de la materia orgánica fresca genera calor y amoníaco que queman las raíces jóvenes."
+        ],
+        "tip": "Para la 'receta de hoyo orgánico', mezcla el 'topsoil' extraído con 3-5 kg de compost maduro (o lombricompost), 200 gramos de roca fosfórica molida y 50 gramos de micorrizas. Si el suelo es muy ácido, añade 100 gramos de cal dolomita. Rellena el hoyo con esta mezcla 10 días antes de sembrar para que se asiente. Al momento de trasplantar, riega con 2 litros de 'té de compost' (compost diluido en agua y filtrado) para asentar las raíces.",
+        "recommendedTools": [
+          {
+            "name": "Ahoyador de pedal o manual",
+            "url": "N/A (Herramienta física)"
+          },
+          {
+            "name": "Inoculante de Micorrizas (Ej: Micorrizas del Colombia, Rootgrow)",
+            "url": "https://www.rootgrow.com/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "planting_start_date",
+          "label": "Fecha de Inicio de la Siembra en Campo",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "hole_dimensions",
+          "label": "Dimensiones Exactas de los Hoyos de Siembra (Largo x Ancho x Profundidad)",
+          "type": "text",
+          "placeholder": "Ej: 40x40x40 cm",
+          "required": true
+        },
+        {
+          "id": "organic_base_fertilizer_recipe",
+          "label": "Receta de Fertilización Orgánica Base por Hoyo",
+          "type": "textarea",
+          "placeholder": "Ej: 4 kg de compost maduro + 200g roca fosfórica + 50g micorrizas + 100g cal dolomita. Mezclado con el topsoil 10 días antes...",
+          "required": true
+        },
+        {
+          "id": "total_plants_established",
+          "label": "Número Total de Plántulas Establecidas en Campo",
+          "type": "number",
+          "placeholder": "Ej: 1250",
+          "required": true
+        },
+        {
+          "id": "survival_rate_30_days",
+          "label": "Tasa de Supervivencia Evaluada a los 30 Días (%)",
+          "type": "number",
+          "placeholder": "Ej: 95",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_2_1_1",
+          "text": "Ejecutar el trasplante y registrar la fecha exacta de inicio de la siembra.",
+          "registryFieldRef": "planting_start_date"
+        },
+        {
+          "id": "cl_2_1_2",
+          "text": "Definir y estandarizar las dimensiones exactas de los hoyos de siembra para todo el lote.",
+          "registryFieldRef": "hole_dimensions"
+        },
+        {
+          "id": "cl_2_1_3",
+          "text": "Documentar la receta exacta de la mezcla orgánica base aplicada por hoyo.",
+          "registryFieldRef": "organic_base_fertilizer_recipe"
+        },
+        {
+          "id": "cl_2_1_4",
+          "text": "Contabilizar y registrar el número total de plántulas efectivamente establecidas.",
+          "registryFieldRef": "total_plants_established"
+        },
+        {
+          "id": "cl_2_1_5",
+          "text": "Evaluar el lote a los 30 días y registrar el porcentaje de supervivencia de las plántulas.",
+          "registryFieldRef": "survival_rate_30_days"
+        }
+      ]
+    },
+    {
+      "id": "step_2_2",
+      "title": "Plan de Manejo Agronómico Inicial (Control de Malezas y Podas)",
+      "guide": {
+        "whyItMatters": "Los primeros 18 a 24 meses son la etapa más crítica y costosa en mano de obra del cacao. La plántula joven compite débilmente por luz, agua y nutrientes. Si la maleza la cubre, el cacao se 'ahorca' y muere. Paralelamente, la arquitectura futura del árbol se define en esta etapa. Una poda de formación correcta crea el 'jorobado' (un tronco limpio de 1.2 a 1.5 metros antes de que salgan las ramas principales), lo que facilita la cosecha, permite la circulación de aire (reduciendo Monilia) y optimiza la fotosíntesis. En orgánico, el control de malezas es 100% mecánico, lo que exige disciplina y calendarización.",
+        "bestPractices": [
+          "Mantener una 'corona' o plato limpio de 1 a 1.5 metros de radio alrededor de cada plántula. El control debe ser manual (machete) o mecánico (desbrozadora de hilo), nunca químico.",
+          "Fomentar la cobertura viva en las calles (entre hileras). Sembrar Arachis pintoi (maní forrajero) o Mucuna pruriens evita la erosión, fija nitrógeno y suprime malezas agresivas, reduciendo los costos de limpieza.",
+          "La poda de formación debe iniciar apenas la planta muestra vigor. Selecciona el brote más vigoroso y vertical (guía principal) y elimina todos los brotes basales (chupones hidráulicos) que nazcan desde la raíz o en el primer metro del tronco.",
+          "Desinfectar las tijeras de podar con alcohol al 70% o una solución de cloro al 10% entre cada árbol para evitar la transmisión de patógenos como las escobas de bruja o virus."
+        ],
+        "commonMistakes": [
+          "Usar herbicidas 'orgánicos' de contacto (como vinagre agrícola concentrado o ácido acético) cerca del cacao. Estos acidifican el suelo, matan la biología superficial y pueden dañar la corteza joven del cacao.",
+          "Dejar que la maleza crezca demasiado antes de limpiar. Cortar maleza de 1 metro de alto con machete cerca del cacao es riesgoso; es fácil cortar accidentalmente la corteza del cacao, lo que puede matarlo.",
+          "No realizar el 'deshije' (eliminación de chupones basales). Si se permiten múltiples troncos desde la base, el árbol se vuelve un arbusto impenetrable, imposible de cosechar y altamente susceptible a plagas.",
+          "Podar excesivamente. El cacao necesita sus hojas para generar energía. En la formación, solo se quitan los brotes no deseados, nunca se defolia el árbol."
+        ],
+        "tip": "Para la formación del 'jorobado', ata un listón de bambú o una estaca al tronco principal de la plántula hasta la altura de 1.2 - 1.5 metros. Esto te servirá de guía visual para saber exactamente hasta dónde debes eliminar todos los brotes laterales. Todo el material vegetal que cortes (chupones, maleza de la corona) debe ser picado y dejado como 'mulch' (acolchado) en la corona. Al descomponerse, alimentará el suelo y retendrá la humedad.",
+        "recommendedTools": [
+          {
+            "name": "Desbrozadora de mochila (Para limpieza de calles)",
+            "url": "N/A (Herramienta física)"
+          },
+          {
+            "name": "Tijeras de podar de bypass y alcohol isopropílico",
+            "url": "N/A (Herramienta física)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "weed_control_method",
+          "label": "Método Principal de Control de Malezas en la Corona",
+          "type": "select",
+          "options": [
+            "Manual con machete (Corte cuidadoso)",
+            "Mecánico con desbrozadora de hilo (Hilo de nylon)",
+            "Cobertura viva supresora (Ej: Arachis pintoi, Mucuna)",
+            "Acolchado (Mulch) con material orgánico seco"
+          ],
+          "required": true
+        },
+        {
+          "id": "formative_pruning_start_date",
+          "label": "Fecha de Inicio de las Podas de Formación",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "target_trunk_height",
+          "label": "Altura Meta del Tronco Principal antes de la Ramificación (Metros)",
+          "type": "number",
+          "placeholder": "Ej: 1.2",
+          "required": true
+        },
+        {
+          "id": "mulching_strategy",
+          "label": "Estrategia de Reutilización del Material de Poda y Maleza como Mulch",
+          "type": "textarea",
+          "placeholder": "Ej: Todo el material de deshije y maleza de la corona se pica con machete y se deja como acolchado de 10 cm de espesor en un radio de 1m, evitando tocar el cuello del tronco...",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_2_2_1",
+          "text": "Definir y establecer el método de control de malezas (mecánico/manual/cobertura) para la corona de las plántulas.",
+          "registryFieldRef": "weed_control_method"
+        },
+        {
+          "id": "cl_2_2_2",
+          "text": "Iniciar las labores de despunte y deshije, registrando la fecha de inicio de la poda de formación.",
+          "registryFieldRef": "formative_pruning_start_date"
+        },
+        {
+          "id": "cl_2_2_3",
+          "text": "Establecer y marcar la altura meta del tronco principal (formación del jorobado) antes de permitir ramificación.",
+          "registryFieldRef": "target_trunk_height"
+        },
+        {
+          "id": "cl_2_2_4",
+          "text": "Documentar la estrategia para picar y reutilizar los residuos de poda como mulch orgánico en la corona.",
+          "registryFieldRef": "mulching_strategy"
+        }
+      ]
+    }
+  ]
+}

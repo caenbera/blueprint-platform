@@ -1,0 +1,1058 @@
+{
+  "block": "business",
+  "blockTitle": "Negocio",
+  "phases": [
+    {
+      "phaseId": "commercialization-sales",
+      "phaseTitle": "Comercialización, Canales de Distribución y Gestión de Ventas",
+      "steps": [
+        {
+          "stepId": "buyer-identification",
+          "stepTitle": "Identificación y Contacto de Compradores Nacionales e Internacionales",
+          "guide": {
+            "whyItMatters": "La identificación estratégica de compradores es el puente entre tu producción de cacao orgánico y la generación de ingresos. Sin un portafolio diversificado de compradores, dependes de un solo cliente que puede reducir precios o cancelar pedidos. El mercado de cacao orgánico tiene compradores especializados que pagan premiums del 30-100% sobre el precio convencional, pero requieren relaciones comerciales sólidas y trazabilidad documentada. Además, acceder a mercados internacionales (Europa, Estados Unidos, Japón) requiere contactos específicos y cumplimiento de estándares rigurosos.",
+            "bestPractices": [
+              "Diversifica tu portafolio: 40% mercado nacional, 40% exportación directa, 20% mercados especializados (bean-to-bar, artesanal)",
+              "Investiga compradores que valoren cacao fino de aroma y orgánico certificado",
+              "Asiste a ferias internacionales: Salon du Chocolat (París), Fancy Food Show (NY), Anuga (Alemania)",
+              "Regístrate en plataformas B2B especializadas: Alibaba, Tridge, Ecovia, FiBL",
+              "Contacta directamente a chocolateros bean-to-bar y fabricantes artesanales",
+              "Establece relaciones con cooperativas y comercializadoras de cacao orgánico",
+              "Prepara muestras de 500g-1kg listas para enviar a compradores potenciales",
+              "Documenta tu historia de origen, prácticas orgánicas y diferenciadores"
+            ],
+            "commonMistakes": [
+              "Depender de un solo comprador, perdiendo poder de negociación",
+              "Vender a intermediarios locales a precios convencionales sin aprovechar la certificación orgánica",
+              "No preparar muestras profesionales con información completa de trazabilidad",
+              "No asistir a ferias o eventos del sector, perdiendo oportunidades de networking",
+              "Contactar compradores sin conocer sus requisitos específicos de calidad y volumen",
+              "No tener presencia digital profesional (sitio web, LinkedIn) que genere credibilidad",
+              "Subestimar el tiempo requerido para establecer relaciones comerciales internacionales (6-18 meses)",
+              "No documentar la historia y valores del negocio, perdiendo diferenciación"
+            ],
+            "tip": "Para cacao orgánico fino de aroma en Colombia, los compradores más rentables son: 1) Chocolateros bean-to-bar internacionales (pagan $8.000-$15.000 USD por kg), 2) Importadores especializados en Europa (Ritter Sport, Luker Chocolate, etc.), 3) Fabricantes artesanales nacionales que buscan diferenciación. El proceso típico de venta internacional: 1) Enviar muestras (2-4 semanas), 2) Evaluación de calidad (1-2 meses), 3) Negociación de contrato (1-3 meses), 4) Primer pedido (3-6 meses desde primer contacto). Total: 6-12 meses. Inicia contactos 12-18 meses antes de necesitar ventas. Costo de participación en ferias internacionales: $8.000.000-$15.000.000 COP incluyendo viaje, stand y muestras.",
+            "recommendedTools": [
+              {
+                "name": "Fedecacao - Directorio de Compradores",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Federación Nacional de Cacaoteros con información de mercados y compradores"
+              },
+              {
+                "name": "Tridge - Plataforma B2B de Alimentos",
+                "url": "https://www.tridge.com",
+                "description": "Plataforma global para conectar productores con compradores internacionales"
+              },
+              {
+                "name": "Salon du Chocolat - Feria Internacional",
+                "url": "https://www.salonduchocolat.com",
+                "description": "Feria líder mundial de chocolate y cacao, oportunidad de networking"
+              },
+              {
+                "name": "ProColombia - Ruedas de Negocios",
+                "url": "https://www.procolombia.co",
+                "description": "Entidad gubernamental que facilita exportaciones y conecta con compradores"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "target-markets",
+                "label": "Mercados Objetivo Definidos",
+                "type": "multiselect",
+                "options": [
+                  "Nacional - Chocolateros artesanales",
+                  "Nacional - Industria nacional",
+                  "Europa - Importadores especializados",
+                  "Europa - Chocolateros bean-to-bar",
+                  "Estados Unidos - Importadores",
+                  "Estados Unidos - Chocolateros artesanales",
+                  "Japón - Importadores",
+                  "Canadá - Importadores",
+                  "Otros mercados internacionales"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "national-buyers-identified",
+                "label": "Número de Compradores Nacionales Identificados",
+                "type": "number",
+                "placeholder": "10",
+                "required": true
+              },
+              {
+                "fieldId": "international-buyers-identified",
+                "label": "Número de Compradores Internacionales Identificados",
+                "type": "number",
+                "placeholder": "15",
+                "required": true
+              },
+              {
+                "fieldId": "buyer-database-tool",
+                "label": "Herramienta para Gestionar Base de Datos de Compradores",
+                "type": "select",
+                "options": [
+                  "CRM especializado (Salesforce, HubSpot)",
+                  "Excel/Google Sheets",
+                  "Airtable personalizado",
+                  "Software contable (módulo de clientes)",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "samples-prepared",
+                "label": "¿Preparó Muestras Profesionales para Enviar?",
+                "type": "select",
+                "options": ["Sí, con etiquetado completo", "Sí, básico", "No aún"],
+                "required": true
+              },
+              {
+                "fieldId": "samples-cost-per-unit",
+                "label": "Costo por Muestra Preparada (COP)",
+                "type": "number",
+                "placeholder": "50000",
+                "required": false
+              },
+              {
+                "fieldId": "samples-sent-quantity",
+                "label": "Número de Muestras Enviadas a Compradores",
+                "type": "number",
+                "placeholder": "20",
+                "required": true
+              },
+              {
+                "fieldId": "trade-fairs-attended",
+                "label": "Ferias Internacionales Asistidas o Programadas",
+                "type": "multiselect",
+                "options": [
+                  "Salon du Chocolat (París)",
+                  "Fancy Food Show (NY)",
+                  "Anuga (Alemania)",
+                  "SIAL (París)",
+                  "Alimentaria (Barcelona)",
+                  "Ferias nacionales de cacao",
+                  "No asistido aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "b2b-platforms-registered",
+                "label": "Plataformas B2B donde está Registrado",
+                "type": "multiselect",
+                "options": [
+                  "Alibaba",
+                  "Tridge",
+                  "Ecovia",
+                  "FiBL Database",
+                  "ProColombia",
+                  "Fedecacao",
+                  "No registrado en plataformas"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "company-story-documented",
+                "label": "¿Historia de Origen y Valores Documentados?",
+                "type": "select",
+                "options": ["Sí, en español e inglés", "Sí, solo español", "No aún"],
+                "required": true
+              },
+              {
+                "fieldId": "professional-website",
+                "label": "¿Tiene Sitio Web Profesional en Inglés y Español?",
+                "type": "select",
+                "options": ["Sí, bilingüe", "Sí, solo español", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "linkedin-company-page",
+                "label": "¿Tiene Página de LinkedIn de la Empresa?",
+                "type": "select",
+                "options": ["Sí, activa", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "buyer-contact-frequency",
+                "label": "Frecuencia de Contacto con Compradores Potenciales",
+                "type": "select",
+                "options": ["Semanal", "Quincenal", "Mensual", "Trimestral", "Irregular"],
+                "required": true
+              },
+              {
+                "fieldId": "average-response-time",
+                "label": "Tiempo Promedio de Respuesta a Compradores (horas)",
+                "type": "number",
+                "placeholder": "24",
+                "required": true
+              },
+              {
+                "fieldId": "buyer-database-url",
+                "label": "Enlace a Base de Datos de Compradores",
+                "type": "url",
+                "placeholder": "https://docs.google.com/spreadsheets/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Definir mercados objetivo (nacional e internacional) según capacidad y calidad",
+            "Investigar y listar compradores potenciales en cada mercado",
+            "Crear base de datos de compradores con información de contacto y requisitos",
+            "Preparar muestras profesionales con etiquetado completo de trazabilidad",
+            "Calcular costo de envío de muestras nacionales e internacionales",
+            "Enviar muestras a compradores priorizados",
+            "Registrarse en plataformas B2B especializadas (Tridge, Alibaba, etc.)",
+            "Crear o actualizar sitio web profesional bilingüe (español/inglés)",
+            "Crear página de LinkedIn de la empresa con historia y valores",
+            "Documentar historia de origen, prácticas orgánicas y diferenciadores",
+            "Investigar ferias internacionales del sector y planificar asistencia",
+            "Contactar a ProColombia para participar en ruedas de negocios",
+            "Establecer protocolo de seguimiento a compradores (frecuencia, canales)",
+            "Capacitar al equipo comercial en atención a compradores internacionales",
+            "Programar revisión mensual de avances en contactos con compradores"
+          ]
+        },
+        {
+          "stepId": "pricing-negotiation",
+          "stepTitle": "Estrategia de Precios y Negociación de Contratos",
+          "guide": {
+            "whyItMatters": "La estrategia de precios determina la rentabilidad y sostenibilidad de tu negocio de cacao orgánico. Fijar precios demasiado bajos por desesperación de vender destruye el valor de tu producto y dificulta cubrir costos de producción orgánica (30-50% mayores que convencional). Por el contrario, precios mal justificados sin valor agregado claro alejan compradores. La negociación de contratos define condiciones de pago, volúmenes, calidad y duración que impactan directamente tu flujo de caja y estabilidad financiera.",
+            "bestPractices": [
+              "Calcula tu precio mínimo basado en costos reales + margen objetivo (mínimo 30%)",
+              "Investiga precios de referencia: ICE (bolsa de NY), precios orgánicos premium, precios de cacao fino",
+              "Diferencia precios por calidad: grado A (exportación), grado B (nacional), subproductos",
+              "Negocia contratos a largo plazo (1-3 años) para estabilidad, pero con revisión anual de precios",
+              "Incluye cláusulas de ajuste por fluctuación del mercado internacional",
+              "Define claramente especificaciones de calidad, volumen y plazos de entrega",
+              "Negocia condiciones de pago favorables: 30-50% anticipo, resto contra entrega",
+              "Documenta todos los acuerdos en contratos formales con asesoría legal"
+            ],
+            "commonMistakes": [
+              "Fijar precios solo basándose en la competencia, sin calcular costos reales",
+              "Aceptar precios de mercado convencional para cacao orgánico certificado",
+              "No diferenciar precios por calidad, vendiendo todo al mismo precio",
+              "Firmar contratos sin cláusulas de ajuste por inflación o fluctuación cambiaria",
+              "Aceptar condiciones de pago desfavorables (90-120 días) que afectan flujo de caja",
+              "No incluir especificaciones claras de calidad, generando disputas posteriores",
+              "Negociar verbalmente sin documentar acuerdos formalmente",
+              "No considerar costos de exportación (fletes, seguros, certificaciones) en el precio"
+            ],
+            "tip": "Para cacao orgánico fino de aroma en Colombia, los rangos de precio típicos son: 1) Precio base ICE (bolsa de NY): $2.50-$3.50 USD/kg, 2) Premium orgánico: +$0.30-$0.80 USD/kg sobre ICE, 3) Premium fino de aroma: +$0.50-$1.50 USD/kg sobre ICE, 4) Cacao bean-to-bar premium: $8.00-$15.00 USD/kg (precio fijo, no indexado a ICE). Tu precio mínimo debe cubrir: costos de producción ($4.00-$6.00 USD/kg) + costos de procesamiento ($1.00-$2.00 USD/kg) + margen objetivo (30%) = $6.50-$10.40 USD/kg mínimo. Para contratos internacionales, usa Incoterms 2020: FOB (puerto colombiano) o CIF (puerto destino). Incluye cláusula de revisión semestral de precios basada en ICE + premium fijo.",
+            "recommendedTools": [
+              {
+                "name": "ICE Futures - Precios de Cacao",
+                "url": "https://www.theice.com",
+                "description": "Bolsa de Nueva York con precios de referencia internacionales de cacao"
+              },
+              {
+                "name": "Incoterms 2020 - Cámara de Comercio Internacional",
+                "url": "https://iccwbo.org",
+                "description": "Términos de comercio internacional para definir responsabilidades en exportación"
+              },
+              {
+                "name": "MinCIT - Guía de Exportación de Cacao",
+                "url": "https://www.mincit.gov.co",
+                "description": "Guía del Ministerio de Comercio, Industria y Turismo para exportadores"
+              },
+              {
+                "name": "Asesor Legal Especializado en Comercio Internacional",
+                "url": "https://www.google.com",
+                "description": "Abogados especializados en contratos de exportación y comercio exterior"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "minimum-price-calculated",
+                "label": "Precio Mínimo Calculado por Kg de Cacao Seco (COP)",
+                "type": "number",
+                "placeholder": "16000",
+                "required": true
+              },
+              {
+                "fieldId": "target-margin-percentage",
+                "label": "Margen Objetivo (%)",
+                "type": "number",
+                "placeholder": "30",
+                "required": true
+              },
+              {
+                "fieldId": "price-differentiation-by-quality",
+                "label": "¿Diferencia Precios por Calidad?",
+                "type": "select",
+                "options": [
+                  "Sí, 3 o más grados",
+                  "Sí, 2 grados",
+                  "No, precio único"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "grade-a-price",
+                "label": "Precio Grado A - Exportación (COP/kg)",
+                "type": "number",
+                "placeholder": "20000",
+                "required": false
+              },
+              {
+                "fieldId": "grade-b-price",
+                "label": "Precio Grado B - Nacional (COP/kg)",
+                "type": "number",
+                "placeholder": "16000",
+                "required": false
+              },
+              {
+                "fieldId": "grade-c-price",
+                "label": "Precio Grado C - Subproductos (COP/kg)",
+                "type": "number",
+                "placeholder": "12000",
+                "required": false
+              },
+              {
+                "fieldId": "pricing-strategy",
+                "label": "Estrategia de Precios Utilizada",
+                "type": "select",
+                "options": [
+                  "Indexado a ICE + premium fijo",
+                  "Precio fijo anual",
+                  "Precio fijo semestral con revisión",
+                  "Precio negociado por lote",
+                  "Combinación de estrategias"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "contract-duration",
+                "label": "Duración Típica de Contratos con Compradores",
+                "type": "select",
+                "options": [
+                  "Spot (pedido único)",
+                  "6 meses",
+                  "1 año",
+                  "2-3 años",
+                  "Más de 3 años"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "price-adjustment-clause",
+                "label": "¿Incluye Cláusula de Ajuste por Fluctuación de Mercado?",
+                "type": "select",
+                "options": ["Sí, semestral", "Sí, anual", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "payment-terms",
+                "label": "Condiciones de Pago Negociadas",
+                "type": "select",
+                "options": [
+                  "100% anticipo",
+                  "50% anticipo, 50% contra entrega",
+                  "30% anticipo, 70% a 30 días",
+                  "100% contra entrega",
+                  "30-60 días crédito",
+                  "90-120 días crédito"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "incoterms-used",
+                "label": "Incoterms Utilizados en Exportación",
+                "type": "multiselect",
+                "options": [
+                  "EXW - Ex Works",
+                  "FOB - Free on Board",
+                  "CIF - Cost, Insurance, Freight",
+                  "CFR - Cost and Freight",
+                  "DDP - Delivered Duty Paid",
+                  "No exporta aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "quality-specifications-documented",
+                "label": "¿Especificaciones de Calidad Documentadas en Contratos?",
+                "type": "select",
+                "options": ["Sí, detalladas", "Sí, básicas", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "contracts-reviewed-by-lawyer",
+                "label": "¿Contratos Revisados por Abogado Especializado?",
+                "type": "select",
+                "options": ["Sí, todos", "Algunos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "active-contracts-quantity",
+                "label": "Número de Contratos Activos con Compradores",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "total-contracted-volume-kg",
+                "label": "Volumen Total Contratado (kg/año)",
+                "type": "number",
+                "placeholder": "10000",
+                "required": true
+              },
+              {
+                "fieldId": "average-selling-price",
+                "label": "Precio Promedio de Venta Actual (COP/kg)",
+                "type": "number",
+                "placeholder": "18000",
+                "required": true
+              },
+              {
+                "fieldId": "pricing-spreadsheet-url",
+                "label": "Enlace a Hoja de Cálculo de Precios y Costos",
+                "type": "url",
+                "placeholder": "https://docs.google.com/spreadsheets/...",
+                "required": true
+              },
+              {
+                "fieldId": "contract-templates-url",
+                "label": "Enlace a Plantillas de Contratos",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Calcular costo real de producción por kilo de cacao seco",
+            "Definir margen objetivo mínimo (recomendado 30%)",
+            "Investigar precios de referencia internacionales (ICE, orgánicos, fino)",
+            "Establecer diferenciación de precios por calidad (grados A, B, C)",
+            "Definir estrategia de precios (indexado a ICE, fijo, negociado)",
+            "Diseñar plantilla de contrato con asesoría legal especializada",
+            "Incluir cláusulas de ajuste por fluctuación de mercado",
+            "Definir especificaciones claras de calidad en contratos",
+            "Negociar condiciones de pago favorables (anticipo mínimo 30%)",
+            "Seleccionar Incoterms adecuados para exportación (FOB, CIF)",
+            "Firmar contratos formales con todos los compradores",
+            "Crear sistema de seguimiento de contratos activos y vencimientos",
+            "Calcular volumen total contratado vs capacidad de producción",
+            "Programar revisiones periódicas de precios y condiciones",
+            "Documentar procedimientos de negociación en manual comercial"
+          ]
+        },
+        {
+          "stepId": "distribution-channels",
+          "stepTitle": "Canales de Distribución y Logística de Exportación",
+          "guide": {
+            "whyItMatters": "Los canales de distribución definen cómo tu cacao orgánico llega desde la finca hasta el comprador final. Cada canal tiene costos, requisitos y márgenes diferentes. Para exportación, la logística internacional es compleja: requiere documentación aduanera, certificaciones fitosanitarias, transporte especializado y cumplimiento de regulaciones del país destino. Errores en logística pueden generar retrasos, deterioro del producto, o rechazo en aduanas, generando pérdidas millonarias y daño reputacional.",
+            "bestPractices": [
+              "Diversifica canales: venta directa (60%), cooperativas (20%), intermediarios (20%)",
+              "Para exportación, trabaja con agentes de carga especializados en productos agrícolas",
+              "Obtén todas las certificaciones de exportación: ICA, Invima (si aplica), certificado orgánico",
+              "Conoce requisitos del país destino: FDA (EEUU), regulaciones UE, JAS (Japón)",
+              "Implementa sistema de trazabilidad completo desde finca hasta comprador",
+              "Negocia con navieras y transportadores tarifas preferenciales por volumen",
+              "Contrata seguro de transporte internacional para cubrir pérdidas durante tránsito",
+              "Mantén inventario de seguridad para cumplir pedidos sin retrasos"
+            ],
+            "commonMistakes": [
+              "Depender exclusivamente de intermediarios, perdiendo margen y control",
+              "No conocer requisitos fitosanitarios del país destino, generando rechazo en aduanas",
+              "No contratar seguro de transporte, asumiendo riesgos de pérdida total",
+              "No implementar trazabilidad completa, perdiendo oportunidades de mercados premium",
+              "Subestimar tiempos de logística internacional (30-60 días desde pedido hasta entrega)",
+              "No calcular costos completos de exportación (fletes, seguros, certificaciones, aduanas)",
+              "No mantener inventario de seguridad, incumpliendo pedidos en momentos críticos",
+              "No documentar procesos de exportación, generando inconsistencias y errores"
+            ],
+            "tip": "Para exportar cacao orgánico desde Colombia, los costos típicos son: 1) Agente de carga: $150.000-$300.000 COP por contenedor de 20', 2) Flete marítimo a Europa: $2.000-$4.000 USD por contenedor de 20' (18-25 toneladas), 3) Seguro de transporte: 0.3-0.5% del valor de la mercancía, 4) Certificaciones y trámites aduaneros: $500.000-$1.000.000 COP por embarque, 5) Almacenamiento en puerto: $50.000-$100.000 COP por tonelada/día. Tiempo típico: 15-25 días de navegación a Europa, 20-30 días a EEUU. Requisitos UE: certificado fitosanitario ICA, certificado orgánico, análisis de residuos, declaración de trazabilidad. Usa Incoterm FOB (puerto de Buenaventura o Cartagena) para transferir responsabilidad al comprador desde el puerto colombiano.",
+            "recommendedTools": [
+              {
+                "name": "VUCEx - Ventanilla Única de Comercio Exterior",
+                "url": "https://www.vucex.gov.co",
+                "description": "Plataforma gubernamental para trámites de exportación en Colombia"
+              },
+              {
+                "name": "ICA - Instituto Colombiano Agropecuario",
+                "url": "https://www.ica.gov.co",
+                "description": "Entidad que emite certificados fitosanitarios para exportación"
+              },
+              {
+                "name": "Agentes de Carga Internacionales",
+                "url": "https://www.google.com",
+                "description": "Empresas especializadas en logística de exportación agrícola (Kuehne+Nagel, DHL Global, etc.)"
+              },
+              {
+                "name": "FIATA - Federación Internacional de Agentes de Carga",
+                "url": "https://www.fiata.org",
+                "description": "Directorio global de agentes de carga certificados"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "distribution-channels",
+                "label": "Canales de Distribución Utilizados",
+                "type": "multiselect",
+                "options": [
+                  "Venta directa a compradores internacionales",
+                  "Venta directa a compradores nacionales",
+                  "Cooperativas de cacao",
+                  "Comercializadoras/intermediarios",
+                  "Plataformas B2B online",
+                  "Ferias y eventos",
+                  "Tienda propia (si aplica)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "direct-sales-percentage",
+                "label": "Porcentaje de Ventas Directas (%)",
+                "type": "number",
+                "placeholder": "60",
+                "required": true
+              },
+              {
+                "fieldId": "export-percentage",
+                "label": "Porcentaje de Producción Destinada a Exportación (%)",
+                "type": "number",
+                "placeholder": "40",
+                "required": true
+              },
+              {
+                "fieldId": "freight-forwarder-company",
+                "label": "Agente de Carga Utilizado",
+                "type": "text",
+                "placeholder": "Ej: Kuehne+Nagel, DHL Global",
+                "required": false
+              },
+              {
+                "fieldId": "freight-forwarder-contact",
+                "label": "Contacto del Agente de Carga",
+                "type": "text",
+                "placeholder": "Nombre, teléfono, email",
+                "required": false
+              },
+              {
+                "fieldId": "phytosanitary-certificate-obtained",
+                "label": "¿Obtuvo Certificado Fitosanitario de Exportación (ICA)?",
+                "type": "select",
+                "options": ["Sí", "No", "En trámite"],
+                "required": true
+              },
+              {
+                "fieldId": "export-requirements-known",
+                "label": "¿Conoce Requisitos del País Destino?",
+                "type": "multiselect",
+                "options": [
+                  "FDA (Estados Unidos)",
+                  "Regulaciones UE (Europa)",
+                  "JAS (Japón)",
+                  "CFIA (Canadá)",
+                  "Otros mercados",
+                  "No exporta aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "traceability-system-complete",
+                "label": "¿Sistema de Trazabilidad Completo (Finca a Comprador)?",
+                "type": "select",
+                "options": ["Sí, digital y documentado", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "shipping-insurance-obtained",
+                "label": "¿Contrató Seguro de Transporte Internacional?",
+                "type": "select",
+                "options": ["Sí", "No", "En cotización"],
+                "required": true
+              },
+              {
+                "fieldId": "insurance-coverage-percentage",
+                "label": "Porcentaje de Cobertura del Seguro (%)",
+                "type": "number",
+                "placeholder": "110",
+                "required": false
+              },
+              {
+                "fieldId": "average-shipping-time-days",
+                "label": "Tiempo Promedio de Envío a Mercados Principales (días)",
+                "type": "number",
+                "placeholder": "25",
+                "required": true
+              },
+              {
+                "fieldId": "export-costs-per-kg",
+                "label": "Costo Total de Exportación por Kg (COP)",
+                "type": "number",
+                "placeholder": "2500",
+                "required": true
+              },
+              {
+                "fieldId": "safety-stock-maintained",
+                "label": "¿Mantiene Inventario de Seguridad?",
+                "type": "select",
+                "options": ["Sí, 1 mes de producción", "Sí, 2 semanas", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "safety-stock-kg",
+                "label": "Cantidad de Inventario de Seguridad (kg)",
+                "type": "number",
+                "placeholder": "1000",
+                "required": false
+              },
+              {
+                "fieldId": "export-documentation-folder-url",
+                "label": "Enlace a Carpeta de Documentación de Exportación",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              },
+              {
+                "fieldId": "shipping-procedures-manual-url",
+                "label": "Enlace a Manual de Procedimientos de Envío",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Definir canales de distribución y porcentaje objetivo por canal",
+            "Investigar y contactar agentes de carga especializados en productos agrícolas",
+            "Obtener certificado fitosanitario de exportación ante ICA",
+            "Investigar requisitos específicos de cada país destino (FDA, UE, JAS, etc.)",
+            "Implementar sistema de trazabilidad completo desde finca hasta comprador",
+            "Cotizar y contratar seguro de transporte internacional",
+            "Calcular costos completos de exportación (fletes, seguros, certificaciones, aduanas)",
+            "Definir Incoterms adecuados para cada mercado (FOB, CIF, etc.)",
+            "Establecer inventario de seguridad para cumplir pedidos sin retrasos",
+            "Crear manual de procedimientos de exportación documentado",
+            "Capacitar al equipo en documentación y trámites de exportación",
+            "Establecer relaciones con navieras y transportadores",
+            "Implementar sistema de seguimiento de embarques en tránsito",
+            "Programar revisiones trimestrales de eficiencia logística",
+            "Documentar lecciones aprendidas de cada embarque"
+          ]
+        },
+        {
+          "stepId": "b2b-marketing",
+          "stepTitle": "Marketing B2B y Posicionamiento de Marca",
+          "guide": {
+            "whyItMatters": "El marketing B2B (business-to-business) es fundamental para diferenciarte en un mercado competitivo de cacao orgánico. Los compradores internacionales no solo compran producto, compran historia, valores, trazabilidad y confiabilidad. Una marca bien posicionada te permite negociar precios premium, establecer relaciones a largo plazo, y acceder a mercados exclusivos. Sin estrategia de marketing B2B, eres un commodity más sujeto a fluctuaciones de precio y competencia por costo.",
+            "bestPractices": [
+              "Desarrolla una marca que comunique: origen territorial, prácticas orgánicas, impacto social, calidad premium",
+              "Crea contenido profesional en múltiples formatos: sitio web, catálogos, videos, presentaciones",
+              "Destaca certificaciones: orgánica, comercio justo, sostenibilidad, denominación de origen",
+              "Participa activamente en LinkedIn con contenido sobre cacao, sostenibilidad y tu historia",
+              "Desarrolla casos de éxito y testimonios de compradores satisfechos",
+              "Crea muestras de producto con empaque profesional que refleje calidad",
+              "Asiste a ferias y eventos del sector con stand profesional y material promocional",
+              "Establece relaciones con medios especializados en chocolate y cacao"
+            ],
+            "commonMistakes": [
+              "No tener identidad de marca definida, siendo percibido como commodity",
+              "Crear material promocional de baja calidad que proyecta imagen de bajo valor",
+              "No comunicar diferenciadores clave (origen, prácticas orgánicas, impacto social)",
+              "No tener presencia digital profesional (sitio web, LinkedIn, catálogos online)",
+              "No participar en ferias o eventos, perdiendo oportunidades de visibilidad",
+              "No crear contenido de valor que eduque al mercado sobre tu propuesta única",
+              "No solicitar ni publicar testimonios de compradores satisfechos",
+              "No medir resultados de acciones de marketing, invirtiendo sin retorno"
+            ],
+            "tip": "Para cacao orgánico colombiano, los diferenciadores más valorados internacionalmente son: 1) Origen territorial específico (Sierra Nevada, Amazonía, Pacífico), 2) Variedades criollas o finas de aroma, 3) Prácticas orgánicas certificadas, 4) Impacto social (comunidades indígenas, campesinas, mujeres), 5) Sostenibilidad ambiental (agroforestería, biodiversidad). Inversión típica en marketing B2B anual: $5.000.000-$15.000.000 COP incluyendo: sitio web ($2.000.000-$5.000.000), catálogos y muestras ($1.500.000-$3.000.000), ferias ($3.000.000-$8.000.000), contenido digital ($1.000.000-$2.000.000). ROI esperado: 3-5x en acceso a compradores premium y precios superiores.",
+            "recommendedTools": [
+              {
+                "name": "Canva Pro - Diseño Gráfico",
+                "url": "https://www.canva.com",
+                "description": "Herramienta de diseño para crear catálogos, presentaciones y material promocional profesional"
+              },
+              {
+                "name": "WordPress - Sitio Web Profesional",
+                "url": "https://www.wordpress.com",
+                "description": "Plataforma para crear sitio web bilingüe con blog y catálogo de productos"
+              },
+              {
+                "name": "LinkedIn Sales Navigator",
+                "url": "https://www.linkedin.com",
+                "description": "Herramienta para identificar y conectar con compradores internacionales"
+              },
+              {
+                "name": "Mailchimp - Email Marketing",
+                "url": "https://www.mailchimp.com",
+                "description": "Plataforma para newsletters y comunicación con compradores potenciales"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "brand-identity-defined",
+                "label": "¿Identidad de Marca Definida (nombre, logo, valores, mensaje)?",
+                "type": "select",
+                "options": ["Sí, profesional", "Sí, básica", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "brand-story-documented",
+                "label": "¿Historia de Marca Documentada en Español e Inglés?",
+                "type": "select",
+                "options": ["Sí, bilingüe", "Sí, solo español", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "key-differentiators",
+                "label": "Diferenciadores Clave de la Marca",
+                "type": "multiselect",
+                "options": [
+                  "Origen territorial específico",
+                  "Variedades criollas/finas de aroma",
+                  "Certificación orgánica",
+                  "Comercio justo",
+                  "Impacto social (comunidades)",
+                  "Sostenibilidad ambiental",
+                  "Agroforestería/biodiversidad",
+                  "Mujeres cabeza de familia",
+                  "Calidad premium certificada"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "professional-website-url",
+                "label": "URL del Sitio Web Profesional",
+                "type": "url",
+                "placeholder": "https://www.tumarca.com",
+                "required": false
+              },
+              {
+                "fieldId": "website-languages",
+                "label": "Idiomas Disponibles en el Sitio Web",
+                "type": "multiselect",
+                "options": ["Español", "Inglés", "Francés", "Alemán", "Japonés"],
+                "required": true
+              },
+              {
+                "fieldId": "product-catalog-created",
+                "label": "¿Catálogo de Productos Creado?",
+                "type": "select",
+                "options": ["Sí, profesional bilingüe", "Sí, básico", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "catalog-url",
+                "label": "Enlace al Catálogo Digital (PDF o web)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "linkedin-company-page-url",
+                "label": "URL de la Página de LinkedIn de la Empresa",
+                "type": "url",
+                "placeholder": "https://www.linkedin.com/company/...",
+                "required": false
+              },
+              {
+                "fieldId": "linkedin-followers",
+                "label": "Número de Seguidores en LinkedIn",
+                "type": "number",
+                "placeholder": "500",
+                "required": false
+              },
+              {
+                "fieldId": "linkedin-posting-frequency",
+                "label": "Frecuencia de Publicación en LinkedIn",
+                "type": "select",
+                "options": ["Diaria", "3 veces por semana", "Semanal", "Quincenal", "Mensual", "Irregular"],
+                "required": true
+              },
+              {
+                "fieldId": "video-content-created",
+                "label": "¿Contenido en Video Creado (finca, procesos, testimonios)?",
+                "type": "multiselect",
+                "options": [
+                  "Video de la finca y procesos",
+                  "Testimonios de compradores",
+                  "Explicación de prácticas orgánicas",
+                  "Historia de la comunidad",
+                  "No creado aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "video-platform",
+                "label": "Plataforma donde se Publican Videos",
+                "type": "multiselect",
+                "options": ["YouTube", "Vimeo", "LinkedIn", "Sitio web", "No publicados"],
+                "required": true
+              },
+              {
+                "fieldId": "testimonials-collected",
+                "label": "Número de Testimonios de Compradores Recopilados",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "trade-fairs-participated",
+                "label": "Ferias y Eventos donde ha Participado con Stand",
+                "type": "multiselect",
+                "options": [
+                  "Salon du Chocolat",
+                  "Fancy Food Show",
+                  "Anuga",
+                  "SIAL",
+                  "Ferias nacionales de cacao",
+                  "Ruedas de negocios ProColombia",
+                  "No participado aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "annual-marketing-budget",
+                "label": "Presupuesto Anual de Marketing B2B (COP)",
+                "type": "number",
+                "placeholder": "10000000",
+                "required": true
+              },
+              {
+                "fieldId": "marketing-roi-measured",
+                "label": "¿Mide ROI de Acciones de Marketing?",
+                "type": "select",
+                "options": ["Sí, detalladamente", "Sí, básicamente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "marketing-plan-url",
+                "label": "Enlace a Plan de Marketing B2B",
+                "type": "url",
+                "placeholder": "https://docs.google.com/document/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Definir identidad de marca completa (nombre, logo, valores, mensaje clave)",
+            "Documentar historia de marca en español e inglés",
+            "Identificar y priorizar diferenciadores clave",
+            "Crear o actualizar sitio web profesional bilingüe",
+            "Diseñar catálogo de productos profesional con información completa",
+            "Crear página de LinkedIn de la empresa y optimizar perfil",
+            "Desarrollar calendario de contenido para LinkedIn (mínimo semanal)",
+            "Producir videos profesionales de la finca, procesos y comunidad",
+            "Recopilar testimonios de compradores satisfechos",
+            "Diseñar material promocional para ferias (brochures, muestras, banners)",
+            "Planificar participación en ferias internacionales del sector",
+            "Establecer relaciones con medios especializados en chocolate/cacao",
+            "Implementar sistema de email marketing para nurturing de compradores",
+            "Definir presupuesto anual de marketing B2B",
+            "Establecer métricas y KPIs para medir ROI de acciones de marketing",
+            "Programar revisión trimestral de estrategia y resultados de marketing"
+          ]
+        },
+        {
+          "stepId": "order-customer-service",
+          "stepTitle": "Gestión de Pedidos y Servicio al Cliente",
+          "guide": {
+            "whyItMatters": "La gestión eficiente de pedidos y el servicio al cliente excepcional son lo que convierte compradores ocasionales en socios comerciales a largo plazo. En el negocio de cacao orgánico, donde los volúmenes son significativos y los plazos críticos, errores en pedidos (cantidades incorrectas, retrasos, calidad inconsistente) generan pérdidas económicas y daño reputacional difícil de recuperar. Un sistema robusto de gestión de pedidos y servicio al cliente te permite escalar el negocio, mantener compradores satisfechos, y generar referencias positivas.",
+            "bestPractices": [
+              "Implementa un sistema de gestión de pedidos (ERP o software especializado)",
+              "Define procesos claros desde recepción del pedido hasta entrega y seguimiento post-venta",
+              "Establece tiempos de respuesta estándar: confirmación en 24h, actualizaciones semanales",
+              "Implementa sistema de trazabilidad que permita al comprador rastrear su pedido",
+              "Designa un responsable de servicio al cliente dedicado para cuentas clave",
+              "Realiza seguimiento post-venta: encuesta de satisfacción a los 30 días de entrega",
+              "Documenta y comunica claramente políticas de devoluciones y reclamos",
+              "Crea programa de fidelización para compradores recurrentes"
+            ],
+            "commonMistakes": [
+              "Gestionar pedidos manualmente en Excel o cuadernos, generando errores y retrasos",
+              "No confirmar pedidos rápidamente, generando incertidumbre en el comprador",
+              "No comunicar actualizaciones de estado del pedido, dejando al cliente en la oscuridad",
+              "No tener trazabilidad completa, imposibilitando resolver problemas rápidamente",
+              "No designar responsable claro de servicio al cliente, generando respuestas inconsistentes",
+              "No realizar seguimiento post-venta, perdiendo oportunidad de mejorar y fidelizar",
+              "No tener políticas claras de devoluciones, generando disputas prolongadas",
+              "No medir satisfacción del cliente, operando sin retroalimentación"
+            ],
+            "tip": "Para gestionar pedidos de cacao orgánico eficientemente, implementa un flujo estándar: 1) Recepción de pedido (email/formulario), 2) Confirmación en 24h con detalles (cantidad, calidad, precio, plazo), 3) Actualización semanal de estado (producción, empaque, envío), 4) Notificación de despacho con documentos (factura, packing list, BL), 5) Seguimiento de tránsito, 6) Confirmación de entrega, 7) Encuesta de satisfacción a los 30 días. Herramientas recomendadas: ERP como Odoo ($0-$200.000 USD/año) o software especializado como AgriERP. Para cuentas clave (>5.000 kg/año), asigna un account manager dedicado. Costo de implementación de sistema de gestión de pedidos: $2.000.000-$8.000.000 COP. Métricas clave: tiempo de confirmación (<24h), tasa de entrega a tiempo (>95%), satisfacción del cliente (>4.5/5), tasa de recompra (>80%).",
+            "recommendedTools": [
+              {
+                "name": "Odoo - ERP para PYMES",
+                "url": "https://www.odoo.com",
+                "description": "Software ERP con módulos de ventas, inventarios, facturación y CRM"
+              },
+              {
+                "name": "Salesforce - CRM Empresarial",
+                "url": "https://www.salesforce.com",
+                "description": "Plataforma CRM líder para gestión de relaciones con clientes"
+              },
+              {
+                "name": "HubSpot - CRM Gratuito",
+                "url": "https://www.hubspot.com",
+                "description": "CRM gratuito con herramientas de marketing y ventas"
+              },
+              {
+                "name": "Typeform - Formularios de Pedido",
+                "url": "https://www.typeform.com",
+                "description": "Herramienta para crear formularios profesionales de pedidos online"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "order-management-system",
+                "label": "Sistema de Gestión de Pedidos Utilizado",
+                "type": "select",
+                "options": [
+                  "ERP (Odoo, SAP, Microsoft Dynamics)",
+                  "Software contable (módulo de ventas)",
+                  "CRM (Salesforce, HubSpot)",
+                  "Excel/Google Sheets",
+                  "Cuadernos físicos",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "order-confirmation-time-hours",
+                "label": "Tiempo Promedio de Confirmación de Pedidos (horas)",
+                "type": "number",
+                "placeholder": "24",
+                "required": true
+              },
+              {
+                "fieldId": "order-status-updates-frequency",
+                "label": "Frecuencia de Actualizaciones de Estado al Cliente",
+                "type": "select",
+                "options": ["Diaria", "Cada 2-3 días", "Semanal", "Solo al despachar", "Irregular"],
+                "required": true
+              },
+              {
+                "fieldId": "traceability-for-customers",
+                "label": "¿Cliente Puede Rastrear su Pedido?",
+                "type": "select",
+                "options": ["Sí, portal online", "Sí, por email/WhatsApp", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "customer-service-responsible",
+                "label": "¿Hay Responsable Dedicado de Servicio al Cliente?",
+                "type": "select",
+                "options": ["Sí, dedicado", "Sí, compartido con otras funciones", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "account-managers-assigned",
+                "label": "Número de Account Managers para Cuentas Clave",
+                "type": "number",
+                "placeholder": "2",
+                "required": false
+              },
+              {
+                "fieldId": "on-time-delivery-rate",
+                "label": "Tasa de Entrega a Tiempo (%)",
+                "type": "number",
+                "placeholder": "95",
+                "required": true
+              },
+              {
+                "fieldId": "post-delivery-follow-up",
+                "label": "¿Realiza Seguimiento Post-Entrega?",
+                "type": "select",
+                "options": ["Sí, encuesta de satisfacción", "Sí, llamada/email", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "customer-satisfaction-score",
+                "label": "Puntuación Promedio de Satisfacción del Cliente (1-5)",
+                "type": "number",
+                "placeholder": "4.5",
+                "required": false
+              },
+              {
+                "fieldId": "return-claim-policy-documented",
+                "label": "¿Política de Devoluciones y Reclamos Documentada?",
+                "type": "select",
+                "options": ["Sí, clara y comunicada", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "average-claims-resolution-days",
+                "label": "Días Promedio para Resolver Reclamos",
+                "type": "number",
+                "placeholder": "7",
+                "required": false
+              },
+              {
+                "fieldId": "loyalty-program-implemented",
+                "label": "¿Programa de Fidelización para Compradores Recurrentes?",
+                "type": "select",
+                "options": ["Sí, formal", "Sí, informal", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "repeat-purchase-rate",
+                "label": "Tasa de Recompra de Compradores (%)",
+                "type": "number",
+                "placeholder": "80",
+                "required": true
+              },
+              {
+                "fieldId": "total-active-customers",
+                "label": "Número Total de Clientes Activos",
+                "type": "number",
+                "placeholder": "15",
+                "required": true
+              },
+              {
+                "fieldId": "key-accounts-quantity",
+                "label": "Número de Cuentas Clave (>5.000 kg/año)",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "customer-service-manual-url",
+                "label": "Enlace a Manual de Procedimientos de Servicio al Cliente",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "customer-feedback-system-url",
+                "label": "Enlace a Sistema de Retroalimentación de Clientes",
+                "type": "url",
+                "placeholder": "https://docs.google.com/forms/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Seleccionar e implementar sistema de gestión de pedidos (ERP, CRM o software)",
+            "Definir proceso estándar desde recepción de pedido hasta entrega",
+            "Establecer tiempos de respuesta (confirmación en 24h, actualizaciones semanales)",
+            "Implementar sistema de trazabilidad accesible para clientes",
+            "Designar responsable de servicio al cliente (dedicado o compartido)",
+            "Asignar account managers para cuentas clave",
+            "Crear plantillas de comunicación (confirmación, actualizaciones, seguimiento)",
+            "Implementar protocolo de seguimiento post-entrega (encuesta a 30 días)",
+            "Documentar política de devoluciones y reclamos",
+            "Establecer métricas de servicio (tiempo de respuesta, entrega a tiempo, satisfacción)",
+            "Crear programa de fidelización para compradores recurrentes",
+            "Capacitar al equipo en estándares de servicio al cliente",
+            "Implementar sistema de registro y seguimiento de reclamos",
+            "Programar revisión mensual de métricas de servicio",
+            "Solicitar testimonios y referencias a clientes satisfechos",
+            "Documentar procedimientos en manual de servicio al cliente"
+          ]
+        }
+      ]
+    }
+  ]
+}

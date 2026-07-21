@@ -1,0 +1,392 @@
+{
+  "block": "operations",
+  "blockTitle": "Operaciones",
+  "phases": [
+    {
+      "phaseId": "harvest-collection-traceability",
+      "phaseTitle": "Cosecha, Acopio Temporal y Trazabilidad en Campo",
+      "steps": [
+        {
+          "stepId": "harvesting-field-collection",
+          "stepTitle": "Cosecha, Selección de Madurez y Recolección",
+          "guide": {
+            "whyItMatters": "La calidad del cacao fermentado comienza el día de la cosecha. Cortar mazorcas inmaduras genera granos con bajo contenido de mucílago y azúcares, resultando en una fermentación deficiente y sabores ácidos/astringentes. Cortar mazorcas sobremaduras o dañadas introduce patógenos y granos germinados o mohosos. Además, un corte brusco daña el 'cojín floral' (de donde saldrán las flores y mazorcas de los próximos 5-10 años), destruyendo la productividad futura del árbol.",
+            "bestPractices": [
+              "Identifica la madurez óptima por color (variedad dependiente) y sonido (al golpear la mazorca debe sonar 'hueca' o 'seca', no 'sorda')",
+              "Utiliza machetes bien afilados o tijeras de podar de altura (tijerón) para mazorcas altas, evitando tirones",
+              "Corta el pedúnculo (tallo) a 1-2 cm de la base, dejando el cojín floral completamente intacto",
+              "Recolecta todas las mazorcas del suelo inmediatamente para evitar que se pudran y atraigan plagas",
+              "Realiza la cosecha en horarios de menor radiación solar (temprano en la mañana o late afternoon) para evitar el estrés del árbol y del trabajador",
+              "Separa las mazorcas sanas de las enfermas (con Moniliasis o Phytophthora) directamente en el campo"
+            ],
+            "commonMistakes": [
+              "Arrancar las mazorcas con las manos o dar tirones fuertes, desgarrando la corteza y el cojín floral",
+              "Cosechar mazorcas verdes ('pintonas') por afán de sacar volumen, arruinando el perfil de sabor",
+              "Dejar mazorcas abiertas o podridas colgando del árbol o en el suelo, sirviendo de foco de infección",
+              "Usar machetes desafilados que 'mastican' el tallo en lugar de cortarlo limpiamente",
+              "Mezclar mazorcas sanas con mazorcas enfermas en la misma bolsa o costal durante la recolección"
+            ],
+            "tip": "En variedades Trinitarias o CCN-51 en Colombia, el cambio de color verde a amarillo/naranja es el indicador principal, pero la prueba del sonido es infalible: si al golpearla con los nudillos suena como un tambor vacío, está lista. Si suena sólida y húmeda, le faltan días. Un cosechero experto puede recolectar y limpiar entre 800 y 1200 mazorcas por día (aprox. 40-60 kg de mazorca). Paga por productividad (por kg o por mazorca) para incentivar la velocidad, pero bonifica por 'cero daños al cojín floral' para cuidar el árbol.",
+            "recommendedTools": [
+              {
+                "name": "Tijera de Podar de Altura (Telescópica)",
+                "url": "https://www.google.com",
+                "description": "Para cortar mazorcas altas sin necesidad de subir al árbol, garantizando un corte limpio"
+              },
+              {
+                "name": "Machete de Acero de Alta Carbono",
+                "url": "https://www.google.com",
+                "description": "Herramienta principal para el corte de pedúnculos, debe mantenerse siempre afilado"
+              },
+              {
+                "name": "Canastas o Bolsas de Recolección de Malla",
+                "url": "https://www.google.com",
+                "description": "Permiten ventilación y evitan que las mazorcas se aplasten o fermenten prematuramente en el campo"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "harvest-date",
+                "label": "Fecha de Cosecha",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "plot-or-zone",
+                "label": "Parcela o Zona de Cosecha",
+                "type": "text",
+                "placeholder": "Ej: Parcela 4 - Lote Criollo",
+                "required": true
+              },
+              {
+                "fieldId": "worker-name",
+                "label": "Nombre del Cosechero",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": true
+              },
+              {
+                "fieldId": "pods-harvested-count",
+                "label": "Cantidad de Mazorcas Cosechadas",
+                "type": "number",
+                "placeholder": "150",
+                "required": true
+              },
+              {
+                "fieldId": "estimated-weight-kg",
+                "label": "Peso Estimado de Mazorca Fresca (kg)",
+                "type": "number",
+                "placeholder": "7.5",
+                "required": true
+              },
+              {
+                "fieldId": "maturity-status",
+                "label": "Estado de Madurez Predominante",
+                "type": "select",
+                "options": ["Óptima (Color y sonido correctos)", "Ligeramente inmadura", "Sobremadura", "Mezcla heterogénea"],
+                "required": true
+              },
+              {
+                "fieldId": "tool-used",
+                "label": "Herramienta Principal Utilizada",
+                "type": "select",
+                "options": ["Machete", "Tijera telescópica", "Combinada"],
+                "required": true
+              },
+              {
+                "fieldId": "floral-cushion-damage",
+                "label": "¿Se evidenció daño a los cojines florales?",
+                "type": "select",
+                "options": ["Ninguno (Corte limpio)", "Daño menor (<5%)", "Daño severo (Requiere capacitación)"],
+                "required": true
+              },
+              {
+                "fieldId": "diseased-pods-separated",
+                "label": "¿Se separaron las mazorcas enfermas en campo?",
+                "type": "select",
+                "options": ["Sí, 100%", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "field-observations",
+                "label": "Observaciones de Campo",
+                "type": "textarea",
+                "placeholder": "Ej: Se encontraron 10 mazorcas con Moniliasis, se dejaron en la bolsa de descarte.",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Inspeccionar el estado de madurez de las mazorcas en el árbol (color y sonido)",
+            "Verificar que las herramientas de corte estén limpias y bien afiladas",
+            "Realizar el corte del pedúnculo dejando 1-2 cm y sin dañar el cojín floral",
+            "Recolectar las mazorcas y colocarlas en canastas o bolsas de malla (no al suelo)",
+            "Separar inmediatamente las mazorcas enfermas, golpeadas o muy verdes",
+            "Revisar el suelo y recolectar cualquier mazorca caída para evitar focos de plaga",
+            "Pesar o contar las mazorcas cosechadas por trabajador y parcela",
+            "Registrar la fecha, parcela, cantidad y estado de madurez en la app o cuaderno",
+            "Transportar las mazorcas sanas al área de acopio temporal antes del mediodía"
+          ]
+        },
+        {
+          "stepId": "temporary-collection-transport",
+          "stepTitle": "Acopio Temporal y Transporte a la Planta de Beneficio",
+          "guide": {
+            "whyItMatters": "Una vez cortada, la mazorca es un organismo vivo que sigue respirando. Si se acumula en montañas bajo el sol, la temperatura interna subirá rápidamente, iniciando una 'pre-fermentación' o germinación dentro de la mazorca, lo que genera granos germinados (defecto grave) y sabores a vinagre. El transporte brusco a la planta de beneficio puede romper las mazorcas, mezclando la cáscara con la semilla y contaminando el futuro cacao con basura y hongos.",
+            "bestPractices": [
+              "El acopio temporal en campo debe ser en un lugar fresco, ventilado y bajo techo (sombrío)",
+              "Nunca acumules las mazorcas en costales cerrados o pilas de más de 40 cm de altura",
+              "El tiempo máximo entre la cosecha y el rompimiento (beneficio) no debe exceder 7-10 días (idealmente 3-5 días)",
+              "Utiliza canastas plásticas, costales de malla o camas de madera para el transporte; evita costales de plástico tejido cerrado",
+              "Lava y desinfecta los recipientes de transporte al final de cada jornada",
+              "Protege la carga de la lluvia directa y el sol intenso durante el traslado en tractor o bestia de carga"
+            ],
+            "commonMistakes": [
+              "Dejar las mazorcas cosechadas expuestas al sol directo en el campo por varios días",
+              "Empacar las mazorcas en costales plásticos cerrados, asfixiándolas y acelerando la germinación",
+              "Tardar más de 10 días en romper las mazorcas, perdiendo calidad y generando moho",
+              "Transportar las mazorcas en remolques sucios que tuvieron contacto con fertilizantes o combustibles",
+              "Lanzar las mazorcas desde el tractor, golpeándolas y abriéndolas antes de tiempo"
+            ],
+            "tip": "La regla de oro para el acopio temporal es 'Camas, no montañas'. Extiende las mazorcas en capas de máximo 20-30 cm de espesor sobre camas de madera o plásticas limpias bajo un techo de palma o lona. Esto permite la circulación de aire. Si vas a transportar en tractor, usa canastas plásticas apilables o costales de malla (como los de papa o cebolla, pero exclusivos para cacao) y cubre con una lona limpia si hay riesgo de lluvia. El tiempo óptimo de 'reposo' post-cosecha antes de romper es de 48 a 72 horas para homogenizar la madurez, pero nunca más de 5 días.",
+            "recommendedTools": [
+              {
+                "name": "Canastas Plásticas Apilables o Costales de Malla",
+                "url": "https://www.google.com",
+                "description": "Recipientes ventilados para evitar la pre-fermentación y el sobrecalentamiento"
+              },
+              {
+                "name": "Báscula de Plataforma (Capacidad 150-300 kg)",
+                "url": "https://www.google.com",
+                "description": "Para pesar el volumen total de mazorca cosechada antes de enviarla a beneficio"
+              },
+              {
+                "name": "Lonas o Techos de Sombrío Móviles",
+                "url": "https://www.google.com",
+                "description": "Para proteger el acopio temporal de la lluvia y el sol directo en el campo"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "collection-date",
+                "label": "Fecha de Acopio / Envío a Beneficio",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "origin-plot",
+                "label": "Parcela de Origen de la Cosecha",
+                "type": "text",
+                "placeholder": "Ej: Parcela 4",
+                "required": true
+              },
+              {
+                "fieldId": "total-pods-weight-kg",
+                "label": "Peso Total de Mazorca Fresca Acopiada (kg)",
+                "type": "number",
+                "placeholder": "450",
+                "required": true
+              },
+              {
+                "fieldId": "container-type",
+                "label": "Tipo de Recipiente Utilizado para Transporte",
+                "type": "select",
+                "options": [
+                  "Canastas plásticas apilables",
+                  "Costales de malla (ventilados)",
+                  "Camas de madera en tractor",
+                  "Costales de plástico tejido (No recomendado)",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "storage-location",
+                "label": "Lugar de Acopio Temporal Previo al Transporte",
+                "type": "select",
+                "options": ["Bajo techo ventilado (Ideal)", "Bajo sombra de árboles", "A la intemperie (No recomendado)"],
+                "required": true
+              },
+              {
+                "fieldId": "days-since-harvest",
+                "label": "Días Transcurridos desde la Cosecha hasta el Rompimiento",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "transport-method",
+                "label": "Método de Transporte a la Planta de Beneficio",
+                "type": "select",
+                "options": ["Tractor / Carreta", "Motocicleta de carga", "Bestia de carga (Mula/Burro)", "Transporte manual"],
+                "required": true
+              },
+              {
+                "fieldId": "containers-cleaned",
+                "label": "¿Se lavaron/desinfectaron los recipientes de transporte?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "transport-observations",
+                "label": "Observaciones del Transporte",
+                "type": "textarea",
+                "placeholder": "Ej: Se cubrió con lona por lluvia leve. Llegó en buen estado.",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Extender las mazorcas en capas de máximo 30 cm en el acopio temporal bajo techo",
+            "Verificar que el lugar de acopio esté ventilado y protegido del sol y la lluvia",
+            "Pesar el volumen total de mazorca cosechada en la báscula de plataforma",
+            "Seleccionar el recipiente adecuado (canastas o costales de malla, nunca plástico cerrado)",
+            "Cargar los recipientes con cuidado para no golpear ni romper las mazorcas",
+            "Proteger la carga con lonas limpias durante el traslado si hay riesgo de lluvia",
+            "Transportar la mazorca a la planta de beneficio en un tiempo máximo de 3-5 días",
+            "Descargar con cuidado en el área de beneficio (rompimiento)",
+            "Lavar y desinfectar los recipientes de transporte al finalizar la jornada",
+            "Registrar el peso total, días de acopio y método de transporte"
+          ]
+        },
+        {
+          "stepId": "batch-traceability-entry",
+          "stepTitle": "Trazabilidad de Lote y Registro de Entrada a Beneficio",
+          "guide": {
+            "whyItMatters": "Este es el eslabón que conecta el campo con la fermentación. Sin un código de lote único y un registro estricto de entrada, pierdes la capacidad de rastrear un defecto de calidad en el cacao seco hasta la parcela específica donde se originó. Para la certificación orgánica y para los compradores bean-to-bar, esta trazabilidad 'Parcela-a-Lote' es el documento más exigido y auditado. Garantiza que no se mezcle cacao de fincas vecinas no certificadas con el tuyo.",
+            "bestPractices": [
+              "Genera un código de lote alfanumérico único que incluya fecha y parcela (ej. L-231025-P4)",
+              "Pesa la mazorca exactamente antes de iniciar el rompimiento (beneficio) para tener el rendimiento real",
+              "Crea una 'Etiqueta de Lote Físico' (tarja o ficha) que acompañe la masa de cacao desde el rompimiento hasta la bodega de secado",
+              "Cruza la información del campo (cuántas mazorcas se cortaron) con la información de beneficio (cuánto grano húmedo se generó)",
+              "Almacena las fichas de trazabilidad físicas en una carpeta cronológica y digitalízalas semanalmente",
+              "Nunca mezcles cacao de diferentes parcelas o días de cosecha en la misma caja de fermentación si buscas perfiles de 'Micro-lote'"
+            ],
+            "commonMistakes": [
+              "Mezclar cacao de todas las parcelas en un solo tanque de fermentación, perdiendo la trazabilidad de origen",
+              "No pesar la mazorca antes de romper, imposibilitando calcular el rendimiento (Ratio Mazorca/Grano)",
+              "Perder las etiquetas físicas durante el proceso de fermentación y secado",
+              "Anotar los datos en papeles sueltos que se mojan, se pierden o son ilegibles",
+              "No registrar la hora exacta en que el cacao entra a la caja de fermentación (crítico para el control de tiempo)"
+            ],
+            "tip": "El 'Ratio de Conversión' o rendimiento es vital para la rentabilidad. En cacao fino, de 100 kg de mazorca fresca se obtienen aproximadamente 25-30 kg de grano húmedo (baba), que al secarse quedarán en 8-10 kg de cacao seco. Si tu rendimiento es menor a esto, estás perdiendo cacao en la cáscara, en el patio, o las mazorcas venían con poco grano. Etiqueta: Usa tarjetas de plástico rígido o madera delgada con un porta-lápiz de grafito (la tinta se corre con la humedad de la fermentación). Cuelga la tarjeta con alambre o mecate en la esquina de la caja de fermentación.",
+            "recommendedTools": [
+              {
+                "name": "Báscula Colgante o de Plataforma Calibrada",
+                "url": "https://www.google.com",
+                "description": "Para pesar con precisión la entrada de mazorca y la salida de grano húmedo/seco"
+              },
+              {
+                "name": "Tarjetas de Trazabilidad Rígidas y Marcadores de Grafito",
+                "url": "https://www.google.com",
+                "description": "Etiquetas que soportan la humedad y el manipuleo durante la fermentación"
+              },
+              {
+                "name": "App de Trazabilidad (Ej. AgriApp, Notion, Excel Offline)",
+                "url": "https://www.google.com",
+                "description": "Para registrar digitalmente el ingreso del lote y vincularlo a la parcela de origen"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "batch-code",
+                "label": "Código Único de Lote Asignado",
+                "type": "text",
+                "placeholder": "Ej: L-231025-P4",
+                "required": true
+              },
+              {
+                "fieldId": "entry-date",
+                "label": "Fecha de Entrada a Beneficio (Rompimiento)",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "entry-time",
+                "label": "Hora de Inicio del Rompimiento / Entrada a Caja",
+                "type": "text",
+                "placeholder": "Ej: 08:30 AM",
+                "required": true
+              },
+              {
+                "fieldId": "total-pods-weight-kg",
+                "label": "Peso Total de Mazorca Fresca en Beneficio (kg)",
+                "type": "number",
+                "placeholder": "300",
+                "required": true
+              },
+              {
+                "fieldId": "origin-plots-included",
+                "label": "Parcelas de Origen Incluidas en este Lote",
+                "type": "text",
+                "placeholder": "Ej: Parcela 4 y Parcela 5",
+                "required": true
+              },
+              {
+                "fieldId": "harvest-dates-included",
+                "label": "Fechas de Cosecha que Componen este Lote",
+                "type": "text",
+                "placeholder": "Ej: 23, 24 y 25 de Octubre",
+                "required": true
+              },
+              {
+                "fieldId": "estimated-wet-beans-kg",
+                "label": "Peso Estimado de Grano Húmedo (Baba) Resultante (kg)",
+                "type": "number",
+                "placeholder": "80",
+                "required": true
+              },
+              {
+                "fieldId": "fermentation-box-assigned",
+                "label": "Número de Caja o Turno de Fermentación Asignado",
+                "type": "text",
+                "placeholder": "Ej: Caja #2",
+                "required": true
+              },
+              {
+                "fieldId": "physical-tag-attached",
+                "label": "¿Se colgó la Etiqueta Física de Trazabilidad en la Caja?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "supervisor-name",
+                "label": "Nombre del Supervisor de Beneficio",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": true
+              },
+              {
+                "fieldId": "traceability-docs-url",
+                "label": "Enlace a la Ficha de Trazabilidad Digitalizada (PDF/Foto)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Generar el código de lote único (Fecha + Parcela) antes de iniciar el rompimiento",
+            "Preparar las tarjetas de trazabilidad física y colgarlas en la caja de fermentación",
+            "Pesar la totalidad de la mazorca fresca que ingresará a este lote específico",
+            "Verificar que la mazorca esté limpia (sin basura, hojas o mazorcas podridas)",
+            "Iniciar el rompimiento (beneficio) y registrar la hora exacta de entrada a la caja",
+            "Pesar el grano húmedo (baba) resultante para calcular el rendimiento inmediato",
+            "Cruzar los datos de campo (cosechadores) con los datos de beneficio (supervisor)",
+            "Asegurar que la etiqueta física quede visible y protegida en la caja de fermentación",
+            "Digitalizar o transcribir la ficha de lote a la app o sistema central de trazabilidad",
+            "Archivar el soporte físico en la carpeta cronológica de 'Lotes en Proceso'"
+          ]
+        }
+      ]
+    }
+  ]
+}

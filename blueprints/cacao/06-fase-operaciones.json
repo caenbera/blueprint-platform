@@ -1,0 +1,296 @@
+{
+  "block": "operations",
+  "phase": "Manejo Productivo y Cosecha",
+  "steps": [
+    {
+      "id": "step_3_1",
+      "title": "Programa de Fertilización y Nutrición Orgánica",
+      "guide": {
+        "whyItMatters": "En un sistema 100% orgánico, los nutrientes no están disueltos y listos para ser absorbidos como en los fertilizantes sintéticos. Dependen de la actividad biológica del suelo (bacterias, hongos, lombrices) para mineralizarse. Por lo tanto, el programa de fertilización no es solo 'aplicar comida', sino 'alimentar al suelo' en sincronía con las etapas fenológicas del cacao (crecimiento vegetativo, floración, cuaje y llenado de mazorca). Un desbalance nutricional en orgánico no se corrige en una semana; requiere meses de ajuste biológico, por lo que la prevención y el monitoreo (análisis foliar) son innegociables para mantener rendimientos de fino de aroma.",
+        "bestPractices": [
+          "Basar el programa en un análisis de suelos anual y un análisis foliar semestral. El análisis foliar es la 'foto real' de lo que la planta está asimilando.",
+          "Aplicar fertilizantes orgánicos sólidos (compost, bocashi, harina de rocas) en la 'proyección de la copa' (goteo), donde están las raíces absorventes finas, nunca pegados al tronco.",
+          "Utilizar biofertilizantes foliares (bioles, extractos de algas) en las primeras horas de la mañana o al atardecer, cuando los estomas de las hojas están abiertos y la radiación UV es baja.",
+          "Sincronizar la aplicación de nutrientes con las lluvias. Aplicar materia orgánica sólida justo al inicio de la temporada lluviosa para que la humedad active la biología del suelo."
+        ],
+        "commonMistakes": [
+          "Aplicar bioles ricos en nitrógeno (como el de estiércol de gallina) en plena floración. El exceso de nitrógeno en esta etapa provoca la caída masiva de flores y reduce la cuaja de frutos.",
+          "Ignorar los micronutrientes. La deficiencia de Boro y Zinc en cacao orgánico es común y se manifiesta con deformaciones en las hojas (similares a la Escoba de Bruja) y mala formación de las almendras.",
+          "Aplicar roca fosfórica en superficie sin incorporar o sin la humedad adecuada. El fósforo es muy inmóvil en el suelo; si no hay hongos micorrízicos y humedad, se queda en los primeros 2 cm sin que las raíces lo alcancen."
+        ],
+        "tip": "Para la etapa de llenado de mazorca, aplica un foliar a base de extracto de algas marinas (kelp) y solubor (fuente de boro orgánico). El boro es el 'transportador' del calcio y los azúcares hacia la mazorca. Esto no solo aumenta el peso del grano seco, sino que mejora drásticamente el perfil de sabor y reduce la incidencia de malformaciones.",
+        "recommendedTools": [
+          {
+            "name": "Kit de Análisis Foliar (Muestreo y envío a laboratorio)",
+            "url": "N/A (Servicio de laboratorio agronómico)"
+          },
+          {
+            "name": "Refractómetro de mano (Para medir grados Brix en el mucílago)",
+            "url": "https://www.atago.net/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "soil_foliar_analysis_date",
+          "label": "Fecha del Último Análisis de Suelos y Foliar",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "solid_organic_fertilizer_recipe",
+          "label": "Receta de Fertilización Orgánica Sólida (Compost/Bocashi/Rocas)",
+          "type": "textarea",
+          "placeholder": "Ej: 500g de bocashi + 100g de roca fosfórica + 50g de sulfato de potasio natural (Kainita) por árbol, aplicado en la proyección de la copa...",
+          "required": true
+        },
+        {
+          "id": "foliar_biolar_recipe",
+          "label": "Receta y Frecuencia de Biofertilizantes Foliares (Bioles/Algas)",
+          "type": "textarea",
+          "placeholder": "Ej: Biol de bovinos diluido al 10% + extracto de algas marinas al 2%. Aplicación quincenal desde la floración hasta el llenado de mazorca...",
+          "required": true
+        },
+        {
+          "id": "annual_organic_fertilizer_volume",
+          "label": "Volumen Total Estimado de Fertilizante Orgánico Sólido Anual (kg/ha)",
+          "type": "number",
+          "placeholder": "Ej: 2500",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_3_1_1",
+          "text": "Programar y registrar la fecha de toma de muestras para el análisis de suelos y foliar.",
+          "registryFieldRef": "soil_foliar_analysis_date"
+        },
+        {
+          "id": "cl_3_1_2",
+          "text": "Definir la receta exacta y dosis del fertilizante orgánico sólido a aplicar por árbol.",
+          "registryFieldRef": "solid_organic_fertilizer_recipe"
+        },
+        {
+          "id": "cl_3_1_3",
+          "text": "Documentar la receta, dilución y calendario de aplicación de los biofertilizantes foliares.",
+          "registryFieldRef": "foliar_biolar_recipe"
+        },
+        {
+          "id": "cl_3_1_4",
+          "text": "Calcular y registrar el volumen total de fertilizante orgánico sólido necesario por hectárea para el año.",
+          "registryFieldRef": "annual_organic_fertilizer_volume"
+        }
+      ]
+    },
+    {
+      "id": "step_3_2",
+      "title": "Manejo Integrado de Plagas y Enfermedades (MIP)",
+      "guide": {
+        "whyItMatters": "Las enfermedades fúngicas (Monilia, Escoba de Bruja, Mazorca Negra) pueden destruir el 100% de la cosecha en pocas semanas. En un sistema 100% orgánico, al no contar con fungicidas sistémicos de síntesis, la estrategia de MIP debe ser implacable, preventiva y cultural. El objetivo no es 'eliminar' la presión de la enfermedad (imposible en el trópico húmedo), sino mantenerla por debajo del umbral de daño económico mediante la reducción de la humedad relativa, la eliminación de inóculo y el fortalecimiento de la inmunidad de la planta.",
+        "bestPractices": [
+          "Implementar la técnica del 'Enterado' o 'Monitoreo Fitosanitario': recorrer la plantación cada 15 días (sin falta) para cortar y enterrar TODAS las mazorcas enfermas, secas o momificadas, independientemente de si hay cosecha comercial o no.",
+          "Realizar podas de saneamiento y ventilación anualmente. Un dosel abierto permite que el viento seque la humedad de las hojas y mazorcas, creando un microclima hostil para las esporas de hongos.",
+          "Aplicar hongos antagonistas como *Trichoderma harzianum* o *Trichoderma asperellum* directamente sobre los restos vegetales y en las heridas de poda. Estos hongos 'comen' o compiten con los patógenos como la Monilia.",
+          "Para la Mazorca Negra (Phytophthora), aplicar preventivamente Caldo Bordelés (mezcla de sulfato de cobre y cal, permitido en orgánico) en el tercio inferior del tronco y las mazorcas bajas justo antes de que inicien las lluvias fuertes."
+        ],
+        "commonMistakes": [
+          "Dejar las mazorcas enfermas colgando en el árbol o tirarlas al suelo en medio del lote. Esto convierte la plantación en una 'bomba de tiempo' de esporas que infectarán las mazorcas sanas en la siguiente lluvia.",
+          "Aplicar *Trichoderma* o Caldo Bordelés en horas de alta radiación solar o justo después de una poda fuerte sin dejar cicatrizar, lo que mata los hongos benéficos o fitotoxiciza la planta.",
+          "Confiar únicamente en los bioinsumos y olvidar la poda de ventilación. Ningún hongo benéfico puede controlar una epidemia si el microclima es un sauna de humedad constante."
+        ],
+        "tip": "Para el control de la Monilia, la técnica de la 'Cosecha Anticipada' es tu mejor arma. Cada 15 días, cosecha todas las mazorcas que muestren el más mínimo síntoma (manchas hundidas, polvo blanco). Córtalas, ábrelas en el campo, deja los granos para que se descompongan (aportando nutrientes al suelo) y entierra la cáscara a 20 cm de profundidad, lejos de los árboles. Rompe el ciclo biológico del hongo.",
+        "recommendedTools": [
+          {
+            "name": "Mochila pulverizadora de 20L (Para Caldo Bordelés y bioles)",
+            "url": "N/A (Herramienta física)"
+          },
+          {
+            "name": "Biofábrica de Trichoderma (Kit de multiplicación en arroz/hongo)",
+            "url": "N/A (Insumo biológico)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "monitoring_frequency_days",
+          "label": "Frecuencia de Monitoreo Fitosanitario (Días)",
+          "type": "number",
+          "placeholder": "Ej: 15",
+          "required": true
+        },
+        {
+          "id": "main_diseases_target",
+          "label": "Principales Enfermedades a Controlar",
+          "type": "multiselect",
+          "options": [
+            "Monilia (Moniliophthora roreri)",
+            "Escoba de Bruja (Moniliophthora perniciosa)",
+            "Mazorca Negra / Pudrición Parda (Phytophthora spp.)",
+            "Antracnosis (Colletotrichum spp.)",
+            "Muerте Descendente / Phytophthora palmivora"
+          ],
+          "required": true
+        },
+        {
+          "id": "biological_control_agents",
+          "label": "Agentes de Control Biológico a Utilizar",
+          "type": "multiselect",
+          "options": [
+            "Trichoderma harzianum / asperellum (Hongo antagonista)",
+            "Beauveria bassiana (Hongo entomopatógeno para brocas/insectos)",
+            "Metarhizium anisopliae (Hongo entomopatógeno)",
+            "Bacillus thuringiensis (Bt - Para larvas de lepidópteros)",
+            "Caldo Bordelés (Fungicida de contacto orgánico a base de cobre)",
+            "Caldos Minerales (Sulfocálcico, Viñas)"
+          ],
+          "required": true
+        },
+        {
+          "id": "preventive_copper_application_date",
+          "label": "Fecha Programada para la 1ra Aplicación Preventiva de Cobre Orgánico",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "phytosanitary_waste_management",
+          "label": "Protocolo de Manejo de Residuos Fitosanitarios (Mazorcas Enfermas)",
+          "type": "textarea",
+          "placeholder": "Ej: Toda mazorca con Monilia se corta, se abre, los granos se dejan en el suelo y la cáscara se entierra en hoyos de 30cm a 5 metros de distancia de los árboles, cubriéndola con cal agrícola...",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_3_2_1",
+          "text": "Definir la frecuencia estricta (en días) para las rondas de monitoreo y control fitosanitario.",
+          "registryFieldRef": "monitoring_frequency_days"
+        },
+        {
+          "id": "cl_3_2_2",
+          "text": "Seleccionar las principales enfermedades fúngicas que atacan la región y a las que se hará seguimiento.",
+          "registryFieldRef": "main_diseases_target"
+        },
+        {
+          "id": "cl_3_2_3",
+          "text": "Seleccionar los agentes de control biológico y productos orgánicos que se aplicarán.",
+          "registryFieldRef": "biological_control_agents"
+        },
+        {
+          "id": "cl_3_2_4",
+          "text": "Programar en calendario la fecha de la primera aplicación preventiva de Caldo Bordelés (antes de lluvias).",
+          "registryFieldRef": "preventive_copper_application_date"
+        },
+        {
+          "id": "cl_3_2_5",
+          "text": "Redactar y socializar con el equipo el protocolo exacto para el entierro/compostaje de mazorcas enfermas.",
+          "registryFieldRef": "phytosanitary_waste_management"
+        }
+      ]
+    },
+    {
+      "id": "step_3_3",
+      "title": "Protocolo de Cosecha, Quebrado y Fermentación",
+      "guide": {
+        "whyItMatters": "El cacao no sabe a chocolate hasta que pasa por la fermentación. Este es el proceso bioquímico más crítico para definir la calidad 'Fino de Aroma' y el precio final. Una mala cosecha (mazorcas verdes o sobre-maduras) y una mala fermentación (cajas plásticas, falta de oxígeno, tiempos erróneos) destruyen los precursores de sabor. En un sistema orgánico, la higiene y el control de temperatura son las únicas herramientas para evitar la proliferación de bacterias putrefactoras que generan sabores a 'jamón', 'vinagre' o 'moho', los cuales son rechazados por los chocolateros premium.",
+        "bestPractices": [
+          "Cosechar solo mazorcas en el índice de madurez correcto (cambio de color del 50-70% de verde a amarillo/naranja, y sonido hueco al golpear). Las mazorcas verdes no tienen azúcares para fermentar; las pasadas se pudren.",
+          "Realizar el 'quebrado' (apertura de la mazorca) con mazo de madera, nunca con machete, para evitar cortar los granos y exponer la almendra a hongos toxigénicos.",
+          "Fermentar en cajas de madera (no plástico ni metal) con orificios de drenaje en el fondo. La madera aísla térmicamente y permite la microoxigenación. El volumen mínimo debe ser de 100 kg de grano húmedo por caja para generar el calor necesario.",
+          "Ejecutar los 'volteos' (mezclar los granos con palas de madera) rigurosamente. El primer volteo a las 48 horas, el segundo a las 72 horas, y el tercero a las 96 horas. Esto introduce oxígeno para las bacterias acéticas y homogeniza la temperatura."
+        ],
+        "commonMistakes": [
+          "Fermentar en baldes plásticos o costales. El plástico es tóxico a altas temperaturas, no respira y genera fermentaciones anaeróbicas que producen sabores putrefactos y ácido butírico (olor a vómito).",
+          "No medir la temperatura. Si la masa supera los 50-52°C, las enzimas que crean el sabor a chocolate mueren (se 'cocinan' los cotiledones), resultando en granos 'matados' con sabor a carbón y alta astringencia.",
+          "Detener la fermentación antes de tiempo (3 días) por prisa. Esto genera 'granos pizarrosos' (slaty beans), que son granos sin fermentar por dentro, amargos y sin perfil aromático, degradando todo el lote."
+        ],
+        "tip": "Para asegurar una fermentación homogénea, mezcla los granos húmedos de varias cosechas diarias (de 2 o 3 días) antes de llenar la caja de fermentación. Esto se llama 'acopio de baba'. Al tener una masa más grande y uniforme, la fase aeróbica (levaduras y bacterias lácticas) arranca con más fuerza y rapidez, superando la fase de putrefacción inicial en menos de 12 horas.",
+        "recommendedTools": [
+          {
+            "name": "Termómetro de vara de acero inoxidable (0-100°C)",
+            "url": "N/A (Herramienta física)"
+          },
+          {
+            "name": "Cajas de fermentación de madera (Cedro o pino tratado) con drenajes",
+            "url": "N/A (Infraestructura física)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "harvest_maturity_index",
+          "label": "Índice de Madurez para la Cosecha",
+          "type": "select",
+          "options": [
+            "Cambio de color (50-70% de la cáscara de verde a amarillo/naranja)",
+            "Sonido hueco al golpear la mazorca (seco)",
+            "Combinación de cambio de color y sonido hueco",
+            "Días específicos desde la floración (según clon)"
+          ],
+          "required": true
+        },
+        {
+          "id": "fermentation_box_material",
+          "label": "Material de las Cajas de Fermentación",
+          "type": "select",
+          "options": [
+            "Madera (Cedro, Pino, Caoba) con orificios de drenaje",
+            "Plástico alimentario de grado industrial (No recomendado para fino)",
+            "Hojas de plátano y costales de yute (Método tradicional en montón)",
+            "Acero inoxidable (Escala industrial)"
+          ],
+          "required": true
+        },
+        {
+          "id": "fermentation_duration_days",
+          "label": "Duración Exacta de la Fermentación (Días)",
+          "type": "number",
+          "placeholder": "Ej: 6",
+          "required": true
+        },
+        {
+          "id": "turning_schedule",
+          "label": "Calendario de Volteos y Control de Temperatura",
+          "type": "textarea",
+          "placeholder": "Ej: Día 1: Acopio. Día 2: Cierre de caja. Día 3 (48h): 1er volteo (Temp meta 38°C). Día 4 (72h): 2do volteo (Temp meta 45°C). Día 5 (96h): 3er volteo (Temp meta 48°C)...",
+          "required": true
+        },
+        {
+          "id": "target_fermentation_temperature_max",
+          "label": "Temperatura Máxima Objetivo Durante la Fermentación (°C)",
+          "type": "number",
+          "placeholder": "Ej: 48",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_3_3_1",
+          "text": "Definir y capacitar al equipo en el índice de madurez exacto para la cosecha de mazorcas.",
+          "registryFieldRef": "harvest_maturity_index"
+        },
+        {
+          "id": "cl_3_3_2",
+          "text": "Seleccionar y construir/adquirir el material de las cajas de fermentación (preferiblemente madera).",
+          "registryFieldRef": "fermentation_box_material"
+        },
+        {
+          "id": "cl_3_3_3",
+          "text": "Establecer la duración exacta en días del proceso de fermentación según el clon y volumen.",
+          "registryFieldRef": "fermentation_duration_days"
+        },
+        {
+          "id": "cl_3_3_4",
+          "text": "Documentar el calendario estricto de volteos y las temperaturas meta para cada etapa.",
+          "registryFieldRef": "turning_schedule"
+        },
+        {
+          "id": "cl_3_3_5",
+          "text": "Definir la temperatura máxima límite (°C) para evitar la muerte de los cotiledones durante la fermentación.",
+          "registryFieldRef": "target_fermentation_temperature_max"
+        }
+      ]
+    }
+  ]
+}

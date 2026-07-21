@@ -1,0 +1,313 @@
+{
+  "block": "operations",
+  "phase": "Preparación del Terreno e Infraestructura",
+  "steps": [
+    {
+      "id": "step_1_1",
+      "title": "Análisis de Suelos y Corrección Orgánica",
+      "guide": {
+        "whyItMatters": "En un sistema de cacao 100% orgánico, el suelo no es solo un sustrato físico; es un ecosistema vivo que debe proveer todos los nutrientes. A diferencia del cultivo convencional que 'inyecta' fertilizantes sintéticos solubles, el sistema orgánico depende de la biología del suelo (bacterias, hongos micorrízicos, lombrices) para mineralizar la materia orgánica. Si el pH es incorrecto o la materia orgánica es baja, esta biología no funciona, y las plántulas de cacao, aunque reciban toneladas de compost, mostrarán deficiencias. Un análisis de suelo previo es el diagnóstico médico de la finca; sin él, estás aplicando 'medicina a ciegas'. Además, para la certificación orgánica, el análisis de suelo inicial es la prueba base de que el terreno está libre de residuos de agroquímicos prohibidos.",
+        "bestPractices": [
+          "Realizar un muestreo compuesto: tomar al menos 15-20 submuestras en zigzag por cada lote homogéneo (máximo 5 hectáreas por muestra), a una profundidad de 0-20 cm para cacao joven y 0-40 cm para cacao adulto.",
+          "Enviar las muestras a un laboratorio certificado que utilice metodologías estándar y que pueda emitir informes con recomendaciones agronómicas. Guarda una contramuestra por si el auditor orgánico la solicita.",
+          "Para la corrección orgánica, prioriza el encalado con cal agrícola (carbonato de calcio) o cal dolomita si hay deficiencia de magnesio, aplicándola al menos 60 días antes de la siembra. Para fósforo, usa roca fosfórica molida, que se solubiliza lentamente gracias a los ácidos orgánicos del suelo.",
+          "El objetivo en materia orgánica (MO) para un suelo tropical bajo cacao es mantenerla por encima del 3%. Si está por debajo, el plan de corrección debe incluir la siembra masiva de coberturas vivas (Mucuna, Centrosema) y la aplicación de compost maduro."
+        ],
+        "commonMistakes": [
+          "Tomar muestras de suelo solo de la 'capa superficial' (0-5 cm) donde se acumulan los nutrientes por la descomposición de hojarasca, ignorando la zona de exploración radicular del cacao (20-40 cm).",
+          "Intentar corregir un pH muy ácido (<4.5) solo con compost. El compost es un buffer excelente, pero si el pH es críticamente bajo, se requiere encalado físico previo.",
+          "No registrar la fecha de la última aplicación de químicos sintéticos en el terreno. Si el terreno fue convencional antes de tu proyecto, esta fecha es el 'Día Cero' para el conteo de los 36 meses de transición orgánica.",
+          "Mezclar muestras de zonas con diferente historial de uso (ej. una zona que fue pastizal y otra que fue bosque) en una sola bolsa, lo que invalida el resultado del análisis."
+        ],
+        "tip": "Para cacao orgánico, un pH ideal oscila entre 5.5 y 6.5. Si tu análisis arroja un pH menor a 5.0, aplica la fórmula de necesidad de cal (NC) que te dé el laboratorio. Una regla empírica segura en trópico húmedo es aplicar 1 a 2 toneladas de cal dolomita por hectárea si el pH está entre 4.5 y 5.0, incorporándola ligeramente en los primeros 10 cm o aplicándola en franjas bajo la proyección de la copa.",
+        "recommendedTools": [
+          {
+            "name": "Sonda de pH de campo (Para mediciones rápidas preliminares)",
+            "url": "https://www.bluelab.com/"
+          },
+          {
+            "name": "Laboratorios locales certificados (Ej: Agrolab, Laboratorio de Suelos del ICA/INIAP)",
+            "url": "N/A (Buscar directorio local)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "soil_sampling_date",
+          "label": "Fecha de Toma de Muestras de Suelo",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "soil_analysis_report_url",
+          "label": "Enlace al Informe del Laboratorio de Suelos",
+          "type": "url",
+          "placeholder": "Ej: https://drive.google.com/file/d/...",
+          "required": true
+        },
+        {
+          "id": "correction_plan",
+          "label": "Plan de Corrección Orgánica (Encalado, Compost, Rocas)",
+          "type": "textarea",
+          "placeholder": "Ej: Aplicar 1.5 ton/ha de cal dolomita 60 días antes de siembra. Incorporar 5 kg de compost maduro por hoyo de siembra. Aplicar 500 kg/ha de roca fosfórica...",
+          "required": true
+        },
+        {
+          "id": "last_chemical_application_date",
+          "label": "Fecha de Última Aplicación de Químicos Sintéticos en el Terreno",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_1_1_1",
+          "text": "Tomar las muestras de suelo compuestas por lote y registrar la fecha exacta del muestreo.",
+          "registryFieldRef": "soil_sampling_date"
+        },
+        {
+          "id": "cl_1_1_2",
+          "text": "Recibir el informe del laboratorio y subir el enlace al documento oficial en la nube.",
+          "registryFieldRef": "soil_analysis_report_url"
+        },
+        {
+          "id": "cl_1_1_3",
+          "text": "Redactar y definir el plan de corrección orgánica basado en los resultados del análisis.",
+          "registryFieldRef": "correction_plan"
+        },
+        {
+          "id": "cl_1_1_4",
+          "text": "Registrar la fecha histórica de la última aplicación de agroquímicos sintéticos en el terreno (Hitos de transición).",
+          "registryFieldRef": "last_chemical_application_date"
+        }
+      ]
+    },
+    {
+      "id": "step_1_2",
+      "title": "Diseño de la Plantación y Trazado de Lotes",
+      "guide": {
+        "whyItMatters": "El diseño de la plantación es el plano arquitectónico de tu negocio agrícola. Un mal trazado en terrenos inclinados resultará en erosión severa durante las lluvias, perdiendo la valiosa capa superficial de materia orgánica que tanto cuesta construir en sistemas orgánicos. Además, un diseño sin vías internas adecuadas encarecerá la cosecha y el transporte de insumos (compost, bioles) hasta en un 40%. La delimitación física de las zonas de amortiguamiento (buffer zones) y las reservas forestales no es solo un requisito de la certificación orgánica para evitar la deriva de químicos; es la garantía de que tu inversión no será contaminada por vecinos.",
+        "bestPractices": [
+          "En terrenos con pendiente mayor al 5%, el trazado de las hileras de cacao y las vías internas debe hacerse siguiendo estrictamente las curvas de nivel. Esto convierte cada hilera y cada vía en una terraza que frena el agua y permite su infiltración.",
+          "Dividir la finca en lotes o zonas manejables (máximo 1-2 hectáreas por lote) para facilitar el registro de operaciones, la rotación de cuadrillas de trabajo y la trazabilidad de la cosecha por lotes.",
+          "Diseñar las vías internas con un ancho mínimo de 2.5 a 3 metros para permitir el paso de carretillas, motocultores o pequeños tractos, y sembrarlas con pasto o cobertura viva para evitar que se conviertan en cárcavas.",
+          "Dejar un mínimo de 10 a 15 metros de ancho de zona de amortiguamiento (buffer zone) en todo el perímetro de la finca que colinde con vecinos convencionales. Esta zona puede sembrarse con maderables o frutales, pero su cosecha no podrá venderse como orgánica."
+        ],
+        "commonMistakes": [
+          "Trazar hileras en línea recta subiendo y bajando la pendiente (en la dirección de máxima pendiente), lo que crea 'canales' por donde el agua de lluvia arrastra el suelo fértil.",
+          "Diseñar vías internas demasiado estrechas (menos de 1.5 metros), lo que obliga a los cosecheros a cargar bultos pesados de cacao húmedo por distancias largas o terrenos resbalosos, aumentando el riesgo de accidentes y pérdida de calidad por golpes.",
+          "No delimitar físicamente (con cercas vivas o postes) las zonas de reserva forestal y las fuentes de agua, lo que lleva a que el ganado o las labores de limpieza las invadan con el tiempo.",
+          "Ignorar la ubicación de la futura infraestructura de beneficio (centro de fermentación y marquesinas de secado). Deben estar cerca de las vías de acceso para vehículos de carga, pero en una zona elevada y bien drenada."
+        ],
+        "tip": "Para el trazado en curvas de nivel a bajo costo, utiliza el 'A-Frame' (o nivel A, un instrumento de madera en forma de 'A' con una plomada). Es una herramienta rústica pero extremadamente precisa para marcar curvas de nivel en terrenos pequeños y medianos. Marca las curvas cada 10-15 metros de desnivel vertical. Las vías internas deben ir en las divisorias de aguas (las partes más altas de las curvas) para que drenen naturalmente hacia ambos lados.",
+        "recommendedTools": [
+          {
+            "name": "Nivel A (A-Frame) para trazado de curvas a nivel",
+            "url": "N/A (Herramienta física de construcción manual)"
+          },
+          {
+            "name": "QGIS (Software libre para cartografía y diseño de lotes)",
+            "url": "https://qgis.org/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "topography_type",
+          "label": "Tipo de Topografía del Terreno",
+          "type": "select",
+          "options": [
+            "Plana (0-2% de pendiente)",
+            "Ondulada (2-8% de pendiente)",
+            "Quebrada (8-15% de pendiente)",
+            "Montañosa / Fuerte pendiente (>15% de pendiente)"
+          ],
+          "required": true
+        },
+        {
+          "id": "plot_division",
+          "label": "Diseño y División de Lotes / Zonas de la Finca",
+          "type": "textarea",
+          "placeholder": "Ej: Lote 1 (2 ha) - Cacao en establecimiento; Lote 2 (3 ha) - Cacao en producción con sombra permanente; Lote 3 (1 ha) - Reserva forestal y nacederos...",
+          "required": true
+        },
+        {
+          "id": "drainage_and_roads_design",
+          "label": "Diseño de Vías Internas y Sistema de Drenajes",
+          "type": "textarea",
+          "placeholder": "Ej: Vía principal de 3m de ancho en corona. Vías secundarias de 2m siguiendo curvas de nivel. Cunetas vegetadas cada 50m para desvío de agua...",
+          "required": true
+        },
+        {
+          "id": "buffer_zone_width",
+          "label": "Ancho de la Zona de Amortiguamiento Perimetral (Metros)",
+          "type": "number",
+          "placeholder": "Ej: 12",
+          "required": true
+        },
+        {
+          "id": "farm_map_url",
+          "label": "Enlace al Mapa / Cartografía Digital de la Plantación",
+          "type": "url",
+          "placeholder": "Ej: https://drive.google.com/file/d/...",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_1_2_1",
+          "text": "Realizar el levantamiento topográfico y seleccionar el tipo de relieve para definir el método de trazado.",
+          "registryFieldRef": "topography_type"
+        },
+        {
+          "id": "cl_1_2_2",
+          "text": "Trazar en papel o software la división de la finca en lotes o zonas de manejo.",
+          "registryFieldRef": "plot_division"
+        },
+        {
+          "id": "cl_1_2_3",
+          "text": "Diseñar el trazado de vías internas (siguiendo curvas de nivel) y el sistema de drenajes.",
+          "registryFieldRef": "drainage_and_roads_design"
+        },
+        {
+          "id": "cl_1_2_4",
+          "text": "Definir y medir el ancho de la zona de amortiguamiento (buffer zone) en todo el perímetro.",
+          "registryFieldRef": "buffer_zone_width"
+        },
+        {
+          "id": "cl_1_2_5",
+          "text": "Subir y enlazar el mapa o cartografía digital final de la plantación.",
+          "registryFieldRef": "farm_map_url"
+        }
+      ]
+    },
+    {
+      "id": "step_1_3",
+      "title": "Establecimiento de Sombra y Barreras Vivas",
+      "guide": {
+        "whyItMatters": "En el cacao orgánico, la sombra no es un accesorio; es un cultivo paralelo que crea el microclima necesario para que el cacao prospere sin químicos. La sombra temporal (plátano/banano) protege a las plántulas jóvenes del sol directo, aporta materia orgánica masiva con sus hojas y genera ingresos en los primeros 18 meses. La sombra permanente regula la temperatura y la humedad. Las barreras vivas son el 'muro sanitario' de la finca: filtran el aire para evitar que esporas de hongos o gotas de herbicidas de los vecinos lleguen a tu cacao, y evitan la erosión eólica. Establecer esta infraestructura verde antes de sembrar el cacao es la diferencia entre un sistema resiliente y uno que colapsa al primer verano o a la primera plaga.",
+        "bestPractices": [
+          "Sembrar la sombra temporal (plátano/banano) al menos 3 a 6 meses antes de trasplantar el cacao. Esto asegura que para cuando llegue el cacao, el plátano ya tenga un dosel formado que amortigüe el impacto de las lluvias y el sol.",
+          "En la siembra de plátano para sombra, utiliza la técnica de 'doble hilera' o siembra en triángulo para maximizar la cobertura sin competir excesivamente. Deja un distanciamiento de 3x3 o 4x4 metros.",
+          "Para las barreras vivas perimetrales, utiliza especies de crecimiento rápido, denso y preferiblemente fijadoras de nitrógeno (como Matarratón / Gliricidia sepium o Bototillo / Erythrina). Deben podarse regularmente para mantenerlas densas y a la altura adecuada.",
+          "Al momento de sembrar cualquier especie de sombra o barrera, aplica una dosis de compost maduro o lombricompost en el hoyo, y cubre el suelo alrededor con una 'corona' de 1 metro de diámetro de hojarasca o pasto seco para retener humedad y suppressir malezas."
+        ],
+        "commonMistakes": [
+          "Sembrar el cacao y la sombra definitiva (maderables) exactamente el mismo día. Los maderables de crecimiento rápido pueden ahogar al cacao en menos de 2 años si no se podan a tiempo. Es mejor establecer primero la sombra temporal y regular la permanente.",
+          "Usar especies de sombra que albergan plagas del cacao. Evita sembrar cerca del cacao especies como el Cedro (puede ser huésped de la Mazorca Negra en algunas regiones) o el Mango (atrae ardillas y ratas que roen las mazorcas).",
+          "No podar las barreras vivas. Una barrera viva sin podar se vuelve un árbol alto y disperso que no filtra el aire ni define el lindero, perdiendo su función de 'muro sanitario'.",
+          "Olvidar desinfectar las herramientas de corte (machetes, tijeras) antes de trabajar con las plántulas de sombra, para evitar transmitir virus o bacterias de un lote a otro."
+        ],
+        "tip": "Para la siembra de plátano/banano como sombra temporal en sistema orgánico, abre un hoyo de 40x40x40 cm, mezcla la tierra superficial con 3 kg de compost maduro y 200 gramos de roca fosfórica. Coloca el colino (rizoma) y cúbrelo. Inmediatamente, aplica 2 litros de biol diluido al 10% en el cuello de la planta. Esto acelera el enraizamiento y el crecimiento inicial en un 30% sin usar fertilizantes sintéticos.",
+        "recommendedTools": [
+          {
+            "name": "Ahoyador de pedal (Para abrir hoyos rápidamente con menor esfuerzo)",
+            "url": "N/A (Herramienta física de ferretería agrícola)"
+          },
+          {
+            "name": "Podaderas telescópicas (Para poda de barreras vivas y sombra)",
+            "url": "N/A (Herramienta física)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "temporary_shade_planting_date",
+          "label": "Fecha de Siembra de Especies de Sombra Temporal",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "permanent_shade_planting_date",
+          "label": "Fecha de Siembra de Especies de Sombra Permanente / Maderables",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "temporary_shade_density",
+          "label": "Densidad de Siembra de Sombra Temporal (Plantas por hectárea)",
+          "type": "number",
+          "placeholder": "Ej: 400",
+          "required": true
+        },
+        {
+          "id": "permanent_shade_density",
+          "label": "Densidad de Siembra de Sombra Permanente (Árboles por hectárea)",
+          "type": "number",
+          "placeholder": "Ej: 80",
+          "required": true
+        },
+        {
+          "id": "living_barrier_species",
+          "label": "Especies Seleccionadas para Barreras Vivas Perimetrales",
+          "type": "multiselect",
+          "options": [
+            "Matarratón / Gliricidia (Gliricidia sepium)",
+            "Bototillo / Poro (Erythrina poeppigiana / Erythrina berteroana)",
+            "Guamo / Inga (Inga edulis)",
+            "Caña de Castilla (Spondias purpurea)",
+            "Piñón Blanco (Jatropha gossypiifolia)",
+            "Bambú (Para barreras densas y cortavientos)",
+            "Otra especie local (Especificar en notas)"
+          ],
+          "required": true
+        },
+        {
+          "id": "barrier_length_meters",
+          "label": "Longitud Total de Barreras Vivas Instaladas (Metros lineales)",
+          "type": "number",
+          "placeholder": "Ej: 1200",
+          "required": true
+        },
+        {
+          "id": "organic_fertilization_at_planting",
+          "label": "Receta de Biofertilizantes y Coberturas Aplicadas en la Siembra",
+          "type": "textarea",
+          "placeholder": "Ej: 3 kg de compost maduro + 200g roca fosfórica por hoyo. Corona de 1m de hojarasca seca. Aplicación de 2L de biol al 10% post-siembra...",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_1_3_1",
+          "text": "Ejecutar la siembra de especies de sombra temporal y registrar la fecha exacta.",
+          "registryFieldRef": "temporary_shade_planting_date"
+        },
+        {
+          "id": "cl_1_3_2",
+          "text": "Ejecutar la siembra de especies de sombra permanente y registrar la fecha exacta.",
+          "registryFieldRef": "permanent_shade_planting_date"
+        },
+        {
+          "id": "cl_1_3_3",
+          "text": "Calcular y registrar la densidad de siembra de sombra temporal (plantas/ha).",
+          "registryFieldRef": "temporary_shade_density"
+        },
+        {
+          "id": "cl_1_3_4",
+          "text": "Calcular y registrar la densidad de siembra de sombra permanente (árboles/ha).",
+          "registryFieldRef": "permanent_shade_density"
+        },
+        {
+          "id": "cl_1_3_5",
+          "text": "Seleccionar y sembrar las especies definitivas para las barreras vivas perimetrales.",
+          "registryFieldRef": "living_barrier_species"
+        },
+        {
+          "id": "cl_1_3_6",
+          "text": "Medir y registrar la longitud total en metros de las barreras vivas instaladas.",
+          "registryFieldRef": "barrier_length_meters"
+        },
+        {
+          "id": "cl_1_3_7",
+          "text": "Documentar la receta exacta de biofertilizantes orgánicos y coberturas aplicadas al momento de la siembra.",
+          "registryFieldRef": "organic_fertilization_at_planting"
+        }
+      ]
+    }
+  ]
+}

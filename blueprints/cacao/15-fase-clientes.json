@@ -1,0 +1,860 @@
+{
+  "block": "customers",
+  "blockTitle": "Clientes",
+  "phases": [
+    {
+      "phaseId": "packaging-product-experience",
+      "phaseTitle": "Empaque, Etiquetado y Experiencia de Producto",
+      "steps": [
+        {
+          "stepId": "primary-packaging-design",
+          "stepTitle": "Diseño de Empaque Primario para Exportación y B2B",
+          "guide": {
+            "whyItMatters": "El empaque primario es la primera barrera de protección y comunicación de tu cacao orgánico. En mercados internacionales, compradores como chocolateros bean-to-bar y importadores europeos evalúan la seriedad de un proveedor por su empaque antes de probar el producto. Un empaque profesional comunica calidad, trazabilidad y respeto por el producto. Además, debe cumplir regulaciones internacionales de transporte, almacenamiento y trazabilidad. Un empaque inadecuado puede generar rechazo en aduanas, deterioro del producto durante tránsito, o percepción de baja calidad que reduce el precio hasta en 40%.",
+            "bestPractices": [
+              "Usa sacos de yute de 60-70 kg con bolsa interior de polietileno alimentario de alta densidad (mínimo 80 micras)",
+              "Para mercados ultra-premium, considera bolsas GrainPro o Ecotact que mantienen humedad estable y protegen aromas",
+              "Diseña etiqueta principal con información completa: origen, lote, fecha, certificaciones, contacto",
+              "Incluye código QR que lleve a información de trazabilidad completa del lote",
+              "Usa materiales sostenibles y biodegradables cuando sea posible",
+              "Implementa sistema de sellado hermético (costurado o térmico) para prevenir contaminación",
+              "Diseña empaque que facilite el apilamiento y almacenamiento eficiente en bodegas",
+              "Incluye instrucciones de manejo y almacenamiento en el empaque"
+            ],
+            "commonMistakes": [
+              "Usar sacos reutilizados o de baja calidad que contaminan el producto",
+              "No incluir bolsa interior plástica, permitiendo absorción de humedad",
+              "Etiquetar con información incompleta o poco legible",
+              "No incluir código QR o sistema de trazabilidad accesible",
+              "Usar materiales no alimentarios que pueden contaminar el cacao",
+              "No considerar la logística de apilamiento y almacenamiento",
+              "Diseñar etiquetas que se desprenden o deterioran con humedad",
+              "Ignorar regulaciones del país destino (FDA, UE, JAS)"
+            ],
+            "tip": "Para exportación de cacao orgánico colombiano, el empaque estándar es: saco de yute nuevo de 60-70 kg con bolsa interior de polietileno de alta densidad (80-100 micras). Costo por unidad: $18.000-$28.000 COP. Para mercados premium, bolsas GrainPro cuestan $35.000-$50.000 COP por unidad y mantienen humedad estable por 6-12 meses. La etiqueta principal debe incluir: nombre del producto, origen específico, número de lote, fecha de producción, peso neto, nombre y dirección del productor, número de certificación orgánica, logos de certificaciones, código QR de trazabilidad, instrucciones de almacenamiento. Tamaño de etiqueta: mínimo 15x10 cm.",
+            "recommendedTools": [
+              {
+                "name": "GrainPro - Bolsas Herméticas Premium",
+                "url": "https://www.grainpro.com",
+                "description": "Bolsas que mantienen humedad estable y protegen aromas durante transporte"
+              },
+              {
+                "name": "QR Code Generator Pro",
+                "url": "https://www.qr-code-generator.com",
+                "description": "Generador de códigos QR con analytics para trazabilidad"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "primary-packaging-type",
+                "label": "Tipo de Empaque Primario Utilizado",
+                "type": "select",
+                "options": [
+                  "Saco de yute 60-70 kg con bolsa interior plástica",
+                  "Saco de yute sin bolsa interior",
+                  "Bolsa GrainPro hermética",
+                  "Bolsa Ecotact premium",
+                  "Saco de polipropileno",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "bag-capacity-kg",
+                "label": "Capacidad de Cada Bolsa/Saco (kg)",
+                "type": "number",
+                "placeholder": "65",
+                "required": true
+              },
+              {
+                "fieldId": "inner-plastic-bag-used",
+                "label": "¿Usa Bolsa Interior de Polietileno Alimentario?",
+                "type": "select",
+                "options": ["Sí, alta densidad (80-100 micras)", "Sí, baja densidad", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sealing-system",
+                "label": "Sistema de Sellado de Sacos",
+                "type": "select",
+                "options": [
+                  "Costuradora industrial",
+                  "Selladora térmica",
+                  "Cordón manual",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "label-information-included",
+                "label": "Información Incluida en Etiqueta Principal",
+                "type": "multiselect",
+                "options": [
+                  "Nombre del producto",
+                  "Origen específico (finca, vereda, municipio)",
+                  "Número de lote",
+                  "Fecha de producción",
+                  "Peso neto",
+                  "Nombre y dirección del productor",
+                  "Número de certificación orgánica",
+                  "Logos de certificaciones",
+                  "Código QR de trazabilidad",
+                  "Instrucciones de almacenamiento"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "qr-code-on-packaging",
+                "label": "¿Código QR en Empaque que Lleva a Trazabilidad?",
+                "type": "select",
+                "options": ["Sí, con información completa", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "cost-per-bag-complete",
+                "label": "Costo Promedio por Bolsa/Saco Completo (COP)",
+                "type": "number",
+                "placeholder": "22000",
+                "required": true
+              },
+              {
+                "fieldId": "monthly-bag-consumption",
+                "label": "Consumo Mensual Estimado de Bolsas/Sacos",
+                "type": "number",
+                "placeholder": "80",
+                "required": true
+              },
+              {
+                "fieldId": "packaging-design-investment",
+                "label": "Inversión en Diseño de Empaque Primario (COP)",
+                "type": "number",
+                "placeholder": "3000000",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Seleccionar tipo de bolsa/saco adecuado (yute, GrainPro, Ecotact)",
+            "Cotizar y adquirir sacos de yute con bolsa interior plástica alimentaria",
+            "Verificar que bolsa interior tenga espesor adecuado (80-100 micras mínimo)",
+            "Cotizar y adquirir costuradora industrial o selladora térmica",
+            "Diseñar etiqueta principal con toda la información requerida",
+            "Diseñar e implementar código QR con información de trazabilidad del lote",
+            "Seleccionar material de etiqueta resistente a humedad y manipulación",
+            "Verificar cumplimiento de regulaciones de países destino (FDA, UE, JAS)",
+            "Establecer proveedor de bolsas/sacos y programar compras",
+            "Calcular costo por bolsa completa y consumo mensual",
+            "Realizar prueba de empaque con primer lote",
+            "Documentar especificaciones técnicas de empaque"
+          ]
+        },
+        {
+          "stepId": "secondary-packaging-retail",
+          "stepTitle": "Empaque Secundario para Mercados Retail y Bean-to-Bar",
+          "guide": {
+            "whyItMatters": "El empaque secundario es crucial cuando vendes a chocolateros bean-to-bar, tiendas especializadas o consumidores finales. Este empaque debe comunicar premium, artesanal, orgánico y sostenible en segundos. En mercados retail, el empaque es el principal vendedor: 70% de las decisiones de compra se toman frente al anaquel basándose en el empaque. Un diseño profesional y atractivo puede justificar precios 2-3 veces superiores al commodity.",
+            "bestPractices": [
+              "Diseña empaques de 500g, 1kg y 5kg para diferentes segmentos de mercado",
+              "Usa materiales premium: bolsas kraft con ventana, stand-up pouch, cajas de cartón",
+              "Incluye ventana transparente para que el consumidor vea el producto",
+              "Diseña etiqueta atractiva con storytelling, fotos reales de la finca y certificaciones",
+              "Incluye información nutricional si vendes a retail (requerido por regulaciones)",
+              "Diseña empaque reutilizable o reciclable para reforzar mensaje sostenible",
+              "Incluye código QR con receta, historia completa o video de la finca",
+              "Crea ediciones limitadas o especiales para fechas o eventos"
+            ],
+            "commonMistakes": [
+              "Usar empaques genéricos sin diferenciación que compiten solo por precio",
+              "No incluir ventana para ver el producto, perdiendo oportunidad de mostrar calidad",
+              "Diseñar etiquetas con demasiada información que confunden al consumidor",
+              "Usar materiales de baja calidad que proyectan imagen de bajo valor",
+              "No incluir información nutricional requerida para retail",
+              "Ignorar regulaciones de etiquetado del país destino",
+              "No considerar la experiencia de unboxing y apertura del empaque",
+              "Diseñar empaque que no es funcional para el consumidor"
+            ],
+            "tip": "Para mercados retail y bean-to-bar, los empaques más efectivos son: 1) Bolsa kraft de 1kg con ventana y zipper ($3.000-$6.000 COP por unidad), 2) Stand-up pouch de 500g con ventana ($2.500-$5.000 COP), 3) Caja de cartón de 5kg con diseño premium ($8.000-$15.000 COP). Costo de diseño profesional: $2.000.000-$5.000.000 COP por línea de empaque. Para volúmenes pequeños (<1000 unidades), usa impresión digital; para volúmenes grandes (>5000 unidades), usa flexografía que reduce costo unitario.",
+            "recommendedTools": [
+              {
+                "name": "Diseñador de Empaques Freelance",
+                "url": "https://www.behance.net",
+                "description": "Plataforma para encontrar diseñadores especializados en empaques de alimentos"
+              },
+              {
+                "name": "Imprentas de Empaques Flexibles",
+                "url": "https://www.google.com",
+                "description": "Imprentas especializadas en empaques flexibles para alimentos"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "secondary-packaging-formats",
+                "label": "Formatos de Empaque Secundario Ofrecidos",
+                "type": "multiselect",
+                "options": [
+                  "Bolsa kraft 1kg con ventana",
+                  "Bolsa kraft 500g con ventana",
+                  "Stand-up pouch 1kg",
+                  "Stand-up pouch 500g",
+                  "Caja de cartón 5kg",
+                  "Caja de cartón 10kg",
+                  "Bolsa de 5kg para bean-to-bar",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "packaging-material",
+                "label": "Material Principal del Empaque Secundario",
+                "type": "select",
+                "options": [
+                  "Papel kraft con ventana",
+                  "Plástico reciclable",
+                  "Cartón",
+                  "Combinación kraft/plástico",
+                  "Material biodegradable",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "window-included",
+                "label": "¿Incluye Ventana Transparente para Ver Producto?",
+                "type": "select",
+                "options": ["Sí, en todos los formatos", "Sí, en algunos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "label-information-included",
+                "label": "Información Incluida en Etiqueta Secundaria",
+                "type": "multiselect",
+                "options": [
+                  "Nombre del producto",
+                  "Origen específico",
+                  "Peso neto",
+                  "Información nutricional",
+                  "Ingredientes",
+                  "Instrucciones de uso/almacenamiento",
+                  "Historia de la finca (storytelling)",
+                  "Fotos reales de la finca",
+                  "Logos de certificaciones",
+                  "Código QR con video/receta",
+                  "Contacto del productor",
+                  "Sitio web"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "nutritional-information-included",
+                "label": "¿Información Nutricional Incluida (requerido para retail)?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, básica", "No aplica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "cost-per-unit-1kg",
+                "label": "Costo por Unidad de Empaque de 1kg (COP)",
+                "type": "number",
+                "placeholder": "4500",
+                "required": false
+              },
+              {
+                "fieldId": "cost-per-unit-5kg",
+                "label": "Costo por Unidad de Empaque de 5kg (COP)",
+                "type": "number",
+                "placeholder": "12000",
+                "required": false
+              },
+              {
+                "fieldId": "design-investment",
+                "label": "Inversión en Diseño de Empaque Secundario (COP)",
+                "type": "number",
+                "placeholder": "4000000",
+                "required": true
+              },
+              {
+                "fieldId": "regulatory-compliance-verified",
+                "label": "¿Cumplimiento Normativo de Etiquetado Verificado?",
+                "type": "select",
+                "options": ["Sí, todos los mercados", "Sí, algunos", "No"],
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Definir formatos de empaque secundario según mercados objetivo",
+            "Seleccionar material de empaque premium (kraft, stand-up pouch, cartón)",
+            "Incluir ventana transparente para mostrar calidad del producto",
+            "Implementar sistema de cierre reutilizable (zipper)",
+            "Contratar diseñador especializado en empaques de alimentos",
+            "Diseñar etiqueta atractiva con storytelling y fotos reales",
+            "Agregar información nutricional si vendes a retail",
+            "Implementar código QR con contenido de valor",
+            "Verificar cumplimiento de regulaciones de etiquetado de países destino",
+            "Cotizar con proveedores de empaques flexibles",
+            "Calcular costo por unidad y consumo mensual por formato",
+            "Realizar prueba de empaque con producto real",
+            "Evaluar experiencia de unboxing y funcionalidad para consumidor",
+            "Documentar especificaciones técnicas de cada formato"
+          ]
+        },
+        {
+          "stepId": "labeling-regulatory-compliance",
+          "stepTitle": "Etiquetado y Cumplimiento Normativo Internacional",
+          "guide": {
+            "whyItMatters": "El cumplimiento normativo en etiquetado es obligatorio para exportar cacao orgánico a mercados internacionales. Cada país tiene regulaciones específicas sobre información requerida, formato, idioma y certificaciones. No cumplir con estas regulaciones puede generar rechazo en aduanas, multas millonarias, devolución del producto, o prohibición de importación. Además, los compradores internacionales verifican rigurosamente el cumplimiento normativo antes de realizar pedidos. Un error en etiquetado puede costar el contrato completo y dañar irreparablemente tu reputación.",
+            "bestPractices": [
+              "Investiga regulaciones específicas de cada país destino antes de diseñar etiquetas",
+              "Para UE: Reglamento 1169/2011 sobre información alimentaria al consumidor",
+              "Para EEUU: FDA Food Labeling Guide con requisitos específicos de formato y contenido",
+              "Para Japón: JAS (Japanese Agricultural Standards) con requisitos estrictos",
+              "Incluye toda la información obligatoria: denominación, lista de ingredientes, alérgenos, peso neto, fecha, identificación del operador, país de origen, lote",
+              "Traduce etiquetas al idioma del país destino (inglés para EEUU/UK, francés para Francia, alemán para Alemania, japonés para Japón)",
+              "Verifica que los logos de certificación orgánica cumplan con regulaciones del país destino",
+              "Contrata asesor legal especializado en comercio exterior para revisar etiquetas",
+              "Mantén registro de todas las versiones de etiquetas por mercado y fecha de vigencia",
+              "Actualiza etiquetas cuando cambien regulaciones o certificaciones"
+            ],
+            "commonMistakes": [
+              "Usar la misma etiqueta para todos los mercados sin adaptar a regulaciones locales",
+              "No incluir información de alérgenos requerida por regulaciones (cacao puede contener trazas de frutos secos)",
+              "Usar logos de certificación orgánica no reconocidos en el país destino",
+              "No traducir etiquetas al idioma local, generando rechazo en aduanas",
+              "Omitir información de lote o fecha de producción, imposibilitando trazabilidad",
+              "No verificar regulaciones de claims (declaraciones) como 'orgánico', 'sostenible', 'fair trade'",
+              "No incluir información del importador/distribuidor local cuando es requerido",
+              "No actualizar etiquetas cuando cambian regulaciones o se renuevan certificaciones"
+            ],
+            "tip": "Requisitos de etiquetado por mercado principal: 1) UE: denominación de venta, lista de ingredientes, alérgenos en negrita, peso neto, fecha de duración mínima, condiciones de conservación, nombre y dirección del operador, país de origen, lote, información nutricional (por 100g), logo orgánico UE si aplica. 2) EEUU (FDA): Statement of Identity, Net Quantity, Nutrition Facts (formato específico FDA), Ingredients, Allergens, Name and Address, Country of Origin, Lot. 3) Japón (JAS): nombre del producto, ingredientes, contenido neto, fecha de vencimiento, método de conservación, país de origen, nombre del importador, logo JAS orgánico. Costo de asesoría legal por mercado: $2.000.000-$5.000.000 COP. Costo de traducción profesional por idioma: $500.000-$1.000.000 COP. Invierte en revisión legal antes de imprimir grandes volúmenes de etiquetas.",
+            "recommendedTools": [
+              {
+                "name": "FDA - Food Labeling Guide",
+                "url": "https://www.fda.gov/food/food-labeling-nutrition",
+                "description": "Guía oficial de la FDA para etiquetado de alimentos en Estados Unidos"
+              },
+              {
+                "name": "UE - Reglamento 1169/2011",
+                "url": "https://eur-lex.europa.eu",
+                "description": "Reglamento europeo sobre información alimentaria al consumidor"
+              },
+              {
+                "name": "ProColombia - Guía de Exportación",
+                "url": "https://www.procolombia.co",
+                "description": "Guías de requisitos de etiquetado por mercado de destino"
+              },
+              {
+                "name": "Asesor Legal en Comercio Exterior",
+                "url": "https://www.google.com",
+                "description": "Abogados especializados en regulaciones de etiquetado internacional"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "target-markets-labeling",
+                "label": "Mercados Destino con Etiquetado Adaptado",
+                "type": "multiselect",
+                "options": [
+                  "Colombia (nacional)",
+                  "Unión Europea",
+                  "Estados Unidos (FDA)",
+                  "Japón (JAS)",
+                  "Canadá (CFIA)",
+                  "Reino Unido",
+                  "Otros"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "eu-labeling-compliant",
+                "label": "¿Etiquetado Cumple Reglamento UE 1169/2011?",
+                "type": "select",
+                "options": ["Sí, verificado", "En proceso", "No aplica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "fda-labeling-compliant",
+                "label": "¿Etiquetado Cumple FDA Food Labeling Guide?",
+                "type": "select",
+                "options": ["Sí, verificado", "En proceso", "No aplica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "jas-labeling-compliant",
+                "label": "¿Etiquetado Cumple JAS (Japón)?",
+                "type": "select",
+                "options": ["Sí, verificado", "En proceso", "No aplica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "allergen-information-included",
+                "label": "¿Información de Alérgenos Incluida?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "labels-translated",
+                "label": "¿Etiquetas Traducidas a Idiomas de Mercados Destino?",
+                "type": "multiselect",
+                "options": [
+                  "Español",
+                  "Inglés",
+                  "Francés",
+                  "Alemán",
+                  "Japonés",
+                  "No traducidas"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "organic-logos-verified",
+                "label": "¿Logos de Certificación Orgánica Verificados por Mercado?",
+                "type": "select",
+                "options": ["Sí, todos los mercados", "Sí, algunos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "legal-review-completed",
+                "label": "¿Etiquetas Revisadas por Asesor Legal Especializado?",
+                "type": "select",
+                "options": ["Sí, todos los mercados", "Sí, algunos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "legal-review-cost",
+                "label": "Costo de Revisión Legal de Etiquetas (COP)",
+                "type": "number",
+                "placeholder": "3000000",
+                "required": false
+              },
+              {
+                "fieldId": "translation-cost",
+                "label": "Costo de Traducción de Etiquetas (COP)",
+                "type": "number",
+                "placeholder": "1500000",
+                "required": false
+              },
+              {
+                "fieldId": "label-versions-maintained",
+                "label": "¿Registro de Versiones de Etiquetas por Mercado Mantenido?",
+                "type": "select",
+                "options": ["Sí, actualizado", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "label-update-schedule",
+                "label": "Frecuencia de Revisión y Actualización de Etiquetas",
+                "type": "select",
+                "options": ["Cada 6 meses", "Anual", "Solo cuando cambian regulaciones", "No definido"],
+                "required": true
+              },
+              {
+                "fieldId": "labeling-compliance-folder-url",
+                "label": "Enlace a Carpeta de Etiquetado por Mercado",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Investigar regulaciones de etiquetado de cada mercado destino",
+            "Verificar cumplimiento con Reglamento UE 1169/2011 (si exporta a Europa)",
+            "Verificar cumplimiento con FDA Food Labeling Guide (si exporta a EEUU)",
+            "Verificar cumplimiento con JAS (si exporta a Japón)",
+            "Incluir información de alérgenos según regulaciones de cada mercado",
+            "Traducir etiquetas a idiomas de mercados destino con traductor profesional",
+            "Verificar que logos de certificación orgánica sean reconocidos en cada mercado",
+            "Contratar asesor legal especializado para revisar etiquetas antes de imprimir",
+            "Incluir información del importador/distribuidor local cuando sea requerido",
+            "Verificar regulaciones de claims (declaraciones orgánico, sostenible, fair trade)",
+            "Crear registro de versiones de etiquetas por mercado y fecha de vigencia",
+            "Establecer calendario de revisión y actualización de etiquetas",
+            "Archivar todas las versiones de etiquetas en carpeta organizada",
+            "Capacitar al equipo en requisitos de etiquetado por mercado",
+            "Realizar prueba de importación con etiquetas antes de enviar grandes volúmenes"
+          ]
+        },
+        {
+          "stepId": "unboxing-customer-experience",
+          "stepTitle": "Experiencia de Unboxing y Presentación del Producto",
+          "guide": {
+            "whyItMatters": "La experiencia de unboxing es el primer contacto físico del comprador con tu producto y determina su percepción de calidad y valor. En mercados premium de cacao orgánico, donde los compradores pagan 2-3 veces el precio convencional, la experiencia de recibir y abrir el producto debe justificar ese premium. Un unboxing memorable genera lealtad, recomendaciones boca a boca, y contenido orgánico en redes sociales. Para compradores B2B (chocolateros bean-to-bar), la presentación del producto refleja tu profesionalismo y atención al detalle.",
+            "bestPractices": [
+              "Diseña una experiencia de apertura que cuente la historia de la marca paso a paso",
+              "Incluye tarjeta de agradecimiento personalizada con información del lote específico",
+              "Agrega muestra de otros productos o variedades para incentivar recompra",
+              "Incluye guía de uso o recetas para inspirar al comprador",
+              "Usa materiales de empaque sostenibles y coherentes con valores de marca",
+              "Asegura que el producto llegue en condiciones óptimas (humedad, aroma, integridad)",
+              "Para B2B: incluye informe de calidad del lote, análisis de laboratorio, y ficha técnica",
+              "Para retail: diseña empaque que sea 'instagrammable' y genere contenido orgánico",
+              "Solicita feedback sobre la experiencia de unboxing para mejorar continuamente"
+            ],
+            "commonMistakes": [
+              "Enviar producto en empaque genérico sin experiencia de apertura",
+              "No incluir información del lote o historia del producto",
+              "Usar materiales de empaque que contradicen valores de sostenibilidad",
+              "No proteger adecuadamente el producto durante envío, llegando dañado",
+              "No incluir guía de uso o recetas, perdiendo oportunidad de engagement",
+              "No solicitar feedback, perdiendo información valiosa para mejorar",
+              "Para B2B: no incluir documentación técnica (análisis, certificaciones)",
+              "No personalizar la experiencia según el tipo de comprador"
+            ],
+            "tip": "Para cacao orgánico premium, la experiencia de unboxing ideal incluye: 1) Caja exterior con logo y diseño de marca, 2) Papel de seda o kraft con patrón de marca, 3) Bolsa de producto con etiqueta completa, 4) Tarjeta de agradecimiento con historia del lote específico (fecha de cosecha, parcela, notas de cata), 5) Mini-guía de recetas o usos del cacao, 6) Muestra de otra variedad o producto, 7) Código QR con video de la finca. Costo adicional por experiencia de unboxing: $2.000-$5.000 COP por unidad. Para B2B: incluye además informe de análisis de laboratorio, ficha técnica del lote, y certificado orgánico. El ROI de una buena experiencia de unboxing: 25-40% más recompra, 15-25% más referencias, y contenido orgánico en redes sociales.",
+            "recommendedTools": [
+              {
+                "name": "Noissue - Empaques Sostenibles Personalizados",
+                "url": "https://www.noissue.co",
+                "description": "Papel de seda, stickers y tarjetas personalizadas con materiales sostenibles"
+              },
+              {
+                "name": "Canva - Diseño de Tarjetas y Guías",
+                "url": "https://www.canva.com",
+                "description": "Herramienta para diseñar tarjetas de agradecimiento y guías de uso"
+              },
+              {
+                "name": "Typeform - Encuestas de Satisfacción",
+                "url": "https://www.typeform.com",
+                "description": "Formularios interactivos para solicitar feedback de unboxing"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "unboxing-experience-designed",
+                "label": "¿Experiencia de Unboxing Diseñada Intencionalmente?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "unboxing-elements",
+                "label": "Elementos Incluidos en la Experiencia de Unboxing",
+                "type": "multiselect",
+                "options": [
+                  "Caja exterior con diseño de marca",
+                  "Papel de seda o kraft personalizado",
+                  "Tarjeta de agradecimiento",
+                  "Información del lote específico",
+                  "Guía de uso o recetas",
+                  "Muestra de otros productos",
+                  "Código QR con video de la finca",
+                  "Stickers o elementos decorativos",
+                  "Informe de calidad (para B2B)",
+                  "Ficha técnica del lote (para B2B)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "thank-you-card-included",
+                "label": "¿Tarjeta de Agradecimiento Personalizada Incluida?",
+                "type": "select",
+                "options": ["Sí, con info del lote", "Sí, genérica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "usage-guide-included",
+                "label": "¿Guía de Uso o Recetas Incluida?",
+                "type": "select",
+                "options": ["Sí, impresa", "Sí, digital (QR)", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "product-sample-included",
+                "label": "¿Muestra de Otros Productos Incluida?",
+                "type": "select",
+                "options": ["Sí, regularmente", "Sí, ocasionalmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "b2b-technical-docs-included",
+                "label": "¿Documentación Técnica Incluida para Compradores B2B?",
+                "type": "multiselect",
+                "options": [
+                  "Informe de análisis de laboratorio",
+                  "Ficha técnica del lote",
+                  "Certificado orgánico",
+                  "Perfil de cata",
+                  "No aplica"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "sustainable-packaging-materials",
+                "label": "¿Materiales de Empaque Sostenibles?",
+                "type": "select",
+                "options": ["Sí, 100% sostenibles", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "unboxing-cost-per-unit",
+                "label": "Costo Adicional por Experiencia de Unboxing (COP/unidad)",
+                "type": "number",
+                "placeholder": "3500",
+                "required": true
+              },
+              {
+                "fieldId": "unboxing-feedback-collected",
+                "label": "¿Feedback de Unboxing Recopilado de Compradores?",
+                "type": "select",
+                "options": ["Sí, sistemáticamente", "Sí, ocasionalmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "unboxing-satisfaction-score",
+                "label": "Puntuación de Satisfacción de Unboxing (1-5)",
+                "type": "number",
+                "placeholder": "4.5",
+                "required": false
+              },
+              {
+                "fieldId": "social-media-mentions-unboxing",
+                "label": "Menciones en Redes Sociales por Unboxing",
+                "type": "number",
+                "placeholder": "15",
+                "required": false
+              },
+              {
+                "fieldId": "unboxing-investment",
+                "label": "Inversión Total en Experiencia de Unboxing (COP)",
+                "type": "number",
+                "placeholder": "2000000",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Diseñar experiencia de unboxing coherente con valores de marca",
+            "Crear tarjeta de agradecimiento con información del lote específico",
+            "Diseñar guía de uso o recetas para incluir en cada envío",
+            "Preparar muestras de otros productos para incentivar recompra",
+            "Para B2B: incluir informe de análisis de laboratorio y ficha técnica",
+            "Para B2B: incluir certificado orgánico y perfil de cata del lote",
+            "Seleccionar materiales de empaque sostenibles y coherentes",
+            "Calcular costo adicional por experiencia de unboxing",
+            "Implementar sistema de recopilación de feedback de unboxing",
+            "Monitorear menciones en redes sociales generadas por unboxing",
+            "Medir impacto en tasa de recompra y referencias",
+            "Iterar y mejorar experiencia según feedback recibido",
+            "Documentar protocolo de unboxing para escalar operación"
+          ]
+        },
+        {
+          "stepId": "product-samples-strategy",
+          "stepTitle": "Estrategia de Muestras de Producto para Compradores",
+          "guide": {
+            "whyItMatters": "Las muestras de producto son la herramienta de venta más poderosa en el mercado de cacao orgánico. Los compradores internacionales no firman contratos sin probar el producto primero. Una muestra bien preparada y presentada puede abrir puertas a contratos de miles de dólares. Por el contrario, una muestra mal preparada (humedad incorrecta, defectos, empaque pobre) puede cerrar puertas permanentemente. La estrategia de muestras debe ser intencional, profesional y personalizada para cada comprador potencial.",
+            "bestPractices": [
+              "Prepara muestras de 500g-1kg en empaque profesional con información completa del lote",
+              "Selecciona los mejores granos de cada lote para muestras (representativos pero de alta calidad)",
+              "Incluye ficha técnica con: origen, variedad, fermentación, humedad, perfil de cata, certificaciones",
+              "Envía muestras en empaque hermético (GrainPro o Ecotact) para preservar frescura",
+              "Personaliza la muestra según el comprador: bean-to-bar prefiere granos enteros, industria prefiere nibs",
+              "Incluye carta de presentación personalizada con historia de la finca y propuesta de valor",
+              "Realiza seguimiento 2-3 semanas después del envío para obtener feedback",
+              "Mantén registro de todas las muestras enviadas y resultados obtenidos"
+            ],
+            "commonMistakes": [
+              "Enviar muestras en empaque genérico sin información del lote",
+              "No seleccionar granos representativos, generando expectativas irreales",
+              "Enviar muestras con humedad incorrecta que llegan con moho",
+              "No incluir ficha técnica, obligando al comprador a solicitar información adicional",
+              "No personalizar la muestra según el tipo de comprador",
+              "No dar seguimiento después del envío, perdiendo oportunidad de venta",
+              "Enviar muestras demasiado pequeñas (<200g) que no permiten evaluación completa",
+              "No mantener registro de muestras enviadas, perdiendo control del proceso"
+            ],
+            "tip": "Para cacao orgánico de exportación, el kit de muestra ideal incluye: 1) Bolsa GrainPro de 500g-1kg con granos seleccionados, 2) Ficha técnica impresa (origen, variedad, fermentación %, humedad %, perfil de cata, certificaciones), 3) Carta de presentación personalizada, 4) Catálogo de productos y servicios, 5) Código QR con video de la finca. Costo por kit de muestra: $50.000-$100.000 COP incluyendo empaque, producto y envío nacional. Envío internacional: $80.000-$200.000 COP por DHL/FedEx. Volumen recomendado: 50-100 muestras al año para compradores potenciales. Tasa de conversión típica: 10-20% de muestras enviadas se convierten en pedidos. ROI: una sola venta de 5.000 kg a $18.000 COP/kg = $90.000.000 COP, justificando ampliamente la inversión en muestras.",
+            "recommendedTools": [
+              {
+                "name": "DHL/FedEx - Envío Internacional de Muestras",
+                "url": "https://www.dhl.com",
+                "description": "Servicios de envío exprés internacional para muestras de producto"
+              },
+              {
+                "name": "CRM para Seguimiento de Muestras",
+                "url": "https://www.hubspot.com",
+                "description": "HubSpot CRM gratuito para registrar y dar seguimiento a muestras enviadas"
+              },
+              {
+                "name": "SCA Cupping Form - Evaluación Sensorial",
+                "url": "https://sca.coffee",
+                "description": "Formato estándar de la Specialty Coffee Association adaptado para cata de cacao"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "sample-kit-designed",
+                "label": "¿Kit de Muestras Profesional Diseñado?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, básico", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sample-size-grams",
+                "label": "Tamaño de Muestra (gramos)",
+                "type": "number",
+                "placeholder": "500",
+                "required": true
+              },
+              {
+                "fieldId": "sample-packaging-type",
+                "label": "Tipo de Empaque para Muestras",
+                "type": "select",
+                "options": [
+                  "Bolsa GrainPro hermética",
+                  "Bolsa Ecotact",
+                  "Bolsa kraft con zipper",
+                  "Bolsa plástica sellada",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "technical-sheet-included",
+                "label": "¿Ficha Técnica Incluida en Cada Muestra?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, básica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "technical-sheet-parameters",
+                "label": "Parámetros Incluidos en Ficha Técnica",
+                "type": "multiselect",
+                "options": [
+                  "Origen (finca, vereda, municipio)",
+                  "Variedad de cacao",
+                  "Porcentaje de fermentación",
+                  "Humedad",
+                  "Tamaño de grano",
+                  "Perfil de cata (notas de sabor)",
+                  "Certificaciones",
+                  "Fecha de cosecha",
+                  "Número de lote"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "personalized-letter-included",
+                "label": "¿Carta de Presentación Personalizada Incluida?",
+                "type": "select",
+                "options": ["Sí, para cada comprador", "Sí, genérica", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "samples-sent-this-year",
+                "label": "Número de Muestras Enviadas Este Año",
+                "type": "number",
+                "placeholder": "45",
+                "required": true
+              },
+              {
+                "fieldId": "samples-sent-national",
+                "label": "Muestras Enviadas a Compradores Nacionales",
+                "type": "number",
+                "placeholder": "25",
+                "required": true
+              },
+              {
+                "fieldId": "samples-sent-international",
+                "label": "Muestras Enviadas a Compradores Internacionales",
+                "type": "number",
+                "placeholder": "20",
+                "required": true
+              },
+              {
+                "fieldId": "sample-conversion-rate",
+                "label": "Tasa de Conversión de Muestras a Pedidos (%)",
+                "type": "number",
+                "placeholder": "15",
+                "required": true
+              },
+              {
+                "fieldId": "sample-followup-protocol",
+                "label": "¿Protocolo de Seguimiento Post-Envío Implementado?",
+                "type": "select",
+                "options": ["Sí, a las 2-3 semanas", "Sí, irregular", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sample-tracking-system",
+                "label": "Sistema de Registro de Muestras Enviadas",
+                "type": "select",
+                "options": [
+                  "CRM (HubSpot, Salesforce)",
+                  "Excel/Google Sheets",
+                  "Cuaderno físico",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "cost-per-sample-kit",
+                "label": "Costo por Kit de Muestra Completo (COP)",
+                "type": "number",
+                "placeholder": "75000",
+                "required": true
+              },
+              {
+                "fieldId": "international-shipping-cost",
+                "label": "Costo Promedio de Envío Internacional por Muestra (COP)",
+                "type": "number",
+                "placeholder": "150000",
+                "required": false
+              },
+              {
+                "fieldId": "annual-samples-budget",
+                "label": "Presupuesto Anual para Muestras (COP)",
+                "type": "number",
+                "placeholder": "10000000",
+                "required": true
+              },
+              {
+                "fieldId": "samples-roi-calculated",
+                "label": "¿ROI de Muestras Calculado?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "samples-tracking-url",
+                "label": "Enlace a Sistema de Registro de Muestras",
+                "type": "url",
+                "placeholder": "https://docs.google.com/spreadsheets/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Diseñar kit de muestra profesional con empaque hermético",
+            "Definir tamaño de muestra adecuado (500g-1kg)",
+            "Crear ficha técnica con todos los parámetros de calidad",
+            "Diseñar carta de presentación personalizable por comprador",
+            "Incluir catálogo de productos y servicios en cada kit",
+            "Agregar código QR con video de la finca y procesos",
+            "Establecer protocolo de selección de granos para muestras",
+            "Implementar sistema de registro de muestras enviadas (CRM o Excel)",
+            "Definir protocolo de seguimiento post-envío (2-3 semanas)",
+            "Calcular costo por kit de muestra y envío internacional",
+            "Definir presupuesto anual para muestras",
+            "Medir tasa de conversión de muestras a pedidos",
+            "Calcular ROI de inversión en muestras",
+            "Personalizar muestras según tipo de comprador (bean-to-bar, industria, retail)",
+            "Archivar feedback de compradores sobre muestras recibidas",
+            "Programar revisión trimestral de estrategia de muestras"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "block": "strategy",
+  "phase": "Planificación y Viabilidad Financiera",
+  "steps": [
+    {
+      "id": "step_2_1",
+      "title": "Cálculo de Costos y Punto de Equilibrio",
+      "guide": {
+        "whyItMatters": "El cacao 100% orgánico tiene un período de 'valle de la muerte' financiero de 3 a 4 años antes de alcanzar su primera cosecha comercial significativa. Además, los costos operativos (OPEX) son estructuralmente diferentes a los convencionales: se invierte más en mano de obra para control manual de malezas y producción de compost/bioles, y se ahorra en agroquímicos sintéticos. Calcular el punto de equilibrio exacto en kilogramos de cacao seco es la única forma de saber si el negocio es un hobby caro o una empresa rentable, y define el precio mínimo de venta para no operar a pérdida.",
+        "bestPractices": [
+          "Separar rigurosamente los costos de establecimiento (CAPEX: plántulas, sistemas de riego, infraestructura de sombra) de los costos operativos anuales (OPEX: jornales, insumos orgánicos, transporte).",
+          "Incluir el costo de oportunidad de la tierra y, fundamentalmente, el salario del emprendedor (costo de vida) en los costos fijos durante los años de establecimiento.",
+          "Calcular el punto de equilibrio en unidades físicas (kg de cacao seco fermentado) utilizando el precio premium orgánico proyectado, no el precio convencional de bolsa."
+        ],
+        "commonMistakes": [
+          "Omitir el 'costo de vida personal' del agricultor durante los primeros 3 años, lo que lleva a la quiebra personal y al abandono del cultivo.",
+          "Subestimar el costo de la mano de obra para la elaboración y aplicación de insumos orgánicos (preparar 5 toneladas de compost o 1,000 litros de biol requiere muchas horas-hombre).",
+          "Calcular el punto de equilibrio usando rendimientos de cacao convencional (ej. 2,500 kg/ha), lo que arroja un punto de equilibrio ficticio e inalcanzable en un sistema orgánico real."
+        ],
+        "tip": "Para tu cálculo, asume un rendimiento orgánico conservador de 800-1,000 kg/ha en plena producción. Si tus costos fijos y variables totales anuales son de $8,000 USD y el precio de venta orgánico es de $4.50 USD/kg, tu punto de equilibrio es de 1,777 kg. Si tu finca es de 2 hectáreas, necesitas producir 888 kg/ha solo para no perder dinero. Conoce tus números antes de sembrar.",
+        "recommendedTools": [
+          {
+            "name": "FAO - Cost and Returns of Agricultural Production",
+            "url": "https://www.fao.org/statistics/en/"
+          },
+          {
+            "name": "Google Sheets (Plantilla de Flujo de Caja Agrícola)",
+            "url": "https://www.google.com/sheets"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "fixed_costs",
+          "label": "Costos Fijos Anuales (USD)",
+          "type": "number",
+          "placeholder": "Ej: 3500 (Incluye arriendo, seguros, depreciación, servicios)",
+          "required": true
+        },
+        {
+          "id": "personal_living_costs",
+          "label": "Costo de Vida Personal / Salario Emprendedor Anual (USD)",
+          "type": "number",
+          "placeholder": "Ej: 6000",
+          "required": true
+        },
+        {
+          "id": "unit_variable_cost",
+          "label": "Costo Variable Unitario por kg de Cacao Seco (USD)",
+          "type": "number",
+          "placeholder": "Ej: 1.20 (Insumos orgánicos, jornales de cosecha, fermentación, empaque)",
+          "required": true
+        },
+        {
+          "id": "break_even_point_kg",
+          "label": "Punto de Equilibrio en kg de Cacao Seco (Anual)",
+          "type": "number",
+          "placeholder": "Ej: 2100",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_2_1_1",
+          "text": "Calcular y registrar los costos fijos anuales totales de la operación.",
+          "registryFieldRef": "fixed_costs"
+        },
+        {
+          "id": "cl_2_1_2",
+          "text": "Definir y registrar el costo de vida personal (salario del emprendedor) para los años de operación.",
+          "registryFieldRef": "personal_living_costs"
+        },
+        {
+          "id": "cl_2_1_3",
+          "text": "Calcular el costo variable unitario por cada kilogramo de cacao seco producido.",
+          "registryFieldRef": "unit_variable_cost"
+        },
+        {
+          "id": "cl_2_1_4",
+          "text": "Calcular el punto de equilibrio exacto en kilogramos de cacao seco necesarios para cubrir todos los costos.",
+          "registryFieldRef": "break_even_point_kg"
+        }
+      ]
+    },
+    {
+      "id": "step_2_2",
+      "title": "Calendario de Estacionalidad de Ingresos y Flujo de Caja",
+      "guide": {
+        "whyItMatters": "El cacao es un cultivo marcadamente estacional. Aunque hay cosecha durante varios meses, los ingresos se concentran en picos específicos (cosecha principal y 'mitaca' o cosecha intermedia). Sin embargo, los gastos (jornales, mantenimiento, alimentación) son mensuales y constantes. En un sistema 100% orgánico, los meses de 'no cosecha' son en realidad los meses de mayor intensidad de trabajo de campo (podas, aplicación de bioles, elaboración de compost). Si no calendarizas el flujo de caja, te quedarás sin liquidez exactamente cuando más necesitas invertir en el suelo.",
+        "bestPractices": [
+          "Mapear en un calendario visual los 12 meses del año, diferenciando claramente los meses de cosecha principal, los de mitaca (cosecha intermedia) y los de varetamiento (poda/descanso).",
+          "Crear un 'Fondo de Reserva' obligatorio: destinar al menos el 20% de los ingresos de la cosecha principal para cubrir los gastos operativos de los meses de escasez.",
+          "Negociar con compradores orgánicos pagos anticipados o parciales (ej. 30% al firmar contrato, 70% contra entrega) para suavizar el flujo de caja."
+        ],
+        "commonMistakes": [
+          "Gastar todos los ingresos de la cosecha principal en lujos o deudas personales, dejando la finca sin capital de trabajo para la temporada de lluvias y la mitaca.",
+          "Ignorar la 'mitaca' (cosecha pequeña) y no presupuestarla, cuando en realidad es crucial para cubrir los costos variables de ese trimestre.",
+          "No presupuestar la compra de insumos orgánicos (como roca fosfórica o harina de rocas) con meses de anticipación, ya que a veces tienen tiempos de entrega largos."
+        ],
+        "tip": "En cacao orgánico, la época de lluvias (cuando usualmente hay menos cosecha y más enfermedad como Monilia) es la época de mayor gasto en mano de obra para podas fitosanitarias y aplicación de caldos (Bordelés, Sulfocálcico). Asegúrate de que tu costo de escasez incluya un presupuesto robusto para control fitosanitario orgánico preventivo.",
+        "recommendedTools": [
+          {
+            "name": "Calendario Agronómico Local (Ministerio de Agricultura de tu país)",
+            "url": "https://www.agricultura.gob.ec/"
+          },
+          {
+            "name": "Wave Accounting (Software gratuito de flujo de caja)",
+            "url": "https://www.waveapps.com/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "high_income_months",
+          "label": "Meses de Ingresos Altos (Cosecha Principal y Mitaca)",
+          "type": "multiselect",
+          "options": [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+          ],
+          "required": true
+        },
+        {
+          "id": "scarcity_months",
+          "label": "Meses de Escasez o Cero Ingresos",
+          "type": "multiselect",
+          "options": [
+            "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+          ],
+          "required": true
+        },
+        {
+          "id": "scarcity_maintenance_cost",
+          "label": "Costo Estimado de Mantenimiento y Alimentación en Meses de Escasez (USD)",
+          "type": "number",
+          "placeholder": "Ej: 1500",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_2_2_1",
+          "text": "Identificar y seleccionar en el calendario los meses de ingresos altos (cosecha principal y mitaca).",
+          "registryFieldRef": "high_income_months"
+        },
+        {
+          "id": "cl_2_2_2",
+          "text": "Identificar y seleccionar los meses de escasez o nula generación de ingresos comerciales.",
+          "registryFieldRef": "scarcity_months"
+        },
+        {
+          "id": "cl_2_2_3",
+          "text": "Calcular y registrar el costo estimado de mantenimiento, insumos y alimentación para sobrevivir los meses de escasez.",
+          "registryFieldRef": "scarcity_maintenance_cost"
+        }
+      ]
+    },
+    {
+      "id": "step_2_3",
+      "title": "Definición de KPIs y Metas Anuales",
+      "guide": {
+        "whyItMatters": "Lo que no se mide, no se mejora. En el cacao 100% orgánico, los KPIs no pueden limitarse solo a 'kilos producidos'. Deben equilibrar la productividad con la salud del ecosistema y la calidad del grano. Establecer metas claras de rendimiento, tasas de supervivencia de plántulas orgánicas y costos límite permite evaluar si el modelo agronómico está funcionando o si es necesario ajustar las dosis de compost, la frecuencia de podas o las técnicas de fermentación.",
+        "bestPractices": [
+          "Definir KPIs Agronómicos: Rendimiento por hectárea (kg/ha), % de mazorcas sanas vs. enfermas, y tasa de supervivencia de plántulas tras el trasplante.",
+          "Definir KPIs de Calidad: % de grano bien fermentado, % de humedad al secado (meta estricta < 7.5%), y % de granos pizarrosos/mohosos (debe ser < 1.5%).",
+          "Definir KPIs Financieros: Costo de producción por kg, margen neto por hectárea, y % de insumos orgánicos producidos dentro de la finca (autonomía)."
+        ],
+        "commonMistakes": [
+          "Fijar metas de rendimiento basadas en cacao convencional (ej. 2,500 kg/ha), lo que genera frustración y la tentación de usar químicos prohibidos para 'cumplir la meta'.",
+          "Medir solo el volumen de cacao húmedo (baba) y no el cacao seco fermentado, lo que oculta pérdidas por mala fermentación o secado deficiente.",
+          "No establecer un KPI de 'tasa de supervivencia', asumiendo que todas las plántulas sembradas llegarán a productivas, cuando la mortalidad en trasplantes orgánicos puede ser del 10-15%."
+        ],
+        "tip": "Un KPI de oro en cacao orgánico es el 'Índice de Materia Orgánica del Suelo'. Si tu rendimiento baja un 5% pero tu materia orgánica sube del 2% al 4% en tres años, tu negocio es más resiliente y valioso a largo plazo. Mide la salud del suelo al menos una vez al año.",
+        "recommendedTools": [
+          {
+            "name": "CropIn o FarmLogs (Software de gestión agrícola)",
+            "url": "https://www.cropin.com/"
+          },
+          {
+            "name": "Cuaderno de Campo Físico (Trazabilidad Orgánica)",
+            "url": "N/A (Herramienta física)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "target_yield_kg_ha",
+          "label": "Meta de Rendimiento Físico por Hectárea (kg/ha año)",
+          "type": "number",
+          "placeholder": "Ej: 1000",
+          "required": true
+        },
+        {
+          "id": "target_survival_quality_rate",
+          "label": "Tasa Meta de Supervivencia de Plántulas / % de Grano de Alta Calidad (%)",
+          "type": "number",
+          "placeholder": "Ej: 95",
+          "required": true
+        },
+        {
+          "id": "acceptable_production_cost",
+          "label": "Costo de Producción Máximo Aceptable por kg de Cacao Seco (USD)",
+          "type": "number",
+          "placeholder": "Ej: 2.50",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_2_3_1",
+          "text": "Definir la meta de rendimiento físico por hectárea (kg/ha) realista para un sistema orgánico en plena producción.",
+          "registryFieldRef": "target_yield_kg_ha"
+        },
+        {
+          "id": "cl_2_3_2",
+          "text": "Establecer la tasa meta de supervivencia de plántulas y el porcentaje mínimo de calidad en taza/grano.",
+          "registryFieldRef": "target_survival_quality_rate"
+        },
+        {
+          "id": "cl_2_3_3",
+          "text": "Fijar el costo de producción máximo aceptable por kilogramo de cacao seco para garantizar la rentabilidad.",
+          "registryFieldRef": "acceptable_production_cost"
+        }
+      ]
+    }
+  ]
+}

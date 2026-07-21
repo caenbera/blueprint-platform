@@ -1,0 +1,1008 @@
+{
+  "block": "customers",
+  "blockTitle": "Clientes",
+  "phases": [
+    {
+      "phaseId": "brand-identity-positioning",
+      "phaseTitle": "Identidad de Marca, Branding y Posicionamiento",
+      "steps": [
+        {
+          "stepId": "brand-strategy-foundation",
+          "stepTitle": "Estrategia de Marca y Fundamentos de Branding",
+          "guide": {
+            "whyItMatters": "La identidad de marca es lo que diferencia tu cacao orgánico de miles de productores en el mercado global. En un commodity como el cacao, la marca es lo que permite cobrar precios premium del 30-100% sobre el precio convencional. Una marca bien construida comunica tus valores (orgánico, sostenible, origen territorial, impacto social), genera confianza con compradores internacionales, y crea conexión emocional con consumidores finales. Sin identidad de marca clara, eres invisible en un mercado saturado y compites únicamente por precio.",
+            "bestPractices": [
+              "Define el propósito de tu marca más allá de 'vender cacao': impacto social, sostenibilidad, preservación cultural",
+              "Investiga a fondo tu mercado objetivo: chocolateros bean-to-bar, importadores, consumidores conscientes",
+              "Desarrolla un arquetipo de marca coherente: explorador (origen remoto), cuidador (sostenibilidad), sabio (tradición ancestral)",
+              "Crea una narrativa de origen auténtica que conecte con los valores del consumidor moderno",
+              "Define 3-5 valores de marca no negociables que guíen todas las decisiones del negocio",
+              "Posiciona tu marca en un nicho específico: cacao fino de aroma, origen único, comercio justo, biodiversidad",
+              "Asegura coherencia visual y verbal en todos los puntos de contacto con el cliente",
+              "Registra tu marca ante la SIC para proteger tu inversión en branding"
+            ],
+            "commonMistakes": [
+              "Crear una marca genérica sin diferenciadores claros ('Cacao Orgánico Colombia')",
+              "Copiar la identidad de marcas exitosas sin adaptar a tu realidad y valores únicos",
+              "No definir el público objetivo específico, intentando venderle a todo el mundo",
+              "Cambiar constantemente el nombre, logo o mensaje, confundiendo al mercado",
+              "No registrar la marca, perdiendo el derecho a usarla si otro la registra primero",
+              "Enfocar la marca solo en características del producto, ignorando el impacto social y ambiental",
+              "No documentar los lineamientos de marca, generando inconsistencias en comunicación",
+              "Subestimar la importancia del storytelling, perdiendo oportunidad de conexión emocional"
+            ],
+            "tip": "Para cacao orgánico colombiano, los posicionamientos más exitosos son: 1) Origen territorial específico (ej. 'Cacao del Magdalena', 'Cacao Amazónico'), 2) Variedades ancestrales/criollas (ej. 'Cacao Criollo Purificado'), 3) Impacto social medible (ej. 'Cacao que transforma comunidades'), 4) Biodiversidad y agroforestería (ej. 'Cacao de selva preservada'). El costo de desarrollo de marca profesional (nombre, logo, manual de marca, storytelling) es $5.000.000-$15.000.000 COP con agencia especializada, o $1.000.000-$3.000.000 COP con freelancer experimentado. El registro de marca ante la SIC cuesta aproximadamente $1.500.000 COP por clase internacional. Invierte al menos 6 meses en definir tu marca antes de lanzarla al mercado.",
+            "recommendedTools": [
+              {
+                "name": "SIC - Registro de Marca",
+                "url": "https://www.sic.gov.co",
+                "description": "Superintendencia de Industria y Comercio para registro oficial de marca en Colombia"
+              },
+              {
+                "name": "Canva Pro - Diseño de Identidad Visual",
+                "url": "https://www.canva.com",
+                "description": "Herramienta de diseño para crear logo, paleta de colores y materiales de marca"
+              },
+              {
+                "name": "Brand Archetypes Test",
+                "url": "https://www.brandarchetypes.com",
+                "description": "Test para identificar el arquetipo de marca más alineado con tu negocio"
+              },
+              {
+                "name": "Fedecacao - Marca País Cacao",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Recursos sobre posicionamiento de cacao colombiano en mercados internacionales"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "brand-name",
+                "label": "Nombre de la Marca",
+                "type": "text",
+                "placeholder": "Ej: Cacao del Sinú, Amazonia Cacao",
+                "required": true
+              },
+              {
+                "fieldId": "brand-purpose",
+                "label": "Propósito de la Marca (más allá de vender)",
+                "type": "textarea",
+                "placeholder": "Describe el propósito superior de tu marca...",
+                "required": true
+              },
+              {
+                "fieldId": "brand-archetype",
+                "label": "Arquetipo de Marca Principal",
+                "type": "select",
+                "options": [
+                  "Explorador (aventura, origen remoto)",
+                  "Cuidador (sostenibilidad, protección)",
+                  "Sabio (tradición, conocimiento ancestral)",
+                  "Creador (innovación, artesanía)",
+                  "Inocente (pureza, naturalidad)",
+                  "Rebelde (disrupción, cambio)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "brand-values",
+                "label": "Valores de Marca (3-5 valores no negociables)",
+                "type": "multiselect",
+                "options": [
+                  "Sostenibilidad ambiental",
+                  "Impacto social positivo",
+                  "Calidad premium",
+                  "Autenticidad y transparencia",
+                  "Innovación continua",
+                  "Preservación cultural",
+                  "Biodiversidad",
+                  "Comercio justo",
+                  "Excelencia artesanal"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "target-market-segment",
+                "label": "Segmento de Mercado Objetivo Principal",
+                "type": "select",
+                "options": [
+                  "Chocolateros bean-to-bar internacionales",
+                  "Importadores especializados Europa/EEUU",
+                  "Industria chocolatera nacional",
+                  "Consumidores finales conscientes",
+                  "Tiendas especializadas/orgánicas",
+                  "Restaurantes y pastelerías premium"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "brand-positioning-statement",
+                "label": "Declaración de Posicionamiento de Marca",
+                "type": "textarea",
+                "placeholder": "Para [público objetivo], [marca] es el [categoría] que [beneficio clave] porque [razón para creer].",
+                "required": true
+              },
+              {
+                "fieldId": "brand-story-summary",
+                "label": "Resumen de la Historia de Marca (Storytelling)",
+                "type": "textarea",
+                "placeholder": "Cuenta la historia de origen de tu marca en 3-5 párrafos...",
+                "required": true
+              },
+              {
+                "fieldId": "brand-registered-sic",
+                "label": "¿Marca Registrada ante la SIC?",
+                "type": "select",
+                "options": ["Sí, registrada", "En proceso de registro", "No registrada aún"],
+                "required": true
+              },
+              {
+                "fieldId": "trademark-registration-number",
+                "label": "Número de Registro de Marca (si aplica)",
+                "type": "text",
+                "placeholder": "Ej: SIC-2024-123456",
+                "required": false
+              },
+              {
+                "fieldId": "trademark-classes-registered",
+                "label": "Clases Internacionales Registradas",
+                "type": "multiselect",
+                "options": [
+                  "Clase 30 - Cacao y chocolate",
+                  "Clase 31 - Productos agrícolas",
+                  "Clase 32 - Bebidas",
+                  "Clase 35 - Servicios comerciales",
+                  "Clase 39 - Transporte y almacenamiento",
+                  "Clase 42 - Servicios de certificación"
+                ],
+                "required": false
+              },
+              {
+                "fieldId": "brand-manual-created",
+                "label": "¿Manual de Marca Creado?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, básico", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "brand-manual-url",
+                "label": "Enlace al Manual de Marca (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "brand-development-investment",
+                "label": "Inversión en Desarrollo de Marca (COP)",
+                "type": "number",
+                "placeholder": "8000000",
+                "required": true
+              },
+              {
+                "fieldId": "brand-launch-date",
+                "label": "Fecha de Lanzamiento de la Marca",
+                "type": "date",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Investigar mercado objetivo y competencia en cacao orgánico",
+            "Definir propósito de marca más allá de la venta de producto",
+            "Identificar arquetipo de marca alineado con valores del negocio",
+            "Seleccionar 3-5 valores de marca no negociables",
+            "Redactar declaración de posicionamiento de marca",
+            "Desarrollar narrativa de origen auténtica (storytelling)",
+            "Definir nicho específico de posicionamiento (origen, variedad, impacto)",
+            "Crear nombre de marca memorable y disponible legalmente",
+            "Verificar disponibilidad de nombre en RUES y SIC",
+            "Diseñar identidad visual (logo, paleta de colores, tipografía)",
+            "Crear manual de marca con lineamientos de uso",
+            "Registrar marca ante la SIC en clases internacionales relevantes",
+            "Calcular inversión total en desarrollo de marca",
+            "Planificar fecha de lanzamiento oficial de la marca",
+            "Capacitar a todo el equipo en valores y mensaje de marca"
+          ]
+        },
+        {
+          "stepId": "visual-identity-design",
+          "stepTitle": "Diseño de Identidad Visual y Elementos Gráficos",
+          "guide": {
+            "whyItMatters": "La identidad visual es la cara de tu marca y la primera impresión que tienen los compradores internacionales, certificadores y consumidores. En el mercado premium de cacao orgánico, donde la calidad visual comunica calidad del producto, una identidad visual profesional y coherente es indispensable. Compradores como chocolateros bean-to-bar y importadores europeos juzgan la seriedad de un proveedor por su presentación visual antes de probar el producto. Una identidad visual débil o inconsistente genera desconfianza y te excluye de mercados premium.",
+            "bestPractices": [
+              "Diseña un logo versátil que funcione en empaques, sitio web, redes sociales y material impreso",
+              "Define paleta de colores que evoque los valores de tu marca (tierras, naturaleza, premium)",
+              "Selecciona tipografías legibles y coherentes con el posicionamiento (artesanal, moderno, ancestral)",
+              "Crea sistema de iconografía propio para comunicar certificaciones y atributos",
+              "Desarrolla fotografía profesional de alta calidad: finca, procesos, producto, gente",
+              "Diseña plantillas reutilizables para redes sociales, presentaciones y catálogos",
+              "Asegura coherencia visual en todos los puntos de contacto: empaque, web, ferias, documentos",
+              "Crea versiones del logo para diferentes fondos (claro, oscuro, monocromático)"
+            ],
+            "commonMistakes": [
+              "Usar imágenes genéricas de internet que no representan tu finca ni tu realidad",
+              "Cambiar constantemente los colores o tipografías, perdiendo reconocimiento de marca",
+              "Diseñar un logo demasiado complejo que no se ve bien en tamaños pequeños",
+              "No considerar la aplicación del logo en empaques y etiquetas desde el inicio",
+              "Usar fotografías de baja calidad que proyectan imagen de bajo valor",
+              "No crear manual de marca, generando inconsistencias en comunicación visual",
+              "Copiar el estilo visual de marcas competidoras sin diferenciación",
+              "No adaptar la identidad visual a diferentes mercados culturales (Europa vs Asia vs EEUU)"
+            ],
+            "tip": "Para cacao orgánico colombiano, los elementos visuales más efectivos son: 1) Paleta de colores: tonos tierra (marrón cacao, verde selva, dorado premium), 2) Tipografía: combinación de serif elegante (títulos) + sans-serif limpia (cuerpo), 3) Fotografía: imágenes reales de la finca, trabajadores, procesos artesanales (NO fotos de stock), 4) Iconografía: íconos lineales para certificaciones (orgánico, fair trade, biodiversidad). Costo de diseño profesional: $3.000.000-$8.000.000 COP incluyendo logo, manual de marca, plantillas y banco de fotografías profesionales. Sesión fotográfica profesional en finca: $1.500.000-$3.000.000 COP (2-3 días de shooting). Herramientas: Adobe Creative Suite (profesional), Canva Pro (básico pero efectivo), Figma (diseño colaborativo).",
+            "recommendedTools": [
+              {
+                "name": "Adobe Creative Cloud - Diseño Profesional",
+                "url": "https://www.adobe.com",
+                "description": "Suite completa para diseño de identidad visual profesional (Illustrator, Photoshop, InDesign)"
+              },
+              {
+                "name": "Canva Pro - Diseño Accesible",
+                "url": "https://www.canva.com",
+                "description": "Herramienta de diseño con plantillas para redes sociales, presentaciones y materiales"
+              },
+              {
+                "name": "Figma - Diseño Colaborativo",
+                "url": "https://www.figma.com",
+                "description": "Plataforma para diseño de interfaces y materiales de marca colaborativos"
+              },
+              {
+                "name": "Unsplash - Banco de Imágenes Gratuito",
+                "url": "https://unsplash.com",
+                "description": "Fotografías de alta calidad gratuitas (aunque se recomienda fotografía propia)"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "logo-designed",
+                "label": "¿Logo de la Marca Diseñado?",
+                "type": "select",
+                "options": ["Sí, profesional", "Sí, básico", "En diseño", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "logo-versions-created",
+                "label": "Versiones del Logo Creadas",
+                "type": "multiselect",
+                "options": [
+                  "Logo principal a color",
+                  "Logo monocromático (blanco/negro)",
+                  "Logo para fondo oscuro",
+                  "Logo para fondo claro",
+                  "Isotipo (símbolo sin texto)",
+                  "Favicon para web"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "color-palette-defined",
+                "label": "Paleta de Colores Definida",
+                "type": "multiselect",
+                "options": [
+                  "Color primario (principal)",
+                  "Color secundario (complementario)",
+                  "Colores de acento",
+                  "Colores neutros (fondos, textos)",
+                  "Códigos HEX/CMYK/Pantone documentados"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "primary-color-hex",
+                "label": "Código HEX del Color Primario",
+                "type": "text",
+                "placeholder": "Ej: #5D4037 (marrón cacao)",
+                "required": false
+              },
+              {
+                "fieldId": "typography-selected",
+                "label": "Tipografías Seleccionadas",
+                "type": "text",
+                "placeholder": "Ej: Títulos: Playfair Display, Cuerpo: Open Sans",
+                "required": true
+              },
+              {
+                "fieldId": "iconography-system",
+                "label": "¿Sistema de Iconografía Propio Creado?",
+                "type": "select",
+                "options": ["Sí, personalizado", "Sí, de biblioteca", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "professional-photography-done",
+                "label": "¿Sesión Fotográfica Profesional Realizada?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, parcial", "En planificación", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "photography-categories-covered",
+                "label": "Categorías de Fotografía Cubiertas",
+                "type": "multiselect",
+                "options": [
+                  "Paisajes de la finca",
+                  "Trabajadores en acción",
+                  "Procesos de fermentación/secado",
+                  "Producto terminado (granos, empaque)",
+                  "Detalle de texturas y calidad",
+                  "Vida silvestre/biodiversidad",
+                  "Comunidad y contexto cultural"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "photo-bank-organized",
+                "label": "¿Banco de Fotografías Organizado y Etiquetado?",
+                "type": "select",
+                "options": ["Sí, en la nube", "Sí, local", "No organizado"],
+                "required": true
+              },
+              {
+                "fieldId": "templates-created",
+                "label": "Plantillas de Diseño Creadas",
+                "type": "multiselect",
+                "options": [
+                  "Posts para redes sociales",
+                  "Presentaciones corporativas",
+                  "Catálogos de producto",
+                  "Tarjetas de presentación",
+                  "Papel con membrete",
+                  "Firmas de email",
+                  "Banners para ferias"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "brand-assets-folder-url",
+                "label": "Enlace a Carpeta de Activos de Marca (logos, fotos, plantillas)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              },
+              {
+                "fieldId": "designer-agency-name",
+                "label": "Nombre del Diseñador o Agencia",
+                "type": "text",
+                "placeholder": "Ej: Estudio Creativo Cacao, Freelancer Juan Pérez",
+                "required": false
+              },
+              {
+                "fieldId": "visual-identity-investment",
+                "label": "Inversión en Identidad Visual (COP)",
+                "type": "number",
+                "placeholder": "6000000",
+                "required": true
+              },
+              {
+                "fieldId": "photography-investment",
+                "label": "Inversión en Fotografía Profesional (COP)",
+                "type": "number",
+                "placeholder": "2000000",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Contratar diseñador gráfico profesional o agencia especializada",
+            "Brief de marca completo con valores, arquetipo y posicionamiento",
+            "Diseñar logo principal con múltiples versiones (color, monocromático, fondos)",
+            "Definir paleta de colores con códigos HEX, CMYK y Pantone",
+            "Seleccionar tipografías para títulos y cuerpo de texto",
+            "Crear sistema de iconografía para certificaciones y atributos",
+            "Planificar y ejecutar sesión fotográfica profesional en finca",
+            "Fotografiar todas las categorías: paisajes, procesos, producto, gente",
+            "Organizar banco de fotografías en la nube con etiquetas descriptivas",
+            "Diseñar plantillas reutilizables para redes sociales y presentaciones",
+            "Crear plantillas para catálogos, tarjetas y papel con membrete",
+            "Diseñar firmas de email corporativas con identidad visual",
+            "Compilar todos los activos de marca en carpeta organizada y accesible",
+            "Documentar lineamientos de uso en manual de marca visual",
+            "Capacitar a equipo en uso correcto de activos de marca"
+          ]
+        },
+        {
+          "stepId": "brand-storytelling-content",
+          "stepTitle": "Storytelling de Marca y Creación de Contenido Narrativo",
+          "guide": {
+            "whyItMatters": "En el mercado premium de cacao orgánico, los compradores no solo compran producto, compran historias. El storytelling de marca es lo que conecta emocionalmente con consumidores conscientes que buscan saber el origen, el impacto y las personas detrás del producto. Una narrativa auténtica y bien contada puede justificar precios 2-3 veces superiores al commodity, generar lealtad de marca, y diferenciarte en un mercado saturado. Los chocolateros bean-to-bar y consumidores finales están dispuestos a pagar premium por conocer la historia de la finca, los trabajadores, y el impacto positivo de su compra.",
+            "bestPractices": [
+              "Desarrolla una narrativa de origen auténtica que conecte con los valores del consumidor",
+              "Cuenta la historia de las personas: fundadores, trabajadores, comunidad local",
+              "Documenta el proceso artesanal desde la siembra hasta el producto final",
+              "Destaca el impacto social y ambiental medible de tu negocio",
+              "Crea contenido en múltiples formatos: texto, video, audio, fotografía",
+              "Adapta la narrativa a diferentes audiencias: compradores B2B, consumidores finales, inversionistas",
+              "Traduce todo el contenido a inglés para mercados internacionales",
+              "Actualiza la narrativa regularmente con nuevas historias y logros"
+            ],
+            "commonMistakes": [
+              "Contar solo características técnicas del producto, ignorando el componente humano",
+              "Usar historias genéricas que podrían ser de cualquier productor de cacao",
+              "No traducir contenido al inglés, perdiendo acceso a mercados internacionales",
+              "Exagerar o inventar historias, perdiendo credibilidad cuando se descubre",
+              "No actualizar la narrativa, quedándose desactualizado y poco relevante",
+              "Enfocar la historia solo en el fundador, ignorando a trabajadores y comunidad",
+              "No cuantificar el impacto social y ambiental, perdiendo oportunidad de diferenciación",
+              "Crear contenido solo en formato texto, ignorando el poder del video y la fotografía"
+            ],
+            "tip": "Para cacao orgánico colombiano, las narrativas más poderosas son: 1) Origen territorial: 'En las riberas del río Sinú, donde la selva tropical se encuentra con la tradición cacaotera ancestral...', 2) Impacto social: 'Cada kilo de nuestro cacao transforma la vida de 5 familias campesinas...', 3) Biodiversidad: 'Nuestro cacao crece bajo la sombra de 45 especies de árboles nativos, preservando 20 hectáreas de selva...', 4) Proceso artesanal: 'Desde la cosecha manual hasta la fermentación de 7 días, cada grano es tratado con el cuidado de quien sabe que la excelencia no acepta atajos...'. Formato de contenido más efectivo: video de 2-3 minutos mostrando finca, procesos y gente (costo: $2.000.000-$5.000.000 COP). Texto para sitio web y catálogos: 500-800 palabras con fotos profesionales. Testimonios de compradores: 3-5 citas reales con foto y nombre.",
+            "recommendedTools": [
+              {
+                "name": "Loom - Grabación de Videos Narrativos",
+                "url": "https://www.loom.com",
+                "description": "Herramienta para grabar videos de storytelling de forma rápida y profesional"
+              },
+              {
+                "name": "Grammarly - Redacción en Inglés",
+                "url": "https://www.grammarly.com",
+                "description": "Asistente de escritura para asegurar contenido en inglés sin errores gramaticales"
+              },
+              {
+                "name": "Hemingway Editor - Claridad de Texto",
+                "url": "https://hemingwayapp.com",
+                "description": "Herramienta para mejorar la claridad y legibilidad de textos narrativos"
+              },
+              {
+                "name": "Storytelling for Business - Curso Online",
+                "url": "https://www.coursera.org",
+                "description": "Cursos especializados en narrativa de marca para negocios"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "origin-story_written",
+                "label": "¿Historia de Origen de la Marca Escrita?",
+                "type": "select",
+                "options": ["Sí, en español e inglés", "Sí, solo español", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "origin-story-word-count",
+                "label": "Número de Palabras en Historia de Origen",
+                "type": "number",
+                "placeholder": "600",
+                "required": false
+              },
+              {
+                "fieldId": "people-stories_documented",
+                "label": "¿Historias de Personas Documentadas (fundadores, trabajadores, comunidad)?",
+                "type": "multiselect",
+                "options": [
+                  "Historia del fundador",
+                  "Perfiles de trabajadores clave",
+                  "Testimonios de comunidad local",
+                  "Historia de familias beneficiadas",
+                  "No documentadas"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "process-documentation",
+                "label": "¿Proceso Artesanal Documentado Paso a Paso?",
+                "type": "multiselect",
+                "options": [
+                  "Siembra y establecimiento",
+                  "Cosecha y selección",
+                  "Fermentación controlada",
+                  "Secado artesanal",
+                  "Empaque y almacenamiento",
+                  "Control de calidad"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "social-impact_quantified",
+                "label": "¿Impacto Social Cuantificado en la Narrativa?",
+                "type": "select",
+                "options": ["Sí, con métricas específicas", "Sí, general", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "environmental-impact_quantified",
+                "label": "¿Impacto Ambiental Cuantificado en la Narrativa?",
+                "type": "select",
+                "options": ["Sí, con métricas específicas", "Sí, general", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "content-formats_created",
+                "label": "Formatos de Contenido Creados",
+                "type": "multiselect",
+                "options": [
+                  "Texto para sitio web",
+                  "Texto para catálogos",
+                  "Video narrativo (2-3 min)",
+                  "Video corto para redes (30-60 seg)",
+                  "Podcast o audio",
+                  "Fotografía narrativa",
+                  "Infografías"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "video-narrative_produced",
+                "label": "¿Video Narrativo Principal Producido?",
+                "type": "select",
+                "options": ["Sí, profesional", "Sí, básico", "En producción", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "video-duration_minutes",
+                "label": "Duración del Video Narrativo Principal (minutos)",
+                "type": "number",
+                "placeholder": "2.5",
+                "required": false
+              },
+              {
+                "fieldId": "video-url",
+                "label": "Enlace al Video Narrativo Principal",
+                "type": "url",
+                "placeholder": "https://vimeo.com/... o https://youtube.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "testimonials_collected",
+                "label": "Número de Testimonios de Compradores Recopilados",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "content-translated_to_english",
+                "label": "¿Contenido Traducido al Inglés?",
+                "type": "select",
+                "options": ["Sí, todo el contenido", "Sí, contenido principal", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "content-calendar_implemented",
+                "label": "¿Calendario de Contenido Implementado?",
+                "type": "select",
+                "options": ["Sí, actualizado mensualmente", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "storytelling-investment",
+                "label": "Inversión en Creación de Contenido Narrativo (COP)",
+                "type": "number",
+                "placeholder": "5000000",
+                "required": true
+              },
+              {
+                "fieldId": "content-folder_url",
+                "label": "Enlace a Carpeta con Todo el Contenido Narrativo",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Redactar historia de origen auténtica de la marca (500-800 palabras)",
+            "Traducir historia de origen al inglés profesional",
+            "Documentar historias de personas clave (fundador, trabajadores, comunidad)",
+            "Fotografiar y filmar a las personas en su contexto real",
+            "Documentar proceso artesanal paso a paso con fotos y videos",
+            "Cuantificar impacto social (empleos, ingresos, familias beneficiadas)",
+            "Cuantificar impacto ambiental (biodiversidad, carbono, agua)",
+            "Crear video narrativo principal de 2-3 minutos mostrando finca y procesos",
+            "Producir videos cortos (30-60 seg) para redes sociales",
+            "Recopilar testimonios reales de compradores satisfechos",
+            "Crear infografías visuales del proceso e impacto",
+            "Adaptar narrativa para diferentes audiencias (B2B, consumidores, inversionistas)",
+            "Implementar calendario de contenido para actualizar historias regularmente",
+            "Organizar todo el contenido en carpeta accesible y etiquetada",
+            "Calcular inversión total en creación de contenido narrativo"
+          ]
+        },
+        {
+          "stepId": "brand-guidelines-documentation",
+          "stepTitle": "Manual de Marca y Documentación de Lineamientos",
+          "guide": {
+            "whyItMatters": "El manual de marca es la biblia que garantiza la coherencia visual y verbal de tu marca en todos los puntos de contacto. Sin este documento, cada persona que cree contenido para tu marca (diseñadores, community managers, impresores, socios) lo hará de forma diferente, generando inconsistencias que diluyen el reconocimiento y valor de marca. En mercados internacionales donde trabajas con múltiples proveedores, agencias y socios, el manual de marca es esencial para mantener control de calidad en la comunicación.",
+            "bestPractices": [
+              "Incluye todos los elementos: logo (versiones y usos correctos/incorrectos), paleta de colores, tipografías, iconografía",
+              "Define tono de voz y estilo de comunicación con ejemplos prácticos",
+              "Especifica usos permitidos y prohibidos de la marca en diferentes contextos",
+              "Incluye plantillas descargables para redes sociales, presentaciones y documentos",
+              "Documenta fotografía: estilo, iluminación, composición, temas permitidos",
+              "Crea sección de storytelling con narrativa de marca y mensajes clave",
+              "Haz el manual accesible en formato digital (PDF interactivo o sitio web)",
+              "Actualiza el manual anualmente según evolución de la marca"
+            ],
+            "commonMistakes": [
+              "Crear manual solo visual, ignorando tono de voz y mensajes clave",
+              "Hacer manual demasiado extenso y complejo que nadie consulta",
+              "No incluir ejemplos de usos incorrectos, generando confusiones",
+              "No hacer el manual accesible digitalmente, limitando su uso",
+              "No actualizar el manual, quedándose desactualizado",
+              "No capacitar al equipo en uso del manual, creando inconsistencias",
+              "Incluir solo lineamientos generales sin especificaciones técnicas (códigos de color, tamaños mínimos)",
+              "No considerar aplicaciones prácticas (empaques, ferias, documentos)"
+            ],
+            "tip": "Un manual de marca efectivo para cacao orgánico debe incluir: 1) Portada con logo y versión, 2) Índice navegable, 3) Filosofía de marca (propósito, valores, arquetipo), 4) Logo (versiones, áreas de protección, tamaños mínimos, usos incorrectos), 5) Paleta de colores (primarios, secundarios, códigos HEX/CMYK/Pantone/RGB), 6) Tipografía (familias, jerarquías, usos), 7) Iconografía (estilo, usos), 8) Fotografía (estilo, temas, iluminación, composición), 9) Tono de voz (personalidad, mensajes clave, ejemplos), 10) Aplicaciones (empaques, redes sociales, presentaciones, ferias), 11) Storytelling (narrativa de origen, mensajes por audiencia), 12) Plantillas descargables. Costo de creación: $2.000.000-$5.000.000 COP. Formato: PDF interactivo de 30-50 páginas + sitio web con activos descargables.",
+            "recommendedTools": [
+              {
+                "name": "Adobe InDesign - Diseño de Manual",
+                "url": "https://www.adobe.com",
+                "description": "Software profesional para diseño de manuales de marca interactivos"
+              },
+              {
+                "name": "Frontify - Plataforma de Brand Guidelines",
+                "url": "https://www.frontify.com",
+                "description": "Plataforma online para crear y compartir manuales de marca digitales"
+              },
+              {
+                "name": "Canva - Manual de Marca Básico",
+                "url": "https://www.canva.com",
+                "description": "Herramienta accesible para crear manuales de marca simples pero efectivos"
+              },
+              {
+                "name": "Brand Guidelines Template",
+                "url": "https://www.canva.com/templates/brand-guidelines",
+                "description": "Plantillas gratuitas para iniciar la creación de manual de marca"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "brand-manual_created",
+                "label": "¿Manual de Marca Creado?",
+                "type": "select",
+                "options": ["Sí, completo y profesional", "Sí, básico", "En desarrollo", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "brand-manual-format",
+                "label": "Formato del Manual de Marca",
+                "type": "multiselect",
+                "options": [
+                  "PDF interactivo",
+                  "Sitio web dedicado",
+                  "Presentación PowerPoint",
+                  "Documento impreso",
+                  "Plataforma online (Frontify, etc.)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "manual-page-count",
+                "label": "Número de Páginas del Manual",
+                "type": "number",
+                "placeholder": "40",
+                "required": false
+              },
+              {
+                "fieldId": "manual-sections_included",
+                "label": "Secciones Incluidas en el Manual",
+                "type": "multiselect",
+                "options": [
+                  "Filosofía de marca (propósito, valores)",
+                  "Logo (versiones, usos correctos/incorrectos)",
+                  "Paleta de colores (códigos técnicos)",
+                  "Tipografía (familias, jerarquías)",
+                  "Iconografía",
+                  "Fotografía (estilo, temas)",
+                  "Tono de voz y mensajes clave",
+                  "Aplicaciones (empaques, redes, ferias)",
+                  "Storytelling y narrativa",
+                  "Plantillas descargables"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "logo-usage-guidelines_documented",
+                "label": "¿Lineamientos de Uso del Logo Documentados?",
+                "type": "multiselect",
+                "options": [
+                  "Área de protección",
+                  "Tamaños mínimos",
+                  "Versiones para diferentes fondos",
+                  "Usos incorrectos (ejemplos)",
+                  "Aplicaciones en empaques",
+                  "Aplicaciones en digital"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "color-codes_documented",
+                "label": "¿Códigos de Color Documentados en Todos los Sistemas?",
+                "type": "multiselect",
+                "options": [
+                  "HEX (web)",
+                  "RGB (pantallas)",
+                  "CMYK (impresión)",
+                  "Pantone (impresión profesional)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "tone-of-voice_defined",
+                "label": "¿Tono de Voz de la Marca Definido?",
+                "type": "select",
+                "options": ["Sí, con ejemplos prácticos", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "key-messages_documented",
+                "label": "¿Mensajes Clave por Audiencia Documentados?",
+                "type": "select",
+                "options": ["Sí, completos", "Sí, básicos", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "templates-included",
+                "label": "¿Plantillas Descargables Incluidas en el Manual?",
+                "type": "multiselect",
+                "options": [
+                  "Posts para redes sociales",
+                  "Presentaciones corporativas",
+                  "Documentos con membrete",
+                  "Tarjetas de presentación",
+                  "Firmas de email",
+                  "Banners para ferias"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "manual-accessibility",
+                "label": "¿Manual Accesible para Todo el Equipo y Socios?",
+                "type": "select",
+                "options": ["Sí, en la nube con permisos", "Sí, descargable", "Limitado"],
+                "required": true
+              },
+              {
+                "fieldId": "manual-url",
+                "label": "Enlace al Manual de Marca Digital",
+                "type": "url",
+                "placeholder": "https://drive.google.com/... o https://tu-marca.com/manual",
+                "required": true
+              },
+              {
+                "fieldId": "team-trained_on_manual",
+                "label": "¿Equipo Capacitado en Uso del Manual?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "manual-last-update",
+                "label": "Fecha de Última Actualización del Manual",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "manual-creation-investment",
+                "label": "Inversión en Creación del Manual de Marca (COP)",
+                "type": "number",
+                "placeholder": "3000000",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Definir estructura y secciones del manual de marca",
+            "Documentar filosofía de marca (propósito, valores, arquetipo)",
+            "Especificar todas las versiones del logo con lineamientos de uso",
+            "Documentar área de protección y tamaños mínimos del logo",
+            "Incluir ejemplos de usos correctos e incorrectos del logo",
+            "Definir paleta de colores completa con códigos técnicos (HEX, RGB, CMYK, Pantone)",
+            "Especificar tipografías con jerarquías y usos permitidos",
+            "Documentar estilo de iconografía y fotografía",
+            "Definir tono de voz con ejemplos prácticos de comunicación",
+            "Crear mensajes clave para diferentes audiencias (B2B, consumidores, inversionistas)",
+            "Diseñar plantillas descargables para redes sociales, presentaciones y documentos",
+            "Compilar todo en manual profesional de 30-50 páginas",
+            "Crear versión digital interactiva (PDF o sitio web)",
+            "Hacer manual accesible en la nube para equipo y socios",
+            "Capacitar a todo el equipo en uso correcto del manual",
+            "Programar revisión y actualización anual del manual"
+          ]
+        },
+        {
+          "stepId": "brand-launch-communication",
+          "stepTitle": "Lanzamiento de Marca y Estrategia de Comunicación",
+          "guide": {
+            "whyItMatters": "El lanzamiento de marca es el momento crítico donde presentas tu identidad al mercado y generas la primera impresión con compradores, inversionistas y consumidores. Un lanzamiento bien planificado genera buzz, atrae atención de medios especializados, y establece credibilidad desde el inicio. En el mercado de cacao orgánico, donde las relaciones personales y la reputación son fundamentales, un lanzamiento profesional te posiciona como jugador serio y te abre puertas a mercados premium. Un lanzamiento improvisado o de baja calidad puede generar desinterés o incluso dañar la percepción de marca antes de empezar.",
+            "bestPractices": [
+              "Planifica el lanzamiento con 3-6 meses de anticipación",
+              "Define objetivos claros: cuántos compradores contactar, cuántas menciones en medios, cuántos seguidores",
+              "Crea lista de invitados estratégicos: compradores potenciales, medios especializados, influencers del sector",
+              "Desarrolla material de lanzamiento: comunicado de prensa, kit de medios, muestras de producto",
+              "Organiza evento de lanzamiento (presencial o virtual) con degustación y presentación",
+              "Coordina publicación simultánea en todos los canales: web, redes sociales, email, LinkedIn",
+              "Contacta medios especializados en chocolate, cacao y alimentos orgánicos",
+              "Mide resultados del lanzamiento y ajusta estrategia según aprendizajes"
+            ],
+            "commonMistakes": [
+              "Lanzar la marca sin planificación, esperando que 'el producto se venda solo'",
+              "No definir objetivos medibles, imposibilitando evaluar éxito del lanzamiento",
+              "No crear material profesional de lanzamiento (comunicado, kit de medios)",
+              "No invitar a compradores potenciales y medios especializados",
+              "Lanzar solo en redes sociales, ignorando canales B2B como LinkedIn y email",
+              "No preparar muestras de producto listas para enviar a interesados",
+              "No dar seguimiento después del lanzamiento, perdiendo momentum",
+              "No medir resultados, repitiendo errores en futuros lanzamientos"
+            ],
+            "tip": "Para lanzamiento de marca de cacao orgánico en Colombia, el presupuesto típico es: 1) Evento de lanzamiento (presencial o virtual): $3.000.000-$8.000.000 COP incluyendo venue, catering, degustación, presentación, 2) Kit de medios y muestras: $2.000.000-$4.000.000 COP (50-100 kits con producto, catálogo, historia de marca), 3) Campaña digital: $1.500.000-$3.000.000 COP en LinkedIn y email marketing, 4) Relaciones públicas: $2.000.000-$5.000.000 COP si contratas agencia. Total: $8.500.000-$20.000.000 COP. Objetivos realistas: contactar 50-100 compradores potenciales, lograr 5-10 menciones en medios especializados, generar 500-1000 seguidores en redes, recibir 20-50 solicitudes de información. Cronograma: 3 meses de preparación, 1 semana de lanzamiento intensivo, 2 meses de seguimiento post-lanzamiento.",
+            "recommendedTools": [
+              {
+                "name": "Mailchimp - Email Marketing",
+                "url": "https://www.mailchimp.com",
+                "description": "Plataforma para campañas de email marketing y newsletters de lanzamiento"
+              },
+              {
+                "name": "LinkedIn Campaign Manager",
+                "url": "https://www.linkedin.com",
+                "description": "Herramienta para campañas publicitarias dirigidas a compradores B2B"
+              },
+              {
+                "name": "Eventbrite - Gestión de Eventos",
+                "url": "https://www.eventbrite.com",
+                "description": "Plataforma para organizar y promover evento de lanzamiento"
+              },
+              {
+                "name": "HARO - Relaciones Públicas",
+                "url": "https://www.helpareporter.com",
+                "description": "Servicio para conectar con periodistas y medios especializados"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "launch-date",
+                "label": "Fecha de Lanzamiento de la Marca",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "launch-objectives_defined",
+                "label": "¿Objetivos de Lanzamiento Definidos y Medibles?",
+                "type": "multiselect",
+                "options": [
+                  "Número de compradores a contactar",
+                  "Menciones en medios especializados",
+                  "Seguidores en redes sociales",
+                  "Solicitudes de información recibidas",
+                  "Muestras enviadas",
+                  "Ventas generadas en primer mes"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "target-buyers-contacted",
+                "label": "Número de Compradores Potenciales Contactados",
+                "type": "number",
+                "placeholder": "75",
+                "required": true
+              },
+              {
+                "fieldId": "media-mentions_achieved",
+                "label": "Número de Menciones en Medios Logradas",
+                "type": "number",
+                "placeholder": "8",
+                "required": true
+              },
+              {
+                "fieldId": "social-followers_gained",
+                "label": "Seguidores Ganados en Redes Sociales",
+                "type": "number",
+                "placeholder": "750",
+                "required": true
+              },
+              {
+                "fieldId": "information-requests_received",
+                "label": "Solicitudes de Información Recibidas",
+                "type": "number",
+                "placeholder": "35",
+                "required": true
+              },
+              {
+                "fieldId": "samples-sent_launch",
+                "label": "Muestras de Producto Enviadas durante Lanzamiento",
+                "type": "number",
+                "placeholder": "40",
+                "required": true
+              },
+              {
+                "fieldId": "launch-event_held",
+                "label": "¿Evento de Lanzamiento Realizado?",
+                "type": "select",
+                "options": ["Sí, presencial", "Sí, virtual", "Sí, híbrido", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "event-attendees_count",
+                "label": "Número de Asistentes al Evento",
+                "type": "number",
+                "placeholder": "60",
+                "required": false
+              },
+              {
+                "fieldId": "press-kit_created",
+                "label": "¿Kit de Medios (Press Kit) Creado?",
+                "type": "select",
+                "options": ["Sí, profesional", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "press-release_distributed",
+                "label": "¿Comunicado de Prensa Distribuido?",
+                "type": "select",
+                "options": ["Sí, a medios especializados", "Sí, general", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "digital-campaign_launched",
+                "label": "¿Campaña Digital de Lanzamiento Ejecutada?",
+                "type": "multiselect",
+                "options": [
+                  "LinkedIn Ads",
+                  "Email marketing",
+                  "Instagram/Facebook Ads",
+                  "Google Ads",
+                  "Contenido orgánico en redes"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "launch-budget_total",
+                "label": "Presupuesto Total de Lanzamiento (COP)",
+                "type": "number",
+                "placeholder": "15000000",
+                "required": true
+              },
+              {
+                "fieldId": "launch-roi_calculated",
+                "label": "¿ROI del Lanzamiento Calculado?",
+                "type": "select",
+                "options": ["Sí, detallado", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "post-launch-followup_implemented",
+                "label": "¿Seguimiento Post-Lanzamiento Implementado?",
+                "type": "select",
+                "options": ["Sí, sistemático", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "launch-report_url",
+                "label": "Enlace a Reporte de Resultados del Lanzamiento",
+                "type": "url",
+                "placeholder": "https://docs.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Definir fecha objetivo de lanzamiento (3-6 meses de preparación)",
+            "Establecer objetivos medibles (compradores, menciones, seguidores, solicitudes)",
+            "Crear lista de invitados estratégicos (compradores, medios, influencers)",
+            "Desarrollar comunicado de prensa profesional en español e inglés",
+            "Crear kit de medios con información completa de la marca",
+            "Preparar muestras de producto listas para enviar (50-100 unidades)",
+            "Organizar evento de lanzamiento (presencial, virtual o híbrido)",
+            "Coordinar degustación y presentación en el evento",
+            "Contactar medios especializados en chocolate, cacao y alimentos orgánicos",
+            "Diseñar y ejecutar campaña digital en LinkedIn y email marketing",
+            "Publicar contenido de lanzamiento simultáneamente en todos los canales",
+            "Dar seguimiento personalizado a cada comprador contactado",
+            "Monitorear menciones en medios y redes sociales",
+            "Medir resultados vs objetivos definidos",
+            "Calcular ROI del lanzamiento (inversión vs oportunidades generadas)",
+            "Documentar lecciones aprendidas para futuros lanzamientos",
+            "Implementar seguimiento post-lanzamiento por 2 meses"
+          ]
+        }
+      ]
+    }
+  ]
+}

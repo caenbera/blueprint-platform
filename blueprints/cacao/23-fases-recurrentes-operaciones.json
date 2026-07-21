@@ -1,0 +1,390 @@
+{
+  "block": "operations",
+  "blockTitle": "Operaciones",
+  "phases": [
+    {
+      "phaseId": "infrastructure-equipment-inputs-management",
+      "phaseTitle": "Mantenimiento de Infraestructura, Equipos y Gestión de Insumos",
+      "steps": [
+        {
+          "stepId": "benefit-infrastructure-maintenance",
+          "stepTitle": "Limpieza y Mantenimiento de Infraestructura de Beneficio",
+          "guide": {
+            "whyItMatters": "Las áreas de fermentación y secado son el corazón de la calidad. Los residuos de cacao viejo en las cajas de fermentación se pudren, generando moscas de la fruta y hongos que contaminan los lotes nuevos. En los secaderos, el polvo o los restos de granos anteriores pueden albergar ácaros u hongos toxigénicos. Además, la certificación orgánica prohíbe el uso de detergentes químicos o cloro en estas áreas, ya que matan la microbiología nativa necesaria para la fermentación y contaminan el producto.",
+            "bestPractices": [
+              "Limpia las cajas de fermentación con agua potable a presión y escobillas de cerdas duras entre cada lote",
+              "NUNCA uses jabón, detergente o cloro en las cajas de fermentación (mata las levaduras nativas y contamina el cacao)",
+              "Deja secar las cajas al sol directamente (los rayos UV desinfectan naturalmente) antes de ingresar el nuevo lote",
+              "Limpia las mallas de los secaderos con un paño húmedo (solo agua) al final de cada semana para quitar polvo y restos de mucílago",
+              "Revisa semanalmente el estado de los techos, canoas y canaletas para asegurar que no haya goteras hacia el cacao",
+              "Mantén el área de acopio y beneficio libre de maleza, basura y criaderos de animales en un radio de 10 metros"
+            ],
+            "commonMistakes": [
+              "Usar cloro o detergentes químicos para 'desinfectar' las cajas, arruinando el perfil de sabor del siguiente lote",
+              "Dejar las cajas húmedas y cerrarlas, generando proliferación de bacterias anaeróbicas putrefactivas",
+              "No limpiar las mallas del secadero, acumulando polvo que se mezcla con el grano húmedo",
+              "Permitir que el agua de lluvia caiga directamente sobre el cacao en fermentación o secado por canaletas obstruidas",
+              "Almacenar herramientas, combustible o insumos dentro de la misma sala de secado o fermentación"
+            ],
+            "tip": "El 'descanso' de las cajas es tan importante como su uso. Si es posible, rota el uso de tus cajas (ej. si tienes 5, usa 4 y deja 1 en limpieza y secado al sol por 48 horas). Para desinfectar las mallas del secadero, usa una solución de vinagre blanco diluido en agua (5%) si hay presencia de hongos; el vinagre es aprobado en agricultura orgánica y no deja residuos tóxicos. Asegúrate de enjuagar con agua limpia después.",
+            "recommendedTools": [
+              {
+                "name": "Escobillas de Cerdas Duras y Hidrolavadora (Opcional)",
+                "url": "https://www.google.com",
+                "description": "Para remover mecánicamente los restos de mucílago y cáscaras pegadas en las cajas"
+              },
+              {
+                "name": "Paños de Microfibra y Solución de Vinagre (5%)",
+                "url": "https://www.google.com",
+                "description": "Para limpieza suave de mallas de secado y superficies de contacto"
+              },
+              {
+                "name": "Silicona Antihongos (Grado Alimentario)",
+                "url": "https://www.google.com",
+                "description": "Para sellar grietas en las cajas de madera donde se acumula humedad y suciedad"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "maintenance-date",
+                "label": "Fecha del Mantenimiento",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "area-cleaned",
+                "label": "Área o Equipo Mantenido",
+                "type": "select",
+                "options": [
+                  "Caja de Fermentación #1",
+                  "Caja de Fermentación #2",
+                  "Caja de Fermentación #3",
+                  "Mallas del Secadero Solar",
+                  "Bandejas de Pre-secado",
+                  "Canaletas y Techos",
+                  "Patio / Área de Acopio"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "maintenance-type",
+                "label": "Tipo de Mantenimiento Realizado",
+                "type": "multiselect",
+                "options": [
+                  "Limpieza profunda con agua",
+                  "Limpieza con solución de vinagre",
+                  "Reparación estructural (madera/malla)",
+                  "Despeje de canaletas/techos",
+                  "Control de maleza periférica"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "chemicals-used",
+                "label": "¿Se utilizó algún producto de limpieza?",
+                "type": "select",
+                "options": [
+                  "Solo agua potable",
+                  "Vinagre blanco diluido (Aprobado orgánico)",
+                  "Ácido cítrico (Aprobado orgánico)",
+                  "Ninguno (Limpieza en seco)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "sun-drying-time-hours",
+                "label": "Horas de Secado al Sol Post-Limpieza",
+                "type": "number",
+                "placeholder": "48",
+                "required": true
+              },
+              {
+                "fieldId": "structural-issues-found",
+                "label": "¿Se encontraron daños estructurales (goteras, tablas podridas)?",
+                "type": "select",
+                "options": ["No, todo en buen estado", "Sí, reparados en el momento", "Sí, requieren reparación mayor"],
+                "required": true
+              },
+              {
+                "fieldId": "labor-hours-invested",
+                "label": "Horas-Hombre Invertidas en el Mantenimiento",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              },
+              {
+                "fieldId": "responsible-name",
+                "label": "Nombre del Responsable del Mantenimiento",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Inspeccionar el área de beneficio (cajas, secaderos, patios) antes de iniciar",
+            "Retirar manualmente todos los residuos de cacao viejo, cáscaras o basura",
+            "Lavar las cajas de fermentación con agua a presión y escobillas (sin químicos)",
+            "Aplicar solución de vinagre diluido en mallas si hay presencia de hongos o polvo pegado",
+            "Dejar las cajas y equipos secar completamente al sol (mínimo 24-48 horas)",
+            "Reparar o sellar cualquier grieta, tabla podrida o malla rota encontrada",
+            "Despejar canaletas y techos para asegurar que no habrá goteras sobre el cacao",
+            "Cortar la maleza en un radio de 10 metros alrededor del área de beneficio",
+            "Verificar que no haya herramientas, combustibles o insumos almacenados en el área",
+            "Registrar el mantenimiento, horas invertidas y estado final en el sistema"
+          ]
+        },
+        {
+          "stepId": "tools-equipment-maintenance",
+          "stepTitle": "Mantenimiento, Afilado y Calibración de Herramientas y Equipos",
+          "guide": {
+            "whyItMatters": "Un machete desafilado desgarra el cojín floral del cacao, abriendo la puerta a la Escoba de Bruja y la Moniliasis. Una tijera de poda sucia transmite enfermedades de árbol en árbol. Un medidor de humedad descalibrado puede hacer que empques cacao al 8% de humedad, generando moho y rechazo en exportación. El mantenimiento preventivo de herramientas no es solo una cuestión de eficiencia, es un requisito fitosanitario y de calidad innegociable.",
+            "bestPractices": [
+              "Afila todas las herramientas de corte (machetes, tijeras, serruchos) al menos una vez al mes o antes de cada jornada de poda/cosecha",
+              "Desinfecta las herramientas de poda con alcohol al 70% o flameado entre CADA árbol enfermo y uno sano",
+              "Aplica aceite mineral o vegetal en las hojas de las herramientas después de limpiarlas para evitar oxidación",
+              "Calibra el medidor de humedad digital mensualmente usando muestras de referencia o agua destilada",
+              "Limpia los sensores del medidor de humedad con un paño suave y seco; NUNCA uses agua ni cepillos metálicos",
+              "Inventario y revisa el estado de las básculas periódicamente para asegurar que no hayan perdido el calibrado"
+            ],
+            "commonMistakes": [
+              "Dejar las herramientas tiradas en el campo bajo la lluvia, oxidándose y perdiendo el filo",
+              "Usar limas o piedras de afilar sucias que dejan residuos de metal en las hojas",
+              "Sumergir el medidor de humedad en agua o usarlo con las manos llenas de mucílago, arruinando los sensores",
+              "No desinfectar las tijeras de poda, asumiendo que 'se limpian solas' con el uso",
+              "Guardar las herramientas sin aplicar una capa protectora de aceite, generando óxido profundo"
+            ],
+            "tip": "Para afilar un machete de cacao correctamente, usa una piedra de afilar mojada con agua, manteniendo un ángulo de 20-25 grados. El filo debe ser como el de un cuchillo de cocina, no un hacha. Para el medidor de humedad, guárdalo siempre en su estuche con las bolsitas de sílice gel (desecante). Si notas que las lecturas son erráticas o muy variables con el mismo grano, es hora de enviarlo al servicio técnico para recalibración anual.",
+            "recommendedTools": [
+              {
+                "name": "Piedra de Afilar (Grano medio y fino)",
+                "url": "https://www.google.com",
+                "description": "Para mantener el filo de machetes y cuchillos sin dañar el acero"
+              },
+              {
+                "name": "Aceite Mineral o Vegetal",
+                "url": "https://www.google.com",
+                "description": "Para lubricar y proteger las hojas de herramientas contra la oxidación"
+              },
+              {
+                "name": "Alcohol Isopropílico al 70% y Atomizador",
+                "url": "https://www.google.com",
+                "description": "Para desinfección rápida de tijeras de poda y superficies de equipos"
+              },
+              {
+                "name": "Kit de Calibración de Medidor de Humedad",
+                "url": "https://www.google.com",
+                "description": "Soluciones o muestras de referencia para verificar la precisión del equipo"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "maintenance-date",
+                "label": "Fecha del Mantenimiento",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "tool-or-equipment-name",
+                "label": "Nombre de la Herramienta o Equipo",
+                "type": "select",
+                "options": [
+                  "Machete de Cosecha",
+                  "Tijera de Poda / Serrucho",
+                  "Medidor de Humedad Digital",
+                  "Báscula de Plataforma",
+                  "Termómetro de Sonda (Fermentación)",
+                  "Mochila Pulverizadora"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "maintenance-type",
+                "label": "Tipo de Mantenimiento Realizado",
+                "type": "multiselect",
+                "options": [
+                  "Limpieza general",
+                  "Afilado de corte",
+                  "Desinfección (Alcohol/Flameado)",
+                  "Lubricación (Aceite)",
+                  "Calibración",
+                  "Reparación física"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "condition-before",
+                "label": "Estado Previo al Mantenimiento",
+                "type": "select",
+                "options": ["Bueno", "Regular (Requería atención)", "Malo (Dañado/Desafilado)"],
+                "required": true
+              },
+              {
+                "fieldId": "condition-after",
+                "label": "Estado Posterior al Mantenimiento",
+                "type": "select",
+                "options": ["Excelente / Como nuevo", "Bueno / Operativo", "Requiere reemplazo pronto"],
+                "required": true
+              },
+              {
+                "fieldId": "calibration-result",
+                "label": "Resultado de Calibración (Si aplica)",
+                "type": "select",
+                "options": ["Precisión correcta", "Requirió ajuste", "No aplica / No calibrado"],
+                "required": false
+              },
+              {
+                "fieldId": "responsible-name",
+                "label": "Nombre de quien realizó el mantenimiento",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Reunir todas las herramientas y equipos que requieren mantenimiento",
+            "Limpieza general de tierra, mucílago o residuos de cacao",
+            "Afilar las hojas de corte (machetes, tijeras) con piedra de afilar",
+            "Desinfectar tijeras y superficies con alcohol al 70%",
+            "Aplicar una capa fina de aceite mineral/vegetal para proteger contra el óxido",
+            "Si es un equipo de medición (humedad, báscula), realizar el proceso de calibración",
+            "Verificar que los sensores del medidor de humedad estén limpios y secos",
+            "Almacenar las herramientas en un lugar seco, seguro y organizado",
+            "Registrar el estado antes/después y cualquier necesidad de reemplazo",
+            "Actualizar el inventario de herramientas de la finca"
+          ]
+        },
+        {
+          "stepId": "organic-inputs-traceability",
+          "stepTitle": "Recepción, Almacenamiento y Trazabilidad de Insumos Orgánicos",
+          "guide": {
+            "whyItMatters": "La certificación orgánica exige que demuestres que NINGÚN insumo químico sintético ha entrado a tu finca. Cada saco de compost, cada litro de biol y cada biocontrol debe estar respaldado por su certificado orgánico y registrado en el 'Cuaderno de Campo'. Si el auditor encuentra un saco de fertilizante químico (aunque sea para uso personal o de un vecino) en tu bodega, perderás la certificación inmediatamente. La gestión de insumos es tu escudo legal ante la auditoría.",
+            "bestPractices": [
+              "Designa una bodega exclusiva para insumos orgánicos, claramente identificada y separada de combustibles o herramientas",
+              "Exige a tu proveedor el Certificado de Aptitud para Agricultura Orgánica de CADA lote de insumo que compres",
+              "Implementa el sistema FIFO (First In, First Out) para usar primero los insumos más antiguos",
+              "Lleva un 'Kardex' o inventario digital donde cruces: Fecha de compra, Lote del insumo, Cantidad y Fecha de aplicación en campo",
+              "Almacena los bioinsumos líquidos (biol, trichoderma) en lugares frescos y oscuros para no matar los microorganismos",
+              "Archiva en una carpeta física y digital todas las facturas y certificados orgánicos de los proveedores"
+            ],
+            "commonMistakes": [
+              "Comprar insumos orgánicos a proveedores informales que no pueden emitir certificado de aptitud orgánica",
+              "Almacenar insumos orgánicos en la misma bodega donde se guarda gasolina, aceite de motor o herraduras",
+              "Dejar los bioinsumos biológicos (hongos/bacterias) al sol o en zonas calientes, matando el principio activo",
+              "No registrar el número de lote del insumo en el cuaderno de campo al momento de aplicarlo",
+              "Perder las facturas o certificados, haciendo imposible demostrar el origen del insumo al auditor"
+            ],
+            "tip": "Crea una 'Carpeta Maestra de Insumos' (física y en la nube). Debe tener una pestaña por cada proveedor, con su certificado vigente, y una hoja de cálculo donde registres cada entrada y salida. Cuando el auditor te pida: 'Muéstrame el respaldo de la aplicación de Trichoderma del 15 de octubre en la Parcela 4', tú debes poder mostrar en 30 segundos: 1) La ficha de aplicación, 2) La factura de compra, 3) El certificado orgánico del lote de ese Trichoderma. Esa es la trazabilidad de oro.",
+            "recommendedTools": [
+              {
+                "name": "Estanterías Metálicas y Pallets Plásticos",
+                "url": "https://www.google.com",
+                "description": "Para almacenar insumos elevados del suelo, evitando humedad y contaminación"
+              },
+              {
+                "name": "Software de Inventarios o Excel Avanzado (Kardex)",
+                "url": "https://www.google.com",
+                "description": "Para controlar entradas, salidas y lotes de insumos en tiempo real"
+              },
+              {
+                "name": "Carpeta Maestra de Certificaciones (Física y Nube)",
+                "url": "https://www.google.com",
+                "description": "Archivo exclusivo para facturas y certificados de aptitud orgánica de proveedores"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "transaction-date",
+                "label": "Fecha de Recepción o Salida del Insumo",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "transaction-type",
+                "label": "Tipo de Movimiento",
+                "type": "select",
+                "options": ["Recepción (Compra)", "Salida (Aplicación en campo)", "Devolución / Merma"],
+                "required": true
+              },
+              {
+                "fieldId": "input-name",
+                "label": "Nombre del Insumo",
+                "type": "text",
+                "placeholder": "Ej: Trichoderma harzianum, Biol de pulpa",
+                "required": true
+              },
+              {
+                "fieldId": "input-batch-number",
+                "label": "Número de Lote del Insumo (Según Proveedor)",
+                "type": "text",
+                "placeholder": "Ej: Lote TH-2023-09",
+                "required": true
+              },
+              {
+                "fieldId": "quantity",
+                "label": "Cantidad (kg o litros)",
+                "type": "number",
+                "placeholder": "50",
+                "required": true
+              },
+              {
+                "fieldId": "supplier-name",
+                "label": "Nombre del Proveedor",
+                "type": "text",
+                "placeholder": "Nombre de la empresa o persona",
+                "required": true
+              },
+              {
+                "fieldId": "organic-certificate-on-file",
+                "label": "¿Certificado de Aptitud Orgánica del Proveedor Vigente?",
+                "type": "select",
+                "options": ["Sí, archivado en carpeta maestra", "Sí, pero vencido (Requiere actualización)", "No solicitado"],
+                "required": true
+              },
+              {
+                "fieldId": "storage-location",
+                "label": "Ubicación en Bodega de Insumos",
+                "type": "text",
+                "placeholder": "Ej: Estante 2 - Estante superior",
+                "required": false
+              },
+              {
+                "fieldId": "destination-plot",
+                "label": "Parcela de Destino (Si es salida para aplicación)",
+                "type": "text",
+                "placeholder": "Ej: Parcela 4",
+                "required": false
+              },
+              {
+                "fieldId": "invoice-or-doc-url",
+                "label": "Enlace a Factura o Soporte Digital (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Recibir el insumo y verificar que el empaque esté íntegro y bien rotulado",
+            "Solicitar y archivar el Certificado de Aptitud Orgánica y la factura de compra",
+            "Verificar el número de lote del insumo contra la documentación del proveedor",
+            "Trasladar el insumo a la bodega exclusiva, sobre pallets y lejos de químicos no orgánicos",
+            "Si es un bioinsumo vivo, verificar que se haya mantenido en condiciones de frescura",
+            "Registrar la entrada en el Kardex o sistema de inventarios",
+            "Al momento de la aplicación, registrar la salida, el lote usado y la parcela de destino",
+            "Cruzar la información con el Cuaderno de Campo para asegurar trazabilidad total",
+            "Aplicar el sistema FIFO, moviendo los lotes más antiguos al frente",
+            "Realizar inventario físico mensual para detectar mermas o vencimientos"
+          ]
+        }
+      ]
+    }
+  ]
+}

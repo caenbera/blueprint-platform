@@ -1,0 +1,360 @@
+{
+  "block": "operations",
+  "blockTitle": "Operaciones",
+  "phases": [
+    {
+      "phaseId": "post-harvest-fermentation-drying",
+      "phaseTitle": "Procesamiento Post-Cosecha: Fermentación y Secado Controlado",
+      "steps": [
+        {
+          "stepId": "fermentation-daily-management",
+          "stepTitle": "Gestión Diaria de la Fermentación (Volteos y Temperatura)",
+          "guide": {
+            "whyItMatters": "La fermentación es el proceso bioquímico donde se desarrollan los precursores del sabor y aroma del chocolate. Sin un control estricto de la temperatura y el oxígeno (mediante volteos), la fermentación puede ser incompleta (granos ácidos/astringentes) o excesiva (granos con sabor a quemado o amoniaco). Además, es la fase donde se asegura la muerte del germen, evitando que el grano germine durante el almacenamiento.",
+            "bestPractices": [
+              "Sigue un calendario estricto de volteos: Días 1-2 (sin voltear, fase anaeróbica), Día 3 (primer volteo, introduciendo oxígeno), Días 4-5 (volteos diarios para aerar y homogenizar).",
+              "Monitorea la temperatura dos veces al día (mañana y tarde). La curva ideal sube gradualmente hasta 45-52°C y se mantiene estable.",
+              "Mantén la caja siempre cubierta con costales de yute limpios o tapas de madera para retener el calor y la humedad.",
+              "Al voltear, mueve los granos de los bordes (más fríos) hacia el centro (más calientes) para asegurar una fermentación uniforme.",
+              "Si la temperatura baja de 40°C antes del día 4, la fermentación se detendrá; aísla mejor la caja o traslada el cacao a una caja más pequeña.",
+              "La duración total depende de la variedad: Trinitario/CCN-51 (5-6 días), Criollo (3-4 días para no perder sutileza)."
+            ],
+            "commonMistakes": [
+              "Voltear el cacao el primer y segundo día, interrumpiendo la fase anaeróbica crítica.",
+              "Dejar la caja destapada, perdiendo calor y secando la masa prematuramente.",
+              "No medir la temperatura, dependiendo solo de la 'experiencia' sin datos objetivos.",
+              "Mezclar cacao de diferentes días de cosecha en la misma caja sin calcular el volumen mínimo requerido.",
+              "Detener la fermentación antes de tiempo por prisa en el secado, resultando en granos 'pizarra' (no fermentados)."
+            ],
+            "tip": "El volumen mínimo para que una caja de fermentación genere su propio calor es de 150-200 kg de grano húmedo (baba). Si tienes menos cantidad, usa una caja más pequeña o acumula cosecha por 48 horas antes de iniciar. Para medir la temperatura, introduce el termómetro de sonda larga en el centro de la masa, a unos 30 cm de profundidad, y déjalo 2 minutos antes de leer.",
+            "recommendedTools": [
+              {
+                "name": "Termómetro de Sonda Larga (50 cm)",
+                "url": "https://www.google.com",
+                "description": "Para medir la temperatura interna de la masa de cacao sin dañar los granos"
+              },
+              {
+                "name": "Palas de Madera o Plástico Alimentario",
+                "url": "https://www.google.com",
+                "description": "Herramientas para el volteo manual, evitando el uso de metal que pueda oxidar o dañar granos"
+              },
+              {
+                "name": "Costales de Yute Limpios o Tapas Aislantes",
+                "url": "https://www.google.com",
+                "description": "Para cubrir la masa, permitiendo transpiración pero reteniendo calor"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "date",
+                "label": "Fecha del Registro",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "batch-code",
+                "label": "Código de Lote en Fermentación",
+                "type": "text",
+                "placeholder": "Ej: L-231025-P4",
+                "required": true
+              },
+              {
+                "fieldId": "fermentation-day",
+                "label": "Día de Fermentación (1 a 6)",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "max-temperature-celsius",
+                "label": "Temperatura Máxima Registrada (°C)",
+                "type": "number",
+                "placeholder": "48",
+                "required": true
+              },
+              {
+                "fieldId": "min-temperature-celsius",
+                "label": "Temperatura Mínima Registrada (°C)",
+                "type": "number",
+                "placeholder": "42",
+                "required": true
+              },
+              {
+                "fieldId": "turning-performed",
+                "label": "¿Se Realizó Volteo el Día de Hoy?",
+                "type": "select",
+                "options": ["Sí", "No (Fase anaeróbica)", "No (Otro motivo)"],
+                "required": true
+              },
+              {
+                "fieldId": "turning-time",
+                "label": "Hora del Volteo",
+                "type": "text",
+                "placeholder": "Ej: 10:30 AM",
+                "required": false
+              },
+              {
+                "fieldId": "observations",
+                "label": "Observaciones (Color, olor, estado de los costales)",
+                "type": "textarea",
+                "placeholder": "Ej: Olor alcohólico fuerte al destapar, color de grano cambiando a marrón.",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Medir la temperatura máxima y mínima de la masa de cacao",
+            "Registrar el día exacto del proceso de fermentación",
+            "Realizar el volteo según el calendario establecido (ej. día 3, 4 y 5)",
+            "Mezclar los granos de los bordes hacia el centro para homogenizar",
+            "Cubrir la caja con costales o tapas adecuadas inmediatamente tras el volteo",
+            "Verificar que no haya exceso de líquido (lixiviados) estancado en el fondo",
+            "Registrar todos los datos (temperatura, volteo, observaciones) en el sistema"
+          ]
+        },
+        {
+          "stepId": "drying-monitoring-control",
+          "stepTitle": "Monitoreo y Control del Proceso de Secado",
+          "guide": {
+            "whyItMatters": "El secado detiene la fermentación y reduce la humedad del grano del 60% al 7% óptimo para su almacenamiento. Un secado mal manejado arruina meses de trabajo: secar muy rápido con calor extremo 'fija' el ácido y genera sabor a humo; secar muy lento o a la intemperie nocturna permite el crecimiento de mohos (ocratoxina) y la absorción de humedad ambiental, rechazando el lote para exportación.",
+            "bestPractices": [
+              "Fase 1 (Pre-secado, días 1-3): Capas delgadas (3-5 cm), volteo cada 2 horas. El grano aún está húmedo y la cáscara es blanda.",
+              "Fase 2 (Secado medio, días 4-6): Aumenta el espesor a 5-8 cm, voltea cada 4 horas. La cáscara empieza a crujir.",
+              "Fase 3 (Secado final, días 7-10): Capas de 8-10 cm, voltea 2 veces al día. La cáscara es frágil y se rompe fácilmente.",
+              "Nunca seques el cacao directamente sobre el suelo (tierra, concreto). Usa camas elevadas (camas africanas, marquesinas) con malla.",
+              "Protege el cacao del rocío nocturno y la lluvia. Debe entrar a bodega o cubrirse con lonas cada tarde a las 4:00 PM.",
+              "La meta es un secado lento y uniforme. La humedad final debe estar estrictamente entre 6.5% y 7.5%."
+            ],
+            "commonMistakes": [
+              "Exponer el cacao a humo de leña o estufas directas, contaminando el sabor (defecto grave en cata).",
+              "Dejar el cacao extendido en el patio toda la noche, absorbiendo la humedad del rocío.",
+              "Voltear con rastrillos metálicos agresivos que rompen los granos secos (grano quebrado).",
+              "Empacar el cacao con humedad superior al 7.5%, generando moho interno en los sacos.",
+              "Mezclar cacao de diferentes niveles de humedad en el mismo saco al final del proceso."
+            ],
+            "tip": "Si no tienes secadero solar (marquesina), el secado al sol directo en patios de cemento o madera requiere entre 8 y 12 días dependiendo del clima. La prueba empírica de 'mordida': si muerdes un grano y se parte limpiamente sin pegarse a los dientes, está cerca del 7%. Sin embargo, para exportación, exige el uso de un medidor de humedad digital calibrado. Si llueve, ten siempre el protocolo de 'emergencia de lonas' listo; el cacao no puede mojarse una vez iniciada la fase 2.",
+            "recommendedTools": [
+              {
+                "name": "Medidor de Humedad de Granos Digital",
+                "url": "https://www.google.com",
+                "description": "Equipo calibrado específicamente para cacao, lectura precisa al 0.1%"
+              },
+              {
+                "name": "Rastrillos de Madera o Plástico de Dientes Flexibles",
+                "url": "https://www.google.com",
+                "description": "Para voltear el cacao sin romper los granos en las fases finales"
+              },
+              {
+                "name": "Lonas de Polietileno Opacas o Translúcidas",
+                "url": "https://www.google.com",
+                "description": "Para cubrir rápidamente el cacao en caso de lluvia inesperada"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "date",
+                "label": "Fecha del Registro",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "batch-code",
+                "label": "Código de Lote en Secado",
+                "type": "text",
+                "placeholder": "Ej: L-231025-P4",
+                "required": true
+              },
+              {
+                "fieldId": "drying-day",
+                "label": "Día de Secado (1 a 10+)",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "current-moisture-percentage",
+                "label": "Humedad Actual del Grano (%)",
+                "type": "number",
+                "placeholder": "12.5",
+                "required": true
+              },
+              {
+                "fieldId": "weather-conditions",
+                "label": "Condiciones Climáticas del Día",
+                "type": "select",
+                "options": ["Soleado / Alta radiación", "Nublado / Seco", "Llovizna / Húmedo", "Lluvia (Secado detenido)"],
+                "required": true
+              },
+              {
+                "fieldId": "turning-performed",
+                "label": "¿Se Realizó Volteo el Día de Hoy?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "night-protection-applied",
+                "label": "¿Se protegió el cacao contra el rocío nocturno?",
+                "type": "select",
+                "options": ["Sí, se metió a bodega", "Sí, se cubrió con lonas", "No aplica (Secadero cerrado)"],
+                "required": true
+              },
+              {
+                "fieldId": "observations",
+                "label": "Observaciones (Estado de la cáscara, color)",
+                "type": "textarea",
+                "placeholder": "Ej: Cáscara ya cruje al presionar, color marrón oscuro uniforme.",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Verificar el pronóstico del clima y preparar lonas o techos",
+            "Extender el cacao en el espesor de capa adecuado según la fase de secado",
+            "Medir la humedad actual del grano con el medidor digital",
+            "Realizar el volteo con rastrillos suaves para asegurar secado uniforme",
+            "Retirar manualmente cualquier grano compactado o con moho visible",
+            "Cubrir el cacao o trasladarlo a bodega al caer la tarde (4:00 PM)",
+            "Registrar el avance del secado, humedad y condiciones en el sistema"
+          ]
+        },
+        {
+          "stepId": "final-grading-packaging",
+          "stepTitle": "Clasificación Final, Pesaje y Empaque de Cacao Seco",
+          "guide": {
+            "whyItMatters": "Esta es la última barrera de control de calidad antes de que el cacao vaya a la bodega o al cliente. Un lote con exceso de impurezas, granos mohosos o humedad incorrecta será rechazado por el comprador, generando pérdidas logísticas y daño reputacional. Una clasificación y empaque rigurosos garantizan que el producto cumpla con los estándares internacionales (ej. Norma ICCO o requisitos FDA/UE).",
+            "bestPractices": [
+              "Reposa el cacao seco: Una vez alcanzado el 7% de humedad, deja el cacao 'reposar' en la bodega por 48-72 horas antes de empacarlo para que la humedad se homogenice.",
+              "Pasa el cacao por zarandas (tamices) para eliminar tierra, piedras, palos y granos muy pequeños.",
+              "Realiza una selección manual (o con mesa densimétrica) para retirar granos con defectos (moho, insecto, germinados, pizarra).",
+              "Realiza la 'Prueba de Corte' (Cut Test) tomando una muestra de 100 granos al azar para verificar el porcentaje de fermentación y defectos internos.",
+              "Pesa los sacos exactamente (ej. 60 kg netos) y utiliza bolsas de polipropileno o yute con liner interior.",
+              "Etiqueta cada saco con: Código de Lote, Peso Net, Fecha de Empaque y 'Cacao Orgánico'."
+            ],
+            "commonMistakes": [
+              "Empacar el cacao inmediatamente después de secarlo sin el periodo de reposo (humedad desigual).",
+              "Omitir el zarandeo, enviando tierra y piedras que contaminan el lote y generan rechazo.",
+              "No hacer la prueba de corte, asumiendo que si por fuera se ve bien, por dentro también.",
+              "Usar sacos sucios o que previamente contuvieron fertilizantes o productos químicos.",
+              "Sobrepesar los sacos (ej. 65 kg en un saco de 60 kg), generando pérdidas financieras silenciosas."
+            ],
+            "tip": "La 'Prueba de Corte' es el estándar de oro. Toma 300 granos al azar de diferentes partes del lote. De esos, selecciona 100 granos enteros y córtalos longitudinalmente. Cuenta cuántos están bien fermentados (color marrón uniforme), cuántos son defecto (moho, insecto, pizarra, germinado) y cuántos no fermentados (color pizarra/gris). Para cacao fino de aroma, el estándar exige mínimo 80-85% de granos bien fermentados y menos del 5% de defectos totales. Si no pasa la prueba, el lote debe ser degradado a calidad corriente o reprocesado.",
+            "recommendedTools": [
+              {
+                "name": "Zarandas / Tamices de Diferentes Calibres",
+                "url": "https://www.google.com",
+                "description": "Para separar impurezas, polvo y granos pequeños (menudos)"
+              },
+              {
+                "name": "Mesa de Selección o Bandejas Limpias",
+                "url": "https://www.google.com",
+                "description": "Superficie limpia e iluminada para la clasificación manual de granos"
+              },
+              {
+                "name": "Cuchillo de Acero Inoxidable para Cut Test",
+                "url": "https://www.google.com",
+                "description": "Filo recto para partir los granos longitudinalmente sin pulverizarlos"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "date",
+                "label": "Fecha de Clasificación y Empaque",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "batch-code",
+                "label": "Código de Lote Final",
+                "type": "text",
+                "placeholder": "Ej: L-231025-P4",
+                "required": true
+              },
+              {
+                "fieldId": "final-weight-kg",
+                "label": "Peso Neto Total del Lote Seco (kg)",
+                "type": "number",
+                "placeholder": "120",
+                "required": true
+              },
+              {
+                "fieldId": "final-moisture-percentage",
+                "label": "Humedad Final Empacada (%)",
+                "type": "number",
+                "placeholder": "7.0",
+                "required": true
+              },
+              {
+                "fieldId": "sieve-size-used",
+                "label": "Calibre de Zaranda Utilizado para Limpieza",
+                "type": "select",
+                "options": ["Zaranda Gruesa (Piedras/Palos)", "Zaranda Media (Menudos)", "Zaranda Fina (Polvo)", "Combinada / No aplicada"],
+                "required": true
+              },
+              {
+                "fieldId": "cut-test-fermentation-rate",
+                "label": "Porcentaje de Granos Bien Fermentados en Cut Test (%)",
+                "type": "number",
+                "placeholder": "88",
+                "required": true
+              },
+              {
+                "fieldId": "defect-percentage-visual",
+                "label": "Porcentaje de Defectos Visuales Totales (%)",
+                "type": "number",
+                "placeholder": "2.5",
+                "required": true
+              },
+              {
+                "fieldId": "number-of-bags-packed",
+                "label": "Número de Sacos/Bolsas Empacadas",
+                "type": "number",
+                "placeholder": "2",
+                "required": true
+              },
+              {
+                "fieldId": "storage-bag-ids",
+                "label": "Identificación de los Sacos (Ej. Saco 1, Saco 2)",
+                "type": "text",
+                "placeholder": "Ej: L-231025-P4-01, L-231025-P4-02",
+                "required": true
+              },
+              {
+                "fieldId": "quality-status",
+                "label": "Estado de Calidad del Lote",
+                "type": "select",
+                "options": ["Aprobado (Grado 1 / Exportación)", "Aprobado (Grado 2 / Nacional)", "Rechazado (Requiere reproceso)", "Rechazado (Descarte)"],
+                "required": true
+              },
+              {
+                "fieldId": "storage-location",
+                "label": "Ubicación en Bodega (Pallet / Zona)",
+                "type": "text",
+                "placeholder": "Ej: Pallet A - Fila 2",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Dejar reposar el cacao seco por 48-72 horas para homogenizar humedad",
+            "Pasar el cacao por zarandas para eliminar tierra, piedras y menudos",
+            "Realizar selección manual en mesa limpia para retirar granos con defectos",
+            "Medir la humedad final con el medidor digital (asegurar entre 6.5% y 7.5%)",
+            "Tomar muestra de 100 granos y realizar la prueba de corte (Cut Test)",
+            "Contar y registrar el porcentaje de fermentación y defectos",
+            "Pesar el lote final en la báscula calibrada y registrar el peso neto",
+            "Etiquetar cada saco individualmente con el código de lote y peso",
+            "Trasladar los sacos a la bodega y colocarlos sobre pallets (nunca directo al suelo)",
+            "Actualizar el inventario de producto terminado en el sistema"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,531 @@
+{
+  "block": "customers",
+  "blockTitle": "Clientes",
+  "phases": [
+    {
+      "phaseId": "digital-showcase-online-presence",
+      "phaseTitle": "Vitrina Digital, Presencia Online y Captación de Clientes",
+      "steps": [
+        {
+          "stepId": "professional-website-catalog",
+          "stepTitle": "Sitio Web Profesional y Catálogo Digital Bilingüe",
+          "guide": {
+            "whyItMatters": "El sitio web es tu vitrina global 24/7. Compradores internacionales, chocolateros bean-to-bar y certificadores investigan tu presencia digital antes de siquiera responder un correo. Un sitio web profesional, rápido y bilingüe (español/inglés) genera credibilidad inmediata, demuestra que eres una empresa seria y facilita que los clientes encuentren tu catálogo, certificaciones y formulario de contacto sin fricción.",
+            "bestPractices": [
+              "Desarrolla un sitio web responsivo (adaptable a móviles) con tiempos de carga inferiores a 3 segundos",
+              "Garantiza que todo el contenido esté disponible en español e inglés como mínimo",
+              "Incluye un botón de 'Solicitar Muestra' o 'Contactar' visible en todas las páginas",
+              "Crea una sección dedicada a 'Trazabilidad y Origen' con fotos y videos reales de la finca",
+              "Ofrece un catálogo digital descargable en PDF con especificaciones técnicas y precios referenciales",
+              "Instala certificado SSL (https) para garantizar seguridad y mejorar el ranking en Google",
+              "Integra un formulario de contacto que envíe alertas directas al equipo comercial"
+            ],
+            "commonMistakes": [
+              "Tener un sitio web solo en español, perdiendo el 80% del mercado internacional",
+              "Usar plantillas genéricas con fotos de stock que no reflejan la realidad de la finca",
+              "No incluir información de contacto clara o formularios que no funcionan",
+              "Sitios web lentos o que no se visualizan bien en teléfonos móviles",
+              "Olvidar renovar el dominio o el hosting, causando caída del sitio",
+              "No actualizar la información de certificaciones vencidas o cambios de dirección"
+            ],
+            "tip": "Para cacao orgánico, la estructura ideal del sitio web es: 1) Inicio (propuesta de valor y video de fondo), 2) Nuestra Historia (storytelling y equipo), 3) Nuestro Cacao (variedades, procesos de fermentación/secado), 4) Sostenibilidad y Certificaciones (con logos y enlaces a verificadores), 5) Catálogo y Fichas Técnicas (descargables), 6) Contacto (formulario + WhatsApp Business). Costo de desarrollo profesional: $3.000.000-$8.000.000 COP (WordPress/Webflow). Hosting y dominio anual: $300.000-$600.000 COP.",
+            "recommendedTools": [
+              {
+                "name": "WordPress + Elementor",
+                "url": "https://wordpress.org",
+                "description": "Plataforma flexible y escalable para sitios web corporativos con blog integrado"
+              },
+              {
+                "name": "Webflow",
+                "url": "https://webflow.com",
+                "description": "Constructor de sitios web con diseño de alta gama y animaciones profesionales"
+              },
+              {
+                "name": "WhatsApp Business API",
+                "url": "https://www.whatsapp.com/business",
+                "description": "Integración de chat directo en el sitio web para respuesta inmediata"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "website-domain",
+                "label": "Dominio del Sitio Web",
+                "type": "url",
+                "placeholder": "https://www.tucacaoorganico.com",
+                "required": true
+              },
+              {
+                "fieldId": "website-languages",
+                "label": "Idiomas Disponibles en el Sitio",
+                "type": "multiselect",
+                "options": ["Español", "Inglés", "Francés", "Alemán", "Japonés"],
+                "required": true
+              },
+              {
+                "fieldId": "ssl-certificate-active",
+                "label": "¿Certificado SSL (HTTPS) Activo?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "mobile-responsive",
+                "label": "¿Sitio Optimizado para Dispositivos Móviles?",
+                "type": "select",
+                "options": ["Sí, completamente", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "digital-catalog-available",
+                "label": "¿Catálogo Digital Descargable Disponible?",
+                "type": "select",
+                "options": ["Sí, actualizado", "Sí, desactualizado", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "catalog-url",
+                "label": "Enlace al Catálogo Digital (PDF)",
+                "type": "url",
+                "placeholder": "https://www.tucacaoorganico.com/catalogo.pdf",
+                "required": false
+              },
+              {
+                "fieldId": "sample-request-form",
+                "label": "¿Formulario de 'Solicitar Muestra' Implementado?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "website-platform",
+                "label": "Plataforma Utilizada para el Sitio Web",
+                "type": "select",
+                "options": ["WordPress", "Webflow", "Wix", "Shopify", "Desarrollo a medida", "Otra"],
+                "required": true
+              },
+              {
+                "fieldId": "website-investment",
+                "label": "Inversión en Desarrollo del Sitio Web (COP)",
+                "type": "number",
+                "placeholder": "5000000",
+                "required": true
+              },
+              {
+                "fieldId": "annual-hosting-domain-cost",
+                "label": "Costo Anual de Dominio y Hosting (COP)",
+                "type": "number",
+                "placeholder": "500000",
+                "required": true
+              },
+              {
+                "fieldId": "website-launch-date",
+                "label": "Fecha de Lanzamiento del Sitio Web",
+                "type": "date",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Registrar dominio corporativo profesional (.com o .com.co)",
+            "Contratar servicio de hosting confiable y rápido",
+            "Instalar certificado SSL (HTTPS)",
+            "Diseñar estructura del sitio (Inicio, Historia, Proceso, Certificaciones, Contacto)",
+            "Redactar y traducir todo el contenido al inglés profesional",
+            "Subir fotografías y videos de alta calidad de la finca y procesos",
+            "Crear y subir el catálogo digital en formato PDF",
+            "Implementar formulario de contacto y botón de WhatsApp Business",
+            "Probar el sitio en diferentes dispositivos (móvil, tablet, escritorio)",
+            "Configurar Google Analytics y Search Console",
+            "Lanzar el sitio web y verificar que todos los enlaces funcionen"
+          ]
+        },
+        {
+          "stepId": "seo-value-content",
+          "stepTitle": "Posicionamiento SEO y Estrategia de Contenido de Valor",
+          "guide": {
+            "whyItMatters": "El SEO (Optimización para Motores de Búsqueda) permite que compradores que buscan activamente 'cacao orgánico fino de aroma Colombia' o 'proveedor de cacao bean-to-bar' encuentren tu sitio web sin pagar publicidad. Una estrategia de contenido de valor (blog, artículos, guías) posiciona a tu marca como autoridad en el sector, educa al cliente y mejora drásticamente tu visibilidad orgánica en Google.",
+            "bestPractices": [
+              "Investiga palabras clave de cola larga (long-tail) específicas de tu nicho",
+              "Optimiza títulos, meta descripciones y etiquetas alt de imágenes con estas palabras clave",
+              "Publica artículos de blog mensuales sobre el proceso del cacao, sostenibilidad y origen",
+              "Obtén backlinks (enlaces entrantes) de sitios de autoridad (Fedecacao, ProColombia, blogs de chocolate)",
+              "Asegura que la velocidad de carga del sitio sea óptima (Core Web Vitals)",
+              "Crea contenido que responda a las preguntas frecuentes de los compradores internacionales"
+            ],
+            "commonMistakes": [
+              "Ignorar el SEO y asumir que 'si lo construyes, ellos vendrán'",
+              "Usar las mismas meta descripciones en todas las páginas",
+              "Publicar contenido genérico o copiado de otros sitios (penalizado por Google)",
+              "No optimizar imágenes, haciendo que el sitio cargue muy lento",
+              "Olvidar el SEO local (no mencionar la región o país en el contenido)",
+              "No medir el tráfico orgánico ni ajustar la estrategia"
+            ],
+            "tip": "Palabras clave objetivo para cacao colombiano: 'organic fine flavor cacao Colombia', 'fermented cocoa beans supplier', 'cacao orgánico de origen único'. Escribe 1-2 artículos de blog al mes (800-1200 palabras) respondiendo a estas búsquedas. Ejemplo: 'El proceso de fermentación de 7 días que hace único a nuestro cacao'. Costo de herramienta SEO básica: $50.000-$150.000 COP/mes. Si no tienes experto interno, un freelancer de SEO puede cobrar $1.000.000-$2.500.000 COP mensuales por gestión.",
+            "recommendedTools": [
+              {
+                "name": "Google Search Console",
+                "url": "https://search.google.com/search-console",
+                "description": "Herramienta gratuita de Google para monitorear el rendimiento de búsqueda del sitio"
+              },
+              {
+                "name": "Ubersuggest o Ahrefs",
+                "url": "https://neilpatel.com/ubersuggest",
+                "description": "Herramientas para investigación de palabras clave y análisis de competencia"
+              },
+              {
+                "name": "Yoast SEO o RankMath",
+                "url": "https://wordpress.org/plugins/yoast-seo",
+                "description": "Plugins de WordPress para optimización SEO on-page"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "target-keywords",
+                "label": "Palabras Clave Principales Objetivo",
+                "type": "textarea",
+                "placeholder": "Ej: cacao orgánico Colombia, fine flavor cocoa beans supplier...",
+                "required": true
+              },
+              {
+                "fieldId": "seo-tool-used",
+                "label": "Herramienta de SEO Utilizada",
+                "type": "select",
+                "options": ["Google Search Console (gratuita)", "Ubersuggest", "Ahrefs", "SEMrush", "Otra"],
+                "required": true
+              },
+              {
+                "fieldId": "blog-active",
+                "label": "¿Tiene un Blog o Sección de Noticias Activa?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "articles-per-month",
+                "label": "Número de Artículos de Blog Publicados por Mes",
+                "type": "number",
+                "placeholder": "2",
+                "required": true
+              },
+              {
+                "fieldId": "organic-traffic-monthly",
+                "label": "Tráfico Orgánico Mensual Estimado (visitas)",
+                "type": "number",
+                "placeholder": "500",
+                "required": false
+              },
+              {
+                "fieldId": "backlinks-acquired",
+                "label": "¿Ha Obtenido Enlaces de Sitios de Autoridad (ProColombia, Fedecacao, etc.)?",
+                "type": "select",
+                "options": ["Sí, varios", "Sí, algunos", "No aún"],
+                "required": true
+              },
+              {
+                "fieldId": "seo-monthly-investment",
+                "label": "Inversión Mensual en SEO y Contenido (COP)",
+                "type": "number",
+                "placeholder": "1500000",
+                "required": false
+              },
+              {
+                "fieldId": "content-calendar-url",
+                "label": "Enlace al Calendario de Contenidos",
+                "type": "url",
+                "placeholder": "https://docs.google.com/spreadsheets/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Realizar investigación de palabras clave en español e inglés",
+            "Optimizar títulos (H1) y meta descripciones de todas las páginas del sitio",
+            "Agregar texto alternativo (alt text) descriptivo a todas las imágenes",
+            "Crear y publicar el primer artículo de blog sobre el origen del cacao",
+            "Registrar el sitio en Google Search Console y enviar el sitemap",
+            "Solicitar a aliados (Fedecacao, ProColombia) que incluyan un enlace a tu sitio",
+            "Establecer un calendario editorial de 3 meses para el blog",
+            "Revisar la velocidad de carga del sitio y optimizar imágenes pesadas",
+            "Medir el tráfico orgánico mensual y ajustar la estrategia de palabras clave"
+          ]
+        },
+        {
+          "stepId": "google-maps-b2b-directories",
+          "stepTitle": "Presencia en Google Maps y Directorios B2B Especializados",
+          "guide": {
+            "whyItMatters": "La presencia en Google Maps (Google Business Profile) valida que tu negocio es real, ubicado en Colombia, y operativo. Compradores internacionales verifican esto para evitar estafas. Además, estar listado en directorios B2B especializados (ProColombia, Tridge, Alibaba, FiBL) te pone directamente en el radar de importadores que buscan proveedores verificados, generando leads calificados sin esfuerzo de prospección directa.",
+            "bestPractices": [
+              "Reclama y verifica tu Perfil de Negocio de Google con la dirección de la oficina o finca",
+              "Sube fotos de alta calidad de la finca, instalaciones, equipo y producto final a Google Maps",
+              "Solicita reseñas a socios, clientes actuales o visitantes de la finca",
+              "Registra tu empresa en el directorio de Exportamos de ProColombia",
+              "Crea perfiles completos en plataformas B2B como Tridge, Alibaba o Go4WorldBusiness",
+              "Mantén la información NAP (Nombre, Dirección, Teléfono) idéntica en todas las plataformas",
+              "Responde profesionalmente a todas las reseñas y consultas en los directorios"
+            ],
+            "commonMistakes": [
+              "No tener perfil de Google Maps o tenerlo con información incompleta/desactualizada",
+              "Usar direcciones falsas o de casas particulares que generan desconfianza",
+              "No responder a las reseñas (positivas o negativas)",
+              "Crear perfiles en directorios B2B pero dejarlos incompletos o sin fotos",
+              "Tener inconsistencias en el nombre o teléfono entre el sitio web y los directorios",
+              "Pagar por directorios spam o de baja reputación que dañan el SEO"
+            ],
+            "tip": "Para cacao colombiano, los directorios más efectivos son: 1) ProColombia (gratuito y con alta autoridad), 2) Fedecacao (directorio de asociados), 3) Tridge (plataforma global de alimentos, tiene versión gratuita y premium), 4) FiBL Database (específico para insumos y productos orgánicos). Costo de registro en ProColombia/Fedecacao: Gratuito o cuota de afiliación. Tridge/Alibaba: $500.000-$2.000.000 COP/año por membresía básica. Asegúrate de que las fotos de Google Maps muestren la fachada, el proceso de fermentación y el empaque final.",
+            "recommendedTools": [
+              {
+                "name": "Google Business Profile",
+                "url": "https://www.google.com/business",
+                "description": "Herramienta gratuita para gestionar la presencia de tu negocio en Búsqueda y Maps"
+              },
+              {
+                "name": "ProColombia - Exportamos",
+                "url": "https://www.procolombia.co",
+                "description": "Directorio oficial de exportadores colombianos verificados"
+              },
+              {
+                "name": "Tridge",
+                "url": "https://www.tridge.com",
+                "description": "Plataforma global de inteligencia de datos y comercio de alimentos"
+              },
+              {
+                "name": "FiBL Database",
+                "url": "https://www.fibl.org",
+                "description": "Base de datos internacional de actores de la agricultura orgánica"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "google-business-verified",
+                "label": "¿Perfil de Negocio de Google Verificado?",
+                "type": "select",
+                "options": ["Sí", "En proceso", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "google-maps-url",
+                "label": "Enlace al Perfil de Google Maps",
+                "type": "url",
+                "placeholder": "https://maps.app.goo.gl/...",
+                "required": false
+              },
+              {
+                "fieldId": "google-reviews-count",
+                "label": "Número de Reseñas en Google",
+                "type": "number",
+                "placeholder": "15",
+                "required": false
+              },
+              {
+                "fieldId": "google-average-rating",
+                "label": "Calificación Promedio en Google (1-5)",
+                "type": "number",
+                "placeholder": "4.8",
+                "required": false
+              },
+              {
+                "fieldId": "b2b-directories-listed",
+                "label": "Directorios B2B donde está Registrado",
+                "type": "multiselect",
+                "options": [
+                  "ProColombia (Exportamos)",
+                  "Fedecacao",
+                  "Tridge",
+                  "Alibaba",
+                  "FiBL Database",
+                  "Go4WorldBusiness",
+                  "Cámara de Comercio local"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "directory-membership-cost",
+                "label": "Costo Anual de Membresías en Directorios (COP)",
+                "type": "number",
+                "placeholder": "1500000",
+                "required": false
+              },
+              {
+                "fieldId": "nap-consistency-checked",
+                "label": "¿Consistencia de NAP (Nombre, Dirección, Teléfono) Verificada en Todos los Sitios?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "leads-from-directories",
+                "label": "Leads o Contactos Generados desde Directorios este Año",
+                "type": "number",
+                "placeholder": "8",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Crear y verificar el Perfil de Negocio de Google con dirección real",
+            "Subir mínimo 10 fotos de alta calidad a Google Maps (finca, proceso, equipo)",
+            "Solicitar 5 reseñas iniciales a socios, clientes o visitantes",
+            "Responder a todas las reseñas existentes en Google",
+            "Registrar la empresa en el directorio de ProColombia",
+            "Registrar la empresa en el directorio de Fedecacao (si es miembro)",
+            "Crear perfil completo en Tridge con catálogo y certificaciones",
+            "Verificar que el Nombre, Dirección y Teléfono (NAP) sean idénticos en todos lados",
+            "Actualizar la información de los directorios cada 6 meses",
+            "Monitorear de dónde provienen los leads entrantes"
+          ]
+        },
+        {
+          "stepId": "social-media-b2b-b2c",
+          "stepTitle": "Estrategia de Redes Sociales (LinkedIn, Instagram y Facebook)",
+          "guide": {
+            "whyItMatters": "Las redes sociales humanizan tu marca y sirven como canal de validación. Los chocolateros bean-to-bar y compradores de ingredientes buscan en Instagram y LinkedIn para ver la 'vida real' detrás del producto. LinkedIn es la red más poderosa para conectar directamente con gerentes de compras e importadores B2B, mientras que Instagram es ideal para mostrar la belleza del proceso, la biodiversidad y el storytelling visual.",
+            "bestPractices": [
+              "Usa LinkedIn para contenido B2B: logros de exportación, certificaciones, artículos sobre el mercado del cacao",
+              "Usa Instagram/Facebook para storytelling visual: cosecha, fermentación, rostros de los trabajadores, biodiversidad",
+              "Mantén una frecuencia de publicación constante (ej. 2 veces por semana en LinkedIn, 3 en Instagram)",
+              "Interactúa activamente con cuentas de chocolateros, asociaciones de cacao y compradores potenciales",
+              "Usa hashtags estratégicos: #FineFlavorCacao, #CacaoColombia, #OrganicCacao, #BeanToBar",
+              "Incluye un enlace a tu sitio web o catálogo en la biografía de todas las redes",
+              "Considera campañas de publicidad pagada (LinkedIn Ads o Meta Ads) segmentadas a la industria alimentaria"
+            ],
+            "commonMistakes": [
+              "Publicar solo fotos de producto empacado sin mostrar el proceso ni las personas",
+              "Usar un tono demasiado corporativo y frío en redes visuales como Instagram",
+              "Ignorar los comentarios o mensajes directos de posibles clientes",
+              "Publicar de forma errática (5 posts en un día y nada en un mes)",
+              "Mezclar el perfil personal del fundador con el perfil de la empresa",
+              "No usar enlaces de llamada a la acción (CTA) en las publicaciones",
+              "Comprar seguidores falsos, lo que destruye la credibilidad y el alcance orgánico"
+            ],
+            "tip": "Estrategia de contenido semanal recomendada: Lunes (LinkedIn): Artículo sobre el mercado del cacao o logro de la finca. Miércoles (Instagram): Reel o carrusel mostrando el proceso de fermentación o secado. Viernes (Ambas): Foto del equipo o testimonio de un cliente. Presupuesto para pauta digital B2B: $300.000-$800.000 COP/mes puede ser suficiente para empezar a segmentar gerentes de compras de chocolaterías en EE.UU. o Europa. Herramienta clave: Meta Business Suite para programar publicaciones gratuitas.",
+            "recommendedTools": [
+              {
+                "name": "Meta Business Suite",
+                "url": "https://business.facebook.com",
+                "description": "Herramienta gratuita para programar y gestionar publicaciones en Facebook e Instagram"
+              },
+              {
+                "name": "LinkedIn Company Page",
+                "url": "https://www.linkedin.com",
+                "description": "Plataforma esencial para networking B2B y posicionamiento de autoridad"
+              },
+              {
+                "name": "Canva",
+                "url": "https://www.canva.com",
+                "description": "Diseño rápido de posts, historias y carruseles para redes sociales"
+              },
+              {
+                "name": "Metricool o Buffer",
+                "url": "https://metricool.com",
+                "description": "Programador de contenidos con análisis de mejores horarios para publicar"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "social-platforms-active",
+                "label": "Plataformas de Redes Sociales Activas",
+                "type": "multiselect",
+                "options": [
+                  "LinkedIn (Empresa)",
+                  "Instagram",
+                  "Facebook",
+                  "YouTube",
+                  "TikTok",
+                  "X (Twitter)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "linkedin-url",
+                "label": "URL de la Página de LinkedIn de la Empresa",
+                "type": "url",
+                "placeholder": "https://www.linkedin.com/company/...",
+                "required": false
+              },
+              {
+                "fieldId": "instagram-url",
+                "label": "URL del Perfil de Instagram",
+                "type": "url",
+                "placeholder": "https://www.instagram.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "posting-frequency",
+                "label": "Frecuencia de Publicación Promedio",
+                "type": "select",
+                "options": [
+                  "Diaria",
+                  "3 veces por semana",
+                  "Semanal",
+                  "Quincenal",
+                  "Irregular"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "total-followers",
+                "label": "Número Total de Seguidores (Todas las Plataformas)",
+                "type": "number",
+                "placeholder": "1500",
+                "required": false
+              },
+              {
+                "fieldId": "content-calendar-used",
+                "label": "¿Utiliza un Calendario de Contenidos Planificado?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "social-media-budget-monthly",
+                "label": "Presupuesto Mensual para Publicidad en Redes (COP)",
+                "type": "number",
+                "placeholder": "500000",
+                "required": false
+              },
+              {
+                "fieldId": "leads-from-social",
+                "label": "Leads o Contactos Generados desde Redes Sociales este Año",
+                "type": "number",
+                "placeholder": "12",
+                "required": false
+              },
+              {
+                "fieldId": "social-media-manager",
+                "label": "¿Quién Gestiona las Redes Sociales?",
+                "type": "select",
+                "options": [
+                  "Equipo interno dedicado",
+                  "Fundador/Equipo general (parte del tiempo)",
+                  "Agencia o Freelancer externo",
+                  "Nadie actualmente"
+                ],
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Crear o optimizar la Página de Empresa en LinkedIn con logo y banner profesional",
+            "Crear o optimizar el perfil de Instagram con biografía clara y enlace al sitio web",
+            "Diseñar una plantilla de Canva coherente con la identidad visual de la marca",
+            "Establecer un calendario de contenidos mensual (temas, fechas, plataformas)",
+            "Programar las publicaciones de las primeras 4 semanas",
+            "Identificar y seguir a 50 compradores potenciales, chocolateros y asociaciones del sector",
+            "Interactuar (comentar, dar like) con las publicaciones de cuentas objetivo semanalmente",
+            "Configurar Meta Business Suite para programación automática",
+            "Lanzar una campaña de publicidad pequeña ($300.000 COP) segmentada a la industria alimentaria",
+            "Revisar las métricas de alcance y engagement al final de cada mes"
+          ]
+        }
+      ]
+    }
+  ]
+}

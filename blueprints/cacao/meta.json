@@ -1,0 +1,20 @@
+{
+  "slug": "cultivo-cacao-organico",
+  "name": "Cultivo de Cacao 100% Orgánico",
+  "description": "Metodología completa para establecer, operar y comercializar un cultivo de cacao fino de aroma 100% orgánico bajo sistemas agroforestales (SAF) sostenibles.",
+  "category": "Agricultura",
+  "industry": "Agroindustria",
+  "version": "1.0.0",
+  "author": "Carlos",
+  "language": "es",
+  "difficulty": "intermediate",
+  "estimatedDuration": "12 meses",
+  "tags": [
+    "cacao",
+    "organico",
+    "agroforesteria",
+    "sostenible"
+  ],
+  "icon": "sprout",
+  "status": "published"
+}

@@ -1,0 +1,1337 @@
+{
+  "block": "business",
+  "blockTitle": "Negocio",
+  "phases": [
+    {
+      "phaseId": "physical-infrastructure",
+      "phaseTitle": "Infraestructura Física y Equipos de Procesamiento de Cacao",
+      "steps": [
+        {
+          "stepId": "fermentation-infrastructure",
+          "stepTitle": "Diseño y Construcción de Infraestructura de Fermentación",
+          "guide": {
+            "whyItMatters": "La fermentación es el proceso más crítico para desarrollar el perfil de sabor del cacao orgánico. Sin infraestructura adecuada de fermentación, tu cacao no alcanzará los estándares de calidad requeridos para mercados premium y exportación. Las cajas o turnos de fermentación mal diseñados generan cacao no fermentado, sobrefermentado o con defectos que reducen el precio hasta en 50%. Además, los compradores internacionales y certificadores orgánicos exigen infraestructura que garantice trazabilidad y control de procesos.",
+            "bestPractices": [
+              "Diseña cajas de fermentación con capacidad para 100-300 kg de cacao fresco por turno",
+              "Usa madera de especies locales resistentes a la humedad (cejilla, cedro, roble) o plástico alimentario",
+              "Construye cajas con dimensiones estándar: 1m x 1m x 1.2m (ancho x largo x alto)",
+              "Incluye sistema de drenaje para lixiviados con recolección para compostaje",
+              "Implementa sistema de volteo mecánico o manual cada 24-48 horas",
+              "Construye techo protector contra lluvia y sol directo",
+              "Instala termómetros digitales para monitoreo de temperatura (45-52°C óptimo)",
+              "Separa lotes por fecha de cosecha y parcela para trazabilidad completa"
+            ],
+            "commonMistakes": [
+              "Construir cajas demasiado grandes (>500 kg) que generan fermentación desigual",
+              "Usar materiales tóxicos o que absorben olores (maderas tratadas con químicos)",
+              "No incluir sistema de drenaje, generando acumulación de lixiviados y malos olores",
+              "No proteger la fermentación de lluvia, enfriando la masa y deteniendo el proceso",
+              "No monitorear temperatura, perdiendo control del proceso",
+              "Mezclar cacao de diferentes fechas, perdiendo trazabilidad",
+              "Construir infraestructura muy lejos de la zona de cosecha, aumentando tiempo de transporte"
+            ],
+            "tip": "Para cacao orgánico de alta calidad, construye un sistema de 3-5 cajas en serie (método de turnos) para tener fermentación continua. Dimensiones óptimas: 1m x 1m x 1.2m (capacidad 150-200 kg de cacao fresco). Usa madera de cejilla o cedro de 5 cm de espesor. Incluye tapa ajustada y termómetro digital con sonda. El costo por caja es aproximadamente $800.000-$1.200.000 COP. Construye sobre plataforma elevada 30 cm del suelo con pendiente 2% para drenaje. Ubica a máximo 500 metros de la zona de cosecha.",
+            "recommendedTools": [
+              {
+                "name": "Manual de Fermentación de Cacao - Fedecacao",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Guía técnica completa sobre infraestructura y procesos de fermentación"
+              },
+              {
+                "name": "Termómetros Digitales para Fermentación",
+                "url": "https://www.google.com",
+                "description": "Termómetros con sonda larga para monitoreo de temperatura en masa de cacao"
+              },
+              {
+                "name": "Carpintería Local Especializada",
+                "url": "https://www.google.com",
+                "description": "Busca carpinteros con experiencia en infraestructura agrícola y maderas resistentes"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "fermentation-boxes-quantity",
+                "label": "Número de Cajas de Fermentación Construidas",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "fermentation-box-dimensions",
+                "label": "Dimensiones de Cada Caja (ancho x largo x alto en metros)",
+                "type": "text",
+                "placeholder": "Ej: 1.0 x 1.0 x 1.2",
+                "required": true
+              },
+              {
+                "fieldId": "fermentation-box-capacity",
+                "label": "Capacidad por Caja (kg de cacao fresco)",
+                "type": "number",
+                "placeholder": "200",
+                "required": true
+              },
+              {
+                "fieldId": "fermentation-box-material",
+                "label": "Material de Construcción de las Cajas",
+                "type": "select",
+                "options": [
+                  "Madera de cejilla",
+                  "Madera de cedro",
+                  "Madera de roble",
+                  "Plástico alimentario",
+                  "Concrete block",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "drainage-system-installed",
+                "label": "¿Sistema de Drenaje para Lixiviados Instalado?",
+                "type": "select",
+                "options": ["Sí, con recolección para compostaje", "Sí, sin recolección", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "roof-protection-installed",
+                "label": "¿Techo Protector contra Lluvia Instalado?",
+                "type": "select",
+                "options": ["Sí, techo fijo", "Sí, techo móvil", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "thermometers-installed",
+                "label": "Número de Termómetros Instalados",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "fermentation-location",
+                "label": "Ubicación de la Zona de Fermentación",
+                "type": "text",
+                "placeholder": "Ej: A 300m de la zona de cosecha, coordenadas GPS",
+                "required": true
+              },
+              {
+                "fieldId": "construction-start-date",
+                "label": "Fecha de Inicio de Construcción",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "construction-completion-date",
+                "label": "Fecha de Finalización de Construcción",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "construction-total-cost",
+                "label": "Costo Total de Construcción (COP)",
+                "type": "number",
+                "placeholder": "5000000",
+                "required": true
+              },
+              {
+                "fieldId": "turn-system-implemented",
+                "label": "¿Implementó Sistema de Turnos/Volteo?",
+                "type": "select",
+                "options": ["Sí, manual cada 24h", "Sí, manual cada 48h", "Sí, mecánico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "lot-traceability-system",
+                "label": "¿Sistema de Trazabilidad por Lotes Implementado?",
+                "type": "select",
+                "options": ["Sí, con etiquetas físicas y digitales", "Sí, solo físico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "infrastructure-photos-url",
+                "label": "Enlace a Fotos de la Infraestructura Construida",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Diseñar plano de infraestructura de fermentación con dimensiones y materiales",
+            "Seleccionar ubicación adecuada (cercana a cosecha, acceso a agua, drenaje)",
+            "Adquirir materiales de construcción (madera, clavos, bisagras, termómetros)",
+            "Contratar carpinteros o mano de obra para construcción",
+            "Construir plataforma elevada con pendiente para drenaje",
+            "Construir cajas de fermentación con dimensiones estándar",
+            "Instalar sistema de drenaje con recolección de lixiviados",
+            "Construir techo protector contra lluvia y sol",
+            "Instalar termómetros digitales en cada caja",
+            "Implementar sistema de etiquetado de lotes por fecha y parcela",
+            "Capacitar a trabajadores en protocolo de volteo y monitoreo de temperatura",
+            "Realizar prueba de fermentación con primer lote",
+            "Documentar proceso con fotos y registros"
+          ]
+        },
+        {
+          "stepId": "drying-infrastructure",
+          "stepTitle": "Instalación de Sistemas de Secado de Cacao",
+          "guide": {
+            "whyItMatters": "El secado es la segunda etapa crítica post-cosecha que determina la calidad final del cacao orgánico. Un secado inadecuado genera mohos, sabores a humo o defectos que reducen drásticamente el precio. Para cacao orgánico de exportación, la humedad final debe estar entre 6.5-7.5%. Sin infraestructura de secado adecuada, dependerás exclusivamente del clima, arriesgando pérdidas totales en temporadas lluviosas. Además, los compradores premium exigen secado controlado y trazable.",
+            "bestPractices": [
+              "Instala secaderos solares tipo invernadero con capacidad para 500-1000 kg de cacao húmedo",
+              "Usa camas de secado elevadas (80-100 cm del suelo) con malla plástica alimentaria",
+              "Construye estructura con ventilación cruzada para flujo de aire uniforme",
+              "Implementa sistema de volteo cada 2-4 horas durante las primeras 48 horas",
+              "Instala higrómetros digitales para monitoreo de humedad ambiental",
+              "Considera secador mecánico de respaldo para temporadas lluviosas",
+              "Protege el cacao de insectos, aves y roedores con mallas finas",
+              "Separa lotes por fecha de fermentación para trazabilidad"
+            ],
+            "commonMistakes": [
+              "Secar directamente sobre el suelo, contaminando el cacao con tierra y microorganismos",
+              "Usar materiales tóxicos en camas de secado (plásticos no alimentarios, maderas tratadas)",
+              "No proteger contra lluvia, mojando el cacao y reiniciando el proceso de secado",
+              "No voltear regularmente, generando secado desigual y mohos",
+              "Secar con fuego directo o humo, contaminando el sabor del cacao",
+              "No monitorear humedad, sobresecando (cacao quebradizo) o subsecando (riesgo de moho)",
+              "Construir secaderos muy pequeños para la capacidad de fermentación",
+              "No tener plan de contingencia para temporadas lluviosas prolongadas"
+            ],
+            "tip": "Para cacao orgánico de alta calidad, construye un secadero solar tipo invernadero de 6m x 3m (18 m²) con capacidad para 800-1000 kg de cacao húmedo. Usa estructura metálica o de madera con cubierta de plástico transparente UV estabilizado. Camas de secado a 90 cm del suelo con malla plástica alimentaria de 2 mm. Incluye ventilación lateral ajustable y ventilación en techo. El costo es aproximadamente $4.000.000-$6.000.000 COP. El tiempo de secado es 7-12 días dependiendo del clima. Para temporadas lluviosas, considera secador mecánico de respaldo con temperatura máxima 65°C (costo $8.000.000-$15.000.000 COP).",
+            "recommendedTools": [
+              {
+                "name": "Manual de Secado de Cacao - Fedecacao",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Guía técnica sobre sistemas de secado solar y mecánico"
+              },
+              {
+                "name": "Higrómetros Digitales",
+                "url": "https://www.google.com",
+                "description": "Instrumentos para monitoreo de humedad ambiental y del cacao"
+              },
+              {
+                "name": "Medidor de Humedad de Cacao",
+                "url": "https://www.google.com",
+                "description": "Equipo específico para medir humedad exacta de granos de cacao (6.5-7.5% óptimo)"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "drying-system-type",
+                "label": "Tipo de Sistema de Secado Instalado",
+                "type": "multiselect",
+                "options": [
+                  "Secadero solar tipo invernadero",
+                  "Secadero solar tipo bandejas",
+                  "Secador mecánico",
+                  "Secado al aire libre (no recomendado)",
+                  "Combinación solar + mecánico"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "solar-dryer-dimensions",
+                "label": "Dimensiones del Secadero Solar (largo x ancho en metros)",
+                "type": "text",
+                "placeholder": "Ej: 6.0 x 3.0",
+                "required": false
+              },
+              {
+                "fieldId": "solar-dryer-capacity",
+                "label": "Capacidad del Secadero Solar (kg de cacao húmedo)",
+                "type": "number",
+                "placeholder": "800",
+                "required": false
+              },
+              {
+                "fieldId": "drying-bed-height",
+                "label": "Altura de las Camas de Secado (cm del suelo)",
+                "type": "number",
+                "placeholder": "90",
+                "required": true
+              },
+              {
+                "fieldId": "drying-bed-material",
+                "label": "Material de las Camas de Secado",
+                "type": "select",
+                "options": [
+                  "Malla plástica alimentaria",
+                  "Malla metálica inoxidable",
+                  "Bambú",
+                  "Madera",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "rain-protection-installed",
+                "label": "¿Protección contra Lluvia Instalada?",
+                "type": "select",
+                "options": ["Sí, techo completo", "Sí, parcial", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "ventilation-system",
+                "label": "Sistema de Ventilación Implementado",
+                "type": "select",
+                "options": [
+                  "Ventilación cruzada natural",
+                  "Ventiladores mecánicos",
+                  "Combinación natural + mecánica",
+                  "No implementada"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "hygrometers-installed",
+                "label": "Número de Higrómetros Instalados",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "moisture-meter-available",
+                "label": "¿Dispone de Medidor de Humedad de Cacao?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "mechanical-dryer-backup",
+                "label": "¿Tiene Secador Mecánico de Respaldo?",
+                "type": "select",
+                "options": ["Sí", "No", "En cotización"],
+                "required": true
+              },
+              {
+                "fieldId": "mechanical-dryer-capacity",
+                "label": "Capacidad del Secador Mecánico (kg por ciclo)",
+                "type": "number",
+                "placeholder": "200",
+                "required": false
+              },
+              {
+                "fieldId": "drying-location",
+                "label": "Ubicación de la Zona de Secado",
+                "type": "text",
+                "placeholder": "Ej: Adjunta a zona de fermentación, coordenadas GPS",
+                "required": true
+              },
+              {
+                "fieldId": "construction-start-date",
+                "label": "Fecha de Inicio de Construcción/Instalación",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "construction-completion-date",
+                "label": "Fecha de Finalización",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "total-investment-cost",
+                "label": "Costo Total de Inversión en Secado (COP)",
+                "type": "number",
+                "placeholder": "6000000",
+                "required": true
+              },
+              {
+                "fieldId": "turning-protocol",
+                "label": "Protocolo de Volteo Implementado",
+                "type": "select",
+                "options": [
+                  "Cada 2 horas (primeras 48h), luego cada 4h",
+                  "Cada 4 horas",
+                  "Cada 6 horas",
+                  "No definido"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "drying-time-average",
+                "label": "Tiempo Promedio de Secado (días)",
+                "type": "number",
+                "placeholder": "8",
+                "required": true
+              },
+              {
+                "fieldId": "final-moisture-target",
+                "label": "Meta de Humedad Final (%)",
+                "type": "number",
+                "placeholder": "7.0",
+                "required": true
+              },
+              {
+                "fieldId": "infrastructure-photos-url",
+                "label": "Enlace a Fotos de la Infraestructura de Secado",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar necesidades de capacidad de secado según volumen de fermentación",
+            "Seleccionar tipo de secadero (solar, mecánico o combinado)",
+            "Diseñar plano del secadero con dimensiones y materiales",
+            "Adquirir materiales de construcción (estructura, cubierta, mallas)",
+            "Construir estructura del secadero con ventilación adecuada",
+            "Instalar camas de secado elevadas con material alimentario",
+            "Instalar sistema de protección contra lluvia",
+            "Instalar higrómetros y medidor de humedad de cacao",
+            "Si aplica, instalar secador mecánico de respaldo",
+            "Implementar sistema de etiquetado de lotes por fecha de fermentación",
+            "Capacitar a trabajadores en protocolo de volteo y monitoreo",
+            "Establecer protocolo de control de calidad (humedad 6.5-7.5%)",
+            "Realizar prueba de secado con primer lote",
+            "Documentar proceso con fotos y registros"
+          ]
+        },
+        {
+          "stepId": "quality-control-equipment",
+          "stepTitle": "Equipos de Medición y Control de Calidad",
+          "guide": {
+            "whyItMatters": "El control de calidad riguroso es lo que diferencia el cacao orgánico premium del cacao convencional. Sin equipos de medición adecuados, no puedes validar que tu cacao cumple con los estándares de calidad requeridos por compradores internacionales (humedad, tamaño de grano, fermentación, ausencia de defectos). Esto te impide negociar precios premium y acceder a mercados especializados. Además, los certificadores orgánicos y de calidad exigen registros documentados de control de calidad.",
+            "bestPractices": [
+              "Adquiere medidor digital de humedad de cacao con precisión de ±0.1%",
+              "Implementa kit de corte para evaluar porcentaje de fermentación (mínimo 80% bien fermentado)",
+              "Instala balanza digital calibrada con capacidad de 0-50 kg y precisión de 5g",
+              "Adquiere termómetros infrarrojos para medición rápida de temperatura",
+              "Implementa sistema de muestreo estadístico por lote (norma ISO 2292)",
+              "Crea laboratorio básico de control de calidad con iluminación adecuada",
+              "Capacita a personal en técnicas de cata y análisis sensorial",
+              "Documenta todos los resultados en formatos estandarizados"
+            ],
+            "commonMistakes": [
+              "No medir humedad objetivamente, confiando solo en percepción visual o táctil",
+              "No realizar pruebas de corte, ignorando el porcentaje real de fermentación",
+              "Usar balanzas no calibradas, generando errores en pesajes y facturación",
+              "No implementar muestreo estadístico, evaluando solo algunos granos",
+              "No documentar resultados de control de calidad, perdiendo trazabilidad",
+              "No capacitar personal en técnicas de evaluación, generando subjetividad",
+              "No tener iluminación adecuada para evaluación visual de granos",
+              "Ignorar estándares internacionales (ISO, ICCO) en procedimientos de calidad"
+            ],
+            "tip": "Para cacao orgánico de exportación, el kit básico de control de calidad incluye: 1) Medidor de humedad digital ($800.000-$1.500.000 COP), 2) Balanza digital calibrada 0-50 kg ($400.000-$800.000 COP), 3) Kit de corte con cuchillo especial y lupa 10x ($300.000-$500.000 COP), 4) Termómetro infrarrojo ($150.000-$300.000 COP), 5) Muestrario y formatos de registro ($100.000 COP). Inversión total: $1.750.000-$3.200.000 COP. Estándares clave: humedad 6.5-7.5%, mínimo 80% granos bien fermentados, máximo 5% granos con defectos, tamaño mínimo 100 granos/100g. Calibra equipos cada 6 meses.",
+            "recommendedTools": [
+              {
+                "name": "Medidor de Humedad de Cacao Digital",
+                "url": "https://www.google.com",
+                "description": "Equipos específicos para medición precisa de humedad en granos de cacao"
+              },
+              {
+                "name": "Kit de Corte para Evaluación de Fermentación",
+                "url": "https://www.google.com",
+                "description": "Cuchillo especial, placa de corte y lupa para evaluación visual de granos"
+              },
+              {
+                "name": "Balanza Digital Calibrada",
+                "url": "https://www.google.com",
+                "description": "Balanzas con precisión de 5g para pesaje de lotes y muestras"
+              },
+              {
+                "name": "Norma ISO 2292 - Muestreo de Cacao",
+                "url": "https://www.iso.org",
+                "description": "Estándar internacional para procedimientos de muestreo de granos de cacao"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "moisture-meter-obtained",
+                "label": "¿Adquirió Medidor Digital de Humedad?",
+                "type": "select",
+                "options": ["Sí", "No", "En compra"],
+                "required": true
+              },
+              {
+                "fieldId": "moisture-meter-brand-model",
+                "label": "Marca y Modelo del Medidor de Humedad",
+                "type": "text",
+                "placeholder": "Ej: Dickey-john GAC 500-AG",
+                "required": false
+              },
+              {
+                "fieldId": "moisture-meter-cost",
+                "label": "Costo del Medidor de Humedad (COP)",
+                "type": "number",
+                "placeholder": "1200000",
+                "required": false
+              },
+              {
+                "fieldId": "digital-scale-obtained",
+                "label": "¿Adquirió Balanza Digital Calibrada?",
+                "type": "select",
+                "options": ["Sí", "No", "En compra"],
+                "required": true
+              },
+              {
+                "fieldId": "scale-capacity-kg",
+                "label": "Capacidad de la Balanza (kg)",
+                "type": "number",
+                "placeholder": "50",
+                "required": false
+              },
+              {
+                "fieldId": "scale-precision-grams",
+                "label": "Precisión de la Balanza (gramos)",
+                "type": "number",
+                "placeholder": "5",
+                "required": false
+              },
+              {
+                "fieldId": "scale-cost",
+                "label": "Costo de la Balanza (COP)",
+                "type": "number",
+                "placeholder": "600000",
+                "required": false
+              },
+              {
+                "fieldId": "cutting-kit-obtained",
+                "label": "¿Adquirió Kit de Corte para Evaluación de Fermentación?",
+                "type": "select",
+                "options": ["Sí", "No", "En compra"],
+                "required": true
+              },
+              {
+                "fieldId": "cutting-kit-cost",
+                "label": "Costo del Kit de Corte (COP)",
+                "type": "number",
+                "placeholder": "400000",
+                "required": false
+              },
+              {
+                "fieldId": "infrared-thermometer-obtained",
+                "label": "¿Adquirió Termómetro Infrarrojo?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "infrared-thermometer-cost",
+                "label": "Costo del Termómetro Infrarrojo (COP)",
+                "type": "number",
+                "placeholder": "200000",
+                "required": false
+              },
+              {
+                "fieldId": "quality-lab-setup",
+                "label": "¿Configuró Laboratorio Básico de Control de Calidad?",
+                "type": "select",
+                "options": ["Sí, completo", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "lab-lighting-adequate",
+                "label": "¿Iluminación del Laboratorio Adecuada para Evaluación Visual?",
+                "type": "select",
+                "options": ["Sí, luz natural + artificial", "Sí, solo artificial", "No adecuada"],
+                "required": true
+              },
+              {
+                "fieldId": "sampling-protocol-implemented",
+                "label": "¿Implementó Protocolo de Muestreo Estadístico?",
+                "type": "select",
+                "options": ["Sí, basado en ISO 2292", "Sí, protocolo propio", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "quality-standards-defined",
+                "label": "Estándares de Calidad Definidos",
+                "type": "multiselect",
+                "options": [
+                  "Humedad 6.5-7.5%",
+                  "Mínimo 80% granos bien fermentados",
+                  "Máximo 5% granos con defectos",
+                  "Tamaño mínimo 100 granos/100g",
+                  "Ausencia de mohos",
+                  "Ausencia de olores extraños",
+                  "Ausencia de insectos vivos"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "quality-records-format",
+                "label": "Formato de Registro de Control de Calidad",
+                "type": "select",
+                "options": [
+                  "Software especializado",
+                  "Excel/Google Sheets",
+                  "Formatos físicos impresos",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "staff-trained-in-quality",
+                "label": "¿Personal Capacitado en Técnicas de Control de Calidad?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "equipment-calibration-schedule",
+                "label": "Programa de Calibración de Equipos",
+                "type": "select",
+                "options": ["Cada 6 meses", "Cada año", "No definido"],
+                "required": true
+              },
+              {
+                "fieldId": "total-equipment-investment",
+                "label": "Inversión Total en Equipos de Control de Calidad (COP)",
+                "type": "number",
+                "placeholder": "2500000",
+                "required": true
+              },
+              {
+                "fieldId": "quality-manual-url",
+                "label": "Enlace a Manual de Control de Calidad (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar necesidades de equipos de control de calidad según volumen",
+            "Cotizar y adquirir medidor digital de humedad de cacao",
+            "Cotizar y adquirir balanza digital calibrada",
+            "Cotizar y adquirir kit de corte para evaluación de fermentación",
+            "Adquirir termómetro infrarrojo y otros equipos complementarios",
+            "Configurar laboratorio básico de control de calidad con iluminación adecuada",
+            "Implementar protocolo de muestreo estadístico (norma ISO 2292)",
+            "Definir estándares de calidad específicos para el negocio",
+            "Crear formatos de registro de control de calidad",
+            "Capacitar a personal en técnicas de evaluación y uso de equipos",
+            "Establecer programa de calibración de equipos (cada 6 meses)",
+            "Realizar pruebas de control de calidad con primeros lotes",
+            "Documentar procedimientos en manual de control de calidad",
+            "Archivar equipos y manuales en ubicación segura y accesible"
+          ]
+        },
+        {
+          "stepId": "storage-warehousing",
+          "stepTitle": "Almacenes y Bodegas de Producto Terminado",
+          "guide": {
+            "whyItMatters": "El almacenamiento adecuado del cacao seco y empacado es crítico para mantener la calidad hasta la venta. Sin bodegas apropiadas, el cacao absorbe humedad, desarrolla mohos, es contaminado por insectos o roedores, o pierde sus características aromáticas. Esto genera pérdidas económicas directas y daña la reputación con compradores. Además, los certificadores orgánicos y compradores internacionales exigen condiciones específicas de almacenamiento para garantizar trazabilidad y calidad.",
+            "bestPractices": [
+              "Construye bodega exclusiva para cacao seco, separada de insumos y productos químicos",
+              "Instala pallets plásticos o de madera tratada para elevar sacos 15-20 cm del suelo",
+              "Mantiene ventilación cruzada adecuada y control de humedad ambiental (<65%)",
+              "Implementa control de temperatura (18-25°C óptimo) con termómetros registrados",
+              "Instala mallas en ventanas y puertas contra insectos y roedores",
+              "Implementa sistema FIFO (First In, First Out) para rotación de inventarios",
+              "Separa lotes por fecha de producción y calidad con etiquetado claro",
+              "Instala iluminación adecuada pero protege de luz solar directa",
+              "Mantiene bodega limpia y libre de olores extraños",
+              "Implementa control de acceso y registro de entradas/salidas"
+            ],
+            "commonMistakes": [
+              "Almacenar cacao junto a insumos agrícolas, combustibles o productos químicos",
+              "Colocar sacos directamente sobre el suelo, absorbiendo humedad",
+              "No controlar humedad ambiental, generando condensación y mohos",
+              "No implementar sistema FIFO, dejando cacao viejo al fondo",
+              "No separar lotes por calidad, mezclando cacao premium con defectuoso",
+              "Permitir acceso de animales (roedores, aves, insectos) a la bodega",
+              "No registrar entradas y salidas, perdiendo control de inventarios",
+              "Usar bodega compartida con otros productos que contaminan aromas",
+              "No limpiar regularmente, acumulando polvo y residuos"
+            ],
+            "tip": "Para cacao orgánico, construye bodega de mínimo 30-50 m² con paredes de bloque o madera tratada, techo aislante (teja de barro o lámina con aislante), piso de concreto sellado. Instala pallets plásticos (más higiénicos que madera) elevados 20 cm. Ventanas con mallas mosquiteras y ventilación cruzada. Puerta metálica con sello hermético. Costo aproximado: $15.000.000-$25.000.000 COP para 50 m². Si no puedes construir, adapta un espacio existente cumpliendo requisitos mínimos: elevación, ventilación, control de plagas. Instala higrómetro y termómetro con registro diario. Capacidad típica: 500-1000 sacos de 60 kg.",
+            "recommendedTools": [
+              {
+                "name": "Pallets Plásticos para Almacenamiento",
+                "url": "https://www.google.com",
+                "description": "Pallets de plástico alimentario, más higiénicos y duraderos que madera"
+              },
+              {
+                "name": "Higrómetro y Termómetro Digital con Registro",
+                "url": "https://www.google.com",
+                "description": "Equipos para monitoreo continuo de humedad y temperatura en bodega"
+              },
+              {
+                "name": "Sistema de Etiquetado de Lotes",
+                "url": "https://www.google.com",
+                "description": "Etiquetas resistentes con código de lote, fecha, peso y calidad"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "warehouse-type",
+                "label": "Tipo de Bodega de Almacenamiento",
+                "type": "select",
+                "options": [
+                  "Bodega exclusiva construida para cacao",
+                  "Espacio adaptado dentro de otra estructura",
+                  "Bodega compartida (no recomendado)",
+                  "Contenedor metálico adaptado",
+                  "No disponible aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "warehouse-area-m2",
+                "label": "Área de la Bodega (m²)",
+                "type": "number",
+                "placeholder": "50",
+                "required": true
+              },
+              {
+                "fieldId": "warehouse-capacity-bags",
+                "label": "Capacidad de Almacenamiento (sacos de 60 kg)",
+                "type": "number",
+                "placeholder": "500",
+                "required": true
+              },
+              {
+                "fieldId": "floor-material",
+                "label": "Material del Piso de la Bodega",
+                "type": "select",
+                "options": [
+                  "Concreto sellado",
+                  "Concreto sin sellar",
+                  "Madera",
+                  "Tierra compactada",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "pallets-installed",
+                "label": "¿Instaló Pallets para Elevar Sacos?",
+                "type": "select",
+                "options": ["Sí, plásticos", "Sí, de madera tratada", "Sí, de madera sin tratar", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "pallet-height-cm",
+                "label": "Altura de Pallets del Suelo (cm)",
+                "type": "number",
+                "placeholder": "20",
+                "required": true
+              },
+              {
+                "fieldId": "ventilation-system",
+                "label": "Sistema de Ventilación de la Bodega",
+                "type": "select",
+                "options": [
+                  "Ventilación cruzada natural",
+                  "Ventiladores mecánicos",
+                  "Aire acondicionado",
+                  "Combinación natural + mecánica",
+                  "No implementada"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "humidity-control",
+                "label": "¿Control de Humedad Ambiental Implementado?",
+                "type": "select",
+                "options": ["Sí, deshumidificador", "Sí, ventilación controlada", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "temperature-control",
+                "label": "¿Control de Temperatura Implementado?",
+                "type": "select",
+                "options": ["Sí, aire acondicionado", "Sí, aislamiento térmico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "pest-control-measures",
+                "label": "Medidas de Control de Plagas Implementadas",
+                "type": "multiselect",
+                "options": [
+                  "Mallas en ventanas y puertas",
+                  "Trampas para roedores",
+                  "Trampas para insectos",
+                  "Limpieza regular",
+                  "Inspecciones periódicas",
+                  "Productos orgánicos autorizados"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "fifo-system-implemented",
+                "label": "¿Implementó Sistema FIFO (First In, First Out)?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "lot-separation-system",
+                "label": "¿Separa Lotes por Fecha y Calidad?",
+                "type": "select",
+                "options": ["Sí, con etiquetado claro", "Sí, por zonas", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "access-control",
+                "label": "¿Control de Acceso a la Bodega Implementado?",
+                "type": "select",
+                "options": ["Sí, con registro", "Sí, sin registro", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "inventory-records-system",
+                "label": "Sistema de Registro de Entradas/Salidas",
+                "type": "select",
+                "options": [
+                  "Software contable (módulo de inventarios)",
+                  "Excel/Google Sheets",
+                  "Formatos físicos",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "hygrometer-thermometer-installed",
+                "label": "¿Instaló Higrómetro y Termómetro con Registro?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "target-humidity-range",
+                "label": "Rango de Humedad Ambiental Objetivo (%)",
+                "type": "text",
+                "placeholder": "Ej: 60-65%",
+                "required": true
+              },
+              {
+                "fieldId": "target-temperature-range",
+                "label": "Rango de Temperatura Objetivo (°C)",
+                "type": "text",
+                "placeholder": "Ej: 18-25°C",
+                "required": true
+              },
+              {
+                "fieldId": "construction-adaptation-cost",
+                "label": "Costo de Construcción/Adaptación de Bodega (COP)",
+                "type": "number",
+                "placeholder": "20000000",
+                "required": true
+              },
+              {
+                "fieldId": "construction-completion-date",
+                "label": "Fecha de Finalización de Construcción/Adaptación",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "warehouse-photos-url",
+                "label": "Enlace a Fotos de la Bodega",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar necesidades de capacidad de almacenamiento según proyección de producción",
+            "Diseñar o adaptar bodega cumpliendo requisitos de calidad y orgánicos",
+            "Construir o adecuar estructura con piso sellado y techo aislante",
+            "Instalar pallets elevados 15-20 cm del suelo",
+            "Implementar sistema de ventilación cruzada adecuada",
+            "Instalar mallas contra insectos y roedores en ventanas y puertas",
+            "Implementar medidas de control de plagas (trampas, limpieza)",
+            "Instalar higrómetro y termómetro con registro diario",
+            "Definir rangos objetivo de humedad (60-65%) y temperatura (18-25°C)",
+            "Implementar sistema FIFO para rotación de inventarios",
+            "Crear sistema de etiquetado de lotes por fecha y calidad",
+            "Implementar control de acceso y registro de entradas/salidas",
+            "Configurar sistema de registro de inventarios (software o formatos)",
+            "Capacitar a personal en protocolos de almacenamiento y manejo",
+            "Establecer protocolo de limpieza regular de la bodega",
+            "Realizar inspecciones semanales de calidad y condiciones",
+            "Documentar procedimientos en manual de almacenamiento"
+          ]
+        },
+        {
+          "stepId": "packaging-equipment",
+          "stepTitle": "Equipos de Empaque y Etiquetado",
+          "guide": {
+            "whyItMatters": "El empaque profesional es la carta de presentación de tu cacao orgánico ante compradores internacionales. Un empaque inadecuado daña la calidad del producto durante el transporte, genera pérdidas por contaminación, y proyecta imagen de baja calidad que reduce el precio de venta. Además, las regulaciones internacionales exigen etiquetado específico con información de trazabilidad, certificación orgánica y datos del producto. Sin equipos de empaque adecuados, no puedes acceder a mercados premium.",
+            "bestPractices": [
+              "Usa sacos de yute de 60 kg con bolsa interior de polietileno alimentario para exportación",
+              "Para mercados premium, considera GrainPro o bolsas herméticas que mantienen humedad estable",
+              "Implementa sistema de sellado térmico o costurado para cierre hermético",
+              "Etiqueta cada saco con: lote, fecha de producción, peso neto, origen, certificación orgánica",
+              "Adquiere balanza de empaque con impresora de etiquetas integrada",
+              "Para ventas minoristas, diseña empaques atractivos con información completa",
+              "Implementa zona de empaque limpia y separada de otras actividades",
+              "Capacita a personal en técnicas de empaque higiénico y etiquetado correcto"
+            ],
+            "commonMistakes": [
+              "Usar sacos reutilizados o contaminados que afectan la calidad del cacao",
+              "No usar bolsa interior plástica, permitiendo absorción de humedad",
+              "No sellar herméticamente los sacos, permitiendo entrada de insectos y humedad",
+              "Etiquetar incorrectamente o no etiquetar, perdiendo trazabilidad",
+              "No incluir información de certificación orgánica en etiquetas",
+              "Empacar en zona sucia o contaminada, afectando la calidad",
+              "Usar materiales de empaque no alimentarios que contaminan el producto",
+              "No pesar correctamente los sacos, generando reclamos de compradores"
+            ],
+            "tip": "Para exportación de cacao orgánico, usa sacos de yute nuevo de 60 kg con bolsa interior de polietileno de alta densidad (mínimo 80 micras). Costo por saco completo: $15.000-$25.000 COP. Para mercados ultra-premium, considera bolsas GrainPro ($30.000-$40.000 COP por unidad) que mantienen humedad estable y protegen aromas. Sistema de sellado: costuradora industrial ($800.000-$1.500.000 COP) o selladora térmica ($400.000-$800.000 COP). Balanza con impresora de etiquetas: $1.500.000-$3.000.000 COP. Inversión total en equipos de empaque: $3.000.000-$6.000.000 COP. Etiqueta debe incluir: nombre del producto, origen (finca, vereda, municipio), lote, fecha de producción, peso neto, nombre y dirección del productor, número de certificación orgánica, código de barras si aplica.",
+            "recommendedTools": [
+              {
+                "name": "Sacos de Yute con Bolsa Interior",
+                "url": "https://www.google.com",
+                "description": "Sacos de yute nuevo de 60 kg con bolsa interior de polietileno alimentario"
+              },
+              {
+                "name": "Bolsas GrainPro para Cacao Premium",
+                "url": "https://www.grainpro.com",
+                "description": "Bolsas herméticas que mantienen humedad estable y protegen aromas"
+              },
+              {
+                "name": "Costuradora Industrial de Sacos",
+                "url": "https://www.google.com",
+                "description": "Equipos para sellado hermético de sacos de cacao"
+              },
+              {
+                "name": "Balanza con Impresora de Etiquetas",
+                "url": "https://www.google.com",
+                "description": "Sistema integrado de pesaje y etiquetado para empaque profesional"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "packaging-bag-type",
+                "label": "Tipo de Bolsa/Saco Utilizado para Empaque",
+                "type": "select",
+                "options": [
+                  "Saco de yute 60 kg con bolsa interior plástica",
+                  "Saco de yute 60 kg sin bolsa interior",
+                  "Bolsa GrainPro hermética",
+                  "Saco de polipropileno",
+                  "Empaque minorista (1kg, 5kg, etc.)",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "bag-capacity-kg",
+                "label": "Capacidad de Cada Bolsa/Saco (kg)",
+                "type": "number",
+                "placeholder": "60",
+                "required": true
+              },
+              {
+                "fieldId": "inner-plastic-bag-used",
+                "label": "¿Usa Bolsa Interior de Polietileno Alimentario?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "inner-plastic-thickness-micras",
+                "label": "Espesor de Bolsa Interior (micras)",
+                "type": "number",
+                "placeholder": "80",
+                "required": false
+              },
+              {
+                "fieldId": "sealing-system",
+                "label": "Sistema de Sellado de Sacos",
+                "type": "select",
+                "options": [
+                  "Costuradora industrial",
+                  "Selladora térmica",
+                  "Cordón manual",
+                  "Cinta adhesiva",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "sewing-machine-obtained",
+                "label": "¿Adquirió Costuradora Industrial?",
+                "type": "select",
+                "options": ["Sí", "No", "En compra"],
+                "required": true
+              },
+              {
+                "fieldId": "sewing-machine-cost",
+                "label": "Costo de Costuradora Industrial (COP)",
+                "type": "number",
+                "placeholder": "1200000",
+                "required": false
+              },
+              {
+                "fieldId": "weighing-labeling-system",
+                "label": "¿Dispone de Balanza con Impresora de Etiquetas?",
+                "type": "select",
+                "options": ["Sí, integrada", "Sí, separada", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "weighing-labeling-cost",
+                "label": "Costo de Balanza con Impresora (COP)",
+                "type": "number",
+                "placeholder": "2000000",
+                "required": false
+              },
+              {
+                "fieldId": "label-information-included",
+                "label": "Información Incluida en Etiquetas",
+                "type": "multiselect",
+                "options": [
+                  "Nombre del producto (Cacao Orgánico)",
+                  "Origen (finca, vereda, municipio, departamento)",
+                  "Número de lote",
+                  "Fecha de producción",
+                  "Peso neto",
+                  "Nombre y dirección del productor",
+                  "Número de certificación orgánica",
+                  "Logo de certificación orgánica",
+                  "Código de barras",
+                  "Instrucciones de almacenamiento"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "organic-certification-logo-included",
+                "label": "¿Incluye Logo de Certificación Orgánica en Etiquetas?",
+                "type": "select",
+                "options": ["Sí", "No", "No aplica aún"],
+                "required": true
+              },
+              {
+                "fieldId": "packaging-area-setup",
+                "label": "¿Configuró Zona de Empaque Limpia y Separada?",
+                "type": "select",
+                "options": ["Sí, exclusiva", "Sí, compartida pero limpia", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "packaging-area-area-m2",
+                "label": "Área de Zona de Empaque (m²)",
+                "type": "number",
+                "placeholder": "15",
+                "required": false
+              },
+              {
+                "fieldId": "staff-trained-in-packaging",
+                "label": "¿Personal Capacitado en Técnicas de Empaque Higiénico?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "cost-per-bag",
+                "label": "Costo Promedio por Bolsa/Saco Completo (COP)",
+                "type": "number",
+                "placeholder": "20000",
+                "required": true
+              },
+              {
+                "fieldId": "monthly-bag-consumption",
+                "label": "Consumo Mensual Estimado de Bolsas/Sacos",
+                "type": "number",
+                "placeholder": "100",
+                "required": true
+              },
+              {
+                "fieldId": "bag-supplier",
+                "label": "Proveedor de Bolsas/Sacos",
+                "type": "text",
+                "placeholder": "Nombre y contacto del proveedor",
+                "required": false
+              },
+              {
+                "fieldId": "total-packaging-equipment-investment",
+                "label": "Inversión Total en Equipos de Empaque (COP)",
+                "type": "number",
+                "placeholder": "4000000",
+                "required": true
+              },
+              {
+                "fieldId": "equipment-purchase-date",
+                "label": "Fecha de Compra de Equipos",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "packaging-manual-url",
+                "label": "Enlace a Manual de Procedimientos de Empaque (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar necesidades de empaque según volumen de producción y mercados objetivo",
+            "Seleccionar tipo de bolsa/saco adecuado (yute, GrainPro, etc.)",
+            "Cotizar y adquirir sacos de yute con bolsa interior plástica alimentaria",
+            "Cotizar y adquirir costuradora industrial o selladora térmica",
+            "Cotizar y adquirir balanza con impresora de etiquetas integrada",
+            "Diseñar formato de etiqueta con toda la información requerida",
+            "Incluir logo de certificación orgánica en etiquetas (si aplica)",
+            "Configurar zona de empaque limpia y separada de otras actividades",
+            "Implementar protocolo de empaque higiénico",
+            "Capacitar a personal en técnicas de empaque y sellado",
+            "Establecer sistema de registro de lotes empacados",
+            "Definir proveedor de bolsas/sacos y programar compras",
+            "Calcular costo por bolsa y consumo mensual estimado",
+            "Realizar prueba de empaque con primer lote",
+            "Documentar procedimientos en manual de empaque",
+            "Archivar equipos y manuales en zona de empaque"
+          ]
+        },
+        {
+          "stepId": "transport-logistics",
+          "stepTitle": "Vehículos y Transporte para Logística Interna y Externa",
+          "guide": {
+            "whyItMatters": "El transporte adecuado es esencial para mover cacao desde la zona de cosecha hasta fermentación, de fermentación a secado, y de secado a almacenamiento y venta. Sin vehículos apropiados, el cacao sufre daños mecánicos, se contamina, o se retrasa el procesamiento afectando la calidad. Además, para ventas a compradores o exportación, necesitas transporte que garantice condiciones adecuadas durante el tránsito. Vehículos inadecuados generan pérdidas por deterioro, contaminación, o rechazo de lotes por compradores.",
+            "bestPractices": [
+              "Adquiere vehículos adecuados para el volumen de producción y topografía de la finca",
+              "Para transporte interno: carretillas, triciclos de carga, o motocicleta con canastilla",
+              "Para transporte externo: camioneta o camión con caja cerrada o protegida",
+              "Mantiene vehículos limpios y libres de olores que contaminen el cacao",
+              "Protege el cacao de lluvia y sol directo durante transporte con lonas o caja cerrada",
+              "Implementa mantenimiento preventivo regular de vehículos",
+              "Para exportación, coordina con transportadores especializados en productos agrícolas",
+              "Documenta todos los traslados con registros de fecha, lote, peso y destino"
+            ],
+            "commonMistakes": [
+              "Transportar cacao en vehículos sucios o que transportaron productos químicos",
+              "No proteger el cacao de lluvia durante transporte, mojando el producto",
+              "Usar vehículos sobrecargados que dañan los sacos por fricción o presión",
+              "No realizar mantenimiento preventivo, generando averías en momentos críticos",
+              "Mezclar cacao con otros productos en el mismo vehículo, contaminando aromas",
+              "No registrar traslados, perdiendo trazabilidad de lotes",
+              "Subestimar necesidades de transporte, generando cuellos de botella en cosecha",
+              "No coordinar con transportadores especializados para exportación"
+            ],
+            "tip": "Para finca de cacao de 10-20 hectáreas, necesitas: 1) Transporte interno: 2-3 carretillas ($300.000-$500.000 COP c/u) o triciclo de carga ($3.000.000-$5.000.000 COP) para mover cacao de cosecha a fermentación, 2) Transporte externo: motocicleta con canastilla ($6.000.000-$8.000.000 COP) o camioneta usada ($25.000.000-$40.000.000 COP) para llevar producto a compradores. Para exportación, coordina con transportadores especializados que ofrezcan vehículos cerrados con control de temperatura. Costo de transporte externo: $500-$1.500 COP por kg dependiendo de distancia. Incluye en presupuesto: combustible ($500.000-$1.000.000 COP mensuales), mantenimiento ($200.000-$500.000 COP mensuales), y seguros de vehículo.",
+            "recommendedTools": [
+              {
+                "name": "Triciclos de Carga Agrícola",
+                "url": "https://www.google.com",
+                "description": "Vehículos de tres ruedas para transporte interno en fincas"
+              },
+              {
+                "name": "Camionetas 4x4 para Zonas Rurales",
+                "url": "https://www.google.com",
+                "description": "Vehículos adecuados para topografía difícil y transporte externo"
+              },
+              {
+                "name": "Transportadores Especializados en Cacao",
+                "url": "https://www.google.com",
+                "description": "Empresas de logística especializadas en transporte de productos agrícolas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "internal-transport-equipment",
+                "label": "Equipos de Transporte Interno Disponibles",
+                "type": "multiselect",
+                "options": [
+                  "Carretillas",
+                  "Triciclos de carga",
+                  "Motocicleta con canastilla",
+                  "Animal de carga (mula, burro)",
+                  "Transporte manual",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "wheelbarrows-quantity",
+                "label": "Número de Carretillas",
+                "type": "number",
+                "placeholder": "3",
+                "required": false
+              },
+              {
+                "fieldId": "wheelbarrow-cost-each",
+                "label": "Costo por Carreta (COP)",
+                "type": "number",
+                "placeholder": "400000",
+                "required": false
+              },
+              {
+                "fieldId": "cargo-tricycle-obtained",
+                "label": "¿Adquirió Triciclo de Carga?",
+                "type": "select",
+                "options": ["Sí", "No", "En compra"],
+                "required": true
+              },
+              {
+                "fieldId": "cargo-tricycle-cost",
+                "label": "Costo del Triciclo de Carga (COP)",
+                "type": "number",
+                "placeholder": "4000000",
+                "required": false
+              },
+              {
+                "fieldId": "external-transport-vehicle",
+                "label": "Vehículo para Transporte Externo",
+                "type": "select",
+                "options": [
+                  "Motocicleta con canastilla",
+                  "Camioneta 4x4 propia",
+                  "Camioneta 4x4 alquilada",
+                  "Camión contratado",
+                  "Transporte contratado especializado",
+                  "No disponible"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "motorcycle-obtained",
+                "label": "¿Adquirió Motocicleta con Canastilla?",
+                "type": "select",
+                "options": ["Sí", "No", "En compra"],
+                "required": false
+              },
+              {
+                "fieldId": "motorcycle-cost",
+                "label": "Costo de Motocicleta (COP)",
+                "type": "number",
+                "placeholder": "7000000",
+                "required": false
+              },
+              {
+                "fieldId": "pickup-truck-obtained",
+                "label": "¿Adquirió Camioneta 4x4?",
+                "type": "select",
+                "options": ["Sí, propia", "Sí, alquilada", "No"],
+                "required": false
+              },
+              {
+                "fieldId": "pickup-truck-cost",
+                "label": "Costo de Camioneta (COP)",
+                "type": "number",
+                "placeholder": "35000000",
+                "required": false
+              },
+              {
+                "fieldId": "vehicle-protection-system",
+                "label": "Sistema de Protección del Cacao durante Transporte",
+                "type": "multiselect",
+                "options": [
+                  "Caja cerrada",
+                  "Lona protectora",
+                  "Bolsas plásticas individuales",
+                  "Pallets para elevación",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "rain-protection-during-transport",
+                "label": "¿Protección contra Lluvia durante Transporte?",
+                "type": "select",
+                "options": ["Sí, completa", "Sí, parcial", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "vehicle-maintenance-schedule",
+                "label": "Programa de Mantenimiento Preventivo de Vehículos",
+                "type": "select",
+                "options": ["Cada 3 meses", "Cada 6 meses", "Cada año", "No definido"],
+                "required": true
+              },
+              {
+                "fieldId": "monthly-fuel-cost",
+                "label": "Costo Mensual de Combustible (COP)",
+                "type": "number",
+                "placeholder": "700000",
+                "required": true
+              },
+              {
+                "fieldId": "monthly-maintenance-cost",
+                "label": "Costo Mensual de Mantenimiento de Vehículos (COP)",
+                "type": "number",
+                "placeholder": "300000",
+                "required": true
+              },
+              {
+                "fieldId": "vehicle-insurance-obtained",
+                "label": "¿Contrató Seguro para Vehículos?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "specialized-transporter-for-export",
+                "label": "¿Coordina con Transportador Especializado para Exportación?",
+                "type": "select",
+                "options": ["Sí", "No", "No aplica aún"],
+                "required": true
+              },
+              {
+                "fieldId": "transporter-name-contact",
+                "label": "Nombre y Contacto del Transportador (si aplica)",
+                "type": "text",
+                "placeholder": "Ej: Transportes Cacao S.A.S. - Tel: 3001234567",
+                "required": false
+              },
+              {
+                "fieldId": "transport-cost-per-kg",
+                "label": "Costo Promedio de Transporte Externo por Kg (COP)",
+                "type": "number",
+                "placeholder": "1000",
+                "required": false
+              },
+              {
+                "fieldId": "transport-records-system",
+                "label": "Sistema de Registro de Traslados",
+                "type": "select",
+                "options": [
+                  "Software contable",
+                  "Excel/Google Sheets",
+                  "Formatos físicos",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "total-transport-investment",
+                "label": "Inversión Total en Vehículos y Equipos de Transporte (COP)",
+                "type": "number",
+                "placeholder": "45000000",
+                "required": true
+              },
+              {
+                "fieldId": "vehicles-purchase-date",
+                "label": "Fecha de Compra de Vehículos",
+                "type": "date",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar necesidades de transporte según volumen de producción y topografía",
+            "Cotizar y adquirir equipos de transporte interno (carretillas, triciclos)",
+            "Cotizar y adquirir vehículo para transporte externo (motocicleta, camioneta)",
+            "Implementar sistema de protección del cacao durante transporte (lonas, caja cerrada)",
+            "Asegurar protección contra lluvia durante todos los traslados",
+            "Establecer programa de mantenimiento preventivo de vehículos",
+            "Contratar seguro para vehículos propios",
+            "Calcular costos mensuales de combustible y mantenimiento",
+            "Si exporta, coordinar con transportador especializado en productos agrícolas",
+            "Implementar sistema de registro de traslados (fecha, lote, peso, destino)",
+            "Capacitar a conductores en manejo seguro y protección del producto",
+            "Establecer protocolos de limpieza de vehículos para evitar contaminación",
+            "Documentar procedimientos de transporte en manual operativo",
+            "Programar revisiones periódicas de condiciones de vehículos"
+          ]
+        }
+      ]
+    }
+  ]
+}

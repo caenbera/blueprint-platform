@@ -1,0 +1,395 @@
+{
+  "block": "strategy",
+  "phase": "Modelo de Producción y Enfoque Agronómico",
+  "steps": [
+    {
+      "id": "step_3_1",
+      "title": "Definición del Sistema de Cultivo (Agroforestal vs. Monocultivo)",
+      "guide": {
+        "whyItMatters": "En un proyecto de cacao 100% orgánico, la decisión del sistema de cultivo no es solo agronómica; es existencial. Un monocultivo a pleno sol es extremadamente vulnerable a plagas, agota el suelo en pocos años y es prácticamente incompatible con los estándares de certificación orgánica y biodiveridad que exigen organismos como USDA Organic, EU Organic o Rainforest Alliance. Un Sistema Agroforestal (SAF) con sombra regulada, estratos múltiples y cobertura viva reduce la incidencia de Monilia y Escoba de Bruja hasta en un 40%, recicla nutrientes naturalmente, secuestra carbono y permite acceder a bonos de carbono y primas de precio. Definir este sistema desde la estrategia evita el error fatal de sembrar cacao como si fuera maíz.",
+        "bestPractices": [
+          "Adoptar un diseño de SAF con al menos 3 estratos: sombra temporal (plátano/banano, papaya) para los primeros 2 años, sombra semipermanente (guamo, poró, eritrina) y sombra permanente/maderable (cedro, laurel, nogal cafetero, samán).",
+          "Definir el marco de plantación antes de comprar plántulas. Para SAF orgánico, las densidades recomendadas van de 400 a 625 árboles de cacao por hectárea (ej. 4m x 4m o 4m x 5m), dejando espacio para las especies de sombra y circulación de aire.",
+          "Incorporar leguminosas fijadoras de nitrógeno (Inga, Gliricidia, Erythrina) como componente estratégico del sistema, ya que sustituyen parcialmente el nitrógeno que en sistemas convencionales se aporta con urea sintética.",
+          "Diseñar curvas a nivel y barreras vivas si el terreno tiene pendiente superior al 15%, para evitar erosión y pérdida de materia orgánica."
+        ],
+        "commonMistakes": [
+          "Sembrar a alta densidad (más de 800 árboles/ha) buscando mayor producción a corto plazo, lo que genera un microclima húmedo propicio para Monilia y dificulta las podas.",
+          "Usar como sombra árboles que compiten agresivamente por agua y luz (como el eucalipto o el pino), o que albergan plagas del cacao.",
+          "No planificar la 'poda de la sombra' como actividad recurrente. La sombra debe regularse al 30-40% de cobertura; sombra excesiva reduce la floración y aumenta la humedad que favorece enfermedades fúngicas.",
+          "Ignorar la orientación de las hileras respecto al sol y los vientos dominantes, lo que afecta la fotosíntesis y la dispersión de esporas de patógenos."
+        ],
+        "tip": "Para cacao orgánico fino de aroma, el marco de plantación 4m x 4m (625 árboles/ha) con un árbol de sombra por cada 4-6 árboles de cacao es el punto óptimo. Esto permite suficiente luz para la floración, ventilación para reducir la humedad relativa bajo el dosel (meta: <85% para controlar Monilia) y espacio para las podas y la cosecha. Además, planta plátano cada 6 metros como sombra temporal y fuente de ingresos los primeros 18 meses.",
+        "recommendedTools": [
+          {
+            "name": "QGIS (Diseño cartográfico de la plantación)",
+            "url": "https://qgis.org/"
+          },
+          {
+            "name": "World Agroforestry Centre (ICRAF) - Tree Species Database",
+            "url": "https://www.worldagroforestry.org/"
+          },
+          {
+            "name": "CATIE - Manual de Cacao Agroforestal",
+            "url": "https://www.catie.ac.cr/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "cultivation_system_type",
+          "label": "Tipo de Sistema de Cultivo Seleccionado",
+          "type": "select",
+          "options": [
+            "Sistema Agroforestal (SAF) con sombra regulada y estratos múltiples",
+            "Sistema Agroforestal simplificado (SAF con 1-2 especies de sombra)",
+            "Cacao bajo sombra natural de bosque raleado (Cacao bajo monte)",
+            "Monocultivo a pleno sol (No recomendado para orgánico)"
+          ],
+          "required": true
+        },
+        {
+          "id": "planting_density",
+          "label": "Densidad de Plantación (Árboles de cacao por hectárea)",
+          "type": "number",
+          "placeholder": "Ej: 625",
+          "required": true
+        },
+        {
+          "id": "planting_frame",
+          "label": "Marco de Plantación (Distancia entre árboles)",
+          "type": "text",
+          "placeholder": "Ej: 4m x 4m",
+          "required": true
+        },
+        {
+          "id": "shade_species_temporary",
+          "label": "Especies de Sombra Temporal (Primeros 1-2 años)",
+          "type": "multiselect",
+          "options": [
+            "Plátano (Musa AAB)",
+            "Banano (Musa AAA)",
+            "Papaya (Carica papaya)",
+            "Yuca (Manihot esculenta) como cobertura",
+            "Maíz como cultivo intercalado inicial",
+            "Otra (especificar en notas)"
+          ],
+          "required": true
+        },
+        {
+          "id": "shade_species_permanent",
+          "label": "Especies de Sombra Permanente y Maderables",
+          "type": "multiselect",
+          "options": [
+            "Guamo / Inga (Inga edulis / Inga spectabilis)",
+            "Poró / Eritrina (Erythrina poeppigiana)",
+            "Matarratón / Gliricidia (Gliricidia sepium)",
+            "Cedro (Cedrela odorata)",
+            "Laurel (Cordia alliodora)",
+            "Nogal Cafetero (Cordia gerascanthus)",
+            "Samán (Samanea saman)",
+            "Frutales: Aguacate, Guanábana, Zapote",
+            "Otra (especificar en notas)"
+          ],
+          "required": true
+        },
+        {
+          "id": "canopy_coverage_target",
+          "label": "Meta de Cobertura de Dosel / Sombra (%)",
+          "type": "number",
+          "placeholder": "Ej: 35",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_3_1_1",
+          "text": "Definir el tipo de sistema de cultivo (SAF multiestrato, SAF simplificado, etc.).",
+          "registryFieldRef": "cultivation_system_type"
+        },
+        {
+          "id": "cl_3_1_2",
+          "text": "Calcular y registrar la densidad de plantación en árboles de cacao por hectárea.",
+          "registryFieldRef": "planting_density"
+        },
+        {
+          "id": "cl_3_1_3",
+          "text": "Establecer el marco de plantación (distancia entre árboles en metros).",
+          "registryFieldRef": "planting_frame"
+        },
+        {
+          "id": "cl_3_1_4",
+          "text": "Seleccionar las especies de sombra temporal para los primeros 1-2 años de establecimiento.",
+          "registryFieldRef": "shade_species_temporary"
+        },
+        {
+          "id": "cl_3_1_5",
+          "text": "Seleccionar las especies de sombra permanente y maderables para el dosel superior.",
+          "registryFieldRef": "shade_species_permanent"
+        },
+        {
+          "id": "cl_3_1_6",
+          "text": "Definir el porcentaje meta de cobertura de dosel para regular la sombra.",
+          "registryFieldRef": "canopy_coverage_target"
+        }
+      ]
+    },
+    {
+      "id": "step_3_2",
+      "title": "Selección de Clones y Variedades de Cacao",
+      "guide": {
+        "whyItMatters": "La genética del cacao determina el 50% del resultado final. En un sistema 100% orgánico no hay fungicidas de síntesis para 'rescatar' una variedad susceptible a Monilia o Escoba de Bruja. Elegir clones con resistencia genética comprobada y perfil de sabor fino de aroma es la decisión más irreversible del proyecto (los árboles vivirán 30-50 años). Además, el comprador de cacao orgánico premium paga por perfiles de sabor específicos (floral, frutal, a nuez, especiados), y esos perfiles están codificados en el ADN de la variedad. Una mala selección genética condena al negocio a 20 años de mediocridad comercial.",
+        "bestPractices": [
+          "Utilizar una mezcla de 4 a 6 clones/variedades complementarias para diluir el riesgo: si un clon es muy susceptible a una plaga nueva, los demás pueden resistir. Nunca dependas de un solo clon.",
+          "Priorizar clones con resistencia comprobada a Moniliophthora roreri (Monilia) y Moniliophthora perniciosa (Escoba de Bruja) en condiciones orgánicas. Clones como ICS-95, TSH-565 y ciertos materiales del INIAP (Ecuador) o ICA (Colombia) han mostrado resiliencia.",
+          "Para cacao fino de aroma, considerar variedades Nacional (Arriba) de Ecuador, Criollo o Trinitario selecto de Centroamérica y el Caribe, o materiales locales con perfil de taza documentado.",
+          "Exigir al vivero certificado que las plántulas provengan de huertos semilleros clonales registrados, con injertos de yema verificable. Nunca sembrar semilla sexual (no injertada) si buscas uniformidad y calidad.",
+          "Mantener un mapa clonal de la finca: saber exactamente qué clon está en qué lote es esencial para la trazabilidad y para cosechar y fermentar por lotes separados según el perfil de sabor."
+        ],
+        "commonMistakes": [
+          "Sembrar exclusivamente CCN-51 por su alto rendimiento (hasta 3,000 kg/ha), ignorando que su perfil de sabor es considerado 'astringente y plano' por los compradores premium, lo que limita severamente el precio de venta.",
+          "Comprar plántulas en viveros no certificados que venden material genético desconocido o contaminado con virus (CSSV) o mal injertado.",
+          "No planificar la polinización cruzada: el cacao es autoincompatible en muchos clones. Si siembras un solo clon, no habrá polinización efectiva y la producción de mazorcas será mínima.",
+          "Ignorar la adaptación local: un clon que rinde bien en la costa ecuatoriana puede fracasar en el piedemonte colombiano por diferencias en altitud, humedad y fotoperiodo."
+        ],
+        "tip": "Consulta el catálogo de la colección internacional de germoplasma de cacao de CATIE (Costa Rica) o del INIAP (Ecuador) para seleccionar clones probados en tu zona. Para cacao orgánico fino, una mezcla recomendada es: 40% variedad con perfil floral/frutal (ej. EET-62, IMC-67), 30% variedad con perfil a nuez/chocolate intenso (ej. ICS-95, CCN-51 como polinizador), y 30% materiales locales resilientes. Esto da complejidad en taza y seguridad agronómica.",
+        "recommendedTools": [
+          {
+            "name": "ICCO - International Cocoa Organization (Base de datos de variedades)",
+            "url": "https://www.icco.org/"
+          },
+          {
+            "name": "Cocoa of Excellence Programme (Perfiles de sabor por origen)",
+            "url": "https://cocoaofexcellence.org/"
+          },
+          {
+            "name": "CIRAD - Catálogo de Clones de Cacao",
+            "url": "https://www.cirad.fr/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "selected_clones",
+          "label": "Clones y Variedades Seleccionadas",
+          "type": "multiselect",
+          "options": [
+            "CCN-51 (Alto rendimiento, polinizador, perfil neutro)",
+            "ICS-95 (Trinitario, resistente a Monilia, perfil balanceado)",
+            "EET-62 (Nacional, fino de aroma, floral/frutal)",
+            "IMC-67 (Alto Amazonas, fino de aroma, complejo)",
+            "TSH-565 (Trinitario, productivo, resistente)",
+            "CATIE-R1 / CATIE-R4 / CATIE-R6 (Híbridos CATIE, resistentes)",
+            "ICS-1 (Trinitario clásico, fino de aroma)",
+            "Criollo local (Aroma excepcional, bajo rendimiento, susceptible)",
+            "Material local / Selecciones regionales (Especificar en notas)",
+            "Nacional Arriba (Ecuador, fino de aroma floral/jazmín)"
+          ],
+          "required": true
+        },
+        {
+          "id": "primary_clone_percentage",
+          "label": "Porcentaje del Clon Principal en la Plantación (%)",
+          "type": "number",
+          "placeholder": "Ej: 40",
+          "required": true
+        },
+        {
+          "id": "secondary_clone_percentage",
+          "label": "Porcentaje del Segundo Clon (%)",
+          "type": "number",
+          "placeholder": "Ej: 30",
+          "required": true
+        },
+        {
+          "id": "plant_origin",
+          "label": "Vivero o Huerto Semillero de Origen de las Plántulas",
+          "type": "text",
+          "placeholder": "Ej: Vivero certificado ICA - Huerto semilleral clonal El Rosario, Registro #...",
+          "required": true
+        },
+        {
+          "id": "planting_method",
+          "label": "Método de Propagación de las Plántulas",
+          "type": "select",
+          "options": [
+            "Injerto de yema (parche) sobre patrón local",
+            "Injerto de púa sobre patrón local",
+            "Plántula de semilla sexual (no recomendado para fino)",
+            "Esqueje enraizado (menos común en cacao)"
+          ],
+          "required": true
+        },
+        {
+          "id": "expected_flavor_profile",
+          "label": "Perfil de Sabor Esperado (Notas de Cata Objetivo)",
+          "type": "textarea",
+          "placeholder": "Ej: Notas florales (jazmín), frutales (maracuyá, frutos rojos), nueces, acidez media, astringencia baja...",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_3_2_1",
+          "text": "Seleccionar los clones y variedades que compondrán la plantación (mínimo 3-4 para diversidad genética).",
+          "registryFieldRef": "selected_clones"
+        },
+        {
+          "id": "cl_3_2_2",
+          "text": "Definir el porcentaje del clon principal en la distribución de la plantación.",
+          "registryFieldRef": "primary_clone_percentage"
+        },
+        {
+          "id": "cl_3_2_3",
+          "text": "Definir el porcentaje del segundo clon en la distribución.",
+          "registryFieldRef": "secondary_clone_percentage"
+        },
+        {
+          "id": "cl_3_2_4",
+          "text": "Identificar y registrar el vivero certificado y huerto semillero de origen de las plántulas.",
+          "registryFieldRef": "plant_origin"
+        },
+        {
+          "id": "cl_3_2_5",
+          "text": "Seleccionar el método de propagación (injerto de yema, púa, etc.).",
+          "registryFieldRef": "planting_method"
+        },
+        {
+          "id": "cl_3_2_6",
+          "text": "Documentar el perfil de sabor esperado (notas de cata objetivo) para alinear genética con mercado.",
+          "registryFieldRef": "expected_flavor_profile"
+        }
+      ]
+    },
+    {
+      "id": "step_3_3",
+      "title": "Plan de Certificaciones Objetivo",
+      "guide": {
+        "whyItMatters": "En el mercado global de cacao, la certificación orgánica es la llave que abre la puerta al sobreprecio (prima orgánica del 15-30% sobre el precio de bolsa) y a compradores especializados. Sin ella, tu cacao orgánico es 'orgánico invisible': tiene los costos de producción orgánica pero se vende a precio de commodity. Planificar las certificaciones desde la estrategia es crítico porque la certificación orgánica (USDA, EU) exige un período de transición de 36 meses desde la última aplicación de químico sintético antes de poder etiquetar el producto como 'orgánico'. Si no planificas esto desde el día uno, perderás años de ingresos premium.",
+        "bestPractices": [
+          "Iniciar el proceso de registro como 'En Transición' ante la entidad certificadora desde el día de la siembra. Documentar cada insumo, cada aplicación y cada actividad de campo en un cuaderno de campo desde el primer día, ya que el auditor revisará 3 años de historial.",
+          "Evaluar la combinación de certificaciones que maximice el precio: Orgánico (USDA/EU) + Fair Trade + Rainforest Alliance es la 'tríada dorada' que más primas genera, pero también la más costosa y exigente en documentación.",
+          "Presupuestar las certificaciones como un CAPEX: los costos de auditoría, inscripción y seguimiento anual de un organismo como ECOCERT, CERES o Control Union pueden oscilar entre $2,000 y $8,000 USD anuales dependiendo de la superficie y el estándar.",
+          "Si la finca es pequeña (<10 ha), evaluar la certificación grupal a través de una cooperativa o asociación de productores orgánicos, que reduce el costo individual hasta en un 60%."
+        ],
+        "commonMistakes": [
+          "Iniciar la certificación orgánica en el año 3 (cuando ya hay cosecha), cuando debería haberse iniciado en el año 0, perdiendo así 3 años de prima orgánica potencial.",
+          "No documentar el historial de uso de la tierra. Si el terreno fue convencional antes de tu proyecto, necesitas evidencia (análisis de residuos en suelo, declaración jurada) de cuándo se dejó de aplicar químicos.",
+          "Confundir 'orgánico' con 'sin químicos'. La certificación orgánica exige un Sistema de Gestión Interno (SGI) con procedimientos escritos, trazabilidad por lotes y planes de manejo documentados, no solo buenas intenciones.",
+          "Ignorar los costos de recertificación anual. No es un pago único; cada año hay auditoría y si no se aprueba, se pierde la certificación y toda la cosecha de ese año se devalúa."
+        ],
+        "tip": "Para cacao 100% orgánico, la certificación más reconocida internacionalmente es la combinación USDA Organic (para el mercado norteamericano) y EU Organic (Reglamento UE 2018/848, para Europa). Si tu finca es nueva y nunca ha tenido químicos, puedes solicitar una 'reducción del período de conversión' presentando análisis de suelo y agua que demuestren cero residuos. Organismos como CERES, ECOCERT o BCS Öko realizan auditorías en Latinoamérica con tiempos de respuesta de 3-6 meses.",
+        "recommendedTools": [
+          {
+            "name": "IFOAM - Directory of Organic Certifiers",
+            "url": "https://ifoam.bio/"
+          },
+          {
+            "name": "USDA National Organic Program (Regulaciones)",
+            "url": "https://www.ams.usda.gov/rules-regulations/organic"
+          },
+          {
+            "name": "EU Organic Regulation 2018/848",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32018R0848"
+          },
+          {
+            "name": "Fairtrade International (Estándares para cacao)",
+            "url": "https://www.fairtrade.net/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "target_certifications",
+          "label": "Certificaciones Objetivo del Proyecto",
+          "type": "multiselect",
+          "options": [
+            "Orgánico USDA (NOP) - Mercado USA",
+            "Orgánico EU (Reg. 2018/848) - Mercado Europeo",
+            "Orgánico JAS - Mercado Japonés",
+            "Fair Trade / Comercio Justo",
+            "Rainforest Alliance / UTZ",
+            "Cacao de Excelencia (Cocoa of Excellence)",
+            "B Corp (Empresa B)",
+            "Carbono Neutral / Bonos de Carbono",
+            "Regenerative Organic Certified (ROC)",
+            "Bird Friendly / Amigable con las Aves"
+          ],
+          "required": true
+        },
+        {
+          "id": "certifying_body",
+          "label": "Entidad Certificadora Seleccionada o en Evaluación",
+          "type": "text",
+          "placeholder": "Ej: ECOCERT, CERES, Control Union, BCS Öko, IMO",
+          "required": true
+        },
+        {
+          "id": "certification_budget",
+          "label": "Presupuesto Estimado Anual para Certificaciones (USD)",
+          "type": "number",
+          "placeholder": "Ej: 3500",
+          "required": true
+        },
+        {
+          "id": "transition_start_date",
+          "label": "Fecha de Inicio del Período de Transición Orgánica",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "target_full_certification_date",
+          "label": "Fecha Objetivo para Obtener la Certificación Orgánica Completa",
+          "type": "date",
+          "placeholder": null,
+          "required": true
+        },
+        {
+          "id": "certification_model",
+          "label": "Modelo de Certificación",
+          "type": "select",
+          "options": [
+            "Certificación individual (Finca propia)",
+            "Certificación grupal (A través de cooperativa/asociación)",
+            "Sistema de Garantía Participativa (SGP - para mercados locales)",
+            "Aún por definir"
+          ],
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_3_3_1",
+          "text": "Seleccionar las certificaciones objetivo que alineen la producción con el mercado meta.",
+          "registryFieldRef": "target_certifications"
+        },
+        {
+          "id": "cl_3_3_2",
+          "text": "Identificar la entidad certificadora (organismo de inspección) seleccionada o en proceso de evaluación.",
+          "registryFieldRef": "certifying_body"
+        },
+        {
+          "id": "cl_3_3_3",
+          "text": "Presupuestar el costo anual estimado para auditorías, inscripción y seguimiento de certificaciones.",
+          "registryFieldRef": "certification_budget"
+        },
+        {
+          "id": "cl_3_3_4",
+          "text": "Registrar la fecha de inicio del período de transición orgánica (día cero sin químicos).",
+          "registryFieldRef": "transition_start_date"
+        },
+        {
+          "id": "cl_3_3_5",
+          "text": "Establecer la fecha objetivo para obtener la certificación orgánica completa (tras 36 meses de transición).",
+          "registryFieldRef": "target_full_certification_date"
+        },
+        {
+          "id": "cl_3_3_6",
+          "text": "Definir el modelo de certificación (individual, grupal o SGP).",
+          "registryFieldRef": "certification_model"
+        }
+      ]
+    }
+  ]
+}

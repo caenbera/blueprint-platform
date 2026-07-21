@@ -1,0 +1,524 @@
+{
+  "block": "customers",
+  "blockTitle": "Clientes",
+  "phases": [
+    {
+      "phaseId": "acquisition-loyalty-post-sales",
+      "phaseTitle": "Canales de Captación, Fidelización y Postventa",
+      "steps": [
+        {
+          "stepId": "lead-generation-outreach",
+          "stepTitle": "Generación de Leads y Prospección Activa B2B",
+          "guide": {
+            "whyItMatters": "Esperar a que los clientes lleguen por sí solos (inbound) no es suficiente en el competitivo mercado del cacao orgánico. La prospección activa y estructurada hacia chocolateros bean-to-bar, importadores y distribuidores especializados es lo que llena el embudo de ventas. Un enfoque proactivo te permite controlar tu crecimiento, apuntar a los compradores que mejor valoran tu calidad y construir una cartera de clientes diversificada y resiliente.",
+            "bestPractices": [
+              "Construye una lista segmentada de 100-200 compradores potenciales ideales (ICP)",
+              "Utiliza secuencias de correo electrónico personalizadas (máximo 3-4 seguimientos)",
+              "Incluye un video corto personalizado (ej. Loom) presentando la finca en el primer contacto",
+              "Ofrece el envío de un kit de muestras gratuito como 'gancho' de valor",
+              "Utiliza LinkedIn Sales Navigator para identificar y conectar con gerentes de compras",
+              "Da seguimiento inmediato (menos de 24 horas) a los leads que descarguen tu catálogo"
+            ],
+            "commonMistakes": [
+              "Enviar correos masivos genéricos (spam) sin personalización",
+              "Rendirse después de un solo intento de contacto sin respuesta",
+              "No tener un CRM para registrar las interacciones y seguimientos",
+              "Prometer volúmenes o calidades que la finca no puede entregar consistentemente",
+              "Ignorar las diferencias culturales y de horario en la comunicación internacional",
+              "No ofrecer una llamada a la acción (CTA) clara en cada mensaje"
+            ],
+            "tip": "Para cacao fino de aroma, la tasa de respuesta a correos fríos mejora un 30-40% si incluyes un video de 30 segundos mostrando el proceso de fermentación o el rostro del productor. Usa un asunto de correo específico: 'Cacao orgánico fermentado de [Tu Región] para [Nombre de la Chocolatería]'. Costo de herramientas de prospección (CRM + Email automation): $150.000-$400.000 COP mensuales. Meta realista: 10-15 contactos nuevos calificados por mes, con una tasa de conversión a muestra del 20%.",
+            "recommendedTools": [
+              {
+                "name": "HubSpot CRM (Gratuito)",
+                "url": "https://www.hubspot.com",
+                "description": "Gestión de contactos, seguimiento de correos y pipeline de ventas"
+              },
+              {
+                "name": "Loom",
+                "url": "https://www.loom.com",
+                "description": "Grabación de videos rápidos y personalizados para prospección"
+              },
+              {
+                "name": "LinkedIn Sales Navigator",
+                "url": "https://www.linkedin.com/sales",
+                "description": "Búsqueda avanzada para encontrar tomadores de decisiones en la industria del chocolate"
+              },
+              {
+                "name": "Mailchimp o Brevo",
+                "url": "https://www.brevo.com",
+                "description": "Automatización de secuencias de correo electrónico de seguimiento"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "crm-platform-used",
+                "label": "Plataforma CRM Utilizada",
+                "type": "select",
+                "options": ["HubSpot", "Salesforce", "Pipedrive", "Excel/Google Sheets", "Ninguna"],
+                "required": true
+              },
+              {
+                "fieldId": "target-leads-list-size",
+                "label": "Tamaño de la Lista de Leads Objetivo",
+                "type": "number",
+                "placeholder": "150",
+                "required": true
+              },
+              {
+                "fieldId": "outreach-channels",
+                "label": "Canales de Prospección Utilizados",
+                "type": "multiselect",
+                "options": [
+                  "Correo electrónico en frío",
+                  "LinkedIn (mensajes directos)",
+                  "Llamadas telefónicas",
+                  "Ferias y eventos presenciales",
+                  "Referidos de clientes actuales"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "personalized-video-used",
+                "label": "¿Incluye Video Personalizado en la Prospección?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, a veces", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "follow-up-sequences-defined",
+                "label": "¿Tiene Secuencias de Seguimiento Definidas (3-4 pasos)?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "new-leads-per-month",
+                "label": "Promedio de Nuevos Leads Calificados por Mes",
+                "type": "number",
+                "placeholder": "12",
+                "required": true
+              },
+              {
+                "fieldId": "sample-request-conversion-rate",
+                "label": "Tasa de Conversión de Lead a Solicitud de Muestra (%)",
+                "type": "number",
+                "placeholder": "20",
+                "required": true
+              },
+              {
+                "fieldId": "monthly-prospecting-budget",
+                "label": "Presupuesto Mensual para Herramientas de Prospección (COP)",
+                "type": "number",
+                "placeholder": "300000",
+                "required": true
+              },
+              {
+                "fieldId": "crm-database-url",
+                "label": "Enlace a la Base de Datos de Leads o CRM",
+                "type": "url",
+                "placeholder": "https://app.hubspot.com/... o Google Sheets",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Definir el Perfil de Cliente Ideal (ICP) para cacao orgánico",
+            "Construir y segmentar una lista de 100-200 compradores potenciales",
+            "Configurar un CRM para registrar todas las interacciones",
+            "Redactar plantillas de correo electrónico personalizadas (en español e inglés)",
+            "Grabar un video corto de presentación de la finca para prospección",
+            "Implementar una secuencia automática de 3-4 seguimientos",
+            "Ofrecer el kit de muestras como llamado a la acción principal",
+            "Capacitar al equipo comercial en el uso del CRM y protocolos de seguimiento",
+            "Dar seguimiento en menos de 24 horas a cualquier lead entrante",
+            "Revisar semanalmente el pipeline de ventas y tasas de conversión"
+          ]
+        },
+        {
+          "stepId": "loyalty-retention-program",
+          "stepTitle": "Programa de Fidelización y Retención de Compradores",
+          "guide": {
+            "whyItMatters": "Adquirir un nuevo cliente B2B cuesta hasta 5 veces más que retener uno existente. En el negocio del cacao, la estabilidad de los contratos a largo plazo es lo que permite planificar cosechas, invertir en infraestructura y mantener el flujo de caja. Un programa de fidelización bien diseñado transforma a un comprador transaccional en un socio estratégico que prioriza tu cacao sobre el de la competencia, incluso en tiempos de escasez o fluctuación de precios.",
+            "bestPractices": [
+              "Segmenta a tus clientes por volumen de compra y potencial (ej. Tier 1, Tier 2, Tier 3)",
+              "Ofrece 'Derecho de Primer Rechazo' (First Right of Refusal) en micro-lotes de alta puntuación a tus mejores clientes",
+              "Establece descuentos por volumen o por contratos anuales prepagados",
+              "Realiza revisiones de negocio trimestrales o anuales (QBR) con clientes clave",
+              "Mantén comunicación constante fuera de los ciclos de venta (ej. noticias de la cosecha, felicitaciones)",
+              "Garantiza consistencia absoluta en la calidad y los tiempos de entrega"
+            ],
+            "commonMistakes": [
+              "Tratar a todos los clientes por igual, dedicando los mismos recursos a todos",
+              "Solo contactar al cliente cuando se necesita vender o cobrar",
+              "Cambiar las especificaciones de calidad o empaque sin avisar al cliente",
+              "No tener contratos o acuerdos de suministro a largo plazo",
+              "Ignorar las señales de advertencia de un cliente insatisfecho hasta que se va",
+              "No cumplir con los plazos de entrega prometidos, erosionando la confianza"
+            ],
+            "tip": "Para retener chocolateros bean-to-bar, el valor no está solo en el grano, sino en la exclusividad. Ofrece a tus 3 mejores clientes la oportunidad de comprar 'lotes de micro-fermentación' con perfiles de sabor únicos antes de ofrecerlos al mercado general. Un contrato anual con compromiso de volumen puede incluir un descuento del 3-5% o envío gratuito a puerto. El costo de implementar un programa de fidelización es bajo (principalmente tiempo y comunicación), pero el ROI en retención (objetivo >85%) es enorme.",
+            "recommendedTools": [
+              {
+                "name": "Plantilla de Acuerdo de Suministro Anual",
+                "url": "https://www.google.com",
+                "description": "Modelo de contrato con cláusulas de volumen, precio y calidad"
+              },
+              {
+                "name": "Calendly",
+                "url": "https://calendly.com",
+                "description": "Programación de reuniones de revisión de negocio (QBR) sin fricción"
+              },
+              {
+                "name": "Notion o Excel",
+                "url": "https://www.notion.so",
+                "description": "Seguimiento de niveles de clientes y beneficios de fidelización asignados"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "customer-segmentation-active",
+                "label": "¿Clientes Segmentados por Valor/Volumen?",
+                "type": "select",
+                "options": ["Sí, formalmente", "Sí, informalmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "loyalty-benefits-offered",
+                "label": "Beneficios de Fidelización Ofrecidos",
+                "type": "multiselect",
+                "options": [
+                  "Descuentos por volumen",
+                  "Prioridad en micro-lotes exclusivos",
+                  "Envío gratuito o subsidiado",
+                  "Condiciones de pago flexibles",
+                  "Visitas guiadas a la finca",
+                  "Co-branding en empaques"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "annual-contracts-signed",
+                "label": "Número de Contratos de Suministro Anual Firmados",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              },
+              {
+                "fieldId": "customer-retention-rate",
+                "label": "Tasa de Retención de Clientes Anual (%)",
+                "type": "number",
+                "placeholder": "85",
+                "required": true
+              },
+              {
+                "fieldId": "repeat-purchase-rate",
+                "label": "Tasa de Recompra (%)",
+                "type": "number",
+                "placeholder": "90",
+                "required": true
+              },
+              {
+                "fieldId": "qbr-meetings-held",
+                "label": "Reuniones de Revisión de Negocio (QBR) Realizadas este Año",
+                "type": "number",
+                "placeholder": "8",
+                "required": true
+              },
+              {
+                "fieldId": "key-account-manager-assigned",
+                "label": "¿Hay un Gerente de Cuentas Clave Asignado?",
+                "type": "select",
+                "options": ["Sí", "No, lo hace el fundador", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "loyalty-program-investment",
+                "label": "Inversión Anual en Programa de Fidelización (COP)",
+                "type": "number",
+                "placeholder": "2000000",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Segmentar la base de clientes actual en Tier 1 (clave), Tier 2 (crecimiento) y Tier 3",
+            "Definir beneficios claros y atractivos para cada nivel de cliente",
+            "Diseñar una plantilla de Acuerdo de Suministro Anual",
+            "Ofrecer prioridad de compra en los mejores micro-lotes a clientes Tier 1",
+            "Programar reuniones de revisión de negocio (QBR) semestrales o anuales",
+            "Establecer un protocolo de comunicación proactiva (no solo para vender)",
+            "Implementar descuentos por volumen o prepagos para mejorar el flujo de caja",
+            "Invitar a clientes clave a visitar la finca (presencial o virtualmente)",
+            "Monitorear la tasa de retención y recompra trimestralmente",
+            "Identificar y actuar sobre señales de riesgo de abandono de clientes"
+          ]
+        },
+        {
+          "stepId": "post-sales-feedback",
+          "stepTitle": "Postventa, Retroalimentación y Gestión de Incidencias",
+          "guide": {
+            "whyItMatters": "La venta no termina cuando el cacao se entrega; termina cuando el cliente lo ha procesado y está satisfecho con el resultado final. La postventa es el momento crítico para detectar problemas de calidad (ej. humedad que subió en tránsito, granos mohosos) antes de que se conviertan en reclamos formales o pérdida del cliente. Una gestión de incidencias rápida, transparente y orientada a la solución construye más confianza que un pedido que nunca tuvo problemas.",
+            "bestPractices": [
+              "Envía un formulario de retroalimentación de calidad a los 15-30 días de la entrega",
+              "Pregunta específicamente sobre: humedad al recibir, consistencia de fermentación, perfil de sabor y estado del empaque",
+              "Establece un protocolo de respuesta a reclamos en menos de 24 horas",
+              "Realiza análisis de causa raíz para cualquier defecto reportado y comparte el plan de acción con el cliente",
+              "Ofrece una compensación justa y rápida si el producto no cumple las especificaciones acordadas",
+              "Cierra el ciclo informando al cliente cómo su feedback mejoró tus procesos"
+            ],
+            "commonMistakes": [
+              "Desaparecer o dejar de comunicar una vez que se recibe el pago",
+              "Ponerse a la defensiva o culpar al transportista cuando se reporta un problema de calidad",
+              "Tardar semanas en responder a un reclamo, frustrando al cliente",
+              "No documentar los reclamos, repitiendo los mismos errores en futuros lotes",
+              "Pedir feedback de forma genérica sin preguntas específicas sobre el cacao",
+              "No tener una política clara de devoluciones o reemplazos"
+            ],
+            "tip": "Crea un 'Formulario de Evaluación de Lote' digital (Typeform o Google Forms) que se envíe automáticamente 3 semanas después de la entrega. Incluye preguntas como: '¿El porcentaje de granos bien fermentados coincidió con la ficha técnica?' y '¿Hubo algún problema de humedad o moho?'. Si hay un reclamo válido, la mejor práctica es: 1) Disculparse y reconocer el problema en <24h, 2) Solicitar fotos/evidencia, 3) Ofrecer reemplazo, descuento en el próximo pedido o reembolso, 4) Enviar un informe de 'Acción Correctiva' en 7 días. Esto transforma una queja en una demostración de profesionalismo.",
+            "recommendedTools": [
+              {
+                "name": "Typeform o Google Forms",
+                "url": "https://www.typeform.com",
+                "description": "Creación de formularios de feedback de calidad atractivos y fáciles de responder"
+              },
+              {
+                "name": "Zapier",
+                "url": "https://zapier.com",
+                "description": "Automatización del envío del formulario de feedback tras la confirmación de entrega"
+              },
+              {
+                "fieldId": "plantilla-accion-correctiva",
+                "name": "Plantilla de Informe de Acción Correctiva (8D o similar)",
+                "url": "https://www.google.com",
+                "description": "Formato profesional para explicar al cliente cómo se resolvió un problema de calidad"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "feedback-form-implemented",
+                "label": "¿Formulario de Feedback Post-Entrega Implementado?",
+                "type": "select",
+                "options": ["Sí, automatizado", "Sí, manual", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "feedback-response-rate",
+                "label": "Tasa de Respuesta al Formulario de Feedback (%)",
+                "type": "number",
+                "placeholder": "60",
+                "required": true
+              },
+              {
+                "fieldId": "quality-parameters-checked",
+                "label": "Parámetros de Calidad Consultados en el Feedback",
+                "type": "multiselect",
+                "options": [
+                  "Humedad al recibir",
+                  "Porcentaje de fermentación",
+                  "Perfil de sabor / Cata",
+                  "Estado del empaque",
+                  "Cumplimiento en tiempo de entrega",
+                  "Atención del equipo"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "complaint-response-time-hours",
+                "label": "Tiempo Promedio de Respuesta a Reclamos (horas)",
+                "type": "number",
+                "placeholder": "12",
+                "required": true
+              },
+              {
+                "fieldId": "claims-registered-this-year",
+                "label": "Número de Reclamos de Calidad Registrados este Año",
+                "type": "number",
+                "placeholder": "2",
+                "required": true
+              },
+              {
+                "fieldId": "claims-resolved-satisfactorily",
+                "label": "Porcentaje de Reclamos Resueltos Satisfactoriamente (%)",
+                "type": "number",
+                "placeholder": "100",
+                "required": true
+              },
+              {
+                "fieldId": "corrective-action-reports-sent",
+                "label": "¿Se Envían Informes de Acción Correctiva al Cliente?",
+                "type": "select",
+                "options": ["Sí, siempre", "Solo en reclamos graves", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "refund-replacement-policy-documented",
+                "label": "¿Política de Reembolso/Reemplazo Documentada?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "post-sales-protocol-url",
+                "label": "Enlace al Protocolo de Postventa y Gestión de Reclamos",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Diseñar un formulario digital de evaluación de calidad del lote",
+            "Automatizar el envío del formulario a los 15-30 días de la entrega",
+            "Definir un protocolo de respuesta a reclamos con tiempos máximos (<24h)",
+            "Capacitar al equipo en manejo de objeciones y servicio al cliente empático",
+            "Documentar una política clara de reemplazos, descuentos o reembolsos",
+            "Registrar cada reclamo en el CRM con su estado de resolución",
+            "Realizar análisis de causa raíz para cada incidencia de calidad",
+            "Enviar un informe de acción correctiva al cliente afectado",
+            "Hacer seguimiento para asegurar que el cliente quedó satisfecho con la solución",
+            "Utilizar el feedback para ajustar procesos en finca (ej. mejorar secado)"
+          ]
+        },
+        {
+          "stepId": "customer-advocacy-referrals",
+          "stepTitle": "Advocacy de Marca y Programa de Referidos",
+          "guide": {
+            "whyItMatters": "La recomendación de un par es la forma de marketing más poderosa y con mayor tasa de conversión en el sector B2B del cacao. Un chocolatero satisfecho que recomienda tu cacao a otro colega valida tu calidad más que cualquier folleto. Convertir a tus clientes actuales en 'embajadores' de tu marca genera un ciclo virtuoso de crecimiento orgánico, reduce drásticamente el costo de adquisición de clientes (CAC) y fortalece tu reputación en la comunidad del chocolate de especialidad.",
+            "bestPractices": [
+              "Crea campañas de co-marketing: destaca las barras de chocolate que usan tu cacao en tus redes",
+              "Solicita activamente testimonios en video o escritos después de una entrega exitosa",
+              "Implementa un programa de referidos con incentivos (ej. descuento en el próximo pedido o muestras gratis)",
+              "Etiqueta y menciona a tus clientes en tus publicaciones de redes sociales",
+              "Invita a clientes a participar como jueces en tus catas internas o eventos de cosecha",
+              "Publica un 'Mapa de Aliados' en tu sitio web mostrando a quiénes suministras"
+            ],
+            "commonMistakes": [
+              "Asumir que el cliente te recomendará sin que se lo pidas",
+              "No dar crédito o visibilidad a los clientes que usan tu producto",
+              "Pedir testimonios en momentos inoportunos (ej. justo después de un retraso)",
+              "No ofrecer ningún incentivo o reconocimiento por las referencias",
+              "Usar testimonios falsos o exagerados que dañan la credibilidad",
+              "No tener un proceso fácil para que el cliente deje una reseña o testimonio"
+            ],
+            "tip": "La estrategia de 'Partner Spotlight' es de bajo costo y alto impacto. Publica mensualmente en LinkedIn e Instagram una historia sobre un cliente: 'Conoce a [Chocolatería X], que transforma nuestro cacao de [Tu Finca] en barras premiadas'. Ellos compartirán la publicación con su audiencia, dándote exposición gratuita a su red. Para referidos, ofrece un 'Bono de Cacao': por cada nuevo cliente que cierre un pedido mínimo de 500kg gracias a una referencia, el cliente referente recibe 25kg de cacao gratis o un 5% de descuento en su próxima factura.",
+            "recommendedTools": [
+              {
+                "name": "Canva",
+                "url": "https://www.canva.com",
+                "description": "Diseño de gráficos de 'Partner Spotlight' y materiales de co-branding"
+              },
+              {
+                "name": "VideoAsk o Loom",
+                "url": "https://www.videoask.com",
+                "description": "Recolección fácil de testimonios en video de clientes"
+              },
+              {
+                "name": "ReferralCandy o sistema manual en CRM",
+                "url": "https://www.referralcandy.com",
+                "description": "Seguimiento de referidos y asignación de recompensas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "co-marketing-campaigns-active",
+                "label": "Campañas de Co-Marketing Activas con Clientes",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "video-testimonials-collected",
+                "label": "Número de Testimonios en Video Recopilados",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              },
+              {
+                "fieldId": "written-testimonials-collected",
+                "label": "Número de Testimonios Escritos Recopilados",
+                "type": "number",
+                "placeholder": "8",
+                "required": true
+              },
+              {
+                "fieldId": "referral-program-active",
+                "label": "¿Programa de Referidos con Incentivos Activo?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "referral-incentive-type",
+                "label": "Tipo de Incentivo por Referido",
+                "type": "select",
+                "options": [
+                  "Descuento en próxima factura",
+                  "Kilos de cacao gratuitos",
+                  "Muestras de nuevos lotes",
+                  "Visita exclusiva a la finca",
+                  "No aplica"
+                ],
+                "required": false
+              },
+              {
+                "fieldId": "leads-from-referrals-this-year",
+                "label": "Leads Generados por Referidos este Año",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "closed-deals-from-referrals",
+                "label": "Ventas Cerradas Provenientes de Referidos este Año",
+                "type": "number",
+                "placeholder": "2",
+                "required": true
+              },
+              {
+                "fieldId": "partner-spotlight-published",
+                "label": "¿Sección de 'Aliados' o 'Partner Spotlight' en el Sitio Web?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "social-media-tagging-frequency",
+                "label": "Frecuencia de Mención/Etiquetado de Clientes en Redes",
+                "type": "select",
+                "options": ["Mensual", "Trimestral", "Ocasionalmente", "Nunca"],
+                "required": true
+              },
+              {
+                "fieldId": "advocacy-strategy-url",
+                "label": "Enlace a la Estrategia o Carpeta de Testimonios y Co-Marketing",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Identificar a los 5-10 clientes más satisfechos y con mejor relación",
+            "Solicitar activamente un testimonio escrito o en video a estos clientes",
+            "Diseñar e implementar un programa de referidos con incentivos claros",
+            "Crear una sección de 'Aliados' o 'Partner Spotlight' en el sitio web",
+            "Lanzar al menos una campaña de co-marketing mensual en redes sociales",
+            "Etiquetar y dar crédito a los clientes en publicaciones relevantes",
+            "Invitar a clientes clave a eventos virtuales o presenciales de la finca",
+            "Hacer seguimiento a los leads generados por referidos en el CRM",
+            "Entregar las recompensas de referidos de manera rápida y visible",
+            "Medir el porcentaje de nuevas ventas provenientes de recomendaciones"
+          ]
+        }
+      ]
+    }
+  ]
+}

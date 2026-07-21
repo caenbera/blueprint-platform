@@ -1,0 +1,1120 @@
+{
+  "block": "business",
+  "blockTitle": "Negocio",
+  "phases": [
+    {
+      "phaseId": "quality-certifications-continuous-improvement",
+      "phaseTitle": "Gestión de Calidad, Certificaciones Continuas y Mejora Continua",
+      "steps": [
+        {
+          "stepId": "organic-certification-maintenance",
+          "stepTitle": "Mantenimiento de Certificaciones Orgánicas y Auditorías Anuales",
+          "guide": {
+            "whyItMatters": "Las certificaciones orgánicas no son un evento único, sino un compromiso continuo que requiere mantenimiento riguroso. Perder la certificación orgánica significa perder acceso a mercados premium que pagan 30-100% más por tu cacao, además de dañar irreparablemente tu reputación. Las auditorías anuales evalúan no solo el cumplimiento actual, sino también la trazabilidad histórica de tus prácticas. Un solo hallazgo crítico (uso de insumos no permitidos, falta de registros, contaminación cruzada) puede resultar en suspensión inmediata de la certificación.",
+            "bestPractices": [
+              "Mantén el cuaderno de campo actualizado diariamente con todas las actividades y insumos utilizados",
+              "Realiza auditorías internas trimestrales antes de la auditoría externa anual",
+              "Capacita a todos los trabajadores al menos una vez al año en normas orgánicas",
+              "Implementa sistema de trazabilidad completo desde insumos hasta producto final",
+              "Documenta todas las no conformidades y acciones correctivas inmediatamente",
+              "Mantén separación física clara entre áreas orgánicas y convencionales (si aplica)",
+              "Conserva registros mínimos de 5 años según estándares internacionales",
+              "Programa reuniones trimestrales de revisión con el equipo sobre cumplimiento orgánico"
+            ],
+            "commonMistakes": [
+              "No actualizar el cuaderno de campo diariamente, creando vacíos en la trazabilidad",
+              "Usar insumos no permitidos sin consultar con el certificador, aunque sean 'naturales'",
+              "No capacitar trabajadores nuevos en normas orgánicas, generando incumplimientos",
+              "Mezclar herramientas o equipos entre áreas orgánicas y convencionales sin limpieza",
+              "No documentar acciones correctivas cuando se identifican problemas",
+              "Subestimar la auditoría interna, llegando desprevenido a la auditoría externa",
+              "No conservar registros históricos completos, imposibilitando demostrar cumplimiento",
+              "Permitir contaminación cruzada por deriva de vecinos que usan químicos sintéticos"
+            ],
+            "tip": "Para mantener certificación orgánica en cacao, el calendario típico es: 1) Enero-Febrero: planificación anual y actualización de documentos, 2) Marzo-Junio: implementación y registro diario, 3) Julio: auditoría interna completa, 4) Agosto: acciones correctivas si aplica, 5) Septiembre-Octubre: auditoría externa del certificador, 6) Noviembre-Diciembre: seguimiento de no conformidades y preparación para siguiente ciclo. Costo anual de mantenimiento: $1.500.000-$2.500.000 COP (auditoría + renovación). Las no conformidades más comunes son: registros incompletos (40%), uso de insumos no autorizados (25%), falta de capacitación documentada (20%), contaminación cruzada (15%).",
+            "recommendedTools": [
+              {
+                "name": "Cuaderno de Campo Digital - AgriApp",
+                "url": "https://www.agriapp.co",
+                "description": "Aplicación móvil para registro diario de actividades agrícolas con trazabilidad"
+              },
+              {
+                "name": "Checklist de Auditoría Interna Orgánica",
+                "url": "https://www.ifoam.bio",
+                "description": "Modelos de checklist para autoevaluación antes de auditoría externa"
+              },
+              {
+                "name": "Software de Gestión de Certificaciones",
+                "url": "https://www.google.com",
+                "description": "Plataformas como Certisys o Ecocert Portal para gestión documental"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "certification-body",
+                "label": "Organismo Certificador",
+                "type": "text",
+                "placeholder": "Ej: ECOCERT, IMO, BCS",
+                "required": true
+              },
+              {
+                "fieldId": "certificate-number",
+                "label": "Número de Certificado Vigente",
+                "type": "text",
+                "placeholder": "Ej: ECO-CO-2024-12345",
+                "required": true
+              },
+              {
+                "fieldId": "certificate-issue-date",
+                "label": "Fecha de Emisión del Certificado",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "certificate-expiration-date",
+                "label": "Fecha de Vencimiento del Certificado",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "certification-standards",
+                "label": "Estándares Certificadas",
+                "type": "multiselect",
+                "options": [
+                  "UE - Unión Europea",
+                  "USDA NOP - Estados Unidos",
+                  "JAS - Japón",
+                  "COR - Canadá",
+                  "Nacional Colombia",
+                  "Fair Trade (Comercio Justo)",
+                  "Rainforest Alliance"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "field-notebook-updated-daily",
+                "label": "¿Cuaderno de Campo Actualizado Diariamente?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, la mayoría del tiempo", "Irregularmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "internal-audits-per-year",
+                "label": "Número de Auditorías Internas Realizadas al Año",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              },
+              {
+                "fieldId": "last-internal-audit-date",
+                "label": "Fecha de Última Auditoría Interna",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "last-internal-audit-score",
+                "label": "Puntuación de Última Auditoría Interna (%)",
+                "type": "number",
+                "placeholder": "92",
+                "required": true
+              },
+              {
+                "fieldId": "last-external-audit-date",
+                "label": "Fecha de Última Auditoría Externa",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "non-conformities-found",
+                "label": "Número de No Conformidades en Última Auditoría Externa",
+                "type": "number",
+                "placeholder": "2",
+                "required": true
+              },
+              {
+                "fieldId": "corrective-actions-implemented",
+                "label": "¿Acciones Correctivas Implementadas Completamente?",
+                "type": "select",
+                "options": ["Sí, todas", "Parcialmente", "No aún", "No aplica"],
+                "required": true
+              },
+              {
+                "fieldId": "worker-training-organic-standards",
+                "label": "¿Trabajadores Capacitados en Normas Orgánicas este Año?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No aún"],
+                "required": true
+              },
+              {
+                "fieldId": "training-date",
+                "label": "Fecha de Última Capacitación en Normas Orgánicas",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "traceability-system-complete",
+                "label": "¿Sistema de Trazabilidad Completo (Insumos a Producto Final)?",
+                "type": "select",
+                "options": ["Sí, digital y documentado", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "records-retention-years",
+                "label": "Años de Registros Conservados",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "contamination-cross-prevention",
+                "label": "¿Medidas de Prevención de Contaminación Cruzada Implementadas?",
+                "type": "select",
+                "options": ["Sí, completas", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "annual-certification-cost",
+                "label": "Costo Anual de Mantenimiento de Certificación (COP)",
+                "type": "number",
+                "placeholder": "2000000",
+                "required": true
+              },
+              {
+                "fieldId": "certification-folder-url",
+                "label": "Enlace a Carpeta con Documentos de Certificación",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Mantener cuaderno de campo actualizado diariamente con todas las actividades",
+            "Realizar auditoría interna trimestral completa antes de auditoría externa",
+            "Capacitar a todos los trabajadores en normas orgánicas al menos una vez al año",
+            "Documentar todas las no conformidades y acciones correctivas inmediatamente",
+            "Implementar sistema de trazabilidad completo desde insumos hasta producto final",
+            "Mantener separación física clara entre áreas orgánicas y convencionales",
+            "Conservar registros mínimos de 5 años según estándares internacionales",
+            "Programar reuniones trimestrales de revisión sobre cumplimiento orgánico",
+            "Verificar que todos los insumos utilizados estén permitidos por el certificador",
+            "Implementar medidas de prevención de contaminación cruzada",
+            "Preparar documentación completa para auditoría externa anual",
+            "Implementar acciones correctivas para no conformidades identificadas",
+            "Archivar todos los documentos de certificación en carpeta física y digital",
+            "Programar recordatorios para renovación anual de certificados"
+          ]
+        },
+        {
+          "stepId": "continuous-quality-control",
+          "stepTitle": "Control de Calidad Continuo y Análisis de Laboratorio",
+          "guide": {
+            "whyItMatters": "El control de calidad no es un evento puntual sino un proceso continuo que garantiza la consistencia y excelencia de tu cacao orgánico. Los compradores internacionales exigen análisis de laboratorio periódicos que validen la ausencia de contaminantes (metales pesados, micotoxinas, residuos de pesticidas) y confirmen las características fisicoquímicas del producto. Sin análisis regulares, no puedes demostrar que tu cacao cumple con estándares internacionales (FDA, UE, JAS), arriesgando rechazos en aduanas y pérdida de contratos millonarios.",
+            "bestPractices": [
+              "Realiza análisis de laboratorio completos al menos una vez por lote de exportación",
+              "Implementa control de calidad interno en cada etapa: fermentación, secado, empaque",
+              "Muestrea estadísticamente según norma ISO 2292 para representatividad",
+              "Analiza parámetros clave: humedad, porcentaje de fermentación, tamaño de grano, defectos",
+              "Contrata laboratorios acreditados internacionalmente (ISO 17025) para análisis externos",
+              "Mantén historial completo de análisis por lote para trazabilidad y mejora continua",
+              "Implementa cartas de control estadístico para monitorear variabilidad de calidad",
+              "Capacita a personal en técnicas de muestreo y análisis sensorial"
+            ],
+            "commonMistakes": [
+              "No realizar análisis de laboratorio, asumiendo que el cacao 'se ve bien'",
+              "Muestrear incorrectamente, obteniendo resultados no representativos del lote",
+              "Usar laboratorios no acreditados que generan resultados cuestionables",
+              "No analizar todos los parámetros requeridos por el país destino",
+              "No mantener historial de análisis, perdiendo capacidad de rastrear problemas",
+              "No implementar control estadístico, permitiendo variabilidad excesiva",
+              "No capacitar personal en técnicas de muestreo, generando errores",
+              "Ignorar análisis de contaminantes (metales pesados, micotoxinas) hasta que hay problema"
+            ],
+            "tip": "Para cacao orgánico de exportación, los análisis de laboratorio típicos incluyen: 1) Humedad (método ICCO/ISO): $80.000-$150.000 COP, 2) Porcentaje de fermentación (prueba de corte): incluido en análisis sensorial, 3) Tamaño de grano (100 granos): $100.000-$200.000 COP, 4) Defectos visuales: $150.000-$250.000 COP, 5) Análisis sensorial (cata): $300.000-$500.000 COP, 6) Metales pesados (Pb, Cd): $400.000-$600.000 COP, 7) Micotoxinas (aflatoxinas, ocratoxinas): $350.000-$550.000 COP, 8) Residuos de pesticidas: $500.000-$800.000 COP. Costo total por análisis completo: $1.880.000-$3.050.000 COP. Laboratorios recomendados en Colombia: SGS Colombia, Bureau Veritas, Intertek. Frecuencia: análisis completo por cada lote de exportación, análisis básico (humedad, fermentación, defectos) en cada lote producido.",
+            "recommendedTools": [
+              {
+                "name": "SGS Colombia - Laboratorio Acreditado",
+                "url": "https://www.sgs.com.co",
+                "description": "Laboratorio internacional acreditado ISO 17025 para análisis de cacao"
+              },
+              {
+                "name": "Bureau Veritas Colombia",
+                "url": "https://www.bureauveritas.com.co",
+                "description": "Servicios de análisis y certificación para productos agrícolas"
+              },
+              {
+                "name": "Software de Control Estadístico de Calidad",
+                "url": "https://www.google.com",
+                "description": "Minitab, Quality Explorer o Excel con complementos para cartas de control"
+              },
+              {
+                "name": "Norma ISO 2292 - Muestreo de Cacao",
+                "url": "https://www.iso.org",
+                "description": "Estándar internacional para procedimientos de muestreo representativo"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "laboratory-used",
+                "label": "Laboratorio Utilizado para Análisis",
+                "type": "text",
+                "placeholder": "Ej: SGS Colombia, Bureau Veritas",
+                "required": true
+              },
+              {
+                "fieldId": "laboratory-accreditation",
+                "label": "¿Laboratorio Acreditado ISO 17025?",
+                "type": "select",
+                "options": ["Sí", "No", "No sé"],
+                "required": true
+              },
+              {
+                "fieldId": "analyses-performed-per-year",
+                "label": "Número de Análisis Completos Realizados al Año",
+                "type": "number",
+                "placeholder": "12",
+                "required": true
+              },
+              {
+                "fieldId": "last-analysis-date",
+                "label": "Fecha del Último Análisis de Laboratorio",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "parameters_analyzed",
+                "label": "Parámetros Analizados en Último Análisis",
+                "type": "multiselect",
+                "options": [
+                  "Humedad",
+                  "Porcentaje de fermentación",
+                  "Tamaño de grano",
+                  "Defectos visuales",
+                  "Análisis sensorial (cata)",
+                  "Metales pesados (Pb, Cd)",
+                  "Micotoxinas (aflatoxinas, ocratoxinas)",
+                  "Residuos de pesticidas",
+                  "Microbiología"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "moisture_result",
+                "label": "Resultado de Humedad en Último Análisis (%)",
+                "type": "number",
+                "placeholder": "7.2",
+                "required": false
+              },
+              {
+                "fieldId": "fermentation_percentage",
+                "label": "Porcentaje de Fermentación en Último Análisis (%)",
+                "type": "number",
+                "placeholder": "85",
+                "required": false
+              },
+              {
+                "fieldId": "defects_percentage",
+                "label": "Porcentaje de Defectos en Último Análisis (%)",
+                "type": "number",
+                "placeholder": "3.5",
+                "required": false
+              },
+              {
+                "fieldId": "heavy_metals_compliant",
+                "label": "¿Metales Pesados Dentro de Límites Permitidos?",
+                "type": "select",
+                "options": ["Sí", "No", "No analizado"],
+                "required": true
+              },
+              {
+                "fieldId": "mycotoxins_compliant",
+                "label": "¿Micotoxinas Dentro de Límites Permitidos?",
+                "type": "select",
+                "options": ["Sí", "No", "No analizado"],
+                "required": true
+              },
+              {
+                "fieldId": "pesticide_residues_compliant",
+                "label": "¿Residuos de Pesticidas Dentro de Límites Permitidos?",
+                "type": "select",
+                "options": ["Sí", "No", "No analizado"],
+                "required": true
+              },
+              {
+                "fieldId": "sensory_score",
+                "label": "Puntuación Sensorial (Cata) - Escala 1-10",
+                "type": "number",
+                "placeholder": "7.5",
+                "required": false
+              },
+              {
+                "fieldId": "statistical_control_charts",
+                "label": "¿Implementó Cartas de Control Estadístico?",
+                "type": "select",
+                "options": ["Sí", "No", "En implementación"],
+                "required": true
+              },
+              {
+                "fieldId": "sampling_protocol",
+                "label": "¿Protocolo de Muestreo Basado en ISO 2292?",
+                "type": "select",
+                "options": ["Sí, estrictamente", "Sí, adaptado", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "staff_trained_in_sampling",
+                "label": "¿Personal Capacitado en Técnicas de Muestreo?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "analysis_history_maintained",
+                "label": "¿Historial Completo de Análisis por Lote Mantenido?",
+                "type": "select",
+                "options": ["Sí, digital y físico", "Sí, solo digital", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "average_cost_per_analysis",
+                "label": "Costo Promedio por Análisis Completo (COP)",
+                "type": "number",
+                "placeholder": "2500000",
+                "required": true
+              },
+              {
+                "fieldId": "annual_quality_control_budget",
+                "label": "Presupuesto Anual de Control de Calidad (COP)",
+                "type": "number",
+                "placeholder": "30000000",
+                "required": true
+              },
+              {
+                "fieldId": "lab_reports_folder_url",
+                "label": "Enlace a Carpeta con Informes de Laboratorio",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Seleccionar laboratorio acreditado ISO 17025 para análisis externos",
+            "Definir parámetros de análisis requeridos por cada mercado destino",
+            "Implementar protocolo de muestreo estadístico según ISO 2292",
+            "Capacitar a personal en técnicas de muestreo representativo",
+            "Realizar análisis completo de laboratorio por cada lote de exportación",
+            "Implementar control de calidad interno en cada etapa (fermentación, secado, empaque)",
+            "Mantener historial completo de análisis por lote en sistema digital",
+            "Implementar cartas de control estadístico para monitorear variabilidad",
+            "Analizar parámetros críticos: humedad, fermentación, defectos, contaminantes",
+            "Verificar cumplimiento de límites de metales pesados, micotoxinas y pesticidas",
+            "Realizar análisis sensorial (cata) para evaluar perfil de sabor",
+            "Documentar todos los resultados en formatos estandarizados",
+            "Calcular presupuesto anual de control de calidad",
+            "Programar revisiones trimestrales de tendencias de calidad",
+            "Implementar acciones correctivas cuando resultados están fuera de especificaciones",
+            "Archivar informes de laboratorio en carpeta física y digital"
+          ]
+        },
+        {
+          "stepId": "complete-traceability-system",
+          "stepTitle": "Sistema de Trazabilidad Completa desde Finca hasta Comprador",
+          "guide": {
+            "whyItMatters": "La trazabilidad completa es el requisito fundamental para acceder a mercados premium de cacao orgánico. Compradores internacionales, certificadores y consumidores finales exigen poder rastrear cada grano de cacao desde la parcela específica donde se cultivó hasta el producto final. Sin trazabilidad documentada y verificable, no puedes demostrar autenticidad orgánica, calidad consistente, ni prácticas sostenibles. Además, en caso de problemas de calidad o seguridad alimentaria, la trazabilidad permite retirar solo lotes específicos en lugar de toda la producción, minimizando pérdidas.",
+            "bestPractices": [
+              "Implementa sistema de codificación único para cada lote desde cosecha hasta venta",
+              "Registra información completa: parcela, fecha de cosecha, trabajador, peso, fecha de fermentación",
+              "Documenta todas las transformaciones: fermentación (fechas, temperaturas, volteos), secado (tiempo, humedad final)",
+              "Mantene trazabilidad de insumos: origen de plántulas, fertilizantes orgánicos utilizados",
+              "Implementa sistema digital (software o app) para registro en tiempo real en campo",
+              "Genera códigos QR en empaques que permitan al comprador final acceder a información completa",
+              "Conserva registros mínimos de 5 años según estándares internacionales",
+              "Realiza simulacros de retiro de producto al menos una vez al año"
+            ],
+            "commonMistakes": [
+              "Usar solo registros en papel que se pierden, dañan o son difíciles de consultar",
+              "No codificar lotes de forma única, generando confusiones y mezclas",
+              "No registrar información completa en cada etapa, creando vacíos en la trazabilidad",
+              "No implementar sistema digital, dependiendo de memoria o registros incompletos",
+              "No generar códigos QR o accesibles para compradores finales",
+              "No realizar simulacros de retiro, no estar preparado para emergencias",
+              "No capacitar a todos los trabajadores en importancia de registro completo",
+              "No integrar trazabilidad con sistemas de calidad y certificación"
+            ],
+            "tip": "Para implementar trazabilidad completa en cacao orgánico, el sistema mínimo debe incluir: 1) Código único de lote (formato: AAAA-MM-DD-PPPP donde AAAA=año, MM=mes, DD=día, PPPP=número de parcela), 2) Registro de cosecha: fecha, parcela, trabajador, peso fresco, 3) Registro de fermentación: fecha inicio, fechas de volteo, temperatura máxima, fecha fin, peso húmedo, 4) Registro de secado: fecha inicio, fecha fin, humedad final, peso seco, 5) Registro de empaque: fecha, lote, peso neto, código de saco, 6) Registro de venta: comprador, fecha, cantidad, precio. Sistema digital recomendado: AgriApp ($200.000-$500.000 COP/mes) o desarrollo personalizado en Airtable ($50.000-$150.000 COP/mes). Costo de implementación inicial: $2.000.000-$5.000.000 COP incluyendo hardware (tablets, lectores de código de barras). Código QR en empaque puede generarse con herramientas gratuitas como QR Code Generator.",
+            "recommendedTools": [
+              {
+                "name": "AgriApp - Trazabilidad Agrícola",
+                "url": "https://www.agriapp.co",
+                "description": "Aplicación móvil para registro de trazabilidad desde campo hasta venta"
+              },
+              {
+                "name": "Airtable - Base de Datos Personalizable",
+                "url": "https://www.airtable.com",
+                "description": "Plataforma flexible para crear sistema de trazabilidad adaptado a tu negocio"
+              },
+              {
+                "name": "QR Code Generator",
+                "url": "https://www.qr-code-generator.com",
+                "description": "Herramienta gratuita para generar códigos QR en empaques"
+              },
+              {
+                "name": "Lectores de Código de Barras Portátiles",
+                "url": "https://www.google.com",
+                "description": "Dispositivos para registro rápido de lotes en campo y bodega"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "traceability_system_type",
+                "label": "Tipo de Sistema de Trazabilidad Implementado",
+                "type": "select",
+                "options": [
+                  "Software especializado (AgriApp, CropIn)",
+                  "Airtable/Notion personalizado",
+                  "Excel/Google Sheets",
+                  "Registros físicos (cuadernos)",
+                  "Combinación digital + físico",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "lot_coding_format",
+                "label": "Formato de Codificación de Lotes",
+                "type": "text",
+                "placeholder": "Ej: AAAA-MM-DD-PPPP (año-mes-día-parcela)",
+                "required": true
+              },
+              {
+                "fieldId": "harvest_registration_complete",
+                "label": "¿Registro de Cosecha Completo (fecha, parcela, trabajador, peso)?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, la mayoría", "Irregularmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "fermentation_registration_complete",
+                "label": "¿Registro de Fermentación Completo (fechas, temperaturas, volteos)?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, la mayoría", "Irregularmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "drying_registration_complete",
+                "label": "¿Registro de Secado Completo (fechas, humedad final, peso)?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, la mayoría", "Irregularmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "packaging_registration_complete",
+                "label": "¿Registro de Empaque Completo (fecha, lote, peso, código)?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, la mayoría", "Irregularmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sales_registration_complete",
+                "label": "¿Registro de Venta Completo (comprador, fecha, cantidad, precio)?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, la mayoría", "Irregularmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "inputs_traceability",
+                "label": "¿Trazabilidad de Insumos (origen de plántulas, fertilizantes)?",
+                "type": "select",
+                "options": ["Sí, completa", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "qr_codes_on_packaging",
+                "label": "¿Códigos QR en Empaques que Permiten Rastrear Lote?",
+                "type": "select",
+                "options": ["Sí, con información completa", "Sí, básico", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "digital_system_used",
+                "label": "Sistema Digital Utilizado para Trazabilidad",
+                "type": "text",
+                "placeholder": "Ej: AgriApp, Airtable, software personalizado",
+                "required": false
+              },
+              {
+                "fieldId": "digital_system_monthly_cost",
+                "label": "Costo Mensual del Sistema Digital (COP)",
+                "type": "number",
+                "placeholder": "300000",
+                "required": false
+              },
+              {
+                "fieldId": "hardware_equipment",
+                "label": "Equipos de Hardware para Registro en Campo",
+                "type": "multiselect",
+                "options": [
+                  "Tablets",
+                  "Teléfonos inteligentes",
+                  "Lectores de código de barras",
+                  "Impresoras de etiquetas",
+                  "Computadoras portátiles",
+                  "No se usa hardware"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "records_retention_years",
+                "label": "Años de Registros de Trazabilidad Conservados",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "product_recall_simulation",
+                "label": "¿Realiza Simulacros de Retiro de Producto?",
+                "type": "select",
+                "options": ["Sí, anual", "Sí, cada 2 años", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "last_recall_simulation_date",
+                "label": "Fecha de Último Simulacro de Retiro",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "average_recall_time_hours",
+                "label": "Tiempo Promedio para Rastrear Lote Completo (horas)",
+                "type": "number",
+                "placeholder": "2",
+                "required": false
+              },
+              {
+                "fieldId": "staff_trained_in_traceability",
+                "label": "¿Trabajadores Capacitados en Sistema de Trazabilidad?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "initial_implementation_cost",
+                "label": "Costo de Implementación Inicial del Sistema (COP)",
+                "type": "number",
+                "placeholder": "3000000",
+                "required": true
+              },
+              {
+                "fieldId": "traceability_manual_url",
+                "label": "Enlace a Manual de Procedimientos de Trazabilidad",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Diseñar sistema de codificación único para lotes desde cosecha hasta venta",
+            "Seleccionar e implementar sistema digital de trazabilidad (software o app)",
+            "Adquirir hardware necesario para registro en campo (tablets, lectores)",
+            "Capacitar a todos los trabajadores en registro completo de cada etapa",
+            "Implementar registro de cosecha: fecha, parcela, trabajador, peso",
+            "Implementar registro de fermentación: fechas, temperaturas, volteos",
+            "Implementar registro de secado: fechas, humedad final, peso",
+            "Implementar registro de empaque: fecha, lote, peso, código de saco",
+            "Implementar registro de venta: comprador, fecha, cantidad, precio",
+            "Documentar trazabilidad de insumos: origen de plántulas, fertilizantes",
+            "Generar códigos QR en empaques con información de lote accesible",
+            "Conservar registros mínimos de 5 años en sistema digital y físico",
+            "Realizar simulacro anual de retiro de producto",
+            "Medir tiempo promedio para rastrear lote completo (objetivo: <4 horas)",
+            "Integrar sistema de trazabilidad con certificaciones orgánicas",
+            "Documentar procedimientos en manual de trazabilidad",
+            "Programar revisiones trimestrales de efectividad del sistema"
+          ]
+        },
+        {
+          "stepId": "continuous-improvement-innovation",
+          "stepTitle": "Mejora Continua e Innovación de Procesos",
+          "guide": {
+            "whyItMatters": "La mejora continua es lo que separa a los negocios exitosos de los que se estancan. En el competitivo mercado de cacao orgánico, las prácticas agrícolas, técnicas de fermentación y expectativas de calidad evolucionan constantemente. Negocios que no innovan pierden rentabilidad, calidad y relevancia. La mejora continua sistemática te permite reducir costos, aumentar rendimientos, mejorar calidad, y adaptarte a cambios del mercado. Además, compradores premium y certificadores valoran cada vez más la innovación y sostenibilidad.",
+            "bestPractices": [
+              "Implementa metodología de mejora continua (PDCA: Plan-Do-Check-Act) en todos los procesos",
+              "Establece indicadores clave de desempeño (KPIs) medibles para cada proceso crítico",
+              "Realiza reuniones de mejora mensual con equipo para identificar oportunidades",
+              "Investiga y prueba nuevas variedades de cacao, técnicas de fermentación y prácticas agrícolas",
+              "Benchmarking: visita otras fincas exitosas y aprende de sus mejores prácticas",
+              "Participa en programas de investigación con Fedecacao, universidades o centros técnicos",
+              "Documenta lecciones aprendidas de cada cosecha y proceso",
+              "Invierte al menos 2-5% de ingresos anuales en innovación y mejora"
+            ],
+            "commonMistakes": [
+              "Operar siempre 'como se ha hecho siempre', sin cuestionar si hay formas mejores",
+              "No medir resultados de cambios implementados, sin saber si mejoraron o no",
+              "No involucrar a trabajadores en identificación de mejoras, perdiendo su conocimiento práctico",
+              "No documentar lecciones aprendidas, repitiendo errores",
+              "No invertir en innovación, quedándose atrás tecnológicamente",
+              "Implementar cambios sin capacitación adecuada, generando resistencia y errores",
+              "No hacer benchmarking, perdiendo oportunidades de aprender de otros",
+              "No participar en programas de investigación, perdiendo acceso a nuevas tecnologías"
+            ],
+            "tip": "Para implementar mejora continua en cacao orgánico, enfócate en 4 áreas clave: 1) Productividad: rendimiento por hectárea (objetivo: 800-1200 kg/ha/año), 2) Calidad: porcentaje de fermentación (objetivo: >85%), defectos (<5%), 3) Eficiencia: costo por kilo producido, tiempo de procesamiento, 4) Sostenibilidad: biodiversidad, salud del suelo, impacto social. Metodología PDCA: 1) Plan: identifica problema y diseña solución, 2) Do: implementa en pequeña escala, 3) Check: mide resultados vs línea base, 4) Act: si funciona, estandariza; si no, ajusta. Ejemplos de innovación: fermentación con levaduras seleccionadas (+10-15% en calidad sensorial), sistemas agroforestales diversificados (+20% biodiversidad, +15% resiliencia), secado solar con ventilación forzada (-30% tiempo de secado). Presupuesto de innovación: 2-5% de ingresos anuales ($5.000.000-$15.000.000 COP para negocio mediano).",
+            "recommendedTools": [
+              {
+                "name": "Fedecacao - Programas de Investigación",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Programas de investigación y desarrollo para cacaoteros"
+              },
+              {
+                "name": "Metodología PDCA - Ciclo Deming",
+                "url": "https://www.google.com",
+                "description": "Marco de mejora continua: Planificar-Hacer-Verificar-Actuar"
+              },
+              {
+                "name": "Software de Gestión de Proyectos",
+                "url": "https://www.google.com",
+                "description": "Trello, Asana o Monday para gestionar iniciativas de mejora"
+              },
+              {
+                "name": "Centros de Investigación Agrícola",
+                "url": "https://www.google.com",
+                "description": "AGROSAVIA, universidades con programas de cacao"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "continuous_improvement_methodology",
+                "label": "Metodología de Mejora Continua Implementada",
+                "type": "select",
+                "options": [
+                  "PDCA (Plan-Do-Check-Act)",
+                  "Kaizen",
+                  "Six Sigma",
+                  "Lean",
+                  "Propia adaptada",
+                  "No implementada"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "kpis_defined",
+                "label": "Indicadores Clave de Desempeño (KPIs) Definidos",
+                "type": "multiselect",
+                "options": [
+                  "Rendimiento por hectárea (kg/ha/año)",
+                  "Porcentaje de fermentación",
+                  "Porcentaje de defectos",
+                  "Costo por kilo producido",
+                  "Tiempo de procesamiento",
+                  "Satisfacción del cliente",
+                  "Biodiversidad en finca",
+                  "Salud del suelo",
+                  "Impacto social (empleos, ingresos comunidad)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "current_yield_per_hectare",
+                "label": "Rendimiento Actual por Hectárea (kg/ha/año)",
+                "type": "number",
+                "placeholder": "800",
+                "required": true
+              },
+              {
+                "fieldId": "target_yield_per_hectare",
+                "label": "Meta de Rendimiento por Hectárea (kg/ha/año)",
+                "type": "number",
+                "placeholder": "1000",
+                "required": true
+              },
+              {
+                "fieldId": "current_fermentation_percentage",
+                "label": "Porcentaje Actual de Fermentación (%)",
+                "type": "number",
+                "placeholder": "82",
+                "required": true
+              },
+              {
+                "fieldId": "target_fermentation_percentage",
+                "label": "Meta de Porcentaje de Fermentación (%)",
+                "type": "number",
+                "placeholder": "88",
+                "required": true
+              },
+              {
+                "fieldId": "current_defects_percentage",
+                "label": "Porcentaje Actual de Defectos (%)",
+                "type": "number",
+                "placeholder": "4.5",
+                "required": true
+              },
+              {
+                "fieldId": "target_defects_percentage",
+                "label": "Meta de Porcentaje de Defectos (%)",
+                "type": "number",
+                "placeholder": "3.0",
+                "required": true
+              },
+              {
+                "fieldId": "improvement_meetings_frequency",
+                "label": "Frecuencia de Reuniones de Mejora con Equipo",
+                "type": "select",
+                "options": ["Semanal", "Quincenal", "Mensual", "Trimestral", "No se realizan"],
+                "required": true
+              },
+              {
+                "fieldId": "improvement_projects_per_year",
+                "label": "Número de Proyectos de Mejora Implementados al Año",
+                "type": "number",
+                "placeholder": "6",
+                "required": true
+              },
+              {
+                "fieldId": "innovation_areas",
+                "label": "Áreas de Innovación Exploradas",
+                "type": "multiselect",
+                "options": [
+                  "Nuevas variedades de cacao",
+                  "Técnicas de fermentación (levaduras seleccionadas)",
+                  "Sistemas agroforestales diversificados",
+                  "Prácticas de salud del suelo",
+                  "Tecnología de secado",
+                  "Automatización de procesos",
+                  "Embalajes sostenibles",
+                  "Trazabilidad digital",
+                  "Prácticas de comercio justo"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "benchmarking_visits_per_year",
+                "label": "Número de Visitas de Benchmarking a Otras Fincas al Año",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "research_programs_participation",
+                "label": "¿Participa en Programas de Investigación con Fedecacao/Universidades?",
+                "type": "select",
+                "options": ["Sí, actualmente", "Sí, en el pasado", "No, pero interesado", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "lessons_learned_documented",
+                "label": "¿Lecciones Aprendidas de Cada Cosecha Documentadas?",
+                "type": "select",
+                "options": ["Sí, sistemáticamente", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "annual_innovation_budget",
+                "label": "Presupuesto Anual de Innovación y Mejora (COP)",
+                "type": "number",
+                "placeholder": "10000000",
+                "required": true
+              },
+              {
+                "fieldId": "innovation_budget_percentage_revenue",
+                "label": "Porcentaje de Ingresos Destinado a Innovación (%)",
+                "type": "number",
+                "placeholder": "3",
+                "required": true
+              },
+              {
+                "fieldId": "improvement_results_measured",
+                "label": "¿Se Miden Resultados de Cambios Implementados?",
+                "type": "select",
+                "options": ["Sí, siempre", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "improvement_projects_folder_url",
+                "label": "Enlace a Carpeta de Proyectos de Mejora",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Implementar metodología de mejora continua (PDCA, Kaizen, etc.)",
+            "Definir indicadores clave de desempeño (KPIs) para cada proceso crítico",
+            "Establecer línea base de rendimiento actual (kg/ha, fermentación, defectos)",
+            "Definir metas de mejora para cada KPI",
+            "Realizar reuniones mensuales de mejora con equipo",
+            "Involucrar a trabajadores en identificación de oportunidades de mejora",
+            "Investigar y probar nuevas variedades de cacao",
+            "Experimentar con técnicas de fermentación innovadoras",
+            "Implementar sistemas agroforestales diversificados",
+            "Explorar tecnologías de secado más eficientes",
+            "Realizar visitas de benchmarking a otras fincas exitosas",
+            "Participar en programas de investigación con Fedecacao o universidades",
+            "Documentar lecciones aprendidas de cada cosecha y proceso",
+            "Medir resultados de cambios implementados vs línea base",
+            "Asignar presupuesto anual de innovación (2-5% de ingresos)",
+            "Gestionar proyectos de mejora con software especializado",
+            "Programar revisión trimestral de avances en mejora continua"
+          ]
+        },
+        {
+          "stepId": "sustainability-impact-reporting",
+          "stepTitle": "Reportes de Sostenibilidad y Medición de Impacto",
+          "guide": {
+            "whyItMatters": "Los compradores internacionales, inversionistas y consumidores finales exigen cada vez más transparencia sobre el impacto social y ambiental de sus cadenas de suministro. Reportar sostenibilidad no es solo una obligación ética, sino una ventaja competitiva que te permite acceder a mercados premium, atraer inversión de impacto, y construir relaciones de largo plazo con compradores conscientes. Además, medir tu impacto te permite identificar áreas de mejora, comunicar tu valor diferencial, y cumplir con requisitos de certificaciones como Fair Trade o Rainforest Alliance.",
+            "bestPractices": [
+              "Mide impacto en 3 dimensiones: ambiental (biodiversidad, carbono, agua), social (empleo, comunidad, equidad), económica (rentabilidad, distribución de valor)",
+              "Utiliza marcos internacionales de reporte: GRI (Global Reporting Initiative), SASB, o B Corp",
+              "Contrata auditoría externa de impacto cada 2-3 años para validación independiente",
+              "Publica reporte anual de sostenibilidad en sitio web y compártelo con compradores",
+              "Calcula huella de carbono de toda la cadena de valor (Scope 1, 2 y 3)",
+              "Mide biodiversidad en finca: número de especies de árboles, aves, insectos",
+              "Documenta impacto social: empleos generados, ingresos de trabajadores, inversión en comunidad",
+              "Comunica impacto de forma visual y accesible: infografías, videos, dashboards"
+            ],
+            "commonMistakes": [
+              "No medir impacto, asumiendo que 'ser orgánico' es suficiente",
+              "Medir solo una dimensión (ej. ambiental) ignorando social y económica",
+              "No usar marcos internacionales, generando reportes incomparables",
+              "No validar con auditoría externa, perdiendo credibilidad",
+              "No comunicar impacto, perdiendo oportunidad de diferenciación",
+              "No calcular huella de carbono completa, subestimando impacto real",
+              "No involucrar a trabajadores y comunidad en medición de impacto",
+              "No actualizar reportes regularmente, quedándose desactualizado"
+            ],
+            "tip": "Para reportar sostenibilidad en cacao orgánico, los indicadores más valorados son: 1) Ambiental: huella de carbono (kg CO2eq/kg cacao), biodiversidad (especies/ha), uso de agua (m³/kg), cobertura boscosa (%), 2) Social: empleos generados (directos e indirectos), salario promedio vs mínimo legal, inversión en comunidad (% de ingresos), equidad de género (% mujeres en nómina), 3) Económica: rentabilidad neta, distribución de valor (% a productores vs intermediarios), inversión en innovación. Costo de auditoría externa de impacto: $5.000.000-$15.000.000 COP. Herramientas gratuitas: GHG Protocol para huella de carbono, GRI Standards para reporte. Si certificas Fair Trade, ya tienes marco de medición social. Publica reporte anual en formato PDF descargable y crea sección de sostenibilidad en sitio web.",
+            "recommendedTools": [
+              {
+                "name": "GRI - Global Reporting Initiative",
+                "url": "https://www.globalreporting.org",
+                "description": "Marco internacional para reportes de sostenibilidad"
+              },
+              {
+                "name": "GHG Protocol - Huella de Carbono",
+                "url": "https://ghgprotocol.org",
+                "description": "Estándar internacional para cálculo de emisiones de gases de efecto invernadero"
+              },
+              {
+                "name": "B Corp Certification",
+                "url": "https://www.bcorporation.net",
+                "description": "Certificación de empresas que cumplen altos estándares de impacto social y ambiental"
+              },
+              {
+                "name": "Software de Reporte de Sostenibilidad",
+                "url": "https://www.google.com",
+                "description": "Plataformas como SustaiNet, Envest o Reportabee"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "sustainability_reporting_framework",
+                "label": "Marco de Reporte de Sostenibilidad Utilizado",
+                "type": "multiselect",
+                "options": [
+                  "GRI (Global Reporting Initiative)",
+                  "SASB (Sustainability Accounting Standards Board)",
+                  "B Corp",
+                  "Fair Trade",
+                  "Rainforest Alliance",
+                  "Propio adaptado",
+                  "No utiliza marco"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "environmental_impact_measured",
+                "label": "¿Mide Impacto Ambiental?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "carbon_footprint_calculated",
+                "label": "¿Calculó Huella de Carbono (kg CO2eq/kg cacao)?",
+                "type": "select",
+                "options": ["Sí, Scope 1, 2 y 3", "Sí, Scope 1 y 2", "Sí, solo Scope 1", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "carbon_footprint_value",
+                "label": "Huella de Carbono Actual (kg CO2eq/kg cacao)",
+                "type": "number",
+                "placeholder": "2.5",
+                "required": false
+              },
+              {
+                "fieldId": "biodiversity_measured",
+                "label": "¿Mide Biodiversidad en Finca?",
+                "type": "select",
+                "options": ["Sí, inventario completo", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "tree_species_count",
+                "label": "Número de Especies de Árboles en Finca",
+                "type": "number",
+                "placeholder": "45",
+                "required": false
+              },
+              {
+                "fieldId": "forest_coverage_percentage",
+                "label": "Porcentaje de Cobertura Boscosa en Finca (%)",
+                "type": "number",
+                "placeholder": "40",
+                "required": false
+              },
+              {
+                "fieldId": "water_usage_measured",
+                "label": "¿Mide Uso de Agua (m³/kg cacao)?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "water_usage_value",
+                "label": "Uso de Agua Actual (m³/kg cacao)",
+                "type": "number",
+                "placeholder": "0.5",
+                "required": false
+              },
+              {
+                "fieldId": "social_impact_measured",
+                "label": "¿Mide Impacto Social?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "direct_jobs_created",
+                "label": "Número de Empleos Directos Generados",
+                "type": "number",
+                "placeholder": "15",
+                "required": true
+              },
+              {
+                "fieldId": "indirect_jobs_created",
+                "label": "Número de Empleos Indirectos Generados",
+                "type": "number",
+                "placeholder": "30",
+                "required": true
+              },
+              {
+                "fieldId": "average_salary_vs_minimum",
+                "label": "Salario Promedio vs Salario Mínimo Legal (%)",
+                "type": "number",
+                "placeholder": "130",
+                "required": false
+              },
+              {
+                "fieldId": "women_percentage_payroll",
+                "label": "Porcentaje de Mujeres en Nómina (%)",
+                "type": "number",
+                "placeholder": "35",
+                "required": false
+              },
+              {
+                "fieldId": "community_investment_percentage",
+                "label": "Inversión en Comunidad (% de Ingresos)",
+                "type": "number",
+                "placeholder": "5",
+                "required": false
+              },
+              {
+                "fieldId": "economic_impact_measured",
+                "label": "¿Mide Impacto Económico?",
+                "type": "select",
+                "options": ["Sí, completo", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "value_distribution_producer_percentage",
+                "label": "Porcentaje de Valor que Llega a Productores (%)",
+                "type": "number",
+                "placeholder": "65",
+                "required": false
+              },
+              {
+                "fieldId": "external_impact_audit",
+                "label": "¿Contrata Auditoría Externa de Impacto?",
+                "type": "select",
+                "options": ["Sí, cada año", "Sí, cada 2-3 años", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "last_impact_audit_date",
+                "label": "Fecha de Última Auditoría de Impacto",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "annual_sustainability_report_published",
+                "label": "¿Publica Reporte Anual de Sostenibilidad?",
+                "type": "select",
+                "options": ["Sí, en sitio web", "Sí, solo para compradores", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sustainability_report_url",
+                "label": "Enlace a Reporte de Sostenibilidad",
+                "type": "url",
+                "placeholder": "https://www.tusitio.com/sostenibilidad",
+                "required": false
+              },
+              {
+                "fieldId": "impact_communication_channels",
+                "label": "Canales de Comunicación de Impacto",
+                "type": "multiselect",
+                "options": [
+                  "Sitio web",
+                  "Redes sociales",
+                  "Reporte PDF descargable",
+                  "Videos",
+                  "Infografías",
+                  "Presentaciones a compradores",
+                  "Ferias y eventos"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "annual_sustainability_reporting_cost",
+                "label": "Costo Anual de Reporte de Sostenibilidad (COP)",
+                "type": "number",
+                "placeholder": "5000000",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Seleccionar marco internacional de reporte (GRI, SASB, B Corp)",
+            "Definir indicadores de impacto en 3 dimensiones: ambiental, social, económica",
+            "Calcular huella de carbono completa (Scope 1, 2 y 3)",
+            "Medir biodiversidad en finca (especies de árboles, aves, insectos)",
+            "Medir uso de agua por kilo de cacao producido",
+            "Documentar impacto social: empleos, salarios, inversión en comunidad",
+            "Calcular distribución de valor en cadena (productores vs intermediarios)",
+            "Contratar auditoría externa de impacto cada 2-3 años",
+            "Crear reporte anual de sostenibilidad en formato profesional",
+            "Publicar reporte en sitio web con sección dedicada a sostenibilidad",
+            "Comunicar impacto de forma visual: infografías, videos, dashboards",
+            "Compartir reporte con compradores actuales y potenciales",
+            "Involucrar a trabajadores y comunidad en medición de impacto",
+            "Establecer metas de mejora de impacto para próximos años",
+            "Programar revisión anual de indicadores y actualización de reporte",
+            "Considerar certificación B Corp u otras certificaciones de impacto"
+          ]
+        }
+      ]
+    }
+  ]
+}

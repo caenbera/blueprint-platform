@@ -1,0 +1,323 @@
+{
+  "block": "strategy",
+  "phase": "Identidad y Rumbo Estratégico",
+  "steps": [
+    {
+      "id": "step_1_1",
+      "title": "Declaración de Misión y Propósito",
+      "guide": {
+        "whyItMatters": "En el cultivo de cacao 100% orgánico, la misión no es solo una frase motivacional; es el compromiso contractual con la tierra y el futuro comprador. Definir claramente el alcance (hectáreas) y el propósito regenerativo desde el día cero evita la 'deriva convencional' (contaminación cruzada) y establece la base innegociable para los inspectores de certificación orgánica. Sin una misión clara, los costos de producción orgánica (que son inicialmente más altos) carecerán de un propósito que justifique la inversión a largo plazo.",
+        "bestPractices": [
+          "Integrar conceptos de 'Agricultura Regenerativa' y 'Agroforestería' en la misión, no solo 'orgánico'.",
+          "Definir el alcance geográfico y físico exacto (hectáreas) para delimitar el perímetro de certificación.",
+          "Alinear la misión con los Objetivos de Desarrollo Sostenible (ODS) de la ONU para facilitar futuras postulaciones a fondos verdes."
+        ],
+        "commonMistakes": [
+          "Redactar misiones genéricas de 'producir cacao de calidad' sin mencionar la sostenibilidad o el método orgánico.",
+          "No definir las hectáreas iniciales, lo que lleva a expandir el cultivo sin control hacia zonas no aptas o no certificables.",
+          "Separar la misión del negocio de la misión ambiental; en cacao orgánico, son la misma cosa."
+        ],
+        "tip": "Para definir las hectáreas iniciales, considera que en sistemas agroforestales orgánicos la densidad es menor (ej. 400-600 árboles/ha) y necesitas espacio para zonas de amortiguamiento (buffer zones) de al menos 8-10 metros alrededor de todo el perímetro para evitar la deriva de químicos de vecinos convencionales.",
+        "recommendedTools": [
+          {
+            "name": "FAO Land Cover Database",
+            "url": "https://www.fao.org/land-water/database-land-cover/en/"
+          },
+          {
+            "name": "Notion (Documentación de Propósito)",
+            "url": "https://www.notion.so/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "ecological_commercial_values",
+          "label": "Valores Ecológicos y Comerciales Fundacionales",
+          "type": "textarea",
+          "placeholder": "Ej: Regeneración de suelos, cero químicos sintéticos, trazabilidad total, comercio justo...",
+          "required": true
+        },
+        {
+          "id": "mission_statement",
+          "label": "Declaración de Misión y Propósito",
+          "type": "textarea",
+          "placeholder": "Ej: Producir cacao fino de aroma 100% orgánico bajo sistemas agroforestales regenerativos en [X] hectáreas, recuperando la biodiversidad...",
+          "required": true
+        },
+        {
+          "id": "initial_hectares",
+          "label": "Extensión Inicial del Proyecto (Hectáreas)",
+          "type": "number",
+          "placeholder": "Ej: 5.5",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_1_1_1",
+          "text": "Definir y redactar los valores ecológicos y comerciales que regirán la finca.",
+          "registryFieldRef": "ecological_commercial_values"
+        },
+        {
+          "id": "cl_1_1_2",
+          "text": "Redactar la declaración de misión integrando el compromiso 100% orgánico y regenerativo.",
+          "registryFieldRef": "mission_statement"
+        },
+        {
+          "id": "cl_1_1_3",
+          "text": "Definir la extensión inicial de tierra a cultivar y certificar en hectáreas.",
+          "registryFieldRef": "initial_hectares"
+        }
+      ]
+    },
+    {
+      "id": "step_1_2",
+      "title": "Visión de Crecimiento a Largo Plazo (3-5 años)",
+      "guide": {
+        "whyItMatters": "El cacao orgánico tiene un ciclo biológico lento. Los primeros 2-3 años la producción es mínima mientras el sistema agroforestal madura y los suelos recuperan su biología. Una visión a 3-5 años es vital para planificar el flujo de caja (usando cultivos de ciclo corto como plátano o piña en la sombra temporal) y para escalar la certificación orgánica de 'en transición' a 'orgánico certificado'. Definir el tamaño final del equipo y la capacidad máxima evita sobre-estructurar la operación en los años de vacas flacas.",
+        "bestPractices": [
+          "Proyectar el crecimiento en fases: Año 1-2 (Establecimiento y sombra), Año 3 (Primera cosecha comercial), Año 4-5 (Maduración y posible procesamiento post-cosecha).",
+          "Incluir en la visión la meta de rendimiento por hectárea en estado maduro (un cacao orgánico bien manejado rinde entre 800 y 1,500 kg/ha de cacao seco).",
+          "Planificar la transición de solo vender grano a procesar (fermentación controlada, secado solar, empaque) para capturar mayor margen."
+        ],
+        "commonMistakes": [
+          "Proyectar rendimientos de cacao convencional (2,500+ kg/ha) en un sistema 100% orgánico, lo que lleva a frustración y abandono.",
+          "No planificar el equipo humano necesario para la cosecha y el procesamiento (fermentación/secado) en los años pico.",
+          "Ignorar la necesidad de infraestructura de secado (marquesinas) al proyectar el crecimiento."
+        ],
+        "tip": "En tu visión a 5 años, incluye la meta de 'Cero Residuos'. En un sistema orgánico, toda la cáscara de la mazorca y el mucílago deben retornar al suelo como compost o alimento para animales, cerrando el ciclo de nutrientes.",
+        "recommendedTools": [
+          {
+            "name": "Excel / Google Sheets (Modelos Financieros)",
+            "url": "https://www.google.com/sheets/about/"
+          },
+          {
+            "name": "FiBL (Research Institute of Organic Agriculture) - Data",
+            "url": "https://www.fibl.org/en/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "long_term_vision",
+          "label": "Visión de Crecimiento a 3-5 Años",
+          "type": "textarea",
+          "placeholder": "Ej: Ser la finca referente en cacao orgánico de la región, procesando el 100% de nuestra cosecha y exportando directamente a chocolateros bean-to-bar...",
+          "required": true
+        },
+        {
+          "id": "max_capacity_hectares",
+          "label": "Capacidad Máxima / Hectáreas al Año 5",
+          "type": "number",
+          "placeholder": "Ej: 10",
+          "required": true
+        },
+        {
+          "id": "target_yield_mature",
+          "label": "Rendimiento Meta en Estado Maduro (kg/ha año)",
+          "type": "number",
+          "placeholder": "Ej: 1200",
+          "required": true
+        },
+        {
+          "id": "growth_strategy",
+          "label": "Estrategia Principal de Crecimiento",
+          "type": "select",
+          "options": [
+            "Expansión de frontera agrícola (Comprar/Arrendar más tierra)",
+            "Intensificación sostenible (Aumentar rendimiento en la tierra actual)",
+            "Integración vertical (Construir infraestructura de fermentación/secado y venta directa)"
+          ],
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_1_2_1",
+          "text": "Redactar la visión de la empresa a 3-5 años, incluyendo hitos de certificación orgánica.",
+          "registryFieldRef": "long_term_vision"
+        },
+        {
+          "id": "cl_1_2_2",
+          "text": "Definir la extensión total de hectáreas proyectada para el año 5.",
+          "registryFieldRef": "max_capacity_hectares"
+        },
+        {
+          "id": "cl_1_2_3",
+          "text": "Establecer la meta de rendimiento en kg/ha para cuando el cultivo esté en plena maduración.",
+          "registryFieldRef": "target_yield_mature"
+        },
+        {
+          "id": "cl_1_2_4",
+          "text": "Seleccionar la estrategia principal de crecimiento (expansión, intensificación o integración vertical).",
+          "registryFieldRef": "growth_strategy"
+        }
+      ]
+    },
+    {
+      "id": "step_1_3",
+      "title": "Valores Centrales y Políticas Éticas",
+      "guide": {
+        "whyItMatters": "En la producción 100% orgánica, las políticas éticas y ambientales no son opcionales; son el requisito de supervivencia del negocio. Un solo error en la aplicación de un insumo prohibido puede resultar en la pérdida inmediata de la certificación orgánica y la confiscación de la cosecha. Además, los compradores de cacao fino y orgánico exigen políticas claras de no trabajo infantil, equidad de género y protección de fuentes hídricas.",
+        "bestPractices": [
+          "Establecer una política de 'Zonas de Amortiguamiento' estricta para evitar la deriva de agroquímicos de predios vecinos.",
+          "Documentar la política de manejo de residuos: toda cáscara y mucílago debe compostarse; no se permite quemar residuos vegetales.",
+          "Incluir políticas de bienestar laboral: provisión de agua potable, EPP para manejo de insumos orgánicos (que también requieren cuidado) y jornadas justas."
+        ],
+        "commonMistakes": [
+          "Copiar políticas de sostenibilidad genéricas sin adaptarlas a la normativa específica del estándar orgánico (ej. Norma EOS, USDA Organic, UE).",
+          "Permitir que personal de campo use ropa de trabajo contaminada con químicos convencionales dentro de la zona orgánica.",
+          "No tener un protocolo escrito para cuando un vecino fumiga con avioneta o motorizado cerca de la finca."
+        ],
+        "tip": "Para el control de malezas en cacao orgánico, tu política debe dictar 'Control mecánico y manual, y cobertura viva'. Prohíbe explícitamente el uso de 'herbicidas de contacto orgánico' (como el ácido acético concentrado) si dañan la biología del suelo; el objetivo es manejar la maleza, no esterilizar el suelo.",
+        "recommendedTools": [
+          {
+            "name": "IFOAM - Organics International (Standards)",
+            "url": "https://ifoam.bio/our-work/top-menu/standards"
+          },
+          {
+            "name": "Rainforest Alliance (Certification Criteria)",
+            "url": "https://www.rainforest-alliance.org/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "guiding_principles",
+          "label": "Principios Rectores de la Operación",
+          "type": "textarea",
+          "placeholder": "Ej: Respeto a los ciclos biológicos, bienestar del equipo, transparencia total con el comprador...",
+          "required": true
+        },
+        {
+          "id": "organic_policies",
+          "label": "Políticas de Producción 100% Orgánica",
+          "type": "multiselect",
+          "options": [
+            "Cero uso de herbicidas sintéticos (Glifosato, Paraquat, etc.)",
+            "Cero uso de insecticidas/fungicidas sintéticos",
+            "Uso exclusivo de fertilizantes orgánicos (compost, bocashi, lombricultura, bioles)",
+            "Control biológico, etológico y cultural de plagas",
+            "Mantenimiento estricto de zonas de amortiguamiento (buffer zones)",
+            "Prohibición de quema de residuos vegetales (Cero quemas)"
+          ],
+          "required": true
+        },
+        {
+          "id": "biodiversity_labor_policy",
+          "label": "Política de Biodiversidad y Bienestar Laboral",
+          "type": "textarea",
+          "placeholder": "Ej: Mantener el 20% de la finca como reserva forestal, garantizar cero trabajo infantil, proveer EPP...",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_1_3_1",
+          "text": "Definir y redactar los principios rectores que guiarán cada decisión en la finca.",
+          "registryFieldRef": "guiding_principles"
+        },
+        {
+          "id": "cl_1_3_2",
+          "text": "Seleccionar las políticas de producción orgánica inquebrantables que regirán el manejo del cultivo.",
+          "registryFieldRef": "organic_policies"
+        },
+        {
+          "id": "cl_1_3_3",
+          "text": "Redactar la política de biodiversidad, conservación de fuentes hídricas y bienestar laboral.",
+          "registryFieldRef": "biodiversity_labor_policy"
+        }
+      ]
+    },
+    {
+      "id": "step_1_4",
+      "title": "Perfil del Cliente Ideal y Segmento",
+      "guide": {
+        "whyItMatters": "El cacao 100% orgánico y fino de aroma no se vende en el mercado de commodities (bolsa de Nueva York). Si intentas venderlo como cacao convencional, perderás dinero porque tus costos de producción orgánica son más altos. Debes identificar compradores que paguen una prima (premium) por la calidad en taza, la trazabilidad y la certificación orgánica. Conocer a tu cliente define qué clones sembrar, cómo fermentar el cacao y qué tipo de empaque utilizar.",
+        "bestPractices": [
+          "Segmentar el mercado en tres niveles: Chocolateros Bean-to-Bar (compran lotes pequeños, pagan el precio más alto, exigen perfiles de sabor únicos), Marcas de Chocolate Premium (compran vol medios, exigen consistencia y certificación), y Cooperativas/Exportadores (compran volúmenes grandes, pagan primas orgánicas pero menores que el bean-to-bar).",
+          "Entender que el comprador de cacao orgánico compra una 'historia' y 'confianza' tanto como el grano. La trazabilidad es su mayor motivación.",
+          "Mapear ferias internacionales (Salon du Chocolat, Fancy Food Show) y plataformas B2B donde estos compradores buscan proveedores."
+        ],
+        "commonMistakes": [
+          "Apuntar al mercado local masivo que no está dispuesto a pagar el sobreprecio de un chocolate 100% orgánico.",
+          "No entender las exigencias de humedad (7%) y fermentación que piden los chocolateros artesanales, asumiendo que 'cacao es cacao'.",
+          "Subestimar el poder de las redes sociales (Instagram/LinkedIn) para conectar directamente con maestros chocolateros."
+        ],
+        "tip": "Para definir tu segmento, investiga el concepto de 'Terroir' del cacao. Los mejores compradores buscan cacao que exprese el sabor específico de tu región (ej. notas florales, frutales, a nueces). Tu perfil de cliente ideal es aquel que valora y sabe leer una ficha de cata (tasting notes).",
+        "recommendedTools": [
+          {
+            "name": "Tree of Life (Cacao Buyers Directory)",
+            "url": "https://www.treeoflifecacao.com/"
+          },
+          {
+            "name": "Google Trends (Análisis de mercado de chocolate orgánico)",
+            "url": "https://trends.google.com/"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "buyer_persona",
+          "label": "Perfil Detallado del Comprador Ideal (Buyer Persona)",
+          "type": "textarea",
+          "placeholder": "Ej: Maestro chocolatero de Europa o Norteamérica, dueño de marca bean-to-bar, valora la trazabilidad directa, busca perfiles frutales...",
+          "required": true
+        },
+        {
+          "id": "purchase_motivations",
+          "label": "Motivaciones de Compra del Cliente",
+          "type": "multiselect",
+          "options": [
+            "Certificación Orgánica verificada",
+            "Perfil de sabor único / Fino de Aroma",
+            "Trazabilidad directa al productor (Historia de la finca)",
+            "Prácticas de Comercio Justo y equidad de género",
+            "Consistencia en el proceso de fermentación y secado"
+          ],
+          "required": true
+        },
+        {
+          "id": "target_market_volume",
+          "label": "Volumen de Mercado Objetivo (Toneladas anuales a captar)",
+          "type": "number",
+          "placeholder": "Ej: 2.5",
+          "required": true
+        },
+        {
+          "id": "pricing_tier",
+          "label": "Estrategia de Precio y Segmento de Mercado",
+          "type": "select",
+          "options": [
+            "Commodity con prima orgánica (Venta a cooperativas/exportadores)",
+            "Cacao Fino / Premium (Venta a marcas de chocolate especializadas)",
+            "Cacao de Origen Único / Bean-to-Bar (Venta directa a chocolateros artesanales, precio más alto)"
+          ],
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_1_4_1",
+          "text": "Definir y redactar el perfil detallado del comprador ideal (Buyer Persona) para cacao orgánico.",
+          "registryFieldRef": "buyer_persona"
+        },
+        {
+          "id": "cl_1_4_2",
+          "text": "Seleccionar las principales motivaciones de compra que nuestro cacao debe satisfacer.",
+          "registryFieldRef": "purchase_motivations"
+        },
+        {
+          "id": "cl_1_4_3",
+          "text": "Estimar el volumen de mercado objetivo en toneladas anuales de cacao seco a captar.",
+          "registryFieldRef": "target_market_volume"
+        },
+        {
+          "id": "cl_1_4_4",
+          "text": "Definir la estrategia de precio y el segmento de mercado al que se apuntará.",
+          "registryFieldRef": "pricing_tier"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "block": "customers",
+  "blockTitle": "Clientes",
+  "phases": [
+    {
+      "phaseId": "customers-recurrent-management",
+      "phaseTitle": "Gestión Comercial y de Marketing Recurrente",
+      "steps": [
+        {
+          "stepId": "monthly-sales-funnel-kpi-review",
+          "stepTitle": "Análisis Mensual del Embudo de Ventas y KPIs Comerciales",
+          "guide": {
+            "whyItMatters": "El mercado del cacao orgánico es dinámico. Revisar mensualmente las métricas comerciales te permite detectar si tu estrategia de prospección está funcionando o si estás perdiendo dinero en muestras que no se convierten en ventas. Sin esta revisión periódica, puedes pasar meses creyendo que todo va bien, solo para descubrir al final del año que el Costo de Adquisición de Cliente (CAC) es insostenible.",
+            "bestPractices": [
+              "Extrae los datos del CRM o de tu hoja de seguimiento el primer día hábil del mes",
+              "Calcula las tasas de conversión clave: de Lead a Muestra, y de Muestra a Primer Pedido",
+              "Compara los resultados reales contra las metas definidas en la fase de estrategia",
+              "Identifica la principal razón por la que se perdieron los negocios en el mes",
+              "Define una única acción correctiva priorizada para el mes siguiente basándote en los datos"
+            ],
+            "commonMistakes": [
+              "Revisar solo métricas de vanidad (likes, visitas web) en lugar de métricas de negocio (conversiones, CAC)",
+              "No registrar la razón de las ventas perdidas, impidiendo el aprendizaje",
+              "Culpar al mercado en lugar de ajustar el proceso de seguimiento o la calidad de la muestra",
+              "Hacer el análisis de memoria sin consultar los datos reales del sistema"
+            ],
+            "tip": "En cacao B2B, si tu tasa de conversión de 'Muestra Enviada' a 'Primer Pedido' cae por debajo del 15%, el problema suele estar en: 1) La calidad de la fermentación/secado de esa muestra específica, 2) La falta de seguimiento post-envío, o 3) Un precio no competitivo para la calidad ofrecida. Dedica 1 hora mensual a este análisis con el equipo comercial.",
+            "recommendedTools": [
+              {
+                "name": "CRM (HubSpot, Pipedrive) o Google Sheets",
+                "url": "https://www.hubspot.com",
+                "description": "Fuente única de verdad para extraer los datos del embudo"
+              },
+              {
+                "name": "Looker Studio",
+                "url": "https://lookerstudio.google.com",
+                "description": "Para visualizar las tendencias de conversión mes a mes"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "review-month",
+                "label": "Mes de la Revisión",
+                "type": "text",
+                "placeholder": "Ej: Noviembre 2023",
+                "required": true
+              },
+              {
+                "fieldId": "new-leads-count",
+                "label": "Número de Nuevos Leads Calificados este Mes",
+                "type": "number",
+                "placeholder": "15",
+                "required": true
+              },
+              {
+                "fieldId": "samples-sent-count",
+                "label": "Número de Muestras Enviadas este Mes",
+                "type": "number",
+                "placeholder": "8",
+                "required": true
+              },
+              {
+                "fieldId": "sample-to-order-conversion",
+                "label": "Tasa de Conversión de Muestra a Pedido (%)",
+                "type": "number",
+                "placeholder": "20",
+                "required": true
+              },
+              {
+                "fieldId": "primary-losing-reason",
+                "label": "Razón Principal de Pérdida de Ventas este Mes",
+                "type": "select",
+                "options": [
+                  "Precio demasiado alto",
+                  "Calidad no cumplió expectativas en cata",
+                  "Volúmenes no disponibles",
+                  "Logística / Costos de envío",
+                  "Falta de respuesta del cliente",
+                  "Otro"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "corrective-action-defined",
+                "label": "Acción Correctiva Definida para el Próximo Mes",
+                "type": "textarea",
+                "placeholder": "Ej: Implementar llamada de seguimiento obligatoria a los 7 días de enviar la muestra.",
+                "required": true
+              },
+              {
+                "fieldId": "kpi-report-url",
+                "label": "Enlace al Reporte o Dashboard de KPIs del Mes",
+                "type": "url",
+                "placeholder": "https://docs.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Extraer datos de leads, muestras y ventas del mes desde el CRM",
+            "Calcular la tasa de conversión de Muestra a Primer Pedido",
+            "Comparar el CAC (Costo de Adquisición) real con la meta establecida",
+            "Analizar las razones registradas para las ventas perdidas",
+            "Identificar el cuello de botella principal en el embudo este mes",
+            "Definir y documentar una acción correctiva prioritaria",
+            "Archivar el reporte mensual en la carpeta de gestión comercial"
+          ]
+        },
+        {
+          "stepId": "quarterly-customer-loyalty-review",
+          "stepTitle": "Revisión Trimestral de Fidelización y Satisfacción del Cliente",
+          "guide": {
+            "whyItMatters": "Retener a un comprador de cacao es mucho más rentable que conseguir uno nuevo. Una revisión trimestral de la satisfacción y lealtad de tus clientes te permite anticiparte a la pérdida de un contrato, resolver problemas de calidad acumulativos y fortalecer las relaciones con tus compradores 'Tier 1' (los más rentables).",
+            "bestPractices": [
+              "Revisa la tasa de recompra y el volumen de pedidos de cada cliente en los últimos 3 meses",
+              "Analiza los resultados de los formularios de feedback post-entrega recibidos en el trimestre",
+              "Contacta proactivamente a tus 3-5 clientes más importantes (Tier 1) para una reunión de revisión (QBR)",
+              "Verifica que se hayan entregado todos los beneficios de fidelización prometidos (descuentos, prioridad en lotes)",
+              "Actualiza la información de contacto y las necesidades cambiantes de cada cliente en el CRM"
+            ],
+            "commonMistakes": [
+              "Esperar a que el cliente se queje o cancele un pedido para actuar",
+              "No dar seguimiento a los reclamos de calidad reportados en el trimestre",
+              "Tratar a todos los clientes con la misma intensidad, descuidando a los más valiosos",
+              "Olvidar cumplir las promesas de fidelización (ej. no enviar la muestra del nuevo micro-lote prometido)"
+            ],
+            "tip": "Una llamada de 15 minutos con un chocolatero bean-to-bar preguntando '¿Cómo se comportó nuestro cacao en su última producción y qué podemos mejorar?' vale más que 10 correos de venta. Esta revisión trimestral debe resultar en al menos 3 acciones concretas de mejora en tu proceso de postventa o calidad.",
+            "recommendedTools": [
+              {
+                "name": "CRM (Módulo de Cuentas)",
+                "url": "https://www.hubspot.com",
+                "description": "Para revisar el historial de compras y notas de interacción por cliente"
+              },
+              {
+                "name": "Calendly",
+                "url": "https://calendly.com",
+                "description": "Para programar fácilmente las reuniones trimestrales de revisión con clientes"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "review-quarter",
+                "label": "Trimestre de la Revisión",
+                "type": "select",
+                "options": ["Q1 (Ene-Mar)", "Q2 (Abr-Jun)", "Q3 (Jul-Sep)", "Q4 (Oct-Dic)"],
+                "required": true
+              },
+              {
+                "fieldId": "review-year",
+                "label": "Año de la Revisión",
+                "type": "number",
+                "placeholder": "2023",
+                "required": true
+              },
+              {
+                "fieldId": "repurchase-rate",
+                "label": "Tasa de Recompra del Trimestre (%)",
+                "type": "number",
+                "placeholder": "85",
+                "required": true
+              },
+              {
+                "fieldId": "tier1-customers-contacted",
+                "label": "Número de Clientes Tier 1 Contactados Proactivamente",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              },
+              {
+                "fieldId": "negative-feedback-resolved",
+                "label": "¿Se resolvieron todos los feedbacks negativos o reclamos del trimestre?",
+                "type": "select",
+                "options": ["Sí, todos", "Sí, la mayoría", "No, hay pendientes"],
+                "required": true
+              },
+              {
+                "fieldId": "pending-loyalty-actions",
+                "label": "Acciones de Fidelización Pendientes o Completadas",
+                "type": "textarea",
+                "placeholder": "Ej: Se envió la muestra del micro-lote de marzo al Cliente X. Pendiente descuento por volumen al Cliente Y.",
+                "required": true
+              },
+              {
+                "fieldId": "quarterly-review-report-url",
+                "label": "Enlace al Informe Trimestral de Satisfacción y Fidelización",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Calcular la tasa de recompra de clientes del trimestre",
+            "Revisar y analizar todos los formularios de feedback post-entrega recibidos",
+            "Verificar el estado de resolución de todos los reclamos de calidad",
+            "Programar y realizar reuniones de revisión con clientes Tier 1 (clave)",
+            "Auditar que se hayan cumplido los beneficios de fidelización prometidos",
+            "Actualizar la información y las necesidades de los clientes en el CRM",
+            "Documentar las acciones de mejora derivadas de esta revisión trimestral"
+          ]
+        }
+      ]
+    }
+  ]
+}

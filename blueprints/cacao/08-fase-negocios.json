@@ -1,0 +1,740 @@
+{
+  "block": "business",
+  "blockTitle": "Negocio",
+  "phases": [
+    {
+      "phaseId": "legal-constitution",
+      "phaseTitle": "Constitución Legal y Cumplimiento",
+      "steps": [
+        {
+          "stepId": "business-name-registration",
+          "stepTitle": "Registro del Nombre Comercial y Reserva de Marca",
+          "guide": {
+            "whyItMatters": "El nombre comercial es la identidad legal de tu negocio de cacao orgánico. Sin un nombre registrado y una marca protegida, no podrás abrir cuentas bancarias empresariales, firmar contratos con compradores internacionales, ni acceder a certificaciones orgánicas. Además, proteger tu marca evita que competidores usen nombres similares que confundan a tus clientes en mercados especializados de cacao fino de aroma.",
+            "bestPractices": [
+              "Elige un nombre que refleje la calidad orgánica y el origen territorial de tu cacao",
+              "Verifica disponibilidad en la Cámara de Comercio y en la SIC (Superintendencia de Industria y Comercio)",
+              "Reserva el nombre por 30 días antes de iniciar el proceso de constitución",
+              "Registra la marca en la clase 30 (cacao, chocolate) y clase 31 (productos agrícolas) ante la SIC",
+              "Considera registrar también el dominio web con el mismo nombre comercial"
+            ],
+            "commonMistakes": [
+              "Elegir un nombre genérico como 'Cacao Orgánico Colombia' que no es registrable como marca",
+              "No verificar disponibilidad previa y perder tiempo en trámites con nombres ya registrados",
+              "Olvidar registrar la marca en clases internacionales si planeas exportar",
+              "Usar términos geográficos protegidos (ej. 'Cacao Arhuaco') sin autorización de la comunidad indígena"
+            ],
+            "tip": "Para cacao orgánico certificado, considera nombres que incluyan referencias a la región específica (ej. 'Cacao del Magdalena', 'Cacao Amazónico') pero verifica que no estén protegidos como denominación de origen. La reserva de nombre en Cámara de Comercio cuesta aproximadamente $60.000 COP y la marca ante SIC alrededor de $1.500.000 COP por clase.",
+            "recommendedTools": [
+              {
+                "name": "RUES - Registro Único Empresarial y Social",
+                "url": "https://www.rues.org.co",
+                "description": "Consulta gratuita de disponibilidad de nombres comerciales en todas las Cámaras de Comercio de Colombia"
+              },
+              {
+                "name": "SIC - Consulta de Antecedentes Marcarios",
+                "url": "https://www.sic.gov.co",
+                "description": "Base de datos oficial para verificar si tu marca ya está registrada"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "business-name",
+                "label": "Nombre Comercial Propuesto",
+                "type": "text",
+                "placeholder": "Ej: Cacao Orgánico del Sinú S.A.S.",
+                "required": true
+              },
+              {
+                "fieldId": "chamber-of-commerce",
+                "label": "Cámara de Comercio de Registro",
+                "type": "select",
+                "options": [
+                  "Bogotá",
+                  "Medellín",
+                  "Cali",
+                  "Barranquilla",
+                  "Cartagena",
+                  "Bucaramanga",
+                  "Pereira",
+                  "Manizales",
+                  "Santa Marta",
+                  "Montería",
+                  "Otra"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "name-availability-date",
+                "label": "Fecha de Consulta de Disponibilidad",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "name-reservation-number",
+                "label": "Número de Reserva de Nombre",
+                "type": "text",
+                "placeholder": "Ej: 12345678",
+                "required": false
+              },
+              {
+                "fieldId": "trademark-classes",
+                "label": "Clases de Marca a Registrar",
+                "type": "multiselect",
+                "options": [
+                  "Clase 30 - Cacao y productos de cacao",
+                  "Clase 31 - Productos agrícolas frescos",
+                  "Clase 32 - Bebidas no alcohólicas",
+                  "Clase 35 - Servicios de comercialización",
+                  "Clase 39 - Transporte y almacenamiento",
+                  "Clase 42 - Servicios de certificación orgánica"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "trademark-application-date",
+                "label": "Fecha de Radicación de Solicitud de Marca",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "trademark-application-number",
+                "label": "Número de Radicación SIC",
+                "type": "text",
+                "placeholder": "Ej: SIC-2024-123456",
+                "required": false
+              },
+              {
+                "fieldId": "domain-name",
+                "label": "Dominio Web Registrado",
+                "type": "url",
+                "placeholder": "https://www.tucacaoorganico.com",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Consultar disponibilidad del nombre comercial en RUES",
+            "Reservar el nombre en la Cámara de Commerce correspondiente",
+            "Realizar búsqueda de antecedentes marcarios en la SIC",
+            "Definir las clases internacionales de Niza aplicables al negocio",
+            "Radicar solicitud de registro de marca ante la SIC",
+            "Registrar dominio web con el nombre comercial elegido",
+            "Guardar comprobantes de pago y números de radicación"
+          ]
+        },
+        {
+          "stepId": "legal-constitution",
+          "stepTitle": "Constitución de la Sociedad y Registro Mercantil",
+          "guide": {
+            "whyItMatters": "La constitución legal formaliza tu emprendimiento de cacao orgánico como una entidad jurídica independiente. Esto es obligatorio para acceder a créditos bancarios agrícolas, firmar contratos de exportación, obtener certificaciones orgánicas (que requieren persona jurídica), y proteger tu patrimonio personal de los riesgos del negocio. Una SAS (Sociedad por Acciones Simplificada) es la estructura más flexible para emprendimientos agrícolas en Colombia.",
+            "bestPractices": [
+              "Constituye una SAS para limitar tu responsabilidad al capital aportado",
+              "Define un objeto social amplio que incluya: cultivo, procesamiento, comercialización, exportación y servicios técnicos en cacao",
+              "Establece un capital inicial realista (mínimo $1.000.000 COP para SAS, pero considera $5.000.000-$10.000.000 COP para credibilidad)",
+              "Designa un representante legal con cédula vigente y RUT actualizado",
+              "Incluye cláusulas de resolución de disputas entre accionistas",
+              "Registra la sociedad en la Cámara de Comercio de la ciudad donde estará la finca principal"
+            ],
+            "commonMistakes": [
+              "Constituirse como persona natural y asumir responsabilidad ilimitada ante deudas o demandas",
+              "Definir un objeto social muy restrictivo que limite futuras expansiones (ej. solo 'cultivo de cacao')",
+              "No establecer acuerdos de accionistas claros sobre distribución de utilidades y toma de decisiones",
+              "Olvidar incluir actividades complementarias como procesamiento, empaque y comercialización",
+              "No actualizar el RUT del representante legal antes del registro"
+            ],
+            "tip": "Para una SAS de cacao orgánico, incluye en el objeto social: 'Cultivo, beneficiado, transformación, comercialización nacional e internacional de cacao y sus derivados; producción y venta de insumos orgánicos; prestación de servicios de asistencia técnica agrícola; turismo agrícola y agroturismo'. El costo de registro en Cámara de Comercio varía según el capital: para $10.000.000 COP son aproximadamente $350.000 COP.",
+            "recommendedTools": [
+              {
+                "name": "Cámara de Comercio - Ventanilla de Constitución",
+                "url": "https://www.ccb.org.co",
+                "description": "Plataforma para constitución en línea de SAS con firma electrónica"
+              },
+              {
+                "name": "Pre-RUT - DIAN",
+                "url": "https://www.dian.gov.co",
+                "description": "Genera el RUT previo del representante legal antes de constituir la sociedad"
+              },
+              {
+                "name": "Plantilla de Estatutos SAS",
+                "url": "https://www.supersociedades.gov.co",
+                "description": "Modelos oficiales de estatutos para sociedades por acciones simplificadas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "company-type",
+                "label": "Tipo de Sociedad Constituida",
+                "type": "select",
+                "options": [
+                  "SAS - Sociedad por Acciones Simplificada",
+                  "LTDA - Sociedad de Responsabilidad Limitada",
+                  "S.A. - Sociedad Anónima",
+                  "Persona Natural con Establecimiento de Comercio"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "company-name-legal",
+                "label": "Nombre Legal de la Sociedad",
+                "type": "text",
+                "placeholder": "Ej: Cacao Orgánico del Sinú S.A.S.",
+                "required": true
+              },
+              {
+                "fieldId": "nit-number",
+                "label": "NIT Asignado",
+                "type": "text",
+                "placeholder": "Ej: 900.123.456-7",
+                "required": true
+              },
+              {
+                "fieldId": "constitution-date",
+                "label": "Fecha de Constitución",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "chamber-registration-number",
+                "label": "Número de Registro Mercantil",
+                "type": "text",
+                "placeholder": "Ej: 12345678",
+                "required": true
+              },
+              {
+                "fieldId": "subscribed-capital",
+                "label": "Capital Suscrito (COP)",
+                "type": "number",
+                "placeholder": "10000000",
+                "required": true
+              },
+              {
+                "fieldId": "paid-capital",
+                "label": "Capital Pagado (COP)",
+                "type": "number",
+                "placeholder": "5000000",
+                "required": true
+              },
+              {
+                "fieldId": "legal-representative-name",
+                "label": "Nombre del Representante Legal",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": true
+              },
+              {
+                "fieldId": "legal-representative-id",
+                "label": "Cédula del Representante Legal",
+                "type": "text",
+                "placeholder": "Ej: 1.234.567.890",
+                "required": true
+              },
+              {
+                "fieldId": "main-activity-code",
+                "label": "Código CIIU Actividad Principal",
+                "type": "text",
+                "placeholder": "Ej: 0113 - Cultivo de cacao",
+                "required": true
+              },
+              {
+                "fieldId": "social-object",
+                "label": "Objeto Social Completo",
+                "type": "textarea",
+                "placeholder": "Describe todas las actividades que realizará la sociedad...",
+                "required": true
+              },
+              {
+                "fieldId": "company-address",
+                "label": "Dirección de la Oficina Principal",
+                "type": "text",
+                "placeholder": "Dirección completa",
+                "required": true
+              },
+              {
+                "fieldId": "farm-location",
+                "label": "Ubicación de la Finca de Cacao",
+                "type": "textarea",
+                "placeholder": "Vereda, municipio, departamento, coordenadas si es posible",
+                "required": true
+              },
+              {
+                "fieldId": "shareholders-agreement",
+                "label": "¿Existe Acuerdo de Accionistas por Escrito?",
+                "type": "select",
+                "options": ["Sí", "No", "En proceso de redacción"],
+                "required": true
+              },
+              {
+                "fieldId": "bylaws-document-url",
+                "label": "Enlace a Estatutos Firmados (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Redactar estatutos de la sociedad con abogado o contador",
+            "Definir accionistas, porcentajes de participación y capital suscrito",
+            "Firmar documento privado de constitución (o escritura pública si hay bienes inmuebles)",
+            "Obtener RUT previo del representante legal en la DIAN",
+            "Radicar documento de constitución en Cámara de Comercio",
+            "Pagar derechos de registro mercantil",
+            "Obtener Certificado de Existencia y Representación Legal",
+            "Inscribir el establecimiento de comercio (finca) en Cámara de Comercio",
+            "Registrar libros de accionistas, actas y contables"
+          ]
+        },
+        {
+          "stepId": "tax-registration",
+          "stepTitle": "Registro Tributario ante la DIAN y Obligaciones Fiscales",
+          "guide": {
+            "whyItMatters": "El registro ante la DIAN es obligatorio para operar legalmente y emitir facturas. Para un negocio de cacao orgánico, es crucial definir correctamente las responsabilidades tributarias porque el sector agrícola tiene beneficios fiscales específicos (como la exención de renta para actividades agrícolas hasta cierto límite). Además, necesitas facturación electrónica para vender a compradores formales y exportadores.",
+            "bestPractices": [
+              "Solicita el RUT inmediatamente después del registro mercantil",
+              "Define con precisión las responsabilidades fiscales: Régimen Simple (si aplica), Responsable de IVA, Retenedor, etc.",
+              "Para actividades agrícolas, investiga si calificas para beneficios tributarios especiales (Ley 1133 de 2006)",
+              "Configura facturación electrónica antes de realizar la primera venta",
+              "Mantén separada la contabilidad personal de la empresarial desde el día uno",
+              "Si vas a exportar, solicita el registro como exportador ante la DIAN"
+            ],
+            "commonMistakes": [
+              "No actualizar el RUT cuando cambian las actividades o responsabilidades fiscales",
+              "Confundir el régimen tributario y perder beneficios fiscales del sector agrícola",
+              "Emitir facturas sin tener autorización de numeración vigente",
+              "No declarar IVA o renta en las fechas establecidas, generando sanciones",
+              "Mezclar gastos personales con los del negocio, complicando la contabilidad"
+            ],
+            "tip": "Las actividades agrícolas en Colombia pueden acceder a beneficios tributarios si cumplen ciertos requisitos. Por ejemplo, la renta por actividades agrícolas puede estar exonerada hasta cierto porcentaje. Consulta con un contador especializado en agro si tu facturación supera los topes del Régimen Simple. La facturación electrónica es obligatoria desde 2023: necesitas un software certificado (costo aproximado $50.000-$200.000 COP mensuales) y realizar pruebas técnicas con la DIAN.",
+            "recommendedTools": [
+              {
+                "name": "DIAN - Sistema de Facturación Electrónica",
+                "url": "https://www.dian.gov.co/factura-electronica",
+                "description": "Portal oficial para habilitación de facturación electrónica"
+              },
+              {
+                "name": "Alegra - Software Contable",
+                "url": "https://www.alegra.com",
+                "description": "Software contable colombiano con facturación electrónica integrada"
+              },
+              {
+                "name": "Contador Especializado en Agro",
+                "url": "https://www.google.com",
+                "description": "Busca contadores con experiencia en sector agrícola y beneficios tributarios"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "rut-obtention-date",
+                "label": "Fecha de Obtención del RUT",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "rut-document-url",
+                "label": "Enlace al RUT (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              },
+              {
+                "fieldId": "tax-regime",
+                "label": "Régimen Tributario",
+                "type": "select",
+                "options": [
+                  "Régimen Simple",
+                  "Régimen Ordinario - No Responsable de IVA",
+                  "Régimen Ordinario - Responsable de IVA",
+                  "Gran Contribuyente"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "iva-responsible",
+                "label": "¿Es Responsable de IVA?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "withholding-agent",
+                "label": "¿Es Agente de Retención?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "agricultural-tax-benefits",
+                "label": "¿Califica para Beneficios Tributarios Agrícolas?",
+                "type": "select",
+                "options": ["Sí", "No", "En evaluación con contador"],
+                "required": true
+              },
+              {
+                "fieldId": "accounting-software",
+                "label": "Software Contable Utilizado",
+                "type": "text",
+                "placeholder": "Ej: Alegra, Siigo, World Office",
+                "required": true
+              },
+              {
+                "fieldId": "electronic-invoicing-enabled",
+                "label": "¿Habilitó Facturación Electrónica?",
+                "type": "select",
+                "options": ["Sí", "No", "En proceso"],
+                "required": true
+              },
+              {
+                "fieldId": "invoicing-resolution-number",
+                "label": "Número de Resolución de Facturación",
+                "type": "text",
+                "placeholder": "Ej: 18760000001",
+                "required": false
+              },
+              {
+                "fieldId": "invoicing-resolution-expiration",
+                "label": "Fecha de Vencimiento de Resolución",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "exporter-registration",
+                "label": "¿Está Registrado como Exportador ante DIAN?",
+                "type": "select",
+                "options": ["Sí", "No", "No aplica aún"],
+                "required": true
+              },
+              {
+                "fieldId": "accountant-name",
+                "label": "Nombre del Contador Asesor",
+                "type": "text",
+                "placeholder": "Nombre completo",
+                "required": false
+              },
+              {
+                "fieldId": "accountant-contact",
+                "label": "Contacto del Contador",
+                "type": "text",
+                "placeholder": "Teléfono o email",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Solicitar RUT en la DIAN con el Certificado de Existencia Legal",
+            "Definir responsabilidades fiscales con contador especializado",
+            "Verificar si califica para beneficios tributarios agrícolas",
+            "Seleccionar y contratar software de facturación electrónica",
+            "Realizar pruebas técnicas de facturación electrónica con DIAN",
+            "Obtener resolución de numeración de facturación",
+            "Configurar libros contables en software seleccionado",
+            "Si aplica, registrarse como exportador en el RUT",
+            "Programar calendario de obligaciones tributarias mensuales y anuales"
+          ]
+        },
+        {
+          "stepId": "municipal-permits",
+          "stepTitle": "Permisos Municipales y Licencias de Funcionamiento",
+          "guide": {
+            "whyItMatters": "Para operar legalmente una finca de cacao orgánico, necesitas permisos municipales que certifiquen que tu actividad es compatible con el uso del suelo y cumple con normas sanitarias y ambientales locales. Sin estos permisos, la alcaldía puede clausurar tu operación y enfrentar multas. Además, estos permisos son requisito para obtener certificaciones orgánicas y vender a compradores formales.",
+            "bestPractices": [
+              "Consulta el Plan de Ordenamiento Territorial (POT) de tu municipio antes de comprar o arrendar la finca",
+              "Verifica que el uso de suelo permita actividades agrícolas y de procesamiento de cacao",
+              "Tramita la licencia de funcionamiento antes de iniciar operaciones",
+              "Si procesas cacao (fermentación, secado, empaque), necesitas permiso sanitario",
+              "Cumple con normas ambientales para manejo de residuos y vertimientos",
+              "Mantén todos los permisos actualizados y visibles en la finca"
+            ],
+            "commonMistakes": [
+              "Comprar o arrendar finca sin verificar el uso de suelo permitido",
+              "Iniciar operaciones sin licencia de funcionamiento, arriesgando clausura",
+              "No tramitar permiso sanitario si procesas o empacas cacao en la finca",
+              "Ignorar normas ambientales sobre manejo de aguas residuales o residuos sólidos",
+              "Olvidar renovar permisos temporales (como licencias de construcción para bodegas)"
+            ],
+            "tip": "En la mayoría de municipios colombianos, el cultivo de cacao está permitido en zonas rurales sin restricciones especiales. Sin embargo, si vas a procesar cacao (fermentar, secar, empacar), necesitas permiso sanitario de la Secretaría de Salud municipal. El costo de la licencia de funcionamiento varía entre $200.000 y $800.000 COP según el municipio y el tamaño del negocio. Para actividades agrícolas orgánicas, algunos municipios ofrecen descuentos en impuestos prediales.",
+            "recommendedTools": [
+              {
+                "name": "Secretaría de Desarrollo Económico Municipal",
+                "url": "https://www.google.com",
+                "description": "Entidad encargada de licencias de funcionamiento en tu municipio"
+              },
+              {
+                "name": "Secretaría de Salud Municipal",
+                "url": "https://www.google.com",
+                "description": "Para permisos sanitarios si procesas cacao"
+              },
+              {
+                "name": "Corporación Autónoma Regional (CAR)",
+                "url": "https://www.google.com",
+                "description": "Para permisos ambientales si tu finca está en zona protegida o cerca de fuentes hídricas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "land-use-compatibility",
+                "label": "¿El Uso de Suelo es Compatible con Cacao?",
+                "type": "select",
+                "options": ["Sí, sin restricciones", "Sí, con restricciones", "No compatible"],
+                "required": true
+              },
+              {
+                "fieldId": "land-use-certificate-url",
+                "label": "Enlace a Certificado de Uso de Suelo",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "operating-license-obtained",
+                "label": "¿Obtuvo Licencia de Funcionamiento?",
+                "type": "select",
+                "options": ["Sí", "No", "En trámite"],
+                "required": true
+              },
+              {
+                "fieldId": "operating-license-number",
+                "label": "Número de Licencia de Funcionamiento",
+                "type": "text",
+                "placeholder": "Ej: LIC-2024-12345",
+                "required": false
+              },
+              {
+                "fieldId": "operating-license-date",
+                "label": "Fecha de Expedición de Licencia",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "operating-license-expiration",
+                "label": "Fecha de Vencimiento de Licencia",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "cacao-processing",
+                "label": "¿Procesa Cacao en la Finca (Fermentación/Secado/Empaque)?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sanitary-permit-obtained",
+                "label": "¿Obtuvo Permiso Sanitario de Funcionamiento?",
+                "type": "select",
+                "options": ["Sí", "No", "No aplica"],
+                "required": true
+              },
+              {
+                "fieldId": "sanitary-permit-number",
+                "label": "Número de Permiso Sanitario",
+                "type": "text",
+                "placeholder": "Ej: PS-2024-67890",
+                "required": false
+              },
+              {
+                "fieldId": "environmental-permit-required",
+                "label": "¿Requiere Permiso Ambiental Especial?",
+                "type": "select",
+                "options": ["Sí", "No", "En evaluación"],
+                "required": true
+              },
+              {
+                "fieldId": "environmental-permit-url",
+                "label": "Enlace a Permiso Ambiental (si aplica)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "municipal-taxes-paid",
+                "label": "¿Está al Día con Impuestos Municipales (Industria y Comercio)?",
+                "type": "select",
+                "options": ["Sí", "No", "En proceso"],
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Consultar Plan de Ordenamiento Territorial del municipio",
+            "Obtener certificado de uso de suelo compatible con cacao",
+            "Tramitar licencia de funcionamiento en Secretaría de Desarrollo Económico",
+            "Si procesa cacao, tramitar permiso sanitario en Secretaría de Salud",
+            "Verificar requisitos ambientales con la CAR local",
+            "Obtener permisos de vertimientos si aplica",
+            "Pagar impuestos municipales de Industria y Comercio",
+            "Archivar todos los permisos en carpeta física y digital",
+            "Programar recordatorios para renovación de permisos temporales"
+          ]
+        },
+        {
+          "stepId": "organic-certification",
+          "stepTitle": "Certificación Orgánica y Registros Especiales",
+          "guide": {
+            "whyItMatters": "La certificación orgánica es el sello que valida que tu cacao cumple con estándares internacionales de producción sin químicos sintéticos. Sin esta certificación, no puedes vender tu producto como 'orgánico' ni acceder a mercados premium que pagan hasta 3 veces más por cacao certificado. Además, es requisito para exportar a mercados como Europa, Estados Unidos y Japón, donde la demanda de cacao orgánico crece constantemente.",
+            "bestPractices": [
+              "Inicia el proceso de certificación al menos 3 años antes de querer vender como orgánico (período de conversión)",
+              "Elige un certificador reconocido internacionalmente (ECOCERT, IMO, BCS, etc.)",
+              "Documenta todas las prácticas desde el día uno: insumos utilizados, fuentes de agua, manejo de suelos",
+              "Implementa un sistema de trazabilidad completo desde la finca hasta el producto final",
+              "Capacita a todos los trabajadores en normas orgánicas",
+              "Mantén registros detallados de todas las operaciones (cuaderno de campo)"
+            ],
+            "commonMistakes": [
+              "Empezar a vender como 'orgánico' sin certificación, arriesgando multas y pérdida de credibilidad",
+              "No documentar adecuadamente las prácticas, haciendo imposible la auditoría",
+              "Usar insumos no permitidos (aunque sean naturales) sin verificar con el certificador",
+              "No mantener registros continuos, creando vacíos en la trazabilidad",
+              "Subestimar el costo y tiempo del proceso de certificación"
+            ],
+            "tip": "El proceso de certificación orgánica tiene 3 etapas: 1) Período de conversión (3 años mínimo donde debes cumplir todas las normas pero no puedes vender como orgánico), 2) Certificación orgánica (puedes vender como orgánico), 3) Mantenimiento (auditorías anuales). El costo inicial es aproximadamente $3.000.000-$5.000.000 COP más una anualidad de $1.500.000-$2.500.000 COP. Para pequeños productores, considera certificarse en grupo a través de cooperativas para reducir costos.",
+            "recommendedTools": [
+              {
+                "name": "ECOCERT Colombia",
+                "url": "https://www.ecocert.com",
+                "description": "Certificador orgánico internacional con presencia en Colombia"
+              },
+              {
+                "name": "IFOAM - Organics International",
+                "url": "https://www.ifoam.bio",
+                "description": "Directorio global de certificadores orgánicos acreditados"
+              },
+              {
+                "name": "MinAgricultura - Programa de Agricultura Orgánica",
+                "url": "https://www.minagricultura.gov.co",
+                "description": "Información sobre apoyos gubernamentales para certificación orgánica"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "certification-stage",
+                "label": "Etapa Actual de Certificación Orgánica",
+                "type": "select",
+                "options": [
+                  "No iniciado",
+                  "En proceso de conversión (año 1)",
+                  "En proceso de conversión (año 2)",
+                  "En proceso de conversión (año 3)",
+                  "Certificado orgánico",
+                  "Certificación en grupo/cooperativa"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "certifier-name",
+                "label": "Nombre del Organismo Certificador",
+                "type": "text",
+                "placeholder": "Ej: ECOCERT, IMO, BCS",
+                "required": false
+              },
+              {
+                "fieldId": "certification-start-date",
+                "label": "Fecha de Inicio del Proceso de Conversión",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "expected-certification-date",
+                "label": "Fecha Estimada de Obtención de Certificado",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "certificate-number",
+                "label": "Número de Certificado Orgánico",
+                "type": "text",
+                "placeholder": "Ej: ECO-CO-12345",
+                "required": false
+              },
+              {
+                "fieldId": "certificate-expiration",
+                "label": "Fecha de Vencimiento del Certificado",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "certification-standards",
+                "label": "Estándares de Certificación Aplicables",
+                "type": "multiselect",
+                "options": [
+                  "UE - Unión Europea",
+                  "USDA NOP - Estados Unidos",
+                  "JAS - Japón",
+                  "COR - Canadá",
+                  "Nacional Colombia",
+                  "Fair Trade (Comercio Justo)",
+                  "Rainforest Alliance"
+                ],
+                "required": false
+              },
+              {
+                "fieldId": "field-notebook-implemented",
+                "label": "¿Implementó Cuaderno de Campo para Registros?",
+                "type": "select",
+                "options": ["Sí", "No", "En desarrollo"],
+                "required": true
+              },
+              {
+                "fieldId": "traceability-system",
+                "label": "Sistema de Trazabilidad Implementado",
+                "type": "text",
+                "placeholder": "Ej: Software específico, Excel, cuadernos físicos",
+                "required": false
+              },
+              {
+                "fieldId": "organic-inputs-verified",
+                "label": "¿Todos los Insumos Están Verificados como Orgánicos?",
+                "type": "select",
+                "options": ["Sí", "No", "En proceso de verificación"],
+                "required": true
+              },
+              {
+                "fieldId": "worker-training-completed",
+                "label": "¿Trabajadores Capacitados en Normas Orgánicas?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No aún"],
+                "required": true
+              },
+              {
+                "fieldId": "certification-cost-annual",
+                "label": "Costo Anual de Certificación (COP)",
+                "type": "number",
+                "placeholder": "2000000",
+                "required": false
+              },
+              {
+                "fieldId": "certificate-document-url",
+                "label": "Enlace al Certificado Orgánico (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Investigar y seleccionar organismo certificador reconocido",
+            "Iniciar período de conversión orgánica (mínimo 3 años)",
+            "Implementar cuaderno de campo para registro diario de operaciones",
+            "Documentar todos los insumos utilizados y sus fuentes",
+            "Capacitar a trabajadores en normas y prácticas orgánicas",
+            "Establecer sistema de trazabilidad desde finca hasta producto final",
+            "Realizar auditoría interna previa a la auditoría de certificación",
+            "Completar auditoría externa con organismo certificador",
+            "Obtener certificado orgánico y registrarlo en archivos",
+            "Programar auditorías anuales de mantenimiento"
+          ]
+        }
+      ]
+    }
+  ]
+}

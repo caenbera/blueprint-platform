@@ -1,0 +1,218 @@
+{
+  "block": "operations",
+  "phase": "Logística y Almacenamiento",
+  "steps": [
+    {
+      "id": "step_4_1",
+      "title": "Secado y Clasificación del Cacao",
+      "guide": {
+        "whyItMatters": "El secado es la última barrera física para preservar la calidad 'Fino de Aroma' y garantizar la inocuidad. Si el cacao no se seca hasta alcanzar estrictamente entre un 7% y 7.5% de humedad, los hongos toxigénicos (como *Aspergillus flavus*, productor de aflatoxinas) proliferarán, arruinando el lote y haciendo que sea rechazado en los mercados de exportación y orgánicos. Por otro lado, secarlo por debajo del 6% hace que los granos se vuelvan quebradizos, generando merma de peso (pérdida directa de dinero) y polvo en el transporte. La clasificación manual posterior elimina los granos con defectos (pizarrosos, mohosos, germinados) que introducen sabores off (astringencia, amargor extremo) que destruyen el perfil de taza.",
+        "bestPractices": [
+          "Utilizar secadores solares tipo 'marquesina' con camas elevadas (mallas o madera) a 40-50 cm del suelo. Esto permite circulación de aire por debajo, acelera el secado y evita la contaminación con tierra o animales.",
+          "Realizar el volteo de los granos con rastrillos de madera cada 2-3 horas durante las horas de sol. Esto asegura un secado homogéneo y evita el 'case hardening' (endurecimiento de la cáscara que atrapa la humedad interna).",
+          "Ejecutar la clasificación (selección) en una mesa limpia y bien iluminada. Se debe retirar manualmente cualquier grano pizarroso (no fermentado), mohoso, germinado, plano, o cualquier materia extraña (piedras, palos, cáscaras).",
+          "Proteger el cacao de la humedad nocturna y el rocío. El cacao debe entrar al almacén o cubrirse herméticamente antes de las 4:00 PM diariamente."
+        ],
+        "commonMistakes": [
+          "Secar el cacao directamente sobre el suelo de tierra o cemento al sol libre. Esto contamina el grano con tierra, heces de animales, y provoca un secado desigual, además de ser rechazado por los estándares orgánicos y de calidad.",
+          "Usar secadoras artificiales de combustión directa (leña o diésel). El humo y el hollín impregnan la manteca del cacao con un sabor ahumado/fenólico que lo degrada a categoría de rechazo para chocolate fino.",
+          "Confiar solo en el 'tacto' o el 'sonido' para saber si está seco. Sin un medidor de humedad, es imposible garantizar que el núcleo del grano está al 7%, arriesgando toda la cosecha a la contaminación por hongos.",
+          "Omitir la clasificación asumiendo que 'el comprador lo hará'. Los compradores de cacao fino penalizan económicamente (descuentos severos) los lotes con más del 1-2% de granos defectuosos."
+        ],
+        "tip": "Para la prueba de humedad de campo sin equipo costoso, usa la 'prueba del corte': corta 10 granos al azar por la mañana. Si el centro (cotiledón) se ve oscuro y húmedo, falta secado. Si está uniformemente marrón y seco, usa un medidor de humedad digital para calibrar tu percepción. La meta exacta para exportación orgánica es 7.0% - 7.5%. Para venta local o consumo directo, puedes permitirte hasta 7.5%, pero nunca más.",
+        "recommendedTools": [
+          {
+            "name": "Medidor de Humedad de Granos Digital (Ej: Dickey-John, Agrumex)",
+            "url": "https://www.dickeyjohn.com/"
+          },
+          {
+            "name": "Marquesina Solar con camas de malla plástica o madera",
+            "url": "N/A (Infraestructura física)"
+          },
+          {
+            "name": "Mesa de Clasificación con banda transportadora o estática bien iluminada",
+            "url": "N/A (Infraestructura física)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "drying_method",
+          "label": "Método de Secado Utilizado",
+          "type": "select",
+          "options": [
+            "Secador Solar tipo Marquesina con camas elevadas",
+            "Secado al sol directo sobre camas de madera/bambú (sin marquesina)",
+            "Secadora artificial de biomasa indirecta (sin contacto de humo)",
+            "Secado mixto (Solar + artificial indirecta en días nublados)"
+          ],
+          "required": true
+        },
+        {
+          "id": "target_final_moisture",
+          "label": "Humedad Final Objetivo del Grano Seco (%)",
+          "type": "number",
+          "placeholder": "Ej: 7.0",
+          "required": true
+        },
+        {
+          "id": "estimated_drying_time_days",
+          "label": "Tiempo Estimado de Secado (Días)",
+          "type": "number",
+          "placeholder": "Ej: 5",
+          "required": true
+        },
+        {
+          "id": "sorting_defect_criteria",
+          "label": "Criterios de Defectos a Eliminar en la Clasificación Manual",
+          "type": "multiselect",
+          "options": [
+            "Granos pizarrosos (no fermentados / violetas)",
+            "Granos mohosos (con hongos visibles)",
+            "Granos germinados (raíz visible)",
+            "Granos planos / inmaduros / chatos",
+            "Granos fragmentados / rotos",
+            "Materias extrañas (piedras, palos, cáscaras, tierra)"
+          ],
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_4_1_1",
+          "text": "Seleccionar y habilitar el método de secado (preferiblemente marquesina solar con camas elevadas).",
+          "registryFieldRef": "drying_method"
+        },
+        {
+          "id": "cl_4_1_2",
+          "text": "Definir y calibrar el medidor de humedad para alcanzar el porcentaje exacto de humedad final objetivo.",
+          "registryFieldRef": "target_final_moisture"
+        },
+        {
+          "id": "cl_4_1_3",
+          "text": "Estimar el tiempo promedio en días que tomará el secado según las condiciones climáticas actuales.",
+          "registryFieldRef": "estimated_drying_time_days"
+        },
+        {
+          "id": "cl_4_1_4",
+          "text": "Definir los criterios estrictos de defectos que se eliminarán manualmente en la mesa de clasificación.",
+          "registryFieldRef": "sorting_defect_criteria"
+        }
+      ]
+    },
+    {
+      "id": "step_4_2",
+      "title": "Almacenamiento y Transporte a Punto de Acopio",
+      "guide": {
+        "whyItMatters": "Un cacao perfectamente fermentado, clasificado y secado puede perder su categoría de 'Fino de Aroma' y su certificación orgánica en la bodega. Los granos son higroscópicos (absorben humedad del ambiente) y atraen plagas de almacén (gorgojos, polillas). Además, el riesgo de 'contaminación cruzada' con productos no orgánicos (fertilizantes sintéticos, granos convencionales, combustibles) es la causa número uno de pérdida de certificación orgánica durante el almacenamiento. La trazabilidad por lotes no es solo un requisito burocrático; es el pasaporte que permite al comprador verificar que el grano que recibe es exactamente el que tú fermentaste.",
+        "bestPractices": [
+          "Almacenar los sacos sobre pallets de plástico o madera tratada, nunca directamente sobre el piso de concreto o tierra, para evitar la absorción de humedad capilar. Mantenerlos a 10 cm de distancia de las paredes.",
+          "Utilizar empaque hermético. La mejor práctica actual es usar bolsas internas de polietileno de grado alimenticio (tipo GrainPro o EcoHermetic) dentro de los sacos de yute tradicionales. Esto crea un ambiente anóxico que mata cualquier insecto residual sin necesidad de fumigantes químicos.",
+          "Implementar un control de plagas 100% orgánico en la bodega: uso de tierra de diatomeas en los perímetros, trampas de feromonas para polillas, y limpieza extrema. Está prohibido usar fosfina o plaguicidas sintéticos en la bodega de un productor orgánico.",
+          "Etiquetar cada saco con una 'Etiqueta de Trazabilidad de Lote' que incluya: Nombre de la Finca, Número de Certificado Orgánico, Código de Lote, Fecha de Cosecha, Fecha de Inicio/Fin de Fermentación, Fecha de Secado y Peso Neto."
+        ],
+        "commonMistakes": [
+          "Almacenar el cacao en la misma habitación donde se guardan herramientas con rastros de agroquímicos, combustibles, o alimentos para animales no orgánicos. Esto invalida inmediatamente la certificación orgánica.",
+          "Fumigar la bodega con insecticidas sintéticos en aerosol 'para asegurar que no haya bichos'. Si el auditor orgánico encuentra residuos de fosfina o piretroides sintéticos en el grano o en las paredes, se pierde el certificado.",
+          "Mezclar cosechas de diferentes semanas o meses en un mismo saco o lote. Esto destruye la trazabilidad y hace imposible que el comprador evalúe el perfil de taza específico de una semana de cosecha.",
+          "Usar sacos que previamente contuvieron café, granos convencionales o productos químicos, sin un lavado y certificación de vacío que lo garantice."
+        ],
+        "tip": "Para el transporte, si el viaje al comprador o punto de acopio toma más de 4 horas o se hace en camionetas abiertas, exige que los sacos se cubran con lonas plásticas limpias (exclusivas para cacao) para protegerlos de la lluvia, el polvo de la carretera y el sol directo. El calor extremo en el tránsito puede 'recocinar' ligeramente el grano y alterar sus notas aromáticas volátiles.",
+        "recommendedTools": [
+          {
+            "name": "Bolsas Herméticas GrainPro / EcoHermetic (Para insertar en sacos de yute)",
+            "url": "https://www.grainpro.com/"
+          },
+          {
+            "name": "Tierra de Diatomeas de Grado Alimentario (Control de plagas orgánico)",
+            "url": "N/A (Insumo orgánico)"
+          },
+          {
+            "name": "Etiquetas adhesivas resistentes a la humedad para trazabilidad",
+            "url": "N/A (Insumo de papelería)"
+          }
+        ]
+      },
+      "registroFields": [
+        {
+          "id": "storage_location_type",
+          "label": "Tipo y Condiciones del Lugar de Almacenamiento (Bodega)",
+          "type": "select",
+          "options": [
+            "Bodega cerrada, ventilada, con pallets y exclusiva para cacao orgánico",
+            "Bodega compartida pero con zona delimitada y exclusiva para cacao orgánico",
+            "Contenedor hermético modificado",
+            "Otro (Especificar en notas)"
+          ],
+          "required": true
+        },
+        {
+          "id": "organic_pest_control_method",
+          "label": "Métodos de Control de Plagas Orgánico en Bodega",
+          "type": "multiselect",
+          "options": [
+            "Tierra de diatomeas en perímetros y grietas",
+            "Trampas de luz / Trampas de feromonas para polillas",
+            "Limpieza extrema y sellado de grietas (Control cultural)",
+            "Uso de plantas repelentes naturales (Ej: Neem, Eucalipto en sachets)",
+            "Congelación de lotes pequeños para matar huevos de insectos"
+          ],
+          "required": true
+        },
+        {
+          "id": "packaging_type",
+          "label": "Tipo de Empaque Primario y Secundario Utilizado",
+          "type": "select",
+          "options": [
+            "Bolsa hermética interna (GrainPro) + Saco de yute externo",
+            "Saco de yute tradicional (sin barrera hermética interna)",
+            "Cajas de cartón corrugado de grado alimenticio",
+            "Sacos de polipropileno tejido (Granel convencional)"
+          ],
+          "required": true
+        },
+        {
+          "id": "traceability_lot_format",
+          "label": "Formato de la Etiqueta de Trazabilidad por Lote",
+          "type": "textarea",
+          "placeholder": "Ej: Cada saco lleva etiqueta con: 1. Finca [Nombre], 2. Cert. Orgánica [Número], 3. Lote [Año-Mes-Semana], 4. Fecha Cosecha, 5. Fecha Fermentación, 6. Peso Neto. Se adjunta hoja de registro físico firmado...",
+          "required": true
+        },
+        {
+          "id": "target_buyer_delivery_point",
+          "label": "Punto de Acopio, Comprador Final o Puerto de Embarque",
+          "type": "text",
+          "placeholder": "Ej: Bodega de Acopio Cooperativa X / Exportadora Y / Chocolatero Z en [Ciudad]",
+          "required": true
+        }
+      ],
+      "checklist": [
+        {
+          "id": "cl_4_2_1",
+          "text": "Adecuar el lugar de almacenamiento, asegurando que esté sobre pallets y libre de riesgos de contaminación cruzada.",
+          "registryFieldRef": "storage_location_type"
+        },
+        {
+          "id": "cl_4_2_2",
+          "text": "Implementar y registrar los métodos de control de plagas 100% orgánicos permitidos en la bodega.",
+          "registryFieldRef": "organic_pest_control_method"
+        },
+        {
+          "id": "cl_4_2_3",
+          "text": "Seleccionar y adquirir el tipo de empaque (preferiblemente con barrera hermética interna) para el almacenamiento.",
+          "registryFieldRef": "packaging_type"
+        },
+        {
+          "id": "cl_4_2_4",
+          "text": "Diseñar y estandarizar el formato de la etiqueta de trazabilidad que acompañará a cada saco o lote.",
+          "registryFieldRef": "traceability_lot_format"
+        },
+        {
+          "id": "cl_4_2_5",
+          "text": "Identificar y registrar el punto de acopio, comprador final o puerto de embarque para la entrega del cacao.",
+          "registryFieldRef": "target_buyer_delivery_point"
+        }
+      ]
+    }
+  ]
+}

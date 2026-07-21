@@ -1,0 +1,948 @@
+{
+  "block": "business",
+  "blockTitle": "Negocio",
+  "phases": [
+    {
+      "phaseId": "financial-infrastructure",
+      "phaseTitle": "Infraestructura Financiera, Seguros y Gestión Administrativa",
+      "steps": [
+        {
+          "stepId": "business-banking",
+          "stepTitle": "Apertura de Cuentas Bancarias y Gestión Financiera Básica",
+          "guide": {
+            "whyItMatters": "Separar las finanzas personales de las del negocio es fundamental para la supervivencia de tu emprendimiento de cacao orgánico. Sin cuentas bancarias empresariales, no podrás recibir pagos de compradores formales, acceder a créditos agrícolas subsidiados, ni llevar una contabilidad clara que te permita tomar decisiones informadas. Además, los certificadores orgánicos y compradores internacionales exigen trazabilidad financiera para validar transacciones.",
+            "bestPractices": [
+              "Abre al menos dos cuentas: una corriente para operaciones diarias y una de ahorros para reservas y pagos estacionales",
+              "Negocia con el banco comisiones preferenciales para cuentas agropecuarias (muchos bancos tienen productos especiales)",
+              "Implementa un sistema de doble firma para movimientos superiores a cierto monto",
+              "Configura transferencias electrónicas y pagos de nómina automáticos",
+              "Mantén un flujo de caja proyectado a 12 meses considerando la estacionalidad del cacao",
+              "Separa desde el inicio un fondo de reserva para emergencias (mínimo 3 meses de operación)"
+            ],
+            "commonMistakes": [
+              "Mezclar gastos personales con los del negocio, perdiendo claridad financiera",
+              "No proyectar el flujo de caja considerando que el cacao tiene cosechas estacionales (principal y mitaca)",
+              "Depender de una sola cuenta bancaria sin alternativa en caso de problemas técnicos",
+              "No negociar tasas preferenciales para créditos agrícolas (Finagro tiene líneas especiales)",
+              "Ignorar los costos bancarios (comisiones, mantenimiento) que pueden sumar significativamente"
+            ],
+            "tip": "Para cultivos de cacao, busca bancos que ofrezcan cuentas agropecuarias con beneficios como: exención de cuota de manejo, tasas preferenciales en créditos, y acceso a líneas de Finagro (Fondo para el Financiamiento del Sector Agropecuario). Bancolombia, Banco Agrario y BBVA tienen productos específicos para el sector. El Banco Agrario, por ser estatal, suele tener mejores condiciones para pequeños y medianos productores. Solicita también tarjetas débito/crédito empresariales con límites separados.",
+            "recommendedTools": [
+              {
+                "name": "Banco Agrario de Colombia",
+                "url": "https://www.bancoagrario.gov.co",
+                "description": "Cuentas y créditos especiales para el sector agropecuario con tasas preferenciales"
+              },
+              {
+                "name": "Finagro",
+                "url": "https://www.finagro.com.co",
+                "description": "Líneas de crédito subsidiadas para actividades agrícolas, incluyendo cacao"
+              },
+              {
+                "name": "Bancolombia - Cuenta Agro",
+                "url": "https://www.bancolombia.com",
+                "description": "Cuenta empresarial con beneficios para productores agrícolas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "primary-bank",
+                "label": "Banco Principal de la Empresa",
+                "type": "text",
+                "placeholder": "Ej: Banco Agrario",
+                "required": true
+              },
+              {
+                "fieldId": "checking-account-number",
+                "label": "Número de Cuenta Corriente/Ahorros Principal",
+                "type": "text",
+                "placeholder": "Ej: 123-456789-00",
+                "required": true
+              },
+              {
+                "fieldId": "checking-account-opening-date",
+                "label": "Fecha de Apertura de Cuenta Principal",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "secondary-bank",
+                "label": "Banco Secundario (si aplica)",
+                "type": "text",
+                "placeholder": "Ej: Bancolombia",
+                "required": false
+              },
+              {
+                "fieldId": "secondary-account-number",
+                "label": "Número de Cuenta Secundaria",
+                "type": "text",
+                "placeholder": "Ej: 987-654321-00",
+                "required": false
+              },
+              {
+                "fieldId": "monthly-bank-fees",
+                "label": "Costo Mensual de Comisiones Bancarias (COP)",
+                "type": "number",
+                "placeholder": "50000",
+                "required": true
+              },
+              {
+                "fieldId": "online-banking-enabled",
+                "label": "¿Tiene Banca en Línea Habilitada?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "electronic-payments-configured",
+                "label": "¿Configuró Pagos Electrónicos (Nómina, Proveedores)?",
+                "type": "select",
+                "options": ["Sí", "No", "En proceso"],
+                "required": true
+              },
+              {
+                "fieldId": "business-credit-card",
+                "label": "¿Tiene Tarjeta de Crédito Empresarial?",
+                "type": "select",
+                "options": ["Sí", "No", "En solicitud"],
+                "required": true
+              },
+              {
+                "fieldId": "credit-card-limit",
+                "label": "Cupo de Tarjeta de Crédito (COP)",
+                "type": "number",
+                "placeholder": "10000000",
+                "required": false
+              },
+              {
+                "fieldId": "emergency-fund-target",
+                "label": "Meta de Fondo de Emergencia (COP)",
+                "type": "number",
+                "placeholder": "15000000",
+                "required": true
+              },
+              {
+                "fieldId": "emergency-fund-current",
+                "label": "Fondo de Emergencia Actual (COP)",
+                "type": "number",
+                "placeholder": "5000000",
+                "required": true
+              },
+              {
+                "fieldId": "cash-flow-projection-tool",
+                "label": "Herramienta para Proyección de Flujo de Caja",
+                "type": "text",
+                "placeholder": "Ej: Excel, Alegra, software específico",
+                "required": true
+              },
+              {
+                "fieldId": "financial-policies-document-url",
+                "label": "Enlace a Políticas Financieras Internas (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Comparar ofertas de cuentas empresariales en al menos 3 bancos",
+            "Seleccionar banco con productos agropecuarios preferenciales",
+            "Abrir cuenta corriente principal para operaciones diarias",
+            "Abrir cuenta de ahorros secundaria para reservas y fondo de emergencia",
+            "Solicitar tarjetas débito y crédito empresariales",
+            "Configurar banca en línea y alertas de movimientos",
+            "Establecer sistema de doble firma para montos superiores",
+            "Configurar pagos electrónicos automáticos (nómina, proveedores)",
+            "Crear plantilla de proyección de flujo de caja a 12 meses",
+            "Documentar políticas financieras internas (límites de gasto, aprobaciones)"
+          ]
+        },
+        {
+          "stepId": "agricultural-insurance",
+          "stepTitle": "Seguros para el Cultivo de Cacao y la Operación",
+          "guide": {
+            "whyItMatters": "El cultivo de cacao está expuesto a múltiples riesgos: fenómenos climáticos (sequías, inundaciones), plagas (moniliasis, escoba de bruja), fluctuación de precios internacionales, y accidentes laborales en campo. Sin seguros adecuados, un solo evento adverso puede destruir años de inversión. Además, muchos compradores internacionales y entidades financieras exigen pólizas de seguro como requisito para contratar o prestar.",
+            "bestPractices": [
+              "Contrata seguro agrícola específico para cacao que cubra pérdidas por clima y plagas",
+              "Asegura la infraestructura crítica: bodegas de fermentación, secaderos, equipos de procesamiento",
+              "Contrata seguro de responsabilidad civil para cubrir daños a terceros (vecinos, visitantes)",
+              "Asegura a todos los trabajadores con ARL (Administradora de Riesgos Laborales) desde el primer día",
+              "Considera seguro de vida para el representante legal y personas clave del negocio",
+              "Revisa y actualiza las pólizas anualmente según el crecimiento del negocio"
+            ],
+            "commonMistakes": [
+              "No asegurar el cultivo, asumiendo que 'no va a pasar nada'",
+              "Contratar seguros genéricos que no cubren riesgos específicos del cacao (plagas, clima)",
+              "Subasegurar la infraestructura (declarar valor menor al real para pagar menos prima)",
+              "No asegurar la responsabilidad civil ante daños a vecinos o visitantes",
+              "Olvidar actualizar las pólizas cuando se adquieren nuevos equipos o infraestructura",
+              "No capacitar a trabajadores en procedimientos de seguridad, aumentando el riesgo de accidentes"
+            ],
+            "tip": "Para cacao en Colombia, el seguro agrícola más relevante es el ofrecido por Agro Ingreso Seguro (AIS) o aseguradoras privadas como Seguros del Estado, Mapfre y AIG. El costo típico es 2-4% del valor asegurado por año. Para una finca de 10 hectáreas con valor de $100.000.000 COP, la prima anual sería $2.000.000-$4.000.000 COP. La ARL es obligatoria para todos los trabajadores (costo aproximado 3.5% de la nómina mensual). El gobierno nacional a través de Finagro ofrece subsidios de hasta 60% en primas de seguros agrícolas para pequeños productores.",
+            "recommendedTools": [
+              {
+                "name": "Seguros del Estado - Agro Seguros",
+                "url": "https://www.segurosdelestado.com.co",
+                "description": "Pólizas especializadas para cultivos agrícolas incluyendo cacao"
+              },
+              {
+                "name": "ARL Positiva",
+                "url": "https://www.arlpositiva.com",
+                "description": "Administradora de Riesgos Laborales estatal con cobertura nacional"
+              },
+              {
+                "name": "Finagro - Subsidio de Seguros",
+                "url": "https://www.finagro.com.co",
+                "description": "Programa de cobertura de hasta 60% en primas de seguros agrícolas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "crop-insurance-obtained",
+                "label": "¿Contrató Seguro Agrícola para el Cultivo de Cacao?",
+                "type": "select",
+                "options": ["Sí", "No", "En cotización"],
+                "required": true
+              },
+              {
+                "fieldId": "crop-insurance-company",
+                "label": "Aseguradora del Cultivo",
+                "type": "text",
+                "placeholder": "Ej: Seguros del Estado",
+                "required": false
+              },
+              {
+                "fieldId": "crop-insurance-policy-number",
+                "label": "Número de Póliza del Cultivo",
+                "type": "text",
+                "placeholder": "Ej: POL-2024-12345",
+                "required": false
+              },
+              {
+                "fieldId": "crop-insured-value",
+                "label": "Valor Asegurado del Cultivo (COP)",
+                "type": "number",
+                "placeholder": "100000000",
+                "required": false
+              },
+              {
+                "fieldId": "crop-insurance-premium",
+                "label": "Prima Anual del Seguro de Cultivo (COP)",
+                "type": "number",
+                "placeholder": "3000000",
+                "required": false
+              },
+              {
+                "fieldId": "crop-insurance-coverage",
+                "label": "Coberturas Incluidas en Póliza de Cultivo",
+                "type": "multiselect",
+                "options": [
+                  "Pérdida por sequía",
+                  "Pérdida por exceso de lluvia/inundación",
+                  "Pérdida por plagas (moniliasis, escoba de bruja)",
+                  "Pérdida por vientos fuertes",
+                  "Pérdida por granizo",
+                  "Pérdida por incendio"
+                ],
+                "required": false
+              },
+              {
+                "fieldId": "crop-insurance-expiration",
+                "label": "Fecha de Vencimiento Póliza de Cultivo",
+                "type": "date",
+                "required": false
+              },
+              {
+                "fieldId": "infrastructure-insurance-obtained",
+                "label": "¿Contrató Seguro para Infraestructura y Equipos?",
+                "type": "select",
+                "options": ["Sí", "No", "En cotización"],
+                "required": true
+              },
+              {
+                "fieldId": "infrastructure-insured-value",
+                "label": "Valor Asegurado de Infraestructura (COP)",
+                "type": "number",
+                "placeholder": "50000000",
+                "required": false
+              },
+              {
+                "fieldId": "infrastructure-insurance-premium",
+                "label": "Prima Anual de Seguro de Infraestructura (COP)",
+                "type": "number",
+                "placeholder": "1500000",
+                "required": false
+              },
+              {
+                "fieldId": "liability-insurance-obtained",
+                "label": "¿Contrató Seguro de Responsabilidad Civil?",
+                "type": "select",
+                "options": ["Sí", "No", "En cotización"],
+                "required": true
+              },
+              {
+                "fieldId": "liability-coverage-limit",
+                "label": "Límite de Cobertura Responsabilidad Civil (COP)",
+                "type": "number",
+                "placeholder": "200000000",
+                "required": false
+              },
+              {
+                "fieldId": "arl-company",
+                "label": "ARL Contratada para Trabajadores",
+                "type": "text",
+                "placeholder": "Ej: ARL Positiva",
+                "required": true
+              },
+              {
+                "fieldId": "arl-affiliation-date",
+                "label": "Fecha de Afiliación en ARL",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "workers-covered-arl",
+                "label": "Número de Trabajadores Cubiertos en ARL",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "monthly-arl-cost",
+                "label": "Costo Mensual de ARL (COP)",
+                "type": "number",
+                "placeholder": "350000",
+                "required": true
+              },
+              {
+                "fieldId": "life-insurance-obtained",
+                "label": "¿Contrató Seguro de Vida para Personas Clave?",
+                "type": "select",
+                "options": ["Sí", "No", "No aplica"],
+                "required": true
+              },
+              {
+                "fieldId": "government-subsidy-applied",
+                "label": "¿Aplicó a Subsidio de Finagro para Seguros?",
+                "type": "select",
+                "options": ["Sí, aprobado", "Sí, en trámite", "No", "No aplica"],
+                "required": true
+              },
+              {
+                "fieldId": "insurance-policies-folder-url",
+                "label": "Enlace a Carpeta con Todas las Pólizas (PDFs)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar riesgos específicos del cultivo de cacao en la región",
+            "Cotizar seguros agrícolas en al menos 3 aseguradoras",
+            "Contratar póliza de seguro para el cultivo de cacao",
+            "Contratar póliza de seguro para infraestructura y equipos",
+            "Contratar seguro de responsabilidad civil",
+            "Afiliar todos los trabajadores a ARL desde el primer día",
+            "Si aplica, aplicar a subsidio de Finagro para seguros agrícolas",
+            "Considerar seguro de vida para representante legal y personas clave",
+            "Capacitar a trabajadores en procedimientos de seguridad",
+            "Archivar todas las pólizas en carpeta física y digital",
+            "Programar recordatorios para renovación anual de pólizas"
+          ]
+        },
+        {
+          "stepId": "administrative-software",
+          "stepTitle": "Implementación de Software Administrativo y Contable",
+          "guide": {
+            "whyItMatters": "Un sistema administrativo robusto es el cerebro de tu negocio de cacao orgánico. Sin software adecuado, llevarás la contabilidad en cuadernos o Excel básicos, perdiendo trazabilidad de costos por hectárea, rentabilidad por lote de cacao, y control de inventarios. Esto te impide tomar decisiones informadas, detectar fugas de dinero, y presentar información clara a compradores, certificadores y entidades financieras. Además, la facturación electrónica es obligatoria en Colombia desde 2023.",
+            "bestPractices": [
+              "Selecciona software contable colombiano que cumpla con facturación electrónica obligatoria",
+              "Implementa un sistema de trazabilidad desde la finca hasta el producto final (lotes, fechas, pesos)",
+              "Configura centros de costo por actividad: cultivo, fermentación, secado, empaque, comercialización",
+              "Integra el software contable con el sistema de facturación electrónica",
+              "Capacita a todo el personal administrativo en el uso del software",
+              "Realiza respaldos automáticos diarios de la información en la nube",
+              "Configura reportes mensuales automáticos: estado de resultados, balance, flujo de caja"
+            ],
+            "commonMistakes": [
+              "Usar solo Excel para la contabilidad, perdiendo integración con facturación electrónica",
+              "No configurar centros de costo, imposibilitando saber qué actividad es más rentable",
+              "No llevar trazabilidad de lotes de cacao, perdiendo información clave para compradores",
+              "No capacitar al personal, generando errores en el registro de información",
+              "No hacer respaldos regulares, arriesgando perder toda la información",
+              "Elegir software muy básico que no crece con el negocio"
+            ],
+            "tip": "Para cacao orgánico en Colombia, las mejores opciones de software son: 1) Alegra (desde $80.000 COP/mes): contable + facturación electrónica + inventarios + trazabilidad básica, 2) Siigo (desde $100.000 COP/mes): similar a Alegra con mejor soporte contable, 3) World Office (desde $150.000 COP/mes): más robusto para operaciones medianas-grandes. Para trazabilidad específica de cacao, considera software especializado como AgriWebb o CropIn (internacionales) o desarrolla una solución simple en Airtable/Notion. El costo típico de implementación es $500.000-$2.000.000 COP incluyendo capacitación.",
+            "recommendedTools": [
+              {
+                "name": "Alegra - Software Contable",
+                "url": "https://www.alegra.com",
+                "description": "Software contable colombiano con facturación electrónica, inventarios y reportes"
+              },
+              {
+                "name": "Siigo - Contabilidad y Facturación",
+                "url": "https://www.siigo.com",
+                "description": "Software contable con fuerte enfoque en cumplimiento tributario colombiano"
+              },
+              {
+                "name": "Airtable - Trazabilidad Personalizada",
+                "url": "https://www.airtable.com",
+                "description": "Plataforma flexible para crear sistemas de trazabilidad de lotes de cacao"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "accounting-software-selected",
+                "label": "Software Contable Seleccionado",
+                "type": "select",
+                "options": [
+                  "Alegra",
+                  "Siigo",
+                  "World Office",
+                  "Helisa",
+                  "OTRO Software",
+                  "Excel (no recomendado)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "accounting-software-cost-monthly",
+                "label": "Costo Mensual del Software Contable (COP)",
+                "type": "number",
+                "placeholder": "100000",
+                "required": true
+              },
+              {
+                "fieldId": "accounting-software-implementation-date",
+                "label": "Fecha de Implementación del Software",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "electronic-invoicing-integrated",
+                "label": "¿Facturación Electrónica Integrada en el Software?",
+                "type": "select",
+                "options": ["Sí", "No, software separado", "No aún"],
+                "required": true
+              },
+              {
+                "fieldId": "cost-centers-configured",
+                "label": "Centros de Costo Configurados",
+                "type": "multiselect",
+                "options": [
+                  "Cultivo de cacao",
+                  "Fermentación",
+                  "Secado",
+                  "Empaque",
+                  "Comercialización",
+                  "Administración general",
+                  "Transporte y logística"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "traceability-system",
+                "label": "Sistema de Trazabilidad de Lotes Implementado",
+                "type": "select",
+                "options": [
+                  "Software contable (módulo de inventarios)",
+                  "Software especializado (AgriWebb, CropIn)",
+                  "Airtable/Notion personalizado",
+                  "Excel",
+                  "Cuadernos físicos",
+                  "No implementado aún"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "traceability-software-name",
+                "label": "Nombre del Software de Trazabilidad (si aplica)",
+                "type": "text",
+                "placeholder": "Ej: AgriWebb, Airtable",
+                "required": false
+              },
+              {
+                "fieldId": "traceability-software-cost",
+                "label": "Costo Mensual de Trazabilidad (COP)",
+                "type": "number",
+                "placeholder": "50000",
+                "required": false
+              },
+              {
+                "fieldId": "inventory-modules-activated",
+                "label": "Módulos de Inventario Activados",
+                "type": "multiselect",
+                "options": [
+                  "Insumos agrícolas (fertilizantes orgánicos, etc.)",
+                  "Cacao en fermentación",
+                  "Cacao seco en bodega",
+                  "Cacao empacado",
+                  "Equipos y herramientas",
+                  "Productos terminados"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "automatic-backups-configured",
+                "label": "¿Configuró Respaldos Automáticos en la Nube?",
+                "type": "select",
+                "options": ["Sí, diarios", "Sí, semanales", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "monthly-reports-configured",
+                "label": "Reportes Mensuales Automáticos Configurados",
+                "type": "multiselect",
+                "options": [
+                  "Estado de resultados",
+                  "Balance general",
+                  "Flujo de caja",
+                  "Cuentas por cobrar",
+                  "Cuentas por pagar",
+                  "Inventario valorizado",
+                  "Costos por centro de costo"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "staff-training-completed",
+                "label": "¿Personal Administrativo Capacitado en el Software?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No aún"],
+                "required": true
+              },
+              {
+                "fieldId": "training-cost",
+                "label": "Costo de Capacitación en Software (COP)",
+                "type": "number",
+                "placeholder": "500000",
+                "required": false
+              },
+              {
+                "fieldId": "software-login-url",
+                "label": "URL de Acceso al Software",
+                "type": "url",
+                "placeholder": "https://app.alegra.com",
+                "required": true
+              },
+              {
+                "fieldId": "software-credentials-url",
+                "label": "Enlace a Credenciales de Acceso (Gestor de Contraseñas)",
+                "type": "url",
+                "placeholder": "https://1password.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Evaluar necesidades específicas del negocio de cacao orgánico",
+            "Cotizar al menos 3 opciones de software contable colombiano",
+            "Seleccionar software contable con facturación electrónica integrada",
+            "Contratar e implementar software contable",
+            "Configurar plan de cuentas y centros de costo",
+            "Implementar sistema de trazabilidad de lotes de cacao",
+            "Configurar módulos de inventario (insumos, cacao en proceso, producto terminado)",
+            "Integrar facturación electrónica con el software contable",
+            "Configurar respaldos automáticos diarios en la nube",
+            "Configurar reportes mensuales automáticos",
+            "Capacitar a todo el personal administrativo en el uso del software",
+            "Documentar credenciales de acceso en gestor de contraseñas seguro",
+            "Realizar prueba piloto de un mes completo de operación"
+          ]
+        },
+        {
+          "stepId": "payroll-management",
+          "stepTitle": "Gestión de Nómina y Seguridad Social Integral",
+          "guide": {
+            "whyItMatters": "La gestión correcta de nómina y seguridad social es crítica para evitar sanciones laborales, demandas de trabajadores, y problemas con entidades de control. En el cultivo de cacao, donde se emplea mano de obra intensiva (especialmente en cosecha), los errores en pagos de prestaciones, cesantías o aportes parafiscales pueden generar multas millonarias. Además, los certificadores orgánicos y compradores internacionales exigen cumplimiento laboral como parte de sus estándares de comercio justo.",
+            "bestPractices": [
+              "Contrata a todos los trabajadores con contrato laboral escrito desde el primer día",
+              "Afilia inmediatamente a seguridad social integral: salud, pensión, ARL, caja de compensación",
+              "Paga prestaciones sociales correctamente: prima, cesantías, intereses de cesantías, vacaciones",
+              "Lleva registro detallado de horas extras, dominicales y festivos trabajados",
+              "Si contratas temporalmente para cosecha, usa contratos de obra o labor con liquidación correcta",
+              "Implementa un sistema de seguridad y salud en el trabajo (SG-SST) obligatorio",
+              "Capacita a trabajadores en buenas prácticas agrícolas y seguridad en campo"
+            ],
+            "commonMistakes": [
+              "Contratar trabajadores 'de boca' sin contrato escrito, asumiendo riesgos legales enormes",
+              "No afiliar a seguridad social desde el primer día de trabajo",
+              "Pagar por debajo del salario mínimo legal o no pagar horas extras correctamente",
+              "No liquidar prestaciones sociales al finalizar contratos temporales de cosecha",
+              "No implementar el Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST)",
+              "Mezclar trabajadores de la finca con trabajadores domésticos del propietario",
+              "No capacitar en uso seguro de herramientas y manejo de insumos"
+            ],
+            "tip": "Para cacao orgánico en Colombia, los costos laborales típicos son: Salario mínimo 2024: $1.300.000 COP/mes + 50% aproximado de prestaciones y parafiscales = $1.950.000 COP de costo total por trabajador. Para trabajadores de cosecha temporal (2-3 meses), usa contratos de obra o labor con liquidación proporcional. El SG-SST es obligatorio desde el primer trabajador y debe incluir: identificación de riesgos (machetes, alturas, animales ponzoñosos, agroquímicos si aplica), protocolos de emergencia, y exámenes médicos ocupacionales. Costo aproximado de implementación: $1.500.000-$3.000.000 COP inicial + $500.000 COP anuales de mantenimiento.",
+            "recommendedTools": [
+              {
+                "name": "Ministerio del Trabajo - Modelo SG-SST",
+                "url": "https://www.mintrabajo.gov.co",
+                "description": "Modelos y guías oficiales para implementar el Sistema de Gestión de Seguridad y Salud en el Trabajo"
+              },
+              {
+                "name": "PILA - Planilla Integrada de Liquidación de Aportes",
+                "url": "https://www.aulapila.com",
+                "description": "Sistema oficial para liquidar y pagar seguridad social de trabajadores"
+              },
+              {
+                "name": "Software de Nómina (si aplica)",
+                "url": "https://www.google.com",
+                "description": "Software como Siigo Nómina, Helisa, o módulos de nómina de tu software contable"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "total-permanent-workers",
+                "label": "Número Total de Trabajadores Permanentes",
+                "type": "number",
+                "placeholder": "5",
+                "required": true
+              },
+              {
+                "fieldId": "total-temporary-workers",
+                "label": "Número de Trabajadores Temporales (Cosecha)",
+                "type": "number",
+                "placeholder": "10",
+                "required": true
+              },
+              {
+                "fieldId": "all-workers-with-contract",
+                "label": "¿Todos los Trabajadores Tienen Contrato Escrito?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "social-security-affiliation-date",
+                "label": "Fecha de Afiliación a Seguridad Social (último trabajador)",
+                "type": "date",
+                "required": true
+              },
+              {
+                "fieldId": "health-fund",
+                "label": "EPS/Fondo de Salud de los Trabajadores",
+                "type": "text",
+                "placeholder": "Ej: Sura, Nueva EPS",
+                "required": true
+              },
+              {
+                "fieldId": "pension-fund",
+                "label": "Fondo de Pensión de los Trabajadores",
+                "type": "text",
+                "placeholder": "Ej: Porvenir, Colpensiones",
+                "required": true
+              },
+              {
+                "fieldId": "compensation-fund",
+                "label": "Caja de Compensación Familiar",
+                "type": "text",
+                "placeholder": "Ej: Compensar, Comfama",
+                "required": true
+              },
+              {
+                "fieldId": "monthly-payroll-cost",
+                "label": "Costo Total Mensual de Nómina (COP)",
+                "type": "number",
+                "placeholder": "10000000",
+                "required": true
+              },
+              {
+                "fieldId": "payroll-payment-method",
+                "label": "Método de Pago de Nómina",
+                "type": "select",
+                "options": [
+                  "Transferencia bancaria",
+                  "Efectivo (no recomendado)",
+                  "Cheque",
+                  "Mixto"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "social-benefits-paid-on-time",
+                "label": "¿Paga Prestaciones Sociales Correctamente y a Tiempo?",
+                "type": "select",
+                "options": ["Sí", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sst-system-implemented",
+                "label": "¿Implementó Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST)?",
+                "type": "select",
+                "options": ["Sí, completo", "En implementación", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "sst-responsible-person",
+                "label": "Responsable del SG-SST",
+                "type": "text",
+                "placeholder": "Nombre de la persona o empresa contratada",
+                "required": false
+              },
+              {
+                "fieldId": "sst-implementation-cost",
+                "label": "Costo de Implementación del SG-SST (COP)",
+                "type": "number",
+                "placeholder": "2000000",
+                "required": false
+              },
+              {
+                "fieldId": "occupational-exams-completed",
+                "label": "¿Trabajadores Tienen Exámenes Médicos Ocupacionales?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "safety-training-completed",
+                "label": "¿Trabajadores Capacitados en Seguridad Agrícola?",
+                "type": "select",
+                "options": ["Sí, todos", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "payroll-software-used",
+                "label": "Software Utilizado para Nómina",
+                "type": "text",
+                "placeholder": "Ej: Siigo Nómina, Excel, PILA directa",
+                "required": true
+              },
+              {
+                "fieldId": "payroll-records-url",
+                "label": "Enlace a Carpeta de Contratos y Documentos Laborales",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Contratar a todos los trabajadores con contrato laboral escrito",
+            "Afiliar inmediatamente a seguridad social integral (salud, pensión, ARL, caja)",
+            "Configurar sistema de liquidación de nómina (software o PILA)",
+            "Programar pagos mensuales de salario y aportes parafiscales",
+            "Liquidar y pagar prestaciones sociales (prima, cesantías) en fechas legales",
+            "Implementar Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST)",
+            "Realizar identificación de riesgos específicos del cultivo de cacao",
+            "Programar exámenes médicos ocupacionales para todos los trabajadores",
+            "Capacitar a trabajadores en seguridad agrícola y uso de herramientas",
+            "Establecer protocolos de emergencia (accidentes, animales ponzoñosos)",
+            "Mantener archivos de contratos y documentos laborales organizados",
+            "Programar auditorías internas trimestrales de cumplimiento laboral"
+          ]
+        },
+        {
+          "stepId": "financial-policies",
+          "stepTitle": "Políticas Financieras Internas y Control de Costos",
+          "guide": {
+            "whyItMatters": "Sin políticas financieras claras y un sistema de control de costos, tu negocio de cacao orgánico operará 'a ciegas', sin saber realmente cuánto cuesta producir un kilo de cacao, qué actividades son rentables, y dónde se está perdiendo dinero. Esto es especialmente crítico en cacao orgánico donde los costos de producción son 30-50% mayores que en cacao convencional, pero los precios de venta también son superiores. Necesitas saber exactamente tu punto de equilibrio y márgenes para tomar decisiones estratégicas.",
+            "bestPractices": [
+              "Documenta políticas financieras escritas: límites de gasto, aprobaciones, manejo de caja",
+              "Calcula el costo real de producción por kilo de cacao seco (incluyendo todos los costos directos e indirectos)",
+              "Establece centros de costo separados: vivero, cultivo, fermentación, secado, empaque, administración",
+              "Implementa control de inventarios con conteos físicos mensuales",
+              "Define indicadores clave de desempeño (KPIs): costo por hectárea, rendimiento por hectárea, margen bruto",
+              "Realiza conciliaciones bancarias mensuales",
+              "Separa claramente las finanzas personales del representante legal de las del negocio"
+            ],
+            "commonMistakes": [
+              "No calcular el costo real de producción, vendiendo a precios que generan pérdidas",
+              "Mezclar gastos personales con los del negocio, distorsionando la rentabilidad real",
+              "No tener políticas escritas, generando inconsistencias en la toma de decisiones",
+              "No hacer conteos físicos de inventario, permitiendo pérdidas por robo o deterioro",
+              "No definir indicadores de gestión, operando sin métricas claras",
+              "No realizar conciliaciones bancarias, perdiendo errores o fraudes",
+              "Subestimar costos indirectos (transporte, depreciación, administración)"
+            ],
+            "tip": "Para cacao orgánico en Colombia, el costo de producción típico varía entre $8.000-$15.000 COP por kilo de cacao seco, dependiendo de la productividad, ubicación y prácticas. El precio de venta de cacao orgánico certificado oscila entre $12.000-$20.000 COP por kilo (según calidad y mercado). Tu margen bruto objetivo debe ser mínimo 30%. Para calcular costos: 1) Suma todos los costos directos (mano de obra, insumos orgánicos, transporte), 2) Agrega costos indirectos proporcionalmente (administración, depreciación), 3) Divide entre kilos producidos. Implementa un sistema de 'cuaderno de campo' donde se registren diariamente las actividades y costos por lote/parcela.",
+            "recommendedTools": [
+              {
+                "name": "Plantilla de Costos de Producción de Cacao",
+                "url": "https://www.fedecacao.gov.co",
+                "description": "Federación Nacional de Cacaoteros ofrece guías y plantillas para cálculo de costos"
+              },
+              {
+                "name": "Módulo de Costos de tu Software Contable",
+                "url": "https://www.google.com",
+                "description": "Alegra, Siigo u otro software con módulo de costeo por centros de costo"
+              },
+              {
+                "name": "Plantilla KPIs Agrícolas",
+                "url": "https://www.google.com",
+                "description": "Dashboard en Excel o Google Sheets para seguimiento de indicadores clave"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "financial-policies-documented",
+                "label": "¿Tiene Políticas Financieras Internas Documentadas?",
+                "type": "select",
+                "options": ["Sí, completas", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "financial-policies-url",
+                "label": "Enlace a Documento de Políticas Financieras (PDF)",
+                "type": "url",
+                "placeholder": "https://drive.google.com/...",
+                "required": false
+              },
+              {
+                "fieldId": "production-cost-per-kilo",
+                "label": "Costo de Producción por Kilo de Cacao Seco (COP)",
+                "type": "number",
+                "placeholder": "12000",
+                "required": true
+              },
+              {
+                "fieldId": "selling-price-per-kilo",
+                "label": "Precio de Venta Promedio por Kilo de Cacao Seco (COP)",
+                "type": "number",
+                "placeholder": "16000",
+                "required": true
+              },
+              {
+                "fieldId": "gross-margin-per_kilo",
+                "label": "Margen Bruto por Kilo (COP)",
+                "type": "number",
+                "placeholder": "4000",
+                "required": true
+              },
+              {
+                "fieldId": "gross-margin-percentage",
+                "label": "Porcentaje de Margen Bruto (%)",
+                "type": "number",
+                "placeholder": "25",
+                "required": true
+              },
+              {
+                "fieldId": "break-even-point-kilos",
+                "label": "Punto de Equilibrio en Kilos de Cacao al Año",
+                "type": "number",
+                "placeholder": "5000",
+                "required": true
+              },
+              {
+                "fieldId": "cost-centers-defined",
+                "label": "Centros de Costo Definidos",
+                "type": "multiselect",
+                "options": [
+                  "Vivero y plántulas",
+                  "Establecimiento del cultivo",
+                  "Mantenimiento del cultivo",
+                  "Cosecha",
+                  "Fermentación",
+                  "Secado",
+                  "Empaque y almacenamiento",
+                  "Comercialización y ventas",
+                  "Administración general",
+                  "Transporte y logística"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "inventory-control-system",
+                "label": "Sistema de Control de Inventarios Implementado",
+                "type": "select",
+                "options": [
+                  "Software contable (módulo de inventarios)",
+                  "Software especializado",
+                  "Excel/Google Sheets",
+                  "Registros físicos (cuadernos)",
+                  "No implementado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "physical-inventory-counts",
+                "label": "¿Realiza Conteos Físicos de Inventario?",
+                "type": "select",
+                "options": ["Sí, mensuales", "Sí, trimestrales", "Sí, anuales", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "kpis-defined",
+                "label": "Indicadores Clave de Desempeño (KPIs) Definidos",
+                "type": "multiselect",
+                "options": [
+                  "Costo por hectárea",
+                  "Rendimiento por hectárea (kilos/ha)",
+                  "Margen bruto por kilo",
+                  "Margen neto",
+                  "Productividad laboral (kilos/trabajador)",
+                  "Tasa de retorno sobre inversión",
+                  "Punto de equilibrio",
+                  "Rotación de inventarios"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "kpis-dashboard-url",
+                "label": "Enlace a Dashboard de KPIs",
+                "type": "url",
+                "placeholder": "https://docs.google.com/spreadsheets/...",
+                "required": false
+              },
+              {
+                "fieldId": "bank-reconciliation-frequency",
+                "label": "Frecuencia de Conciliaciones Bancarias",
+                "type": "select",
+                "options": ["Mensual", "Trimestral", "Anual", "No se realizan"],
+                "required": true
+              },
+              {
+                "fieldId": "personal-business-finances-separated",
+                "label": "¿Finanzas Personales y del Negocio Completamente Separadas?",
+                "type": "select",
+                "options": ["Sí, completamente", "Parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "field-notebook-implemented",
+                "label": "¿Implementó Cuaderno de Campo para Registro de Costos por Lote?",
+                "type": "select",
+                "options": ["Sí", "No", "En desarrollo"],
+                "required": true
+              },
+              {
+                "fieldId": "cost-analysis-frequency",
+                "label": "Frecuencia de Análisis de Costos y Rentabilidad",
+                "type": "select",
+                "options": ["Mensual", "Trimestral", "Semestral", "Anual", "No se realiza"],
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Documentar políticas financieras internas por escrito",
+            "Calcular costo real de producción por kilo de cacao seco",
+            "Definir precio de venta objetivo basado en costos y mercado",
+            "Calcular punto de equilibrio en kilos de cacao al año",
+            "Configurar centros de costo en el software contable",
+            "Implementar sistema de control de inventarios",
+            "Programar conteos físicos de inventario (mensual/trimestral)",
+            "Definir indicadores clave de desempeño (KPIs) del negocio",
+            "Crear dashboard para seguimiento mensual de KPIs",
+            "Implementar conciliaciones bancarias mensuales",
+            "Asegurar separación total de finanzas personales y del negocio",
+            "Implementar cuaderno de campo para registro de costos por lote/parcela",
+            "Programar análisis trimestral de costos y rentabilidad",
+            "Capacitar al personal administrativo en políticas y procedimientos"
+          ]
+        }
+      ]
+    }
+  ]
+}

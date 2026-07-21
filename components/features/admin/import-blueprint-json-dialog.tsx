@@ -184,7 +184,25 @@ export function ImportBlueprintJsonDialog({
     const warnings: string[] = [];
 
     for (const item of phaseItems) {
-      const phase = item.content;
+      // Crear una copia profunda del objeto de fase para evitar modificar el estado original
+      const phase = JSON.parse(JSON.stringify(item.content));
+
+      // Normalizar fase si viene en formato informal
+      if (phase.phase && !phase.title) {
+        phase.title = phase.phase;
+      }
+
+      if (!phase.id && phase.title) {
+        // Generar un ID de fase limpio basado en el título
+        phase.id = "fase-" + phase.title
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "") // Remueve acentos
+          .replace(/[^a-z0-9]/g, "-")
+          .replace(/-+/g, "-")
+          .replace(/^-|-$/g, "");
+      }
+
       if (!phase.id || !phase.title || !phase.block) {
         setError(`El archivo '${item.name}' no tiene una estructura de fase válida (requiere 'id', 'title' y 'block').`);
         return;
@@ -200,12 +218,56 @@ export function ImportBlueprintJsonDialog({
 
       const steps = phase.steps || [];
       phase.steps = steps.map((step: any, stepIndex: number) => {
+        // Normalizar estructura del paso si viene en formato informal (ej: con "guide" en la raíz)
+        if (step.guide && !step.content) {
+          step.content = {
+            overview: {
+              title: step.title,
+              summary: step.title,
+              body: step.guide.whyItMatters || ""
+            },
+            objective: {
+              description: ""
+            },
+            whyItMatters: step.guide.whyItMatters || "",
+            bestPractices: step.guide.bestPractices || [],
+            commonMistakes: step.guide.commonMistakes || [],
+            tip: step.guide.tip || "",
+            recommendedTools: step.guide.recommendedTools || [],
+            registroFields: step.registroFields || [],
+            checklist: (step.checklist || []).map((checkItem: any, idx: number) => ({
+              id: checkItem.id || `chk-${step.id}-${idx}`,
+              task: checkItem.text || checkItem.task || ""
+            }))
+          };
+
+          // Limpiar campos obsoletos del nivel de raíz
+          delete step.guide;
+          delete step.registroFields;
+          delete step.checklist;
+        }
+
+        // Rellenar valores por defecto para campos obligatorios
+        if (!step.type) {
+          step.type = "one_time";
+        }
+        if (step.estimatedHours === undefined) {
+          step.estimatedHours = 0;
+        }
+        if (!step.difficulty) {
+          step.difficulty = "easy";
+        }
+        if (!step.priority) {
+          step.priority = "normal";
+        }
+        if (!step.dependencies) {
+          step.dependencies = [];
+        }
+
         if (!step.id || !step.title || !step.type) {
           setError(`En '${item.name}', paso '${step.title || "sin título"}': Debe contener 'id', 'title' y 'type'.`);
           return step;
         }
-
-        step.order = stepIndex;
 
         // Validar coherencia de checklist
         const checklistTasks = (step.content?.checklist || []).map((t: any) => t.task.toLowerCase());

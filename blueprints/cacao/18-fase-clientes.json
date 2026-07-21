@@ -1,0 +1,396 @@
+{
+  "block": "customers",
+  "blockTitle": "Clientes",
+  "phases": [
+    {
+      "phaseId": "metrics-data-funnel-optimization",
+      "phaseTitle": "Métricas, Análisis de Datos y Optimización del Embudo",
+      "steps": [
+        {
+          "stepId": "kpi-dashboards-definition",
+          "stepTitle": "Definición de KPIs e Implementación de Tableros de Control (Dashboards)",
+          "guide": {
+            "whyItMatters": "En el negocio B2B del cacao orgánico, los ciclos de venta son largos (3 a 9 meses) y las decisiones de compra son racionales. No puedes mejorar lo que no mides. Definir y monitorear los Indicadores Clave de Desempeño (KPIs) correctos te permite saber si tu estrategia de marketing y ventas es rentable, dónde se está fugando el dinero y cuándo es momento de ajustar el rumbo antes de que sea demasiado tarde.",
+            "bestPractices": [
+              "Enfócate en KPIs accionables, no en 'métricas de vanidad' (ej. 'Costo por Muestra Enviada' es mejor que 'Likes en Instagram')",
+              "Calcula el Costo de Adquisición de Cliente (CAC) incluyendo marketing, tiempo del equipo y costo de las muestras",
+              "Estima el Valor de Vida del Cliente (LTV) basado en la recompra anual promedio y el margen bruto",
+              "La relación LTV:CAC ideal en este sector debe ser superior a 3:1",
+              "Centraliza los datos en un Dashboard visual (Looker Studio, Power BI) que se actualice automáticamente",
+              "Define umbrales de alerta (ej. si la tasa de conversión de muestra a pedido baja del 15%, investigar inmediatamente)"
+            ],
+            "commonMistakes": [
+              "Medir demasiados KPIs, lo que genera parálisis por análisis",
+              "No incluir el costo de las muestras y envíos internacionales en el cálculo del CAC",
+              "Usar hojas de cálculo manuales propensas a errores en lugar de dashboards automatizados",
+              "Revisar las métricas solo al final del año, cuando ya es tarde para corregir",
+              "Ignorar la tasa de abandono (Churn Rate) de clientes existentes"
+            ],
+            "tip": "Para un negocio de cacao orgánico en Colombia, los 4 KPIs no negociables son: 1) Tasa de conversión de Lead a Muestra (objetivo: 20-30%), 2) Tasa de conversión de Muestra a Primer Pedido (objetivo: 15-25%), 3) CAC (objetivo: < 10% del valor del primer pedido), 4) Tasa de Retención Anual (objetivo: > 85%). Herramientas como Looker Studio son gratuitas y se conectan fácilmente con Google Sheets o tu CRM. Inversión inicial en configuración del dashboard: $1.500.000-$3.000.000 COP si se contrata a un analista de datos freelance.",
+            "recommendedTools": [
+              {
+                "name": "Looker Studio (Google)",
+                "url": "https://lookerstudio.google.com",
+                "description": "Herramienta gratuita para crear dashboards visuales conectados a hojas de cálculo o CRMs"
+              },
+              {
+                "name": "Microsoft Power BI",
+                "url": "https://powerbi.microsoft.com",
+                "description": "Plataforma robusta de análisis de datos e inteligencia de negocios"
+              },
+              {
+                "name": "Metricool",
+                "url": "https://metricool.com",
+                "description": "Para medir KPIs específicos de rendimiento en redes sociales y sitio web"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "kpi_metrics_defined",
+                "label": "KPIs Principales Definidos y Documentados",
+                "type": "multiselect",
+                "options": [
+                  "Costo de Adquisición de Cliente (CAC)",
+                  "Valor de Vida del Cliente (LTV)",
+                  "Tasa de conversión Lead a Muestra",
+                  "Tasa de conversión Muestra a Pedido",
+                  "Tasa de Retención Anual (Churn Rate)",
+                  "Tiempo promedio del ciclo de venta"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "dashboard_tool_used",
+                "label": "Herramienta de Dashboard Utilizada",
+                "type": "select",
+                "options": ["Looker Studio", "Power BI", "Excel/Google Sheets", "Dashboard nativo del CRM", "Ninguna"],
+                "required": true
+              },
+              {
+                "fieldId": "cac_calculated",
+                "label": "Costo de Adquisición de Cliente (CAC) Actual (COP)",
+                "type": "number",
+                "placeholder": "2500000",
+                "required": true
+              },
+              {
+                "fieldId": "ltv_estimated",
+                "label": "Valor de Vida del Cliente (LTV) Estimado (COP)",
+                "type": "number",
+                "placeholder": "45000000",
+                "required": true
+              },
+              {
+                "fieldId": "ltv_cac_ratio",
+                "label": "Relación LTV:CAC Calculada",
+                "type": "number",
+                "placeholder": "3.5",
+                "required": true
+              },
+              {
+                "fieldId": "annual_churn_rate",
+                "label": "Tasa de Abandono Anual de Clientes (%)",
+                "type": "number",
+                "placeholder": "10",
+                "required": true
+              },
+              {
+                "fieldId": "automated_alerts_configured",
+                "label": "¿Alertas Automáticas Configuradas para Métricas Fuera de Rango?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "monthly_kpi_review_scheduled",
+                "label": "¿Revisión Mensual de KPIs Programada con el Equipo?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "kpi_documentation_url",
+                "label": "Enlace a la Documentación de Fórmulas y Fuentes de Datos de KPIs",
+                "type": "url",
+                "placeholder": "https://docs.google.com/document/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Definir los 4-6 KPIs principales del negocio de cacao orgánico",
+            "Seleccionar e implementar herramienta de Dashboard (ej. Looker Studio)",
+            "Calcular el Costo de Adquisición de Cliente (CAC) actual incluyendo muestras",
+            "Estimar el Valor de Vida del Cliente (LTV) promedio",
+            "Calcular la relación LTV:CAC y verificar que sea > 3",
+            "Medir y registrar la Tasa de Abandono Anual (Churn Rate)",
+            "Configurar alertas automáticas para métricas fuera de los umbrales aceptables",
+            "Programar una reunión mensual fija de revisión de KPIs con el equipo comercial",
+            "Documentar las fórmulas y fuentes de datos de cada KPI para garantizar consistencia",
+            "Capacitar al equipo en la lectura e interpretación del dashboard"
+          ]
+        },
+        {
+          "stepId": "b2b-sales-funnel-analysis",
+          "stepTitle": "Análisis y Optimización del Embudo de Ventas B2B",
+          "guide": {
+            "whyItMatters": "El embudo de ventas B2B de cacao tiene puntos de fuga críticos. Muchos contactos se convierten en solicitudes de muestra, pero solo un porcentaje cierra el primer pedido. Analizar el embudo te permite identificar exactamente en qué etapa se pierden los clientes potenciales (ej. ¿no responden después de recibir la muestra? ¿rechazan el precio?) y aplicar correcciones quirúrgicas en lugar de adivinar.",
+            "bestPractices": [
+              "Mapea las etapas exactas de tu embudo: Lead -> Contactado -> Muestra Enviada -> Feedback Recibido -> Negociación -> Cerrado Ganado",
+              "Mide el tiempo promedio que un lead pasa en cada etapa (Velocidad del Embudo)",
+              "Calcula la tasa de conversión entre cada etapa consecutiva",
+              "Implementa un protocolo de seguimiento estricto y automatizado para la etapa 'Muestra Enviada'",
+              "Registra sistemáticamente la razón de cada 'Pedido Perdido' (Precio, Calidad, Logística, Competencia)",
+              "Realiza un análisis de cuellos de botella trimestral para ajustar la estrategia"
+            ],
+            "commonMistakes": [
+              "Tratar todas las etapas del embudo como si tuvieran la misma importancia",
+              "No dar seguimiento a los leads que están en la etapa 'Muestra Enviada' (el punto de mayor abandono)",
+              "No registrar por qué se perdió una venta, perdiendo la oportunidad de aprender",
+              "Tener un ciclo de venta demasiado largo por falta de respuesta o documentación",
+              "Mezclar leads fríos con oportunidades calientes en el mismo pipeline sin segmentar"
+            ],
+            "tip": "En el cacao de especialidad, el mayor 'drop-off' (abandono) ocurre entre 'Muestra Enviada' y 'Feedback Recibido'. La solución es una regla de oro: seguimiento a los 7 días para confirmar recepción, y a los 14 días para solicitar retroalimentación de cata, ofreciendo una llamada de 15 minutos con el maestro chocolatero o el productor. Si no hay respuesta a los 21 días, clasificar como 'Perdido temporalmente' y mover a una secuencia de nurturing trimestral. Un CRM bien configurado puede automatizar esto al 100%.",
+            "recommendedTools": [
+              {
+                "name": "HubSpot CRM Pipelines",
+                "url": "https://www.hubspot.com",
+                "description": "Configuración visual del embudo de ventas con automatización de tareas por etapa"
+              },
+              {
+                "name": "Trello o Asana",
+                "url": "https://trello.com",
+                "description": "Alternativa visual tipo Kanban para gestionar el embudo si no se usa un CRM complejo"
+              },
+              {
+                "name": "Calendly",
+                "url": "https://calendly.com",
+                "description": "Facilita la programación de la reunión de feedback post-muestra sin intercambios de correo infinitos"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "funnel_stages_mapped",
+                "label": "Etapas del Embudo de Ventas Mapeadas en el Sistema",
+                "type": "multiselect",
+                "options": [
+                  "Lead Nuevo",
+                  "Primer Contacto Realizado",
+                  "Muestra Solicitada",
+                  "Muestra Enviada",
+                  "Feedback de Muestra Recibido",
+                  "Negociación / Cotización",
+                  "Cerrado Ganado",
+                  "Cerrado Perdido"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "crm_pipeline_configured",
+                "label": "¿Pipeline del Embudo Configurado en el CRM?",
+                "type": "select",
+                "options": ["Sí, completamente", "Sí, parcialmente", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "avg_sales_cycle_days",
+                "label": "Tiempo Promedio del Ciclo de Venta (días, desde Lead hasta Cierre)",
+                "type": "number",
+                "placeholder": "120",
+                "required": true
+              },
+              {
+                "fieldId": "highest_dropoff_stage",
+                "label": "Etapa con Mayor Tasa de Abandono Identificada",
+                "type": "select",
+                "options": [
+                  "Entre Lead y Primer Contacto",
+                  "Entre Contacto y Solicitud de Muestra",
+                  "Entre Muestra Enviada y Feedback",
+                  "Entre Feedback y Negociación",
+                  "Entre Negociación y Cierre"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "sample_followup_protocol_active",
+                "label": "¿Protocolo de Seguimiento Post-Muestra (7 y 14 días) Activo?",
+                "type": "select",
+                "options": ["Sí, automatizado", "Sí, manual", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "lost_deals_reasons_tracked",
+                "label": "¿Se Registran las Razones de 'Pedido Perdido'?",
+                "type": "multiselect",
+                "options": [
+                  "Precio demasiado alto",
+                  "Calidad no cumplió expectativas",
+                  "Volúmenes no disponibles",
+                  "Logística / Costos de envío",
+                  "Competencia ofreció mejores condiciones",
+                  "Falta de respuesta del cliente"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "quarterly_funnel_analysis_done",
+                "label": "¿Se Realiza Análisis Trimestral de Cuellos de Botella en el Embudo?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "funnel_optimization_url",
+                "label": "Enlace al Informe de Análisis del Embudo de Ventas",
+                "type": "url",
+                "placeholder": "https://docs.google.com/document/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Mapear las etapas exactas del embudo de ventas B2B de cacao",
+            "Configurar el pipeline con estas etapas en el CRM o herramienta de gestión",
+            "Medir el tiempo promedio que los leads pasan en cada etapa",
+            "Calcular la tasa de conversión entre cada etapa consecutiva",
+            "Identificar la etapa con mayor tasa de abandono (drop-off)",
+            "Implementar un protocolo de seguimiento estricto para la etapa 'Muestra Enviada'",
+            "Obligar al equipo a registrar la razón de cada 'Pedido Perdido' en el CRM",
+            "Realizar un análisis trimestral de cuellos de botella en el embudo",
+            "Ajustar la estrategia de ventas o marketing basándose en los datos del embudo",
+            "Automatizar recordatorios de seguimiento para oportunidades estancadas"
+          ]
+        },
+        {
+          "stepId": "customer-profitability-channel-optimization",
+          "stepTitle": "Evaluación de Rentabilidad por Cliente y Optimización de Canales",
+          "guide": {
+            "whyItMatters": "No todos los clientes son igualmente rentables. Un comprador que exige empaques personalizados, paga a 90 días y pide volúmenes pequeños puede estar consumiendo más recursos (y margen) que un importador que compra a granel, paga a 30 días y hace pedidos predecibles. Evaluar la rentabilidad real por cliente y por canal de adquisición te permite aplicar la regla 80/20: dedicar el 80% de tu energía a los clientes que generan el 80% de tus ganancias.",
+            "bestPractices": [
+              "Calcula el margen bruto real por cliente, restando no solo el costo del producto, sino los 'costos ocultos' (empaques especiales, logística compleja, financiación, tiempo de soporte)",
+              "Clasifica a los clientes en Tiers (A, B, C) basándote en su rentabilidad neta, no solo en su volumen de ventas",
+              "Evalúa qué canal de adquisición (Ferias, LinkedIn, Referidos, Directorios) trae a los clientes con mayor LTV y menor CAC",
+              "Renegocia condiciones o sube precios gradualmente a los clientes del Tier C (baja rentabilidad)",
+              "Reasigna el presupuesto de marketing y tiempo del equipo hacia los canales y perfiles de cliente más rentables"
+            ],
+            "commonMistakes": [
+              "Juzgar el valor de un cliente solo por sus ingresos totales, ignorando sus costos de servicio",
+              "Mantener clientes tóxicos que pagan tarde, exigen descuentos constantes y generan reclamos frecuentes",
+              "Invertir el mismo presupuesto de marketing en todos los canales sin medir el retorno",
+              "No ajustar los precios a la inflación o al aumento de costos logísticos para clientes antiguos",
+              "Asumir que un cliente grande es automáticamente un cliente rentable"
+            ],
+            "tip": "Realiza un 'Análisis de Rentabilidad de Cliente' anual. Fórmula: Ingresos del Cliente - (Costo del Cacao + Costo de Empaque Específico + Costo de Envío + Costo de Financiación por días de crédito + Horas de soporte dedicadas). A menudo, descubrirás que tus 3 clientes más pequeños pero que pagan de contado y no exigen personalizaciones son más rentables que tu cliente 'gigante' que paga a 120 días. Usa estos datos para crear paquetes de servicio: los clientes Tier A obtienen prioridad en micro-lotes y visitas a la finca; los Tier C deben cumplir pedidos mínimos más altos para ser atendidos.",
+            "recommendedTools": [
+              {
+                "name": "Plantilla de Análisis de Rentabilidad por Cliente",
+                "url": "https://www.google.com",
+                "description": "Hoja de cálculo para desglosar ingresos y costos ocultos por cada cuenta"
+              },
+              {
+                "name": "ABC Analysis Tool",
+                "url": "https://www.google.com",
+                "description": "Metodología para clasificar inventarios y clientes por valor (80/20)"
+              },
+              {
+                "name": "UTM Builder (Google)",
+                "url": "https://ga-dev-tools.google/campaign-url-builder",
+                "description": "Para rastrear exactamente de qué canal o campaña proviene cada lead y venta"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "profitability_analyzed_per_client",
+                "label": "¿Se ha Calculado la Rentabilidad Neta por Cliente en el Último Año?",
+                "type": "select",
+                "options": ["Sí, exhaustivamente", "Sí, estimada", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "hidden_costs_factored",
+                "label": "Costos Ocultos Incluidos en el Análisis",
+                "type": "multiselect",
+                "options": [
+                  "Empaques o etiquetado personalizado",
+                  "Logística o envíos especiales",
+                  "Costo de financiación (días de crédito)",
+                  "Tiempo de soporte o gestión de reclamos",
+                  "Descuentos o bonificaciones otorgadas"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "client_tiering_by_profitability",
+                "label": "¿Clientes Clasificados en Tiers (A, B, C) por Rentabilidad?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "top_20_percent_revenue",
+                "label": "Porcentaje de Ingresos Generado por el Top 20% de Clientes (%)",
+                "type": "number",
+                "placeholder": "75",
+                "required": true
+              },
+              {
+                "fieldId": "most_profitable_acquisition_channel",
+                "label": "Canal de Adquisición Más Rentable Identificado",
+                "type": "select",
+                "options": [
+                  "Referidos de clientes actuales",
+                  "Ferias y eventos presenciales",
+                  "LinkedIn / Prospección directa",
+                  "Directorios B2B (ProColombia, Tridge)",
+                  "Sitio web orgánico (SEO)",
+                  "Aún no determinado"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "low_margin_clients_renegotiated",
+                "label": "¿Se Han Renegociado Condiciones con Clientes de Baja Rentabilidad (Tier C)?",
+                "type": "select",
+                "options": ["Sí", "En proceso", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "marketing_budget_realigned",
+                "label": "¿Se Ha Reasignado el Presupuesto de Marketing hacia el Canal Más Rentable?",
+                "type": "select",
+                "options": ["Sí", "No"],
+                "required": true
+              },
+              {
+                "fieldId": "profitability_report_url",
+                "label": "Enlace al Informe de Rentabilidad por Cliente y Canal",
+                "type": "url",
+                "placeholder": "https://docs.google.com/spreadsheets/...",
+                "required": false
+              }
+            ]
+          },
+          "checklist": [
+            "Calcular los ingresos totales generados por cada cliente en el último año",
+            "Identificar y cuantificar los 'costos ocultos' de servicio por cada cliente",
+            "Calcular el margen bruto y neto real por cliente",
+            "Clasificar a la base de clientes en Tiers (A: Alta rentabilidad, B: Media, C: Baja) ",
+            "Identificar el canal de adquisición que trae a los clientes con mayor LTV y menor CAC",
+            "Diseñar paquetes de servicio diferenciados para cada Tier de cliente",
+            "Renegociar precios, volúmenes mínimos o condiciones de pago con clientes Tier C",
+            "Reasignar el presupuesto de marketing y tiempo del equipo hacia el canal y perfil más rentable",
+            "Implementar seguimiento UTM en todas las campañas para medir el origen exacto de las ventas",
+            "Programar una revisión anual formal de la rentabilidad de la cartera de clientes"
+          ]
+        }
+      ]
+    }
+  ]
+}
