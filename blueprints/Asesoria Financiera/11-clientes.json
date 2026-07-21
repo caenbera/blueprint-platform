@@ -4,10 +4,65 @@
   "block": "customers",
   "steps": [
     {
-      "id": "v2-step-paleta-colores",
-      "title": "Definir Paleta de Colores",
-      "description": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.",
+      "id": "step-nombre-publico",
+      "title": "Definir el nombre comercial visible al público",
+      "description": "Confirma si usarás tu nombre personal o un nombre de marca distinto.",
+      "icon": "type",
       "order": 0,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-elegir-nombre"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir el nombre comercial visible al público",
+          "summary": "Confirma si usarás tu nombre personal o un nombre de marca distinto.",
+          "body": "Decide si tu marca pública va a ser tu nombre personal o un nombre comercial distinto al de la razón social."
+        },
+        "objective": {
+          "description": "Decidir el nombre bajo el cual te vas a presentar públicamente."
+        },
+        "checklist": [
+          {
+            "id": "chk-nombre-publico",
+            "task": "Decidir el nombre bajo el cual te vas a presentar públicamente.",
+            "completed": false,
+            "registryFieldRef": "reg-nombre-publico-elegido"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a decidir su nombre de marca público.",
+          "context": "El usuario está construyendo su identidad de marca.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Si usas tu nombre personal como marca, revisa que también esté disponible como usuario en tus redes principales.",
+        "registroFields": [
+          {
+            "id": "reg-nombre-publico-elegido",
+            "label": "Nombre público de marca",
+            "type": "text",
+            "helpText": "Si es distinto al nombre comercial registrado legalmente."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-eslogan",
+      "title": "Escribir el eslogan de la firma",
+      "description": "Redacta una frase corta que resuma tu propuesta de valor.",
+      "icon": "message-circle",
+      "order": 1,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -21,61 +76,49 @@
       },
       "content": {
         "overview": {
-          "title": "Definir Paleta de Colores",
-          "summary": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.",
-          "body": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.\n\nEn servicios financieros, los tonos asociados a estabilidad suelen funcionar mejor que los muy llamativos.\n\nDocumenta los códigos exactos (HEX)."
+          "title": "Escribir el eslogan de la firma",
+          "summary": "Redacta una frase corta que resuma tu propuesta de valor.",
+          "body": "Un buen eslogan comunica en pocas palabras qué haces y para quién."
         },
         "objective": {
-          "description": "¿Qué colores representan tu marca?"
+          "description": "Redactar una frase corta que resuma tu propuesta de valor."
         },
         "checklist": [
           {
-            "id": "v2-chk-col-01",
-            "task": "Seleccionar 2-4 colores de marca",
+            "id": "chk-eslogan",
+            "task": "Redactar una frase corta que resuma tu propuesta de valor.",
             "completed": false,
-            "registryFieldRef": "paleta-colores-status"
-          },
-          {
-            "id": "v2-chk-col-02",
-            "task": "Documentar códigos HEX",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-col-03",
-            "task": "Definir color primario y secundarios",
-            "completed": false
+            "registryFieldRef": "reg-eslogan-final"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a elegir una paleta de colores profesional para su firma de asesoría financiera.",
-          "context": "El usuario está construyendo la identidad visual de su marca.",
+          "systemPrompt": "Ayuda al usuario a redactar un eslogan claro y memorable para su firma.",
+          "context": "El usuario está construyendo su identidad de marca.",
           "suggestions": []
         },
         "knowledge": [],
+        "whyItMatters": "Un buen eslogan filtra en segundos si un visitante nuevo entiende qué haces - si tienes que explicarlo, probablemente no está funcionando.",
         "registroFields": [
           {
-            "id": "paleta-colores-status",
-            "label": "Estado de la tarea: Definir Paleta de Colores",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-eslogan-final",
+            "label": "Eslogan de la firma",
+            "type": "text"
           }
         ]
       }
     },
     {
-      "id": "v2-step-tipografia",
-      "title": "Elegir Tipografía",
-      "description": "Elige 1-2 tipografías consistentes para toda la comunicación de la firma.",
-      "order": 1,
+      "id": "step-paleta-colores",
+      "title": "Definir la paleta de colores de marca",
+      "description": "Elige los colores oficiales de tu marca.",
+      "icon": "palette",
+      "order": 2,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "normal",
-      "dependencies": [
-        "v2-step-paleta-colores"
-      ],
+      "dependencies": [],
       "completionRules": {
         "requiredChecklist": true,
         "requiredResources": false,
@@ -84,61 +127,51 @@
       },
       "content": {
         "overview": {
-          "title": "Elegir Tipografía",
-          "summary": "Elige 1-2 tipografías consistentes para toda la comunicación de la firma.",
-          "body": "Elige 1-2 tipografías consistentes. Verifica legibilidad en pantalla e impreso.\n\nUsa un máximo de 3 fuentes diferentes por material impreso."
+          "title": "Definir la paleta de colores de marca",
+          "summary": "Elige los colores oficiales de tu marca.",
+          "body": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo, y documenta sus códigos exactos."
         },
         "objective": {
-          "description": "¿Qué fuentes usará tu marca?"
+          "description": "Elegir los colores oficiales de tu marca."
         },
         "checklist": [
           {
-            "id": "v2-chk-tip-01",
-            "task": "Elegir tipografías",
+            "id": "chk-paleta-colores",
+            "task": "Elegir los colores oficiales de tu marca.",
             "completed": false,
-            "registryFieldRef": "tipografia-status"
-          },
-          {
-            "id": "v2-chk-tip-02",
-            "task": "Verificar legibilidad",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-tip-03",
-            "task": "Adquirir licencias si necesario",
-            "completed": false
+            "registryFieldRef": "reg-paleta-colores-hex"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a elegir tipografías profesionales para su firma de asesoría financiera.",
-          "context": "El usuario está definiendo los elementos visuales de su marca.",
+          "systemPrompt": "Ayuda al usuario a elegir una paleta de colores profesional para una firma financiera.",
+          "context": "El usuario está construyendo su identidad de marca.",
           "suggestions": []
         },
         "knowledge": [],
+        "whyItMatters": "El color es lo primero que percibe el ojo antes de leer una palabra - en servicios financieros, los tonos asociados a estabilidad y confianza suelen funcionar mejor que los muy llamativos.",
         "registroFields": [
           {
-            "id": "tipografia-status",
-            "label": "Estado de la tarea: Elegir Tipografía",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-paleta-colores-hex",
+            "label": "Colores de marca (HEX)",
+            "type": "color",
+            "required": true,
+            "helpText": "Agrega cada color oficial de tu marca. Usa el selector o escribe el código HEX."
           }
         ]
       }
     },
     {
-      "id": "v2-step-eslogan",
-      "title": "Escribir el Eslogan",
-      "description": "Redacta una frase que resuma tu propuesta de valor en pocas palabras.",
-      "order": 2,
+      "id": "step-tipografia",
+      "title": "Elegir la tipografía de marca",
+      "description": "Elige las fuentes tipográficas oficiales de tu marca.",
+      "icon": "type",
+      "order": 3,
       "type": "one_time",
       "estimatedHours": 1,
-      "difficulty": "medium",
+      "difficulty": "easy",
       "priority": "normal",
-      "dependencies": [
-        "v2-step-mision-vision"
-      ],
+      "dependencies": [],
       "completionRules": {
         "requiredChecklist": true,
         "requiredResources": false,
@@ -147,62 +180,52 @@
       },
       "content": {
         "overview": {
-          "title": "Escribir el Eslogan",
-          "summary": "Redacta una frase que resuma tu propuesta de valor en pocas palabras.",
-          "body": "Un buen eslogan comunica en pocas palabras qué haces y para quién.\n\nSi tienes que explicarlo, probablemente no está funcionando."
+          "title": "Elegir la tipografía de marca",
+          "summary": "Elige las fuentes tipográficas oficiales de tu marca.",
+          "body": "Elige 1 o 2 tipografías consistentes para todos tus materiales de marketing y documentos."
         },
         "objective": {
-          "description": "¿Qué frase resume tu propuesta de valor?"
+          "description": "Elegir las fuentes tipográficas oficiales de tu marca."
         },
         "checklist": [
           {
-            "id": "v2-chk-esl-01",
-            "task": "Redactar 3-5 opciones de eslogan",
+            "id": "chk-tipografia",
+            "task": "Elegir las fuentes tipográficas oficiales de tu marca.",
             "completed": false,
-            "registryFieldRef": "eslogan-status"
-          },
-          {
-            "id": "v2-chk-esl-02",
-            "task": "Seleccionar eslogan final",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-esl-03",
-            "task": "Documentar en manual de marca",
-            "completed": false
+            "registryFieldRef": "reg-tipografias-elegidas"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a crear un eslogan memorable y claro para su firma de asesoría financiera.",
-          "context": "El usuario necesita un eslogan que comunique su propuesta de valor en pocas palabras.",
-          "suggestions": [
-            "¿Cómo escribo un eslogan para una firma de asesoría financiera?"
-          ]
+          "systemPrompt": "Ayuda al usuario a elegir una tipografía profesional para su marca.",
+          "context": "El usuario está construyendo su identidad de marca.",
+          "suggestions": []
         },
         "knowledge": [],
+        "tip": "Elige tipografías que se vean bien tanto en pantalla como impresas - vas a necesitar ambas versiones.",
         "registroFields": [
           {
-            "id": "eslogan-status",
-            "label": "Estado de la tarea: Escribir el Eslogan",
+            "id": "reg-tipografias-elegidas",
+            "label": "Tipografías elegidas",
             "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "placeholder": "Ej. Inter, Georgia"
           }
         ]
       }
     },
     {
-      "id": "v2-step-logo",
-      "title": "Diseñar el Logo",
-      "description": "Con la paleta y tipografía definidas, diseña el logo de la firma.",
-      "order": 3,
+      "id": "step-disenar-logo",
+      "title": "Diseñar el logo",
+      "description": "Ten un logo profesional listo para usar en todos tus materiales.",
+      "icon": "palette",
+      "order": 4,
       "type": "one_time",
-      "estimatedHours": 4,
+      "estimatedHours": 6,
       "difficulty": "medium",
       "priority": "high",
       "dependencies": [
-        "v2-step-tipografia"
+        "step-paleta-colores",
+        "step-tipografia"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -245,17 +268,333 @@
       }
     },
     {
-      "id": "v2-step-biografia",
-      "title": "Escribir tu Biografía Profesional",
-      "description": "Redacta versión corta (2 oraciones) y larga (1 párrafo) incluyendo certificaciones y experiencia.",
-      "order": 4,
+      "id": "step-variantes-logo",
+      "title": "Definir las variantes del logo",
+      "description": "Ten las variantes necesarias del logo para distintos usos.",
+      "icon": "layers",
+      "order": 5,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-disenar-logo"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir las variantes del logo",
+          "summary": "Ten las variantes necesarias del logo (horizontal, ícono, monocromático) para distintos usos.",
+          "body": "Vas a necesitar el logo en distintos formatos: versión horizontal, solo el ícono, y una versión monocromática para fondos oscuros o impresión en blanco y negro."
+        },
+        "objective": {
+          "description": "Tener las variantes necesarias del logo (horizontal, ícono, monocromático) para distintos usos."
+        },
+        "checklist": [
+          {
+            "id": "chk-variantes-logo",
+            "task": "Tener las variantes necesarias del logo (horizontal, ícono, monocromático) para distintos usos.",
+            "completed": false,
+            "registryFieldRef": "reg-variantes-logo-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir qué variantes de logo necesita.",
+          "context": "El usuario ya tiene el diseño principal de su logo.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Pide siempre el archivo en formato vectorial (SVG o AI) además del PNG - sin eso, cualquier ajuste futuro del logo requiere rehacerlo desde cero.",
+        "registroFields": [
+          {
+            "id": "reg-variantes-logo-drive",
+            "label": "Enlace a las variantes en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-tarjeta-presentacion",
+      "title": "Diseñar la tarjeta de presentación",
+      "description": "Ten tarjetas de presentación profesionales listas para imprimir.",
+      "icon": "contact",
+      "order": 6,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-disenar-logo"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Diseñar la tarjeta de presentación",
+          "summary": "Ten tarjetas de presentación profesionales listas para imprimir.",
+          "body": "Diseña una tarjeta de presentación simple con tu logo, nombre, cargo y datos de contacto."
+        },
+        "objective": {
+          "description": "Tener tarjetas de presentación profesionales listas para imprimir."
+        },
+        "checklist": [
+          {
+            "id": "chk-tarjeta-presentacion",
+            "task": "Tener tarjetas de presentación profesionales listas para imprimir.",
+            "completed": false,
+            "registryFieldRef": "reg-tarjeta-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir el contenido de su tarjeta de presentación.",
+          "context": "El usuario ya tiene su logo listo.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-tarjeta-drive",
+            "label": "Enlace al diseño en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-membrete",
+      "title": "Diseñar el membrete",
+      "description": "Ten una plantilla de membrete lista para documentos oficiales.",
+      "icon": "file-text",
+      "order": 7,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-disenar-logo"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Diseñar el membrete",
+          "summary": "Ten una plantilla de membrete lista para documentos oficiales.",
+          "body": "Diseña una plantilla de membrete con tu logo para usar en contratos, planes financieros y comunicaciones formales."
+        },
+        "objective": {
+          "description": "Tener una plantilla de membrete lista para documentos oficiales."
+        },
+        "checklist": [
+          {
+            "id": "chk-membrete",
+            "task": "Tener una plantilla de membrete lista para documentos oficiales.",
+            "completed": false,
+            "registryFieldRef": "reg-membrete-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar una plantilla de membrete profesional.",
+          "context": "El usuario ya tiene su logo listo.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-membrete-drive",
+            "label": "Enlace a la plantilla en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-firma-correo",
+      "title": "Configurar la firma de correo electrónico de marca",
+      "description": "Ten una firma de correo profesional y consistente con tu marca.",
+      "icon": "mail",
+      "order": 8,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "v2-step-registro-profesional"
+        "step-disenar-logo"
       ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Configurar la firma de correo electrónico de marca",
+          "summary": "Ten una firma de correo profesional y consistente con tu marca.",
+          "body": "Configura una firma de correo con tu logo, cargo, teléfono y enlaces a tu sitio web y redes."
+        },
+        "objective": {
+          "description": "Tener una firma de correo profesional y consistente con tu marca."
+        },
+        "checklist": [
+          {
+            "id": "chk-firma-correo",
+            "task": "Tener una firma de correo profesional y consistente con tu marca.",
+            "completed": false,
+            "registryFieldRef": "step-firma-correo-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar una firma de correo profesional.",
+          "context": "El usuario ya tiene su logo listo.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Incluye un enlace directo a tu herramienta de agendamiento de citas en la firma - reduce la fricción para que un prospecto reserve una reunión.",
+        "registroFields": [
+          {
+            "id": "step-firma-correo-status",
+            "label": "Estado de: Configurar la firma de correo electrónico de marca",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-tono-comunicacion",
+      "title": "Definir el tono de comunicación de la marca",
+      "description": "Define cómo se comunica tu marca.",
+      "icon": "message-circle",
+      "order": 9,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir el tono de comunicación de la marca",
+          "summary": "Define cómo se comunica tu marca (formal, cercana, técnica, etc.).",
+          "body": "Define el tono que vas a usar en todos tus materiales: formal, cercano, técnico, educativo, etc. - y sé consistente en todos los canales."
+        },
+        "objective": {
+          "description": "Definir cómo se comunica tu marca (formal, cercana, técnica, etc.)."
+        },
+        "checklist": [
+          {
+            "id": "chk-tono-comunicacion",
+            "task": "Definir cómo se comunica tu marca (formal, cercana, técnica, etc.).",
+            "completed": false,
+            "registryFieldRef": "reg-tono-marca"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir el tono de comunicación de su marca.",
+          "context": "El usuario está construyendo su identidad de marca.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "El tono de comunicación es lo que hace que tu marca se sienta consistente, sin importar si el cliente te lee en el sitio web, en un correo o en una reunión.",
+        "registroFields": [
+          {
+            "id": "reg-tono-marca",
+            "label": "Tono de comunicación definido",
+            "type": "text",
+            "placeholder": "Ej. cercano y educativo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-elevator-pitch",
+      "title": "Redactar el guion de presentación de 30 segundos",
+      "description": "Ten un discurso breve y claro para presentarte en cualquier contexto.",
+      "icon": "mic",
+      "order": 10,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-priorizar-servicios"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar el guion de presentación de 30 segundos",
+          "summary": "Ten un discurso breve y claro para presentarte en cualquier contexto.",
+          "body": "Redacta un 'elevator pitch': quién eres, a quién ayudas y cómo, en menos de 30 segundos."
+        },
+        "objective": {
+          "description": "Tener un discurso breve y claro para presentarte en cualquier contexto."
+        },
+        "checklist": [
+          {
+            "id": "chk-elevator-pitch",
+            "task": "Tener un discurso breve y claro para presentarte en cualquier contexto.",
+            "completed": false,
+            "registryFieldRef": "reg-elevator-pitch-texto"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar un elevator pitch claro y natural.",
+          "context": "El usuario ya tiene definidos sus servicios principales.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Practícalo en voz alta hasta que suene natural - un buen elevator pitch no debe sonar memorizado.",
+        "registroFields": [
+          {
+            "id": "reg-elevator-pitch-texto",
+            "label": "Guion del elevator pitch",
+            "type": "textarea"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-biografia",
+      "title": "Escribir tu biografía profesional",
+      "description": "Ten una biografía profesional lista para tu sitio web y tus perfiles.",
+      "icon": "user",
+      "order": 11,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [],
       "completionRules": {
         "requiredChecklist": true,
         "requiredResources": false,
@@ -291,56 +630,6 @@
           {
             "id": "reg-biografia-drive",
             "label": "Enlace a la biografía final en Google Drive",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-fotos-profesionales",
-      "title": "Tomar Fotografías Profesionales",
-      "description": "Contrata a un fotógrafo o toma fotos con buena iluminación para sitio web y materiales.",
-      "order": 5,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Tomar fotografías profesionales",
-          "summary": "Ten fotografías profesionales tuyas y/o de tu equipo listas para usar.",
-          "body": "Contrata a un fotógrafo o toma fotos con buena iluminación - vas a usarlas en tu sitio web, LinkedIn y materiales de marketing."
-        },
-        "objective": {
-          "description": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar."
-        },
-        "checklist": [
-          {
-            "id": "chk-fotos-profesionales",
-            "task": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar.",
-            "completed": false,
-            "registryFieldRef": "reg-fotos-profesionales-drive"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a planear una sesión de fotos profesional.",
-          "context": "El usuario necesita fotos profesionales para su presencia digital.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Las fotos genéricas o de baja calidad son una de las señales más rápidas de que una firma no está bien establecida.",
-        "registroFields": [
-          {
-            "id": "reg-fotos-profesionales-drive",
-            "label": "Enlace a las fotos en Google Drive",
             "type": "url"
           }
         ]

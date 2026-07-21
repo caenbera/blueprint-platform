@@ -4,16 +4,71 @@
   "block": "customers",
   "steps": [
     {
-      "id": "v2-step-mapa-sitio",
-      "title": "Definir Mapa del Sitio",
-      "description": "Define las páginas principales del sitio web y las llamadas a la acción por página.",
+      "id": "step-cliente-ideal-perfil",
+      "title": "Describir el perfil demográfico de tu cliente ideal",
+      "description": "Construye el perfil del cliente al que mejor puedes servir.",
+      "icon": "target",
       "order": 0,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "step-priorizar-servicios"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Describir el perfil demográfico de tu cliente ideal",
+          "summary": "Construye el perfil demográfico y financiero de tu cliente ideal.",
+          "body": "Conocer a tu cliente ideal te permite enfocar tus esfuerzos de marketing donde realmente generan resultado."
+        },
+        "objective": {
+          "description": "Describir el perfil demográfico y financiero de tu cliente ideal."
+        },
+        "checklist": [
+          {
+            "id": "chk-cliente-ideal-perfil",
+            "task": "Describir el perfil demográfico y financiero de tu cliente ideal.",
+            "completed": false,
+            "registryFieldRef": "reg-nombre-arquetipo-cliente"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir el perfil de su cliente ideal como asesor financiero.",
+          "context": "El usuario está construyendo su estrategia de marketing.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un mensaje de marketing dirigido a 'cualquiera que necesite asesoría financiera' no le habla realmente a nadie. Entre más específico sea tu cliente ideal, más efectivo será cada peso que inviertas en atraerlo.",
+        "registroFields": [
+          {
+            "id": "reg-nombre-arquetipo-cliente",
+            "label": "Nombre del arquetipo de cliente ideal",
+            "type": "text",
+            "placeholder": "Ej. Profesional independiente en crecimiento"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-dolores-metas",
+      "title": "Identificar los principales dolores y metas de tu cliente ideal",
+      "description": "Identifica los dolores y metas financieras de tu cliente ideal.",
+      "icon": "target",
+      "order": 1,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "v2-step-dominio-hosting"
+        "step-cliente-ideal-perfil"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -23,123 +78,50 @@
       },
       "content": {
         "overview": {
-          "title": "Definir Mapa del Sitio",
-          "summary": "Define las páginas principales del sitio web y las llamadas a la acción por página.",
-          "body": "Define páginas principales: inicio, servicios, sobre mí, contacto.\n\nPlanear llamadas a la acción por página."
+          "title": "Identificar los principales dolores y metas de tu cliente ideal",
+          "summary": "Identifica sus principales dolores y metas financieras.",
+          "body": "Anota los problemas financieros que más le preocupan a tu cliente ideal y las metas que quiere alcanzar."
         },
         "objective": {
-          "description": "¿Qué páginas tendrá tu sitio web?"
+          "description": "Identificar los principales dolores y metas financieras de tu cliente ideal."
         },
         "checklist": [
           {
-            "id": "v2-chk-map-01",
-            "task": "Definir páginas principales",
+            "id": "chk-dolores-metas",
+            "task": "Identificar los principales dolores y metas financieras de tu cliente ideal.",
             "completed": false,
-            "registryFieldRef": "mapa-sitio-status"
-          },
-          {
-            "id": "v2-chk-map-02",
-            "task": "Crear estructura de navegación",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-map-03",
-            "task": "Planear llamadas a la acción",
-            "completed": false
+            "registryFieldRef": "reg-dolores-metas-texto"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a definir la estructura y navegación de su sitio web de asesoría financiera.",
-          "context": "El usuario tiene el dominio y necesita planificar qué páginas tendrá el sitio.",
+          "systemPrompt": "Ayuda al usuario a identificar los dolores y metas de su cliente ideal.",
+          "context": "El usuario ya definió el perfil demográfico de su cliente ideal.",
           "suggestions": []
         },
         "knowledge": [],
+        "tip": "Entrevista a 2-3 clientes potenciales reales antes de asumir cuáles son sus dolores - las suposiciones sin validar suelen estar equivocadas.",
         "registroFields": [
           {
-            "id": "mapa-sitio-status",
-            "label": "Estado de la tarea: Definir Mapa del Sitio",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-dolores-metas-texto",
+            "label": "Dolores y metas del cliente ideal",
+            "type": "textarea"
           }
         ]
       }
     },
     {
-      "id": "v2-step-contenido-inicio",
-      "title": "Redactar Contenido de Página de Inicio",
-      "description": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.",
-      "order": 1,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-mapa-sitio"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Redactar Contenido de Página de Inicio",
-          "summary": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.",
-          "body": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.\n\nEl contenido debe ser claro, conciso y con llamado a la acción."
-        },
-        "objective": {
-          "description": "¿Tu página de inicio comunica quién eres en segundos?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-ci-home-01",
-            "task": "Redactar propuesta de valor visible",
-            "completed": false,
-            "registryFieldRef": "contenido-inicio-status"
-          },
-          {
-            "id": "v2-chk-ci-home-02",
-            "task": "Incluir llamada a la acción clara",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-ci-home-03",
-            "task": "Agregar información de contacto",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a redactar el contenido de la página de inicio de su sitio web de asesoría financiera.",
-          "context": "El usuario necesita un texto convincente para la página principal de su sitio.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "contenido-inicio-status",
-            "label": "Estado de la tarea: Redactar Contenido de Página de Inicio",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-linkedin",
-      "title": "Crear Perfil de LinkedIn",
-      "description": "Completa el perfil con foto, biografía, certificaciones y servicios de la firma.",
+      "id": "step-canales-contenido",
+      "title": "Definir en qué canales vas a publicar contenido de forma constante",
+      "description": "Elige el canal principal donde vas a publicar contenido.",
+      "icon": "megaphone",
       "order": 2,
       "type": "one_time",
-      "estimatedHours": 2,
+      "estimatedHours": 1,
       "difficulty": "easy",
-      "priority": "high",
+      "priority": "normal",
       "dependencies": [
-        "v2-step-biografia"
+        "step-redes-sociales"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -149,130 +131,58 @@
       },
       "content": {
         "overview": {
-          "title": "Crear Perfil de LinkedIn",
-          "summary": "Completa el perfil con foto, biografía, certificaciones y servicios de la firma.",
-          "body": "Completa perfil con foto, biografía, certificaciones y servicios de la firma.\n\nConecta con colegas y potenciales clientes."
+          "title": "Definir en qué canales vas a publicar contenido de forma constante",
+          "summary": "Elige en qué canales vas a publicar contenido de forma constante.",
+          "body": "Elige un solo canal principal al inicio y hazlo bien, en vez de estar en 5 canales de forma inconsistente."
         },
         "objective": {
-          "description": "¿Estableciste presencia profesional?"
+          "description": "Definir en qué canales vas a publicar contenido de forma constante."
         },
         "checklist": [
           {
-            "id": "v2-chk-li-01",
-            "task": "Completar perfil profesional",
+            "id": "chk-canales-contenido",
+            "task": "Definir en qué canales vas a publicar contenido de forma constante.",
             "completed": false,
-            "registryFieldRef": "linkedin-status"
-          },
-          {
-            "id": "v2-chk-li-02",
-            "task": "Agregar certificaciones",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-li-03",
-            "task": "Publicar servicios",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-li-04",
-            "task": "Conectar con red",
-            "completed": false
+            "registryFieldRef": "reg-canales-contenido-elegidos"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a optimizar su perfil de LinkedIn para una firma de asesoría financiera.",
-          "context": "El usuario necesita establecer presencia profesional en LinkedIn.",
+          "systemPrompt": "Ayuda al usuario a elegir el canal de contenido más adecuado para su cliente ideal.",
+          "context": "El usuario ya tiene perfiles en redes sociales creados.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "LinkedIn es el canal más efectivo para asesores financieros — tus clientes potenciales van a buscar tu perfil antes de agendar una primera reunión.",
+        "whyItMatters": "Publicar en muchos canales de forma inconsistente genera menos resultado que publicar en uno solo de forma constante.",
         "registroFields": [
           {
-            "id": "linkedin-status",
-            "label": "Estado de la tarea: Crear Perfil de LinkedIn",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-canales-contenido-elegidos",
+            "label": "Canales donde vas a publicar",
+            "type": "multiselect",
+            "options": [
+              "LinkedIn",
+              "Instagram",
+              "YouTube",
+              "Blog",
+              "Podcast",
+              "TikTok"
+            ]
           }
         ]
       }
     },
     {
-      "id": "v2-step-redes-sociales",
-      "title": "Crear Perfiles en Redes Sociales",
-      "description": "Elige 1 o 2 redes donde realmente esté tu cliente ideal.",
+      "id": "step-calendario-contenido",
+      "title": "Crear el calendario de contenido del primer mes",
+      "description": "Planea las publicaciones del primer mes.",
+      "icon": "calendar",
       "order": 3,
       "type": "one_time",
       "estimatedHours": 2,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [
-        "v2-step-logo"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Crear Perfiles en Redes Sociales",
-          "summary": "Elige 1 o 2 redes donde realmente esté tu cliente ideal.",
-          "body": "No te registres en todas las redes — elige 1 o 2 donde realmente esté tu cliente ideal.\n\nElige un solo canal principal al inicio y hazlo bien."
-        },
-        "objective": {
-          "description": "¿Estás donde está tu cliente ideal?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-rs-soc-01",
-            "task": "Elegir 1-2 redes según cliente ideal",
-            "completed": false,
-            "registryFieldRef": "redes-sociales-status"
-          },
-          {
-            "id": "v2-chk-rs-soc-02",
-            "task": "Crear perfiles con identidad de marca",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-rs-soc-03",
-            "task": "Optimizar perfiles",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a elegir las redes sociales más adecuadas para su firma de asesoría financiera.",
-          "context": "El usuario necesita decidir en qué redes sociales tendrá presencia.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Estar en muchas redes de forma inconsistente genera menos resultado que estar en una sola de forma constante.",
-        "registroFields": [
-          {
-            "id": "redes-sociales-status",
-            "label": "Estado de la tarea: Crear Perfiles en Redes Sociales",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-calendario-contenido",
-      "title": "Crear Calendario de Contenido",
-      "description": "Planifica qué publicar y cuándo para mantener presencia consistente.",
-      "order": 4,
-      "type": "one_time",
-      "estimatedHours": 2,
       "difficulty": "medium",
       "priority": "normal",
       "dependencies": [
-        "v2-step-redes-sociales"
+        "step-canales-contenido"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -282,60 +192,96 @@
       },
       "content": {
         "overview": {
-          "title": "Crear Calendario de Contenido",
-          "summary": "Planifica qué publicar y cuándo para mantener presencia consistente.",
-          "body": "Publicar en muchos canales de forma inconsistente genera menos resultado que publicar en uno de forma constante.\n\nEl contenido educativo funciona mejor que el promocional para generar confianza en este sector."
+          "title": "Crear el calendario de contenido del primer mes",
+          "summary": "Planea las publicaciones del primer mes.",
+          "body": "Planea con anticipación los temas de contenido educativo que vas a publicar el primer mes."
         },
         "objective": {
-          "description": "¿Planificaste qué publicar y cuándo?"
+          "description": "Planear las publicaciones de contenido del primer mes."
         },
         "checklist": [
           {
-            "id": "v2-chk-cc-cal-01",
-            "task": "Definir temas de contenido educativo",
+            "id": "chk-calendario-contenido",
+            "task": "Planear las publicaciones de contenido del primer mes.",
             "completed": false,
-            "registryFieldRef": "calendario-contenido-status"
-          },
-          {
-            "id": "v2-chk-cc-cal-02",
-            "task": "Crear calendario del primer mes",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-cc-cal-03",
-            "task": "Escribir primera publicación",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-cc-cal-04",
-            "task": "Establecer frecuencia",
-            "completed": false
+            "registryFieldRef": "reg-calendario-contenido-texto"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a crear un calendario de contenido educativo para su firma de asesoría financiera.",
-          "context": "El usuario necesita una estrategia de contenido consistente para atraer clientes.",
-          "suggestions": [
-            "¿Sobre qué temas debería publicar un asesor financiero?"
-          ]
+          "systemPrompt": "Ayuda al usuario a planear un calendario de contenido educativo para su primer mes.",
+          "context": "El usuario ya eligió su canal principal de contenido.",
+          "suggestions": []
         },
         "knowledge": [],
+        "tip": "Planea el mes completo de una sola vez - crear contenido sobre la marcha, semana a semana, es la razón más común por la que la gente deja de publicar.",
         "registroFields": [
           {
-            "id": "calendario-contenido-status",
-            "label": "Estado de la tarea: Crear Calendario de Contenido",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-calendario-contenido-texto",
+            "label": "Calendario del primer mes",
+            "type": "textarea"
           }
         ]
       }
     },
     {
-      "id": "v2-step-programa-referidos",
-      "title": "Implementar Programa de Referidos",
-      "description": "Diseña un mecanismo para generar clientes por recomendación.",
+      "id": "step-primer-articulo",
+      "title": "Escribir el primer artículo o publicación educativa",
+      "description": "Publica tu primera pieza de contenido educativo.",
+      "icon": "pen-tool",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-calendario-contenido"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Escribir el primer artículo o publicación educativa",
+          "summary": "Publica tu primera pieza de contenido educativo.",
+          "body": "El contenido educativo (explicar conceptos financieros en lenguaje simple) suele funcionar mejor que el contenido promocional para generar confianza en este sector."
+        },
+        "objective": {
+          "description": "Publicar tu primera pieza de contenido educativo."
+        },
+        "checklist": [
+          {
+            "id": "chk-primer-articulo",
+            "task": "Publicar tu primera pieza de contenido educativo.",
+            "completed": false,
+            "registryFieldRef": "reg-primer-articulo-url"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar su primera publicación de contenido educativo.",
+          "context": "El usuario ya tiene su calendario de contenido planeado.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Tu primer contenido no tiene que ser perfecto - tiene que existir, porque es lo que te obliga a publicar el segundo.",
+        "registroFields": [
+          {
+            "id": "reg-primer-articulo-url",
+            "label": "URL del primer contenido publicado",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-programa-referidos",
+      "title": "Definir tu programa de referidos",
+      "description": "Define cómo vas a pedir y recompensar referidos.",
+      "icon": "gift",
       "order": 5,
       "type": "one_time",
       "estimatedHours": 1,
@@ -350,43 +296,87 @@
       },
       "content": {
         "overview": {
-          "title": "Implementar Programa de Referidos",
-          "summary": "Diseña un mecanismo para generar clientes por recomendación.",
-          "body": "Diseña mecanismo de referidos y prepara mensaje para pedir referidos a clientes satisfechos.\n\nFacilita el proceso enviando el enlace directo — entre más pasos tenga que dar la persona, menos probable es que lo haga."
+          "title": "Definir tu programa de referidos",
+          "summary": "Define cómo vas a pedir y recompensar referidos de clientes actuales.",
+          "body": "La mayoría de los clientes satisfechos no refieren por iniciativa propia, pero sí aceptan cuando se lo pides de forma directa."
         },
         "objective": {
-          "description": "¿Tienes un sistema para generar clientes por recomendación?"
+          "description": "Definir cómo vas a pedir y recompensar referidos de clientes actuales."
         },
         "checklist": [
           {
-            "id": "v2-chk-ref-01",
-            "task": "Diseñar mecanismo de referidos",
+            "id": "chk-programa-referidos",
+            "task": "Definir cómo vas a pedir y recompensar referidos de clientes actuales.",
             "completed": false,
-            "registryFieldRef": "programa-referidos-status"
-          },
-          {
-            "id": "v2-chk-ref-02",
-            "task": "Crear mensaje para pedir referidos",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-ref-03",
-            "task": "Implementar seguimiento de referidos",
-            "completed": false
+            "registryFieldRef": "reg-programa-referidos-texto"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a diseñar un programa de referidos efectivo para su firma de asesoría financiera.",
-          "context": "El usuario quiere generar nuevos clientes a través de recomendaciones.",
+          "systemPrompt": "Ayuda al usuario a diseñar un programa de referidos simple y efectivo.",
+          "context": "El usuario está diseñando su estrategia de captación de clientes.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "Los referidos son la fuente de clientes más rentable para una firma de asesoría financiera — un cliente referido llega con confianza previa y cierra más rápido.",
+        "bestPractices": [
+          "Pide referidos de forma explícita a tus clientes satisfechos - la mayoría no lo hace por iniciativa propia, pero sí acepta cuando se lo pides."
+        ],
         "registroFields": [
           {
-            "id": "programa-referidos-status",
-            "label": "Estado de la tarea: Implementar Programa de Referidos",
+            "id": "reg-programa-referidos-texto",
+            "label": "Programa de referidos definido",
+            "type": "textarea",
+            "helpText": "Cómo se piden y recompensan las referencias."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-identificar-asociaciones",
+      "title": "Identificar asociaciones o cámaras profesionales para afiliarte",
+      "description": "Identifica asociaciones relevantes de tu sector.",
+      "icon": "users",
+      "order": 6,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Identificar asociaciones o cámaras profesionales para afiliarte",
+          "summary": "Identifica asociaciones o cámaras profesionales relevantes para afiliarte.",
+          "body": "Formar parte de una asociación profesional reconocida agrega credibilidad y abre oportunidades de referidos."
+        },
+        "objective": {
+          "description": "Identificar asociaciones o cámaras profesionales relevantes para afiliarte."
+        },
+        "checklist": [
+          {
+            "id": "chk-identificar-asociaciones",
+            "task": "Identificar asociaciones o cámaras profesionales relevantes para afiliarte.",
+            "completed": false,
+            "registryFieldRef": "step-identificar-asociaciones-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar asociaciones profesionales relevantes en su sector.",
+          "context": "El usuario está construyendo su estrategia de networking profesional.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Prioriza asociaciones donde tu cliente ideal también participa, no solo las más grandes o conocidas del sector.",
+        "registroFields": [
+          {
+            "id": "step-identificar-asociaciones-status",
+            "label": "Estado de: Identificar asociaciones o cámaras profesionales para afiliarte",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -395,16 +385,17 @@
       }
     },
     {
-      "id": "v2-step-sitios-resenas",
-      "title": "Registrar en Sitios de Reseñas",
-      "description": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.",
-      "order": 6,
+      "id": "step-afiliarte-asociacion",
+      "title": "Afiliarte a una asociación o cámara profesional",
+      "description": "Completa tu afiliación a la asociación elegida.",
+      "icon": "badge-check",
+      "order": 7,
       "type": "one_time",
-      "estimatedHours": 1,
+      "estimatedHours": 2,
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "v2-step-google-business"
+        "step-identificar-asociaciones"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -414,45 +405,461 @@
       },
       "content": {
         "overview": {
-          "title": "Registrar en Sitios de Reseñas",
-          "summary": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.",
-          "body": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.\n\nSolicita tu primera reseña a un contacto de confianza."
+          "title": "Afiliarte a una asociación o cámara profesional",
+          "summary": "Completa tu afiliación a la asociación profesional elegida.",
+          "body": "Completa el proceso de afiliación y activa tu membresía."
         },
         "objective": {
-          "description": "¿Tienes perfiles en sitios de reseñas del sector?"
+          "description": "Completar tu afiliación a una asociación o cámara profesional."
         },
         "checklist": [
           {
-            "id": "v2-chk-res-01",
-            "task": "Identificar sitios de reseñas relevantes",
+            "id": "chk-afiliarte-asociacion",
+            "task": "Completar tu afiliación a una asociación o cámara profesional.",
             "completed": false,
-            "registryFieldRef": "sitios-resenas-status"
-          },
-          {
-            "id": "v2-chk-res-02",
-            "task": "Registrar firma en 3-5 sitios",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-res-03",
-            "task": "Solicitar primera reseña a contacto de confianza",
-            "completed": false
+            "registryFieldRef": "reg-asociacion-drive"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a identificar y registrarse en los sitios de reseñas más relevantes para su firma.",
-          "context": "El usuario necesita construir credibilidad social a través de reseñas.",
+          "systemPrompt": "Ayuda al usuario a completar el proceso de afiliación a una asociación profesional.",
+          "context": "El usuario ya identificó las asociaciones relevantes.",
           "suggestions": []
         },
         "knowledge": [],
         "registroFields": [
           {
-            "id": "sitios-resenas-status",
-            "label": "Estado de la tarea: Registrar en Sitios de Reseñas",
+            "id": "reg-asociacion-drive",
+            "label": "Enlace al comprobante de afiliación en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-sitios-resenas",
+      "title": "Registrar tu firma en sitios de reseñas relevantes del sector",
+      "description": "Registra tu firma en sitios de reseñas relevantes.",
+      "icon": "star",
+      "order": 8,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-google-business"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Registrar tu firma en sitios de reseñas relevantes del sector",
+          "summary": "Registra tu firma en sitios de reseñas relevantes del sector.",
+          "body": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce."
+        },
+        "objective": {
+          "description": "Registrar tu firma en los sitios de reseñas relevantes de tu sector."
+        },
+        "checklist": [
+          {
+            "id": "chk-sitios-resenas",
+            "task": "Registrar tu firma en los sitios de reseñas relevantes de tu sector.",
+            "completed": false,
+            "registryFieldRef": "step-sitios-resenas-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar sitios de reseñas relevantes para asesores financieros.",
+          "context": "El usuario ya tiene su perfil de Google Business creado.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "La mayoría de los prospectos revisan reseñas antes de agendar una primera reunión, incluso en servicios profesionales.",
+        "registroFields": [
+          {
+            "id": "step-sitios-resenas-status",
+            "label": "Estado de: Registrar tu firma en sitios de reseñas relevantes del sector",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-primera-resena",
+      "title": "Solicitar tu primera reseña a un contacto de confianza",
+      "description": "Solicita tu primera reseña.",
+      "icon": "star",
+      "order": 9,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-sitios-resenas"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Solicitar tu primera reseña a un contacto de confianza",
+          "summary": "Solicita tu primera reseña a un contacto de confianza.",
+          "body": "Pide una primera reseña a alguien que conozca tu trabajo, aunque todavía no sea formalmente un cliente pago - esto le da vida a tu perfil desde el inicio."
+        },
+        "objective": {
+          "description": "Solicitar tu primera reseña a un contacto de confianza."
+        },
+        "checklist": [
+          {
+            "id": "chk-primera-resena",
+            "task": "Solicitar tu primera reseña a un contacto de confianza.",
+            "completed": false,
+            "registryFieldRef": "step-primera-resena-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar una solicitud de reseña efectiva.",
+          "context": "El usuario ya tiene sus perfiles en sitios de reseñas listos.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Facilita el proceso enviando el enlace directo para dejar la reseña - entre más pasos tenga que dar la persona, menos probable es que la complete.",
+        "registroFields": [
+          {
+            "id": "step-primera-resena-status",
+            "label": "Estado de: Solicitar tu primera reseña a un contacto de confianza",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-folleto",
+      "title": "Diseñar un folleto o material de presentación descargable",
+      "description": "Diseña un folleto o PDF de presentación de tu firma.",
+      "icon": "file-text",
+      "order": 10,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-disenar-logo",
+        "step-alcance-paquetes"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Diseñar un folleto o material de presentación descargable",
+          "summary": "Diseña un folleto o PDF de presentación de tu firma.",
+          "body": "Un material descargable resume tus servicios y es útil para enviar por correo tras un primer contacto."
+        },
+        "objective": {
+          "description": "Diseñar un folleto o material de presentación descargable."
+        },
+        "checklist": [
+          {
+            "id": "chk-folleto",
+            "task": "Diseñar un folleto o material de presentación descargable.",
+            "completed": false,
+            "registryFieldRef": "reg-folleto-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a estructurar el contenido de un folleto de presentación profesional.",
+          "context": "El usuario ya tiene su identidad de marca y sus paquetes de servicios listos.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-folleto-drive",
+            "label": "Enlace al archivo final en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-estrategia-webinar",
+      "title": "Definir tu estrategia de eventos o webinars introductorios",
+      "description": "Define el formato y tema de tu primer evento introductorio.",
+      "icon": "presentation",
+      "order": 11,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-dolores-metas"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir tu estrategia de eventos o webinars introductorios",
+          "summary": "Define el formato y tema de tu primer evento introductorio.",
+          "body": "Un webinar o evento introductorio gratuito es una forma efectiva de que varios prospectos te conozcan a la vez."
+        },
+        "objective": {
+          "description": "Definir el formato y tema de tu primer evento o webinar introductorio."
+        },
+        "checklist": [
+          {
+            "id": "chk-estrategia-webinar",
+            "task": "Definir el formato y tema de tu primer evento o webinar introductorio.",
+            "completed": false,
+            "registryFieldRef": "reg-estrategia-webinar-texto"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir el formato y tema de su primer webinar introductorio.",
+          "context": "El usuario ya identificó los dolores y metas de su cliente ideal.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un webinar bien enfocado en un solo tema específico convierte mejor que uno que intenta cubrir todos tus servicios a la vez.",
+        "registroFields": [
+          {
+            "id": "reg-estrategia-webinar-texto",
+            "label": "Estrategia de webinar definida",
+            "type": "textarea",
+            "helpText": "Formato, temas y enfoque."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-primer-webinar",
+      "title": "Planear tu primer webinar o evento introductorio",
+      "description": "Planea la logística de tu primer evento.",
+      "icon": "presentation",
+      "order": 12,
+      "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-estrategia-webinar"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Planear tu primer webinar o evento introductorio",
+          "summary": "Planea la logística de tu primer webinar o evento.",
+          "body": "Define la fecha, la plataforma, cómo vas a invitar asistentes y qué vas a ofrecerles al final del evento."
+        },
+        "objective": {
+          "description": "Planear la logística de tu primer webinar o evento introductorio."
+        },
+        "checklist": [
+          {
+            "id": "chk-primer-webinar",
+            "task": "Planear la logística de tu primer webinar o evento introductorio.",
+            "completed": false,
+            "registryFieldRef": "reg-fecha-webinar"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a planear la logística de su primer webinar introductorio.",
+          "context": "El usuario ya definió el formato y tema de su evento.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Envía un recordatorio 1 hora antes del evento - reduce significativamente la tasa de ausentismo de los inscritos.",
+        "registroFields": [
+          {
+            "id": "reg-fecha-webinar",
+            "label": "Fecha del evento",
+            "type": "date"
+          },
+          {
+            "id": "reg-primer-webinar-drive",
+            "label": "Enlace al evento",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-mision-vision",
+      "title": "Definir la Misión y Visión de la Firma",
+      "description": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
+      "order": 13,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir la Misión y Visión de la Firma",
+          "summary": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
+          "body": "Redacta una declaración clara que defina tu propósito como asesor financiero.\n\nEjemplo: 'Ser el brazo administrativo y estratégico que potencia la rentabilidad y sostenibilidad financiera de cada cliente que confía en nosotros'.\n\nLa misión debe comunicar claramente:\n- A quién ayudas\n- Qué problema resuelves\n- Cómo lo haces de forma única\n\nPublícala en un lugar donde puedas revisarla regularmente."
+        },
+        "objective": {
+          "description": "¿Cuál es el propósito fundamental de tu firma de asesoría financiera?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-mision-01",
+            "task": "Redactar declaración de misión clara y concisa",
+            "completed": false,
+            "registryFieldRef": "v2-reg-mision"
+          },
+          {
+            "id": "v2-chk-mision-02",
+            "task": "Definir visión a 3-5 años",
+            "completed": false,
+            "registryFieldRef": "v2-reg-mision"
+          },
+          {
+            "id": "v2-chk-mision-03",
+            "task": "Establecer valores fundamentales",
+            "completed": false,
+            "registryFieldRef": "v2-reg-mision"
+          },
+          {
+            "id": "v2-chk-mision-04",
+            "task": "Documentar propuesta de valor única",
+            "completed": false,
+            "registryFieldRef": "v2-reg-mision"
+          },
+          {
+            "id": "v2-chk-mision-05",
+            "task": "Validar misión con 2-3 colegas de confianza",
+            "completed": false,
+            "registryFieldRef": "v2-reg-mision"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar la misión, visión y valores fundamentales de su firma de asesoría financiera.",
+          "context": "El usuario está definiendo el propósito y la dirección estratégica de su firma.",
+          "suggestions": [
+            "¿Cómo redacto una declaración de misión para una firma de asesoría financiera?"
+          ]
+        },
+        "knowledge": [],
+        "tip": "Publica la misión en un lugar donde la veas con frecuencia — te va a servir como brújula cuando tengas que tomar decisiones difíciles.",
+        "registroFields": [
+          {
+            "id": "v2-reg-mision",
+            "label": "Declaración de misión redactada",
+            "type": "textarea",
+            "required": true
+          },
+          {
+            "id": "v2-reg-vision",
+            "label": "Visión a 3-5 años",
+            "type": "textarea",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-encuesta-necesidades",
+      "title": "Realizar Encuesta de Necesidades del Mercado",
+      "description": "Entiende qué necesidades financieras tienen tus clientes potenciales antes de lanzar.",
+      "order": 14,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Realizar Encuesta de Necesidades del Mercado",
+          "summary": "Entiende qué necesidades financieras tienen tus clientes potenciales antes de lanzar.",
+          "body": "Antes de lanzar, entiende qué necesidades financieras tienen tus clientes potenciales.\n\nPreguntar:\n- '¿Cuáles son sus mayores desafíos financieros?'\n- '¿En qué área necesita más ayuda?'\n- '¿Qué servicios de asesoría ha utilizado antes?'\n\nEsta información te permitirá enfocar tus servicios en lo que realmente necesita el mercado."
+        },
+        "objective": {
+          "description": "¿Qué necesitan realmente tus clientes potenciales?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-enc-01",
+            "task": "Crear formulario de encuesta",
+            "completed": false,
+            "registryFieldRef": "v2-reg-encuesta-drive"
+          },
+          {
+            "id": "v2-chk-enc-02",
+            "task": "Enviar a clientes potenciales",
+            "completed": false,
+            "registryFieldRef": "v2-reg-encuesta-drive"
+          },
+          {
+            "id": "v2-chk-enc-03",
+            "task": "Analizar resultados y priorizar servicios",
+            "completed": false,
+            "registryFieldRef": "v2-reg-encuesta-drive"
+          },
+          {
+            "id": "v2-chk-enc-04",
+            "task": "Documentar hallazgos clave",
+            "completed": false,
+            "registryFieldRef": "v2-reg-encuesta-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar y analizar una encuesta de necesidades para clientes potenciales de asesoría financiera.",
+          "context": "El usuario quiere validar qué servicios necesita el mercado antes de definir su oferta.",
+          "suggestions": [
+            "¿Qué preguntas incluir en una encuesta de necesidades financieras?"
+          ]
+        },
+        "knowledge": [],
+        "tip": "Habla con al menos 10-15 personas — con menos de eso los patrones que encuentres pueden ser coincidencias.",
+        "registroFields": [
+          {
+            "id": "v2-reg-encuesta-drive",
+            "label": "Enlace a los resultados de la encuesta",
+            "type": "url"
           }
         ]
       }

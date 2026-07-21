@@ -4,77 +4,10 @@
   "block": "business",
   "steps": [
     {
-      "id": "v2-rec-renovar-certificaciones",
-      "title": "Renovar Certificaciones Profesionales",
-      "description": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
-      "order": 0,
-      "type": "yearly",
-      "estimatedHours": 8,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Renovar Certificaciones Profesionales",
-          "summary": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
-          "body": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones."
-        },
-        "objective": {
-          "description": "¿Mantienes tu certificación vigente?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-rcert-01",
-            "task": "Verificar fechas de vencimiento",
-            "completed": false,
-            "registryFieldRef": "renovar-certificaciones-status"
-          },
-          {
-            "id": "v2-chk-rcert-02",
-            "task": "Completar horas de educación continua",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-rcert-03",
-            "task": "Renovar certificaciones profesionales",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-rcert-04",
-            "task": "Actualizar credenciales en materiales",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a gestionar la renovación de sus certificaciones profesionales.",
-          "context": "El usuario necesita mantener vigentes sus certificaciones de asesor financiero.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Una certificación vencida te impide ejercer legalmente y destruye la credibilidad construida con tus clientes.",
-        "registroFields": [
-          {
-            "id": "renovar-certificaciones-status",
-            "label": "Estado de la tarea: Renovar Certificaciones Profesionales",
-            "type": "date",
-            "placeholder": "Selecciona la fecha",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
       "id": "v2-rec-cierre-contable",
       "title": "Realizar Cierre Contable",
       "description": "Conciliación bancaria, registro de gastos e ingresos, generación de estado de resultados.",
-      "order": 1,
+      "order": 0,
       "type": "monthly",
       "estimatedHours": 3,
       "difficulty": "medium",
@@ -105,22 +38,26 @@
           {
             "id": "v2-chk-cc-02",
             "task": "Registrar ingresos y gastos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "cierre-contable-status"
           },
           {
             "id": "v2-chk-cc-03",
             "task": "Clasificar transacciones",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "cierre-contable-status"
           },
           {
             "id": "v2-chk-cc-04",
             "task": "Generar estado de resultados",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "cierre-contable-status"
           },
           {
             "id": "v2-chk-cc-05",
             "task": "Comparar con presupuesto",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "cierre-contable-status"
           }
         ],
         "resources": [],
@@ -134,7 +71,7 @@
         "registroFields": [
           {
             "id": "cierre-contable-status",
-            "label": "Estado de la tarea: Realizar Cierre Contable",
+            "label": "Estado de: Realizar Cierre Contable",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -146,7 +83,7 @@
       "id": "v2-rec-conciliacion-bancaria",
       "title": "Conciliación Bancaria",
       "description": "Verifica movimientos, identifica transacciones pendientes y corrige discrepancias.",
-      "order": 2,
+      "order": 1,
       "type": "monthly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -177,17 +114,20 @@
           {
             "id": "v2-chk-cb-02",
             "task": "Identificar transacciones pendientes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "conciliacion-bancaria-status"
           },
           {
             "id": "v2-chk-cb-03",
             "task": "Corregir discrepancias",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "conciliacion-bancaria-status"
           },
           {
             "id": "v2-chk-cb-04",
             "task": "Documentar conciliación",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "conciliacion-bancaria-status"
           }
         ],
         "resources": [],
@@ -200,7 +140,7 @@
         "registroFields": [
           {
             "id": "conciliacion-bancaria-status",
-            "label": "Estado de la tarea: Conciliación Bancaria",
+            "label": "Estado de: Conciliación Bancaria",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -212,7 +152,7 @@
       "id": "v2-rec-revision-margenes",
       "title": "Revisar Márgenes de Rentabilidad",
       "description": "Analiza rentabilidad por servicio y ajusta precios si es necesario.",
-      "order": 3,
+      "order": 2,
       "type": "quarterly",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -243,17 +183,20 @@
           {
             "id": "v2-chk-rm-02",
             "task": "Comparar con proyecciones",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-margenes-status"
           },
           {
             "id": "v2-chk-rm-03",
             "task": "Ajustar precios si es necesario",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-margenes-status"
           },
           {
             "id": "v2-chk-rm-04",
             "task": "Documentar decisiones",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-margenes-status"
           }
         ],
         "resources": [],
@@ -266,7 +209,7 @@
         "registroFields": [
           {
             "id": "revision-margenes-status",
-            "label": "Estado de la tarea: Revisar Márgenes de Rentabilidad",
+            "label": "Estado de: Revisar Márgenes de Rentabilidad",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -278,7 +221,7 @@
       "id": "v2-rec-declaracion-impuestos",
       "title": "Declaración Anual de Impuestos",
       "description": "Reúne documentación fiscal, trabaja con contador y presenta declaraciones.",
-      "order": 4,
+      "order": 3,
       "type": "yearly",
       "estimatedHours": 6,
       "difficulty": "hard",
@@ -309,17 +252,20 @@
           {
             "id": "v2-chk-di-02",
             "task": "Trabajar con contador en declaración",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "declaracion-impuestos-status"
           },
           {
             "id": "v2-chk-di-03",
             "task": "Presentar declaraciones en plazo",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "declaracion-impuestos-status"
           },
           {
             "id": "v2-chk-di-04",
             "task": "Pagar impuestos correspondientes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "declaracion-impuestos-status"
           }
         ],
         "resources": [],
@@ -333,7 +279,7 @@
         "registroFields": [
           {
             "id": "declaracion-impuestos-status",
-            "label": "Estado de la tarea: Declaración Anual de Impuestos",
+            "label": "Estado de: Declaración Anual de Impuestos",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true

@@ -4,95 +4,17 @@
   "block": "operations",
   "steps": [
     {
-      "id": "v2-step-crm",
-      "title": "Elegir CRM para la Firma",
-      "description": "Un CRM te permite llevar el historial de cada cliente, reuniones y documentos en un solo lugar.",
+      "id": "step-proceso-analisis",
+      "title": "Documentar los pasos del proceso de análisis financiero",
+      "description": "Documenta un proceso de análisis financiero repetible.",
+      "icon": "search",
       "order": 0,
       "type": "one_time",
       "estimatedHours": 3,
       "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Elegir CRM para la Firma",
-          "summary": "Un CRM te permite llevar el historial de cada cliente, reuniones y documentos en un solo lugar.",
-          "body": "Un CRM te permite llevar el historial de cada cliente, reuniones y documentos en un solo lugar.\n\nOpciones: HubSpot CRM, Notion, Salesforce Essentials, Zoho CRM.\n\nCambiar de CRM después de tener clientes cargados es mucho más costoso que comparar bien antes.\n\nConfigura al menos una automatización simple desde el inicio."
-        },
-        "objective": {
-          "description": "¿Dónde gestionas las relaciones con tus clientes?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-crm-01",
-            "task": "Comparar al menos 2 opciones de CRM",
-            "completed": false,
-            "registryFieldRef": "crm-status"
-          },
-          {
-            "id": "v2-chk-crm-02",
-            "task": "Elegir y contratar CRM definitivo",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-crm-03",
-            "task": "Configurar con paquetes de servicios",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-crm-04",
-            "task": "Implementar al menos una automatización",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a comparar y elegir el CRM más adecuado para una firma de asesoría financiera.",
-          "context": "El usuario necesita una herramienta para gestionar las relaciones con sus clientes.",
-          "suggestions": [
-            "¿Qué CRM es mejor para una firma de asesoría financiera pequeña?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "Cambiar de CRM después de tener clientes cargados implica migrar datos, reentrenar el equipo y perder automatizaciones — comparar bien al inicio es mucho más barato.",
-        "recommendedTools": [
-          {
-            "name": "HubSpot CRM",
-            "url": "https://www.hubspot.com/products/crm"
-          },
-          {
-            "name": "Zoho CRM",
-            "url": "https://www.zoho.com/crm/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "crm-status",
-            "label": "Estado de la tarea: Elegir CRM para la Firma",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-firma-electronica",
-      "title": "Implementar Firma Electrónica",
-      "description": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido.",
-      "order": 1,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "easy",
-      "priority": "high",
+      "priority": "normal",
       "dependencies": [
-        "v2-step-contrato"
+        "step-plantilla-plan"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -102,57 +24,86 @@
       },
       "content": {
         "overview": {
-          "title": "Implementar Firma Electrónica",
-          "summary": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido.",
-          "body": "Un contrato firmado electrónicamente el mismo día que lo envías se convierte en cliente activo más rápido.\n\nOpciones: DocuSign, Adobe Sign, HelloSign.\n\nPrueba el proceso con un documento de prueba antes de usarlo con clientes reales."
+          "title": "Documentar los pasos del proceso de análisis financiero",
+          "summary": "Estandariza los pasos que sigues para analizar la situación financiera de cada cliente.",
+          "body": "Tener un proceso repetible te permite atender más clientes sin perder calidad ni consistencia."
         },
         "objective": {
-          "description": "¿Cómo agilizas la contratación?"
+          "description": "Documentar los pasos del proceso de análisis financiero."
         },
         "checklist": [
           {
-            "id": "v2-chk-fe-01",
-            "task": "Elegir herramienta de firma electrónica",
+            "id": "chk-proceso-analisis",
+            "task": "Documentar los pasos del proceso de análisis financiero.",
             "completed": false,
-            "registryFieldRef": "firma-electronica-status"
-          },
-          {
-            "id": "v2-chk-fe-02",
-            "task": "Configurar plantillas de contratos",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-fe-03",
-            "task": "Probar con documento de prueba",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-fe-04",
-            "task": "Documentar proceso",
-            "completed": false
+            "registryFieldRef": "reg-proceso-analisis-texto"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a implementar un proceso de firma electrónica para sus contratos de servicio.",
-          "context": "El usuario tiene el contrato redactado y necesita una forma eficiente de firmarlo con clientes.",
+          "systemPrompt": "Ayuda al usuario a diseñar un proceso interno consistente de análisis financiero.",
+          "context": "El usuario está definiendo cómo va a analizar la situación financiera de sus clientes de forma repetible.",
           "suggestions": []
         },
         "knowledge": [],
-        "recommendedTools": [
-          {
-            "name": "DocuSign",
-            "url": "https://www.docusign.com"
-          },
-          {
-            "name": "Adobe Sign",
-            "url": "https://acrobat.adobe.com/us/en/sign.html"
-          }
-        ],
+        "whyItMatters": "Un proceso estandarizado es lo que te permite crecer sin que la calidad del servicio dependa únicamente de tu memoria o de tu disponibilidad en cada caso.",
         "registroFields": [
           {
-            "id": "firma-electronica-status",
-            "label": "Estado de la tarea: Implementar Firma Electrónica",
+            "id": "reg-proceso-analisis-texto",
+            "label": "Proceso de análisis financiero documentado",
+            "type": "textarea"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-pasos-onboarding",
+      "title": "Definir los pasos del proceso de bienvenida",
+      "description": "Diseña la experiencia de bienvenida para un cliente nuevo.",
+      "icon": "user-plus",
+      "order": 1,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-revision-abogado-contrato"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir los pasos del proceso de bienvenida",
+          "summary": "Diseña la experiencia de bienvenida para un cliente nuevo.",
+          "body": "Un onboarding claro reduce la ansiedad natural de empezar a trabajar con un asesor financiero nuevo y proyecta profesionalismo desde el primer contacto."
+        },
+        "objective": {
+          "description": "Definir los pasos del proceso de bienvenida para un cliente nuevo."
+        },
+        "checklist": [
+          {
+            "id": "chk-pasos-onboarding",
+            "task": "Definir los pasos del proceso de bienvenida para un cliente nuevo.",
+            "completed": false,
+            "registryFieldRef": "step-pasos-onboarding-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar un proceso de onboarding profesional para clientes nuevos.",
+          "context": "El usuario está a punto de recibir a sus primeros clientes.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un proceso de bienvenida claro reduce la ansiedad natural de un cliente nuevo y proyecta profesionalismo antes de la primera reunión.",
+        "registroFields": [
+          {
+            "id": "step-pasos-onboarding-status",
+            "label": "Estado de: Definir los pasos del proceso de bienvenida",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -161,214 +112,206 @@
       }
     },
     {
-      "id": "v2-step-onboarding",
-      "title": "Diseñar Proceso de Onboarding",
-      "description": "Define cómo recibe tu firma a un cliente nuevo desde el primer contacto hasta el primer seguimiento.",
+      "id": "step-cuestionario-descubrimiento",
+      "title": "Preparar el cuestionario de descubrimiento financiero",
+      "description": "Prepara el cuestionario que envías antes de la primera reunión.",
+      "icon": "clipboard-list",
       "order": 2,
       "type": "one_time",
       "estimatedHours": 3,
       "difficulty": "medium",
       "priority": "high",
       "dependencies": [
-        "v2-step-contrato",
-        "v2-step-firma-electronica"
+        "step-pasos-onboarding"
       ],
       "completionRules": {
         "requiredChecklist": true,
-        "requiredResources": false,
+        "requiredResources": true,
         "requiredApproval": false,
         "requiredQuiz": false
       },
       "content": {
         "overview": {
-          "title": "Diseñar Proceso de Onboarding",
-          "summary": "Define cómo recibe tu firma a un cliente nuevo desde el primer contacto hasta el primer seguimiento.",
-          "body": "Un onboarding claro reduce la ansiedad natural de empezar a trabajar con un asesor financiero nuevo y proyecta profesionalismo desde el primer contacto.\n\nPasos:\n1. Reunión inicial de diagnóstico\n2. Firma de acuerdo y confidencialidad\n3. Cuestionario de descubrimiento\n4. Recopilación de documentación\n5. Configuración en sistemas\n6. Construcción del plan\n7. Presentación del plan\n8. Programación de seguimientos"
+          "title": "Preparar el cuestionario de descubrimiento financiero",
+          "summary": "Prepara el cuestionario que envías antes de la primera reunión.",
+          "body": "Usa un cuestionario estructurado para no olvidar información clave sobre la situación financiera del cliente."
         },
         "objective": {
-          "description": "¿Cómo recibe tu firma a un cliente nuevo?"
+          "description": "Preparar el cuestionario de descubrimiento financiero."
         },
         "checklist": [
           {
-            "id": "v2-chk-on-01",
-            "task": "Definir pasos del proceso de bienvenida",
+            "id": "chk-cuestionario-descubrimiento",
+            "task": "Preparar el cuestionario de descubrimiento financiero.",
             "completed": false,
-            "registryFieldRef": "onboarding-status"
-          },
-          {
-            "id": "v2-chk-on-02",
-            "task": "Crear checklist de onboarding",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-on-03",
-            "task": "Preparar paquete de bienvenida",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-on-04",
-            "task": "Documentar flujo completo",
-            "completed": false
+            "registryFieldRef": "reg-cuestionario-drive"
           }
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a diseñar un proceso de onboarding profesional para nuevos clientes de asesoría financiera.",
-          "context": "El usuario necesita un proceso claro para recibir a sus primeros clientes.",
-          "suggestions": [
-            "¿Cómo es un buen proceso de onboarding para asesoría financiera?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "La primera experiencia del cliente con tu firma determina en gran medida si te recomienda o no — un onboarding profesional genera confianza desde el primer minuto.",
-        "registroFields": [
+        "resources": [
           {
-            "id": "onboarding-status",
-            "label": "Estado de la tarea: Diseñar Proceso de Onboarding",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-cuestionario",
-      "title": "Preparar Cuestionario de Descubrimiento Financiero",
-      "description": "Define las preguntas clave que harás en la primera reunión.",
-      "order": 3,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-onboarding"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Preparar Cuestionario de Descubrimiento Financiero",
-          "summary": "Define las preguntas clave que harás en la primera reunión.",
-          "body": "Sé explícito sobre tarifas y alcance del servicio desde el primer minuto.\n\nPreguntas clave:\n- Situación financiera actual (ingresos, gastos, activos, pasivos)\n- Metas financieras de corto, mediano y largo plazo\n- Tolerancia al riesgo\n- Experiencia previa con asesoría financiera\n\nGraba (con permiso) o toma notas detalladas — vas a necesitar esa información exacta para el plan financiero."
-        },
-        "objective": {
-          "description": "¿Qué preguntas harás en la primera reunión?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-cues-01",
-            "task": "Diseñar preguntas clave de descubrimiento",
-            "completed": false,
-            "registryFieldRef": "cuestionario-status"
-          },
-          {
-            "id": "v2-chk-cues-02",
-            "task": "Crear formulario estructurado",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-cues-03",
-            "task": "Incluir sección de metas financieras",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-cues-04",
-            "task": "Probar con cliente de prueba",
-            "completed": false
+            "id": "res-cuestionario-financiero",
+            "type": "form",
+            "title": "Cuestionario de descubrimiento financiero",
+            "description": "Preguntas base para conocer la situación financiera de un cliente nuevo antes de la primera reunión.",
+            "provider": "Blueprint",
+            "previewUrl": "",
+            "downloadUrl": "",
+            "embedUrl": "",
+            "thumbnailUrl": "",
+            "mimeType": "",
+            "extension": "",
+            "size": 0,
+            "metadata": {
+              "pages": null,
+              "duration": null,
+              "language": "es"
+            },
+            "tags": [
+              "clientes",
+              "descubrimiento"
+            ],
+            "visibility": "organization"
           }
         ],
-        "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a diseñar un cuestionario de descubrimiento financiero completo y efectivo.",
-          "context": "El usuario necesita entender a fondo la situación financiera de sus clientes en la primera reunión.",
-          "suggestions": [
-            "¿Qué preguntas debo hacerle a un nuevo cliente en la primera reunión de asesoría financiera?"
-          ]
-        },
-        "knowledge": [],
-        "tip": "Graba la reunión (con permiso del cliente) — te permite estar completamente presente en la conversación en vez de tomar notas constantemente.",
-        "registroFields": [
-          {
-            "id": "cuestionario-status",
-            "label": "Estado de la tarea: Preparar Cuestionario de Descubrimiento Financiero",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-primera-reunion",
-      "title": "Preparar Primera Reunión Financiera",
-      "description": "Practica el guion de la primera reunión y define los próximos pasos concretos.",
-      "order": 4,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-cuestionario",
-        "v2-step-agendamiento"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Preparar Primera Reunión Financiera",
-          "summary": "Practica el guion de la primera reunión y define los próximos pasos concretos.",
-          "body": "Practica el guion de la primera reunión.\n\nErrores comunes:\n- Empezar a dar recomendaciones antes de entender el panorama completo\n- Dejar el tema de tarifas para después\n\nCierra con próximos pasos concretos y fecha para la siguiente sesión."
-        },
-        "objective": {
-          "description": "¿Estás listo para conducir reuniones profesionales?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-pr-01",
-            "task": "Practicar guion de reunión",
-            "completed": false,
-            "registryFieldRef": "primera-reunion-status"
-          },
-          {
-            "id": "v2-chk-pr-02",
-            "task": "Preparar agenda de primera reunión",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-pr-03",
-            "task": "Preparar explicación de tarifas y alcance",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-pr-04",
-            "task": "Definir próximos pasos concretos",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a preparar el guion y la agenda de la primera reunión con un cliente de asesoría financiera.",
-          "context": "El usuario necesita estar preparado para conducir reuniones iniciales con clientes.",
+          "systemPrompt": "Ayuda al usuario a redactar un cuestionario de descubrimiento financiero completo.",
+          "context": "El usuario está preparando su proceso de onboarding de clientes.",
           "suggestions": []
         },
         "knowledge": [],
-        "commonMistakes": [
-          "Dar recomendaciones financieras antes de terminar el cuestionario de descubrimiento.",
-          "No hablar de tarifas hasta el final — provoca incomodidad y expectativas mal calibradas."
-        ],
         "registroFields": [
           {
-            "id": "primera-reunion-status",
-            "label": "Estado de la tarea: Preparar Primera Reunión Financiera",
+            "id": "reg-cuestionario-drive",
+            "label": "Enlace a la plantilla en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-paquete-bienvenida",
+      "title": "Preparar el paquete de bienvenida para clientes nuevos",
+      "description": "Prepara el material que recibe un cliente nuevo al firmar.",
+      "icon": "gift",
+      "order": 3,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-pasos-onboarding"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": true,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Preparar el paquete de bienvenida para clientes nuevos",
+          "summary": "Prepara el material que recibe un cliente nuevo al firmar contigo.",
+          "body": "El paquete de bienvenida incluye el contrato firmado, el cuestionario, y los próximos pasos claros."
+        },
+        "objective": {
+          "description": "Preparar el paquete de bienvenida para clientes nuevos."
+        },
+        "checklist": [
+          {
+            "id": "chk-paquete-bienvenida",
+            "task": "Preparar el paquete de bienvenida para clientes nuevos.",
+            "completed": false,
+            "registryFieldRef": "reg-paquete-bienvenida-drive"
+          }
+        ],
+        "resources": [
+          {
+            "id": "res-paquete-bienvenida",
+            "type": "template",
+            "title": "Plantilla de paquete de bienvenida",
+            "description": "Estructura base del material que recibe un cliente nuevo al firmar contigo.",
+            "provider": "Blueprint",
+            "previewUrl": "",
+            "downloadUrl": "",
+            "embedUrl": "",
+            "thumbnailUrl": "",
+            "mimeType": "",
+            "extension": "",
+            "size": 0,
+            "metadata": {
+              "pages": null,
+              "duration": null,
+              "language": "es"
+            },
+            "tags": [
+              "clientes"
+            ],
+            "visibility": "organization"
+          }
+        ],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar un paquete de bienvenida profesional para clientes nuevos.",
+          "context": "El usuario está a punto de recibir a sus primeros clientes.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-paquete-bienvenida-drive",
+            "label": "Enlace al paquete en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-agendar-primera-reunion",
+      "title": "Agendar la primera reunión con el prospecto",
+      "description": "Agenda la primera reunión con un cliente potencial.",
+      "icon": "calendar",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "step-paquete-bienvenida"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Agendar la primera reunión con el prospecto",
+          "summary": "Agenda la primera reunión con un cliente potencial.",
+          "body": "Usa tu herramienta de agendamiento para coordinar la fecha y hora de la primera reunión."
+        },
+        "objective": {
+          "description": "Agendar la primera reunión con el prospecto."
+        },
+        "checklist": [
+          {
+            "id": "chk-agendar-primera-reunion",
+            "task": "Agendar la primera reunión con el prospecto.",
+            "completed": false,
+            "registryFieldRef": "step-agendar-primera-reunion-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a coordinar la primera reunión con un prospecto.",
+          "context": "El usuario tiene un prospecto interesado y necesita agendar la primera reunión.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Confirma la reunión un día antes - reduce el ausentismo, especialmente con clientes que agendaron con varias semanas de anticipación.",
+        "registroFields": [
+          {
+            "id": "step-agendar-primera-reunion-status",
+            "label": "Estado de: Agendar la primera reunión con el prospecto",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -377,21 +320,454 @@
       }
     },
     {
-      "id": "v2-step-construir-plan",
-      "title": "Construir el Plan Financiero del Cliente",
-      "description": "Construye el diagnóstico de la situación actual, las metas priorizadas y las recomendaciones concretas.",
+      "id": "step-enviar-cuestionario-previo",
+      "title": "Enviar el cuestionario financiero previo a la reunión",
+      "description": "Envía el cuestionario de descubrimiento antes de la reunión.",
+      "icon": "send",
       "order": 5,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "step-agendar-primera-reunion",
+        "step-cuestionario-descubrimiento"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Enviar el cuestionario financiero previo a la reunión",
+          "summary": "Envía el cuestionario de descubrimiento antes de la reunión.",
+          "body": "Enviar el cuestionario con anticipación te permite llegar a la reunión con información de base y aprovechar mejor el tiempo."
+        },
+        "objective": {
+          "description": "Enviar el cuestionario financiero previo a la reunión."
+        },
+        "checklist": [
+          {
+            "id": "chk-enviar-cuestionario-previo",
+            "task": "Enviar el cuestionario financiero previo a la reunión.",
+            "completed": false,
+            "registryFieldRef": "reg-cuestionario-enviado-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar el mensaje para enviar el cuestionario previo a la reunión.",
+          "context": "El usuario ya agendó la primera reunión con un prospecto.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un cliente que llega a la reunión ya habiendo reflexionado sobre sus finanzas aprovecha mucho mejor el tiempo que uno que responde las preguntas por primera vez en vivo.",
+        "registroFields": [
+          {
+            "id": "reg-cuestionario-enviado-drive",
+            "label": "Evidencia de envío en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-enviar-agenda",
+      "title": "Enviar la agenda de la primera reunión",
+      "description": "Envía al cliente lo que se va a cubrir en la reunión.",
+      "icon": "send",
+      "order": 6,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-agendar-primera-reunion"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Enviar la agenda de la primera reunión",
+          "summary": "Envía al cliente lo que se va a cubrir en la reunión.",
+          "body": "Enviar la agenda con anticipación reduce la incertidumbre del cliente y proyecta organización."
+        },
+        "objective": {
+          "description": "Enviar la agenda de la primera reunión al cliente."
+        },
+        "checklist": [
+          {
+            "id": "chk-enviar-agenda",
+            "task": "Enviar la agenda de la primera reunión al cliente.",
+            "completed": false,
+            "registryFieldRef": "reg-agenda-enviada-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar la agenda de la primera reunión con un cliente.",
+          "context": "El usuario ya agendó la primera reunión.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Mantén la agenda a menos de 5 puntos - una lista demasiado larga genera ansiedad en vez de claridad.",
+        "registroFields": [
+          {
+            "id": "reg-agenda-enviada-drive",
+            "label": "Evidencia de envío en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-primera-reunion-financiera",
+      "title": "Realizar la primera reunión financiera con el cliente",
+      "description": "Conoce la situación financiera completa del cliente y establece expectativas claras.",
+      "icon": "users",
+      "order": 7,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "step-enviar-cuestionario-previo",
+        "step-enviar-agenda"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Realizar la primera reunión financiera con el cliente",
+          "summary": "La reunión que define el tono de toda la relación con el cliente.",
+          "body": "La primera reunión financiera tiene dos objetivos: entender a fondo la situación y las metas del cliente, y dejarle absoluta claridad sobre cómo vas a trabajar con él. No es una reunión para dar recomendaciones todavía."
+        },
+        "objective": {
+          "description": "Conocer la situación financiera completa del cliente y establecer expectativas claras sobre el proceso de asesoría."
+        },
+        "checklist": [
+          {
+            "id": "chk-revisar-situacion-actual",
+            "task": "Revisar la situación financiera actual del cliente (ingresos, gastos, activos, pasivos)",
+            "completed": false,
+            "registryFieldRef": "reg-nombre-cliente"
+          },
+          {
+            "id": "chk-identificar-metas",
+            "task": "Identificar sus metas financieras de corto, mediano y largo plazo",
+            "completed": false,
+            "registryFieldRef": "reg-nombre-cliente"
+          },
+          {
+            "id": "chk-explicar-tarifas",
+            "task": "Explicar tu modelo de tarifas y el alcance del servicio",
+            "completed": false,
+            "registryFieldRef": "reg-nombre-cliente"
+          },
+          {
+            "id": "chk-definir-frecuencia",
+            "task": "Definir la frecuencia de las próximas reuniones",
+            "completed": false,
+            "registryFieldRef": "reg-nombre-cliente"
+          }
+        ],
+        "resources": [
+          {
+            "id": "res-checklist-primera-reunion",
+            "type": "pdf",
+            "title": "Checklist de la primera reunión financiera",
+            "description": "Guía paso a paso para conducir la primera reunión con un cliente nuevo.",
+            "provider": "Blueprint",
+            "previewUrl": "",
+            "downloadUrl": "",
+            "embedUrl": "",
+            "thumbnailUrl": "",
+            "mimeType": "",
+            "extension": "",
+            "size": 0,
+            "metadata": {
+              "pages": null,
+              "duration": null,
+              "language": "es"
+            },
+            "tags": [
+              "clientes"
+            ],
+            "visibility": "organization"
+          }
+        ],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a preparar y conducir una primera reunión financiera efectiva con un cliente nuevo.",
+          "context": "El usuario está por tener la primera reunión con un cliente nuevo y quiere generar confianza y claridad desde el inicio.",
+          "suggestions": [
+            "¿Qué preguntas debo hacer en una primera reunión financiera?",
+            "¿Cómo explico mi modelo de tarifas sin sonar incómodo?"
+          ]
+        },
+        "knowledge": [],
+        "whyItMatters": "La primera reunión define la relación completa con el cliente: si no genera confianza y claridad desde el inicio, es muy difícil recuperarla después.",
+        "bestPractices": [
+          "Escucha más de lo que hablas: deja que el cliente cuente su situación con sus propias palabras.",
+          "Sé explícito sobre tarifas y alcance del servicio desde el primer minuto.",
+          "Cierra la reunión con próximos pasos concretos y una fecha para la siguiente sesión."
+        ],
+        "commonMistakes": [
+          "Empezar a dar recomendaciones de inversión antes de entender el panorama completo del cliente.",
+          "Dejar el tema de tarifas para después, generando desconfianza."
+        ],
+        "tip": "Graba (con permiso del cliente) o toma notas detalladas durante la reunión - vas a necesitar esa información exacta para el plan financiero que entregarás después.",
+        "recommendedTools": [
+          {
+            "name": "Herramienta de videollamada con grabación",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "reg-nombre-cliente",
+            "label": "Nombre del cliente",
+            "type": "text",
+            "required": true
+          },
+          {
+            "id": "reg-objetivos-financieros",
+            "label": "Objetivos financieros principales",
+            "type": "textarea",
+            "helpText": "Resume las metas de corto, mediano y largo plazo que mencionó el cliente.",
+            "required": true
+          },
+          {
+            "id": "reg-modelo-tarifa-acordado",
+            "label": "Modelo de tarifa acordado",
+            "type": "select",
+            "options": [
+              "Tarifa fija",
+              "Porcentaje de activos gestionados (AUM)",
+              "Por hora",
+              "Retainer mensual"
+            ]
+          },
+          {
+            "id": "reg-notas-reunion",
+            "label": "Notas de la reunión",
+            "type": "textarea"
+          },
+          {
+            "id": "reg-proxima-reunion",
+            "label": "Fecha acordada para la próxima reunión",
+            "type": "text"
+          },
+          {
+            "id": "reg-patrimonio-cliente",
+            "label": "Patrimonio total del cliente",
+            "type": "number",
+            "placeholder": "Ej. 50000"
+          },
+          {
+            "id": "reg-ingresos-mensuales-cliente",
+            "label": "Ingresos mensuales del cliente",
+            "type": "number",
+            "placeholder": "Ej. 4000"
+          }
+        ],
+        "learnings": [
+          {
+            "title": "La confianza se construye escuchando",
+            "description": "Los clientes recuerdan cómo los hiciste sentir en la primera reunión más que los detalles técnicos que les explicaste."
+          },
+          {
+            "title": "La claridad sobre tarifas evita fricciones futuras",
+            "description": "Ser transparente sobre cómo cobras desde el primer encuentro previene conversaciones incómodas más adelante."
+          }
+        ],
+        "inspirationalQuote": "La gente no recuerda lo que dijiste, recuerda cómo la hiciste sentir."
+      }
+    },
+    {
+      "id": "step-enviar-resumen-reunion",
+      "title": "Enviar el resumen y notas de la primera reunión",
+      "description": "Envía un resumen escrito de lo conversado.",
+      "icon": "send",
+      "order": 8,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-primera-reunion-financiera"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Enviar el resumen y notas de la primera reunión",
+          "summary": "Envía un resumen escrito de lo conversado en la primera reunión.",
+          "body": "Documentar por escrito lo conversado evita malentendidos y muestra profesionalismo."
+        },
+        "objective": {
+          "description": "Enviar un resumen escrito de la primera reunión al cliente."
+        },
+        "checklist": [
+          {
+            "id": "chk-enviar-resumen-reunion",
+            "task": "Enviar un resumen escrito de la primera reunión al cliente.",
+            "completed": false,
+            "registryFieldRef": "reg-resumen-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar un resumen claro de la primera reunión con un cliente.",
+          "context": "El usuario ya tuvo la primera reunión con el cliente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-resumen-drive",
+            "label": "Enlace al resumen en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-solicitar-documentos-cliente",
+      "title": "Solicitar los documentos financieros del cliente",
+      "description": "Solicita los documentos necesarios para construir el plan.",
+      "icon": "folder",
+      "order": 9,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-enviar-cuestionario-previo"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Solicitar los documentos financieros del cliente",
+          "summary": "Solicita los documentos financieros necesarios para construir el plan.",
+          "body": "Solicita estados de cuenta, declaraciones de impuestos u otros documentos que necesites para construir un plan financiero preciso."
+        },
+        "objective": {
+          "description": "Solicitar los documentos financieros necesarios del cliente."
+        },
+        "checklist": [
+          {
+            "id": "chk-solicitar-documentos-cliente",
+            "task": "Solicitar los documentos financieros necesarios del cliente.",
+            "completed": false,
+            "registryFieldRef": "reg-documentos-cliente-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar la solicitud de documentos financieros a un cliente.",
+          "context": "El usuario necesita documentos adicionales para construir el plan financiero.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Da un plazo concreto para recibir los documentos (ej. 5 días hábiles) - sin fecha límite, es común que se retrasen semanas.",
+        "registroFields": [
+          {
+            "id": "reg-documentos-cliente-drive",
+            "label": "Carpeta con documentos del cliente",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-organizar-expediente-cliente",
+      "title": "Crear el expediente digital del cliente en el CRM",
+      "description": "Registra al cliente en el CRM con toda su información.",
+      "icon": "folder",
+      "order": 10,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-primera-reunion-financiera"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear el expediente digital del cliente en el CRM",
+          "summary": "Registra al cliente en el CRM con su información completa.",
+          "body": "Registra al cliente en tu CRM y en la estructura de carpetas que ya definiste, para mantener todo organizado desde el inicio."
+        },
+        "objective": {
+          "description": "Crear el expediente digital completo del cliente en el CRM."
+        },
+        "checklist": [
+          {
+            "id": "chk-organizar-expediente-cliente",
+            "task": "Crear el expediente digital completo del cliente en el CRM.",
+            "completed": false,
+            "registryFieldRef": "reg-expediente-cliente-crm"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a organizar el expediente digital de un cliente nuevo.",
+          "context": "El usuario ya tuvo la primera reunión con el cliente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un expediente completo y organizado desde el inicio es lo que te permite dar un servicio consistente incluso si el cliente vuelve después de meses sin contacto.",
+        "registroFields": [
+          {
+            "id": "reg-expediente-cliente-crm",
+            "label": "Enlace al expediente en el CRM",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-construir-plan",
+      "title": "Construir el plan financiero del cliente",
+      "description": "Traduce la información recopilada en un plan financiero claro y accionable.",
+      "icon": "line-chart",
+      "order": 11,
       "type": "one_time",
       "estimatedHours": 6,
       "difficulty": "hard",
       "priority": "high",
       "dependencies": [
-        "v2-step-primera-reunion",
-        "v2-step-software-planificacion"
+        "step-enviar-resumen-reunion",
+        "step-solicitar-documentos-cliente"
       ],
       "completionRules": {
         "requiredChecklist": true,
-        "requiredResources": false,
+        "requiredResources": true,
         "requiredApproval": false,
         "requiredQuiz": false
       },
@@ -456,16 +832,17 @@
       }
     },
     {
-      "id": "v2-step-revisar-plan",
-      "title": "Revisar el Plan Financiero",
-      "description": "Verifica datos, coherencia de recomendaciones y que el plan sea accionable antes de presentarlo.",
-      "order": 6,
+      "id": "step-revisar-plan",
+      "title": "Revisar el plan financiero antes de presentarlo",
+      "description": "Revisa el plan antes de la reunión de presentación.",
+      "icon": "clipboard-check",
+      "order": 12,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
       "priority": "high",
       "dependencies": [
-        "v2-step-construir-plan"
+        "step-construir-plan"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -475,133 +852,50 @@
       },
       "content": {
         "overview": {
-          "title": "Revisar el Plan Financiero",
-          "summary": "Verifica datos, coherencia de recomendaciones y que el plan sea accionable antes de presentarlo.",
-          "body": "Verifica datos, coherencia de recomendaciones y que el plan sea accionable.\n\nHaz que un colega revise el plan si es posible — una segunda mirada siempre encuentra lo que tú pasaste por alto."
+          "title": "Revisar el plan financiero antes de presentarlo",
+          "summary": "Revisa el plan antes de la reunión de presentación.",
+          "body": "Revisa cifras, ortografía y claridad antes de presentar el plan al cliente."
         },
         "objective": {
-          "description": "¿Revisaste el plan antes de presentarlo?"
+          "description": "Revisar el plan financiero antes de presentarlo al cliente."
         },
         "checklist": [
           {
-            "id": "v2-chk-rp-01",
-            "task": "Verificar datos y cálculos",
+            "id": "chk-revisar-plan",
+            "task": "Revisar el plan financiero antes de presentarlo al cliente.",
             "completed": false,
-            "registryFieldRef": "revisar-plan-status"
-          },
-          {
-            "id": "v2-chk-rp-02",
-            "task": "Revisar coherencia de recomendaciones",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-rp-03",
-            "task": "Validar que el plan sea accionable",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-rp-04",
-            "task": "Corregir errores encontrados",
-            "completed": false
+            "registryFieldRef": "reg-plan-revisado-drive"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a hacer la revisión final del plan financiero antes de presentarlo al cliente.",
-          "context": "El usuario terminó de construir el plan y necesita revisarlo antes de presentarlo.",
+          "systemPrompt": "Ayuda al usuario a hacer una revisión final de un plan financiero antes de presentarlo.",
+          "context": "El usuario ya construyó el plan financiero del cliente.",
           "suggestions": []
         },
         "knowledge": [],
+        "tip": "Deja pasar al menos un día entre terminar el plan y revisarlo - revisar inmediatamente después de escribirlo hace más fácil pasar por alto errores.",
         "registroFields": [
           {
-            "id": "revisar-plan-status",
-            "label": "Estado de la tarea: Revisar el Plan Financiero",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-plan-revisado-drive",
+            "label": "Enlace al plan ya revisado",
+            "type": "url"
           }
         ]
       }
     },
     {
-      "id": "v2-step-presentar-plan",
-      "title": "Presentar el Plan al Cliente",
-      "description": "Presenta el plan financiero al cliente en una reunión dedicada y responde sus preguntas.",
-      "order": 7,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-revisar-plan"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Presentar el Plan al Cliente",
-          "summary": "Presenta el plan financiero al cliente en una reunión dedicada y responde sus preguntas.",
-          "body": "Presenta el plan financiero al cliente en una reunión dedicada.\n\nExplica cada recomendación y su justificación.\n\nResponde preguntas y ajusta según feedback del cliente."
-        },
-        "objective": {
-          "description": "¿Presentaste el plan de forma clara y profesional?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-pp-01",
-            "task": "Presentar plan en reunión dedicada",
-            "completed": false,
-            "registryFieldRef": "presentar-plan-status"
-          },
-          {
-            "id": "v2-chk-pp-02",
-            "task": "Explicar cada recomendación",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-pp-03",
-            "task": "Responder preguntas del cliente",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-pp-04",
-            "task": "Documentar ajustes acordados",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a preparar y ejecutar una presentación efectiva del plan financiero al cliente.",
-          "context": "El usuario está listo para presentar el plan financiero a su cliente.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "presentar-plan-status",
-            "label": "Estado de la tarea: Presentar el Plan al Cliente",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-firma-plan",
-      "title": "Recopilar Firma del Cliente sobre el Plan",
-      "description": "Usa tu herramienta de firma electrónica para que el cliente confirme formalmente el plan acordado.",
-      "order": 8,
+      "id": "step-agendar-presentacion-plan",
+      "title": "Agendar la reunión de presentación del plan",
+      "description": "Agenda la reunión donde vas a presentar el plan.",
+      "icon": "calendar",
+      "order": 13,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
-      "priority": "high",
+      "priority": "normal",
       "dependencies": [
-        "v2-step-presentar-plan"
+        "step-revisar-plan"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -611,51 +905,197 @@
       },
       "content": {
         "overview": {
-          "title": "Recopilar Firma del Cliente sobre el Plan",
-          "summary": "Usa tu herramienta de firma electrónica para que el cliente confirme formalmente el plan acordado.",
-          "body": "Usa tu herramienta de firma electrónica para que el cliente confirme formalmente el plan acordado.\n\nEsta confirmación protege a ambas partes y establece compromiso."
+          "title": "Agendar la reunión de presentación del plan",
+          "summary": "Agenda la reunión donde vas a presentar el plan financiero.",
+          "body": "Coordina con el cliente la fecha para presentarle el plan financiero terminado."
         },
         "objective": {
-          "description": "¿Obtuviste confirmación formal?"
+          "description": "Agendar la reunión de presentación del plan financiero."
         },
         "checklist": [
           {
-            "id": "v2-chk-fp-01",
-            "task": "Enviar plan para firma electrónica",
+            "id": "chk-agendar-presentacion-plan",
+            "task": "Agendar la reunión de presentación del plan financiero.",
             "completed": false,
-            "registryFieldRef": "firma-plan-status"
-          },
-          {
-            "id": "v2-chk-fp-02",
-            "task": "Obtener firma del cliente",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-fp-03",
-            "task": "Archivar documento firmado",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-fp-04",
-            "task": "Programar seguimientos mensuales",
-            "completed": false
+            "registryFieldRef": "reg-reunion-presentacion-agendada"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a formalizar el acuerdo sobre el plan financiero con su cliente.",
-          "context": "El cliente aprobó el plan en la reunión y ahora necesita formalizarlo por escrito.",
+          "systemPrompt": "Ayuda al usuario a coordinar la reunión de presentación del plan financiero.",
+          "context": "El usuario ya revisó el plan financiero del cliente.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "Un plan firmado por el cliente establece un compromiso mutuo y sirve como referencia para evaluar el progreso en los seguimientos futuros.",
+        "tip": "Agenda esta reunión con al menos 45 minutos - presentar un plan financiero completo toma más tiempo que una reunión de seguimiento normal.",
         "registroFields": [
           {
-            "id": "firma-plan-status",
-            "label": "Estado de la tarea: Recopilar Firma del Cliente sobre el Plan",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-reunion-presentacion-agendada",
+            "label": "Confirmación de la cita agendada",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-presentar-plan",
+      "title": "Presentar el plan financiero al cliente",
+      "description": "Presenta el plan financiero completo al cliente.",
+      "icon": "presentation",
+      "order": 14,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "step-agendar-presentacion-plan"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Presentar el plan financiero al cliente",
+          "summary": "Presenta el plan financiero completo al cliente.",
+          "body": "Preséntalo en una reunión, no solo por correo - el plan se entiende mejor cuando lo explicas en voz alta y respondes preguntas en el momento."
+        },
+        "objective": {
+          "description": "Presentar el plan financiero completo al cliente."
+        },
+        "checklist": [
+          {
+            "id": "chk-presentar-plan",
+            "task": "Presentar el plan financiero completo al cliente.",
+            "completed": false,
+            "registryFieldRef": "reg-plan-final-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a preparar la presentación de un plan financiero a un cliente.",
+          "context": "El usuario ya tiene el plan financiero terminado y revisado.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-plan-final-drive",
+            "label": "Enlace al plan financiero entregado en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-firma-plan-acordado",
+      "title": "Recopilar la firma del cliente sobre el plan acordado",
+      "description": "Obtén la confirmación formal del cliente sobre el plan.",
+      "icon": "pen-tool",
+      "order": 15,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-presentar-plan"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Recopilar la firma del cliente sobre el plan acordado",
+          "summary": "Obtén la confirmación formal del cliente sobre el plan acordado.",
+          "body": "Usa tu herramienta de firma electrónica para que el cliente confirme formalmente el plan acordado."
+        },
+        "objective": {
+          "description": "Obtener la confirmación formal del cliente sobre el plan acordado."
+        },
+        "checklist": [
+          {
+            "id": "chk-firma-plan-acordado",
+            "task": "Obtener la confirmación formal del cliente sobre el plan acordado.",
+            "completed": false,
+            "registryFieldRef": "reg-plan-firmado-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a formalizar la aceptación del plan financiero por parte del cliente.",
+          "context": "El usuario ya presentó el plan financiero al cliente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Tener el plan formalmente aceptado por escrito evita ambigüedad sobre qué se acordó si surge una diferencia de opinión más adelante.",
+        "registroFields": [
+          {
+            "id": "reg-plan-firmado-drive",
+            "label": "Enlace al documento firmado",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-programar-seguimiento",
+      "title": "Programar el primer seguimiento mensual",
+      "description": "Programa la primera reunión de seguimiento con el cliente.",
+      "icon": "calendar-clock",
+      "order": 16,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-firma-plan-acordado"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Programar el primer seguimiento mensual",
+          "summary": "Programa la primera reunión de seguimiento con el cliente.",
+          "body": "Programa estos seguimientos con anticipación en el calendario del cliente para que se conviertan en un hábito, no en una excepción."
+        },
+        "objective": {
+          "description": "Programar la primera reunión de seguimiento mensual con el cliente."
+        },
+        "checklist": [
+          {
+            "id": "chk-programar-seguimiento",
+            "task": "Programar la primera reunión de seguimiento mensual con el cliente.",
+            "completed": false,
+            "registryFieldRef": "reg-fecha-primer-seguimiento"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a programar el calendario de seguimiento con un cliente nuevo.",
+          "context": "El usuario ya formalizó el plan financiero con el cliente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Programa los próximos 3 seguimientos de una sola vez, no uno a la vez - reduce el riesgo de que se pierda el ritmo del acompañamiento.",
+        "registroFields": [
+          {
+            "id": "reg-fecha-primer-seguimiento",
+            "label": "Fecha del primer seguimiento",
+            "type": "date"
+          },
+          {
+            "id": "reg-programar-seguimiento-drive",
+            "label": "Enlace al calendario de seguimientos",
+            "type": "url"
           }
         ]
       }

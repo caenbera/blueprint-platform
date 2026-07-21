@@ -38,12 +38,14 @@
           {
             "id": "v2-chk-pc-02",
             "task": "Responder comentarios y mensajes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "contenido-semanal-status"
           },
           {
             "id": "v2-chk-pc-03",
             "task": "Interactuar con comunidad",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "contenido-semanal-status"
           }
         ],
         "resources": [],
@@ -56,7 +58,7 @@
         "registroFields": [
           {
             "id": "contenido-semanal-status",
-            "label": "Estado de la tarea: Publicar Contenido Educativo",
+            "label": "Estado de: Publicar Contenido Educativo",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -99,17 +101,20 @@
           {
             "id": "v2-chk-bl-02",
             "task": "Incluir recordatorios fiscales",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "boletin-mensual-status"
           },
           {
             "id": "v2-chk-bl-03",
             "task": "Enviar a lista de clientes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "boletin-mensual-status"
           },
           {
             "id": "v2-chk-bl-04",
             "task": "Monitorear tasas de apertura",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "boletin-mensual-status"
           }
         ],
         "resources": [],
@@ -125,7 +130,7 @@
         "registroFields": [
           {
             "id": "boletin-mensual-status",
-            "label": "Estado de la tarea: Enviar Boletín a Clientes",
+            "label": "Estado de: Enviar Boletín a Clientes",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -168,17 +173,20 @@
           {
             "id": "v2-chk-mm-02",
             "task": "Analizar engagement en redes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "metricas-marketing-status"
           },
           {
             "id": "v2-chk-mm-03",
             "task": "Calcular CAC y ROI",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "metricas-marketing-status"
           },
           {
             "id": "v2-chk-mm-04",
             "task": "Ajustar estrategia según datos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "metricas-marketing-status"
           }
         ],
         "resources": [],
@@ -191,7 +199,7 @@
         "registroFields": [
           {
             "id": "metricas-marketing-status",
-            "label": "Estado de la tarea: Analizar Métricas de Marketing",
+            "label": "Estado de: Analizar Métricas de Marketing",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -234,17 +242,20 @@
           {
             "id": "v2-chk-tw-02",
             "task": "Preparar material",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "taller-webinar-status"
           },
           {
             "id": "v2-chk-tw-03",
             "task": "Ejecutar taller",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "taller-webinar-status"
           },
           {
             "id": "v2-chk-tw-04",
             "task": "Seguimiento a asistentes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "taller-webinar-status"
           }
         ],
         "resources": [],
@@ -259,7 +270,7 @@
         "registroFields": [
           {
             "id": "taller-webinar-status",
-            "label": "Estado de la tarea: Organizar Taller o Webinar",
+            "label": "Estado de: Organizar Taller o Webinar",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -302,17 +313,20 @@
           {
             "id": "v2-chk-pma-02",
             "task": "Presupuestar actividades",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "plan-marketing-anual-status"
           },
           {
             "id": "v2-chk-pma-03",
             "task": "Establecer métricas de éxito",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "plan-marketing-anual-status"
           },
           {
             "id": "v2-chk-pma-04",
             "task": "Documentar plan anual",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "plan-marketing-anual-status"
           }
         ],
         "resources": [],
@@ -325,7 +339,7 @@
         "registroFields": [
           {
             "id": "plan-marketing-anual-status",
-            "label": "Estado de la tarea: Planificar Marketing del Año",
+            "label": "Estado de: Planificar Marketing del Año",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -368,22 +382,26 @@
           {
             "id": "v2-chk-sc-02",
             "task": "Actualizar cambios en situación del cliente",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "seguimiento-clientes-status"
           },
           {
             "id": "v2-chk-sc-03",
             "task": "Ajustar plan si es necesario",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "seguimiento-clientes-status"
           },
           {
             "id": "v2-chk-sc-04",
             "task": "Documentar notas de seguimiento",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "seguimiento-clientes-status"
           },
           {
             "id": "v2-chk-sc-05",
             "task": "Programar próximo seguimiento",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "seguimiento-clientes-status"
           }
         ],
         "resources": [],
@@ -397,7 +415,7 @@
         "registroFields": [
           {
             "id": "seguimiento-clientes-status",
-            "label": "Estado de la tarea: Seguimiento Mensual con Clientes",
+            "label": "Estado de: Seguimiento Mensual con Clientes",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -440,17 +458,20 @@
           {
             "id": "v2-chk-rt-02",
             "task": "Analizar comentarios recibidos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "retroalimentacion-status"
           },
           {
             "id": "v2-chk-rt-03",
             "task": "Implementar mejoras",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "retroalimentacion-status"
           },
           {
             "id": "v2-chk-rt-04",
             "task": "Documentar feedback",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "retroalimentacion-status"
           }
         ],
         "resources": [],
@@ -463,7 +484,7 @@
         "registroFields": [
           {
             "id": "retroalimentacion-status",
-            "label": "Estado de la tarea: Solicitar Retroalimentación al Cliente",
+            "label": "Estado de: Solicitar Retroalimentación al Cliente",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -506,17 +527,20 @@
           {
             "id": "v2-chk-rft-02",
             "task": "Pedir referidos de forma directa",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "referidos-trimestral-status"
           },
           {
             "id": "v2-chk-rft-03",
             "task": "Dar seguimiento a referidos recibidos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "referidos-trimestral-status"
           },
           {
             "id": "v2-chk-rft-04",
             "task": "Agradecer a clientes que refieren",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "referidos-trimestral-status"
           }
         ],
         "resources": [],
@@ -530,7 +554,7 @@
         "registroFields": [
           {
             "id": "referidos-trimestral-status",
-            "label": "Estado de la tarea: Solicitar Referidos a Clientes Satisfechos",
+            "label": "Estado de: Solicitar Referidos a Clientes Satisfechos",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -573,17 +597,20 @@
           {
             "id": "v2-chk-es-02",
             "task": "Enviar a clientes activos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "encuestas-satisfaccion-status"
           },
           {
             "id": "v2-chk-es-03",
             "task": "Analizar resultados",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "encuestas-satisfaccion-status"
           },
           {
             "id": "v2-chk-es-04",
             "task": "Implementar cambios según feedback",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "encuestas-satisfaccion-status"
           }
         ],
         "resources": [],
@@ -596,7 +623,7 @@
         "registroFields": [
           {
             "id": "encuestas-satisfaccion-status",
-            "label": "Estado de la tarea: Encuestas de Satisfacción",
+            "label": "Estado de: Encuestas de Satisfacción",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -639,17 +666,20 @@
           {
             "id": "v2-chk-rpa-02",
             "task": "Actualizar proyecciones financieras",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-planes-clientes-status"
           },
           {
             "id": "v2-chk-rpa-03",
             "task": "Ajustar metas según cambios",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-planes-clientes-status"
           },
           {
             "id": "v2-chk-rpa-04",
             "task": "Documentar revisiones realizadas",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-planes-clientes-status"
           }
         ],
         "resources": [],
@@ -663,7 +693,7 @@
         "registroFields": [
           {
             "id": "revision-planes-clientes-status",
-            "label": "Estado de la tarea: Revisión Anual de Planes Financieros",
+            "label": "Estado de: Revisión Anual de Planes Financieros",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true

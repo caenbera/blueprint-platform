@@ -4,89 +4,10 @@
   "block": "strategy",
   "steps": [
     {
-      "id": "v2-step-mision-vision",
-      "title": "Definir la Misión y Visión de la Firma",
-      "description": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
-      "order": 0,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Definir la Misión y Visión de la Firma",
-          "summary": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
-          "body": "Redacta una declaración clara que defina tu propósito como asesor financiero.\n\nEjemplo: 'Ser el brazo administrativo y estratégico que potencia la rentabilidad y sostenibilidad financiera de cada cliente que confía en nosotros'.\n\nLa misión debe comunicar claramente:\n- A quién ayudas\n- Qué problema resuelves\n- Cómo lo haces de forma única\n\nPublícala en un lugar donde puedas revisarla regularmente."
-        },
-        "objective": {
-          "description": "¿Cuál es el propósito fundamental de tu firma de asesoría financiera?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-mision-01",
-            "task": "Redactar declaración de misión clara y concisa",
-            "completed": false,
-            "registryFieldRef": "v2-reg-mision"
-          },
-          {
-            "id": "v2-chk-mision-02",
-            "task": "Definir visión a 3-5 años",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-mision-03",
-            "task": "Establecer valores fundamentales",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-mision-04",
-            "task": "Documentar propuesta de valor única",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-mision-05",
-            "task": "Validar misión con 2-3 colegas de confianza",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a redactar la misión, visión y valores fundamentales de su firma de asesoría financiera.",
-          "context": "El usuario está definiendo el propósito y la dirección estratégica de su firma.",
-          "suggestions": [
-            "¿Cómo redacto una declaración de misión para una firma de asesoría financiera?"
-          ]
-        },
-        "knowledge": [],
-        "tip": "Publica la misión en un lugar donde la veas con frecuencia — te va a servir como brújula cuando tengas que tomar decisiones difíciles.",
-        "registroFields": [
-          {
-            "id": "v2-reg-mision",
-            "label": "Declaración de misión redactada",
-            "type": "textarea",
-            "required": true
-          },
-          {
-            "id": "v2-reg-vision",
-            "label": "Visión a 3-5 años",
-            "type": "textarea",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
       "id": "v2-step-gobernanza",
       "title": "Establecer el Modelo de Gobernanza",
       "description": "Define la relación de independencia y reporte con clientes y stakeholders.",
-      "order": 1,
+      "order": 0,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -119,17 +40,20 @@
           {
             "id": "v2-chk-gov-02",
             "task": "Definir mecanismos de toma de decisiones",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "v2-reg-gobernanza-drive"
           },
           {
             "id": "v2-chk-gov-03",
             "task": "Establecer protocolos de reporte",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "v2-reg-gobernanza-drive"
           },
           {
             "id": "v2-chk-gov-04",
             "task": "Documentar responsabilidades",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "v2-reg-gobernanza-drive"
           }
         ],
         "resources": [],
@@ -150,148 +74,10 @@
       }
     },
     {
-      "id": "v2-step-kpis",
-      "title": "Desarrollar los KPIs Estratégicos",
-      "description": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
-      "order": 2,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [
-        "v2-step-gobernanza"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Desarrollar los KPIs Estratégicos",
-          "summary": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
-          "body": "Los KPIs te permiten medir objetivamente el desempeño de tu firma y tomar decisiones basadas en datos.\n\nEjemplos de KPIs para asesoría financiera:\n- % de clientes que utilizan servicios recurrentemente\n- Tiempo promedio de resolución de consultas\n- Número de planes financieros entregados\n- Tasa de retención de clientes\n- Ingresos recurrentes mensuales (MRR)"
-        },
-        "objective": {
-          "description": "¿Qué métricas medirán el éxito de tu firma?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-kpi-01",
-            "task": "Definir métricas de clientes",
-            "completed": false,
-            "registryFieldRef": "kpis-status"
-          },
-          {
-            "id": "v2-chk-kpi-02",
-            "task": "Establecer métricas financieras",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-kpi-03",
-            "task": "Crear dashboard de seguimiento",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-kpi-04",
-            "task": "Documentar frecuencia de revisión",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a definir los KPIs más relevantes para una firma de asesoría financiera.",
-          "context": "El usuario está estableciendo las métricas que usará para medir el éxito de su firma.",
-          "suggestions": [
-            "¿Cuáles son los KPIs más importantes para una firma de asesoría financiera?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "Sin métricas claras no sabrás si tus esfuerzos están funcionando — los KPIs convierten la intuición en decisiones basadas en datos.",
-        "registroFields": [
-          {
-            "id": "kpis-status",
-            "label": "Estado de la tarea: Desarrollar los KPIs Estratégicos",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-encuesta-necesidades",
-      "title": "Realizar Encuesta de Necesidades del Mercado",
-      "description": "Entiende qué necesidades financieras tienen tus clientes potenciales antes de lanzar.",
-      "order": 3,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Realizar Encuesta de Necesidades del Mercado",
-          "summary": "Entiende qué necesidades financieras tienen tus clientes potenciales antes de lanzar.",
-          "body": "Antes de lanzar, entiende qué necesidades financieras tienen tus clientes potenciales.\n\nPreguntar:\n- '¿Cuáles son sus mayores desafíos financieros?'\n- '¿En qué área necesita más ayuda?'\n- '¿Qué servicios de asesoría ha utilizado antes?'\n\nEsta información te permitirá enfocar tus servicios en lo que realmente necesita el mercado."
-        },
-        "objective": {
-          "description": "¿Qué necesitan realmente tus clientes potenciales?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-enc-01",
-            "task": "Crear formulario de encuesta",
-            "completed": false,
-            "registryFieldRef": "v2-reg-encuesta-drive"
-          },
-          {
-            "id": "v2-chk-enc-02",
-            "task": "Enviar a clientes potenciales",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-enc-03",
-            "task": "Analizar resultados y priorizar servicios",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-enc-04",
-            "task": "Documentar hallazgos clave",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a diseñar y analizar una encuesta de necesidades para clientes potenciales de asesoría financiera.",
-          "context": "El usuario quiere validar qué servicios necesita el mercado antes de definir su oferta.",
-          "suggestions": [
-            "¿Qué preguntas incluir en una encuesta de necesidades financieras?"
-          ]
-        },
-        "knowledge": [],
-        "tip": "Habla con al menos 10-15 personas — con menos de eso los patrones que encuentres pueden ser coincidencias.",
-        "registroFields": [
-          {
-            "id": "v2-reg-encuesta-drive",
-            "label": "Enlace a los resultados de la encuesta",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
       "id": "v2-rec-kpis-mensual",
       "title": "Revisión Mensual de KPIs",
       "description": "Analiza métricas clave y compara con objetivos.",
-      "order": 4,
+      "order": 1,
       "type": "monthly",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -322,17 +108,20 @@
           {
             "id": "v2-chk-km-02",
             "task": "Comparar con objetivos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "kpis-mensual-status"
           },
           {
             "id": "v2-chk-km-03",
             "task": "Identificar áreas de mejora",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "kpis-mensual-status"
           },
           {
             "id": "v2-chk-km-04",
             "task": "Ajustar estrategia",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "kpis-mensual-status"
           }
         ],
         "resources": [],
@@ -345,7 +134,7 @@
         "registroFields": [
           {
             "id": "kpis-mensual-status",
-            "label": "Estado de la tarea: Revisión Mensual de KPIs",
+            "label": "Estado de: Revisión Mensual de KPIs",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -357,7 +146,7 @@
       "id": "v2-rec-informe-trimestral",
       "title": "Presentar Informe Trimestral",
       "description": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre.",
-      "order": 5,
+      "order": 2,
       "type": "quarterly",
       "estimatedHours": 3,
       "difficulty": "medium",
@@ -388,17 +177,20 @@
           {
             "id": "v2-chk-it-02",
             "task": "Incluir estado financiero",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "informe-trimestral-status"
           },
           {
             "id": "v2-chk-it-03",
             "task": "Presentar a stakeholders",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "informe-trimestral-status"
           },
           {
             "id": "v2-chk-it-04",
             "task": "Recopilar retroalimentación",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "informe-trimestral-status"
           }
         ],
         "resources": [],
@@ -411,7 +203,7 @@
         "registroFields": [
           {
             "id": "informe-trimestral-status",
-            "label": "Estado de la tarea: Presentar Informe Trimestral",
+            "label": "Estado de: Presentar Informe Trimestral",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -423,7 +215,7 @@
       "id": "v2-rec-revision-estrategia",
       "title": "Revisar y Ajustar Estrategia",
       "description": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras.",
-      "order": 6,
+      "order": 3,
       "type": "quarterly",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -454,17 +246,20 @@
           {
             "id": "v2-chk-re-02",
             "task": "Evaluar feedback de clientes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-estrategia-status"
           },
           {
             "id": "v2-chk-re-03",
             "task": "Proponer nuevos servicios",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-estrategia-status"
           },
           {
             "id": "v2-chk-re-04",
             "task": "Documentar cambios estratégicos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-estrategia-status"
           }
         ],
         "resources": [],
@@ -477,7 +272,7 @@
         "registroFields": [
           {
             "id": "revision-estrategia-status",
-            "label": "Estado de la tarea: Revisar y Ajustar Estrategia",
+            "label": "Estado de: Revisar y Ajustar Estrategia",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true

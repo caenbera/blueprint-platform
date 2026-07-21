@@ -4,17 +4,16 @@
   "block": "business",
   "steps": [
     {
-      "id": "v2-step-cuenta-bancaria",
-      "title": "Abrir Cuenta Bancaria Empresarial",
-      "description": "Separa las finanzas de la firma de tus finanzas personales desde el primer día.",
+      "id": "step-comparar-bancos",
+      "title": "Comparar bancos con cuentas para empresas de servicios profesionales",
+      "description": "Compara al menos 2 bancos antes de elegir dónde abrir tu cuenta empresarial.",
+      "icon": "landmark",
       "order": 0,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "easy",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-registro-mercantil"
-      ],
+      "priority": "normal",
+      "dependencies": [],
       "completionRules": {
         "requiredChecklist": true,
         "requiredResources": false,
@@ -23,53 +22,33 @@
       },
       "content": {
         "overview": {
-          "title": "Abrir Cuenta Bancaria Empresarial",
-          "summary": "Separa las finanzas de la firma de tus finanzas personales desde el primer día.",
-          "body": "Esto es crucial para:\n- Seguimiento claro de ingresos y gastos\n- Separación patrimonial\n- Facilitar la contabilidad\n- Proyectar profesionalismo\n\nCompara al menos 2 bancos: comisiones, integración con software contable, banca en línea.\n\nEn una asesoría financiera, tu propia operación debe ser un ejemplo de orden."
+          "title": "Comparar bancos con cuentas para empresas de servicios profesionales",
+          "summary": "Compara al menos 2 bancos antes de elegir dónde abrir tu cuenta empresarial.",
+          "body": "Compara comisiones, integración con software de contabilidad y calidad de la banca en línea de al menos 2 bancos."
         },
         "objective": {
-          "description": "¿Separaste las finanzas personales de las del negocio?"
+          "description": "Comparar al menos 2 bancos con cuentas empresariales adecuadas para una firma de servicios profesionales."
         },
         "checklist": [
           {
-            "id": "v2-chk-banco-01",
-            "task": "Comparar al menos 2 bancos",
+            "id": "chk-comparar-bancos",
+            "task": "Comparar al menos 2 bancos con cuentas empresariales adecuadas para una firma de servicios profesionales.",
             "completed": false,
-            "registryFieldRef": "v2-reg-banco-elegido"
-          },
-          {
-            "id": "v2-chk-banco-02",
-            "task": "Reunir documentos requeridos",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-banco-03",
-            "task": "Abrir cuenta bancaria empresarial",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-banco-04",
-            "task": "Configurar banca en línea",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-banco-05",
-            "task": "Solicitar tarjetas corporativas",
-            "completed": false
+            "registryFieldRef": "reg-banco-elegido"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a comparar y elegir el banco adecuado para abrir la cuenta empresarial de su firma.",
-          "context": "El usuario ya completó el registro mercantil y necesita abrir la cuenta bancaria.",
+          "systemPrompt": "Ayuda al usuario a comparar bancos para una cuenta empresarial.",
+          "context": "El usuario está por abrir la cuenta bancaria de su firma.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "Mezclar finanzas personales y del negocio es uno de los errores más comunes y más costosos — dificulta la contabilidad, la declaración de impuestos y la evaluación real de si tu firma es rentable.",
+        "whyItMatters": "Las comisiones y el mal servicio bancario son de los costos silenciosos que más desgastan a una firma nueva mes a mes.",
         "tip": "Pregunta específicamente por comisiones de transferencias internacionales si esperas cobrar a clientes en otro país.",
         "registroFields": [
           {
-            "id": "v2-reg-banco-elegido",
+            "id": "reg-banco-elegido",
             "label": "Banco elegido",
             "type": "text"
           }
@@ -77,16 +56,17 @@
       }
     },
     {
-      "id": "v2-step-software-contable",
-      "title": "Elegir y Configurar Software Contable",
-      "description": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.",
+      "id": "step-documentos-banco",
+      "title": "Reunir los documentos requeridos por el banco",
+      "description": "Ten listos los documentos de la firma que exige el banco.",
+      "icon": "folder",
       "order": 1,
       "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
+      "estimatedHours": 1,
+      "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "v2-step-cuenta-bancaria"
+        "step-id-tributaria"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -96,45 +76,192 @@
       },
       "content": {
         "overview": {
-          "title": "Elegir y Configurar Software Contable",
-          "summary": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.",
-          "body": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.\n\nOpciones: QuickBooks, Xero, ContaPyme.\n\nUn buen software ahorra horas cada mes y reduce errores en declaraciones.\n\nConecta tu cuenta bancaria y configura categorías antes de tu primera transacción."
+          "title": "Reunir los documentos requeridos por el banco",
+          "summary": "Ten listos los documentos de la firma que exige el banco.",
+          "body": "La mayoría de los bancos exigen el registro mercantil, la identificación tributaria y una identificación oficial del representante legal."
         },
         "objective": {
-          "description": "¿Tienes herramienta para gestionar la contabilidad?"
+          "description": "Tener listos los documentos de la firma que exige el banco para abrir la cuenta."
         },
         "checklist": [
           {
-            "id": "v2-chk-sw-01",
-            "task": "Elegir software de contabilidad",
+            "id": "chk-documentos-banco",
+            "task": "Tener listos los documentos de la firma que exige el banco para abrir la cuenta.",
             "completed": false,
-            "registryFieldRef": "software-contable-status"
-          },
-          {
-            "id": "v2-chk-sw-02",
-            "task": "Configurar plan de cuentas",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-sw-03",
-            "task": "Conectar con cuenta bancaria",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-sw-04",
-            "task": "Configurar categorías de ingresos y gastos",
-            "completed": false
+            "registryFieldRef": "step-documentos-banco-status"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a elegir y configurar el software de contabilidad más adecuado para su firma.",
-          "context": "El usuario tiene cuenta bancaria activa y necesita una herramienta contable.",
+          "systemPrompt": "Ayuda al usuario a preparar los documentos para abrir una cuenta bancaria empresarial.",
+          "context": "El usuario ya tiene su identificación tributaria y va a abrir la cuenta.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "Un buen software de contabilidad ahorra horas cada mes y reduce errores en tus declaraciones de impuestos.",
-        "tip": "Configura las categorías de gasto antes de tu primera transacción — reclasificar meses de movimientos después es mucho más lento.",
+        "tip": "Llama antes al banco para confirmar la lista exacta de documentos - varía entre bancos y evita una segunda visita.",
+        "registroFields": [
+          {
+            "id": "step-documentos-banco-status",
+            "label": "Estado de: Reunir los documentos requeridos por el banco",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-abrir-cuenta",
+      "title": "Abrir la cuenta bancaria empresarial",
+      "description": "Abre la cuenta bancaria a nombre de la firma.",
+      "icon": "wallet",
+      "order": 2,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-documentos-banco",
+        "step-comparar-bancos"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Abrir la cuenta bancaria empresarial",
+          "summary": "Abre la cuenta bancaria a nombre de la firma.",
+          "body": "Separa las finanzas de la firma de tus finanzas personales desde el primer día - esto es especialmente importante en una asesoría financiera, donde tu propia operación debe ser un ejemplo de orden."
+        },
+        "objective": {
+          "description": "Abrir la cuenta bancaria a nombre de la firma."
+        },
+        "checklist": [
+          {
+            "id": "chk-abrir-cuenta",
+            "task": "Abrir la cuenta bancaria a nombre de la firma.",
+            "completed": false,
+            "registryFieldRef": "step-abrir-cuenta-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a completar el proceso de apertura de cuenta bancaria empresarial.",
+          "context": "El usuario ya eligió el banco y reunió los documentos.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Elige un banco que ofrezca buena integración con herramientas de contabilidad - te va a ahorrar horas cada mes cuando empieces a facturar clientes.",
+        "registroFields": [
+          {
+            "id": "step-abrir-cuenta-status",
+            "label": "Estado de: Abrir la cuenta bancaria empresarial",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-banca-linea",
+      "title": "Activar la banca en línea",
+      "description": "Activa el acceso a banca en línea de la cuenta empresarial.",
+      "icon": "credit-card",
+      "order": 3,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-abrir-cuenta"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Activar la banca en línea",
+          "summary": "Activa el acceso a banca en línea de la cuenta empresarial.",
+          "body": "Activa la banca en línea y, si el banco lo ofrece, agrega usuarios adicionales para tu contador."
+        },
+        "objective": {
+          "description": "Activar el acceso a banca en línea de la cuenta empresarial."
+        },
+        "checklist": [
+          {
+            "id": "chk-banca-linea",
+            "task": "Activar el acceso a banca en línea de la cuenta empresarial.",
+            "completed": false,
+            "registryFieldRef": "step-banca-linea-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a activar y configurar la banca en línea de su cuenta empresarial.",
+          "context": "El usuario ya abrió la cuenta bancaria.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Activa también las notificaciones de movimientos - te van a ayudar a detectar cualquier cargo no autorizado de inmediato.",
+        "registroFields": [
+          {
+            "id": "step-banca-linea-status",
+            "label": "Estado de: Activar la banca en línea",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-elegir-contabilidad",
+      "title": "Elegir un software de contabilidad",
+      "description": "Elige el software con el que vas a llevar la contabilidad de la firma.",
+      "icon": "calculator",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Elegir un software de contabilidad",
+          "summary": "Elige el software con el que vas a llevar la contabilidad de la firma.",
+          "body": "Elige una herramienta de contabilidad adecuada para una firma de servicios pequeña, idealmente con buena integración bancaria."
+        },
+        "objective": {
+          "description": "Elegir el software con el que vas a llevar la contabilidad de la firma."
+        },
+        "checklist": [
+          {
+            "id": "chk-elegir-contabilidad",
+            "task": "Elegir el software con el que vas a llevar la contabilidad de la firma.",
+            "completed": false,
+            "registryFieldRef": "reg-software-contabilidad"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir un software de contabilidad adecuado para una firma pequeña de servicios profesionales.",
+          "context": "El usuario está montando la operación financiera de su firma.",
+          "suggestions": []
+        },
+        "knowledge": [],
         "recommendedTools": [
           {
             "name": "QuickBooks",
@@ -145,10 +272,65 @@
             "url": "https://www.xero.com"
           }
         ],
+        "whyItMatters": "Un buen software de contabilidad ahorra horas cada mes y reduce errores en tus declaraciones de impuestos.",
         "registroFields": [
           {
-            "id": "software-contable-status",
-            "label": "Estado de la tarea: Elegir y Configurar Software Contable",
+            "id": "reg-software-contabilidad",
+            "label": "Software de contabilidad elegido",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-configurar-contabilidad",
+      "title": "Configurar el software de contabilidad",
+      "description": "Configura el software de contabilidad con las cuentas reales de la firma.",
+      "icon": "calculator",
+      "order": 5,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-elegir-contabilidad",
+        "step-abrir-cuenta"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Configurar el software de contabilidad",
+          "summary": "Configura el software de contabilidad con las cuentas reales de la firma.",
+          "body": "Conecta tu cuenta bancaria empresarial al software de contabilidad y configura las categorías de ingresos y gastos."
+        },
+        "objective": {
+          "description": "Configurar el software de contabilidad con las cuentas reales de la firma."
+        },
+        "checklist": [
+          {
+            "id": "chk-configurar-contabilidad",
+            "task": "Configurar el software de contabilidad con las cuentas reales de la firma.",
+            "completed": false,
+            "registryFieldRef": "step-configurar-contabilidad-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a configurar su software de contabilidad por primera vez.",
+          "context": "El usuario ya eligió su software de contabilidad y su cuenta bancaria está activa.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Configura las categorías de gasto antes de tu primera transacción - reclasificar meses de movimientos después es mucho más lento.",
+        "registroFields": [
+          {
+            "id": "step-configurar-contabilidad-status",
+            "label": "Estado de: Configurar el software de contabilidad",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true

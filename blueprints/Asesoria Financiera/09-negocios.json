@@ -33,7 +33,8 @@
           {
             "id": "chk-cotizar-seguro",
             "task": "Cotizar al menos 2 aseguradoras que cubran servicios financieros.",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "step-cotizar-seguro-status"
           }
         ],
         "resources": [],
@@ -43,7 +44,16 @@
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "Los precios y coberturas de un seguro de responsabilidad profesional varían mucho entre aseguradoras - cotizar solo una te deja sin punto de comparación."
+        "whyItMatters": "Los precios y coberturas de un seguro de responsabilidad profesional varían mucho entre aseguradoras - cotizar solo una te deja sin punto de comparación.",
+        "registroFields": [
+          {
+            "id": "step-cotizar-seguro-status",
+            "label": "Estado de: Cotizar seguros de responsabilidad profesional (E&O)",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
       }
     },
     {
@@ -78,7 +88,8 @@
           {
             "id": "chk-contratar-seguro",
             "task": "Contratar la póliza de responsabilidad profesional antes de firmar tu primer contrato con un cliente.",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "reg-aseguradora"
           }
         ],
         "resources": [],
@@ -102,6 +113,59 @@
             "id": "reg-poliza-drive",
             "label": "Enlace a la póliza en Google Drive",
             "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-almacenamiento-seguro",
+      "title": "Elegir una herramienta de almacenamiento seguro de documentos",
+      "description": "Elige dónde vas a almacenar los documentos de tus clientes.",
+      "icon": "cloud",
+      "order": 2,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-definir-almacenamiento"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Elegir una herramienta de almacenamiento seguro de documentos",
+          "summary": "Elige dónde vas a almacenar los documentos de tus clientes.",
+          "body": "Elige una plataforma de almacenamiento en la nube con buenos controles de acceso y cifrado."
+        },
+        "objective": {
+          "description": "Elegir la herramienta de almacenamiento seguro de documentos."
+        },
+        "checklist": [
+          {
+            "id": "chk-almacenamiento-seguro",
+            "task": "Elegir la herramienta de almacenamiento seguro de documentos.",
+            "completed": false,
+            "registryFieldRef": "reg-plataforma-almacenamiento"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir una herramienta de almacenamiento seguro de documentos.",
+          "context": "El usuario ya definió su política de almacenamiento de información.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Verifica que la herramienta que elijas cumpla con estándares de cifrado reconocidos - estás guardando información financiera sensible de tus clientes.",
+        "registroFields": [
+          {
+            "id": "reg-plataforma-almacenamiento",
+            "label": "Plataforma de almacenamiento elegida",
+            "type": "text"
           }
         ]
       }

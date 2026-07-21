@@ -4,16 +4,17 @@
   "block": "customers",
   "steps": [
     {
-      "id": "v2-step-dominio-hosting",
-      "title": "Registrar Dominio y Contratar Hosting",
-      "description": "Asegura tu presencia online con un dominio y plataforma web profesionales.",
+      "id": "step-registrar-dominio",
+      "title": "Registrar el dominio del sitio web",
+      "description": "Registra el dominio oficial de tu sitio web.",
+      "icon": "globe",
       "order": 0,
       "type": "one_time",
-      "estimatedHours": 2,
+      "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "high",
       "dependencies": [
-        "v2-step-nombre-comercial"
+        "step-verificar-nombre"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -23,64 +24,496 @@
       },
       "content": {
         "overview": {
-          "title": "Registrar Dominio y Contratar Hosting",
-          "summary": "Asegura tu presencia online con un dominio y plataforma web profesionales.",
-          "body": "Compra dominio .com o extensión local. Registra por mínimo 2 años.\n\nElige plataforma web: WordPress, Webflow, etc.\n\nConfigura SSL y seguridad básica."
+          "title": "Registrar el dominio del sitio web",
+          "summary": "Registra el dominio oficial de tu sitio web.",
+          "body": "Registra el dominio .com (o el más adecuado en tu país) con el nombre de tu firma."
         },
         "objective": {
-          "description": "¿Aseguraste tu presencia online?"
+          "description": "Registrar el dominio oficial de tu sitio web."
         },
         "checklist": [
           {
-            "id": "v2-chk-dom-01",
-            "task": "Comprar dominio",
+            "id": "chk-registrar-dominio",
+            "task": "Registrar el dominio oficial de tu sitio web.",
             "completed": false,
-            "registryFieldRef": "v2-reg-dominio"
-          },
-          {
-            "id": "v2-chk-dom-02",
-            "task": "Contratar hosting/plataforma web",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-dom-03",
-            "task": "Configurar SSL",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-dom-04",
-            "task": "Configurar correo profesional con dominio propio",
-            "completed": false
+            "registryFieldRef": "step-registrar-dominio-status"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a elegir y configurar su dominio y hosting web.",
-          "context": "El usuario necesita establecer su presencia en línea.",
+          "systemPrompt": "Ayuda al usuario a elegir y registrar el dominio de su sitio web.",
+          "context": "El usuario ya verificó que su nombre comercial está disponible.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "Un correo con dominio propio (nombre@tufirma.com) proyecta mucha más credibilidad que uno genérico (@gmail.com).",
+        "tip": "Registra el dominio por al menos 2 años y activa la renovación automática - perder tu dominio por un pago vencido puede tardar semanas en resolverse.",
         "registroFields": [
           {
-            "id": "v2-reg-dominio",
-            "label": "Dominio registrado",
+            "id": "step-registrar-dominio-status",
+            "label": "Estado de: Registrar el dominio del sitio web",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-contratar-hosting",
+      "title": "Contratar el hosting del sitio web",
+      "description": "Contrata el servicio de hosting donde vivirá tu sitio web.",
+      "icon": "server",
+      "order": 1,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "step-registrar-dominio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Contratar el hosting del sitio web",
+          "summary": "Contrata el servicio de hosting donde vivirá tu sitio web.",
+          "body": "Contrata el servicio de hosting o la plataforma todo en uno donde vas a publicar el sitio web."
+        },
+        "objective": {
+          "description": "Contratar el servicio de hosting donde vivirá tu sitio web."
+        },
+        "checklist": [
+          {
+            "id": "chk-contratar-hosting",
+            "task": "Contratar el servicio de hosting donde vivirá tu sitio web.",
+            "completed": false,
+            "registryFieldRef": "step-contratar-hosting-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir un servicio de hosting adecuado.",
+          "context": "El usuario ya registró su dominio.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un sitio lento o caído en el momento en que un prospecto te busca puede costarte ese cliente potencial.",
+        "registroFields": [
+          {
+            "id": "step-contratar-hosting-status",
+            "label": "Estado de: Contratar el hosting del sitio web",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-elegir-plataforma-web",
+      "title": "Elegir la plataforma para construir el sitio web",
+      "description": "Elige la plataforma con la que vas a construir tu sitio web.",
+      "icon": "monitor",
+      "order": 2,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Elegir la plataforma para construir el sitio web",
+          "summary": "Elige la plataforma con la que vas a construir tu sitio web.",
+          "body": "Elige una plataforma sencilla de mantener tú mismo, sin depender de un desarrollador para cada cambio."
+        },
+        "objective": {
+          "description": "Elegir la plataforma con la que vas a construir tu sitio web."
+        },
+        "checklist": [
+          {
+            "id": "chk-elegir-plataforma-web",
+            "task": "Elegir la plataforma con la que vas a construir tu sitio web.",
+            "completed": false,
+            "registryFieldRef": "reg-plataforma-web-elegida"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir la plataforma más adecuada para construir su sitio web.",
+          "context": "El usuario está construyendo su presencia digital.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "recommendedTools": [
+          {
+            "name": "Webflow",
+            "url": "https://webflow.com"
+          },
+          {
+            "name": "WordPress",
+            "url": "https://wordpress.com"
+          }
+        ],
+        "tip": "Prioriza una plataforma que tú mismo puedas actualizar sin depender de un desarrollador para cada cambio de texto.",
+        "registroFields": [
+          {
+            "id": "reg-plataforma-web-elegida",
+            "label": "Plataforma web elegida",
             "type": "text"
           }
         ]
       }
     },
     {
-      "id": "v2-step-publicar-sitio",
-      "title": "Publicar el Sitio Web",
-      "description": "Revisa todos los enlaces, formularios y la versión móvil antes de publicar.",
-      "order": 1,
+      "id": "step-mapa-sitio",
+      "title": "Definir el mapa del sitio",
+      "description": "Define las páginas principales que va a tener tu sitio web.",
+      "icon": "compass",
+      "order": 3,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-elegir-plataforma-web"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir el mapa del sitio",
+          "summary": "Define las páginas principales que va a tener tu sitio web.",
+          "body": "Define las páginas principales: inicio, servicios, sobre mí, contacto - y cualquier otra que necesites."
+        },
+        "objective": {
+          "description": "Definir las páginas principales que va a tener tu sitio web."
+        },
+        "checklist": [
+          {
+            "id": "chk-mapa-sitio",
+            "task": "Definir las páginas principales que va a tener tu sitio web.",
+            "completed": false,
+            "registryFieldRef": "step-mapa-sitio-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir el mapa de páginas de su sitio web.",
+          "context": "El usuario ya eligió la plataforma de su sitio web.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un mapa de sitio claro evita que un visitante se pierda buscando cómo contactarte - cada página debe tener un siguiente paso obvio.",
+        "registroFields": [
+          {
+            "id": "step-mapa-sitio-status",
+            "label": "Estado de: Definir el mapa del sitio",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-pagina-inicio",
+      "title": "Redactar el contenido de la página de inicio",
+      "description": "Redacta el contenido de la página principal del sitio.",
+      "icon": "home",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "step-mapa-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar el contenido de la página de inicio",
+          "summary": "Redacta el contenido de la página principal del sitio.",
+          "body": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte."
+        },
+        "objective": {
+          "description": "Redactar el contenido de la página principal del sitio."
+        },
+        "checklist": [
+          {
+            "id": "chk-pagina-inicio",
+            "task": "Redactar el contenido de la página principal del sitio.",
+            "completed": false,
+            "registryFieldRef": "reg-pagina-inicio-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar el contenido de la página de inicio de su sitio web.",
+          "context": "El usuario está construyendo el contenido de su sitio web.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "El primer titular debe responder \"a quién ayudas y con qué\" en menos de 10 palabras - los visitantes deciden si se quedan en los primeros segundos.",
+        "registroFields": [
+          {
+            "id": "reg-pagina-inicio-drive",
+            "label": "Enlace al borrador de contenido en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-pagina-servicios",
+      "title": "Redactar la página de Servicios",
+      "description": "Redacta el contenido de la página con tus paquetes y tarifas.",
+      "icon": "list-checks",
+      "order": 5,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "step-mapa-sitio",
+        "step-alcance-paquetes"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar la página de Servicios",
+          "summary": "Redacta el contenido de la página de Servicios con tus paquetes y tarifas.",
+          "body": "Explica cada paquete de servicios con claridad, usando el alcance que ya documentaste."
+        },
+        "objective": {
+          "description": "Redactar el contenido de la página de Servicios con tus paquetes y tarifas."
+        },
+        "checklist": [
+          {
+            "id": "chk-pagina-servicios",
+            "task": "Redactar el contenido de la página de Servicios con tus paquetes y tarifas.",
+            "completed": false,
+            "registryFieldRef": "reg-pagina-servicios-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar la página de Servicios de su sitio web.",
+          "context": "El usuario ya definió sus paquetes de servicios.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-pagina-servicios-drive",
+            "label": "Enlace al borrador de contenido en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-pagina-sobre-mi",
+      "title": "Redactar la página Sobre mí / Nosotros",
+      "description": "Redacta el contenido de la página que presenta a la firma.",
+      "icon": "user",
+      "order": 6,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-mapa-sitio",
+        "step-biografia"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar la página Sobre mí / Nosotros",
+          "summary": "Redacta el contenido de la página que presenta a la firma y a su fundador.",
+          "body": "Usa tu biografía profesional como base y agrega la historia y los valores de la firma."
+        },
+        "objective": {
+          "description": "Redactar el contenido de la página que presenta a la firma y a su fundador."
+        },
+        "checklist": [
+          {
+            "id": "chk-pagina-sobre-mi",
+            "task": "Redactar el contenido de la página que presenta a la firma y a su fundador.",
+            "completed": false,
+            "registryFieldRef": "reg-pagina-sobre-mi-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar la página Sobre mí de su sitio web.",
+          "context": "El usuario ya tiene su biografía profesional lista.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Acompaña el texto con tu fotografía profesional - las páginas \"Sobre mí\" con foto generan más confianza que las que solo tienen texto.",
+        "registroFields": [
+          {
+            "id": "reg-pagina-sobre-mi-drive",
+            "label": "Enlace al borrador de contenido en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-pagina-contacto",
+      "title": "Redactar la página de contacto",
+      "description": "Redacta el contenido de la página de contacto.",
+      "icon": "mail",
+      "order": 7,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-mapa-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar la página de contacto",
+          "summary": "Redacta el contenido de la página de contacto.",
+          "body": "Incluye un formulario simple, tu correo, teléfono y un llamado a la acción claro (ej. 'Agenda tu primera consulta')."
+        },
+        "objective": {
+          "description": "Redactar el contenido de la página de contacto."
+        },
+        "checklist": [
+          {
+            "id": "chk-pagina-contacto",
+            "task": "Redactar el contenido de la página de contacto.",
+            "completed": false,
+            "registryFieldRef": "reg-pagina-contacto-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar una página de contacto efectiva.",
+          "context": "El usuario está terminando el contenido de su sitio web.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Cada paso adicional entre \"quiero contactarte\" y \"lo logré\" reduce las probabilidades de que un prospecto complete la acción.",
+        "registroFields": [
+          {
+            "id": "reg-pagina-contacto-drive",
+            "label": "Enlace al borrador de contenido en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-publicar-privacidad-web",
+      "title": "Publicar la política de privacidad en el sitio",
+      "description": "Publica tu política de privacidad y manejo de datos en el sitio web.",
+      "icon": "shield",
+      "order": 8,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-redactar-politica-privacidad",
+        "step-mapa-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Publicar la política de privacidad en el sitio",
+          "summary": "Publica tu política de privacidad y manejo de datos en el sitio web.",
+          "body": "Publica la política de privacidad que ya redactaste como una página visible del sitio."
+        },
+        "objective": {
+          "description": "Publicar tu política de privacidad y manejo de datos en el sitio web."
+        },
+        "checklist": [
+          {
+            "id": "chk-publicar-privacidad-web",
+            "task": "Publicar tu política de privacidad y manejo de datos en el sitio web.",
+            "completed": false,
+            "registryFieldRef": "step-publicar-privacidad-web-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a publicar su política de privacidad en su sitio web.",
+          "context": "El usuario ya redactó su política de privacidad.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Enlaza la política de privacidad desde el pie de página de todas las páginas del sitio, no solo desde una.",
+        "registroFields": [
+          {
+            "id": "step-publicar-privacidad-web-status",
+            "label": "Estado de: Publicar la política de privacidad en el sitio",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-publicar-sitio",
+      "title": "Publicar el sitio web",
+      "description": "Publica el sitio web completo y verifica que funcione correctamente.",
+      "icon": "rocket",
+      "order": 9,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
       "priority": "high",
       "dependencies": [
-        "v2-step-contenido-inicio"
+        "step-pagina-inicio",
+        "step-pagina-servicios",
+        "step-pagina-sobre-mi",
+        "step-pagina-contacto",
+        "step-contratar-hosting"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -124,16 +557,17 @@
       }
     },
     {
-      "id": "v2-step-google-business",
-      "title": "Crear Google Business Profile",
-      "description": "Un perfil verificado ayuda a que te encuentren en búsquedas locales.",
-      "order": 2,
+      "id": "step-correo-profesional",
+      "title": "Configurar el correo electrónico profesional",
+      "description": "Configura tu cuenta de correo con el dominio de la firma.",
+      "icon": "mail",
+      "order": 10,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "v2-step-publicar-sitio"
+        "step-registrar-dominio"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -143,50 +577,352 @@
       },
       "content": {
         "overview": {
-          "title": "Crear Google Business Profile",
-          "summary": "Un perfil verificado ayuda a que te encuentren en búsquedas locales.",
-          "body": "Un perfil verificado ayuda a que te encuentren en búsquedas locales y permite recibir reseñas."
+          "title": "Configurar el correo electrónico profesional",
+          "summary": "Configura tu cuenta de correo electrónico con el dominio de la firma.",
+          "body": "Configura una cuenta de correo con tu propio dominio (ej. tunombre@tufirma.com) en vez de un correo genérico."
         },
         "objective": {
-          "description": "¿Te encuentran en búsquedas locales?"
+          "description": "Configurar tu cuenta de correo electrónico con el dominio de la firma."
         },
         "checklist": [
           {
-            "id": "v2-chk-gb-01",
-            "task": "Crear perfil de Google Business",
+            "id": "chk-correo-profesional",
+            "task": "Configurar tu cuenta de correo electrónico con el dominio de la firma.",
             "completed": false,
-            "registryFieldRef": "google-business-status"
-          },
-          {
-            "id": "v2-chk-gb-02",
-            "task": "Verificar perfil",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-gb-03",
-            "task": "Completar toda la información",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-gb-04",
-            "task": "Agregar fotos y horarios",
-            "completed": false
+            "registryFieldRef": "reg-correo-profesional-configurado"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a crear y optimizar su perfil de Google Business.",
-          "context": "El usuario necesita aparecer en búsquedas locales de asesoría financiera.",
+          "systemPrompt": "Ayuda al usuario a configurar un correo electrónico profesional con su propio dominio.",
+          "context": "El usuario ya registró su dominio.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Configura también el correo en tu teléfono - vas a necesitar responder a prospectos rápido, no solo desde la computadora.",
+        "registroFields": [
+          {
+            "id": "reg-correo-profesional-configurado",
+            "label": "Correo profesional configurado",
+            "type": "email"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-fotos-profesionales",
+      "title": "Tomar fotografías profesionales",
+      "description": "Ten fotografías profesionales tuyas listas para usar.",
+      "icon": "camera",
+      "order": 11,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Tomar fotografías profesionales",
+          "summary": "Ten fotografías profesionales tuyas y/o de tu equipo listas para usar.",
+          "body": "Contrata a un fotógrafo o toma fotos con buena iluminación - vas a usarlas en tu sitio web, LinkedIn y materiales de marketing."
+        },
+        "objective": {
+          "description": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar."
+        },
+        "checklist": [
+          {
+            "id": "chk-fotos-profesionales",
+            "task": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar.",
+            "completed": false,
+            "registryFieldRef": "reg-fotos-profesionales-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a planear una sesión de fotos profesional.",
+          "context": "El usuario necesita fotos profesionales para su presencia digital.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Las fotos genéricas o de baja calidad son una de las señales más rápidas de que una firma no está bien establecida.",
+        "registroFields": [
+          {
+            "id": "reg-fotos-profesionales-drive",
+            "label": "Enlace a las fotos en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-linkedin",
+      "title": "Crear o actualizar tu perfil de LinkedIn",
+      "description": "Ten un perfil de LinkedIn profesional y actualizado.",
+      "icon": "briefcase",
+      "order": 12,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-biografia",
+        "step-fotos-profesionales"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear o actualizar tu perfil de LinkedIn",
+          "summary": "Ten un perfil de LinkedIn profesional y actualizado.",
+          "body": "Actualiza tu perfil con tu biografía, foto profesional, certificaciones y los servicios de tu firma nueva."
+        },
+        "objective": {
+          "description": "Tener un perfil de LinkedIn profesional y actualizado."
+        },
+        "checklist": [
+          {
+            "id": "chk-linkedin",
+            "task": "Tener un perfil de LinkedIn profesional y actualizado.",
+            "completed": false,
+            "registryFieldRef": "reg-linkedin-url"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a optimizar su perfil de LinkedIn como asesor financiero.",
+          "context": "El usuario ya tiene su biografía y sus fotos profesionales listas.",
           "suggestions": []
         },
         "knowledge": [],
         "registroFields": [
           {
-            "id": "google-business-status",
-            "label": "Estado de la tarea: Crear Google Business Profile",
+            "id": "reg-linkedin-url",
+            "label": "Enlace a tu perfil de LinkedIn",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-google-business",
+      "title": "Crear el perfil de Google Business Profile",
+      "description": "Crea y verifica tu perfil de Google Business Profile.",
+      "icon": "map-pin",
+      "order": 13,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-publicar-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear el perfil de Google Business Profile",
+          "summary": "Crea y verifica tu perfil de Google Business Profile.",
+          "body": "Un perfil de Google Business verificado ayuda a que te encuentren en búsquedas locales y permite recibir reseñas."
+        },
+        "objective": {
+          "description": "Crear y verificar tu perfil de Google Business Profile."
+        },
+        "checklist": [
+          {
+            "id": "chk-google-business",
+            "task": "Crear y verificar tu perfil de Google Business Profile.",
+            "completed": false,
+            "registryFieldRef": "reg-google-business-url"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a crear y optimizar su perfil de Google Business.",
+          "context": "El usuario ya publicó su sitio web.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-google-business-url",
+            "label": "Enlace a tu perfil de Google Business",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-directorios",
+      "title": "Registrar la firma en directorios profesionales del sector",
+      "description": "Registra tu firma en los directorios profesionales relevantes.",
+      "icon": "book-open",
+      "order": 14,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-publicar-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Registrar la firma en directorios profesionales del sector",
+          "summary": "Registra tu firma en los directorios profesionales relevantes de tu sector.",
+          "body": "Muchos clientes buscan asesores financieros en directorios especializados del sector - regístrate en los más relevantes de tu país."
+        },
+        "objective": {
+          "description": "Registrar tu firma en los directorios profesionales relevantes de tu sector."
+        },
+        "checklist": [
+          {
+            "id": "chk-directorios",
+            "task": "Registrar tu firma en los directorios profesionales relevantes de tu sector.",
+            "completed": false,
+            "registryFieldRef": "step-directorios-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar directorios profesionales relevantes para asesores financieros.",
+          "context": "El usuario ya publicó su sitio web.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Prioriza los directorios que exigen verificación de credenciales - generan más confianza que los de registro abierto.",
+        "registroFields": [
+          {
+            "id": "step-directorios-status",
+            "label": "Estado de: Registrar la firma en directorios profesionales del sector",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-redes-sociales",
+      "title": "Crear el perfil en redes sociales principales",
+      "description": "Crea los perfiles de la firma en las redes donde está tu cliente ideal.",
+      "icon": "share-2",
+      "order": 15,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-disenar-logo"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear el perfil en redes sociales principales",
+          "summary": "Crea los perfiles de la firma en las redes sociales donde está tu cliente ideal.",
+          "body": "No te registres en todas las redes - elige 1 o 2 donde realmente esté tu cliente ideal."
+        },
+        "objective": {
+          "description": "Crear los perfiles de la firma en las redes sociales donde está tu cliente ideal."
+        },
+        "checklist": [
+          {
+            "id": "chk-redes-sociales",
+            "task": "Crear los perfiles de la firma en las redes sociales donde está tu cliente ideal.",
+            "completed": false,
+            "registryFieldRef": "reg-redes-sociales-urls"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a decidir en qué redes sociales debería tener presencia su firma.",
+          "context": "El usuario ya tiene su logo e identidad de marca lista.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Estar en una red donde tu cliente ideal no pasa tiempo es esfuerzo desperdiciado, sin importar qué tan buena sea tu presencia ahí.",
+        "registroFields": [
+          {
+            "id": "reg-redes-sociales-urls",
+            "label": "Enlaces a los perfiles creados",
+            "type": "textarea",
+            "helpText": "Un enlace por línea, uno por cada red social."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-analytics",
+      "title": "Configurar una herramienta de medición del sitio",
+      "description": "Configura Google Analytics u otra herramienta para medir las visitas.",
+      "icon": "line-chart",
+      "order": 16,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-publicar-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Configurar una herramienta de medición del sitio",
+          "summary": "Configura Google Analytics u otra herramienta para medir las visitas de tu sitio.",
+          "body": "Sin datos de visitas no vas a poder saber si tus esfuerzos de marketing están funcionando - configura la medición desde el día en que publiques el sitio."
+        },
+        "objective": {
+          "description": "Configurar Google Analytics u otra herramienta para medir las visitas de tu sitio."
+        },
+        "checklist": [
+          {
+            "id": "chk-analytics",
+            "task": "Configurar Google Analytics u otra herramienta para medir las visitas de tu sitio.",
+            "completed": false,
+            "registryFieldRef": "reg-analytics-dashboard-url"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a configurar Google Analytics en su sitio web.",
+          "context": "El usuario ya publicó su sitio web.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Revisa los datos al menos una vez al mes - sin revisión periódica, tener la herramienta instalada no aporta ningún valor.",
+        "registroFields": [
+          {
+            "id": "reg-analytics-dashboard-url",
+            "label": "Enlace al dashboard de métricas",
+            "type": "url"
           }
         ]
       }

@@ -4,10 +4,182 @@
   "block": "operations",
   "steps": [
     {
+      "id": "step-seguimiento-mensual",
+      "title": "Seguimiento mensual con el cliente",
+      "description": "Acompaña al cliente en la ejecución de su plan y ajusta según cambien sus circunstancias.",
+      "icon": "repeat",
+      "order": 0,
+      "type": "monthly",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-programar-seguimiento"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Seguimiento mensual con el cliente",
+          "summary": "Acompaña al cliente en la ejecución de su plan financiero.",
+          "body": "El valor de una asesoría financiera no está solo en el plan inicial, sino en el acompañamiento continuo. Este Step se repite cada mes con cada cliente activo mientras dure la relación de asesoría."
+        },
+        "objective": {
+          "description": "Revisar el avance del cliente hacia sus metas financieras y ajustar el plan si es necesario."
+        },
+        "checklist": [
+          {
+            "id": "chk-revisar-avances",
+            "task": "Revisar avances hacia las metas financieras",
+            "completed": false,
+            "registryFieldRef": "reg-notas-seguimiento-drive"
+          },
+          {
+            "id": "chk-actualizar-cambios",
+            "task": "Actualizar cambios en la situación del cliente",
+            "completed": false,
+            "registryFieldRef": "reg-notas-seguimiento-drive"
+          },
+          {
+            "id": "chk-ajustar-plan",
+            "task": "Ajustar el plan si es necesario",
+            "completed": false,
+            "registryFieldRef": "reg-notas-seguimiento-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a preparar una reunión de seguimiento mensual efectiva con un cliente activo.",
+          "context": "El usuario tiene una reunión de seguimiento mensual programada con un cliente al que ya le entregó un plan financiero.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "El valor de una asesoría financiera no está solo en el plan inicial, sino en el acompañamiento continuo - la vida del cliente cambia y el plan debe adaptarse.",
+        "tip": "Programa estos seguimientos con anticipación en el calendario del cliente para que se conviertan en un hábito, no en una excepción.",
+        "registroFields": [
+          {
+            "id": "reg-notas-seguimiento-drive",
+            "label": "Enlace a las notas de este seguimiento",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-retro-trimestral",
+      "title": "Solicitar retroalimentación al cliente tras el primer trimestre",
+      "description": "Pide retroalimentación honesta sobre el servicio recibido.",
+      "icon": "message-circle",
+      "order": 1,
+      "type": "quarterly",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-seguimiento-mensual"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Solicitar retroalimentación al cliente tras el primer trimestre",
+          "summary": "Pide retroalimentación honesta sobre el servicio recibido.",
+          "body": "Cada trimestre, pregúntale al cliente qué le está funcionando y qué no del servicio - esto te permite mejorar tu proceso y detectar riesgos de cancelación a tiempo."
+        },
+        "objective": {
+          "description": "Solicitar retroalimentación honesta al cliente sobre el servicio recibido."
+        },
+        "checklist": [
+          {
+            "id": "chk-retro-trimestral",
+            "task": "Solicitar retroalimentación honesta al cliente sobre el servicio recibido.",
+            "completed": false,
+            "registryFieldRef": "reg-retroalimentacion-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar preguntas de retroalimentación honesta para un cliente activo.",
+          "context": "El usuario lleva al menos un trimestre trabajando con el cliente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Haz esta pregunta directamente: \"¿qué es lo que menos te ha gustado del servicio?\" - da información mucho más útil que preguntar en general cómo va todo.",
+        "registroFields": [
+          {
+            "id": "reg-retroalimentacion-drive",
+            "label": "Enlace al documento de retroalimentación",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-solicitar-referido-cliente",
+      "title": "Solicitar una referencia al cliente satisfecho",
+      "description": "Pide al cliente que te refiera con alguien que conozca.",
+      "icon": "gift",
+      "order": 2,
+      "type": "quarterly",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-retro-trimestral"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Solicitar una referencia al cliente satisfecho",
+          "summary": "Pide al cliente que te refiera con alguien que conozca.",
+          "body": "Si la retroalimentación del cliente fue positiva, es el mejor momento para pedirle una referencia siguiendo tu programa de referidos."
+        },
+        "objective": {
+          "description": "Solicitar una referencia a un cliente satisfecho."
+        },
+        "checklist": [
+          {
+            "id": "chk-solicitar-referido-cliente",
+            "task": "Solicitar una referencia a un cliente satisfecho.",
+            "completed": false,
+            "registryFieldRef": "reg-contacto-referido"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a pedir una referencia de forma natural a un cliente satisfecho.",
+          "context": "El usuario ya recibió retroalimentación positiva del cliente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Pedir una referencia en el momento en que el cliente está más satisfecho (justo después de una buena retroalimentación) es cuando tiene más probabilidad de decir que sí.",
+        "registroFields": [
+          {
+            "id": "reg-contacto-referido",
+            "label": "Contacto referido",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    {
       "id": "v2-rec-revision-contratos",
       "title": "Revisar Contratos Vigentes",
       "description": "Revisa contratos vigentes, identifica renovaciones y actualiza términos si aplica.",
-      "order": 0,
+      "order": 3,
       "type": "quarterly",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -38,17 +210,20 @@
           {
             "id": "v2-chk-rc-cont-02",
             "task": "Identificar renovaciones próximas",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-contratos-status"
           },
           {
             "id": "v2-chk-rc-cont-03",
             "task": "Actualizar términos si aplica",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-contratos-status"
           },
           {
             "id": "v2-chk-rc-cont-04",
             "task": "Documentar cambios",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-contratos-status"
           }
         ],
         "resources": [],
@@ -61,7 +236,7 @@
         "registroFields": [
           {
             "id": "revision-contratos-status",
-            "label": "Estado de la tarea: Revisar Contratos Vigentes",
+            "label": "Estado de: Revisar Contratos Vigentes",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -73,7 +248,7 @@
       "id": "v2-rec-auditoria-cumplimiento",
       "title": "Auditoría de Cumplimiento",
       "description": "Revisa cumplimiento normativo, verifica certificaciones y actualiza políticas.",
-      "order": 1,
+      "order": 4,
       "type": "semester",
       "estimatedHours": 4,
       "difficulty": "hard",
@@ -104,17 +279,20 @@
           {
             "id": "v2-chk-ac-02",
             "task": "Verificar certificaciones vigentes",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "auditoria-cumplimiento-status"
           },
           {
             "id": "v2-chk-ac-03",
             "task": "Actualizar políticas si aplica",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "auditoria-cumplimiento-status"
           },
           {
             "id": "v2-chk-ac-04",
             "task": "Documentar auditoría",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "auditoria-cumplimiento-status"
           }
         ],
         "resources": [],
@@ -128,9 +306,79 @@
         "registroFields": [
           {
             "id": "auditoria-cumplimiento-status",
-            "label": "Estado de la tarea: Auditoría de Cumplimiento",
+            "label": "Estado de: Auditoría de Cumplimiento",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-rec-renovar-certificaciones",
+      "title": "Renovar Certificaciones Profesionales",
+      "description": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
+      "order": 5,
+      "type": "yearly",
+      "estimatedHours": 8,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Renovar Certificaciones Profesionales",
+          "summary": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
+          "body": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones."
+        },
+        "objective": {
+          "description": "¿Mantienes tu certificación vigente?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-rcert-01",
+            "task": "Verificar fechas de vencimiento",
+            "completed": false,
+            "registryFieldRef": "renovar-certificaciones-status"
+          },
+          {
+            "id": "v2-chk-rcert-02",
+            "task": "Completar horas de educación continua",
+            "completed": false,
+            "registryFieldRef": "renovar-certificaciones-status"
+          },
+          {
+            "id": "v2-chk-rcert-03",
+            "task": "Renovar certificaciones profesionales",
+            "completed": false,
+            "registryFieldRef": "renovar-certificaciones-status"
+          },
+          {
+            "id": "v2-chk-rcert-04",
+            "task": "Actualizar credenciales en materiales",
+            "completed": false,
+            "registryFieldRef": "renovar-certificaciones-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a gestionar la renovación de sus certificaciones profesionales.",
+          "context": "El usuario necesita mantener vigentes sus certificaciones de asesor financiero.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Una certificación vencida te impide ejercer legalmente y destruye la credibilidad construida con tus clientes.",
+        "registroFields": [
+          {
+            "id": "renovar-certificaciones-status",
+            "label": "Estado de: Renovar Certificaciones Profesionales",
+            "type": "date",
+            "placeholder": "Selecciona la fecha",
             "required": true
           }
         ]
@@ -140,7 +388,7 @@
       "id": "v2-rec-backups",
       "title": "Realizar Copias de Seguridad",
       "description": "Verifica respaldos automáticos y revisa integridad de datos.",
-      "order": 2,
+      "order": 6,
       "type": "weekly",
       "estimatedHours": 0.5,
       "difficulty": "easy",
@@ -171,17 +419,20 @@
           {
             "id": "v2-chk-bk-02",
             "task": "Revisar integridad de datos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "backups-status"
           },
           {
             "id": "v2-chk-bk-03",
             "task": "Organizar carpetas de clientes nuevos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "backups-status"
           },
           {
             "id": "v2-chk-bk-04",
             "task": "Probar restauración",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "backups-status"
           }
         ],
         "resources": [],
@@ -194,7 +445,7 @@
         "registroFields": [
           {
             "id": "backups-status",
-            "label": "Estado de la tarea: Realizar Copias de Seguridad",
+            "label": "Estado de: Realizar Copias de Seguridad",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -206,7 +457,7 @@
       "id": "v2-rec-actualizaciones-software",
       "title": "Actualizar Herramientas",
       "description": "Las actualizaciones corrigen vulnerabilidades de seguridad y mejoran rendimiento.",
-      "order": 3,
+      "order": 7,
       "type": "monthly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -237,17 +488,20 @@
           {
             "id": "v2-chk-au-02",
             "task": "Verificar compatibilidad",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "actualizaciones-software-status"
           },
           {
             "id": "v2-chk-au-03",
             "task": "Documentar cambios",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "actualizaciones-software-status"
           },
           {
             "id": "v2-chk-au-04",
             "task": "Probar herramientas post-actualización",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "actualizaciones-software-status"
           }
         ],
         "resources": [],
@@ -260,7 +514,7 @@
         "registroFields": [
           {
             "id": "actualizaciones-software-status",
-            "label": "Estado de la tarea: Actualizar Herramientas",
+            "label": "Estado de: Actualizar Herramientas",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -272,7 +526,7 @@
       "id": "v2-rec-auditoria-accesos",
       "title": "Auditoría de Accesos",
       "description": "Revisa permisos de usuarios, verifica accesos activos y elimina los innecesarios.",
-      "order": 4,
+      "order": 8,
       "type": "quarterly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -303,17 +557,20 @@
           {
             "id": "v2-chk-aa-02",
             "task": "Verificar accesos activos",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "auditoria-accesos-status"
           },
           {
             "id": "v2-chk-aa-03",
             "task": "Eliminar accesos innecesarios",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "auditoria-accesos-status"
           },
           {
             "id": "v2-chk-aa-04",
             "task": "Documentar auditoría",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "auditoria-accesos-status"
           }
         ],
         "resources": [],
@@ -327,7 +584,7 @@
         "registroFields": [
           {
             "id": "auditoria-accesos-status",
-            "label": "Estado de la tarea: Auditoría de Accesos",
+            "label": "Estado de: Auditoría de Accesos",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -339,7 +596,7 @@
       "id": "v2-rec-revision-licencias",
       "title": "Revisar Licencias de Software",
       "description": "Revisa licencias, evalúa uso de herramientas y cancela servicios no utilizados.",
-      "order": 5,
+      "order": 9,
       "type": "semester",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -370,17 +627,20 @@
           {
             "id": "v2-chk-rl-02",
             "task": "Evaluar uso de herramientas",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-licencias-status"
           },
           {
             "id": "v2-chk-rl-03",
             "task": "Cancelar servicios no utilizados",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-licencias-status"
           },
           {
             "id": "v2-chk-rl-04",
             "task": "Negociar mejores tarifas",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "revision-licencias-status"
           }
         ],
         "resources": [],
@@ -393,7 +653,7 @@
         "registroFields": [
           {
             "id": "revision-licencias-status",
-            "label": "Estado de la tarea: Revisar Licencias de Software",
+            "label": "Estado de: Revisar Licencias de Software",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -405,7 +665,7 @@
       "id": "v2-rec-reunion-semanal",
       "title": "Realizar Reunión Semanal de Equipo",
       "description": "Repasa tareas, asigna prioridades y comparte aprendizajes.",
-      "order": 6,
+      "order": 10,
       "type": "weekly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -436,17 +696,20 @@
           {
             "id": "v2-chk-rsem-02",
             "task": "Revisar avances de la semana anterior",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "reunion-semanal-status"
           },
           {
             "id": "v2-chk-rsem-03",
             "task": "Asignar prioridades de la semana",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "reunion-semanal-status"
           },
           {
             "id": "v2-chk-rsem-04",
             "task": "Documentar acuerdos y tareas",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "reunion-semanal-status"
           }
         ],
         "resources": [],
@@ -460,7 +723,7 @@
         "registroFields": [
           {
             "id": "reunion-semanal-status",
-            "label": "Estado de la tarea: Realizar Reunión Semanal de Equipo",
+            "label": "Estado de: Realizar Reunión Semanal de Equipo",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true

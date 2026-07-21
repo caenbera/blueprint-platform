@@ -4,14 +4,15 @@
   "block": "strategy",
   "steps": [
     {
-      "id": "v2-step-presupuesto",
-      "title": "Elaborar Presupuesto Inicial de Operación",
+      "id": "step-presupuesto-inicial",
+      "title": "Definir el presupuesto inicial de arranque",
       "description": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
+      "icon": "piggy-bank",
       "order": 0,
       "type": "one_time",
-      "estimatedHours": 3,
+      "estimatedHours": 2,
       "difficulty": "medium",
-      "priority": "high",
+      "priority": "normal",
       "dependencies": [],
       "completionRules": {
         "requiredChecklist": true,
@@ -21,73 +22,52 @@
       },
       "content": {
         "overview": {
-          "title": "Elaborar Presupuesto Inicial de Operación",
+          "title": "Definir el presupuesto inicial de arranque",
           "summary": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
-          "body": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.\n\nIncluye:\n- Costos de constitución legal\n- Salarios (incluyendo el tuyo)\n- Licencias de software\n- Equipos\n- Marketing inicial\n- Fondo de contingencia (mínimo 6 meses)\n\nLa mayoría de firmas tardan varios meses en conseguir sus primeros clientes pagos."
+          "body": "Suma los costos fijos mensuales (herramientas, seguro, contabilidad) y los costos de arranque (registro, marca, sitio web) para saber cuánto capital necesitas reservado."
         },
         "objective": {
-          "description": "¿Cuánto capital necesitas para operar hasta generar ingresos estables?"
+          "description": "Calcular cuánto capital necesitas para operar la firma hasta generar ingresos estables."
         },
         "checklist": [
           {
-            "id": "v2-chk-ppto-01",
-            "task": "Listar costos de arranque",
+            "id": "chk-presupuesto-inicial",
+            "task": "Calcular cuánto capital necesitas para operar la firma hasta generar ingresos estables.",
             "completed": false,
-            "registryFieldRef": "v2-reg-capital-arranque"
-          },
-          {
-            "id": "v2-chk-ppto-02",
-            "task": "Calcular gastos operativos mensuales",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-ppto-03",
-            "task": "Incluir salario personal mínimo",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-ppto-04",
-            "task": "Establecer fondo de contingencia",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-ppto-05",
-            "task": "Documentar presupuesto total",
-            "completed": false
+            "registryFieldRef": "reg-capital-arranque"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a calcular el presupuesto inicial de arranque de su firma de asesoría financiera.",
+          "systemPrompt": "Ayuda al usuario a calcular el presupuesto inicial de arranque de su firma.",
           "context": "El usuario está planeando el capital que necesita antes de tener clientes.",
-          "suggestions": [
-            "¿Cuánto capital inicial necesita una firma de asesoría financiera?"
-          ]
+          "suggestions": []
         },
         "knowledge": [],
+        "tip": "Calcula al menos 6 meses de gastos fijos sin ingresos - la mayoría de las firmas de servicios profesionales tardan varios meses en conseguir sus primeros clientes pagos.",
         "whyItMatters": "Sin un presupuesto claro es fácil subestimar cuánto capital necesitas y quedarte sin fondos antes de generar ingresos estables.",
-        "tip": "Calcula al menos 6 meses de gastos fijos sin ingresos — la mayoría de las firmas de servicios profesionales tardan varios meses en conseguir sus primeros clientes pagos.",
         "registroFields": [
           {
-            "id": "v2-reg-capital-arranque",
+            "id": "reg-capital-arranque",
             "label": "Capital de arranque calculado",
             "type": "number",
+            "placeholder": "Ej. 15000",
             "helpText": "Incluye la moneda en las notas si lo prefieres (USD, COP, MXN, etc.)."
           }
         ]
       }
     },
     {
-      "id": "v2-step-punto-equilibrio",
-      "title": "Determinar el Punto de Equilibrio",
-      "description": "Calcula cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales.",
+      "id": "v2-step-kpis",
+      "title": "Desarrollar los KPIs Estratégicos",
+      "description": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
       "order": 1,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
-      "priority": "high",
+      "priority": "normal",
       "dependencies": [
-        "v2-step-presupuesto"
+        "v2-step-gobernanza"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -97,60 +77,56 @@
       },
       "content": {
         "overview": {
-          "title": "Determinar el Punto de Equilibrio",
-          "summary": "Calcula cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales.",
-          "body": "Esta es la cantidad que la firma debe generar para pagar gastos del negocio y personales.\n\nEste es el objetivo más importante que tu firma debe alcanzar.\n\nQuedarte por debajo requiere usar ahorros o crédito. Cuando esto se agote, tu negocio fracasará.\n\n¿Hay gastos que puedas reducir o eliminar para bajar este número?\n\nAjusta por estacionalidad."
+          "title": "Desarrollar los KPIs Estratégicos",
+          "summary": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
+          "body": "Los KPIs te permiten medir objetivamente el desempeño de tu firma y tomar decisiones basadas en datos.\n\nEjemplos de KPIs para asesoría financiera:\n- % de clientes que utilizan servicios recurrentemente\n- Tiempo promedio de resolución de consultas\n- Número de planes financieros entregados\n- Tasa de retención de clientes\n- Ingresos recurrentes mensuales (MRR)"
         },
         "objective": {
-          "description": "¿Cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales?"
+          "description": "¿Qué métricas medirán el éxito de tu firma?"
         },
         "checklist": [
           {
-            "id": "v2-chk-eq-01",
-            "task": "Calcular gastos fijos mensuales del negocio",
+            "id": "v2-chk-kpi-01",
+            "task": "Definir métricas de clientes",
             "completed": false,
-            "registryFieldRef": "v2-reg-punto-equilibrio"
+            "registryFieldRef": "kpis-status"
           },
           {
-            "id": "v2-chk-eq-02",
-            "task": "Calcular gastos personales mínimos",
-            "completed": false
+            "id": "v2-chk-kpi-02",
+            "task": "Establecer métricas financieras",
+            "completed": false,
+            "registryFieldRef": "kpis-status"
           },
           {
-            "id": "v2-chk-eq-03",
-            "task": "Sumar para encontrar ingresos de equilibrio",
-            "completed": false
+            "id": "v2-chk-kpi-03",
+            "task": "Crear dashboard de seguimiento",
+            "completed": false,
+            "registryFieldRef": "kpis-status"
           },
           {
-            "id": "v2-chk-eq-04",
-            "task": "Identificar gastos reducibles",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-eq-05",
-            "task": "Completar tabla de ingresos mensuales objetivo",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-eq-06",
-            "task": "Ajustar por estacionalidad",
-            "completed": false
+            "id": "v2-chk-kpi-04",
+            "task": "Documentar frecuencia de revisión",
+            "completed": false,
+            "registryFieldRef": "kpis-status"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a calcular su punto de equilibrio financiero mensual.",
-          "context": "El usuario ya tiene el presupuesto de arranque y necesita saber cuánto debe facturar cada mes.",
-          "suggestions": []
+          "systemPrompt": "Ayuda al usuario a definir los KPIs más relevantes para una firma de asesoría financiera.",
+          "context": "El usuario está estableciendo las métricas que usará para medir el éxito de su firma.",
+          "suggestions": [
+            "¿Cuáles son los KPIs más importantes para una firma de asesoría financiera?"
+          ]
         },
         "knowledge": [],
-        "whyItMatters": "Conocer tu punto de equilibrio convierte el objetivo de 'generar ingresos' en un número concreto que puedes perseguir todos los meses.",
+        "whyItMatters": "Sin métricas claras no sabrás si tus esfuerzos están funcionando — los KPIs convierten la intuición en decisiones basadas en datos.",
         "registroFields": [
           {
-            "id": "v2-reg-punto-equilibrio",
-            "label": "Punto de equilibrio mensual calculado",
-            "type": "number",
-            "helpText": "Ingresa el monto mínimo mensual requerido."
+            "id": "kpis-status",
+            "label": "Estado de: Desarrollar los KPIs Estratégicos",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }

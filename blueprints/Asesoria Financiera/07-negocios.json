@@ -4,10 +4,219 @@
   "block": "business",
   "steps": [
     {
-      "id": "v2-step-entidad-juridica",
-      "title": "Definir la Entidad Jurídica de la Firma",
-      "description": "Elige la estructura legal que mejor protege tu patrimonio y se adapta a tu modelo de operación.",
+      "id": "step-estructura-carpetas-drive",
+      "title": "Crear tu estructura de carpetas en Google Drive",
+      "description": "Organiza en un solo lugar gratuito todo lo que vas a producir durante este Blueprint.",
       "order": 0,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear tu estructura de carpetas en Google Drive",
+          "summary": "Organiza en un solo lugar gratuito todo lo que vas a producir durante este Blueprint.",
+          "body": "Google Drive es gratuito y te permite tener un solo lugar centralizado para guardar cada documento, diseño y archivo que produzcas mientras construyes tu firma. Hoy Google Drive no ofrece una forma nativa de \"copiar\" la estructura de carpetas de otra persona con un clic - la manera más simple y confiable es crearla tú mismo siguiendo esta lista, una sola vez."
+        },
+        "objective": {
+          "description": "Crear una carpeta raíz en tu Google Drive con una subcarpeta para cada área de este Blueprint."
+        },
+        "checklist": [
+          {
+            "id": "chk-carpeta-01-legal",
+            "task": "Crear la carpeta \"01 - Legal y financiero\"",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          },
+          {
+            "id": "chk-carpeta-02-cumplimiento",
+            "task": "Crear la carpeta \"02 - Cumplimiento y certificaciones\"",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          },
+          {
+            "id": "chk-carpeta-03-servicios",
+            "task": "Crear la carpeta \"03 - Servicios y tarifas\"",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          },
+          {
+            "id": "chk-carpeta-04-marca",
+            "task": "Crear la carpeta \"04 - Marca\"",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          },
+          {
+            "id": "chk-carpeta-05-digital",
+            "task": "Crear la carpeta \"05 - Presencia digital\"",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          },
+          {
+            "id": "chk-carpeta-06-herramientas",
+            "task": "Crear la carpeta \"06 - Herramientas y compras\"",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          },
+          {
+            "id": "chk-carpeta-07-marketing",
+            "task": "Crear la carpeta \"07 - Marketing\"",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          },
+          {
+            "id": "chk-carpeta-08-clientes",
+            "task": "Crear la carpeta \"08 - Clientes\" (con una subcarpeta por cada cliente nuevo)",
+            "completed": false,
+            "registryFieldRef": "reg-carpeta-drive-raiz"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a organizar una estructura de carpetas clara en Google Drive para su firma de asesoría financiera.",
+          "context": "El usuario está iniciando su firma y quiere centralizar todos los archivos que va a producir.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Tener todo centralizado desde el primer día evita perder documentos importantes y facilita compartir información con tu contador, tu abogado o un futuro socio sin tener que buscar archivo por archivo.",
+        "tip": "Si te sientes cómodo con herramientas técnicas, puedes automatizar la creación de esta estructura con un script de Google Apps Script - pero crearla manualmente una sola vez, siguiendo esta lista, toma menos de 10 minutos y no requiere nada adicional.",
+        "recommendedTools": [
+          {
+            "name": "Google Drive",
+            "url": "https://drive.google.com"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "reg-carpeta-drive-raiz",
+            "label": "Enlace a tu carpeta raíz de Google Drive",
+            "type": "url",
+            "required": true,
+            "helpText": "Comparte la carpeta contigo mismo y pégala aquí - la vas a usar en los siguientes pasos para guardar cada archivo que produzcas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-elegir-nombre",
+      "title": "Elegir el nombre comercial de la firma",
+      "description": "Define el nombre bajo el cual tus clientes te van a conocer.",
+      "icon": "type",
+      "order": 1,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Elegir el nombre comercial de la firma",
+          "summary": "Define el nombre bajo el cual tus clientes te van a conocer.",
+          "body": "El nombre comercial es la base de toda tu marca y tu presencia digital - elígelo antes de avanzar con el registro legal, el dominio o el logo."
+        },
+        "objective": {
+          "description": "Definir el nombre comercial de la firma."
+        },
+        "checklist": [
+          {
+            "id": "chk-elegir-nombre",
+            "task": "Definir el nombre comercial de la firma.",
+            "completed": false,
+            "registryFieldRef": "reg-nombre-elegido"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir un nombre comercial memorable y profesional para su firma de asesoría financiera.",
+          "context": "El usuario está iniciando su firma y necesita definir el nombre comercial.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "El nombre es la base de tu marca, tu dominio y tus redes sociales - cambiarlo después de registrado implica rehacer papelería, sitio web y materiales.",
+        "tip": "Pronuncia el nombre en voz alta y pide a 2-3 personas que lo escriban de oído - si lo escriben mal, probablemente tus clientes también lo hagan.",
+        "registroFields": [
+          {
+            "id": "reg-nombre-elegido",
+            "label": "Nombre comercial elegido",
+            "type": "text",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-verificar-nombre",
+      "title": "Verificar disponibilidad del nombre comercial",
+      "description": "Confirma que el nombre esté libre como marca, dominio y usuario en redes.",
+      "icon": "search",
+      "order": 2,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "step-elegir-nombre"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Verificar disponibilidad del nombre comercial",
+          "summary": "Confirma que el nombre esté libre como marca, dominio y usuario en redes.",
+          "body": "Antes de comprometerte con el nombre, verifica que no esté registrado por otra firma, que el dominio .com esté disponible y que puedas usarlo en tus redes sociales principales."
+        },
+        "objective": {
+          "description": "Confirmar que el nombre elegido esté disponible legalmente y como dominio/usuario digital."
+        },
+        "checklist": [
+          {
+            "id": "chk-verificar-nombre",
+            "task": "Confirmar que el nombre elegido esté disponible legalmente y como dominio/usuario digital.",
+            "completed": false,
+            "registryFieldRef": "reg-verificacion-dominio-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a verificar la disponibilidad de un nombre comercial.",
+          "context": "El usuario ya eligió un nombre y necesita confirmar que esté disponible.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Descubrir un conflicto de nombre después de invertir en marca y sitio web es mucho más costoso que verificarlo ahora.",
+        "tip": "Revisa también que el nombre no esté ya usado por otra firma de servicios financieros en tu país, aunque el dominio esté libre.",
+        "registroFields": [
+          {
+            "id": "reg-verificacion-dominio-drive",
+            "label": "Enlace a verificación de disponibilidad",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-comparar-estructuras",
+      "title": "Comparar estructuras legales disponibles",
+      "description": "Compara al menos dos figuras legales para tu firma.",
+      "icon": "scale",
+      "order": 3,
       "type": "one_time",
       "estimatedHours": 3,
       "difficulty": "medium",
@@ -21,37 +230,52 @@
       },
       "content": {
         "overview": {
-          "title": "Definir la Entidad Jurídica de la Firma",
-          "summary": "Elige la estructura legal que mejor protege tu patrimonio y se adapta a tu modelo de operación.",
-          "body": "La estructura legal determina:\n- Cuánto respondes con tu patrimonio personal\n- Cómo pagas impuestos\n- Qué tan fácil es sumar socios\n\nOpciones: Persona natural, SRL, SAS, SA.\n\nConsultar con un abogado o contador especializado antes de decidir.\n\nCambiar la estructura legal después cuesta tiempo y dinero."
+          "title": "Comparar estructuras legales disponibles",
+          "summary": "Elige la figura legal que mejor protege tu patrimonio y se ajusta a cómo vas a operar.",
+          "body": "La estructura legal que elijas determina cuánto respondes con tu patrimonio personal, cómo pagas impuestos y qué tan fácil es sumar socios más adelante. Cambiarla después es posible, pero cuesta tiempo y dinero."
         },
         "objective": {
-          "description": "¿Qué estructura legal mejor protege tu patrimonio?"
+          "description": "Elegir la estructura legal correcta para tu firma de asesoría financiera."
         },
         "checklist": [
           {
-            "id": "v2-chk-entidad-01",
-            "task": "Comparar al menos 2 estructuras legales",
+            "id": "chk-comparar-2-estructuras",
+            "task": "Comparar al menos 2 estructuras legales disponibles en tu país",
             "completed": false,
-            "registryFieldRef": "v2-reg-estructura-elegida"
+            "registryFieldRef": "step-comparar-estructuras-status"
           },
           {
-            "id": "v2-chk-entidad-02",
-            "task": "Consultar con abogado especializado",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-entidad-03",
-            "task": "Seleccionar estructura legal definitiva",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-entidad-04",
-            "task": "Documentar la decisión",
-            "completed": false
+            "id": "chk-consultar-abogado-estructura",
+            "task": "Consultar con un abogado o contador especializado en servicios profesionales",
+            "completed": false,
+            "registryFieldRef": "step-comparar-estructuras-status"
           }
         ],
-        "resources": [],
+        "resources": [
+          {
+            "id": "res-guia-estructuras",
+            "type": "pdf",
+            "title": "Guía comparativa de estructuras legales",
+            "description": "Ventajas y desventajas de cada figura legal para una firma de asesoría.",
+            "provider": "Blueprint",
+            "previewUrl": "",
+            "downloadUrl": "",
+            "embedUrl": "",
+            "thumbnailUrl": "",
+            "mimeType": "",
+            "extension": "",
+            "size": 0,
+            "metadata": {
+              "pages": null,
+              "duration": null,
+              "language": "es"
+            },
+            "tags": [
+              "legal"
+            ],
+            "visibility": "organization"
+          }
+        ],
         "assistant": {
           "systemPrompt": "Ayuda al usuario a elegir la estructura legal correcta para su firma de asesoría financiera.",
           "context": "El usuario está iniciando una firma de asesoría financiera y necesita decidir su estructura legal.",
@@ -61,28 +285,170 @@
         },
         "knowledge": [],
         "whyItMatters": "La estructura legal que elijas hoy determina cuánto respondes con tu patrimonio personal si algo sale mal, cómo pagas impuestos, y qué tan fácil es sumar socios o inversionistas más adelante.",
+        "bestPractices": [
+          "Prioriza una estructura que separe tu patrimonio personal del de la firma.",
+          "Piensa a 3 años: ¿planeas sumar socios o seguir solo?"
+        ],
+        "commonMistakes": [
+          "Elegir la estructura más barata o rápida sin considerar la responsabilidad patrimonial."
+        ],
         "tip": "Si todavía no estás seguro de tener suficientes clientes para justificar una sociedad formal, muchas jurisdicciones permiten empezar como persona natural con negocio y migrar después.",
+        "recommendedTools": [
+          {
+            "name": "Cámara de Comercio local",
+            "url": ""
+          },
+          {
+            "name": "Contador o asesor legal",
+            "url": ""
+          }
+        ],
         "registroFields": [
           {
-            "id": "v2-reg-estructura-elegida",
-            "label": "Estructura legal elegida",
+            "id": "step-comparar-estructuras-status",
+            "label": "Estado de: Comparar estructuras legales disponibles",
             "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
             "required": true
           }
         ]
       }
     },
     {
-      "id": "v2-step-nombre-comercial",
-      "title": "Registrar Nombre Comercial",
-      "description": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.",
-      "order": 1,
+      "id": "step-definir-socios",
+      "title": "Definir si operarás solo o con socios",
+      "description": "Decide la composición societaria inicial de la firma.",
+      "icon": "handshake",
+      "order": 4,
       "type": "one_time",
-      "estimatedHours": 2,
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-comparar-estructuras"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir si operarás solo o con socios",
+          "summary": "Decide la composición societaria inicial de la firma.",
+          "body": "Define si vas a operar solo o con socios, y en qué proporción participa cada uno."
+        },
+        "objective": {
+          "description": "Definir si vas a operar solo o con socios, y en qué proporción."
+        },
+        "checklist": [
+          {
+            "id": "chk-definir-socios",
+            "task": "Definir si vas a operar solo o con socios, y en qué proporción.",
+            "completed": false,
+            "registryFieldRef": "reg-solo-o-con-socios"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a evaluar si conviene operar solo o con socios.",
+          "context": "El usuario está definiendo la composición societaria de su firma nueva.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Aunque decidas operar solo, deja por escrito qué pasaría si en el futuro decides sumar un socio.",
+        "registroFields": [
+          {
+            "id": "reg-solo-o-con-socios",
+            "label": "¿Operarás solo o con socios?",
+            "type": "select",
+            "options": [
+              "Solo",
+              "Con socios"
+            ],
+            "required": true
+          },
+          {
+            "id": "reg-composicion-societaria",
+            "label": "Composición societaria",
+            "type": "textarea",
+            "helpText": "Detalle de porcentajes y roles, si aplica."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-acuerdo-socios",
+      "title": "Redactar el acuerdo de socios (si aplica)",
+      "description": "Documenta por escrito los acuerdos entre socios antes de registrar la firma.",
+      "icon": "file-signature",
+      "order": 5,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-definir-socios"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar el acuerdo de socios (si aplica)",
+          "summary": "Documenta por escrito los acuerdos entre socios antes de registrar la firma.",
+          "body": "Si la firma se constituye con más de un socio, documenta por escrito las responsabilidades, la participación y qué pasa si alguno quiere salir."
+        },
+        "objective": {
+          "description": "Tener un acuerdo de socios por escrito, si la firma se constituye con más de un socio."
+        },
+        "checklist": [
+          {
+            "id": "chk-acuerdo-socios",
+            "task": "Tener un acuerdo de socios por escrito, si la firma se constituye con más de un socio.",
+            "completed": false,
+            "registryFieldRef": "reg-requiere-acuerdo-socios"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a estructurar las cláusulas clave de un acuerdo de socios.",
+          "context": "El usuario va a operar con socios y necesita formalizar el acuerdo.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Aunque empieces con un socio de mucha confianza, documenta desde el inicio qué pasa si alguno quiere salir - evita conflictos costosos después.",
+        "registroFields": [
+          {
+            "id": "reg-requiere-acuerdo-socios",
+            "label": "¿Se requiere acuerdo de socios?",
+            "type": "checkbox"
+          },
+          {
+            "id": "reg-resumen-acuerdo-socios",
+            "label": "Resumen del acuerdo",
+            "type": "textarea",
+            "helpText": "Cláusulas principales documentadas."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-elegir-estructura",
+      "title": "Elegir la estructura legal definitiva",
+      "description": "Confirma por escrito la estructura legal bajo la cual se va a registrar la firma.",
+      "icon": "scale",
+      "order": 6,
+      "type": "one_time",
+      "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "high",
       "dependencies": [
-        "v2-step-entidad-juridica"
+        "step-acuerdo-socios"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -92,143 +458,51 @@
       },
       "content": {
         "overview": {
-          "title": "Registrar Nombre Comercial",
-          "summary": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.",
-          "body": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.\n\nRegistra la marca comercial si aplica."
+          "title": "Elegir la estructura legal definitiva",
+          "summary": "Confirma por escrito la estructura legal bajo la cual se va a registrar la firma.",
+          "body": "Con la comparación hecha y, si aplica, el acuerdo de socios firmado, confirma la estructura legal definitiva antes de iniciar el trámite de registro."
         },
         "objective": {
-          "description": "¿Cómo se llamará tu firma ante el público?"
+          "description": "Confirmar por escrito la estructura legal bajo la cual se va a registrar la firma."
         },
         "checklist": [
           {
-            "id": "v2-chk-nombre-01",
-            "task": "Verificar disponibilidad en registro mercantil",
+            "id": "chk-elegir-estructura",
+            "task": "Confirmar por escrito la estructura legal bajo la cual se va a registrar la firma.",
             "completed": false,
-            "registryFieldRef": "v2-reg-nombre-elegido"
-          },
-          {
-            "id": "v2-chk-nombre-02",
-            "task": "Verificar disponibilidad de dominio web",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-nombre-03",
-            "task": "Verificar disponibilidad en redes sociales",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-nombre-04",
-            "task": "Registrar marca comercial",
-            "completed": false
+            "registryFieldRef": "reg-estructura-elegida"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a elegir y verificar la disponibilidad del nombre comercial de su firma de asesoría financiera.",
-          "context": "El usuario necesita definir el nombre bajo el cual sus clientes lo conocerán.",
+          "systemPrompt": "Ayuda al usuario a confirmar su decisión final de estructura legal.",
+          "context": "El usuario ya comparó opciones y necesita confirmar la decisión final.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "El nombre es la base de tu marca, tu dominio y tus redes sociales — cambiarlo después de registrado implica rehacer papelería, sitio web y materiales.",
-        "tip": "Pronuncia el nombre en voz alta y pide a 2-3 personas que lo escriban de oído — si lo escriben mal, probablemente tus clientes también lo hagan.",
+        "whyItMatters": "Esta decisión activa todos los trámites siguientes - una vez que registras bajo una estructura, cambiarla implica repetir gran parte del proceso legal.",
         "registroFields": [
           {
-            "id": "v2-reg-nombre-elegido",
-            "label": "Nombre comercial elegido",
-            "type": "text",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-registro-mercantil",
-      "title": "Realizar Registro Mercantil",
-      "description": "Presenta toda la documentación ante la cámara de comercio y obtén el certificado de existencia.",
-      "order": 2,
-      "type": "one_time",
-      "estimatedHours": 6,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-nombre-comercial"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Realizar Registro Mercantil",
-          "summary": "Presenta toda la documentación ante la cámara de comercio y obtén el certificado de existencia.",
-          "body": "Presenta toda la documentación ante la cámara de comercio y obtén certificado de existencia.\n\nObtener identificación tributaria (NIT/RFC/RUT) para operar fiscalmente."
-        },
-        "objective": {
-          "description": "¿Ya formalizaste legalmente la existencia de la firma?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-reg-01",
-            "task": "Preparar documentación requerida",
-            "completed": false,
-            "registryFieldRef": "v2-reg-fecha-constitucion"
-          },
-          {
-            "id": "v2-chk-reg-02",
-            "task": "Presentar trámite ante cámara de comercio",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-reg-03",
-            "task": "Obtener certificado de existencia",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-reg-04",
-            "task": "Obtener NIT/RFC/RUT",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-reg-05",
-            "task": "Obtener resolución de facturación electrónica",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario con el proceso de registro legal de su firma de asesoría financiera.",
-          "context": "El usuario ya eligió nombre y estructura legal y va a presentar el trámite.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Sin el registro mercantil no puedes facturar legalmente ni abrir la cuenta bancaria empresarial — es el trámite que desbloquea casi todo lo demás.",
-        "tip": "Los tiempos de respuesta de las autoridades varían mucho según el país — inicia este trámite lo antes posible.",
-        "registroFields": [
-          {
-            "id": "v2-reg-fecha-constitucion",
-            "label": "Fecha de constitución legal",
-            "type": "date"
-          },
-          {
-            "id": "v2-reg-num-tributario",
-            "label": "Número de identificación tributaria (NIT/RFC/RUT)",
+            "id": "reg-estructura-elegida",
+            "label": "Estructura legal elegida",
             "type": "text"
           }
         ]
       }
     },
     {
-      "id": "v2-step-investigar-cert",
-      "title": "Investigar Requisitos de Certificación",
-      "description": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
-      "order": 3,
+      "id": "step-reunir-documentos-registro",
+      "title": "Reunir los documentos requeridos para el registro",
+      "description": "Ten listos todos los documentos que exige el trámite de registro mercantil.",
+      "icon": "folder",
+      "order": 7,
       "type": "one_time",
-      "estimatedHours": 4,
-      "difficulty": "medium",
+      "estimatedHours": 2,
+      "difficulty": "easy",
       "priority": "high",
-      "dependencies": [],
+      "dependencies": [
+        "step-elegir-estructura"
+      ],
       "completionRules": {
         "requiredChecklist": true,
         "requiredResources": false,
@@ -237,34 +511,235 @@
       },
       "content": {
         "overview": {
-          "title": "Investigar Requisitos de Certificación",
-          "summary": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
-          "body": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.\n\nVerifica licencias necesarias para asesorar y requisitos de educación continua.\n\nProfesionales exigen horas de educación continua y renovación periódica — agenda los recordatorios desde ahora."
+          "title": "Reunir los documentos requeridos para el registro",
+          "summary": "Ten listos todos los documentos que exige el trámite de registro mercantil.",
+          "body": "Reúne identificaciones, comprobantes de domicilio y cualquier otro documento que exija la autoridad de registro en tu país antes de presentar el trámite."
         },
         "objective": {
-          "description": "¿Qué certificación exige el regulador de tu país?"
+          "description": "Tener listos todos los documentos que exige el trámite de registro mercantil."
         },
         "checklist": [
           {
-            "id": "v2-chk-cert-01",
-            "task": "Investigar requisitos regulatorios locales",
+            "id": "chk-reunir-documentos-registro",
+            "task": "Tener listos todos los documentos que exige el trámite de registro mercantil.",
             "completed": false,
-            "registryFieldRef": "investigar-cert-status"
-          },
+            "registryFieldRef": "step-reunir-documentos-registro-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar qué documentos necesita para el registro mercantil de su firma.",
+          "context": "El usuario está preparando el trámite de registro legal.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un trámite rechazado por documentación incompleta puede atrasar semanas el resto del roadmap, ya que muchos pasos posteriores dependen del registro.",
+        "tip": "Haz una copia digital de cada documento y guárdala en tu carpeta de Google Drive antes de entregarlos - te van a pedir varios de estos mismos documentos después, en el banco y en el seguro.",
+        "registroFields": [
           {
-            "id": "v2-chk-cert-02",
-            "task": "Verificar licencias necesarias",
-            "completed": false
-          },
+            "id": "step-reunir-documentos-registro-status",
+            "label": "Estado de: Reunir los documentos requeridos para el registro",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-tramite-registro",
+      "title": "Presentar el trámite de registro mercantil",
+      "description": "Presenta y da seguimiento al trámite de registro legal de la firma.",
+      "icon": "landmark",
+      "order": 8,
+      "type": "one_time",
+      "estimatedHours": 6,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "step-reunir-documentos-registro"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Presentar el trámite de registro mercantil",
+          "summary": "Presenta y da seguimiento al trámite de registro legal de la firma.",
+          "body": "Con los documentos listos, presenta el trámite de registro ante la autoridad correspondiente y da seguimiento hasta obtener la confirmación."
+        },
+        "objective": {
+          "description": "Presentar y dar seguimiento al trámite de registro legal de la firma."
+        },
+        "checklist": [
           {
-            "id": "v2-chk-cert-03",
-            "task": "Documentar requisitos de educación continua",
-            "completed": false
-          },
+            "id": "chk-tramite-registro",
+            "task": "Presentar y dar seguimiento al trámite de registro legal de la firma.",
+            "completed": false,
+            "registryFieldRef": "reg-fecha-constitucion"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario con el proceso de registro legal de su firma.",
+          "context": "El usuario ya reunió los documentos y va a presentar el trámite.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Los tiempos de respuesta de las autoridades varían mucho según el país - inicia este trámite lo antes posible, ya que varios pasos siguientes dependen de tenerlo listo.",
+        "registroFields": [
           {
-            "id": "v2-chk-cert-04",
-            "task": "Identificar autoridad regulatoria principal",
-            "completed": false
+            "id": "reg-fecha-constitucion",
+            "label": "Fecha de constitución legal",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-id-tributaria",
+      "title": "Obtener el número de identificación tributaria",
+      "description": "Obtén el número de identificación tributaria de la firma.",
+      "icon": "receipt",
+      "order": 9,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "step-tramite-registro"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Obtener el número de identificación tributaria",
+          "summary": "Obtén el número de identificación tributaria de la firma.",
+          "body": "Tramita el número de identificación tributaria de la firma (RFC, NIT, RUT, EIN o el equivalente en tu país) - lo vas a necesitar para facturar, abrir la cuenta bancaria y contratar herramientas."
+        },
+        "objective": {
+          "description": "Obtener el número de identificación tributaria de la firma."
+        },
+        "checklist": [
+          {
+            "id": "chk-id-tributaria",
+            "task": "Obtener el número de identificación tributaria de la firma.",
+            "completed": false,
+            "registryFieldRef": "reg-fecha-id-tributaria"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a tramitar la identificación tributaria de su firma.",
+          "context": "El usuario ya registró legalmente la firma.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Sin este número no puedes facturar legalmente ni abrir la cuenta bancaria empresarial - es el requisito que desbloquea casi todo lo demás.",
+        "registroFields": [
+          {
+            "id": "reg-fecha-id-tributaria",
+            "label": "Fecha de obtención de la identificación tributaria",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-registro-local",
+      "title": "Registrar la firma ante el municipio o autoridad local",
+      "description": "Completa cualquier registro adicional exigido por la autoridad local.",
+      "icon": "map-pin",
+      "order": 10,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-tramite-registro"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Registrar la firma ante el municipio o autoridad local",
+          "summary": "Completa cualquier registro adicional exigido por la autoridad local.",
+          "body": "Algunas jurisdicciones exigen un registro o licencia de funcionamiento adicional a nivel municipal o local."
+        },
+        "objective": {
+          "description": "Completar cualquier registro adicional exigido por la autoridad local o municipal."
+        },
+        "checklist": [
+          {
+            "id": "chk-registro-local",
+            "task": "Completar cualquier registro adicional exigido por la autoridad local o municipal.",
+            "completed": false,
+            "registryFieldRef": "reg-requiere-licencia-municipal"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar si necesita un registro local adicional.",
+          "context": "El usuario ya completó el registro mercantil nacional.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Operar sin el registro local exigido puede generar multas incluso si ya tienes en regla el registro nacional.",
+        "tip": "Confirma con la autoridad local si tu actividad de asesoría financiera requiere una licencia de funcionamiento específica, no solo el registro general de negocios.",
+        "registroFields": [
+          {
+            "id": "reg-requiere-licencia-municipal",
+            "label": "¿Requiere licencia municipal específica?",
+            "type": "checkbox"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-investigar-requisitos",
+      "title": "Investigar qué certificación exige el regulador de tu país",
+      "description": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
+      "icon": "search",
+      "order": 11,
+      "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "step-elegir-estructura"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Investigar qué certificación exige el regulador de tu país",
+          "summary": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
+          "body": "La mayoría de los países exigen algún tipo de certificación o registro profesional para ofrecer asesoría financiera de forma legal (por ejemplo, certificaciones tipo CFP o el equivalente local)."
+        },
+        "objective": {
+          "description": "Identificar qué certificación o registro profesional es obligatorio para ejercer legalmente en tu país."
+        },
+        "checklist": [
+          {
+            "id": "chk-investigar-requisitos",
+            "task": "Identificar qué certificación o registro profesional es obligatorio para ejercer legalmente en tu país.",
+            "completed": false,
+            "registryFieldRef": "step-investigar-requisitos-status"
           }
         ],
         "resources": [],
@@ -276,11 +751,11 @@
           ]
         },
         "knowledge": [],
-        "whyItMatters": "Ejercer sin la certificación o el registro exigido puede exponerte a sanciones legales y que tus clientes no puedan confiar en que estás autorizado para asesorarlos.",
+        "whyItMatters": "Ejercer sin la certificación o el registro exigido puede exponerte a sanciones legales y, sobre todo, a que tus clientes no puedan confiar en que estás autorizado para asesorarlos.",
         "registroFields": [
           {
-            "id": "investigar-cert-status",
-            "label": "Estado de la tarea: Investigar Requisitos de Certificación",
+            "id": "step-investigar-requisitos-status",
+            "label": "Estado de: Investigar qué certificación exige el regulador de tu país",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -289,16 +764,17 @@
       }
     },
     {
-      "id": "v2-step-inscribir-examen",
-      "title": "Inscribirte al Examen de Certificación",
+      "id": "step-inscribir-examen",
+      "title": "Inscribirte al examen o proceso de certificación",
       "description": "Completa la inscripción al examen o proceso de certificación correspondiente.",
-      "order": 4,
+      "icon": "clipboard-list",
+      "order": 12,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "high",
       "dependencies": [
-        "v2-step-investigar-cert"
+        "step-investigar-requisitos"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -308,60 +784,50 @@
       },
       "content": {
         "overview": {
-          "title": "Inscribirte al Examen de Certificación",
+          "title": "Inscribirte al examen o proceso de certificación",
           "summary": "Completa la inscripción al examen o proceso de certificación correspondiente.",
-          "body": "Completa la inscripción al examen o proceso de certificación correspondiente."
+          "body": "Inscríbete formalmente al proceso de certificación identificado en el paso anterior."
         },
         "objective": {
-          "description": "¿Completaste la inscripción al proceso de certificación?"
+          "description": "Completar la inscripción al examen o proceso de certificación correspondiente."
         },
         "checklist": [
           {
-            "id": "v2-chk-inscr-01",
-            "task": "Inscribirse en programa de certificación",
+            "id": "chk-inscribir-examen",
+            "task": "Completar la inscripción al examen o proceso de certificación correspondiente.",
             "completed": false,
-            "registryFieldRef": "inscribir-examen-status"
-          },
-          {
-            "id": "v2-chk-inscr-02",
-            "task": "Pagar derechos de examen",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-inscr-03",
-            "task": "Agendar fecha de examen",
-            "completed": false
+            "registryFieldRef": "reg-inscripcion-examen-drive"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a completar el proceso de inscripción al examen de certificación profesional.",
-          "context": "El usuario ya identificó el examen requerido y necesita inscribirse.",
+          "systemPrompt": "Ayuda al usuario a completar su inscripción a un examen de certificación profesional.",
+          "context": "El usuario ya identificó qué certificación necesita.",
           "suggestions": []
         },
         "knowledge": [],
+        "whyItMatters": "Muchos exámenes de certificación tienen cupos limitados o fechas fijas - inscribirte tarde puede atrasar meses tu certificación.",
         "registroFields": [
           {
-            "id": "inscribir-examen-status",
-            "label": "Estado de la tarea: Inscribirte al Examen de Certificación",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
+            "id": "reg-inscripcion-examen-drive",
+            "label": "Enlace al comprobante de inscripción",
+            "type": "url"
           }
         ]
       }
     },
     {
-      "id": "v2-step-estudiar-examen",
-      "title": "Estudiar para el Examen de Certificación",
-      "description": "Reserva tiempo constante cada semana para prepararte para el examen.",
-      "order": 5,
+      "id": "step-estudiar-examen",
+      "title": "Estudiar para el examen de certificación",
+      "description": "Prepárate con el material de estudio oficial del examen.",
+      "icon": "book-open",
+      "order": 13,
       "type": "one_time",
       "estimatedHours": 40,
       "difficulty": "hard",
       "priority": "high",
       "dependencies": [
-        "v2-step-inscribir-examen"
+        "step-inscribir-examen"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -383,7 +849,7 @@
             "id": "chk-estudiar-examen",
             "task": "Prepararte con el material de estudio oficial del examen de certificación.",
             "completed": false,
-            "registryFieldRef": "estudiar-examen-status"
+            "registryFieldRef": "step-estudiar-examen-status"
           }
         ],
         "resources": [],
@@ -396,8 +862,8 @@
         "tip": "Si el proceso completo toma meses, revisa si tu regulador permite operar bajo supervisión de un profesional ya certificado mientras la obtienes.",
         "registroFields": [
           {
-            "id": "estudiar-examen-status",
-            "label": "Estado de la tarea: Estudiar para el Examen de Certificación",
+            "id": "step-estudiar-examen-status",
+            "label": "Estado de: Estudiar para el examen de certificación",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -406,16 +872,17 @@
       }
     },
     {
-      "id": "v2-step-presentar-examen",
-      "title": "Presentar y Aprobar el Examen",
-      "description": "Llega con anticipación y lleva identificación oficial vigente.",
-      "order": 6,
+      "id": "step-presentar-examen",
+      "title": "Presentar el examen de certificación",
+      "description": "Presenta el examen o proceso de evaluación de la certificación.",
+      "icon": "graduation-cap",
+      "order": 14,
       "type": "one_time",
       "estimatedHours": 4,
       "difficulty": "hard",
       "priority": "high",
       "dependencies": [
-        "v2-step-estudiar-examen"
+        "step-estudiar-examen"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -425,37 +892,33 @@
       },
       "content": {
         "overview": {
-          "title": "Presentar y Aprobar el Examen",
-          "summary": "Llega con anticipación y lleva identificación oficial vigente.",
-          "body": "Llega con anticipación y lleva identificación oficial vigente."
+          "title": "Presentar el examen de certificación",
+          "summary": "Presenta el examen o proceso de evaluación de la certificación.",
+          "body": "Presenta el examen en la fecha programada."
         },
         "objective": {
-          "description": "¿Aprobaste el examen de certificación?"
+          "description": "Presentar el examen o proceso de evaluación de la certificación."
         },
         "checklist": [
           {
-            "id": "v2-chk-exam-01",
-            "task": "Presentar examen de certificación",
+            "id": "chk-presentar-examen",
+            "task": "Presentar el examen o proceso de evaluación de la certificación.",
             "completed": false,
-            "registryFieldRef": "presentar-examen-status"
-          },
-          {
-            "id": "v2-chk-exam-02",
-            "task": "Obtener resultado aprobatorio",
-            "completed": false
+            "registryFieldRef": "step-presentar-examen-status"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a prepararse mentalmente y logísticamente para presentar el examen de certificación.",
-          "context": "El usuario está listo para presentar el examen.",
+          "systemPrompt": "Ayuda al usuario a organizar los últimos detalles antes de presentar su examen de certificación.",
+          "context": "El usuario ya terminó de estudiar y va a presentar el examen.",
           "suggestions": []
         },
         "knowledge": [],
+        "tip": "Llega con anticipación y lleva contigo identificación oficial vigente - la mayoría de los centros de examen no permiten presentarlo sin ella.",
         "registroFields": [
           {
-            "id": "presentar-examen-status",
-            "label": "Estado de la tarea: Presentar y Aprobar el Examen",
+            "id": "step-presentar-examen-status",
+            "label": "Estado de: Presentar el examen de certificación",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
@@ -464,16 +927,17 @@
       }
     },
     {
-      "id": "v2-step-registro-profesional",
-      "title": "Obtener Número de Registro Profesional",
-      "description": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.",
-      "order": 7,
+      "id": "step-obtener-registro",
+      "title": "Obtener el número de registro profesional",
+      "description": "Obtén tu número de certificación o registro profesional oficial.",
+      "icon": "badge-check",
+      "order": 15,
       "type": "one_time",
-      "estimatedHours": 2,
+      "estimatedHours": 1,
       "difficulty": "easy",
       "priority": "high",
       "dependencies": [
-        "v2-step-presentar-examen"
+        "step-presentar-examen"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -483,44 +947,439 @@
       },
       "content": {
         "overview": {
-          "title": "Obtener Número de Registro Profesional",
-          "summary": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.",
-          "body": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.\n\nPublica tus credenciales en tu sitio web y materiales de marketing."
+          "title": "Obtener el número de registro profesional",
+          "summary": "Obtén tu número de certificación o registro profesional oficial.",
+          "body": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial."
         },
         "objective": {
-          "description": "¿Ya tienes tu número de registro oficial?"
+          "description": "Obtener tu número de certificación o registro profesional oficial."
         },
         "checklist": [
           {
-            "id": "v2-chk-regprof-01",
-            "task": "Tramitar número de registro profesional",
+            "id": "chk-obtener-registro",
+            "task": "Obtener tu número de certificación o registro profesional oficial.",
             "completed": false,
-            "registryFieldRef": "v2-reg-num-profesional"
-          },
-          {
-            "id": "v2-chk-regprof-02",
-            "task": "Obtener certificado oficial",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-regprof-03",
-            "task": "Publicar credenciales en sitio web",
-            "completed": false
+            "registryFieldRef": "reg-numero-registro"
           }
         ],
         "resources": [],
         "assistant": {
-          "systemPrompt": "Ayuda al usuario a completar el trámite de registro profesional después de aprobar el examen.",
-          "context": "El usuario aprobó el examen y necesita obtener su número de registro oficial.",
+          "systemPrompt": "Ayuda al usuario a completar el trámite final para obtener su registro profesional.",
+          "context": "El usuario ya aprobó su examen de certificación.",
           "suggestions": []
         },
         "knowledge": [],
-        "whyItMatters": "Publicar tus credenciales oficiales genera confianza inmediata en clientes potenciales que aún no te conocen.",
+        "whyItMatters": "Este número es lo que un cliente o autoridad puede verificar para confirmar que estás autorizado a ejercer - tenlo visible en tu sitio web y materiales.",
         "registroFields": [
           {
-            "id": "v2-reg-num-profesional",
+            "id": "reg-numero-registro",
             "label": "Número de registro profesional",
             "type": "text"
+          },
+          {
+            "id": "reg-fecha-certificacion",
+            "label": "Fecha de certificación profesional",
+            "type": "date"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-redactar-politica-privacidad",
+      "title": "Redactar la política de confidencialidad y manejo de datos",
+      "description": "Documenta cómo proteges la información financiera de tus clientes.",
+      "icon": "file-text",
+      "order": 16,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": true,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar la política de confidencialidad y manejo de datos",
+          "summary": "Documenta cómo proteges la información financiera y personal de tus clientes.",
+          "body": "Una firma de asesoría financiera maneja información extremadamente sensible. Define por escrito tu política de privacidad y confidencialidad antes de recibir a tu primer cliente."
+        },
+        "objective": {
+          "description": "Tener una política de confidencialidad y manejo de datos documentada."
+        },
+        "checklist": [
+          {
+            "id": "chk-redactar-politica-privacidad",
+            "task": "Tener una política de confidencialidad y manejo de datos documentada.",
+            "completed": false,
+            "registryFieldRef": "reg-politica-privacidad-drive"
+          }
+        ],
+        "resources": [
+          {
+            "id": "res-plantilla-privacidad",
+            "type": "word",
+            "title": "Plantilla de política de confidencialidad",
+            "description": "Base editable para redactar tu política de privacidad y manejo de datos.",
+            "provider": "Blueprint",
+            "previewUrl": "",
+            "downloadUrl": "",
+            "embedUrl": "",
+            "thumbnailUrl": "",
+            "mimeType": "",
+            "extension": "",
+            "size": 0,
+            "metadata": {
+              "pages": null,
+              "duration": null,
+              "language": "es"
+            },
+            "tags": [
+              "legal",
+              "cumplimiento"
+            ],
+            "visibility": "organization"
+          }
+        ],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar una política de confidencialidad adecuada para una firma de asesoría financiera.",
+          "context": "El usuario necesita documentar cómo protege la información de sus clientes.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Una firma de asesoría financiera maneja información extremadamente sensible - no tener esta política documentada te expone legalmente y genera desconfianza.",
+        "registroFields": [
+          {
+            "id": "reg-politica-privacidad-drive",
+            "label": "Enlace al documento final en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-definir-almacenamiento",
+      "title": "Definir dónde y cómo se almacenará la información de los clientes",
+      "description": "Define la plataforma y el proceso de almacenamiento seguro de información.",
+      "icon": "cloud",
+      "order": 17,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-redactar-politica-privacidad"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir dónde y cómo se almacenará la información de los clientes",
+          "summary": "Define la plataforma y el proceso de almacenamiento seguro de información.",
+          "body": "Decide en qué plataforma vas a almacenar de forma segura la información financiera y personal de tus clientes, alineado con tu política de privacidad."
+        },
+        "objective": {
+          "description": "Definir la plataforma y el proceso de almacenamiento seguro de la información de clientes."
+        },
+        "checklist": [
+          {
+            "id": "chk-definir-almacenamiento",
+            "task": "Definir la plataforma y el proceso de almacenamiento seguro de la información de clientes.",
+            "completed": false,
+            "registryFieldRef": "reg-proceso-almacenamiento"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir un proceso seguro de almacenamiento de información de clientes.",
+          "context": "El usuario ya definió su política de privacidad.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Activa la autenticación de dos factores en cualquier plataforma donde vayas a guardar información financiera de tus clientes.",
+        "registroFields": [
+          {
+            "id": "reg-proceso-almacenamiento",
+            "label": "Plataforma y proceso de almacenamiento",
+            "type": "textarea"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-listar-fuentes-ingreso",
+      "title": "Listar tus fuentes de ingreso relacionadas con recomendaciones a clientes",
+      "description": "Identifica todas tus fuentes de ingreso que puedan representar un conflicto de interés.",
+      "icon": "list-checks",
+      "order": 18,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Listar tus fuentes de ingreso relacionadas con recomendaciones a clientes",
+          "summary": "Identifica todas tus fuentes de ingreso que puedan representar un conflicto de interés.",
+          "body": "Si recibes comisiones de terceros (por ejemplo, de fondos de inversión que recomiendas) necesitas identificarlo antes de definir tu proceso de declaración de conflictos."
+        },
+        "objective": {
+          "description": "Identificar todas tus fuentes de ingreso que puedan representar un conflicto de interés."
+        },
+        "checklist": [
+          {
+            "id": "chk-listar-fuentes-ingreso",
+            "task": "Identificar todas tus fuentes de ingreso que puedan representar un conflicto de interés.",
+            "completed": false,
+            "registryFieldRef": "reg-recibe-comisiones-terceros"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar posibles conflictos de interés en su modelo de negocio como asesor financiero.",
+          "context": "El usuario está definiendo sus políticas de cumplimiento interno.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Identificar esto con honestidad desde el inicio es lo que te permite declarar un conflicto de interés antes de que un cliente lo descubra por su cuenta.",
+        "registroFields": [
+          {
+            "id": "reg-recibe-comisiones-terceros",
+            "label": "¿Recibes comisiones de terceros?",
+            "type": "checkbox"
+          },
+          {
+            "id": "reg-fuentes-ingreso-texto",
+            "label": "Fuentes de ingreso identificadas",
+            "type": "textarea"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-proceso-declaracion-conflicto",
+      "title": "Definir el proceso de declaración de conflictos de interés",
+      "description": "Define cómo vas a declarar un conflicto de interés a un cliente.",
+      "icon": "scale",
+      "order": 19,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "step-listar-fuentes-ingreso"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir el proceso de declaración de conflictos de interés",
+          "summary": "Define cómo vas a declarar un conflicto de interés a un cliente cuando ocurra.",
+          "body": "Define un proceso claro y consistente para declarar cualquier conflicto de interés a tus clientes en el momento en que se presente."
+        },
+        "objective": {
+          "description": "Definir cómo vas a declarar un conflicto de interés a un cliente cuando ocurra."
+        },
+        "checklist": [
+          {
+            "id": "chk-proceso-declaracion-conflicto",
+            "task": "Definir cómo vas a declarar un conflicto de interés a un cliente cuando ocurra.",
+            "completed": false,
+            "registryFieldRef": "reg-proceso-declaracion-texto"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar un proceso claro de declaración de conflictos de interés.",
+          "context": "El usuario ya identificó sus posibles fuentes de conflicto de interés.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "La regla más simple: si dudas si algo es un conflicto de interés, decláralo. La transparencia siempre construye más confianza que el silencio.",
+        "registroFields": [
+          {
+            "id": "reg-proceso-declaracion-texto",
+            "label": "Proceso de declaración definido",
+            "type": "textarea"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-formato-conflicto",
+      "title": "Crear el formato de declaración de conflicto de interés",
+      "description": "Ten un formato estándar listo para declarar un conflicto de interés.",
+      "icon": "file-text",
+      "order": 20,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-proceso-declaracion-conflicto"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear el formato de declaración de conflicto de interés",
+          "summary": "Ten un formato estándar listo para declarar un conflicto de interés.",
+          "body": "Crea un formato corto y estándar para declarar un conflicto de interés cuando se presente."
+        },
+        "objective": {
+          "description": "Tener un formato estándar listo para declarar un conflicto de interés cuando se presente."
+        },
+        "checklist": [
+          {
+            "id": "chk-formato-conflicto",
+            "task": "Tener un formato estándar listo para declarar un conflicto de interés cuando se presente.",
+            "completed": false,
+            "registryFieldRef": "reg-formato-conflicto-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar un formato de declaración de conflicto de interés.",
+          "context": "El usuario ya definió su proceso de declaración de conflictos.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "reg-formato-conflicto-drive",
+            "label": "Enlace al formato en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-politica-retencion",
+      "title": "Definir tu política de retención de registros",
+      "description": "Define cuánto tiempo y cómo vas a conservar los registros de cada cliente.",
+      "icon": "archive",
+      "order": 21,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir tu política de retención de registros",
+          "summary": "Define cuánto tiempo y cómo vas a conservar los registros de cada cliente.",
+          "body": "La mayoría de los reguladores exigen conservar registros y comunicaciones con clientes por un período mínimo definido."
+        },
+        "objective": {
+          "description": "Definir cuánto tiempo y cómo vas a conservar los registros y comunicaciones con cada cliente."
+        },
+        "checklist": [
+          {
+            "id": "chk-politica-retencion",
+            "task": "Definir cuánto tiempo y cómo vas a conservar los registros y comunicaciones con cada cliente.",
+            "completed": false,
+            "registryFieldRef": "reg-politica-retencion-texto"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir su política de retención de registros.",
+          "context": "El usuario está completando sus políticas de cumplimiento interno.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "La mayoría de los reguladores exigen conservar registros por un período mínimo - no tener esta política definida te deja expuesto en una auditoría.",
+        "registroFields": [
+          {
+            "id": "reg-politica-retencion-texto",
+            "label": "Política de retención documentada",
+            "type": "textarea",
+            "helpText": "Períodos y métodos de conservación de registros."
+          }
+        ]
+      }
+    },
+    {
+      "id": "step-calendario-renovacion",
+      "title": "Configurar el calendario de renovación de certificaciones",
+      "description": "Programa recordatorios para renovar tu certificación.",
+      "icon": "calendar-clock",
+      "order": 22,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "step-obtener-registro"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Configurar el calendario de renovación de certificaciones",
+          "summary": "Programa recordatorios para renovar tu certificación y cumplir con la educación continua exigida.",
+          "body": "La mayoría de las certificaciones profesionales exigen horas de educación continua y una renovación periódica - agenda los recordatorios desde ahora."
+        },
+        "objective": {
+          "description": "Programar recordatorios para renovar tu certificación y cumplir con la educación continua exigida."
+        },
+        "checklist": [
+          {
+            "id": "chk-calendario-renovacion",
+            "task": "Programar recordatorios para renovar tu certificación y cumplir con la educación continua exigida.",
+            "completed": false,
+            "registryFieldRef": "reg-fecha-proxima-renovacion"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a organizar el calendario de renovación de su certificación profesional.",
+          "context": "El usuario ya obtuvo su certificación y necesita mantenerla vigente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Programa el recordatorio con al menos 60 días de anticipación - renovar una certificación a último minuto puede dejarte sin poder operar legalmente por unos días.",
+        "registroFields": [
+          {
+            "id": "reg-fecha-proxima-renovacion",
+            "label": "Fecha de próxima renovación",
+            "type": "date"
+          },
+          {
+            "id": "reg-calendario-renovacion-drive",
+            "label": "Enlace al recordatorio programado",
+            "type": "url"
           }
         ]
       }
@@ -529,7 +1388,7 @@
       "id": "v2-step-kyc-aml",
       "title": "Implementar Políticas KYC/AML",
       "description": "Como asesor financiero, estás obligado a implementar políticas de conocimiento del cliente y anti-lavado.",
-      "order": 8,
+      "order": 23,
       "type": "one_time",
       "estimatedHours": 4,
       "difficulty": "hard",
@@ -562,17 +1421,20 @@
           {
             "id": "v2-chk-kyc-02",
             "task": "Implementar verificación de identidad",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "kyc-aml-status"
           },
           {
             "id": "v2-chk-kyc-03",
             "task": "Documentar reporte de operaciones sospechosas",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "kyc-aml-status"
           },
           {
             "id": "v2-chk-kyc-04",
             "task": "Capacitar equipo en políticas AML",
-            "completed": false
+            "completed": false,
+            "registryFieldRef": "kyc-aml-status"
           }
         ],
         "resources": [],
@@ -591,290 +1453,10 @@
         "registroFields": [
           {
             "id": "kyc-aml-status",
-            "label": "Estado de la tarea: Implementar Políticas KYC/AML",
+            "label": "Estado de: Implementar Políticas KYC/AML",
             "type": "text",
             "placeholder": "Ej: Completado o Registrado",
             "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-conflictos-interes",
-      "title": "Definir Política de Conflictos de Interés",
-      "description": "Gestiona transparentemente posibles conflictos de interés con tus clientes.",
-      "order": 9,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-kyc-aml"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Definir Política de Conflictos de Interés",
-          "summary": "Gestiona transparentemente posibles conflictos de interés con tus clientes.",
-          "body": "Si recibes comisiones de terceros necesitas identificarlo y declararlo.\n\nLa regla más simple: si dudas si algo es un conflicto, decláralo. La transparencia siempre construye más confianza.\n\nCrea un formato estándar y úsalo consistentemente."
-        },
-        "objective": {
-          "description": "¿Gestionas transparentemente posibles conflictos?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-ci-01",
-            "task": "Listar fuentes de ingreso con conflicto",
-            "completed": false,
-            "registryFieldRef": "conflictos-interes-status"
-          },
-          {
-            "id": "v2-chk-ci-02",
-            "task": "Definir proceso de declaración",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-ci-03",
-            "task": "Crear formato estándar",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-ci-04",
-            "task": "Documentar política por escrito",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a identificar y gestionar conflictos de interés en una firma de asesoría financiera.",
-          "context": "El usuario necesita definir cómo manejará situaciones donde sus intereses puedan afectar sus recomendaciones.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "La transparencia en conflictos de interés es una obligación regulatoria en la mayoría de jurisdicciones y el pilar de la relación fiduciaria con el cliente.",
-        "registroFields": [
-          {
-            "id": "conflictos-interes-status",
-            "label": "Estado de la tarea: Definir Política de Conflictos de Interés",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-seguro-eo",
-      "title": "Contratar Seguro de Responsabilidad Profesional (E & O)",
-      "description": "Protege la firma contra errores u omisiones en tus recomendaciones.",
-      "order": 10,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-entidad-juridica"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Contratar Seguro de Responsabilidad Profesional (E & O)",
-          "summary": "Protege la firma contra errores u omisiones en tus recomendaciones.",
-          "body": "Un seguro E & O te protege si un cliente reclama que una recomendación tuya le causó pérdida financiera.\n\nCotiza al menos 2 aseguradoras que cubran servicios financieros.\n\nSin esta cobertura, un solo reclamo puede comprometer todo el patrimonio de la firma.\n\nRevisa con cuidado los montos de cobertura y las exclusiones antes de contratar."
-        },
-        "objective": {
-          "description": "¿Protegiste la firma contra errores u omisiones?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-eo-01",
-            "task": "Cotizar al menos 2 aseguradoras",
-            "completed": false,
-            "registryFieldRef": "v2-reg-aseguradora"
-          },
-          {
-            "id": "v2-chk-eo-02",
-            "task": "Comparar coberturas y exclusiones",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-eo-03",
-            "task": "Contratar póliza antes del primer cliente",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-eo-04",
-            "task": "Documentar póliza en carpeta segura",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a entender qué cubre un seguro de responsabilidad profesional para asesores financieros y cómo elegir la mejor póliza.",
-          "context": "El usuario está por empezar a atender clientes y necesita protegerse frente a reclamos.",
-          "suggestions": [
-            "¿Qué cubre un seguro E & O para asesores financieros?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "Sin esta cobertura, un solo reclamo de un cliente insatisfecho puede comprometer todo el patrimonio de la firma y el tuyo personal.",
-        "commonMistakes": [
-          "Empezar a atender clientes antes de tener la póliza activa, confiando en que 'nada va a pasar'."
-        ],
-        "registroFields": [
-          {
-            "id": "v2-reg-aseguradora",
-            "label": "Aseguradora contratada",
-            "type": "text"
-          },
-          {
-            "id": "v2-reg-poliza-drive",
-            "label": "Enlace a la póliza en almacenamiento seguro",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-calendario-renovacion",
-      "title": "Configurar Calendario de Renovación",
-      "description": "Programa recordatorios para renovar certificaciones y pólizas antes de su vencimiento.",
-      "order": 11,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [
-        "v2-step-registro-profesional",
-        "v2-step-seguro-eo"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Configurar Calendario de Renovación",
-          "summary": "Programa recordatorios para renovar certificaciones y pólizas antes de su vencimiento.",
-          "body": "Profesionales exigen horas de educación continua y renovación periódica.\n\nAgenda los recordatorios desde ahora para no perder vigencia."
-        },
-        "objective": {
-          "description": "¿Programaste recordatorios para renovar certificaciones?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-cal-01",
-            "task": "Programar recordatorios de renovación",
-            "completed": false,
-            "registryFieldRef": "calendario-renovacion-status"
-          },
-          {
-            "id": "v2-chk-cal-02",
-            "task": "Agendar horas de educación continua",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-cal-03",
-            "task": "Configurar alertas 60 días antes de vencimiento",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a configurar un calendario de renovaciones para certificaciones y pólizas.",
-          "context": "El usuario ya obtuvo su certificación y contrató el seguro y necesita programar sus renovaciones.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Configura los recordatorios con 60 días de anticipación — te da tiempo suficiente para completar la educación continua requerida sin carreras de último momento.",
-        "registroFields": [
-          {
-            "id": "calendario-renovacion-status",
-            "label": "Estado de la tarea: Configurar Calendario de Renovación",
-            "type": "date",
-            "placeholder": "Selecciona la fecha",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-contrato",
-      "title": "Redactar Contrato de Servicios",
-      "description": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.",
-      "order": 12,
-      "type": "one_time",
-      "estimatedHours": 4,
-      "difficulty": "hard",
-      "priority": "high",
-      "dependencies": [
-        "v2-step-paquetes"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Redactar Contrato de Servicios",
-          "summary": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.",
-          "body": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.\n\nHacer revisar por abogado especializado."
-        },
-        "objective": {
-          "description": "¿Tienes un contrato legal listo para clientes?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-cont-01",
-            "task": "Redactar borrador del contrato",
-            "completed": false,
-            "registryFieldRef": "v2-reg-contrato-drive"
-          },
-          {
-            "id": "v2-chk-cont-02",
-            "task": "Incluir cláusulas de confidencialidad",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-cont-03",
-            "task": "Definir política de cancelación",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-cont-04",
-            "task": "Hacer revisar por abogado",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a estructurar las cláusulas clave de un contrato de servicios de asesoría financiera.",
-          "context": "El usuario necesita un contrato legal listo antes de firmar con su primer cliente.",
-          "suggestions": [
-            "¿Qué cláusulas debe incluir un contrato de asesoría financiera?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "Un contrato bien redactado protege tanto al cliente como a tu firma — define expectativas claras y evita disputas costosas.",
-        "registroFields": [
-          {
-            "id": "v2-reg-contrato-drive",
-            "label": "Enlace al contrato en almacenamiento seguro",
-            "type": "url"
           }
         ]
       }
