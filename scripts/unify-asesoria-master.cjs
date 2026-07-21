@@ -29,6 +29,15 @@ function cleanString(str) {
     .trim();
 }
 
+// Limpieza para coincidencia de palabras clave manteniendo espacios y eliminando acentos
+function cleanTextForSearch(str) {
+  if (!str) return '';
+  return str.toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
 const phasesMeta = {
   '01-estrategia': { title: 'Identidad y Rumbo Estratégico', block: 'strategy', steps: [] },
   '02-estrategia': { title: 'Planificación y Viabilidad Financiera', block: 'strategy', steps: [] },
@@ -47,7 +56,7 @@ const phasesMeta = {
 };
 
 function getDestKey(s, origPhaseTitle) {
-  const title = s.title.toLowerCase();
+  const title = cleanTextForSearch(s.title);
   const id = s.id.toLowerCase();
   const type = s.type || 'one_time';
   
@@ -100,7 +109,7 @@ function getDestKey(s, origPhaseTitle) {
   }
 
   // Fallbacks if phase title is empty (for v3-linear unique steps)
-  if (title.includes('mision') || title.includes('vision') || title.includes('proposito') || title.includes('gobernanza')) return '01-estrategia';
+  if (title.includes('mision') || title.includes('vision') || title.includes('proposito') || title.includes('gobernanza') || title.includes('mercado') || title.includes('encuesta')) return '01-estrategia';
   if (title.includes('kpi') || title.includes('presupuesto') || title.includes('equilibrio')) return '02-estrategia';
   if (title.includes('catalogo') || title.includes('tarifa') || title.includes('cobro') || title.includes('paquete')) return '03-estrategia';
   if (title.includes('seguro') || title.includes('riesgo') || title.includes('crisis')) return '09-negocios';
