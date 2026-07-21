@@ -101,9 +101,9 @@ const stepDestinationMap = {
   // pero mantendremos este archivo como contenedor de los planes de contingencia si existen)
 
   // 10-negocios.json (Recurrentes de Negocios - business)
-  'revision mensual de kpis': '10-negocios',
-  'presentar informe trimestral': '10-negocios',
-  'revisar y ajustar estrategia': '10-negocios',
+  'revision mensual de kpis': '01-estrategia',
+  'presentar informe trimestral': '01-estrategia',
+  'revisar y ajustar estrategia': '01-estrategia',
   'realizar cierre contable': '10-negocios',
   'conciliacion bancaria': '10-negocios',
   'revisar margenes de rentabilidad': '10-negocios',

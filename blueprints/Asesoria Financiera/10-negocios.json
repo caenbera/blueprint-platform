@@ -4,208 +4,10 @@
   "block": "business",
   "steps": [
     {
-      "id": "v2-rec-kpis-mensual",
-      "title": "Revisión Mensual de KPIs",
-      "description": "Analiza métricas clave y compara con objetivos.",
-      "order": 0,
-      "type": "monthly",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Revisión Mensual de KPIs",
-          "summary": "Analiza métricas clave y compara con objetivos.",
-          "body": "Analiza métricas clave y compara con objetivos.\n\nSin datos no vas a saber si tus esfuerzos están funcionando."
-        },
-        "objective": {
-          "description": "¿Analizaste las métricas del mes?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-km-01",
-            "task": "Analizar métricas del mes",
-            "completed": false,
-            "registryFieldRef": "kpis-mensual-status"
-          },
-          {
-            "id": "v2-chk-km-02",
-            "task": "Comparar con objetivos",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-km-03",
-            "task": "Identificar áreas de mejora",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-km-04",
-            "task": "Ajustar estrategia",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a analizar sus KPIs mensuales y tomar decisiones basadas en datos.",
-          "context": "El usuario necesita revisar el desempeño de su firma del mes anterior.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "kpis-mensual-status",
-            "label": "Estado de la tarea: Revisión Mensual de KPIs",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-rec-informe-trimestral",
-      "title": "Presentar Informe Trimestral",
-      "description": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre.",
-      "order": 1,
-      "type": "quarterly",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Presentar Informe Trimestral",
-          "summary": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre.",
-          "body": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre."
-        },
-        "objective": {
-          "description": "¿Comunicaste resultados a stakeholders?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-it-01",
-            "task": "Preparar informe con KPIs",
-            "completed": false,
-            "registryFieldRef": "informe-trimestral-status"
-          },
-          {
-            "id": "v2-chk-it-02",
-            "task": "Incluir estado financiero",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-it-03",
-            "task": "Presentar a stakeholders",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-it-04",
-            "task": "Recopilar retroalimentación",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a preparar y presentar el informe trimestral de su firma.",
-          "context": "El usuario necesita comunicar los resultados del trimestre a socios o directivos.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "informe-trimestral-status",
-            "label": "Estado de la tarea: Presentar Informe Trimestral",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-rec-revision-estrategia",
-      "title": "Revisar y Ajustar Estrategia",
-      "description": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras.",
-      "order": 2,
-      "type": "quarterly",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Revisar y Ajustar Estrategia",
-          "summary": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras.",
-          "body": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras."
-        },
-        "objective": {
-          "description": "¿Sigue siendo relevante tu oferta?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-re-01",
-            "task": "Analizar servicios más usados",
-            "completed": false,
-            "registryFieldRef": "revision-estrategia-status"
-          },
-          {
-            "id": "v2-chk-re-02",
-            "task": "Evaluar feedback de clientes",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-re-03",
-            "task": "Proponer nuevos servicios",
-            "completed": false
-          },
-          {
-            "id": "v2-chk-re-04",
-            "task": "Documentar cambios estratégicos",
-            "completed": false
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a evaluar y ajustar la estrategia de su firma de asesoría financiera.",
-          "context": "El usuario necesita revisar si su oferta sigue siendo relevante para el mercado.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "revision-estrategia-status",
-            "label": "Estado de la tarea: Revisar y Ajustar Estrategia",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
       "id": "v2-rec-renovar-certificaciones",
       "title": "Renovar Certificaciones Profesionales",
       "description": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
-      "order": 3,
+      "order": 0,
       "type": "yearly",
       "estimatedHours": 8,
       "difficulty": "medium",
@@ -272,7 +74,7 @@
       "id": "v2-rec-cierre-contable",
       "title": "Realizar Cierre Contable",
       "description": "Conciliación bancaria, registro de gastos e ingresos, generación de estado de resultados.",
-      "order": 4,
+      "order": 1,
       "type": "monthly",
       "estimatedHours": 3,
       "difficulty": "medium",
@@ -344,7 +146,7 @@
       "id": "v2-rec-conciliacion-bancaria",
       "title": "Conciliación Bancaria",
       "description": "Verifica movimientos, identifica transacciones pendientes y corrige discrepancias.",
-      "order": 5,
+      "order": 2,
       "type": "monthly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -410,7 +212,7 @@
       "id": "v2-rec-revision-margenes",
       "title": "Revisar Márgenes de Rentabilidad",
       "description": "Analiza rentabilidad por servicio y ajusta precios si es necesario.",
-      "order": 6,
+      "order": 3,
       "type": "quarterly",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -476,7 +278,7 @@
       "id": "v2-rec-declaracion-impuestos",
       "title": "Declaración Anual de Impuestos",
       "description": "Reúne documentación fiscal, trabaja con contador y presenta declaraciones.",
-      "order": 7,
+      "order": 4,
       "type": "yearly",
       "estimatedHours": 6,
       "difficulty": "hard",
