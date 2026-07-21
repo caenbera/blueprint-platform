@@ -176,7 +176,6 @@ export function ImportBlueprintJsonDialog({
       .sort((a, b) => a.name.localeCompare(b.name));
 
     if (phaseItems.length === 0) {
-      // Aún no hay fases subidas, está bien, no hay error crítico todavía, solo esperamos
       return;
     }
 
@@ -184,110 +183,154 @@ export function ImportBlueprintJsonDialog({
     const warnings: string[] = [];
 
     for (const item of phaseItems) {
-      // Crear una copia profunda del objeto de fase para evitar modificar el estado original
-      const phase = JSON.parse(JSON.stringify(item.content));
+      // Crear una copia profunda del objeto de datos del archivo
+      const fileData = JSON.parse(JSON.stringify(item.content));
 
-      // Normalizar fase si viene en formato informal
-      if (phase.phase && !phase.title) {
-        phase.title = phase.phase;
-      }
+      // Extraer las fases (soporta un objeto de fase único o un contenedor con un arreglo "phases")
+      const rawPhases = fileData.phases && Array.isArray(fileData.phases)
+        ? fileData.phases.map((p: any) => ({ ...p, block: p.block || fileData.block }))
+        : [fileData];
 
-      if (!phase.id && phase.title) {
-        // Generar un ID de fase limpio basado en el título
-        phase.id = "fase-" + phase.title
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[\u0300-\u036f]/g, "") // Remueve acentos
-          .replace(/[^a-z0-9]/g, "-")
-          .replace(/-+/g, "-")
-          .replace(/^-|-$/g, "");
-      }
-
-      if (!phase.id || !phase.title || !phase.block) {
-        setError(`El archivo '${item.name}' no tiene una estructura de fase válida (requiere 'id', 'title' y 'block').`);
-        return;
-      }
-
-      if (!ALLOWED_BLOCKS.includes(phase.block)) {
-        setError(`En '${item.name}': El bloque '${phase.block}' no es válido. Debe ser uno de: ${ALLOWED_BLOCKS.join(", ")}`);
-        return;
-      }
-
-      // Autocalcular orden de la fase
-      phase.order = phases.length;
-
-      const steps = phase.steps || [];
-      phase.steps = steps.map((step: any, stepIndex: number) => {
-        // Normalizar estructura del paso si viene en formato informal (ej: con "guide" en la raíz)
-        if (step.guide && !step.content) {
-          step.content = {
-            overview: {
-              title: step.title,
-              summary: step.title,
-              body: step.guide.whyItMatters || ""
-            },
-            objective: {
-              description: ""
-            },
-            whyItMatters: step.guide.whyItMatters || "",
-            bestPractices: step.guide.bestPractices || [],
-            commonMistakes: step.guide.commonMistakes || [],
-            tip: step.guide.tip || "",
-            recommendedTools: step.guide.recommendedTools || [],
-            registroFields: step.registroFields || [],
-            checklist: (step.checklist || []).map((checkItem: any, idx: number) => ({
-              id: checkItem.id || `chk-${step.id}-${idx}`,
-              task: checkItem.text || checkItem.task || ""
-            }))
-          };
-
-          // Limpiar campos obsoletos del nivel de raíz
-          delete step.guide;
-          delete step.registroFields;
-          delete step.checklist;
+      for (const phase of rawPhases) {
+        // Normalizar fase si viene en formato informal
+        if (phase.phase && !phase.title) {
+          phase.title = phase.phase;
+        }
+        if (phase.phaseTitle && !phase.title) {
+          phase.title = phase.phaseTitle;
+        }
+        if (phase.phaseId && !phase.id) {
+          phase.id = phase.phaseId;
         }
 
-        // Rellenar valores por defecto para campos obligatorios
-        if (!step.type) {
-          step.type = "one_time";
-        }
-        if (step.estimatedHours === undefined) {
-          step.estimatedHours = 0;
-        }
-        if (!step.difficulty) {
-          step.difficulty = "easy";
-        }
-        if (!step.priority) {
-          step.priority = "normal";
-        }
-        if (!step.dependencies) {
-          step.dependencies = [];
+        if (!phase.id && phase.title) {
+          // Generar un ID de fase limpio basado en el título
+          phase.id = "fase-" + phase.title
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") // Remueve acentos
+            .replace(/[^a-z0-9]/g, "-")
+            .replace(/-+/g, "-")
+            .replace(/^-|-$/g, "");
         }
 
-        if (!step.id || !step.title || !step.type) {
-          setError(`En '${item.name}', paso '${step.title || "sin título"}': Debe contener 'id', 'title' y 'type'.`);
+        if (!phase.id || !phase.title || !phase.block) {
+          setError(`El archivo '${item.name}' no tiene una estructura de fase válida (requiere 'id', 'title' y 'block').`);
+          return;
+        }
+
+        if (!ALLOWED_BLOCKS.includes(phase.block)) {
+          setError(`En '${item.name}': El bloque '${phase.block}' no es válido. Debe ser uno de: ${ALLOWED_BLOCKS.join(", ")}`);
+          return;
+        }
+
+        // Autocalcular orden de la fase
+        phase.order = phases.length;
+
+        const steps = phase.steps || [];
+        phase.steps = steps.map((step: any, stepIndex: number) => {
+          // Normalizar nombres de llaves informales del paso
+          if (step.stepId && !step.id) {
+            step.id = step.stepId;
+          }
+          if (step.stepTitle && !step.title) {
+            step.title = step.stepTitle;
+          }
+
+          // Normalizar estructura del paso si viene en formato informal (ej: con "guide" en la raíz)
+          if (step.guide && !step.content) {
+            step.content = {
+              overview: {
+                title: step.title,
+                summary: step.title,
+                body: step.guide.whyItMatters || ""
+              },
+              objective: {
+                description: ""
+              },
+              whyItMatters: step.guide.whyItMatters || "",
+              bestPractices: step.guide.bestPractices || [],
+              commonMistakes: step.guide.commonMistakes || [],
+              tip: step.guide.tip || "",
+              recommendedTools: step.guide.recommendedTools || [],
+              registroFields: step.registroFields || [],
+              checklist: (step.checklist || []).map((checkItem: any, idx: number) => ({
+                id: checkItem.id || `chk-${step.id}-${idx}`,
+                task: checkItem.text || checkItem.task || ""
+              }))
+            };
+
+            // Limpiar campos obsoletos del nivel de raíz
+            delete step.guide;
+            delete step.registroFields;
+            delete step.checklist;
+          }
+
+          // Rellenar valores por defecto para campos obligatorios
+          if (!step.type) {
+            step.type = "one_time";
+          }
+          if (step.estimatedHours === undefined) {
+            step.estimatedHours = 0;
+          }
+          if (!step.difficulty) {
+            step.difficulty = "easy";
+          }
+          if (!step.priority) {
+            step.priority = "normal";
+          }
+          if (!step.dependencies) {
+            step.dependencies = [];
+          }
+
+          // Limpiar campos nulos o indefinidos en registroFields para evitar que Zod falle
+          if (step.content && Array.isArray(step.content.registroFields)) {
+            step.content.registroFields = step.content.registroFields.map((field: any) => {
+              const normalizedField = { ...field };
+              if (normalizedField.placeholder === null || normalizedField.placeholder === undefined) {
+                delete normalizedField.placeholder;
+              }
+              if (normalizedField.helpText === null || normalizedField.helpText === undefined) {
+                delete normalizedField.helpText;
+              }
+              if (normalizedField.unit === null || normalizedField.unit === undefined) {
+                delete normalizedField.unit;
+              }
+              if (normalizedField.options === null || normalizedField.options === undefined) {
+                delete normalizedField.options;
+              }
+              if (normalizedField.required === null) {
+                normalizedField.required = false;
+              }
+              return normalizedField;
+            });
+          }
+
+          if (!step.id || !step.title || !step.type) {
+            setError(`En '${item.name}', paso '${step.title || "sin título"}': Debe contener 'id', 'title' y 'type'.`);
+            return step;
+          }
+
+          // Validar coherencia de checklist
+          const checklistTasks = (step.content?.checklist || []).map((t: any) => t.task.toLowerCase());
+          const registroIds = (step.content?.registroFields || []).map((f: any) => f.id);
+          const requiresFields = checklistTasks.some((task: string) =>
+            task.includes("definir") ||
+            task.includes("calcular") ||
+            task.includes("redactar") ||
+            task.includes("establecer") ||
+            task.includes("registrar")
+          );
+
+          if (requiresFields && registroIds.length === 0) {
+            warnings.push(`Paso "${step.title}": pide definir/calcular datos en su checklist pero no tiene campos en Registro del Paso.`);
+          }
+
           return step;
-        }
+        });
 
-        // Validar coherencia de checklist
-        const checklistTasks = (step.content?.checklist || []).map((t: any) => t.task.toLowerCase());
-        const registroIds = (step.content?.registroFields || []).map((f: any) => f.id);
-        const requiresFields = checklistTasks.some((task: string) =>
-          task.includes("definir") ||
-          task.includes("calcular") ||
-          task.includes("redactar") ||
-          task.includes("establecer") ||
-          task.includes("registrar")
-        );
-
-        if (requiresFields && registroIds.length === 0) {
-          warnings.push(`Paso "${step.title}": pide definir/calcular datos en su checklist pero no tiene campos en Registro del Paso.`);
-        }
-
-        return step;
-      });
-
-      phases.push(phase);
+        phases.push(phase);
+      }
     }
 
     setAssembledBlueprint({

@@ -1,0 +1,1579 @@
+{
+  "id": "bp-cultivo-orellana",
+  "slug": "cultivo-orellana",
+  "name": "Cultivo de Hongo Orellana",
+  "description": "Blueprint integral para el diseño, producción y comercialización de hongos orellana (Pleurotus ostreatus), desde la adecuación del sustrato basado en economía circular hasta la venta B2B y B2C.",
+  "category": "Agronegocios",
+  "industry": "Cultivos Agrícolas",
+  "version": "3.0.0-linear",
+  "author": "BizBuilder Gem",
+  "language": "es",
+  "difficulty": "intermediate",
+  "estimatedDuration": "12-16 semanas + operación continua",
+  "tags": ["agro", "hongos", "orellanas", "sostenibilidad", "agricultura"],
+  "coverImage": "",
+  "icon": "sprout",
+  "status": "published",
+  "blueprintType": "construction",
+  "settings": {
+    "allowComments": true,
+    "allowAssistant": true,
+    "allowKnowledge": true,
+    "allowExport": true,
+    "allowMarketplace": true
+  },
+  "roadmap": [
+    {
+      "id": "fase-strategy",
+      "title": "Estrategia y Sostenibilidad",
+      "description": "Definición del modelo de negocio agrícola, economía circular y métricas de éxito del cultivo.",
+      "objective": "Establecer las bases estratégicas, el impacto ambiental y los indicadores de rendimiento (Eficiencia Biológica).",
+      "order": 1,
+      "resources": [],
+      "block": "strategy",
+      "steps": [
+        {
+          "id": "step-strat-1",
+          "icon": "target",
+          "title": "Propósito y Visión",
+          "description": "Misión y norte del proyecto de orellanas.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Visión Estratégica del Cultivo",
+              "summary": "Establece el norte y el impacto deseado de tu producción.",
+              "body": "Define qué quieres lograr. Las orellanas son una alternativa rica en proteína. ¿Tu enfoque será combatir la inseguridad alimentaria, suplir restaurantes gourmet o vender proteína vegetal sustentable?"
+            },
+            "objective": { "description": "Tener claridad sobre la misión y el valor diferencial del hongo." },
+            "checklist": [
+              { "id": "chk-strat-1-1", "task": "Redactar la misión del cultivo", "completed": false },
+              { "id": "chk-strat-1-2", "task": "Redactar la visión a 5 años", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres experto en agronegocios. Ayuda a definir la visión para un cultivo de hongos.",
+              "context": "Fase inicial de planificación.",
+              "suggestions": ["¿Cómo redacto una misión enfocada en sostenibilidad?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Permite alinear a los socios y comunicar un mensaje fuerte a los compradores.",
+            "tip": "Incluye el componente nutricional y ecológico en tu visión.",
+            "bestPractices": ["Enfocarse en el impacto local", "Ser específico"],
+            "commonMistakes": ["Ser demasiado genérico", "Ignorar la sostenibilidad"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-1",
+                "label": "Misión del Cultivo",
+                "type": "textarea",
+                "required": true,
+                "helpText": "Ingresa la misión definida para tu agronegocio.",
+                "placeholder": "Nuestra misión es..."
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-strat-2",
+          "icon": "bar-chart",
+          "title": "Análisis de Mercado",
+          "description": "Estudio de demanda local y nacional.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Demanda de Hongos Comestibles",
+              "summary": "Investiga quién compra orellanas en tu región.",
+              "body": "El mercado de orellanas abarca desde restaurantes veganos y gourmet, hasta supermercados y mercados campesinos. Identifica a tus competidores y los precios promedio por kilo fresco o deshidratado."
+            },
+            "objective": { "description": "Comprender la dinámica de precios y los nichos más rentables." },
+            "checklist": [
+              { "id": "chk-strat-2-1", "task": "Listar 5 competidores o productores locales", "completed": false },
+              { "id": "chk-strat-2-2", "task": "Identificar precios promedio por Kg fresco y seco", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres analista de mercado agrícola.",
+              "context": "Evaluación de mercado de hongos.",
+              "suggestions": ["¿Cuáles son los principales nichos para vender orellanas?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Evita producir a ciegas y asegura que haya demanda real para tu cosecha semanal.",
+            "tip": "Los mercados campesinos locales son excelentes puntos de partida para testear el producto.",
+            "bestPractices": ["Entrevistar chefs locales", "Revisar tiendas naturistas"],
+            "commonMistakes": ["Asumir que el mercado fresco es el único viable"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-2",
+                "label": "Precio Promedio Mercado (Kg)",
+                "type": "number",
+                "required": true,
+                "helpText": "Precio de venta al público en tu zona por 1 kilogramo.",
+                "placeholder": "Ej. 25000"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-strat-3",
+          "icon": "leaf",
+          "title": "Modelo de Economía Circular",
+          "description": "Estrategia de aprovechamiento de sustratos.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-strat-1"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Sustratos a base de Residuos Agrícolas",
+              "summary": "Define los residuos que usarás para cultivar el hongo.",
+              "body": "Las orellanas pueden crecer en bagazo de caña, pulpa de café, tamo de arroz, paja o aserrín. Identifica qué residuo agrícola es abundante, barato o gratuito en tu región para usarlo como sustrato principal."
+            },
+            "objective": { "description": "Reducir costos operativos usando residuos disponibles localmente." },
+            "checklist": [
+              { "id": "chk-strat-3-1", "task": "Mapear 3 fuentes de residuos agrícolas locales", "completed": false },
+              { "id": "chk-strat-3-2", "task": "Establecer modelo de recolección o compra", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres especialista en economía circular y cultivo de hongos.",
+              "context": "Selección de sustratos.",
+              "suggestions": ["¿Qué residuo es mejor: tamo de arroz o pulpa de café?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "El costo del sustrato dictará el margen de rentabilidad del negocio.",
+            "tip": "El bagazo de caña y el tamo de trigo tienen excelente rendimiento biológico.",
+            "bestPractices": ["Asegurar suministro constante", "Verificar que el residuo no tenga fungicidas"],
+            "commonMistakes": ["Usar maderas tratadas con químicos (tóxico para el hongo)"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-3",
+                "label": "Sustrato Principal Seleccionado",
+                "type": "select",
+                "required": true,
+                "helpText": "Elige la base principal de tu sustrato.",
+                "placeholder": "Seleccionar...",
+                "options": ["Bagazo de Caña", "Pulpa de Café", "Tamo de Arroz/Trigo", "Aserrín/Viruta", "Paja de Maíz", "Otro"]
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-strat-4",
+          "icon": "line-chart",
+          "title": "Definición de KPIs",
+          "description": "Métricas biológicas y comerciales.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 2,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Indicadores Clave del Cultivo",
+              "summary": "Establece las métricas que te dirán si eres rentable.",
+              "body": "Los KPIs principales en orellanas son la Eficiencia Biológica (EB: peso de hongos frescos / peso seco del sustrato), la tasa de contaminación (bolsas perdidas por Trichoderma o bacterias) y el costo por Kg producido."
+            },
+            "objective": { "description": "Poder medir la salud financiera y agronómica del cultivo." },
+            "checklist": [
+              { "id": "chk-strat-4-1", "task": "Definir meta de Eficiencia Biológica (Ej. >60%)", "completed": false },
+              { "id": "chk-strat-4-2", "task": "Definir límite aceptable de contaminación (Ej. <5%)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres agrónomo experto en hongos.",
+              "context": "Definición de KPIs.",
+              "suggestions": ["¿Cómo se calcula exactamente la Eficiencia Biológica?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Sin métricas, no sabrás si un lote falló por la cepa, el clima o la técnica.",
+            "tip": "Una Eficiencia Biológica superior al 80% indica un cultivo altamente optimizado.",
+            "bestPractices": ["Registrar cada lote sembrado", "Pesar todo el sustrato seco antes de hidratar"],
+            "commonMistakes": ["No llevar registros de pérdida por contaminación"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-4",
+                "label": "Meta de Contaminación Máxima (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Porcentaje máximo permitido de bolsas contaminadas por lote.",
+                "placeholder": "5"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-strat-5",
+          "icon": "map-pin",
+          "title": "Proveedores Estratégicos",
+          "description": "Selección de cepas (micelio) e insumos.",
+          "order": 5,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Aseguramiento de Semilla de Calidad",
+              "summary": "Encuentra laboratorios confiables de micelio.",
+              "body": "El éxito del cultivo depende en un 50% de la calidad de la 'semilla' (micelio en grano). Investiga laboratorios biotecnológicos locales certificados que vendan cepas vigorosas de Pleurotus y suplementos como salvado o carbonato de calcio."
+            },
+            "objective": { "description": "Garantizar una cadena de suministro estable y biológicamente segura." },
+            "checklist": [
+              { "id": "chk-strat-5-1", "task": "Contactar a 3 laboratorios productores de micelio", "completed": false },
+              { "id": "chk-strat-5-2", "task": "Seleccionar proveedor de bolsas plásticas (con o sin filtro)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Experto en cadena de suministro agrícola.",
+              "context": "Búsqueda de proveedores.",
+              "suggestions": ["¿Qué debo preguntarle a un laboratorio que vende micelio?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "El micelio contaminado o viejo arruinará meses de trabajo e inversión.",
+            "tip": "Pide micelio fresco (blanco puro) y nunca micelio que ya tenga líquido amarillo (metabolitos por estrés/vejez).",
+            "bestPractices": ["Comprar semillas tipo F1 o F2", "Evaluar tiempos de entrega"],
+            "commonMistakes": ["Comprar micelio barato en redes sociales sin respaldo técnico"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-5",
+                "label": "Proveedor Principal de Micelio",
+                "type": "text",
+                "required": true,
+                "helpText": "Nombre del laboratorio seleccionado.",
+                "placeholder": "Ej. Micelio Biotec"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-strat-6",
+          "icon": "calendar",
+          "title": "Revisión Estratégica Trimestral",
+          "description": "Análisis de ciclo de producción (Trimestral).",
+          "order": 6,
+          "type": "quarterly",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-strat-4"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Auditoría de Resultados por Trimestre",
+              "summary": "Revisa los KPIs logrados en los últimos 3 meses.",
+              "body": "Reúne al equipo para analizar la Eficiencia Biológica promedio, las tasas de contaminación y los comentarios de los clientes. Ajusta la formulación del sustrato o el control climático si los números están por debajo de la meta."
+            },
+            "objective": { "description": "Mejorar continuamente la técnica agrícola." },
+            "checklist": [
+              { "id": "chk-strat-6-1", "task": "Calcular EB promedio del trimestre", "completed": false },
+              { "id": "chk-strat-6-2", "task": "Revisar rentabilidad de ventas", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres consultor estratégico agro.",
+              "context": "Revisión trimestral de resultados.",
+              "suggestions": ["¿Cómo puedo aumentar la Eficiencia Biológica?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Permite corregir desviaciones antes de perder capital a largo plazo.",
+            "tip": "Si hay mucha contaminación en un trimestre, revisa los protocolos de pasteurización y filtros de aire.",
+            "bestPractices": ["Ser honesto con las pérdidas", "Analizar variaciones de clima según la época"],
+            "commonMistakes": ["Ocultar los lotes fallidos en los reportes"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-6",
+                "label": "Eficiencia Biológica Trimestral Alcanzada (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Ingresa el % de EB obtenido en promedio este trimestre.",
+                "placeholder": "65"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-strat-7",
+          "icon": "sprout",
+          "title": "Innovación en Cepas",
+          "description": "Pruebas de nuevos sustratos o variedades (Semestral).",
+          "order": 7,
+          "type": "semester",
+          "estimatedHours": 8,
+          "difficulty": "hard",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Experimentación Biológica",
+              "summary": "Prueba orellanas rosadas, amarillas o nuevas mezclas.",
+              "body": "Cada seis meses, dedica un pequeño porcentaje del cuarto de incubación a pruebas (I+D). Prueba cepas como Pleurotus djamor (rosado), Pleurotus citrinopileatus (amarillo) o ajusta la cantidad de suplemento nutricional en el sustrato base."
+            },
+            "objective": { "description": "Diversificar el portafolio y mejorar rendimientos." },
+            "checklist": [
+              { "id": "chk-strat-7-1", "task": "Adquirir una nueva cepa comercial para prueba", "completed": false },
+              { "id": "chk-strat-7-2", "task": "Documentar crecimiento comparativo", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Científico agrícola experto en hongos.",
+              "context": "Innovación en cepas.",
+              "suggestions": ["¿Cuáles son las diferencias de cultivo de la orellana rosada?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Las orellanas de colores o híbridos fuertes atraen a chefs y aumentan el precio de venta.",
+            "tip": "Las orellanas rosadas (Djamor) necesitan más temperatura (trópico), ideal para climas cálidos.",
+            "bestPractices": ["Aislar la zona de pruebas", "Etiquetar cuidadosamente"],
+            "commonMistakes": ["Cambiar el 100% de la producción a una cepa no probada"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-7",
+                "label": "Nueva Cepa o Prueba a Realizar",
+                "type": "text",
+                "required": true,
+                "helpText": "Qué variación probarás este semestre.",
+                "placeholder": "Pleurotus Rosado o +10% Salvado"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-strat-8",
+          "icon": "shield",
+          "title": "Auditoría de Sostenibilidad",
+          "description": "Revisión anual de impacto (Anual).",
+          "order": 8,
+          "type": "yearly",
+          "estimatedHours": 6,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": ["step-strat-3"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Cierre del Ciclo Ecológico",
+              "summary": "Mide cuántas toneladas de residuos agrícolas transformaste en alimento.",
+              "body": "Calcula el volumen total de sustrato agrícola rescatado de la quema o pudrición. Además, planifica la disposición del bloque residual (compostaje de sustrato ya cosechado) para venderlo como abono orgánico superior."
+            },
+            "objective": { "description": "Validar el impacto ambiental positivo y preparar informes para marketing." },
+            "checklist": [
+              { "id": "chk-strat-8-1", "task": "Calcular Toneladas de residuos recuperados", "completed": false },
+              { "id": "chk-strat-8-2", "task": "Revisar proceso de compostaje post-cosecha", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Experto ambiental.",
+              "context": "Métricas de impacto ambiental.",
+              "suggestions": ["¿Cómo vendo el sustrato gastado (Pleurotus spent compost) como abono?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "El sustrato agotado (Pleurotus spent mushroom substrate) es un producto extra vendible como excelente abono para suelos.",
+            "tip": "El sustrato agotado es rico en nitrógeno y enzimas, ideal para recuperación de suelos degradados.",
+            "bestPractices": ["Asociarse con agricultores vecinos para el intercambio"],
+            "commonMistakes": ["Botar el bloque de sustrato viejo a la basura normal"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-strat-8",
+                "label": "Toneladas de Residuo Recicladas este Año",
+                "type": "number",
+                "required": true,
+                "helpText": "Peso total estimado del sustrato procesado.",
+                "placeholder": "12"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "fase-business",
+      "title": "Negocio y Finanzas",
+      "description": "Formalización, presupuestos, permisos (ICA/INVIMA) y estructura de costos.",
+      "objective": "Garantizar el marco legal y asegurar un flujo de caja positivo para la operación constante.",
+      "order": 2,
+      "resources": [],
+      "block": "business",
+      "steps": [
+        {
+          "id": "step-bus-1",
+          "icon": "briefcase",
+          "title": "Constitución Legal",
+          "description": "Registro de la empresa agrícola.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 8,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Formalización de la Unidad Productiva",
+              "summary": "Registra el agronegocio ante las cámaras de comercio y entidades fiscales.",
+              "body": "Elige la figura legal adecuada (Persona Natural, SAS, Cooperativa). En el sector agrícola, ciertas figuras pueden tener beneficios tributarios o facilitar el acceso a créditos de fomento agropecuario."
+            },
+            "objective": { "description": "Poder facturar a supermercados y restaurantes formales." },
+            "checklist": [
+              { "id": "chk-bus-1-1", "task": "Definir tipo de sociedad", "completed": false },
+              { "id": "chk-bus-1-2", "task": "Registrar RUT y Cámara de Comercio (si aplica)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres un abogado corporativo.",
+              "context": "Registro de empresa.",
+              "suggestions": ["¿Cuáles son los beneficios de ser productor primario en temas de impuestos?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Los grandes compradores B2B (supermercados) exigirán facturación electrónica y RUT.",
+            "tip": "Investiga los códigos de actividad económica (CIIU) específicos para cultivo de hongos o hortalizas.",
+            "bestPractices": ["Separar las finanzas personales de las del cultivo"],
+            "commonMistakes": ["Operar informalmente y perder clientes grandes"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-1",
+                "label": "Tipo de Empresa Registrada",
+                "type": "select",
+                "required": true,
+                "helpText": "Selecciona la figura jurídica adoptada.",
+                "placeholder": "Seleccionar...",
+                "options": ["Persona Natural", "SAS", "Cooperativa / Asociación", "Otro"]
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-bus-2",
+          "icon": "file-text",
+          "title": "Permisos y Normativa",
+          "description": "Certificaciones sanitarias y agropecuarias.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 15,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["step-bus-1"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Regulación ICA / INVIMA (o equivalente local)",
+              "summary": "Asegura que tu producto es apto para consumo humano.",
+              "body": "Para productos frescos primarios (hongos sin procesar), usualmente se requiere registro como predio productor agrícola (ej. ICA en Colombia). Si vas a procesar, deshidratar o empacar con marca, podrías requerir notificaciones o registros sanitarios (ej. INVIMA)."
+            },
+            "objective": { "description": "Cumplir la ley sanitaria y garantizar inocuidad alimentaria." },
+            "checklist": [
+              { "id": "chk-bus-2-1", "task": "Consultar requisitos de entidad agropecuaria (ICA)", "completed": false },
+              { "id": "chk-bus-2-2", "task": "Establecer manual de Buenas Prácticas Agrícolas (BPA)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Especialista en regulación sanitaria agrícola.",
+              "context": "Permisos gubernamentales.",
+              "suggestions": ["¿Necesito registro sanitario si solo vendo hongos frescos enteros?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Las sanciones sanitarias pueden cerrar el cultivo permanentemente.",
+            "tip": "El producto fresco entero generalmente no requiere registro sanitario complejo, solo buenas prácticas de producción primaria.",
+            "bestPractices": ["Implementar lavamanos, pediluvios y mallas anti-insectos"],
+            "commonMistakes": ["Vender hongos en polvo o conservas sin el registro sanitario correspondiente"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-2",
+                "label": "Estado de Registro Agrícola",
+                "type": "select",
+                "required": true,
+                "helpText": "Situación actual de tus permisos.",
+                "placeholder": "Seleccionar...",
+                "options": ["Pendiente", "En Trámite", "Aprobado", "No Aplica"]
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-bus-3",
+          "icon": "calculator",
+          "title": "Presupuesto Inicial (CAPEX)",
+          "description": "Inversión en infraestructura y equipos.",
+          "order": 3,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Inversión de Capital para el Cultivo",
+              "summary": "Calcula el costo de arrancar las operaciones.",
+              "body": "Elabora el presupuesto para: adecuación de cuartos (incubación oscuro, fructificación iluminado), estanterías, sistemas de humidificación automática (nebulizadores), termómetros, básculas, y equipos de pasteurización (autoclaves, canecas o calderas)."
+            },
+            "objective": { "description": "Saber exactamente cuánto capital necesitas antes de producir el primer hongo." },
+            "checklist": [
+              { "id": "chk-bus-3-1", "task": "Cotizar equipos de pasteurización", "completed": false },
+              { "id": "chk-bus-3-2", "task": "Cotizar adecuación de cuartos (aislamiento térmico)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres un modelador financiero para agronegocios.",
+              "context": "Presupuesto CAPEX.",
+              "suggestions": ["¿Cuáles son los equipos básicos para un cultivo artesanal de orellanas?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Subestimar la adecuación del clima es la principal causa de fracaso productivo.",
+            "tip": "Las estanterías pueden ser de madera tratada, PVC o metal, pero recuerda que el área tendrá alta humedad constante (85%+), el hierro se oxidará rápido.",
+            "bestPractices": ["Usar plásticos agrícolas gruesos para aislar cuartos"],
+            "commonMistakes": ["Comprar nebulizadores demasiado pequeños para el volumen del cuarto"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-3",
+                "label": "Inversión Inicial Total Estimada",
+                "type": "number",
+                "required": true,
+                "helpText": "Monto total del CAPEX en tu moneda local.",
+                "placeholder": "Ej. 5000000"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-bus-4",
+          "icon": "pie-chart",
+          "title": "Estructura de Costos (OPEX)",
+          "description": "Cálculo del costo de producción por bolsa/kilo.",
+          "order": 4,
+          "type": "one_time",
+          "estimatedHours": 5,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["step-bus-3"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Costos Operativos Mensuales",
+              "summary": "Cuánto cuesta producir un kilo de hongo.",
+              "body": "Suma los costos recurrentes: Sustrato, suplementos (salvado, carbonato, yeso), semilla (micelio), bolsas, agua, electricidad, gas/leña (para pasteurizar) y mano de obra. Divide esto entre los kilos producidos proyectados."
+            },
+            "objective": { "description": "Conocer el costo unitario para fijar un precio rentable." },
+            "checklist": [
+              { "id": "chk-bus-4-1", "task": "Listar costos variables por lote", "completed": false },
+              { "id": "chk-bus-4-2", "task": "Calcular Costo por Kilogramo producido", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Consultor de costos agrícolas.",
+              "context": "Cálculo OPEX.",
+              "suggestions": ["¿Cómo calculo el costo de mano de obra en un cultivo por lotes semanales?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "El margen de rentabilidad depende de mantener el OPEX bajo control.",
+            "tip": "La energía para calentar/pasteurizar el sustrato suele ser el costo más alto junto con la semilla.",
+            "bestPractices": ["Comprar sustrato y semilla al por mayor"],
+            "commonMistakes": ["No incluir el propio salario en los costos operativos"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-4",
+                "label": "Costo de Producción por Kg",
+                "type": "number",
+                "required": true,
+                "helpText": "Ingresa el costo base operativo por kilogramo producido.",
+                "placeholder": "Ej. 8000"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-bus-5",
+          "icon": "package",
+          "title": "Definición de Productos",
+          "description": "Presentaciones: fresco, seco, polvo.",
+          "order": 5,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Portafolio de Productos Micológicos",
+              "summary": "Decide cómo venderás las orellanas.",
+              "body": "Opciones principales: 1) Bandejas de 200g o 250g para supermercados, 2) Bolsas de 1kg-5kg para B2B/Restaurantes, 3) Orellana deshidratada (para extender la vida útil a meses) y 4) Productos derivados (antipastos, conservas)."
+            },
+            "objective": { "description": "Establecer la oferta que saldrá al mercado." },
+            "checklist": [
+              { "id": "chk-bus-5-1", "task": "Definir presentación para B2C (Consumidor final)", "completed": false },
+              { "id": "chk-bus-5-2", "task": "Definir presentación para B2B (Mayoristas)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Experto en desarrollo de producto alimenticio.",
+              "context": "Definición de empaques.",
+              "suggestions": ["¿Qué material de empaque es mejor para que la orellana no sude ni se pudra?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "El hongo fresco tiene una vida útil corta (5-7 días). El empaque es vital para la presentación y conservación.",
+            "tip": "No selles herméticamente el hongo fresco; necesita respirar o se babeará rápido. Usa empaques con microperforaciones.",
+            "bestPractices": ["Tener una línea de deshidratados para aprovechar excesos de cosecha"],
+            "commonMistakes": ["Empacar en bolsas de cierre hermético (Ziploc cerradas)"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-5",
+                "label": "Presentación Principal (B2C)",
+                "type": "text",
+                "required": true,
+                "helpText": "Ej. Bandeja de pulpa biodegradable de 250g con film perforado.",
+                "placeholder": "Bandeja 250g"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-bus-6",
+          "icon": "dollar-sign",
+          "title": "Estrategia de Precios",
+          "description": "Márgenes y punto de equilibrio.",
+          "order": 6,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-bus-4"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Fijación de Precios de Venta",
+              "summary": "Establece el precio B2B y B2C garantizando utilidad.",
+              "body": "Calcula el Punto de Equilibrio (cuántos kilos debes vender al mes para no perder). Luego define un margen de ganancia que compense las variaciones climáticas y las mermas naturales (hongos no vendibles por estética)."
+            },
+            "objective": { "description": "Asegurar que cada kilo vendido contribuya positivamente a la utilidad." },
+            "checklist": [
+              { "id": "chk-bus-6-1", "task": "Fijar precio por Kg B2B (con descuento por volumen)", "completed": false },
+              { "id": "chk-bus-6-2", "task": "Fijar precio por bandeja B2C (Margen mayor)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres un analista de pricing.",
+              "context": "Precios de venta de hongos.",
+              "suggestions": ["¿Cuánto margen de ganancia es razonable en agricultura urbana/hongos?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Precios mal calculados generan 'crecimiento destructivo': entre más vendes, más dinero pierdes.",
+            "tip": "El mercado gourmet valora la apariencia (sombreros enteros, sin romper); puedes cobrar premium por la 'categoría A'.",
+            "bestPractices": ["Diferenciar el hongo de primera (entero y grande) del de segunda (roto, ideal para ceviches)"],
+            "commonMistakes": ["Dar precios B2B a clientes que compran solo 1 kg"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-6",
+                "label": "Precio de Venta B2C (por unidad/bandeja)",
+                "type": "number",
+                "required": true,
+                "helpText": "A qué precio venderás la presentación al consumidor final.",
+                "placeholder": "Ej. 8000"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-bus-7",
+          "icon": "file-text",
+          "title": "Acuerdos y Contratos",
+          "description": "Contratos base B2B y políticas.",
+          "order": 7,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Garantías de Compra",
+              "summary": "Asegura compradores estables para tu cosecha continua.",
+              "body": "El cultivo de hongos produce cosechas cíclicas ('oleadas'). Necesitas contratos o acuerdos de intención de compra con restaurantes o distribuidores para que el hongo fresco no se te dañe al cosechar."
+            },
+            "objective": { "description": "Tener la venta asegurada antes de cosechar." },
+            "checklist": [
+              { "id": "chk-bus-7-1", "task": "Redactar términos y condiciones de entrega", "completed": false },
+              { "id": "chk-bus-7-2", "task": "Establecer políticas de devoluciones por producto dañado", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Abogado comercial especializado en agro.",
+              "context": "Contratos de proveeduría de frescos.",
+              "suggestions": ["¿Cómo manejo los acuerdos de pago a 30 días con restaurantes?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "El hongo perece rápido; no puedes darte el lujo de buscar comprador el día que cosechas.",
+            "tip": "Ofrece un precio fijo trimestral a restaurantes para que ellos no sufran variaciones, a cambio de compra obligatoria semanal.",
+            "bestPractices": ["Visitar al cliente y mostrar la planta/proceso"],
+            "commonMistakes": ["Aceptar pagos a 90 días sin suficiente flujo de caja de respaldo"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-7",
+                "label": "Término de Pago Promedio B2B",
+                "type": "select",
+                "required": true,
+                "helpText": "Condiciones de pago con tus mayoristas.",
+                "placeholder": "Seleccionar...",
+                "options": ["Contra entrega", "Crédito 15 días", "Crédito 30 días", "Anticipado"]
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-bus-8",
+          "icon": "bar-chart-2",
+          "title": "Cierre Financiero Mensual",
+          "description": "Revisión de flujo de caja y ventas (Mensual).",
+          "order": 8,
+          "type": "monthly",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-bus-6"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Control Financiero y Contable",
+              "summary": "Verifica ingresos, egresos y cuentas por cobrar.",
+              "body": "Cada mes, cruza la producción total en kilos (rendimiento biológico) versus lo facturado. Identifica mermas por mal manejo post-cosecha o hongos secados para conservación."
+            },
+            "objective": { "description": "Mantener salud financiera y asegurar cobros a tiempo." },
+            "checklist": [
+              { "id": "chk-bus-8-1", "task": "Registrar todos los gastos del mes", "completed": false },
+              { "id": "chk-bus-8-2", "task": "Hacer gestión de cobro a restaurantes", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Contador de empresas agrícolas.",
+              "context": "Cierre contable mensual.",
+              "suggestions": ["¿Cómo cuadro en contabilidad los hongos que me tocó secar porque no se vendieron frescos?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "La agricultura depende del flujo de caja constante para comprar semillas y sustrato ininterrumpidamente.",
+            "tip": "Registra los 'kilos auto-consumidos' o regalados en pruebas, son gastos de mercadeo o de caja chica.",
+            "bestPractices": ["Usar un software contable o un Excel estricto"],
+            "commonMistakes": ["Mezclar caja menor del negocio con billetera personal"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-bus-8",
+                "label": "Software o Herramienta de Control",
+                "type": "text",
+                "required": true,
+                "helpText": "Dónde llevarás tus registros mensuales.",
+                "placeholder": "Excel, Alegra, QuickBooks..."
+              }
+            ]
+          }
+        }
+      ]
+    },{
+      "id": "fase-operations",
+      "title": "Operaciones y Producción",
+      "description": "Gestión diaria y semanal del cultivo: desde la preparación del sustrato hasta la cosecha y empaque.",
+      "objective": "Estandarizar los procesos de siembra, control climático y cosecha para asegurar una producción semanal constante y de alta calidad.",
+      "order": 3,
+      "resources": [],
+      "block": "operations",
+      "steps": [
+        {
+          "id": "step-ops-1",
+          "icon": "settings",
+          "title": "Adecuación de Infraestructura",
+          "description": "Configuración de los cuartos de incubación y fructificación.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 24,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Preparación de los Espacios de Cultivo",
+              "summary": "Diseña y equipa las zonas críticas para el desarrollo del hongo.",
+              "body": "Necesitas dos áreas separadas: 1) Cuarto de Incubación: Totalmente oscuro, con ventilación moderada y temperatura entre 24-28°C. 2) Cuarto de Fructificación: Con luz indirecta (o luz LED blanca), alta humedad (85-95%) y excelente extracción de aire para eliminar el CO2 que producen los hongos."
+            },
+            "objective": { "description": "Crear el microclima perfecto para simular el ambiente natural del bosque." },
+            "checklist": [
+              { "id": "chk-ops-1-1", "task": "Instalar estanterías y aislar paredes", "completed": false },
+              { "id": "chk-ops-1-2", "task": "Instalar sistema de nebulización y extractores de aire", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Eres ingeniero de instalaciones agroindustriales.",
+              "context": "Adecuación de cuartos de cultivo.",
+              "suggestions": ["¿Cómo automatizo la humedad y extracción de aire con temporizadores?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Un mal control climático resulta en hongos deformes (tallos largos y sombreros pequeños por exceso de CO2) o que se secan y mueren.",
+            "tip": "Cubre las paredes con plástico agrícola blanco para facilitar la limpieza y reflejar la luz en la fase de fructificación.",
+            "bestPractices": ["Usar termohigrómetros en varios puntos del cuarto", "Separar el área sucia (preparación) del área limpia (siembra)"],
+            "commonMistakes": ["Usar madera sin tratar en las estanterías (se pudrirá rápidamente)"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-1",
+                "label": "Capacidad Instalada (Bolsas)",
+                "type": "number",
+                "required": true,
+                "helpText": "Cuántas bolsas tubulares caben en tu cuarto de fructificación.",
+                "placeholder": "Ej. 500"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-ops-2",
+          "icon": "flame",
+          "title": "Pasteurización del Sustrato",
+          "description": "Preparación y desinfección semanal del alimento del hongo.",
+          "order": 2,
+          "type": "weekly",
+          "estimatedHours": 6,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["step-ops-1"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Eliminación de Competidores",
+              "summary": "Tratamiento térmico de los residuos agrícolas.",
+              "body": "El sustrato (ej. bagazo o tamo) debe hidratarse hasta un 60-65% de humedad. Luego, debe someterse a calor (vapor o inmersión en agua caliente a 75-85°C durante 2 horas o esterilización a 121°C) para matar bacterias y esporas de moho verde (Trichoderma) que competirían con la orellana."
+            },
+            "objective": { "description": "Lograr un sustrato biológicamente limpio, pero no necesariamente estéril, ideal para el Pleurotus." },
+            "checklist": [
+              { "id": "chk-ops-2-1", "task": "Pesar e hidratar la mezcla de sustrato y suplementos", "completed": false },
+              { "id": "chk-ops-2-2", "task": "Realizar tratamiento térmico y dejar enfriar a temperatura ambiente", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Experto en pasteurización y control de patógenos en hongos.",
+              "context": "Proceso de pasteurización semanal.",
+              "suggestions": ["¿Cuál es la diferencia entre pasteurizar e inmersión alcalina (cal)?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Saltarse o hacer mal este paso garantiza la pérdida de las bolsas por contaminación cruzada.",
+            "tip": "Haz la prueba del puño: al apretar un puñado de sustrato hidratado, deben salir apenas 1 o 2 gotas de agua. Si escurre, está muy húmedo.",
+            "bestPractices": ["Enfriar el sustrato en un cuarto limpio", "Limpiar los barriles después de cada uso"],
+            "commonMistakes": ["Sembrar el micelio cuando el sustrato aún está caliente (matará la semilla)"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-2",
+                "label": "Temperatura Máxima Alcanzada (°C)",
+                "type": "number",
+                "required": true,
+                "helpText": "Registro de la temperatura central durante la pasteurización.",
+                "placeholder": "80"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-ops-3",
+          "icon": "box",
+          "title": "Siembra e Inoculación",
+          "description": "Mezcla de la semilla con el sustrato limpio.",
+          "order": 3,
+          "type": "weekly",
+          "estimatedHours": 4,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": ["step-ops-2"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Inoculación en Ambiente Aséptico",
+              "summary": "Introduce el micelio en el sustrato preparado.",
+              "body": "Una vez el sustrato esté por debajo de 28°C, trasládalo al área limpia (desinfectada previamente con alcohol y cloro). Mezcla la semilla de micelio en una proporción del 2% al 5% respecto al peso húmedo del sustrato. Empaca la mezcla apretando bien en bolsas tubulares transparentes y ciérralas."
+            },
+            "objective": { "description": "Asegurar que el hongo colonice el sustrato antes que cualquier otro microorganismo." },
+            "checklist": [
+              { "id": "chk-ops-3-1", "task": "Desinfectar área, herramientas y manos", "completed": false },
+              { "id": "chk-ops-3-2", "task": "Empacar y etiquetar las bolsas (fecha, cepa, % de semilla)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Biotecnólogo de hongos.",
+              "context": "Proceso de siembra.",
+              "suggestions": ["¿Cómo detecto si la semilla de micelio ya venía contaminada?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "La higiene estricta en este momento determina la tasa de éxito (baja contaminación) de todo el lote semanal.",
+            "tip": "Perfora la bolsa con un punzón desinfectado e inserta algodón o usa bolsas con filtro microporo para permitir la respiración.",
+            "bestPractices": ["Usar tapabocas, guantes y cofia", "Trabajar rápido y sin corrientes de aire"],
+            "commonMistakes": ["Hablar, toser o dejar puertas abiertas durante la siembra"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-3",
+                "label": "Tasa de Siembra Usada (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Porcentaje de semilla añadida sobre el peso del sustrato.",
+                "placeholder": "3"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-ops-4",
+          "icon": "wind",
+          "title": "Control de Incubación y Fructificación",
+          "description": "Monitoreo del desarrollo del micelio y primordios.",
+          "order": 4,
+          "type": "weekly",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-ops-3"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Gestión del Microclima",
+              "summary": "Monitorea el crecimiento del hongo en sus dos fases.",
+              "body": "Incubación (15-21 días): Las bolsas deben volverse completamente blancas (invasión del micelio). Si ves manchas verdes o negras, retira esa bolsa inmediatamente. Fructificación: Traslada las bolsas blancas al cuarto iluminado, baja la temperatura (choque térmico), aumenta la humedad y corta el plástico para que salgan los 'pines' (mini hongos)."
+            },
+            "objective": { "description": "Garantizar la correcta colonización e inducir la salida masiva de hongos." },
+            "checklist": [
+              { "id": "chk-ops-4-1", "task": "Inspeccionar lotes en incubación buscando contaminación", "completed": false },
+              { "id": "chk-ops-4-2", "task": "Verificar niveles de humedad e inyectar aire fresco en fructificación", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Técnico agrícola especialista en clima.",
+              "context": "Inducción a la fructificación.",
+              "suggestions": ["¿Cómo logro el choque térmico en un clima muy cálido?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Un alto nivel de CO2 en fructificación arruinará la forma comercial de la orellana, reduciendo su valor.",
+            "tip": "Riega el ambiente (pisos y paredes), no rocíes agua directamente sobre los sombreros de los hongos en desarrollo para evitar manchas bacterianas.",
+            "bestPractices": ["Llevar una bitácora de temperatura diaria"],
+            "commonMistakes": ["Dejar bolsas contaminadas junto a las sanas por lástima"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-4",
+                "label": "Bolsas Contaminadas Descartadas (Cant.)",
+                "type": "number",
+                "required": true,
+                "helpText": "Número de bolsas perdidas en el lote semanal.",
+                "placeholder": "2"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-ops-5",
+          "icon": "scissors",
+          "title": "Cosecha y Post-Cosecha",
+          "description": "Recolección y empaque en frío.",
+          "order": 5,
+          "type": "weekly",
+          "estimatedHours": 6,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-ops-4"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Recolección en el Punto Óptimo",
+              "summary": "Corta las orellanas antes de que expulsen esporas.",
+              "body": "Cosecha el racimo completo torciéndolo suavemente desde la base justo antes de que los bordes del sombrero se curven hacia arriba. Limpia los restos de sustrato de la base. Traslada inmediatamente a cuarto frío (2-4°C) y empaca en bandejas o bolsas microperforadas."
+            },
+            "objective": { "description": "Maximizar la vida de anaquel (shelf life) del producto fresco." },
+            "checklist": [
+              { "id": "chk-ops-5-1", "task": "Cosechar racimos enteros manualmente", "completed": false },
+              { "id": "chk-ops-5-2", "task": "Llevar a cadena de frío en menos de 1 hora", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Experto en post-cosecha de perecederos.",
+              "context": "Proceso de cosecha de hongos.",
+              "suggestions": ["¿Por qué mi cuarto de fructificación está lleno de un polvo blanco (esporas)?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Si el hongo se cosecha muy maduro, soltará esporas (causando alergias respiratorias al personal) y se pudrirá muy rápido en el empaque.",
+            "tip": "Las orellanas crecen por 'oleadas' (flushes). Después del primer corte, deja la bolsa descansar unos días; dará una segunda y hasta tercera cosecha menor.",
+            "bestPractices": ["Usar mascarilla en el cuarto de fructificación"],
+            "commonMistakes": ["Cortar solo los hongos grandes y dejar los pequeños en el racimo (se morirán)"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-5",
+                "label": "Kilogramos Frescos Cosechados",
+                "type": "number",
+                "required": true,
+                "helpText": "Ingresa el peso total de la cosecha semanal limpia.",
+                "placeholder": "45"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-ops-6",
+          "icon": "refresh-cw",
+          "title": "Gestión de Sustrato Agotado",
+          "description": "Compostaje y regeneración de suelos.",
+          "order": 6,
+          "type": "monthly",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": ["step-ops-5"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Regeneración de Suelos con Residuos",
+              "summary": "Convierte el bloque viejo en abono premium.",
+              "body": "Después de 3 cosechas, la bolsa ya no es rentable. Retira el plástico y apila el bloque (rico en micelio y enzimas). Este material es excelente para compostaje y regeneración de suelos en cultivos de gulupa, cacao o café."
+            },
+            "objective": { "description": "Dar una disposición final sostenible y económicamente viable al residuo." },
+            "checklist": [
+              { "id": "chk-ops-6-1", "task": "Vaciar bolsas agotadas en zona de compostaje", "completed": false },
+              { "id": "chk-ops-6-2", "task": "Voltear el compost o vender a agricultores locales", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Agrónomo especialista en abonos orgánicos y suelos.",
+              "context": "Gestión del spent mushroom substrate.",
+              "suggestions": ["¿Cómo formulo un abono para cacao o gulupa usando el residuo de la orellana?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Cumple la promesa de economía circular y abre una fuente adicional de ingresos vendiendo abono orgánico.",
+            "tip": "El sustrato agotado atrae lombrices rápidamente, es ideal para iniciar camas de lombricultura.",
+            "bestPractices": ["Hacer análisis de suelo para ver el aporte de nitrógeno del bloque"],
+            "commonMistakes": ["Acumular bolsas de plástico junto con el compost"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-6",
+                "label": "Volumen de Abono Producido (Bultos/Kg)",
+                "type": "number",
+                "required": true,
+                "helpText": "Cantidad de sustrato viejo destinado a regeneración de suelos.",
+                "placeholder": "100"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-ops-7",
+          "icon": "tool",
+          "title": "Mantenimiento Preventivo",
+          "description": "Revisión de calderas, nebulizadores y sensores.",
+          "order": 7,
+          "type": "quarterly",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Auditoría de Maquinaria",
+              "summary": "Evita paros de producción por daños en equipos críticos.",
+              "body": "Revisa el estado de las resistencias o quemadores del sistema de pasteurización. Limpia las boquillas de los nebulizadores (que se tapan con el calcio del agua) y recalibra los termohigrómetros."
+            },
+            "objective": { "description": "Mantener la fiabilidad de la infraestructura de control climático y pasteurización." },
+            "checklist": [
+              { "id": "chk-ops-7-1", "task": "Limpieza y purga de boquillas de humidificación", "completed": false },
+              { "id": "chk-ops-7-2", "task": "Inspección estructural de estanterías (óxido o pudrición)", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Técnico de mantenimiento industrial.",
+              "context": "Sistemas de aspersión y pasteurización.",
+              "suggestions": ["¿Cómo destapo las boquillas de niebla bloqueadas por sarro?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Una falla en la humidificación durante un fin de semana secará la cosecha por completo.",
+            "tip": "Sumerge las boquillas de bronce en vinagre blanco durante 24 horas para disolver los minerales del agua dura.",
+            "bestPractices": ["Tener al menos un repuesto de termohigrómetro y extractor en inventario"],
+            "commonMistakes": ["No revisar las conexiones eléctricas que operan en ambientes del 90% de humedad"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-7",
+                "label": "Estado de Mantenimiento",
+                "type": "select",
+                "required": true,
+                "helpText": "Registra el resultado de la revisión trimestral.",
+                "placeholder": "Seleccionar...",
+                "options": ["Óptimo", "Requiere reparaciones menores", "Reparación urgente necesaria"]
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-ops-8",
+          "icon": "shield",
+          "title": "Vacío Sanitario",
+          "description": "Desinfección profunda anual.",
+          "order": 8,
+          "type": "yearly",
+          "estimatedHours": 16,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Reset Biológico de la Planta",
+              "summary": "Frena la acumulación de plagas y esporas competidoras.",
+              "body": "Una vez al año, detén la producción en un cuarto a la vez. Vacíalo completamente, lávalo con detergentes, aplica desinfectantes fuertes (ej. amonio cuaternario o ácido peracético) y déjalo descansar seco por unos días. Esto corta el ciclo de vida de moscas de los hongos (Sciáridas) y Trichoderma."
+            },
+            "objective": { "description": "Romper el ciclo epidemiológico de plagas que se acumulan mes a mes." },
+            "checklist": [
+              { "id": "chk-ops-8-1", "task": "Vaciar completamente el cuarto de fructificación", "completed": false },
+              { "id": "chk-ops-8-2", "task": "Aplicar protocolo de desinfección en paredes, techos y estanterías", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Biólogo experto en fitopatología agrícola.",
+              "context": "Control de plagas en cultivos de interiores.",
+              "suggestions": ["¿Qué químicos son seguros para lavar un cuarto de cultivo?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Sin vacíos sanitarios, las esporas de mohos verdes se hacen residentes del cuarto, bajando la rentabilidad lote tras lote.",
+            "tip": "Instala trampas cromáticas (cintas amarillas y azules pegajosas) durante el año para monitorear la población de mosquitas.",
+            "bestPractices": ["Sellar grietas en paredes donde puedan esconderse insectos"],
+            "commonMistakes": ["Usar fungicidas agrícolas sistémicos (dejarán residuos tóxicos en la próxima cosecha)"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-ops-8",
+                "label": "Fecha del Último Vacío Sanitario",
+                "type": "date",
+                "required": true,
+                "helpText": "Fecha en la que se completó la limpieza profunda.",
+                "placeholder": "DD/MM/AAAA"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "fase-customers",
+      "title": "Comercialización y Clientes",
+      "description": "Estrategia B2B y B2C, entregas, facturación y retención de compradores mayoristas y minoristas.",
+      "objective": "Asegurar la rotación del 100% de la producción en fresco y posicionar la marca micológica.",
+      "order": 4,
+      "resources": [],
+      "block": "customers",
+      "steps": [
+        {
+          "id": "step-cus-1",
+          "icon": "users",
+          "title": "Perfilamiento B2B",
+          "description": "Identificación de restaurantes y minimercados.",
+          "order": 1,
+          "type": "one_time",
+          "estimatedHours": 4,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Creación de la Base de Datos de Clientes",
+              "summary": "Mapea quién comprará volúmenes constantes de tu hongo.",
+              "body": "Crea una lista de restaurantes (veganos, pizzerías gourmet, asiáticos) y minimercados locales que valoren productos frescos locales. Los minimercados son excelentes aliados para rotar bandejas B2C directamente en tu zona."
+            },
+            "objective": { "description": "Tener un objetivo claro de a quién contactar para cerrar ventas semanales." },
+            "checklist": [
+              { "id": "chk-cus-1-1", "task": "Listar 20 minimercados locales y tiendas saludables", "completed": false },
+              { "id": "chk-cus-1-2", "task": "Listar 15 restaurantes objetivo", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Experto en ventas y distribución de productos frescos.",
+              "context": "Búsqueda de clientes B2B.",
+              "suggestions": ["¿Cómo abordo al dueño de un minimercado para ofrecerle orellanas?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Diversificar entre restaurantes (compran a granel) y minimercados (compran en bandeja) equilibra tus ingresos y márgenes.",
+            "tip": "Acércate al encargado de compras por la mañana, cuando hay menos flujo de clientes en los locales.",
+            "bestPractices": ["Llevar un portafolio fotográfico del cultivo"],
+            "commonMistakes": ["Asumir que solo los restaurantes de lujo compran orellanas"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-1",
+                "label": "Número de Prospectos (CRM inicial)",
+                "type": "number",
+                "required": true,
+                "helpText": "Cuántos clientes potenciales has agregado a tu lista.",
+                "placeholder": "35"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-cus-2",
+          "icon": "gift",
+          "title": "Protocolo de Muestras",
+          "description": "Cata comercial y onboarding de chefs.",
+          "order": 2,
+          "type": "one_time",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-cus-1"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "El Producto Habla por Sí Solo",
+              "summary": "Entrega muestras gratuitas de altísima calidad.",
+              "body": "Elige los racimos más hermosos y frescos, empácalos impecablemente e incluye una ficha técnica (vida útil, beneficios nutricionales, receta sugerida). Entrégaselo directamente a los chefs o administradores de minimercados para que prueben la textura y frescura."
+            },
+            "objective": { "description": "Lograr el primer pedido a través de la validación del producto." },
+            "checklist": [
+              { "id": "chk-cus-2-1", "task": "Diseñar e imprimir ficha técnica del hongo", "completed": false },
+              { "id": "chk-cus-2-2", "task": "Programar 5 visitas semanales de entrega de muestras", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Chef ejecutivo y consultor de restaurantes.",
+              "context": "Presentación de producto gastronómico.",
+              "suggestions": ["¿Qué valora más un chef de un proveedor de hongos locales?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "La mayoría de clientes B2B sufren comprando hongos viejos (babosos) de distribuidores tradicionales; ver tu producto recién cosechado cerrará la venta.",
+            "tip": "Pide el número de WhatsApp del tomador de decisiones al dejar la muestra para hacer seguimiento en 48 horas.",
+            "bestPractices": ["Acompañar la muestra con una historia sobre la economía circular de tu granja"],
+            "commonMistakes": ["Dejar la muestra en recepción sin hablar con el responsable de compras"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-2",
+                "label": "Tasa de Conversión de Muestras (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "De cada 10 muestras entregadas, cuántos hicieron un pedido.",
+                "placeholder": "30"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-cus-3",
+          "icon": "truck",
+          "title": "Logística de Despacho",
+          "description": "Entregas programadas en frío.",
+          "order": 3,
+          "type": "weekly",
+          "estimatedHours": 4,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Gestión de la Cadena de Suministro",
+              "summary": "Proceso de entrega manteniendo la cadena de frío.",
+              "body": "Organiza los pedidos de la semana. Las orellanas deben transportarse en neveras portátiles o vehículos refrigerados para evitar que la temperatura exterior condense agua dentro del empaque y acelere la pudrición."
+            },
+            "objective": { "description": "Entregar un producto que preserve su apariencia de 'recién cortado'." },
+            "checklist": [
+              { "id": "chk-cus-3-1", "task": "Consolidar pedidos los domingos o lunes", "completed": false },
+              { "id": "chk-cus-3-2", "task": "Organizar ruta lógica de entregas minimizando tiempo fuera de la nevera", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Coordinador de logística de última milla.",
+              "context": "Distribución de productos perecederos.",
+              "suggestions": ["¿Qué geles refrigerantes son mejores para transporte en nevera portátil?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Romper la cadena de frío reduce la vida útil del hongo en estantería de 7 días a solo 2 días.",
+            "tip": "Añade papel absorbente limpio (grado alimenticio) en el fondo de las cajas de entrega a granel para que absorba el exceso de humedad durante el viaje.",
+            "bestPractices": ["Entregar remisión firmada con hora de recepción"],
+            "commonMistakes": ["Transportar en bolsas plásticas cerradas bajo el sol"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-3",
+                "label": "Días de Despacho Principal",
+                "type": "text",
+                "required": true,
+                "helpText": "Ej. Lunes y Jueves.",
+                "placeholder": "Lunes y Jueves"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-cus-4",
+          "icon": "box",
+          "title": "Seguimiento Post-Venta",
+          "description": "Revisión de stock en minimercados.",
+          "order": 4,
+          "type": "weekly",
+          "estimatedHours": 2,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": ["step-cus-3"],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Control de Calidad en Estantería",
+              "summary": "Verifica cómo se está vendiendo o usando tu producto.",
+              "body": "Escribe o llama a tus clientes 48h después de la entrega. Para minimercados, pregúntales si el producto rotó o si las bandejas se ven con exceso de condensación. Para restaurantes, valida si el calibre (tamaño) fue adecuado para sus platos."
+            },
+            "objective": { "description": "Evitar mermas en el cliente y ajustar cantidades para el próximo pedido." },
+            "checklist": [
+              { "id": "chk-cus-4-1", "task": "Enviar mensaje de WhatsApp de seguimiento", "completed": false },
+              { "id": "chk-cus-4-2", "task": "Registrar ajustes requeridos para la siguiente semana", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Especialista en customer success.",
+              "context": "Atención al cliente B2B.",
+              "suggestions": ["Escribe una plantilla de WhatsApp amigable para pedir feedback sobre el hongo entregado."]
+            },
+            "knowledge": [],
+            "whyItMatters": "Muestra profesionalismo. Si un minimercado no vende tu producto y se pudre, no te volverán a comprar. Es mejor recogerlo e intercambiarlo a tiempo.",
+            "tip": "Ofrece un sistema de 'garantía de frescura': si el hongo se daña injustificadamente antes de 4 días, lo repones gratis.",
+            "bestPractices": ["Llevar un CRM ligero (Excel o Trello) con las preferencias de cada chef"],
+            "commonMistakes": ["Vender y desaparecer hasta que necesites dinero de nuevo"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-4",
+                "label": "Tasa de Devolución Semanal (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Porcentaje del producto que tuviste que reponer o que el cliente reportó dañado.",
+                "placeholder": "0"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-cus-5",
+          "icon": "clipboard",
+          "title": "Conciliación y Cobro",
+          "description": "Cierre de ventas del mes.",
+          "order": 5,
+          "type": "monthly",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Gestión de Cartera",
+              "summary": "Emite facturas y recauda los pagos pendientes.",
+              "body": "Revisa las notas de entrega firmadas durante el mes y emite las facturas o cuentas de cobro consolidadas. Envía recordatorios de pago a los restaurantes y cruza las ventas a consignación en minimercados."
+            },
+            "objective": { "description": "Asegurar la liquidez de la operación." },
+            "checklist": [
+              { "id": "chk-cus-5-1", "task": "Consolidar remisiones", "completed": false },
+              { "id": "chk-cus-5-2", "task": "Enviar estados de cuenta por correo/WhatsApp", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Administrador financiero B2B.",
+              "context": "Cobranza de cuentas.",
+              "suggestions": ["¿Cómo cobro de manera cordial a un restaurante que tiene 10 días de retraso?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Las cuentas por cobrar antiguas destruyen el flujo de caja necesario para comprar micelio y sustrato el mes siguiente.",
+            "tip": "Da un pequeño descuento (ej. 2%) por pronto pago a aquellos que paguen antes del día 5 del mes.",
+            "bestPractices": ["Tener políticas de crédito claras desde el paso 1 de Onboarding"],
+            "commonMistakes": ["Seguir despachando producto a clientes con mora de más de 30 días"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-5",
+                "label": "Días de Cartera Promedio",
+                "type": "number",
+                "required": true,
+                "helpText": "Cuánto tardan en promedio tus clientes en pagarte.",
+                "placeholder": "15"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-cus-6",
+          "icon": "mail",
+          "title": "Educación al Consumidor",
+          "description": "Boletín de novedades y recetas (B2C y B2B).",
+          "order": 6,
+          "type": "monthly",
+          "estimatedHours": 2,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Marketing Micológico",
+              "summary": "Fomenta el consumo mostrando cómo cocinar el producto.",
+              "body": "La mayor barrera para el consumidor final en minimercados es que no sabe cómo preparar orellanas. Envía a tus listas de difusión o sube a redes sociales recetas sencillas (ceviche, apanadas, a la plancha con ajo) y destaca los beneficios nutricionales (alta proteína)."
+            },
+            "objective": { "description": "Aumentar la demanda educando sobre la versatilidad gastronómica del hongo." },
+            "checklist": [
+              { "id": "chk-cus-6-1", "task": "Diseñar y publicar 1 video/post con una receta fácil", "completed": false },
+              { "id": "chk-cus-6-2", "task": "Actualizar el código QR de las etiquetas con la nueva receta", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Copywriter gastronómico.",
+              "context": "Creación de recetas promocionales.",
+              "suggestions": ["Dame 3 recetas muy fáciles para cocinar orellanas en casa en menos de 15 minutos."]
+            },
+            "knowledge": [],
+            "whyItMatters": "Convierte un ingrediente 'exótico' en un consumo regular semanal para las familias.",
+            "tip": "Coloca códigos QR en las bandejas que lleven directamente a un video corto (Reel/TikTok) de la preparación.",
+            "bestPractices": ["Destacar la textura carnosa como reemplazo ideal de la carne"],
+            "commonMistakes": ["Promocionar solo fotos del cultivo en lugar de fotos del plato terminado"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-6",
+                "label": "Red Social o Canal Principal",
+                "type": "text",
+                "required": true,
+                "helpText": "Dónde comunicas tus recetas.",
+                "placeholder": "Instagram / WhatsApp"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-cus-7",
+          "icon": "star",
+          "title": "Análisis de Fidelidad",
+          "description": "Revisión de cuentas B2B clave.",
+          "order": 7,
+          "type": "quarterly",
+          "estimatedHours": 3,
+          "difficulty": "medium",
+          "priority": "normal",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Cuidado de las Cuentas Principales",
+              "summary": "Evalúa el volumen de compra de tus mejores clientes.",
+              "body": "Identifica a ese 20% de clientes que te generan el 80% de las ventas. Prográmales una visita, ofréceles productos nuevos en primicia (ej. orellanas de colores o deshidratados) y aplica descuentos por escalado de volumen para fidelizarlos frente a competidores."
+            },
+            "objective": { "description": "Proteger las cuentas más rentables a largo plazo." },
+            "checklist": [
+              { "id": "chk-cus-7-1", "task": "Identificar el Top 5 de compradores del trimestre", "completed": false },
+              { "id": "chk-cus-7-2", "task": "Entregar detalle o beneficio extra a estos clientes", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Key Account Manager B2B.",
+              "context": "Estrategias de retención de clientes clave.",
+              "suggestions": ["¿Qué incentivos puedo darle a un restaurante que me compra semanalmente desde hace 6 meses?"]
+            },
+            "knowledge": [],
+            "whyItMatters": "Conseguir un cliente nuevo es mucho más caro (en tiempo y muestras) que mantener contento a uno actual.",
+            "tip": "Un certificado o placa física que diga 'Este restaurante apoya la economía circular y a los agricultores locales' es algo que los dueños adoran exhibir.",
+            "bestPractices": ["Hacerles sentir que son socios estratégicos de tu granja"],
+            "commonMistakes": ["Dar por sentado a los clientes fieles y no ofrecerles ningún plus"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-7",
+                "label": "Estrategia de Fidelización Elegida",
+                "type": "text",
+                "required": true,
+                "helpText": "Qué vas a otorgar a tus mejores clientes este trimestre.",
+                "placeholder": "Ej. 5% descuento o Muestra gratis de deshidratado"
+              }
+            ]
+          }
+        },
+        {
+          "id": "step-cus-8",
+          "icon": "file-text",
+          "title": "Renovación Comercial",
+          "description": "Ajuste anual de tarifas e inflación.",
+          "order": 8,
+          "type": "yearly",
+          "estimatedHours": 3,
+          "difficulty": "hard",
+          "priority": "high",
+          "dependencies": [],
+          "completionRules": { "requiredChecklist": true, "requiredResources": false, "requiredApproval": false, "requiredQuiz": false },
+          "content": {
+            "overview": {
+              "title": "Ajuste de Precios y Acuerdos",
+              "summary": "Actualiza tus precios B2B para mantener la rentabilidad.",
+              "body": "Una vez al año, debido al aumento de costos operativos (salarios, energía, insumos), debes notificar a tus clientes los nuevos precios. Hazlo con al menos un mes de anticipación y justifícalo con profesionalismo."
+            },
+            "objective": { "description": "Evitar la erosión del margen de ganancias por la inflación anual." },
+            "checklist": [
+              { "id": "chk-cus-8-1", "task": "Calcular incremento de OPEX anual", "completed": false },
+              { "id": "chk-cus-8-2", "task": "Enviar carta formal de actualización de lista de precios", "completed": false }
+            ],
+            "resources": [],
+            "assistant": {
+              "systemPrompt": "Consultor en negociación B2B.",
+              "context": "Aumento anual de precios.",
+              "suggestions": ["Redacta una carta cordial informando a un minimercado sobre un ajuste de precios por inflación."]
+            },
+            "knowledge": [],
+            "whyItMatters": "Muchos agricultores quiebran lentamente porque les da miedo subir el precio a sus compradores antiguos.",
+            "tip": "Acompaña la noticia del alza de precios con una mejora en el servicio (ej. nuevo empaque, entregas más rápidas o un nuevo portafolio de productos).",
+            "bestPractices": ["Ser transparente sobre el alza en los costos de los insumos agrícolas"],
+            "commonMistakes": ["Subir los precios de un día para otro sin aviso previo"],
+            "recommendedTools": [],
+            "registroFields": [
+              {
+                "id": "reg-cus-8",
+                "label": "Porcentaje de Incremento Aplicado (%)",
+                "type": "number",
+                "required": true,
+                "helpText": "Ajuste de precio para el nuevo año.",
+                "placeholder": "8"
+              }
+            ]
+          }
+        }
+      ]
+    }
+    ]
+}
