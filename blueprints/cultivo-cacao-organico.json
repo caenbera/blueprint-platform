@@ -18851,6 +18851,492 @@
       "title": "Filosofía Orgánica y Sostenibilidad",
       "id": "organic-sustainability-philosophy",
       "order": 25
+    },
+    {
+      "phaseId": "strategy-recurrent-evaluation",
+      "phaseTitle": "Evaluación y Ajuste Estratégico Recurrente",
+      "steps": [
+        {
+          "stepId": "semester-objectives-review",
+          "stepTitle": "Revisión Semestral de Objetivos y Plan de Cultivo",
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "semester-period",
+                "label": "Semestre Evaluado",
+                "type": "select",
+                "options": [
+                  "Primer Semestre (Ene-Jun)",
+                  "Segundo Semestre (Jul-Dic)"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "adjusted-yield-projection",
+                "label": "Proyección Ajustada de Producción para Siguiente Semestre (kg)",
+                "type": "number",
+                "placeholder": "1500",
+                "required": true
+              },
+              {
+                "fieldId": "shade-coverage-percent",
+                "label": "Porcentaje Promedio de Sombra Detectado (%)",
+                "type": "number",
+                "placeholder": "35",
+                "required": true
+              },
+              {
+                "fieldId": "strategic-notes",
+                "label": "Notas Estratégicas y Decisiones de Ajuste",
+                "type": "textarea",
+                "placeholder": "Ej: Se decide podar el 20% del guamo en el lote sur para aumentar luz y control de Monilia...",
+                "required": true
+              }
+            ]
+          },
+          "id": "semester-objectives-review",
+          "title": "Revisión Semestral de Objetivos y Plan de Cultivo",
+          "content": {
+            "overview": {
+              "title": "Revisión Semestral de Objetivos y Plan de Cultivo",
+              "summary": "Revisión Semestral de Objetivos y Plan de Cultivo",
+              "body": "El comportamiento climático y las fluctuaciones del mercado impactan el cacaotal. Una revisión semestral te permite ajustar la sombra (por podas o nuevas siembras de temporales) y calibrar las proyecciones de cosecha según el desarrollo real de las mazorcas, evitando desfases logísticos o pérdidas de contratos de venta."
+            },
+            "objective": {
+              "description": ""
+            },
+            "whyItMatters": "El comportamiento climático y las fluctuaciones del mercado impactan el cacaotal. Una revisión semestral te permite ajustar la sombra (por podas o nuevas siembras de temporales) y calibrar las proyecciones de cosecha según el desarrollo real de las mazorcas, evitando desfases logísticos o pérdidas de contratos de venta.",
+            "bestPractices": [
+              "Realizar un censo rápido del sombrío dinámico (porcentaje de luz que llega al suelo).",
+              "Comparar los kilos reales cosechados en el semestre con el plan original.",
+              "Ajustar la estimación de producción para el siguiente semestre."
+            ],
+            "commonMistakes": [
+              "Continuar con el mismo plan de fertilización si se presenta una sequía extrema o lluvias fuera de lo común.",
+              "No ajustar las metas de ventas a pesar de saber que la cosecha será menor."
+            ],
+            "tip": "Mide la cobertura de copa del sombrío permanente. Si supera el 40%, planifica podas inmediatas de ramas del sombrío para el inicio del próximo semestre para que los árboles de cacao reciban la radiación solar necesaria para la fotosíntesis y producción.",
+            "recommendedTools": [
+              {
+                "name": "Luxómetro o app móvil de medición de luz solar",
+                "url": "https://www.google.com",
+                "description": "Para medir la radiación que atraviesa el dosel de sombra"
+              }
+            ],
+            "registroFields": [],
+            "checklist": [
+              {
+                "id": "chk-semester-objectives-review-0",
+                "task": ""
+              },
+              {
+                "id": "chk-semester-objectives-review-1",
+                "task": ""
+              },
+              {
+                "id": "chk-semester-objectives-review-2",
+                "task": ""
+              },
+              {
+                "id": "chk-semester-objectives-review-3",
+                "task": ""
+              }
+            ]
+          },
+          "type": "weekly",
+          "estimatedHours": 0,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "order": 0
+        },
+        {
+          "stepId": "yearly-business-viability-review",
+          "stepTitle": "Evaluación Anual de Viabilidad y Plan de Negocios",
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "review-year",
+                "label": "Año Fiscal Evaluado",
+                "type": "number",
+                "placeholder": "2023",
+                "required": true
+              },
+              {
+                "fieldId": "real-annual-yield",
+                "label": "Rendimiento Real del Año (kg totales)",
+                "type": "number",
+                "placeholder": "4500",
+                "required": true
+              },
+              {
+                "fieldId": "calculated-production-cost-kg",
+                "label": "Costo de Producción Real Calculado por kg ($ USD)",
+                "type": "number",
+                "placeholder": "1.85",
+                "required": true
+              },
+              {
+                "fieldId": "next-year-goals",
+                "label": "Metas y Proyecciones de Mejora para el Año Siguiente",
+                "type": "textarea",
+                "placeholder": "Ej: Incrementar rendimiento a 1,200 kg/ha mediante renovación de copas y mejorar compostaje...",
+                "required": true
+              }
+            ]
+          },
+          "id": "yearly-business-viability-review",
+          "title": "Evaluación Anual de Viabilidad y Plan de Negocios",
+          "content": {
+            "overview": {
+              "title": "Evaluación Anual de Viabilidad y Plan de Negocios",
+              "summary": "Evaluación Anual de Viabilidad y Plan de Negocios",
+              "body": "Al cierre de cada año de producción, es crucial analizar la rentabilidad global de la finca. Esto permite recalcular el punto de equilibrio real usando los costos operativos e ingresos consolidados, evaluar si el premio de precio orgánico justifica los costos de certificación y ajustar la estrategia de precios para el año entrante."
+            },
+            "objective": {
+              "description": ""
+            },
+            "whyItMatters": "Al cierre de cada año de producción, es crucial analizar la rentabilidad global de la finca. Esto permite recalcular el punto de equilibrio real usando los costos operativos e ingresos consolidados, evaluar si el premio de precio orgánico justifica los costos de certificación y ajustar la estrategia de precios para el año entrante.",
+            "bestPractices": [
+              "Consolidar todos los registros de OPEX y CAPEX del año.",
+              "Calcular el rendimiento real por hectárea (kg/ha/año).",
+              "Recalcular el precio mínimo de venta (punto de equilibrio) basado en los costos anuales consolidados."
+            ],
+            "commonMistakes": [
+              "Asumir que el negocio es rentable solo porque hay dinero en la cuenta, sin restar la depreciación de maquinaria o el costo de establecimiento.",
+              "No ajustar las proyecciones financieras ante cambios de precios internacionales del cacao."
+            ],
+            "tip": "Un cultivo de cacao orgánico en plena producción en Colombia debería apuntar a un costo de producción anual de menos de $2.00 USD por kg de cacao seco. Si tus costos superan este umbral, enfócate en optimizar la mano de obra en labores recurrentes.",
+            "recommendedTools": [
+              {
+                "name": "Hoja de cálculo financiera de cacao",
+                "url": "https://www.google.com",
+                "description": "Plantilla para cálculo de depreciación y flujo de caja anual consolidado"
+              }
+            ],
+            "registroFields": [],
+            "checklist": [
+              {
+                "id": "chk-yearly-business-viability-review-0",
+                "task": ""
+              },
+              {
+                "id": "chk-yearly-business-viability-review-1",
+                "task": ""
+              },
+              {
+                "id": "chk-yearly-business-viability-review-2",
+                "task": ""
+              },
+              {
+                "id": "chk-yearly-business-viability-review-3",
+                "task": ""
+              }
+            ]
+          },
+          "type": "yearly",
+          "estimatedHours": 0,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "order": 1
+        }
+      ],
+      "block": "strategy",
+      "title": "Evaluación y Ajuste Estratégico Recurrente",
+      "id": "strategy-recurrent-evaluation",
+      "order": 26
+    },
+    {
+      "phaseId": "business-recurrent-management",
+      "phaseTitle": "Gestión Administrativa y Cumplimiento Recurrente",
+      "steps": [
+        {
+          "stepId": "monthly-cashflow-reconciliation",
+          "stepTitle": "Conciliación Financiera y Cierre Contable Mensual",
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "reconciliation-month",
+                "label": "Mes Conciliado",
+                "type": "text",
+                "placeholder": "Ej: Octubre 2023",
+                "required": true
+              },
+              {
+                "fieldId": "total-monthly-income",
+                "label": "Ingresos Totales del Mes ($)",
+                "type": "number",
+                "placeholder": "3200",
+                "required": true
+              },
+              {
+                "fieldId": "total-monthly-opex",
+                "label": "Gastos Operativos (OPEX) del Mes ($)",
+                "type": "number",
+                "placeholder": "1450",
+                "required": true
+              },
+              {
+                "fieldId": "ending-cash-balance",
+                "label": "Saldo Final en Caja/Banco ($)",
+                "type": "number",
+                "placeholder": "1750",
+                "required": true
+              }
+            ]
+          },
+          "id": "monthly-cashflow-reconciliation",
+          "title": "Conciliación Financiera y Cierre Contable Mensual",
+          "content": {
+            "overview": {
+              "title": "Conciliación Financiera y Cierre Contable Mensual",
+              "summary": "Conciliación Financiera y Cierre Contable Mensual",
+              "body": "Llevar las cuentas claras mes a mes evita sorpresas fiscales y te permite reaccionar a tiempo si los costos de jornales o insumos se están saliendo del presupuesto. La conciliación de extractos bancarios contra tus facturas físicas de venta garantiza que no haya fugas de capital y proporciona datos limpios para la declaración anual de impuestos."
+            },
+            "objective": {
+              "description": ""
+            },
+            "whyItMatters": "Llevar las cuentas claras mes a mes evita sorpresas fiscales y te permite reaccionar a tiempo si los costos de jornales o insumos se están saliendo del presupuesto. La conciliación de extractos bancarios contra tus facturas físicas de venta garantiza que no haya fugas de capital y proporciona datos limpios para la declaración anual de impuestos.",
+            "bestPractices": [
+              "Recopilar todas las facturas y recibos de compras del mes.",
+              "Conciliar cada transacción del extracto bancario con un gasto registrado en tu sistema o planilla.",
+              "Calcular el flujo de caja del mes (Ingresos - Gastos)."
+            ],
+            "commonMistakes": [
+              "Dejar la contabilidad para el final del año, perdiendo recibos físicos y cometiendo errores de memoria.",
+              "Mezclar gastos personales de la familia con los gastos del cultivo de cacao."
+            ],
+            "tip": "Usa una cuenta de banco exclusiva para la finca. Cada vez que compres insumos o pagues jornales, hazlo por transferencia o tarjeta de débito para que el extracto sea tu registro primario de transacciones.",
+            "recommendedTools": [
+              {
+                "name": "Software Contable (ej: Treinta, Alegra o Excel simplificado)",
+                "url": "https://www.alegra.com",
+                "description": "Plataformas en la nube para registrar ingresos, gastos y emitir facturas electrónicas"
+              }
+            ],
+            "registroFields": [],
+            "checklist": [
+              {
+                "id": "chk-monthly-cashflow-reconciliation-0",
+                "task": ""
+              },
+              {
+                "id": "chk-monthly-cashflow-reconciliation-1",
+                "task": ""
+              },
+              {
+                "id": "chk-monthly-cashflow-reconciliation-2",
+                "task": ""
+              },
+              {
+                "id": "chk-monthly-cashflow-reconciliation-3",
+                "task": ""
+              }
+            ]
+          },
+          "type": "monthly",
+          "estimatedHours": 0,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "order": 0
+        },
+        {
+          "stepId": "monthly-payroll-social-security",
+          "stepTitle": "Pago de Nómina y Seguridad Social de Trabajadores",
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "payroll-period",
+                "label": "Periodo de Nómina",
+                "type": "text",
+                "placeholder": "Ej: Mes de Septiembre 2023",
+                "required": true
+              },
+              {
+                "fieldId": "pila-planilla-number",
+                "label": "Número de Planilla PILA Pagada",
+                "type": "text",
+                "placeholder": "Ej: 948572049",
+                "required": true
+              },
+              {
+                "fieldId": "total-payroll-amount",
+                "label": "Monto Total de Nómina y Jornales Pagados ($)",
+                "type": "number",
+                "placeholder": "1200",
+                "required": true
+              },
+              {
+                "fieldId": "active-workers-count",
+                "label": "Número de Trabajadores Cubiertos en el Mes",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              }
+            ]
+          },
+          "id": "monthly-payroll-social-security",
+          "title": "Pago de Nómina y Seguridad Social de Trabajadores",
+          "content": {
+            "overview": {
+              "title": "Pago de Nómina y Seguridad Social de Trabajadores",
+              "summary": "Pago de Nómina y Seguridad Social de Trabajadores",
+              "body": "En el sector agrícola colombiano, la formalización laboral es crítica. El no pago de aportes de seguridad social (salud, pensión, riesgos laborales ARL) te expone a demandas laborales costosas y sanciones de la UGPP. Además, el bienestar y la seguridad de los trabajadores de campo garantizan una operación constante y de alta calidad."
+            },
+            "objective": {
+              "description": ""
+            },
+            "whyItMatters": "En el sector agrícola colombiano, la formalización laboral es crítica. El no pago de aportes de seguridad social (salud, pensión, riesgos laborales ARL) te expone a demandas laborales costosas y sanciones de la UGPP. Además, el bienestar y la seguridad de los trabajadores de campo garantizan una operación constante y de alta calidad.",
+            "bestPractices": [
+              "Asegurar que todos los trabajadores estén afiliados a la ARL correspondiente antes de iniciar labores en campo.",
+              "Liquidar las planillas de seguridad social (PILA) mensualmente a través de operadores autorizados.",
+              "Mantener un registro firmado de los jornales pagados a destajo o semanales."
+            ],
+            "commonMistakes": [
+              "Contratar jornaleros temporales sin afiliación a ARL en labores de alto riesgo como poda en altura.",
+              "No guardar los comprobantes de pago de nómina firmados con huella digital o firma física."
+            ],
+            "tip": "Para jornaleros temporales, puedes usar esquemas de afiliación colectiva o cotización por semanas según la normativa vigente en Colombia, garantizando cobertura de riesgos laborales (ARL) a un costo proporcional.",
+            "recommendedTools": [
+              {
+                "name": "Operadores PILA (ej: miplanilla, SOI, Aportes en Línea)",
+                "url": "https://www.miplanilla.com",
+                "description": "Plataformas autorizadas en Colombia para la liquidación y pago de seguridad social"
+              }
+            ],
+            "registroFields": [],
+            "checklist": [
+              {
+                "id": "chk-monthly-payroll-social-security-0",
+                "task": ""
+              },
+              {
+                "id": "chk-monthly-payroll-social-security-1",
+                "task": ""
+              },
+              {
+                "id": "chk-monthly-payroll-social-security-2",
+                "task": ""
+              },
+              {
+                "id": "chk-monthly-payroll-social-security-3",
+                "task": ""
+              }
+            ]
+          },
+          "type": "monthly",
+          "estimatedHours": 0,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "order": 1
+        },
+        {
+          "stepId": "annual-licensing-permits-renewal",
+          "stepTitle": "Renovación Anual de Registros, Licencias y Certificados de Finca",
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "renewal-year",
+                "label": "Año de Renovación de Trámites",
+                "type": "number",
+                "placeholder": "2024",
+                "required": true
+              },
+              {
+                "fieldId": "chamber-commerce-renewal-number",
+                "label": "Número de Radicado de Renovación de Matrícula Mercantil",
+                "type": "text",
+                "placeholder": "Ej: RUES-849572",
+                "required": true
+              },
+              {
+                "fieldId": "ica-permit-status",
+                "label": "Estado del Registro del ICA de la Finca",
+                "type": "select",
+                "options": [
+                  "Vigente / Renovado",
+                  "En proceso de renovación",
+                  "Vencido / Requiere trámite"
+                ],
+                "required": true
+              },
+              {
+                "fieldId": "organic-certificate-expiry",
+                "label": "Fecha de Vencimiento de Certificación Orgánica / Sellos Sostenibles",
+                "type": "date",
+                "required": true
+              }
+            ]
+          },
+          "id": "annual-licensing-permits-renewal",
+          "title": "Renovación Anual de Registros, Licencias y Certificados de Finca",
+          "content": {
+            "overview": {
+              "title": "Renovación Anual de Registros, Licencias y Certificados de Finca",
+              "summary": "Renovación Anual de Registros, Licencias y Certificados de Finca",
+              "body": "Mantener tus registros vigentes es indispensable para vender tu cacao a mercados selectos. La matrícula mercantil de la Cámara de Comercio debe renovarse en los primeros tres meses del año, y los certificados fitosanitarios del ICA o los sellos orgánicos/sostenibles (como FLO o Rainforest) exigen auditorías de renovación anual para certificar que sigues cumpliendo los estándares exigidos."
+            },
+            "objective": {
+              "description": ""
+            },
+            "whyItMatters": "Mantener tus registros vigentes es indispensable para vender tu cacao a mercados selectos. La matrícula mercantil de la Cámara de Comercio debe renovarse en los primeros tres meses del año, y los certificados fitosanitarios del ICA o los sellos orgánicos/sostenibles (como FLO o Rainforest) exigen auditorías de renovación anual para certificar que sigues cumpliendo los estándares exigidos.",
+            "bestPractices": [
+              "Calendario de vencimientos de licencias y auditorías.",
+              "Realizar una pre-auditoría interna de tu cuaderno de campo orgánico antes de la visita del inspector.",
+              "Renovar a tiempo la matrícula mercantil de la Cámara de Comercio para mantener la personería jurídica activa."
+            ],
+            "commonMistakes": [
+              "Dejar vencer el registro del ICA de predio exportador/productor, lo que bloquea las ventas a cooperativas de exportación.",
+              "No preparar los registros de aplicación de bioinsumos, perdiendo la certificación orgánica en la auditoría anual por falta de trazabilidad."
+            ],
+            "tip": "Programa tu pre-auditoría interna 2 meses antes del vencimiento del certificado. Revisa que todos los 'Registro de Paso' (aplicaciones de AOC, control de plagas, etc.) de la plataforma estén completos e impresos como tu cuaderno de campo digital.",
+            "recommendedTools": [
+              {
+                "name": "Cámara de Comercio Virtual (RUES)",
+                "url": "https://www.rues.org.co",
+                "description": "Portal nacional para la renovación en línea de matrículas mercantiles en Colombia"
+              },
+              {
+                "name": "SINE ICA",
+                "url": "https://www.ica.gov.co",
+                "description": "Servicio de trámites en línea para la renovación de registros de predios agrícolas"
+              }
+            ],
+            "registroFields": [],
+            "checklist": [
+              {
+                "id": "chk-annual-licensing-permits-renewal-0",
+                "task": ""
+              },
+              {
+                "id": "chk-annual-licensing-permits-renewal-1",
+                "task": ""
+              },
+              {
+                "id": "chk-annual-licensing-permits-renewal-2",
+                "task": ""
+              },
+              {
+                "id": "chk-annual-licensing-permits-renewal-3",
+                "task": ""
+              }
+            ]
+          },
+          "type": "yearly",
+          "estimatedHours": 0,
+          "difficulty": "easy",
+          "priority": "normal",
+          "dependencies": [],
+          "order": 2
+        }
+      ],
+      "block": "business",
+      "title": "Gestión Administrativa y Cumplimiento Recurrente",
+      "id": "business-recurrent-management",
+      "order": 27
     }
   ]
 }

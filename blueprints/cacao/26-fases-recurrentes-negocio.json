@@ -1,0 +1,202 @@
+{
+  "block": "business",
+  "blockTitle": "Negocio",
+  "phases": [
+    {
+      "phaseId": "business-recurrent-management",
+      "phaseTitle": "Gestión Administrativa y Cumplimiento Recurrente",
+      "steps": [
+        {
+          "stepId": "monthly-cashflow-reconciliation",
+          "stepTitle": "Conciliación Financiera y Cierre Contable Mensual",
+          "guide": {
+            "whyItMatters": "Llevar las cuentas claras mes a mes evita sorpresas fiscales y te permite reaccionar a tiempo si los costos de jornales o insumos se están saliendo del presupuesto. La conciliación de extractos bancarios contra tus facturas físicas de venta garantiza que no haya fugas de capital y proporciona datos limpios para la declaración anual de impuestos.",
+            "bestPractices": [
+              "Recopilar todas las facturas y recibos de compras del mes.",
+              "Conciliar cada transacción del extracto bancario con un gasto registrado en tu sistema o planilla.",
+              "Calcular el flujo de caja del mes (Ingresos - Gastos)."
+            ],
+            "commonMistakes": [
+              "Dejar la contabilidad para el final del año, perdiendo recibos físicos y cometiendo errores de memoria.",
+              "Mezclar gastos personales de la familia con los gastos del cultivo de cacao."
+            ],
+            "tip": "Usa una cuenta de banco exclusiva para la finca. Cada vez que compres insumos o pagues jornales, hazlo por transferencia o tarjeta de débito para que el extracto sea tu registro primario de transacciones.",
+            "recommendedTools": [
+              {
+                "name": "Software Contable (ej: Treinta, Alegra o Excel simplificado)",
+                "url": "https://www.alegra.com",
+                "description": "Plataformas en la nube para registrar ingresos, gastos y emitir facturas electrónicas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "reconciliation-month",
+                "label": "Mes Conciliado",
+                "type": "text",
+                "placeholder": "Ej: Octubre 2023",
+                "required": true
+              },
+              {
+                "fieldId": "total-monthly-income",
+                "label": "Ingresos Totales del Mes ($)",
+                "type": "number",
+                "placeholder": "3200",
+                "required": true
+              },
+              {
+                "fieldId": "total-monthly-opex",
+                "label": "Gastos Operativos (OPEX) del Mes ($)",
+                "type": "number",
+                "placeholder": "1450",
+                "required": true
+              },
+              {
+                "fieldId": "ending-cash-balance",
+                "label": "Saldo Final en Caja/Banco ($)",
+                "type": "number",
+                "placeholder": "1750",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Reunir todos los recibos y facturas físicas/electrónicas del mes",
+            "Conciliar el extracto bancario con el registro contable",
+            "Calcular el saldo de caja y verificar que coincida con las cuentas",
+            "Archivar las facturas del mes en carpetas físicas y digitales"
+          ]
+        },
+        {
+          "stepId": "monthly-payroll-social-security",
+          "stepTitle": "Pago de Nómina y Seguridad Social de Trabajadores",
+          "guide": {
+            "whyItMatters": "En el sector agrícola colombiano, la formalización laboral es crítica. El no pago de aportes de seguridad social (salud, pensión, riesgos laborales ARL) te expone a demandas laborales costosas y sanciones de la UGPP. Además, el bienestar y la seguridad de los trabajadores de campo garantizan una operación constante y de alta calidad.",
+            "bestPractices": [
+              "Asegurar que todos los trabajadores estén afiliados a la ARL correspondiente antes de iniciar labores en campo.",
+              "Liquidar las planillas de seguridad social (PILA) mensualmente a través de operadores autorizados.",
+              "Mantener un registro firmado de los jornales pagados a destajo o semanales."
+            ],
+            "commonMistakes": [
+              "Contratar jornaleros temporales sin afiliación a ARL en labores de alto riesgo como poda en altura.",
+              "No guardar los comprobantes de pago de nómina firmados con huella digital o firma física."
+            ],
+            "tip": "Para jornaleros temporales, puedes usar esquemas de afiliación colectiva o cotización por semanas según la normativa vigente en Colombia, garantizando cobertura de riesgos laborales (ARL) a un costo proporcional.",
+            "recommendedTools": [
+              {
+                "name": "Operadores PILA (ej: miplanilla, SOI, Aportes en Línea)",
+                "url": "https://www.miplanilla.com",
+                "description": "Plataformas autorizadas en Colombia para la liquidación y pago de seguridad social"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "payroll-period",
+                "label": "Periodo de Nómina",
+                "type": "text",
+                "placeholder": "Ej: Mes de Septiembre 2023",
+                "required": true
+              },
+              {
+                "fieldId": "pila-planilla-number",
+                "label": "Número de Planilla PILA Pagada",
+                "type": "text",
+                "placeholder": "Ej: 948572049",
+                "required": true
+              },
+              {
+                "fieldId": "total-payroll-amount",
+                "label": "Monto Total de Nómina y Jornales Pagados ($)",
+                "type": "number",
+                "placeholder": "1200",
+                "required": true
+              },
+              {
+                "fieldId": "active-workers-count",
+                "label": "Número de Trabajadores Cubiertos en el Mes",
+                "type": "number",
+                "placeholder": "4",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Liquidar las horas o jornales laborados por cada trabajador en el mes",
+            "Generar y liquidar la planilla de seguridad social PILA",
+            "Realizar el pago de aportes a salud, pensión, ARL y Caja de Compensación",
+            "Entregar los pagos de nómina y recolectar las firmas de recibidos"
+          ]
+        },
+        {
+          "stepId": "annual-licensing-permits-renewal",
+          "stepTitle": "Renovación Anual de Registros, Licencias y Certificados de Finca",
+          "guide": {
+            "whyItMatters": "Mantener tus registros vigentes es indispensable para vender tu cacao a mercados selectos. La matrícula mercantil de la Cámara de Comercio debe renovarse en los primeros tres meses del año, y los certificados fitosanitarios del ICA o los sellos orgánicos/sostenibles (como FLO o Rainforest) exigen auditorías de renovación anual para certificar que sigues cumpliendo los estándares exigidos.",
+            "bestPractices": [
+              "Calendario de vencimientos de licencias y auditorías.",
+              "Realizar una pre-auditoría interna de tu cuaderno de campo orgánico antes de la visita del inspector.",
+              "Renovar a tiempo la matrícula mercantil de la Cámara de Comercio para mantener la personería jurídica activa."
+            ],
+            "commonMistakes": [
+              "Dejar vencer el registro del ICA de predio exportador/productor, lo que bloquea las ventas a cooperativas de exportación.",
+              "No preparar los registros de aplicación de bioinsumos, perdiendo la certificación orgánica en la auditoría anual por falta de trazabilidad."
+            ],
+            "tip": "Programa tu pre-auditoría interna 2 meses antes del vencimiento del certificado. Revisa que todos los 'Registro de Paso' (aplicaciones de AOC, control de plagas, etc.) de la plataforma estén completos e impresos como tu cuaderno de campo digital.",
+            "recommendedTools": [
+              {
+                "name": "Cámara de Comercio Virtual (RUES)",
+                "url": "https://www.rues.org.co",
+                "description": "Portal nacional para la renovación en línea de matrículas mercantiles en Colombia"
+              },
+              {
+                "name": "SINE ICA",
+                "url": "https://www.ica.gov.co",
+                "description": "Servicio de trámites en línea para la renovación de registros de predios agrícolas"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "renewal-year",
+                "label": "Año de Renovación de Trámites",
+                "type": "number",
+                "placeholder": "2024",
+                "required": true
+              },
+              {
+                "fieldId": "chamber-commerce-renewal-number",
+                "label": "Número de Radicado de Renovación de Matrícula Mercantil",
+                "type": "text",
+                "placeholder": "Ej: RUES-849572",
+                "required": true
+              },
+              {
+                "fieldId": "ica-permit-status",
+                "label": "Estado del Registro del ICA de la Finca",
+                "type": "select",
+                "options": ["Vigente / Renovado", "En proceso de renovación", "Vencido / Requiere trámite"],
+                "required": true
+              },
+              {
+                "fieldId": "organic-certificate-expiry",
+                "label": "Fecha de Vencimiento de Certificación Orgánica / Sellos Sostenibles",
+                "type": "date",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Renovar la matrícula mercantil en la Cámara de Comercio (antes del 31 de marzo)",
+            "Solicitar y pagar la auditoría de renovación de certificación orgánica",
+            "Revisar y actualizar el registro de predio productor ante el ICA",
+            "Subir los documentos de renovación firmados a la nube de la empresa"
+          ]
+        }
+      ]
+    }
+  ]
+}

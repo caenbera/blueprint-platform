@@ -1,0 +1,136 @@
+{
+  "block": "strategy",
+  "blockTitle": "Estrategia",
+  "phases": [
+    {
+      "phaseId": "strategy-recurrent-evaluation",
+      "phaseTitle": "Evaluación y Ajuste Estratégico Recurrente",
+      "steps": [
+        {
+          "stepId": "semester-objectives-review",
+          "stepTitle": "Revisión Semestral de Objetivos y Plan de Cultivo",
+          "guide": {
+            "whyItMatters": "El comportamiento climático y las fluctuaciones del mercado impactan el cacaotal. Una revisión semestral te permite ajustar la sombra (por podas o nuevas siembras de temporales) y calibrar las proyecciones de cosecha según el desarrollo real de las mazorcas, evitando desfases logísticos o pérdidas de contratos de venta.",
+            "bestPractices": [
+              "Realizar un censo rápido del sombrío dinámico (porcentaje de luz que llega al suelo).",
+              "Comparar los kilos reales cosechados en el semestre con el plan original.",
+              "Ajustar la estimación de producción para el siguiente semestre."
+            ],
+            "commonMistakes": [
+              "Continuar con el mismo plan de fertilización si se presenta una sequía extrema o lluvias fuera de lo común.",
+              "No ajustar las metas de ventas a pesar de saber que la cosecha será menor."
+            ],
+            "tip": "Mide la cobertura de copa del sombrío permanente. Si supera el 40%, planifica podas inmediatas de ramas del sombrío para el inicio del próximo semestre para que los árboles de cacao reciban la radiación solar necesaria para la fotosíntesis y producción.",
+            "recommendedTools": [
+              {
+                "name": "Luxómetro o app móvil de medición de luz solar",
+                "url": "https://www.google.com",
+                "description": "Para medir la radiación que atraviesa el dosel de sombra"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "semester-period",
+                "label": "Semestre Evaluado",
+                "type": "select",
+                "options": ["Primer Semestre (Ene-Jun)", "Segundo Semestre (Jul-Dic)"],
+                "required": true
+              },
+              {
+                "fieldId": "adjusted-yield-projection",
+                "label": "Proyección Ajustada de Producción para Siguiente Semestre (kg)",
+                "type": "number",
+                "placeholder": "1500",
+                "required": true
+              },
+              {
+                "fieldId": "shade-coverage-percent",
+                "label": "Porcentaje Promedio de Sombra Detectado (%)",
+                "type": "number",
+                "placeholder": "35",
+                "required": true
+              },
+              {
+                "fieldId": "strategic-notes",
+                "label": "Notas Estratégicas y Decisiones de Ajuste",
+                "type": "textarea",
+                "placeholder": "Ej: Se decide podar el 20% del guamo en el lote sur para aumentar luz y control de Monilia...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Medir el porcentaje de filtración de luz en 5 puntos de muestreo",
+            "Comparar la producción semestral real contra la proyectada",
+            "Ajustar la estimación de kilos para el siguiente ciclo",
+            "Definir necesidad de podas urgentes de sombrío permanente"
+          ]
+        },
+        {
+          "stepId": "yearly-business-viability-review",
+          "stepTitle": "Evaluación Anual de Viabilidad y Plan de Negocios",
+          "guide": {
+            "whyItMatters": "Al cierre de cada año de producción, es crucial analizar la rentabilidad global de la finca. Esto permite recalcular el punto de equilibrio real usando los costos operativos e ingresos consolidados, evaluar si el premio de precio orgánico justifica los costos de certificación y ajustar la estrategia de precios para el año entrante.",
+            "bestPractices": [
+              "Consolidar todos los registros de OPEX y CAPEX del año.",
+              "Calcular el rendimiento real por hectárea (kg/ha/año).",
+              "Recalcular el precio mínimo de venta (punto de equilibrio) basado en los costos anuales consolidados."
+            ],
+            "commonMistakes": [
+              "Asumir que el negocio es rentable solo porque hay dinero en la cuenta, sin restar la depreciación de maquinaria o el costo de establecimiento.",
+              "No ajustar las proyecciones financieras ante cambios de precios internacionales del cacao."
+            ],
+            "tip": "Un cultivo de cacao orgánico en plena producción en Colombia debería apuntar a un costo de producción anual de menos de $2.00 USD por kg de cacao seco. Si tus costos superan este umbral, enfócate en optimizar la mano de obra en labores recurrentes.",
+            "recommendedTools": [
+              {
+                "name": "Hoja de cálculo financiera de cacao",
+                "url": "https://www.google.com",
+                "description": "Plantilla para cálculo de depreciación y flujo de caja anual consolidado"
+              }
+            ]
+          },
+          "registro": {
+            "registroFields": [
+              {
+                "fieldId": "review-year",
+                "label": "Año Fiscal Evaluado",
+                "type": "number",
+                "placeholder": "2023",
+                "required": true
+              },
+              {
+                "fieldId": "real-annual-yield",
+                "label": "Rendimiento Real del Año (kg totales)",
+                "type": "number",
+                "placeholder": "4500",
+                "required": true
+              },
+              {
+                "fieldId": "calculated-production-cost-kg",
+                "label": "Costo de Producción Real Calculado por kg ($ USD)",
+                "type": "number",
+                "placeholder": "1.85",
+                "required": true
+              },
+              {
+                "fieldId": "next-year-goals",
+                "label": "Metas y Proyecciones de Mejora para el Año Siguiente",
+                "type": "textarea",
+                "placeholder": "Ej: Incrementar rendimiento a 1,200 kg/ha mediante renovación de copas y mejorar compostaje...",
+                "required": true
+              }
+            ]
+          },
+          "checklist": [
+            "Consolidar gastos e ingresos de los 12 meses",
+            "Calcular el costo real por kilogramo producido",
+            "Recalcular el punto de equilibrio financiero de la finca",
+            "Definir el presupuesto de mantenimiento para el próximo año"
+          ]
+        }
+      ]
+    }
+  ]
+}
