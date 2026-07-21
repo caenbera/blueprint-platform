@@ -1,168 +1,192 @@
 {
-  "id": "fase-presencia-vitrina-digital",
+  "id": "fase-clientes",
   "title": "Presencia y Vitrina Digital",
   "block": "customers",
   "steps": [
     {
-      "id": "step-registro-dominio-sitio-web",
-      "title": "Registro de Dominio y Sitio Web Básico",
+      "id": "v2-step-dominio-hosting",
+      "title": "Registrar Dominio y Contratar Hosting",
+      "description": "Asegura tu presencia online con un dominio y plataforma web profesionales.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-nombre-comercial"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Registro de Dominio y Sitio Web Básico",
-          "summary": "Asegurar el nombre digital de la firma, publicar un sitio web profesional y configurar los medios para recibir pagos en línea de forma segura.",
-          "body": "En la era digital, tu sitio web es tu oficina principal abierta las 24 horas. Para una asesoría financiera, no necesita ser extremadamente complejo, pero sí debe ser rápido, seguro (HTTPS), móvil-friendly y transmitir absoluta profesionalidad. Además, integrar una pasarela de cobro desde el inicio elimina la fricción administrativa de perseguir pagos por transferencia manual."
+          "title": "Registrar Dominio y Contratar Hosting",
+          "summary": "Asegura tu presencia online con un dominio y plataforma web profesionales.",
+          "body": "Compra dominio .com o extensión local. Registra por mínimo 2 años.\n\nElige plataforma web: WordPress, Webflow, etc.\n\nConfigura SSL y seguridad básica."
         },
         "objective": {
-          "description": "Registrar el dominio oficial, publicar el sitio web con la información esencial de la firma y enlazar una pasarela de pago segura para la facturación de servicios."
+          "description": "¿Aseguraste tu presencia online?"
         },
-        "whyItMatters": "Un dominio propio (ej. tuempresa.com) es la primera prueba de legitimidad. Los clientes desconfían de las asesorías que usan correos gratuitos (gmail, hotmail) o sitios web gratuitos con dominios de tercer nivel. Un sitio web bien estructurado con una pasarela de cobro integrada no solo mejora la imagen, sino que acelera el flujo de caja al permitir que el cliente pague sus honorarios con un solo clic."
-        ,
-        "bestPractices": [
-          "Incluye páginas esenciales: 'Sobre Nosotros' (con fotos reales del equipo), 'Servicios', 'Metodología' y un 'Agendador de Citas' o formulario de contacto seguro.",
-          "Asegúrate de que el sitio web tenga un certificado SSL activo (el candado en la barra de direcciones) y una política de privacidad visible.",
-          "Optimiza las imágenes para que el sitio cargue en menos de 3 segundos; la lentitud genera abandono inmediato."
-        ],
-        "commonMistakes": [
-          "Elegir un dominio demasiado largo, con guiones o difícil de deletrear, lo que provoca que los clientes no puedan encontrarlo.",
-          "Publicar el sitio web con textos de relleno ('Lorem Ipsum') o plantillas sin personalizar, lo que destruye la credibilidad al instante.",
-          "Olvidar configurar el correo electrónico corporativo (ej. nombre@tuempresa.com) asociado al dominio, siguiendo con correos personales."
-        ],
-        "tip": "Registra tu dominio y configura el correo corporativo antes de lanzar el sitio web completo. Esto te permite empezar a usar tu correo profesional en tus firmas de email y tarjetas de presentación desde el día uno, incluso si la web aún está en construcción ('Próximamente').",
-        "recommendedTools": [
-          {
-            "name": "Namecheap o GoDaddy (Registro de dominios)",
-            "url": "https://www.namecheap.com/"
-          },
-          {
-            "name": "Webflow, Squarespace o WordPress (Constructores de sitios web profesionales)",
-            "url": "https://webflow.com/"
-          },
-          {
-            "name": "Stripe o MercadoPago (Pasarelas de cobro seguras y fáciles de integrar)",
-            "url": "https://stripe.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "website-domain-url",
-            "label": "URL del Sitio Web y Dominio Registrado",
-            "type": "url",
-            "placeholder": "Ej: https://www.tuasesoriafinanciera.com",
-            "required": true
-          },
-          {
-            "id": "hosting-platform",
-            "label": "Plataforma de Hosting o Constructor Web Utilizado",
-            "type": "text",
-            "placeholder": "Ej: WordPress con Hostinger, Webflow, Squarespace",
-            "required": true
-          },
-          {
-            "id": "payment-gateway-linked",
-            "label": "Pasarela de Cobro Enlazada en el Sitio Web",
-            "type": "text",
-            "placeholder": "Ej: Stripe, MercadoPago, PayPal (o 'N/A' si se cobra solo por transferencia por ahora)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-search-register-domain",
-            "task": "Buscar, registrar y configurar el dominio oficial de la firma y los correos corporativos asociados.",
-            "registryFieldRef": "website-domain-url"
+            "id": "v2-chk-dom-01",
+            "task": "Comprar dominio",
+            "completed": false,
+            "registryFieldRef": "v2-reg-dominio"
           },
           {
-            "id": "chk-publish-website",
-            "task": "Diseñar, configurar y publicar el sitio web básico con la información esencial y el certificado de seguridad (SSL).",
-            "registryFieldRef": "hosting-platform"
+            "id": "v2-chk-dom-02",
+            "task": "Contratar hosting/plataforma web",
+            "completed": false
           },
           {
-            "id": "chk-link-payment-gateway",
-            "task": "Configurar y enlazar la pasarela de cobro en el sitio web para facilitar el pago de honorarios.",
-            "registryFieldRef": "payment-gateway-linked"
+            "id": "v2-chk-dom-03",
+            "task": "Configurar SSL",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-dom-04",
+            "task": "Configurar correo profesional con dominio propio",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir y configurar su dominio y hosting web.",
+          "context": "El usuario necesita establecer su presencia en línea.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un correo con dominio propio (nombre@tufirma.com) proyecta mucha más credibilidad que uno genérico (@gmail.com).",
+        "registroFields": [
+          {
+            "id": "v2-reg-dominio",
+            "label": "Dominio registrado",
+            "type": "text"
           }
         ]
       }
     },
     {
-      "id": "step-ficha-google-maps-seo-local",
-      "title": "Ficha en Google Maps y SEO Local",
+      "id": "v2-step-publicar-sitio",
+      "title": "Publicar el Sitio Web",
+      "description": "Revisa todos los enlaces, formularios y la versión móvil antes de publicar.",
+      "order": 1,
       "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-contenido-inicio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Ficha en Google Maps y SEO Local",
-          "summary": "Crear, verificar y optimizar el perfil de negocio en Google para aparecer en las búsquedas locales cuando los clientes potenciales necesiten asesoría financiera.",
-          "body": "Cuando alguien busca 'asesor financiero cerca de mí' o 'planificación de jubilación en [Tu Ciudad]', Google muestra un mapa con tres resultados destacados (el 'Local Pack'). Tener un perfil de Google Business optimizado y verificado es la forma más efectiva y gratuita de captar clientes locales que ya tienen una intención de búsqueda alta."
+          "title": "Publicar el sitio web",
+          "summary": "Publica el sitio web completo y verifica que funcione correctamente.",
+          "body": "Revisa todos los enlaces, formularios y la versión móvil antes de publicar el sitio de forma definitiva."
         },
         "objective": {
-          "description": "Crear el perfil de Google Business, completar toda la información con precisión, verificar la dirección y definir las palabras clave locales para la optimización."
+          "description": "Publicar el sitio web completo y verificar que funcione correctamente."
         },
-        "whyItMatters": "Más del 40% de las búsquedas de servicios profesionales tienen intención local. Un perfil incompleto, sin fotos o sin verificar genera desconfianza y hace que Google te oculte en los resultados. Un perfil optimizado, con reseñas y fotos reales, te posiciona como una opción legítima y accesible en tu comunidad."
-        ,
-        "bestPractices": [
-          "Asegúrate de que el Nombre, Dirección y Teléfono (NAP) sean exactamente iguales en tu sitio web, tu perfil de Google y tus redes sociales.",
-          "Sube fotos de alta calidad de tu oficina, tu equipo y tu espacio de trabajo; las fotos humanas generan un 35% más de clics que las imágenes de stock.",
-          "Redacta la descripción del negocio utilizando naturalmente las palabras clave que tu cliente ideal usaría para buscarte."
-        ],
-        "commonMistakes": [
-          "Usar un nombre de negocio en Google que incluya palabras clave de forma antinatural (ej. 'Asesoría Financiera Juan Pérez - Mejores Inversiones Baratas'), lo que viola las directrices de Google y puede resultar en la suspensión del perfil.",
-          "Dejar el perfil en estado 'Pendiente de verificación' durante meses, lo que limita drásticamente su visibilidad.",
-          "Olvidar actualizar los horarios especiales en días festivos, lo que frustra a los clientes que intentan contactarte."
-        ],
-        "tip": "Pide a tus primeros 3-5 clientes satisfechos que dejen una reseña detallada en tu perfil de Google mencionando el servicio específico que les brindaste (ej. 'Me ayudó a organizar mis deudas y planificar mi jubilación'). Las reseñas con palabras clave específicas potencian enormemente tu SEO local.",
-        "recommendedTools": [
-          {
-            "name": "Google Business Profile (Herramienta oficial y gratuita)",
-            "url": "https://www.google.com/business/"
-          },
-          {
-            "name": "BrightLocal o Ubersuggest (Para investigar palabras clave locales y auditar tu perfil)",
-            "url": "https://www.brightlocal.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "google-maps-business-url",
-            "label": "Enlace al Perfil de Google Business (Google Maps)",
-            "type": "url",
-            "placeholder": "Ej: https://goo.gl/maps/tu-enlace-aqui",
-            "required": true
-          },
-          {
-            "id": "verification-status",
-            "label": "Estado de Verificación del Perfil",
-            "type": "select",
-            "options": [
-              "Verificado por correo postal",
-              "Verificado por video o llamada",
-              "Pendiente de verificación"
-            ],
-            "required": true
-          },
-          {
-            "id": "local-seo-keywords",
-            "label": "Palabras Clave Locales Principales Definidas",
-            "type": "textarea",
-            "placeholder": "Ej: 'Asesor financiero en [Ciudad]', 'Planificación de jubilación [Región]', 'Consultoría de inversiones para pymes en [Zona]'.",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-create-google-profile",
-            "task": "Crear el perfil de Google Business y completar toda la información (horarios, servicios, fotos reales y descripción).",
-            "registryFieldRef": "google-maps-business-url"
+            "id": "chk-publicar-sitio",
+            "task": "Publicar el sitio web completo y verificar que funcione correctamente.",
+            "completed": false,
+            "registryFieldRef": "reg-sitio-publicado-url"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a hacer una última revisión antes de publicar su sitio web.",
+          "context": "El usuario ya tiene todas las páginas de su sitio redactadas.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un sitio publicado con errores (enlaces rotos, formularios que no funcionan) daña más la credibilidad que no tener sitio todavía.",
+        "registroFields": [
+          {
+            "id": "reg-sitio-publicado-url",
+            "label": "URL final del sitio publicado",
+            "type": "url",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-google-business",
+      "title": "Crear Google Business Profile",
+      "description": "Un perfil verificado ayuda a que te encuentren en búsquedas locales.",
+      "order": 2,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-publicar-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear Google Business Profile",
+          "summary": "Un perfil verificado ayuda a que te encuentren en búsquedas locales.",
+          "body": "Un perfil verificado ayuda a que te encuentren en búsquedas locales y permite recibir reseñas."
+        },
+        "objective": {
+          "description": "¿Te encuentran en búsquedas locales?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-gb-01",
+            "task": "Crear perfil de Google Business",
+            "completed": false,
+            "registryFieldRef": "google-business-status"
           },
           {
-            "id": "chk-verify-profile",
-            "task": "Completar el proceso de verificación de dirección física o identidad del negocio ante Google.",
-            "registryFieldRef": "verification-status"
+            "id": "v2-chk-gb-02",
+            "task": "Verificar perfil",
+            "completed": false
           },
           {
-            "id": "chk-define-local-seo",
-            "task": "Definir e integrar las palabras clave locales principales en la descripción del perfil y el sitio web.",
-            "registryFieldRef": "local-seo-keywords"
+            "id": "v2-chk-gb-03",
+            "task": "Completar toda la información",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-gb-04",
+            "task": "Agregar fotos y horarios",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a crear y optimizar su perfil de Google Business.",
+          "context": "El usuario necesita aparecer en búsquedas locales de asesoría financiera.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "google-business-status",
+            "label": "Estado de la tarea: Crear Google Business Profile",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }

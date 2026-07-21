@@ -1,222 +1,351 @@
 {
-  "id": "fase-infraestructura-herramientas-trabajo",
+  "id": "fase-operaciones",
   "title": "Infraestructura y Herramientas de Trabajo",
   "block": "operations",
   "steps": [
     {
-      "id": "step-configuracion-entorno-trabajo",
-      "title": "Configuración de Entorno de Trabajo Seguro y Ergonómico",
+      "id": "v2-step-politica-confidencialidad",
+      "title": "Redactar Política de Confidencialidad",
+      "description": "Define cómo proteges la información sensible de tus clientes.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Configuración de Entorno de Trabajo Seguro y Ergonómico",
-          "summary": "Definir y adecuar el espacio físico o remoto donde se realizarán las asesorías, garantizando la privacidad de las sesiones y la ergonomía para jornadas prolongadas.",
-          "body": "En la asesoría financiera, tu entorno de trabajo es una extensión de tu profesionalismo. Si trabajas en remoto, el ruido de fondo o las interrupciones en una videollamada destruyen la confianza. Si tienes oficina física, la privacidad acústica y visual es innegociable cuando un cliente te comparte sus deudas o patrimonios. Este paso asegura que tu 'fábrica' de servicios esté lista para operar con estándares de consultoría de alto nivel."
+          "title": "Redactar Política de Confidencialidad",
+          "summary": "Define cómo proteges la información sensible de tus clientes.",
+          "body": "Una firma de asesoría maneja información extremadamente sensible: estados de cuenta, declaraciones de impuestos, información patrimonial, datos familiares.\n\nEste documento es clave para generar confianza. Debe ser firmado por todo el personal y por cada cliente.\n\nIncluir:\n- Qué información es confidencial\n- Cómo se protege\n- Quién tiene acceso\n- Cuánto tiempo se conserva"
         },
         "objective": {
-          "description": "Seleccionar el modelo de entorno de trabajo (físico, remoto o híbrido) y calcular el presupuesto necesario para su adecuación ergonómica y de privacidad."
+          "description": "¿Cómo proteges la información sensible de tus clientes?"
         },
-        "whyItMatters": "Un entorno de trabajo mal planificado genera fatiga prematura, errores en los cálculos financieros y, lo peor, filtraciones accidentales de información confidencial de clientes (ej. que alguien escuche una llamada o vea una pantalla con estados de cuenta). La ergonomía adecuada previene lesiones a largo plazo, permitiéndote mantener la lucidez necesaria para tomar decisiones críticas.",
-        "bestPractices": [
-          "Si trabajas en remoto, invierte en un fondo de pantalla virtual profesional, iluminación adecuada y un micrófono de solapa o direccional de alta calidad.",
-          "Si tienes oficina física, asegúrate de que la sala de reuniones tenga insonorización básica y que las pantallas de tu computadora no sean visibles desde la puerta o ventanas.",
-          "Utiliza sillas ergonómicas certificadas y monitores a la altura de los ojos para prevenir lesiones cervicales y lumbares.",
-          "Implementa una política de 'escritorio limpio' (Clean Desk Policy): ningún documento físico con datos de clientes debe quedar sobre el mesa al finalizar el día."
-        ],
-        "commonMistakes": [
-          "Subestimar la inversión en audio y video para reuniones virtuales; un audio con eco o cortes constantes hace que el cliente perciba el servicio como 'barato' o 'amateur'.",
-          "Trabajar desde la sala de tu casa donde pasan familiares o mascotas, rompiendo la confidencialidad y el profesionalismo.",
-          "No considerar la velocidad y estabilidad de la conexión a internet; una caída durante la revisión de un portafolio en vivo genera desconfianza inmediata."
-        ],
-        "tip": "Si tu oficina física o remota no tiene insonorización perfecta, utiliza 'ruido blanco' o música instrumental suave de fondo en la sala de espera o pasillos para enmascarar las conversaciones confidenciales que ocurran en tu escritorio.",
-        "recommendedTools": [
-          {
-            "name": "Krisp (Cancelación de ruido por IA para reuniones virtuales)",
-            "url": "https://krisp.ai/"
-          },
-          {
-            "name": "Logitech o Rode (Micrófonos y webcams profesionales)",
-            "url": "https://www.logitech.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "workspace-model-selected",
-            "label": "Modelo de Entorno de Trabajo Seleccionado",
-            "type": "select",
-            "options": [
-              "Oficina física propia (con sala de reuniones privada)",
-              "Oficina física compartida / Coworking (con salas de reuniones reservables)",
-              "100% Remoto (Home office con espacio dedicado y aislado)",
-              "Híbrido (Días de oficina para reuniones complejas y días remotos para análisis)"
-            ],
-            "required": true
-          },
-          {
-            "id": "workspace-setup-budget",
-            "label": "Presupuesto de Adecuación Inicial del Entorno (Mobiliario, aislamiento, tecnología)",
-            "type": "number",
-            "placeholder": "Ej: 2500 (en tu moneda local)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-select-workspace-model",
-            "task": "Definir y seleccionar el modelo de entorno de trabajo (físico, remoto o híbrido) que operará la firma.",
-            "registryFieldRef": "workspace-model-selected"
+            "id": "v2-chk-conf-01",
+            "task": "Redactar política de confidencialidad",
+            "completed": false,
+            "registryFieldRef": "politica-confidencialidad-status"
           },
           {
-            "id": "chk-calc-setup-budget",
-            "task": "Calcular y registrar el presupuesto total necesario para la adecuación ergonómica, de privacidad y tecnológica del espacio.",
-            "registryFieldRef": "workspace-setup-budget"
+            "id": "v2-chk-conf-02",
+            "task": "Definir manejo de datos sensibles",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-conf-03",
+            "task": "Crear acuerdo para firma por clientes",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-conf-04",
+            "task": "Establecer tiempos de retención",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-conf-05",
+            "task": "Documentar protocolo de brecha",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar una política de confidencialidad sólida para una firma de asesoría financiera.",
+          "context": "El usuario necesita proteger la información financiera sensible de sus clientes.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "La confidencialidad es la base de la confianza en asesoría financiera — un solo incidente de filtración de información puede destruir la reputación de la firma.",
+        "registroFields": [
+          {
+            "id": "politica-confidencialidad-status",
+            "label": "Estado de la tarea: Redactar Política de Confidencialidad",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }
     },
     {
-      "id": "step-seleccion-software-planificacion-cifrado",
-      "title": "Selección e Implementación de Software de Planificación Financiera y Cifrado",
+      "id": "v2-step-software-planificacion",
+      "title": "Elegir Software de Planificación Financiera",
+      "description": "Esta herramienta es el corazón de tu operación: ahí vas a proyectar escenarios y calcular metas.",
+      "order": 1,
       "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Selección e Implementación de Software de Planificación Financiera y Cifrado",
-          "summary": "Elegir y configurar las herramientas tecnológicas centrales para modelar planes financieros, gestionar la cartera de clientes y cifrar la información sensible.",
-          "body": "La tecnología en una asesoría financiera no es un lujo, es el motor que te permite escalar sin perder calidad. Necesitas software que te permita proyectar flujos de caja a 30 años, analizar asignaciones de activos y, sobre todo, que garantice que los datos bancarios y patrimoniales de tus clientes estén cifrados de extremo a extremo. Este paso define tu 'stack' tecnológico operativo."
+          "title": "Elegir Software de Planificación Financiera",
+          "summary": "Esta herramienta es el corazón de tu operación: ahí vas a proyectar escenarios y calcular metas.",
+          "body": "Esta herramienta es el corazón de tu operación: ahí vas a proyectar escenarios y calcular metas.\n\nUna interfaz confusa te va a costar horas cada semana.\n\nCrea una plantilla base que vas a reutilizar con cada cliente nuevo."
         },
         "objective": {
-          "description": "Seleccionar el software principal de planificación financiera, la herramienta de gestión de contraseñas/cifrado y calcular el costo mensual de estas licencias críticas."
+          "description": "¿Cuál es tu herramienta core de asesoría?"
         },
-        "whyItMatters": "Usar hojas de cálculo manuales no solo es propenso a errores fatales en los cálculos de interés compuesto o proyecciones fiscales, sino que es un riesgo de seguridad masivo. Un archivo de Excel con los patrimonios de 50 clientes enviado por correo sin cifrar es una bomba de tiempo legal y reputacional. El software especializado automatiza los cálculos, genera informes visuales de alto impacto y garantiza el cumplimiento de normativas de protección de datos.",
-        "bestPractices": [
-          "Elige software de planificación que permita escenarios dinámicos (Monte Carlo) para mostrar al cliente la probabilidad de éxito de su plan bajo diferentes condiciones de mercado.",
-          "Implementa un gestor de contraseñas de grado empresarial para todo el equipo; nunca guardes credenciales de clientes en archivos de texto o correos.",
-          "Asegúrate de que el software elegido cumpla con las normativas locales de protección de datos (ej. GDPR en Europa, HIPAA si manejas datos de salud vinculados a seguros, o leyes locales de habeas data).",
-          "Configura la autenticación de dos factores (2FA) obligatoria en todas las herramientas que almacenen datos de clientes."
-        ],
-        "commonMistakes": [
-          "Comprar software de contabilidad general (ej. QuickBooks) y usarlo para planificación financiera avanzada; son herramientas para propósitos distintos.",
-          "Compartir una sola cuenta de software de planificación entre varios asesores de la firma, perdiendo el historial de quién modificó qué plan y cuándo.",
-          "Ignorar las actualizaciones de seguridad del software; usar versiones obsoletas expone a los clientes a vulnerabilidades conocidas."
-        ],
-        "tip": "Antes de pagar la licencia anual de un software de planificación financiera caro, exige una prueba gratuita de 14 días y carga los datos ficticios de tu 'Buyer Persona'. Si la interfaz es tan compleja que te toma más de 30 minutos generar un plan básico, descártala; la fricción tecnológica te hará abandonar su uso en el primer mes.",
-        "recommendedTools": [
-          {
-            "name": "eMoney Advisor o MoneyGuidePro (Software líder de planificación financiera)",
-            "url": "https://www.emoneyadvisor.com/"
-          },
-          {
-            "name": "1Password Business o Bitwarden (Gestión de credenciales y cifrado)",
-            "url": "https://1password.com/"
-          },
-          {
-            "name": "Tresorit o Proton Drive (Almacenamiento en la nube cifrado de extremo a extremo)",
-            "url": "https://tresorit.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "financial-planning-software",
-            "label": "Software Principal de Planificación Financiera Seleccionado",
-            "type": "text",
-            "placeholder": "Ej: eMoney Advisor / MoneyGuidePro / Planificator",
-            "required": true
-          },
-          {
-            "id": "encryption-password-manager",
-            "label": "Herramienta de Cifrado y Gestión de Contraseñas Seleccionada",
-            "type": "text",
-            "placeholder": "Ej: 1Password Business / Bitwarden Enterprise",
-            "required": true
-          },
-          {
-            "id": "monthly-software-costs",
-            "label": "Costo Mensual Total de Licencias de Software Crítico",
-            "type": "number",
-            "placeholder": "Ej: 350 (en tu moneda local)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-select-planning-software",
-            "task": "Evaluar, seleccionar y registrar el nombre del software principal de planificación financiera.",
-            "registryFieldRef": "financial-planning-software"
+            "id": "v2-chk-sp-01",
+            "task": "Comparar opciones de software",
+            "completed": false,
+            "registryFieldRef": "software-planificacion-status"
           },
           {
-            "id": "chk-select-encryption-tool",
-            "task": "Seleccionar y registrar la herramienta de gestión de contraseñas y cifrado de grado empresarial.",
-            "registryFieldRef": "encryption-password-manager"
+            "id": "v2-chk-sp-02",
+            "task": "Elegir y contratar software",
+            "completed": false
           },
           {
-            "id": "chk-calc-software-costs",
-            "task": "Calcular y registrar el costo mensual total de todas las licencias de software crítico seleccionadas.",
-            "registryFieldRef": "monthly-software-costs"
+            "id": "v2-chk-sp-03",
+            "task": "Configurar plantilla base de plan financiero",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-sp-04",
+            "task": "Capacitarse en uso avanzado",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir el software de planificación financiera más adecuado para su firma.",
+          "context": "El usuario necesita la herramienta principal para crear planes financieros para sus clientes.",
+          "suggestions": [
+            "¿Qué software usan los asesores financieros para planificación?"
+          ]
+        },
+        "knowledge": [],
+        "tip": "Crea la plantilla base antes de tu primer cliente — así cada plan nuevo tarda menos y tiene una estructura consistente.",
+        "registroFields": [
+          {
+            "id": "software-planificacion-status",
+            "label": "Estado de la tarea: Elegir Software de Planificación Financiera",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }
     },
     {
-      "id": "step-protocolos-seguridad-confidencialidad",
-      "title": "Protocolos de Seguridad de la Información y Confidencialidad",
+      "id": "v2-step-agendamiento",
+      "title": "Implementar Herramienta de Agendamiento",
+      "description": "Permite a tus clientes reservar reuniones sin ir y venir por correo.",
+      "order": 2,
       "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Protocolos de Seguridad de la Información y Confidencialidad",
-          "summary": "Documentar las reglas inquebrantables sobre cómo se reciben, almacenan, comparten y destruyen los datos financieros sensibles de los clientes.",
-          "body": "Tus clientes te entregarán las llaves de su vida financiera: estados de cuenta, números de seguridad social, escrituras de propiedades y testamentos. Este paso no es sobre comprar software, es sobre definir el comportamiento humano y los procesos operativos que garantizarán que esa información nunca sea comprometida, ya sea por un ciberataque, un error humano o una fuga física."
+          "title": "Implementar Herramienta de Agendamiento",
+          "summary": "Permite a tus clientes reservar reuniones sin ir y venir por correo.",
+          "body": "Permite a tus clientes reservar reuniones sin ir y venir por correo.\n\nOpciones: Calendly, Acuity, Microsoft Bookings.\n\nConecta tu calendario para evitar dobles reservas.\n\nConfigura un tiempo buffer antes y después de cada reunión."
         },
         "objective": {
-          "description": "Redactar la política formal de manejo de datos sensibles y definir el protocolo operativo de respaldos (backups) y recuperación ante desastres."
+          "description": "¿Cómo reservan citas tus clientes?"
         },
-        "whyItMatters": "En el sector financiero, la confidencialidad es tu moneda de cambio. Un solo incidente donde los datos de un cliente se filtren (ej. enviar un correo al destinatario equivocado, perder una laptop sin cifrar) no solo resultará en demandas millonarias y sanciones regulatorias, sino que destruirá tu reputación de forma irreversible. Los protocolos escritos te protegen legalmente al demostrar 'debida diligencia' y obligan a tu equipo a seguir un estándar.",
-        "bestPractices": [
-          "Establece un canal exclusivo y cifrado para que los clientes te envíen documentos sensibles (ej. portal de clientes seguro), prohibiendo el envío de datos críticos por correo electrónico estándar o WhatsApp.",
-          "Define una política de retención y destrucción de documentos: ¿cuántos años guardas los expedientes de un cliente que se fue? ¿Cómo los destruyes de forma segura (trituración industrial, borrado criptográfico)?",
-          "Realiza simulacros semestrales de recuperación ante desastres: si tu servidor principal cae hoy, ¿en cuánto tiempo puedes volver a acceder a los planes de todos tus clientes?"
-        ],
-        "commonMistakes": [
-          "Guardar documentos físicos de clientes en archivadores sin llave en oficinas compartidas o áreas de acceso público.",
-          "Depender de un solo lugar para los respaldos (ej. solo en la computadora local); si hay un robo o un incendio, pierdes todo el negocio.",
-          "No tener un protocolo claro de qué hacer en las primeras 24 horas si se detecta una brecha de seguridad (quién llama al abogado, quién notifica al cliente, quién contiene el daño)."
-        ],
-        "tip": "Implementa la regla de los '3-2-1 para respaldos': Mantén al menos 3 copias de tus datos críticos, en 2 medios diferentes (ej. nube cifrada y disco duro externo), y 1 de esas copias fuera de las instalaciones físicas (ej. en la nube o en una caja de seguridad bancaria). Prueba restaurar una copia cada trimestre para asegurar que los archivos no están corruptos.",
-        "recommendedTools": [
+        "checklist": [
           {
-            "name": "ShareFile o Citrix (Portales seguros para intercambio de documentos con clientes)",
-            "url": "https://www.sharefile.com/"
+            "id": "v2-chk-ag-01",
+            "task": "Elegir herramienta de agendamiento",
+            "completed": false,
+            "registryFieldRef": "agendamiento-status"
           },
           {
-            "name": "Backblaze B2 (Copia de seguridad en la nube de bajo costo y alta seguridad)",
-            "url": "https://www.backblaze.com/b2/"
+            "id": "v2-chk-ag-02",
+            "task": "Conectar con calendario personal",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-ag-03",
+            "task": "Configurar tiempos buffer",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-ag-04",
+            "task": "Configurar tipos de reunión y duración",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a configurar una herramienta de agendamiento profesional.",
+          "context": "El usuario necesita que sus clientes puedan agendar reuniones de forma autónoma.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "recommendedTools": [
+          {
+            "name": "Calendly",
+            "url": "https://calendly.com"
           }
         ],
         "registroFields": [
           {
-            "id": "data-handling-policy",
-            "label": "Política Formal de Manejo, Retención y Destrucción de Datos Sensibles",
-            "type": "textarea",
-            "placeholder": "Ej: '1. Los clientes subirán documentos solo vía portal cifrado. 2. Prohibido enviar números de cuenta completos por email. 3. Los expedientes de clientes inactivos se archivarán en frío por 7 años y luego se destruirán mediante trituración certificada.'",
-            "required": true
-          },
-          {
-            "id": "backup-disaster-recovery-protocol",
-            "label": "Protocolo de Respaldos (Backups) y Recuperación ante Desastres",
-            "type": "textarea",
-            "placeholder": "Ej: 'Regla 3-2-1 aplicada. Respaldo automático diario a las 2 AM a Backblaze B2 cifrado. Respaldo semanal en disco externo físico guardado en caja fuerte. Tiempo objetivo de recuperación (RTO): 4 horas. Simulacro de restauración cada 90 días.'",
+            "id": "agendamiento-status",
+            "label": "Estado de la tarea: Implementar Herramienta de Agendamiento",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
             "required": true
           }
-        ],
+        ]
+      }
+    },
+    {
+      "id": "v2-step-almacenamiento-seguro",
+      "title": "Configurar Almacenamiento Seguro",
+      "description": "Elige una plataforma con buenos controles de acceso y cifrado para los documentos de clientes.",
+      "order": 3,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Configurar Almacenamiento Seguro",
+          "summary": "Elige una plataforma con buenos controles de acceso y cifrado para los documentos de clientes.",
+          "body": "Elige una plataforma con buenos controles de acceso y cifrado.\n\nVerifica que cumpla estándares de cifrado reconocidos.\n\nDefine una estructura de carpetas estándar: Contrato, Cuestionario, Plan, Comunicaciones.\n\nActiva autenticación de dos factores."
+        },
+        "objective": {
+          "description": "¿Dónde guardas los documentos financieros de tus clientes?"
+        },
         "checklist": [
           {
-            "id": "chk-draft-data-policy",
-            "task": "Redactar y documentar la política formal de cómo se reciben, almacenan, comparten y destruyen los datos sensibles de los clientes.",
-            "registryFieldRef": "data-handling-policy"
+            "id": "v2-chk-alm-01",
+            "task": "Elegir plataforma con cifrado",
+            "completed": false,
+            "registryFieldRef": "almacenamiento-seguro-status"
           },
           {
-            "id": "chk-define-backup-protocol",
-            "task": "Definir y registrar el protocolo de respaldos (backups) y el plan de recuperación ante desastres (RTO/RPO).",
-            "registryFieldRef": "backup-disaster-recovery-protocol"
+            "id": "v2-chk-alm-02",
+            "task": "Configurar estructura de carpetas por cliente",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-alm-03",
+            "task": "Implementar controles de acceso",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-alm-04",
+            "task": "Activar autenticación de dos factores",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-alm-05",
+            "task": "Configurar respaldos automáticos",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir y configurar una solución de almacenamiento seguro para documentos financieros de clientes.",
+          "context": "El usuario maneja información financiera sensible de clientes y necesita protegerla adecuadamente.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Los documentos financieros de tus clientes son extremadamente sensibles — un acceso no autorizado o pérdida de datos puede destruir la reputación de la firma y exponerte a responsabilidad legal.",
+        "registroFields": [
+          {
+            "id": "almacenamiento-seguro-status",
+            "label": "Estado de la tarea: Configurar Almacenamiento Seguro",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-linea-profesional",
+      "title": "Contratar Línea Telefónica Profesional",
+      "description": "Separa tu número personal del profesional para mayor control sobre tu disponibilidad.",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Contratar Línea Telefónica Profesional",
+          "summary": "Separa tu número personal del profesional para mayor control sobre tu disponibilidad.",
+          "body": "Separar tu número personal del profesional te da más control sobre tu disponibilidad y proyecta mayor formalidad.\n\nConfigura buzón de voz profesional."
+        },
+        "objective": {
+          "description": "¿Separaste tu número personal del profesional?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-tel-01",
+            "task": "Contratar línea profesional separada",
+            "completed": false,
+            "registryFieldRef": "linea-profesional-status"
+          },
+          {
+            "id": "v2-chk-tel-02",
+            "task": "Configurar buzón de voz profesional",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-tel-03",
+            "task": "Comunicar número en materiales",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a configurar una línea telefónica profesional para su firma.",
+          "context": "El usuario necesita separar su comunicación personal de la profesional.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Un servicio VoIP como Google Voice te permite tener un número profesional sin necesitar un teléfono físico adicional.",
+        "registroFields": [
+          {
+            "id": "linea-profesional-status",
+            "label": "Estado de la tarea: Contratar Línea Telefónica Profesional",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }

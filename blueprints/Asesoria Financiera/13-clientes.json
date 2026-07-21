@@ -1,238 +1,458 @@
 {
-  "id": "fase-estrategia-captacion-fidelizacion",
+  "id": "fase-clientes",
   "title": "Estrategia de Captación y Fidelización",
   "block": "customers",
   "steps": [
     {
-      "id": "step-creacion-material-educativo-lead-magnets",
-      "title": "Creación de Material Educativo y Lead Magnets",
+      "id": "v2-step-mapa-sitio",
+      "title": "Definir Mapa del Sitio",
+      "description": "Define las páginas principales del sitio web y las llamadas a la acción por página.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-dominio-hosting"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Creación de Material Educativo y Lead Magnets",
-          "summary": "Diseñar y producir recursos de alto valor (calculadoras, guías, webinars) que resuelvan un dolor específico de tu nicho y te permitan capturar los datos de prospectos calificados.",
-          "body": "En la asesoría financiera, la gente no compra 'asesoría', compra 'tranquilidad' o 'claridad'. Un Lead Magnet efectivo (como una 'Calculadora de Años para la Jubilación' o una 'Guía para Proteger tu Patrimonio ante una Crisis') demuestra tu expertise antes de que te contraten, filtrando a los curiosos y atrayendo a los clientes serios que ya tienen un problema que resolver."
+          "title": "Definir Mapa del Sitio",
+          "summary": "Define las páginas principales del sitio web y las llamadas a la acción por página.",
+          "body": "Define páginas principales: inicio, servicios, sobre mí, contacto.\n\nPlanear llamadas a la acción por página."
         },
         "objective": {
-          "description": "Producir al menos un Lead Magnet principal de alta calidad, configurar la página de aterrizaje (landing page) para su descarga y definir la métrica de conversión esperada."
+          "description": "¿Qué páginas tendrá tu sitio web?"
         },
-        "whyItMatters": "Intentar vender una asesoría financiera de alto ticket directamente a un desconocido es muy difícil. El Lead Magnet actúa como el 'primer paso' de baja fricción. Además, el contenido educativo te posiciona como una autoridad, haciendo que el cliente llegue a la primera reunión ya convencido de que eres la persona adecuada para ayudarle, reduciendo drásticamente tu ciclo de ventas."
-        ,
-        "bestPractices": [
-          "Resuelve un problema micro, no macro. En lugar de 'Cómo ser millonario', ofrece 'Los 5 errores fiscales que están costando dinero a los médicos independientes este año'.",
-          "Asegúrate de que el diseño del material coincida exactamente con tu manual de marca (colores, tipografías, tono profesional).",
-          "Incluye una 'llamada a la acción' (CTA) clara al final del material, invitando al lector a agendar una 'Sesión de Diagnóstico Gratuita de 15 minutos'."
-        ],
-        "commonMistakes": [
-          "Crear un Lead Magnet demasiado genérico (ej. '10 tips financieros') que podría haber escrito cualquiera, sin aportar tu visión única o datos específicos de tu nicho.",
-          "Pedir demasiados datos en el formulario de descarga (ej. pedir teléfono y dirección cuando solo se necesita el correo electrónico), lo que destruye la tasa de conversión.",
-          "No hacer seguimiento automatizado después de la descarga; el prospecto descarga el PDF y nunca más sabe de ti."
-        ],
-        "tip": "Las calculadoras interactivas (ej. '¿Cuánto necesitas ahorrar mensualmente para retirarte a los 60?') convierten hasta un 40% más que los PDFs estáticos. Herramientas como Outgrow o incluso fórmulas bien diseñadas en Typeform te permiten crear estas calculadoras y capturar el correo para enviar los resultados personalizados.",
-        "recommendedTools": [
-          {
-            "name": "Outgrow o Typeform (Para crear calculadoras financieras interactivas y cuestionarios)",
-            "url": "https://try.outgrow.co/"
-          },
-          {
-            "name": "Canva Pro (Para diseñar Ebooks, guías y plantillas de alto impacto visual)",
-            "url": "https://www.canva.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "lead-magnet-topic",
-            "label": "Tema y Formato del Lead Magnet Principal",
-            "type": "textarea",
-            "placeholder": "Ej: 'Calculadora Interactiva de Brecha de Jubilación' o 'Ebook: Guía de Protección Patrimonial para Emprendedores en 2024'.",
-            "required": true
-          },
-          {
-            "id": "lead-magnet-url",
-            "label": "Enlace a la Landing Page o Recurso Descargable",
-            "type": "url",
-            "placeholder": "Ej: https://tuasesoria.com/calculadora-jubilacion",
-            "required": true
-          },
-          {
-            "id": "expected-conversion-rate",
-            "label": "Tasa de Conversión Esperada del Lead Magnet (%)",
-            "type": "number",
-            "placeholder": "Ej: 15 (porcentaje de visitantes de la landing que dejan sus datos)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-define-lead-magnet",
-            "task": "Definir el tema, formato y valor central del Lead Magnet principal orientado al dolor del nicho.",
-            "registryFieldRef": "lead-magnet-topic"
+            "id": "v2-chk-map-01",
+            "task": "Definir páginas principales",
+            "completed": false,
+            "registryFieldRef": "mapa-sitio-status"
           },
           {
-            "id": "chk-publish-landing-page",
-            "task": "Diseñar, configurar y publicar la landing page o recurso interactivo para la captura de datos.",
-            "registryFieldRef": "lead-magnet-url"
+            "id": "v2-chk-map-02",
+            "task": "Crear estructura de navegación",
+            "completed": false
           },
           {
-            "id": "chk-set-conversion-goal",
-            "task": "Establecer y registrar la meta de tasa de conversión esperada para evaluar el éxito del recurso.",
-            "registryFieldRef": "expected-conversion-rate"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-configuracion-crm-automatizacion-embudos",
-      "title": "Configuración de CRM y Automatización de Embudos de Venta",
-      "type": "one_time",
-      "content": {
-        "overview": {
-          "title": "Configuración de CRM y Automatización de Embudos de Venta",
-          "summary": "Implementar un sistema de gestión de relaciones con clientes (CRM) y diseñar las automatizaciones que guiarán al prospecto desde que descarga un recurso hasta que agenda una cita.",
-          "body": "Un asesor financiero que lleva sus prospectos en la cabeza, en post-its o en el correo personal está dejando dinero sobre la mesa y cometiendo errores de seguimiento. Un CRM te permite saber exactamente en qué etapa está cada prospecto, automatizar los correos de nutrición y asegurar que ninguna oportunidad de negocio se enfríe por falta de seguimiento."
-        },
-        "objective": {
-          "description": "Seleccionar e implementar un CRM, definir las etapas del embudo de ventas específicas para servicios financieros y configurar la secuencia de correos automatizada post-descarga."
-        },
-        "whyItMatters": "El seguimiento es donde se cierran los contratos de asesoría. Estadísticamente, se necesitan entre 5 y 8 puntos de contacto para que un cliente de alto patrimonio tome la decisión de contratarte. Sin un CRM y automatizaciones, es humanamente imposible mantener un seguimiento personalizado y constante con decenas de prospectos simultáneamente."
-        ,
-        "bestPractices": [
-          "Define etapas claras en tu embudo: 'Nuevo Lead', 'Recurso Descargado', 'Email de Nutrición Enviado', 'Cita Agendada', 'Diagnóstico Realizado', 'Propuesta Enviada', 'Cliente Ganado/Perdido'.",
-          "Configura una secuencia de 3 a 5 correos automatizados que se envíen en los días posteriores a la descarga del Lead Magnet, aportando valor y terminando con una invitación a agendar.",
-          "Integra tu CRM con tu calendario (ej. Calendly) para que, cuando el prospecto haga clic en 'Agendar', el sistema bloquee el horario y cree la tarea automáticamente."
-        ],
-        "commonMistakes": [
-          "Comprar un CRM demasiado complejo (como Salesforce) para un equipo de 1 o 2 personas, terminando por no usarlo por la curva de aprendizaje.",
-          "Configurar automatizaciones que suenan a 'robot corporativo' en lugar de usar un tono personal, empático y directo (ej. 'Hola [Nombre], vi que descargaste la guía...').",
-          "No definir un proceso claro para los leads que 'se quedan estancados' en una etapa intermedia (ej. ¿qué pasa si agendaron pero no asistieron?)."
-        ],
-        "tip": "Configura una 'Tarea de Oro' en tu CRM: Si un prospecto abre tu correo de seguimiento más de 3 veces o hace clic en el enlace de precios, el sistema debe enviarte una notificación inmediata a tu celular. Ese es el momento exacto en que están evaluando contratarte; llámalos o escríbeles en ese instante.",
-        "recommendedTools": [
-          {
-            "name": "HubSpot CRM (Excelente para automatización de marketing y embudos)",
-            "url": "https://www.hubspot.com/"
-          },
-          {
-            "name": "Wealthbox o Redtail (CRMs diseñados específicamente para asesores financieros)",
-            "url": "https://www.wealthbox.com/"
+            "id": "v2-chk-map-03",
+            "task": "Planear llamadas a la acción",
+            "completed": false
           }
         ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir la estructura y navegación de su sitio web de asesoría financiera.",
+          "context": "El usuario tiene el dominio y necesita planificar qué páginas tendrá el sitio.",
+          "suggestions": []
+        },
+        "knowledge": [],
         "registroFields": [
           {
-            "id": "crm-software-selected",
-            "label": "Software CRM Seleccionado e Implementado",
+            "id": "mapa-sitio-status",
+            "label": "Estado de la tarea: Definir Mapa del Sitio",
             "type": "text",
-            "placeholder": "Ej: HubSpot CRM / Wealthbox",
+            "placeholder": "Ej: Completado o Registrado",
             "required": true
-          },
-          {
-            "id": "sales-funnel-stages",
-            "label": "Etapas del Embudo de Ventas Definidas",
-            "type": "textarea",
-            "placeholder": "Ej: '1. Lead Frío (Descargó recurso). 2. Lead Nutrido (Recibió secuencia de 4 emails). 3. Cita de Diagnóstico Agendada. 4. Plan Financiero Propuesto. 5. Cliente Activo (Firmó contrato).'",
-            "required": true
-          },
-          {
-            "id": "key-automation-configured",
-            "label": "Automatización Clave Configurada (Ej. Secuencia post-descarga)",
-            "type": "textarea",
-            "placeholder": "Ej: 'Secuencia de 3 correos: Día 1 (Entrega del recurso + bienvenida). Día 3 (Caso de éxito de un cliente similar). Día 7 (Invitación directa a agendar diagnóstico de 15 min).'",
-            "required": true
-          }
-        ],
-        "checklist": [
-          {
-            "id": "chk-select-setup-crm",
-            "task": "Seleccionar, adquirir y configurar la cuenta del software CRM para la firma.",
-            "registryFieldRef": "crm-software-selected"
-          },
-          {
-            "id": "chk-define-funnel-stages",
-            "task": "Mapear y configurar las etapas del embudo de ventas en el CRM.",
-            "registryFieldRef": "sales-funnel-stages"
-          },
-          {
-            "id": "chk-configure-automation",
-            "task": "Diseñar y activar la secuencia de correos automatizada para la nutrición de leads.",
-            "registryFieldRef": "key-automation-configured"
           }
         ]
       }
     },
     {
-      "id": "step-programa-referidos-fidelizacion",
-      "title": "Programa de Referidos y Fidelización de Clientes",
+      "id": "v2-step-contenido-inicio",
+      "title": "Redactar Contenido de Página de Inicio",
+      "description": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.",
+      "order": 1,
       "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-mapa-sitio"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Programa de Referidos y Fidelización de Clientes",
-          "summary": "Diseñar un sistema formal y ético para incentivar a los clientes actuales a referir a nuevos clientes de su círculo de confianza, y establecer rituales de fidelización.",
-          "body": "En servicios financieros, el boca a boca es el canal de adquisición más poderoso y barato, pero no ocurre por inercia; hay que diseñarlo. Los clientes satisfechos quieren referirte, pero a menudo no lo hacen porque no saben cómo, les da pena 'hablar de dinero' con sus amigos, o no tienen un marco claro para hacerlo. Un programa de referidos estructurado elimina esa fricción."
+          "title": "Redactar Contenido de Página de Inicio",
+          "summary": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.",
+          "body": "La página de inicio debe comunicar en segundos quién eres, a quién ayudas y cómo pueden contactarte.\n\nEl contenido debe ser claro, conciso y con llamado a la acción."
         },
         "objective": {
-          "description": "Definir el incentivo para el cliente que refiere y para el nuevo cliente, establecer la mecánica de solicitud de referidos y diseñar el ritual anual de fidelización."
+          "description": "¿Tu página de inicio comunica quién eres en segundos?"
         },
-        "whyItMatters": "Un cliente referido tiene un costo de adquisición (CAC) cercano a cero, un ciclo de venta más corto (porque llega con la confianza ya transferida) y una tasa de retención mucho mayor. Formalizar este proceso convierte a tus mejores clientes en una fuerza de ventas externa y altamente motivada."
-        ,
-        "bestPractices": [
-          "Ofrece incentivos que aporten valor real pero que no parezcan 'sobornos' (ej. una sesión de planificación fiscal avanzada gratuita, una donación a una obra de caridad a su nombre, o un libro de finanzas de alto valor). Evita dar efectivo directo, ya que puede tener implicaciones fiscales o éticas.",
-          "Facilita el trabajo del cliente: entrégale un 'Kit de Referidos' con un correo pre-redactado que él solo tenga que reenviar a su amigo, o un enlace único de invitación.",
-          "Pide referidos en el 'momento de mayor felicidad' del cliente (ej. justo después de entregarle un plan financiero exitoso o después de resolverle una crisis)."
-        ],
-        "commonMistakes": [
-          "Esperar a que los clientes te refieran espontáneamente sin haberles pedido explícitamente ni dado las herramientas para hacerlo.",
-          "Ofrecer descuentos en las tarifas del cliente existente por referir; en servicios financieros de alto nivel, los clientes no buscan descuentos, buscan exclusividad y valor añadido.",
-          "Olvidar agradecer y cerrar el ciclo; si un cliente te refiere y tú contratas a su amigo, el cliente que refiere DEBE ser notificado y agradecido personalmente."
-        ],
-        "tip": "Implementa la 'Regla de los 3 Nombres' en tu revisión anual con cada cliente. Al final de la sesión, cuando el cliente está satisfecho con su plan, dile: 'Me alegra mucho que estemos en el camino correcto. Para poder ayudar a más personas como tú, ¿hay 3 amigos o colegas de tu misma profesión que crees que también están preocupados por su jubilación y a quienes podrías presentarme?'. Anota los nombres ahí mismo.",
-        "recommendedTools": [
-          {
-            "name": "ReferralCandy o FirstPromoter (Para gestionar enlaces de referidos y recompensas)",
-            "url": "https://www.referralcandy.com/"
-          },
-          {
-            "name": "Bonusly (Para recompensas internas y donaciones a caridad)",
-            "url": "https://bonusly.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "referral-incentive",
-            "label": "Incentivo para el Cliente que Refiere y para el Nuevo Cliente",
-            "type": "textarea",
-            "placeholder": "Ej: 'Cliente que refiere: Sesión estratégica de optimización fiscal gratuita ($300 valor). Nuevo cliente: 50% de descuento en el fee de diagnóstico inicial. Alternativa: Donación de $100 a la ONG favorita del cliente que refiere.'",
-            "required": true
-          },
-          {
-            "id": "referral-mechanics",
-            "label": "Mecánica y Herramienta de Solicitud de Referidos",
-            "type": "textarea",
-            "placeholder": "Ej: '1. Regla de los 3 Nombres en revisión anual. 2. Kit de correo pre-redactado enviado por email para que el cliente reenvíe a su red. 3. Enlace único de invitación generado por el CRM.'",
-            "required": true
-          },
-          {
-            "id": "loyalty-ritual",
-            "label": "Ritual Anual de Fidelización para Clientes Actuales",
-            "type": "textarea",
-            "placeholder": "Ej: 'Cena anual exclusiva para clientes (Networking + Conferencia de mercado). Regalo físico de fin de año de alta calidad (ej. agenda de cuero personalizada). Carta manuscrita de agradecimiento por su confianza.'",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-define-incentives",
-            "task": "Definir los incentivos éticos y de alto valor para el programa de referidos.",
-            "registryFieldRef": "referral-incentive"
+            "id": "v2-chk-ci-home-01",
+            "task": "Redactar propuesta de valor visible",
+            "completed": false,
+            "registryFieldRef": "contenido-inicio-status"
           },
           {
-            "id": "chk-design-mechanics",
-            "task": "Diseñar la mecánica de solicitud y las herramientas (correos, enlaces) para facilitar los referidos.",
-            "registryFieldRef": "referral-mechanics"
+            "id": "v2-chk-ci-home-02",
+            "task": "Incluir llamada a la acción clara",
+            "completed": false
           },
           {
-            "id": "chk-establish-loyalty-ritual",
-            "task": "Documentar el ritual anual de fidelización y agradecimiento para los clientes actuales.",
-            "registryFieldRef": "loyalty-ritual"
+            "id": "v2-chk-ci-home-03",
+            "task": "Agregar información de contacto",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar el contenido de la página de inicio de su sitio web de asesoría financiera.",
+          "context": "El usuario necesita un texto convincente para la página principal de su sitio.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "contenido-inicio-status",
+            "label": "Estado de la tarea: Redactar Contenido de Página de Inicio",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-linkedin",
+      "title": "Crear Perfil de LinkedIn",
+      "description": "Completa el perfil con foto, biografía, certificaciones y servicios de la firma.",
+      "order": 2,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-biografia"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear Perfil de LinkedIn",
+          "summary": "Completa el perfil con foto, biografía, certificaciones y servicios de la firma.",
+          "body": "Completa perfil con foto, biografía, certificaciones y servicios de la firma.\n\nConecta con colegas y potenciales clientes."
+        },
+        "objective": {
+          "description": "¿Estableciste presencia profesional?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-li-01",
+            "task": "Completar perfil profesional",
+            "completed": false,
+            "registryFieldRef": "linkedin-status"
+          },
+          {
+            "id": "v2-chk-li-02",
+            "task": "Agregar certificaciones",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-li-03",
+            "task": "Publicar servicios",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-li-04",
+            "task": "Conectar con red",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a optimizar su perfil de LinkedIn para una firma de asesoría financiera.",
+          "context": "El usuario necesita establecer presencia profesional en LinkedIn.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "LinkedIn es el canal más efectivo para asesores financieros — tus clientes potenciales van a buscar tu perfil antes de agendar una primera reunión.",
+        "registroFields": [
+          {
+            "id": "linkedin-status",
+            "label": "Estado de la tarea: Crear Perfil de LinkedIn",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-redes-sociales",
+      "title": "Crear Perfiles en Redes Sociales",
+      "description": "Elige 1 o 2 redes donde realmente esté tu cliente ideal.",
+      "order": 3,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-logo"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear Perfiles en Redes Sociales",
+          "summary": "Elige 1 o 2 redes donde realmente esté tu cliente ideal.",
+          "body": "No te registres en todas las redes — elige 1 o 2 donde realmente esté tu cliente ideal.\n\nElige un solo canal principal al inicio y hazlo bien."
+        },
+        "objective": {
+          "description": "¿Estás donde está tu cliente ideal?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-rs-soc-01",
+            "task": "Elegir 1-2 redes según cliente ideal",
+            "completed": false,
+            "registryFieldRef": "redes-sociales-status"
+          },
+          {
+            "id": "v2-chk-rs-soc-02",
+            "task": "Crear perfiles con identidad de marca",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-rs-soc-03",
+            "task": "Optimizar perfiles",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir las redes sociales más adecuadas para su firma de asesoría financiera.",
+          "context": "El usuario necesita decidir en qué redes sociales tendrá presencia.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Estar en muchas redes de forma inconsistente genera menos resultado que estar en una sola de forma constante.",
+        "registroFields": [
+          {
+            "id": "redes-sociales-status",
+            "label": "Estado de la tarea: Crear Perfiles en Redes Sociales",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-calendario-contenido",
+      "title": "Crear Calendario de Contenido",
+      "description": "Planifica qué publicar y cuándo para mantener presencia consistente.",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-redes-sociales"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Crear Calendario de Contenido",
+          "summary": "Planifica qué publicar y cuándo para mantener presencia consistente.",
+          "body": "Publicar en muchos canales de forma inconsistente genera menos resultado que publicar en uno de forma constante.\n\nEl contenido educativo funciona mejor que el promocional para generar confianza en este sector."
+        },
+        "objective": {
+          "description": "¿Planificaste qué publicar y cuándo?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-cc-cal-01",
+            "task": "Definir temas de contenido educativo",
+            "completed": false,
+            "registryFieldRef": "calendario-contenido-status"
+          },
+          {
+            "id": "v2-chk-cc-cal-02",
+            "task": "Crear calendario del primer mes",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cc-cal-03",
+            "task": "Escribir primera publicación",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cc-cal-04",
+            "task": "Establecer frecuencia",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a crear un calendario de contenido educativo para su firma de asesoría financiera.",
+          "context": "El usuario necesita una estrategia de contenido consistente para atraer clientes.",
+          "suggestions": [
+            "¿Sobre qué temas debería publicar un asesor financiero?"
+          ]
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "calendario-contenido-status",
+            "label": "Estado de la tarea: Crear Calendario de Contenido",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-programa-referidos",
+      "title": "Implementar Programa de Referidos",
+      "description": "Diseña un mecanismo para generar clientes por recomendación.",
+      "order": 5,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Implementar Programa de Referidos",
+          "summary": "Diseña un mecanismo para generar clientes por recomendación.",
+          "body": "Diseña mecanismo de referidos y prepara mensaje para pedir referidos a clientes satisfechos.\n\nFacilita el proceso enviando el enlace directo — entre más pasos tenga que dar la persona, menos probable es que lo haga."
+        },
+        "objective": {
+          "description": "¿Tienes un sistema para generar clientes por recomendación?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-ref-01",
+            "task": "Diseñar mecanismo de referidos",
+            "completed": false,
+            "registryFieldRef": "programa-referidos-status"
+          },
+          {
+            "id": "v2-chk-ref-02",
+            "task": "Crear mensaje para pedir referidos",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-ref-03",
+            "task": "Implementar seguimiento de referidos",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar un programa de referidos efectivo para su firma de asesoría financiera.",
+          "context": "El usuario quiere generar nuevos clientes a través de recomendaciones.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Los referidos son la fuente de clientes más rentable para una firma de asesoría financiera — un cliente referido llega con confianza previa y cierra más rápido.",
+        "registroFields": [
+          {
+            "id": "programa-referidos-status",
+            "label": "Estado de la tarea: Implementar Programa de Referidos",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-sitios-resenas",
+      "title": "Registrar en Sitios de Reseñas",
+      "description": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.",
+      "order": 6,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-google-business"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Registrar en Sitios de Reseñas",
+          "summary": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.",
+          "body": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce.\n\nSolicita tu primera reseña a un contacto de confianza."
+        },
+        "objective": {
+          "description": "¿Tienes perfiles en sitios de reseñas del sector?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-res-01",
+            "task": "Identificar sitios de reseñas relevantes",
+            "completed": false,
+            "registryFieldRef": "sitios-resenas-status"
+          },
+          {
+            "id": "v2-chk-res-02",
+            "task": "Registrar firma en 3-5 sitios",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-res-03",
+            "task": "Solicitar primera reseña a contacto de confianza",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar y registrarse en los sitios de reseñas más relevantes para su firma.",
+          "context": "El usuario necesita construir credibilidad social a través de reseñas.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "sitios-resenas-status",
+            "label": "Estado de la tarea: Registrar en Sitios de Reseñas",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }

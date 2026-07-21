@@ -1,273 +1,156 @@
 {
-  "id": "fase-planificacion-viabilidad-financiera",
+  "id": "fase-estrategia",
   "title": "Planificación y Viabilidad Financiera",
   "block": "strategy",
   "steps": [
     {
-      "id": "step-calculo-costos-punto-equilibrio",
-      "title": "Cálculo de Costos y Punto de Equilibrio",
+      "id": "v2-step-presupuesto",
+      "title": "Elaborar Presupuesto Inicial de Operación",
+      "description": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Cálculo de Costos y Punto de Equilibrio",
-          "summary": "Determinar con precisión matemática cuántos clientes o cuántas horas de asesoría necesitas vender mensualmente para cubrir todos tus gastos y empezar a generar utilidad.",
-          "body": "En una asesoría financiera, tu principal activo es tu tiempo y tu conocimiento. A diferencia de un negocio de productos, no tienes un 'costo de materia prima' evidente, pero sí tienes costos fijos (licencias de software, renta de oficina, seguros, certificaciones) y costos de vida personal que debes cubrir antes de que el negocio sea rentable. Este paso te obliga a poner números reales sobre la mesa para que no trabajes meses sin saber si estás ganando o perdiendo dinero."
+          "title": "Elaborar Presupuesto Inicial de Operación",
+          "summary": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
+          "body": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.\n\nIncluye:\n- Costos de constitución legal\n- Salarios (incluyendo el tuyo)\n- Licencias de software\n- Equipos\n- Marketing inicial\n- Fondo de contingencia (mínimo 6 meses)\n\nLa mayoría de firmas tardan varios meses en conseguir sus primeros clientes pagos."
         },
         "objective": {
-          "description": "Calcular el punto de equilibrio exacto en número de clientes activos o horas facturables mensuales, separando costos fijos del negocio, costos de vida personal y costos variables por cliente atendido."
+          "description": "¿Cuánto capital necesitas para operar hasta generar ingresos estables?"
         },
-        "whyItMatters": "El 70% de los asesores financieros independientes fracasan en los primeros 2 años no por falta de conocimiento técnico, sino por no saber cuántos clientes necesitan para sobrevivir. Sin un punto de equilibrio claro, subestimas tus tarifas, aceptas clientes que no cubren tu tiempo, o vives en un estado permanente de ansiedad financiera que te impide tomar decisiones estratégicas de largo plazo.",
-        "bestPractices": [
-          "Separa estrictamente los costos del negocio (software, oficina, marketing) de tus costos de vida personal (renta de casa, alimentación, transporte). Ambos deben cubrirse.",
-          "Incluye en los costos fijos las certificaciones anuales (CFP, CFA, registros regulatorios) prorrateadas mensualmente.",
-          "Calcula el costo variable por cliente: tiempo promedio de atención × tu tarifa horaria interna + costo de herramientas por sesión + tiempo de preparación de informes.",
-          "Añade un margen de seguridad del 20-30% sobre tu punto de equilibrio para cubrir meses flojos o clientes que cancelan."
-        ],
-        "commonMistakes": [
-          "Olvidar incluir tu propio salario como costo fijo; muchos asesores trabajan 'gratis' los primeros meses sin contabilizar su tiempo.",
-          "No prorratear gastos anuales (seguros, renovaciones de licencias, membresías profesionales) en un costo mensual, lo que genera sorpresas de liquidez.",
-          "Calcular el punto de equilibrio solo con clientes nuevos, ignorando que los clientes recurrentes (retainers) tienen un costo de mantenimiento menor pero un ingreso predecible.",
-          "Usar una tarifa horaria 'de mercado' en lugar de una tarifa que realmente cubra tus costos reales más la utilidad deseada."
-        ],
-        "tip": "Aplica esta fórmula rápida: Punto de Equilibrio (en clientes) = (Costos Fijos Mensuales + Costos de Vida Personal) ÷ (Tarifa Promedio por Cliente - Costo Variable por Cliente). Si el resultado es 12 clientes y tu capacidad máxima es 15, tienes un margen muy estrecho; necesitas subir tarifas o reducir costos fijos antes de abrir.",
-        "recommendedTools": [
-          {
-            "name": "QuickBooks Self-Employed (Para separar gastos personales y de negocio)",
-            "url": "https://quickbooks.intuit.com/self-employed/"
-          },
-          {
-            "name": "Plantilla de Punto de Equilibrio en Google Sheets",
-            "url": "https://docs.google.com/spreadsheets/"
-          },
-          {
-            "name": "Calculadora de Tarifas de la NAPFA (National Association of Personal Financial Advisors)",
-            "url": "https://www.napfa.org/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "fixed-costs-monthly",
-            "label": "Costos Fijos Mensuales del Negocio (Software, oficina, seguros, membresías prorrateadas)",
-            "type": "number",
-            "placeholder": "Ej: 1500 (en tu moneda local)",
-            "required": true
-          },
-          {
-            "id": "personal-living-costs",
-            "label": "Costos de Vida Personal Mensuales (Renta, alimentación, transporte, salud)",
-            "type": "number",
-            "placeholder": "Ej: 2000 (en tu moneda local)",
-            "required": true
-          },
-          {
-            "id": "variable-cost-per-client",
-            "label": "Costo Variable Unitario por Cliente Atendido (Tiempo de prep + herramientas + informes)",
-            "type": "number",
-            "placeholder": "Ej: 85 (en tu moneda local por cada cliente)",
-            "required": true
-          },
-          {
-            "id": "breakeven-calculation",
-            "label": "Punto de Equilibrio Calculado (Número de clientes o horas facturables mensuales)",
-            "type": "number",
-            "placeholder": "Ej: 14 (clientes activos necesarios al mes)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-list-fixed-costs",
-            "task": "Listar y sumar todos los costos fijos mensuales del negocio (software, renta, seguros, membresías prorrateadas).",
-            "registryFieldRef": "fixed-costs-monthly"
+            "id": "v2-chk-ppto-01",
+            "task": "Listar costos de arranque",
+            "completed": false,
+            "registryFieldRef": "v2-reg-capital-arranque"
           },
           {
-            "id": "chk-list-living-costs",
-            "task": "Calcular y registrar los costos de vida personal que el negocio debe cubrir como mínimo.",
-            "registryFieldRef": "personal-living-costs"
+            "id": "v2-chk-ppto-02",
+            "task": "Calcular gastos operativos mensuales",
+            "completed": false
           },
           {
-            "id": "chk-calc-variable-cost",
-            "task": "Determinar el costo variable unitario por cada cliente atendido (tiempo, herramientas, preparación).",
-            "registryFieldRef": "variable-cost-per-client"
+            "id": "v2-chk-ppto-03",
+            "task": "Incluir salario personal mínimo",
+            "completed": false
           },
           {
-            "id": "chk-calc-breakeven",
-            "task": "Aplicar la fórmula de punto de equilibrio y registrar el número exacto de clientes/horas necesarias.",
-            "registryFieldRef": "breakeven-calculation"
+            "id": "v2-chk-ppto-04",
+            "task": "Establecer fondo de contingencia",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-ppto-05",
+            "task": "Documentar presupuesto total",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a calcular el presupuesto inicial de arranque de su firma de asesoría financiera.",
+          "context": "El usuario está planeando el capital que necesita antes de tener clientes.",
+          "suggestions": [
+            "¿Cuánto capital inicial necesita una firma de asesoría financiera?"
+          ]
+        },
+        "knowledge": [],
+        "whyItMatters": "Sin un presupuesto claro es fácil subestimar cuánto capital necesitas y quedarte sin fondos antes de generar ingresos estables.",
+        "tip": "Calcula al menos 6 meses de gastos fijos sin ingresos — la mayoría de las firmas de servicios profesionales tardan varios meses en conseguir sus primeros clientes pagos.",
+        "registroFields": [
+          {
+            "id": "v2-reg-capital-arranque",
+            "label": "Capital de arranque calculado",
+            "type": "number",
+            "helpText": "Incluye la moneda en las notas si lo prefieres (USD, COP, MXN, etc.)."
           }
         ]
       }
     },
     {
-      "id": "step-calendario-estacionalidad-flujo-caja",
-      "title": "Calendario de Estacionalidad de Ingresos y Flujo de Caja",
+      "id": "v2-step-punto-equilibrio",
+      "title": "Determinar el Punto de Equilibrio",
+      "description": "Calcula cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales.",
+      "order": 1,
       "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-presupuesto"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Calendario de Estacionalidad de Ingresos y Flujo de Caja",
-          "summary": "Mapear los meses de alta y baja demanda de asesoría financiera para planificar reservas de efectivo y campañas de captación con anticipación.",
-          "body": "La asesoría financiera tiene una estacionalidad marcada: enero (propósitos de año nuevo, declaración anual), abril-mayo (impuestos), septiembre (regreso a rutinas, planificación de fin de año) suelen ser picos. Julio-agosto y diciembre suelen ser valles. Conocer este ciclo te permite construir un colchón de efectivo en meses buenos y planificar campañas de marketing en meses previos a los picos."
+          "title": "Determinar el Punto de Equilibrio",
+          "summary": "Calcula cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales.",
+          "body": "Esta es la cantidad que la firma debe generar para pagar gastos del negocio y personales.\n\nEste es el objetivo más importante que tu firma debe alcanzar.\n\nQuedarte por debajo requiere usar ahorros o crédito. Cuando esto se agote, tu negocio fracasará.\n\n¿Hay gastos que puedas reducir o eliminar para bajar este número?\n\nAjusta por estacionalidad."
         },
         "objective": {
-          "description": "Identificar los meses de ingresos altos y bajos, calcular el costo de mantenimiento del negocio durante los meses de escasez y diseñar un calendario de flujo de caja que evite crisis de liquidez."
+          "description": "¿Cuántos ingresos mensuales necesitas para cubrir gastos del negocio y personales?"
         },
-        "whyItMatters": "Muchos asesores financieros cierran no porque no tengan clientes, sino porque tienen un descalce de flujo de caja: gastan como si todos los meses fueran iguales, y cuando llega el mes de vacas flacas no pueden pagar la renta de la oficina o las licencias de software. Un calendario de estacionalidad te permite ahorrar en meses buenos exactamente lo que necesitas para sobrevivir los meses malos sin estrés.",
-        "bestPractices": [
-          "Mapea al menos 2 años de estacionalidad si ya tienes experiencia; si eres nuevo, investiga con colegas del sector o asociaciones profesionales.",
-          "Identifica los 'eventos detonantes' de cada pico (declaración de impuestos, bonos de fin de año, herencias estacionales) y planifica campañas 6 semanas antes.",
-          "Construye un fondo de reserva equivalente a 3 meses de costos fijos + vida personal para cubrir el valle más largo.",
-          "Diversifica tus fuentes de ingreso: combina clientes de pago único (proyectos) con clientes de retainer mensual para suavizar la curva."
-        ],
-        "commonMistakes": [
-          "Asumir que todos los meses serán iguales y no planificar para los valles de demanda.",
-          "Gastar los ingresos de los meses pico en lujos o expansiones prematuras en lugar de construir la reserva de escasez.",
-          "No considerar que los clientes de retainer también pueden cancelar en masa durante crisis económicas (ej. pandemias, recesiones).",
-          "Ignorar los ciclos de pago de tus clientes corporativos (pymes que pagan a 30, 60 o 90 días)."
-        ],
-        "tip": "Crea una 'cuenta de estacionalidad' separada. Cada mes de ingreso alto, transfiere automáticamente el 25-30% de la utilidad a esa cuenta. Esa cuenta SOLO se toca en los meses de valle identificados en tu calendario. Trátala como un gasto fijo obligatorio, no como un ahorro opcional.",
-        "recommendedTools": [
-          {
-            "name": "Float App (Proyección visual de flujo de caja)",
-            "url": "https://www.floatapp.com/"
-          },
-          {
-            "name": "Google Calendar (Para marcar eventos detonantes fiscales y estacionales)",
-            "url": "https://calendar.google.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "high-income-months",
-            "label": "Meses de Ingresos Altos (Picos de demanda identificados)",
-            "type": "textarea",
-            "placeholder": "Ej: 'Enero (propósitos financieros), Abril-Mayo (declaración de impuestos), Octubre (planificación fiscal de fin de año). Evento detonante: vencimiento de declaración anual el 30 de abril.'",
-            "required": true
-          },
-          {
-            "id": "low-income-months",
-            "label": "Meses de Escasez o Valle de Demanda",
-            "type": "textarea",
-            "placeholder": "Ej: 'Julio-Agosto (vacaciones, clientes viajan), Diciembre (cierre de año, presupuestos agotados). Duración del valle más largo: 6 semanas.'",
-            "required": true
-          },
-          {
-            "id": "scarcity-maintenance-cost",
-            "label": "Costo Estimado de Mantenimiento en Meses de Escasez",
-            "type": "number",
-            "placeholder": "Ej: 3500 (suma de costos fijos + vida personal durante el valle)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-map-peak-months",
-            "task": "Identificar y registrar los meses de ingresos altos con sus eventos detonantes fiscales o estacionales.",
-            "registryFieldRef": "high-income-months"
+            "id": "v2-chk-eq-01",
+            "task": "Calcular gastos fijos mensuales del negocio",
+            "completed": false,
+            "registryFieldRef": "v2-reg-punto-equilibrio"
           },
           {
-            "id": "chk-map-valley-months",
-            "task": "Identificar y registrar los meses de escasez o valle de demanda y su duración estimada.",
-            "registryFieldRef": "low-income-months"
+            "id": "v2-chk-eq-02",
+            "task": "Calcular gastos personales mínimos",
+            "completed": false
           },
           {
-            "id": "chk-calc-scarcity-cost",
-            "task": "Calcular el costo total de mantenimiento del negocio y vida personal durante el período de escasez.",
-            "registryFieldRef": "scarcity-maintenance-cost"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-definicion-kpis-metas-anuales",
-      "title": "Definición de KPIs y Metas Anuales",
-      "type": "one_time",
-      "content": {
-        "overview": {
-          "title": "Definición de KPIs y Metas Anuales",
-          "summary": "Establecer los indicadores clave de rendimiento que medirán la salud del negocio y las metas numéricas concretas para el primer año de operación.",
-          "body": "Lo que no se mide, no se mejora. En una asesoría financiera, los KPIs van más allá de 'cuánto facturé este mes'. Debes medir la calidad del servicio (tasa de retención, NPS), la eficiencia operativa (horas facturables vs. horas totales), la salud financiera (ingreso por cliente, margen por servicio) y el crecimiento (tasa de referidos, costo de adquisición). Este paso define tu tablero de control."
-        },
-        "objective": {
-          "description": "Seleccionar entre 5 y 8 KPIs críticos, definir metas numéricas anuales para cada uno y establecer la frecuencia de revisión (semanal, mensual, trimestral)."
-        },
-        "whyItMatters": "Sin KPIs claros, un asesor financiero puede sentirse 'ocupado' todo el mes atendiendo reuniones, respondiendo correos y preparando informes, sin darse cuenta de que su ingreso por hora efectiva está por debajo del salario mínimo. Los KPIs te obligan a distinguir entre actividad (estar ocupado) y productividad (generar valor medible).",
-        "bestPractices": [
-          "Elige máximo 5-8 KPIs; más de eso genera parálisis y nadie los revisa.",
-          "Incluye al menos un KPI de cada dimensión: Financiero (ingreso/cliente), Operativo (tasa de utilización de horas), Cliente (NPS o retención) y Crecimiento (nuevos clientes/mes).",
-          "Define metas SMART: Específicas, Medibles, Alcanzables, Relevantes y con Tiempo definido.",
-          "Revisa los KPIs en una reunión contigo mismo (o tu equipo) cada viernes durante 30 minutos; no esperes al cierre de mes."
-        ],
-        "commonMistakes": [
-          "Medir solo ingresos totales sin desglosar por fuente (clientes nuevos vs. recurrentes, servicios premium vs. básicos).",
-          "No medir la 'tasa de utilización': el porcentaje de horas trabajadas que realmente son facturables vs. horas en administración, marketing o reuniones improductivas.",
-          "Fijar metas anuales sin desglosarlas en metas mensuales o semanales, lo que genera la sensación de 'ya veremos a fin de año'.",
-          "Ignorar KPIs de satisfacción del cliente; en servicios financieros, un cliente insatisfecho no solo se va, sino que habla mal de ti en su círculo."
-        ],
-        "tip": "Tu KPI más importante en el primer año debe ser la 'Tasa de Utilización Facturable': (Horas facturadas al cliente ÷ Horas totales trabajadas) × 100. Si trabajas 40 horas semanales pero solo facturas 20, tu tasa es 50% y estás regalando la mitad de tu tiempo. La meta estándar en consultoría es 65-75%. Todo lo que hagas debe orientarse a subir ese número.",
-        "recommendedTools": [
-          {
-            "name": "Toggl Track (Para medir horas facturables vs. no facturables)",
-            "url": "https://toggl.com/track/"
+            "id": "v2-chk-eq-03",
+            "task": "Sumar para encontrar ingresos de equilibrio",
+            "completed": false
           },
           {
-            "name": "Google Data Studio / Looker Studio (Para crear dashboards de KPIs)",
-            "url": "https://lookerstudio.google.com/"
+            "id": "v2-chk-eq-04",
+            "task": "Identificar gastos reducibles",
+            "completed": false
           },
           {
-            "name": "Harvest (Time tracking + facturación integrada)",
-            "url": "https://www.getharvest.com/"
+            "id": "v2-chk-eq-05",
+            "task": "Completar tabla de ingresos mensuales objetivo",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-eq-06",
+            "task": "Ajustar por estacionalidad",
+            "completed": false
           }
         ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a calcular su punto de equilibrio financiero mensual.",
+          "context": "El usuario ya tiene el presupuesto de arranque y necesita saber cuánto debe facturar cada mes.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Conocer tu punto de equilibrio convierte el objetivo de 'generar ingresos' en un número concreto que puedes perseguir todos los meses.",
         "registroFields": [
           {
-            "id": "target-revenue-per-client",
-            "label": "Meta de Ingreso Promedio por Cliente Anual",
+            "id": "v2-reg-punto-equilibrio",
+            "label": "Punto de equilibrio mensual calculado",
             "type": "number",
-            "placeholder": "Ej: 4800 (ingreso anual promedio esperado por cada cliente activo)",
-            "required": true
-          },
-          {
-            "id": "target-utilization-rate",
-            "label": "Meta de Tasa de Utilización Facturable (%)",
-            "type": "number",
-            "placeholder": "Ej: 70 (porcentaje de horas trabajadas que son facturables)",
-            "required": true
-          },
-          {
-            "id": "target-retention-rate",
-            "label": "Meta de Tasa de Retención de Clientes Anual (%)",
-            "type": "number",
-            "placeholder": "Ej: 85 (porcentaje de clientes que renuevan al año siguiente)",
-            "required": true
-          },
-          {
-            "id": "max-acceptable-acquisition-cost",
-            "label": "Costo Máximo Aceptable de Adquisición por Cliente",
-            "type": "number",
-            "placeholder": "Ej: 200 (máximo que estás dispuesto a invertir en marketing/ventas para conseguir 1 cliente)",
-            "required": true
-          }
-        ],
-        "checklist": [
-          {
-            "id": "chk-define-revenue-target",
-            "task": "Definir la meta de ingreso promedio anual por cliente activo y registrar el valor numérico.",
-            "registryFieldRef": "target-revenue-per-client"
-          },
-          {
-            "id": "chk-define-utilization",
-            "task": "Establecer la meta de tasa de utilización facturable (horas productivas vs. totales).",
-            "registryFieldRef": "target-utilization-rate"
-          },
-          {
-            "id": "chk-define-retention",
-            "task": "Fijar la meta de retención de clientes anual como indicador de calidad del servicio.",
-            "registryFieldRef": "target-retention-rate"
-          },
-          {
-            "id": "chk-define-cac-limit",
-            "task": "Calcular y registrar el costo máximo aceptable de adquisición de un nuevo cliente.",
-            "registryFieldRef": "max-acceptable-acquisition-cost"
+            "helpText": "Ingresa el monto mínimo mensual requerido."
           }
         ]
       }

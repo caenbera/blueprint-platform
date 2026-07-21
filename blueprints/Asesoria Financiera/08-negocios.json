@@ -1,136 +1,157 @@
 {
-  "id": "fase-infraestructura-administrativa-financiera",
+  "id": "fase-negocios",
   "title": "Infraestructura Administrativa y Financiera",
   "block": "business",
   "steps": [
     {
-      "id": "step-cuentas-bancarias-comerciales",
-      "title": "Cuentas Bancarias Comerciales",
+      "id": "v2-step-cuenta-bancaria",
+      "title": "Abrir Cuenta Bancaria Empresarial",
+      "description": "Separa las finanzas de la firma de tus finanzas personales desde el primer día.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-registro-mercantil"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Cuentas Bancarias Comerciales",
-          "summary": "Abrir y configurar las cuentas bancarias exclusivas para el negocio, separando estrictamente las finanzas personales de las de la firma de asesoría.",
-          "body": "La regla de oro de las finanzas empresariales es la separación absoluta de recursos. Mezclar el dinero de la asesoría con tus gastos personales no solo es un error contable grave, sino que puede 'levantar el velo corporativo', dejando tu patrimonio personal desprotegido ante una demanda o auditoría fiscal. Este paso establece el flujo sanguíneo financiero de tu empresa."
+          "title": "Abrir Cuenta Bancaria Empresarial",
+          "summary": "Separa las finanzas de la firma de tus finanzas personales desde el primer día.",
+          "body": "Esto es crucial para:\n- Seguimiento claro de ingresos y gastos\n- Separación patrimonial\n- Facilitar la contabilidad\n- Proyectar profesionalismo\n\nCompara al menos 2 bancos: comisiones, integración con software contable, banca en línea.\n\nEn una asesoría financiera, tu propia operación debe ser un ejemplo de orden."
         },
         "objective": {
-          "description": "Abrir la cuenta bancaria empresarial, solicitar los plásticos (débito/crédito) corporativos y configurar los accesos bancarios en línea para la gestión diaria."
+          "description": "¿Separaste las finanzas personales de las del negocio?"
         },
-        "whyItMatters": "Los clientes de alto patrimonio y las entidades reguladoras exigen profesionalismo financiero. Si un cliente nota que le pides transferir sus honorarios a una cuenta personal a nombre de un individuo en lugar de la razón social de tu firma, perderá la confianza instantáneamente. Además, tener una cuenta comercial te permite acceder a líneas de crédito empresarial, tarjetas con programas de recompensas para viajes de negocios y reportes contables automáticos."
-        ,
-        "bestPractices": [
-          "Elige un banco que tenga buena integración con tu software contable (ej. conciliación bancaria automática vía API).",
-          "Solicita tarjetas de crédito corporativas con límites segregados para ti y para futuros empleados, facilitando el control de gastos.",
-          "Configura alertas automáticas de movimiento y saldo mínimo para tener visibilidad en tiempo real de la liquidez del negocio."
-        ],
-        "commonMistakes": [
-          "Seguir usando tu cuenta de ahorros personal para recibir los pagos de los clientes 'mientras se abre la cuenta empresarial'.",
-          "No leer las comisiones de mantenimiento de la cuenta comercial; algunos bancos cobran tarifas altas que pueden comerse tu margen inicial.",
-          "No establecer desde el día uno un 'salario fijo' para ti como fundador, tomando solo lo necesario de la cuenta empresarial vía nómina o transferencias formales."
-        ],
-        "tip": "Negocia con el ejecutivo de cuentas corporativas la exención de comisiones por mantenimiento durante los primeros 12 meses a cambio de mantener un saldo promedio o de concentrar los cobros de tus clientes (viaje de pagos) en ese banco. Los bancos están dispuestos a ceder en tarifas para captar negocios de servicios profesionales.",
-        "recommendedTools": [
-          {
-            "name": "Meru o Dividendo (Fintechs especializadas en cuentas empresariales y tarjetas corporativas)",
-            "url": "https://www.meru.mx/"
-          },
-          {
-            "name": "Bre-x o similar banco corporativo local",
-            "url": ""
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "business-bank-account-number",
-            "label": "Número de Cuenta Bancaria Empresarial",
-            "type": "text",
-            "placeholder": "Ej: 01234567890123456789",
-            "required": true
-          },
-          {
-            "id": "banking-entity",
-            "label": "Entidad Bancaria y Tarjetas Corporativas Solicitadas",
-            "type": "text",
-            "placeholder": "Ej: Banco XYZ. Tarjetas: 1 Débito empresarial, 1 Crédito corporativo (Límite $5,000).",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-open-business-account",
-            "task": "Realizar la apertura formal de la cuenta empresarial y registrar el número de cuenta.",
-            "registryFieldRef": "business-bank-account-number"
+            "id": "v2-chk-banco-01",
+            "task": "Comparar al menos 2 bancos",
+            "completed": false,
+            "registryFieldRef": "v2-reg-banco-elegido"
           },
           {
-            "id": "chk-request-cards",
-            "task": "Solicitar las tarjetas de débito y crédito corporativas en la entidad bancaria seleccionada.",
-            "registryFieldRef": "banking-entity"
+            "id": "v2-chk-banco-02",
+            "task": "Reunir documentos requeridos",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-banco-03",
+            "task": "Abrir cuenta bancaria empresarial",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-banco-04",
+            "task": "Configurar banca en línea",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-banco-05",
+            "task": "Solicitar tarjetas corporativas",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a comparar y elegir el banco adecuado para abrir la cuenta empresarial de su firma.",
+          "context": "El usuario ya completó el registro mercantil y necesita abrir la cuenta bancaria.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Mezclar finanzas personales y del negocio es uno de los errores más comunes y más costosos — dificulta la contabilidad, la declaración de impuestos y la evaluación real de si tu firma es rentable.",
+        "tip": "Pregunta específicamente por comisiones de transferencias internacionales si esperas cobrar a clientes en otro país.",
+        "registroFields": [
+          {
+            "id": "v2-reg-banco-elegido",
+            "label": "Banco elegido",
+            "type": "text"
           }
         ]
       }
     },
     {
-      "id": "step-software-contable-conciliacion",
-      "title": "Software Contable y Conciliación",
+      "id": "v2-step-software-contable",
+      "title": "Elegir y Configurar Software Contable",
+      "description": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.",
+      "order": 1,
       "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-cuenta-bancaria"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Software Contable y Conciliación",
-          "summary": "Seleccionar, configurar y poner en marcha el sistema contable que registrará cada ingreso, gasto y movimiento fiscal de la firma.",
-          "body": "La contabilidad no es solo para pagar impuestos; es el tablero de control de tu rentabilidad. En una asesoría financiera, donde tus principales gastos son intangibles (software, marketing, educación, tiempo), un buen sistema contable te permite saber exactamente cuánto te cuesta adquirir un cliente (CAC), cuánto te cuesta entregar el servicio y cuál es tu margen real por hora trabajada."
+          "title": "Elegir y Configurar Software Contable",
+          "summary": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.",
+          "body": "Elige una herramienta adecuada para firma de servicios pequeña, con buena integración bancaria.\n\nOpciones: QuickBooks, Xero, ContaPyme.\n\nUn buen software ahorra horas cada mes y reduce errores en declaraciones.\n\nConecta tu cuenta bancaria y configura categorías antes de tu primera transacción."
         },
         "objective": {
-          "description": "Implementar el software contable, definir el catálogo de cuentas (categorías de ingresos y gastos) y establecer la rutina de registro y conciliación."
+          "description": "¿Tienes herramienta para gestionar la contabilidad?"
         },
-        "whyItMatters": "Llevar la contabilidad en hojas de cálculo manuales o en una caja de zapatos con recibos es la receta perfecta para pagar impuestos de más (por no deducir gastos válidos) o recibir multas por declaraciones erróneas. Un software contable automatiza la categorización, genera los reportes fiscales a tiempo y te da claridad financiera para tomar decisiones de inversión en el negocio."
-        ,
-        "bestPractices": [
-          "Configura el 'Plan de Cuentas' desde el día uno, separando claramente los gastos operativos (software, oficina) de los gastos de venta (marketing, comisiones) y los activos (equipos).",
-          "Conecta tu cuenta bancaria empresarial directamente al software contable para que los movimientos se importen automáticamente y solo tengas que categorizarlos.",
-          "Establece una rutina semanal (no mensual) para registrar las ventas y conciliar los gastos; la contabilidad al día toma 15 minutos, la contabilidad acumulada toma días y genera errores."
-        ],
-        "commonMistakes": [
-          "Contratar al contador más barato que solo 'mete los datos al sistema una vez al año' para la declaración de impuestos, perdiendo la oportunidad de tener análisis financiero mensual.",
-          "Mezclar categorías contables (ej. meter los gastos de marketing dentro de 'gastos de oficina'), lo que te impide saber si tu estrategia de captación es rentable.",
-          "No configurar los impuestos retenidos o traslados correctamente en el software, generando descuadres fiscales constantes."
-        ],
-        "tip": "Crea una categoría de gasto llamada 'Inversión en Crecimiento' separada de los 'Gastos Operativos'. Esto te permite ver mensualmente cuánto estás reinvirtiendo en el negocio (ej. nueva certificación, mejora de web, contratar asistente) versus cuánto te cuesta mantenerlo abierto. Los asesores financieros exitosos reinvierten al menos el 15-20% de sus ingresos en los primeros 3 años.",
-        "recommendedTools": [
+        "checklist": [
           {
-            "name": "QuickBooks Online o Xero (Estándares globales en contabilidad para pymes y servicios)",
-            "url": "https://quickbooks.intuit.com/"
+            "id": "v2-chk-sw-01",
+            "task": "Elegir software de contabilidad",
+            "completed": false,
+            "registryFieldRef": "software-contable-status"
           },
           {
-            "name": "Contpaqi o software contable local certificado por la entidad fiscal de tu país",
-            "url": ""
+            "id": "v2-chk-sw-02",
+            "task": "Configurar plan de cuentas",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-sw-03",
+            "task": "Conectar con cuenta bancaria",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-sw-04",
+            "task": "Configurar categorías de ingresos y gastos",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir y configurar el software de contabilidad más adecuado para su firma.",
+          "context": "El usuario tiene cuenta bancaria activa y necesita una herramienta contable.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Un buen software de contabilidad ahorra horas cada mes y reduce errores en tus declaraciones de impuestos.",
+        "tip": "Configura las categorías de gasto antes de tu primera transacción — reclasificar meses de movimientos después es mucho más lento.",
+        "recommendedTools": [
+          {
+            "name": "QuickBooks",
+            "url": "https://quickbooks.intuit.com"
+          },
+          {
+            "name": "Xero",
+            "url": "https://www.xero.com"
           }
         ],
         "registroFields": [
           {
-            "id": "accounting-software-selected",
-            "label": "Software Contable Seleccionado y Configurado",
+            "id": "software-contable-status",
+            "label": "Estado de la tarea: Elegir y Configurar Software Contable",
             "type": "text",
-            "placeholder": "Ej: QuickBooks Online Plus / Xero Premium",
+            "placeholder": "Ej: Completado o Registrado",
             "required": true
-          },
-          {
-            "id": "expense-categories-list",
-            "label": "Listado de Categorías de Gastos e Ingresos Configuradas",
-            "type": "textarea",
-            "placeholder": "Ej: 'Ingresos: Honorarios Planificación, Fees Retainer. Gastos Operativos: Licencias Software, Renta Oficina, Seguros. Gastos Venta: Ads, Webinars. Inversión: Certificaciones, Equipos.'",
-            "required": true
-          }
-        ],
-        "checklist": [
-          {
-            "id": "chk-setup-accounting-software",
-            "task": "Seleccionar, adquirir y configurar el software contable, enlazando la cuenta bancaria empresarial.",
-            "registryFieldRef": "accounting-software-selected"
-          },
-          {
-            "id": "chk-configure-expense-accounts",
-            "task": "Configurar el catálogo de cuentas y el listado detallado de categorías de gastos e ingresos.",
-            "registryFieldRef": "expense-categories-list"
           }
         ]
       }

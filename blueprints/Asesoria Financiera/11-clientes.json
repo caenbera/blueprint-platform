@@ -1,85 +1,347 @@
 {
-  "id": "fase-branding-elementos-visuales",
+  "id": "fase-clientes",
   "title": "Branding y Elementos Visuales",
   "block": "customers",
   "steps": [
     {
-      "id": "step-diseno-logotipo-paleta-colores",
-      "title": "Diseño de Logotipo y Paleta de Colores",
+      "id": "v2-step-paleta-colores",
+      "title": "Definir Paleta de Colores",
+      "description": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Diseño de Logotipo y Paleta de Colores",
-          "summary": "Crear y documentar la identidad visual central de la firma (logotipo, colores y tipografías) para garantizar una imagen coherente, profesional y que inspire confianza en todos los puntos de contacto.",
-          "body": "En la asesoría financiera, la percepción de competencia comienza mucho antes de que el cliente revise tus números; comienza con lo que ve. Un logotipo amateur, colores estridentes o tipografías ilegibles en tus informes generan desconfianza subconsciente inmediata. Tu identidad visual debe comunicar estabilidad, claridad y profesionalismo, actuando como el uniforme de tu marca."
+          "title": "Definir Paleta de Colores",
+          "summary": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.",
+          "body": "Elige entre 2 y 4 colores que transmitan confianza y profesionalismo.\n\nEn servicios financieros, los tonos asociados a estabilidad suelen funcionar mejor que los muy llamativos.\n\nDocumenta los códigos exactos (HEX)."
         },
         "objective": {
-          "description": "Definir, diseñar y documentar formalmente la paleta de colores corporativa (con códigos HEX), las tipografías oficiales y obtener los archivos finales del logotipo en formatos vectoriales y de alta resolución."
+          "description": "¿Qué colores representan tu marca?"
         },
-        "whyItMatters": "La consistencia visual construye reconocimiento y credibilidad. Si tu sitio web usa un estilo, pero tus informes en PDF usan otro, y tus tarjetas de presentación un tercero, el cliente percibe desorganización. Un manual de marca básico asegura que cada documento, correo o presentación que salga de tu firma refuerce la misma sensación de seguridad y autoridad.",
-        "bestPractices": [
-          "Utiliza colores psicológicamente asociados a la confianza y las finanzas (ej. azules profundos, verdes bosque, grises pizarra) combinados con un color de acento para llamadas a la acción.",
-          "Asegúrate de que el logotipo funcione perfectamente en una sola tinta (blanco y negro) y sobre fondos oscuros, ya que se usará en membretes, sellos y firmas de correo.",
-          "Elige tipografías con alta legibilidad (sans-serif para cuerpos de texto en informes digitales) y limita la combinación a un máximo de dos familias tipográficas."
-        ],
-        "commonMistakes": [
-          "Usar iconos o imágenes de stock genéricos (ej. la típica moneda dorada o la mano estrechando otra mano) que hacen que tu firma se vea como una plantilla barata.",
-          "Sobrecargar el logotipo con demasiados detalles que se pierden cuando se reduce al tamaño de un favicon de sitio web o una foto de perfil en redes sociales.",
-          "No documentar los códigos de color exactos, lo que resulta en que cada proveedor (imprenta, diseñador web) use un tono ligeramente diferente, arruinando la consistencia."
-        ],
-        "tip": "Crea un 'Mini Manual de Marca' de una sola página. No necesitas un libro de 50 páginas. Solo necesitas una hoja que diga: 'Este es nuestro logo (y cómo NO deformarlo), estos son nuestros 3 colores con sus códigos HEX/RGB, y estas son nuestras dos fuentes para títulos y párrafos'. Comparte esta hoja con cualquiera que cree contenido para tu firma.",
-        "recommendedTools": [
-          {
-            "name": "Coolors.co (Generador de paletas de colores profesionales)",
-            "url": "https://coolors.co/"
-          },
-          {
-            "name": "Canva Pro o Adobe Illustrator (Para diseño de logotipo y manual de marca)",
-            "url": "https://www.canva.com/"
-          },
-          {
-            "name": "Google Fonts (Para seleccionar tipografías web legibles y gratuitas)",
-            "url": "https://fonts.google.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "brand-color-palette",
-            "label": "Paleta de Colores de Marca (Códigos HEX y uso asignado)",
-            "type": "textarea",
-            "placeholder": "Ej: Primario: #0A2540 (Azul profundo, para fondos y títulos). Secundario: #FFFFFF (Blanco, para espacios negativos). Acento: #00D084 (Verde esmeralda, solo para botones y gráficos de crecimiento).",
-            "required": true
-          },
-          {
-            "id": "brand-typography",
-            "label": "Tipografías Oficiales de la Marca",
-            "type": "textarea",
-            "placeholder": "Ej: Títulos y Logotipo: 'Montserrat' (Negrita). Cuerpo de texto e informes: 'Inter' o 'Open Sans' (Regular).",
-            "required": true
-          },
-          {
-            "id": "logo-assets-url",
-            "label": "Enlace al Repositorio con Archivos Finales del Logotipo",
-            "type": "url",
-            "placeholder": "Ej: https://drive.google.com/drive/folders/branding-assets-firma (Debe incluir formatos .SVG, .PNG fondo transparente y .JPG)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-define-colors",
-            "task": "Definir, validar y registrar la paleta de colores corporativa con sus códigos HEX exactos.",
-            "registryFieldRef": "brand-color-palette"
+            "id": "v2-chk-col-01",
+            "task": "Seleccionar 2-4 colores de marca",
+            "completed": false,
+            "registryFieldRef": "paleta-colores-status"
           },
           {
-            "id": "chk-select-typography",
-            "task": "Seleccionar y registrar las familias tipográficas oficiales para títulos y cuerpos de texto.",
-            "registryFieldRef": "brand-typography"
+            "id": "v2-chk-col-02",
+            "task": "Documentar códigos HEX",
+            "completed": false
           },
           {
-            "id": "chk-upload-logo-assets",
-            "task": "Finalizar el diseño del logotipo y subir los archivos maestros (vectoriales y de alta resolución) al repositorio seguro.",
-            "registryFieldRef": "logo-assets-url"
+            "id": "v2-chk-col-03",
+            "task": "Definir color primario y secundarios",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir una paleta de colores profesional para su firma de asesoría financiera.",
+          "context": "El usuario está construyendo la identidad visual de su marca.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "paleta-colores-status",
+            "label": "Estado de la tarea: Definir Paleta de Colores",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-tipografia",
+      "title": "Elegir Tipografía",
+      "description": "Elige 1-2 tipografías consistentes para toda la comunicación de la firma.",
+      "order": 1,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-paleta-colores"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Elegir Tipografía",
+          "summary": "Elige 1-2 tipografías consistentes para toda la comunicación de la firma.",
+          "body": "Elige 1-2 tipografías consistentes. Verifica legibilidad en pantalla e impreso.\n\nUsa un máximo de 3 fuentes diferentes por material impreso."
+        },
+        "objective": {
+          "description": "¿Qué fuentes usará tu marca?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-tip-01",
+            "task": "Elegir tipografías",
+            "completed": false,
+            "registryFieldRef": "tipografia-status"
+          },
+          {
+            "id": "v2-chk-tip-02",
+            "task": "Verificar legibilidad",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-tip-03",
+            "task": "Adquirir licencias si necesario",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir tipografías profesionales para su firma de asesoría financiera.",
+          "context": "El usuario está definiendo los elementos visuales de su marca.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "tipografia-status",
+            "label": "Estado de la tarea: Elegir Tipografía",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-eslogan",
+      "title": "Escribir el Eslogan",
+      "description": "Redacta una frase que resuma tu propuesta de valor en pocas palabras.",
+      "order": 2,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-mision-vision"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Escribir el Eslogan",
+          "summary": "Redacta una frase que resuma tu propuesta de valor en pocas palabras.",
+          "body": "Un buen eslogan comunica en pocas palabras qué haces y para quién.\n\nSi tienes que explicarlo, probablemente no está funcionando."
+        },
+        "objective": {
+          "description": "¿Qué frase resume tu propuesta de valor?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-esl-01",
+            "task": "Redactar 3-5 opciones de eslogan",
+            "completed": false,
+            "registryFieldRef": "eslogan-status"
+          },
+          {
+            "id": "v2-chk-esl-02",
+            "task": "Seleccionar eslogan final",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-esl-03",
+            "task": "Documentar en manual de marca",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a crear un eslogan memorable y claro para su firma de asesoría financiera.",
+          "context": "El usuario necesita un eslogan que comunique su propuesta de valor en pocas palabras.",
+          "suggestions": [
+            "¿Cómo escribo un eslogan para una firma de asesoría financiera?"
+          ]
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "eslogan-status",
+            "label": "Estado de la tarea: Escribir el Eslogan",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-logo",
+      "title": "Diseñar el Logo",
+      "description": "Con la paleta y tipografía definidas, diseña el logo de la firma.",
+      "order": 3,
+      "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-tipografia"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Diseñar el logo",
+          "summary": "Ten un logo profesional listo para usar en todos tus materiales.",
+          "body": "Con la paleta de colores y la tipografía definidas, diseña el logo de la firma (por tu cuenta o con un diseñador)."
+        },
+        "objective": {
+          "description": "Tener un logo profesional listo para usar en todos tus materiales."
+        },
+        "checklist": [
+          {
+            "id": "chk-disenar-logo",
+            "task": "Tener un logo profesional listo para usar en todos tus materiales.",
+            "completed": false,
+            "registryFieldRef": "reg-logo-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir el brief de diseño de su logo.",
+          "context": "El usuario ya definió su paleta de colores y tipografía.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "El logo va a aparecer en cada punto de contacto con un cliente potencial - en una firma de servicios financieros, un diseño que transmita seriedad ayuda especialmente a generar confianza.",
+        "registroFields": [
+          {
+            "id": "reg-logo-drive",
+            "label": "Enlace a los archivos del logo en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-biografia",
+      "title": "Escribir tu Biografía Profesional",
+      "description": "Redacta versión corta (2 oraciones) y larga (1 párrafo) incluyendo certificaciones y experiencia.",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-registro-profesional"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Escribir tu biografía profesional",
+          "summary": "Ten una biografía profesional lista para tu sitio web y tus perfiles.",
+          "body": "Escribe una biografía que combine tu experiencia, certificaciones y por qué haces lo que haces."
+        },
+        "objective": {
+          "description": "Tener una biografía profesional lista para tu sitio web y tus perfiles."
+        },
+        "checklist": [
+          {
+            "id": "chk-biografia",
+            "task": "Tener una biografía profesional lista para tu sitio web y tus perfiles.",
+            "completed": false,
+            "registryFieldRef": "reg-biografia-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a redactar una biografía profesional convincente.",
+          "context": "El usuario necesita una biografía para su sitio web y sus perfiles profesionales.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Menciona una razón personal por la que haces este trabajo, no solo tus credenciales - genera más conexión que una lista de certificaciones.",
+        "registroFields": [
+          {
+            "id": "reg-biografia-drive",
+            "label": "Enlace a la biografía final en Google Drive",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-fotos-profesionales",
+      "title": "Tomar Fotografías Profesionales",
+      "description": "Contrata a un fotógrafo o toma fotos con buena iluminación para sitio web y materiales.",
+      "order": 5,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Tomar fotografías profesionales",
+          "summary": "Ten fotografías profesionales tuyas y/o de tu equipo listas para usar.",
+          "body": "Contrata a un fotógrafo o toma fotos con buena iluminación - vas a usarlas en tu sitio web, LinkedIn y materiales de marketing."
+        },
+        "objective": {
+          "description": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar."
+        },
+        "checklist": [
+          {
+            "id": "chk-fotos-profesionales",
+            "task": "Tener fotografías profesionales tuyas y/o de tu equipo listas para usar.",
+            "completed": false,
+            "registryFieldRef": "reg-fotos-profesionales-drive"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a planear una sesión de fotos profesional.",
+          "context": "El usuario necesita fotos profesionales para su presencia digital.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Las fotos genéricas o de baja calidad son una de las señales más rápidas de que una firma no está bien establecida.",
+        "registroFields": [
+          {
+            "id": "reg-fotos-profesionales-drive",
+            "label": "Enlace a las fotos en Google Drive",
+            "type": "url"
           }
         ]
       }

@@ -1,217 +1,221 @@
 {
-  "id": "fase-diseno-portafolio-servicios",
+  "id": "fase-estrategia",
   "title": "Diseño del Portafolio de Servicios",
   "block": "strategy",
   "steps": [
     {
-      "id": "step-definicion-servicios-core",
-      "title": "Definición de Servicios Core",
+      "id": "v2-step-catalogo-servicios",
+      "title": "Diseñar el Catálogo de Servicios",
+      "description": "Define qué servicios específicos ofrecerá tu firma y cuáles priorizarás al lanzar.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-encuesta-necesidades"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Definición de Servicios Core",
-          "summary": "Delimitar con precisión los 3 o 4 servicios financieros principales que ofrecerá la firma, evitando la dispersión y la promesa de soluciones para todos los problemas.",
-          "body": "En asesoría financiera, la especialización es sinónimo de autoridad. Intentar ofrecer planificación fiscal, gestión de inversiones, seguros, contabilidad y bienes raíces al mismo tiempo diluye tu experiencia y multiplica tu riesgo legal. Esta fase te obliga a elegir tus batallas y definir claramente qué harás excepcionalmente bien."
+          "title": "Diseñar el Catálogo de Servicios",
+          "summary": "Define qué servicios específicos ofrecerá tu firma y cuáles priorizarás al lanzar.",
+          "body": "Escribe todos los servicios posibles:\n- Planeación financiera integral\n- Gestión de inversiones\n- Planeación de retiro\n- Planeación fiscal\n- Planeación sucesoria\n- Análisis de seguros\n- Gestión de deuda\n\nIntentar ofrecer todo desde el día uno diluye tu propuesta de valor — prioriza 1-3 servicios para lanzar."
         },
         "objective": {
-          "description": "Listar y detallar los servicios centrales (core) de la firma y, con igual importancia, definir explícitamente qué servicios están fuera del alcance (out of scope)."
+          "description": "¿Qué servicios específicos ofrecerá tu firma?"
         },
-        "whyItMatters": "El 'scope creep' (aumento no controlado del alcance) es el asesino silencioso de la rentabilidad en servicios profesionales. Si no defines tus límites, los clientes esperarán que resuelvas problemas legales o contables complejos por los que no estás equipado ni asegurado, exponiendo tu negocio a demandas y quemando tu tiempo no facturable.",
-        "bestPractices": [
-          "Limita tus servicios core a un máximo de 3 o 4 áreas donde tengas verdadera expertise o certificaciones.",
-          "Empaqueta tus servicios como 'productos' con entregables claros (ej. 'Plan de Jubilación en 90 Días') en lugar de 'consultoría por hora' vaga.",
-          "Crea una lista de 'Derivaciones de Confianza': una red de contadores, abogados y corredores de seguros a quienes derivarás lo que no está en tu scope."
-        ],
-        "commonMistakes": [
-          "Decir 'sí' a todo tipo de cliente y problema por miedo a perder ingresos iniciales.",
-          "Confundir asesoría financiera con asesoría legal o contable, cruzando líneas regulatorias peligrosas.",
-          "No tener un proceso estandarizado para derivar al cliente a un especialista cuando surge una necesidad fuera de tu alcance."
-        ],
-        "tip": "Aplica la regla del 'No hacemos eso, pero conozco a alguien que sí'. Tener una respuesta preparada y una red de contactos para derivar trabajos fuera de tu especialidad te hace ver más profesional y confiable que intentar hacerlo todo tú mismo.",
-        "recommendedTools": [
+        "checklist": [
           {
-            "name": "Notion (Para documentar y publicar el catálogo de servicios)",
-            "url": "https://www.notion.so/"
+            "id": "v2-chk-cat-01",
+            "task": "Listar todos los servicios posibles",
+            "completed": false,
+            "registryFieldRef": "catalogo-servicios-status"
           },
           {
-            "name": "Miro (Para mapear el viaje del cliente en cada servicio core)",
-            "url": "https://miro.com/"
+            "id": "v2-chk-cat-02",
+            "task": "Priorizar 1-3 servicios para lanzar",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cat-03",
+            "task": "Definir perfil de cliente por servicio",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cat-04",
+            "task": "Documentar catálogo final",
+            "completed": false
           }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir y priorizar el catálogo de servicios de su firma de asesoría financiera.",
+          "context": "El usuario necesita decidir qué servicios ofrecerá para lanzar su firma.",
+          "suggestions": [
+            "¿Qué servicios ofrece típicamente una firma de asesoría financiera?"
+          ]
+        },
+        "knowledge": [],
+        "bestPractices": [
+          "Inicia con 1-3 servicios que realmente domines — es mejor ser excelente en pocos que mediocre en muchos.",
+          "Define claramente el perfil de cliente ideal para cada servicio."
         ],
         "registroFields": [
           {
-            "id": "core-services-list",
-            "label": "Listado Detallado de Servicios Core",
-            "type": "textarea",
-            "placeholder": "Ej: 1. Planificación Financiera Integral (Fee único). 2. Coaching de Eliminación de Deudas (Programa de 12 semanas). 3. Revisión Anual de Portafolio de Inversiones (Retainer mensual).",
+            "id": "catalogo-servicios-status",
+            "label": "Estado de la tarea: Diseñar el Catálogo de Servicios",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
             "required": true
-          },
-          {
-            "id": "out-of-scope-definition",
-            "label": "Definición de Servicios FUERA del Alcance (Out of Scope)",
-            "type": "textarea",
-            "placeholder": "Ej: 'No ofrecemos preparación de declaraciones de impuestos, no representamos clientes ante entidades fiscales, no vendemos productos de seguros ni gestionamos directamente los activos en cuentas de terceros.'",
-            "required": true
-          }
-        ],
-        "checklist": [
-          {
-            "id": "chk-list-core-services",
-            "task": "Listar y detallar los 3 a 4 servicios core que serán la base de la oferta de la firma.",
-            "registryFieldRef": "core-services-list"
-          },
-          {
-            "id": "chk-define-out-of-scope",
-            "task": "Redactar y documentar explícitamente qué responsabilidades o servicios están fuera del alcance para evitar malentendidos.",
-            "registryFieldRef": "out-of-scope-definition"
           }
         ]
       }
     },
     {
-      "id": "step-estructura-tarifas-modelos-cobro",
-      "title": "Estructura de Tarifas y Modelos de Cobro",
+      "id": "v2-step-tarifas",
+      "title": "Definir Estructura de Tarifas",
+      "description": "Define cómo cobrarás por tus servicios y calcula tu tarifa objetivo.",
+      "order": 1,
       "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-catalogo-servicios"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Estructura de Tarifas y Modelos de Cobro",
-          "summary": "Establecer modelos de precios transparentes, rentables y alineados con el valor entregado, eliminando la ambigüedad que genera desconfianza en los clientes.",
-          "body": "La forma en que cobras comunica tu posicionamiento. Cobrar por hora castiga tu eficiencia (cuanto más rápido resuelves un problema, menos ganas). Los modelos basados en valor (Flat Fee) o en relación continua (Retainer) son los estándares de oro en la asesoría financiera moderna, ya que alinean tus incentivos con el éxito a largo plazo del cliente."
+          "title": "Definir Estructura de Tarifas",
+          "summary": "Define cómo cobrarás por tus servicios y calcula tu tarifa objetivo.",
+          "body": "Modelos habituales:\n- Tarifa fija por servicio\n- Porcentaje de activos gestionados (AUM)\n- Cobro por hora\n- Retainer mensual\n\nEl modelo que elijas afecta qué tipo de cliente atraes.\n\nCalcula tu tarifa a partir de costos fijos, tiempo por cliente y tarifas de referencia.\n\nIncluye el tiempo no facturable (administración, marketing) — subestimarlo es el error más común.\n\nRevisa tarifas de al menos 3 firmas comparables."
         },
         "objective": {
-          "description": "Definir el modelo de cobro principal, diseñar paquetes escalonados de servicios y establecer una tarifa base o fee mínimo que filtre a clientes no calificados."
+          "description": "¿Cómo cobrarás por tus servicios?"
         },
-        "whyItMatters": "La opacidad en los costos es la principal razón por la que los clientes desconfían de los asesores financieros. Una estructura de tarifas clara y publicada (o fácilmente explicable) genera confianza inmediata. Además, un fee mínimo adecuado protege tu tiempo de clientes con problemas financieros demasiado pequeños para tu modelo de negocio.",
-        "bestPractices": [
-          "Ofrece modelos escalonados (Good, Better, Best) para dar sensación de control y opción al cliente, guiándolo hacia la opción intermedia.",
-          "Cobra por el valor del problema resuelto, no por los minutos que te tomó la reunión.",
-          "Exige un pago inicial (setup fee) antes de comenzar cualquier trabajo de análisis profundo."
-        ],
-        "commonMistakes": [
-          "Competir siendo 'el más barato', lo que atrae a clientes de alto mantenimiento y bajo respeto por tu tiempo.",
-          "Ocultar comisiones de terceros (conflicto de interés) en lugar de adoptar un modelo de 'Fee-Only' (solo honorarios) que es más transparente.",
-          "No ajustar las tarifas anualmente según la inflación y la mejora en tu experiencia."
-        ],
-        "tip": "Para planificación financiera, el modelo híbrido suele ser el más sostenible: un 'Flat Fee' inicial alto por el diagnóstico y plan maestro (ej. $1,500), seguido de un 'Retainer' mensual más bajo (ej. $150/mes) para revisiones trimestrales, ajustes y acceso a consultas rápidas. Esto cubre tus costos iniciales y genera flujo de caja recurrente.",
-        "recommendedTools": [
-          {
-            "name": "Baremetrics o ProfitWell (Para modelar ingresos recurrentes)",
-            "url": "https://www.baremetrics.com/"
-          },
-          {
-            "name": "Stripe o MercadoPago (Para configurar cobros recurrentes y transparentes)",
-            "url": "https://stripe.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "pricing-model-selected",
-            "label": "Modelo de Cobro Principal Seleccionado",
-            "type": "select",
-            "options": [
-              "Fee-Only por Proyecto (Flat Fee)",
-              "Retainer Mensual/Trimestral (Suscripción)",
-              "Por Hora (Solo para consultas puntuales)",
-              "Híbrido (Fee inicial + Retainer de seguimiento)",
-              "Porcentaje de Activos bajo Gestión (AUM)"
-            ],
-            "required": true
-          },
-          {
-            "id": "tiered-packages-description",
-            "label": "Descripción de Paquetes Escalonados (Ej. Básico, Premium, Elite)",
-            "type": "textarea",
-            "placeholder": "Ej: 'Paquete Esencial: Diagnóstico y plan de 1 año ($X). Paquete Integral: Plan a 5 años + 4 sesiones de seguimiento anuales ($Y).'",
-            "required": true
-          },
-          {
-            "id": "minimum-entry-fee",
-            "label": "Tarifa Base o Fee Mínimo de Entrada",
-            "type": "number",
-            "placeholder": "Ej: 500 (Monto mínimo para aceptar un nuevo cliente o proyecto)",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-select-pricing-model",
-            "task": "Seleccionar y registrar el modelo de cobro principal que regirá la firma.",
-            "registryFieldRef": "pricing-model-selected"
+            "id": "v2-chk-tar-01",
+            "task": "Comparar modelos de cobro del sector",
+            "completed": false,
+            "registryFieldRef": "tarifas-status"
           },
           {
-            "id": "chk-design-packages",
-            "task": "Diseñar y describir al menos 2 o 3 paquetes escalonados de servicios con entregables claros.",
-            "registryFieldRef": "tiered-packages-description"
+            "id": "v2-chk-tar-02",
+            "task": "Calcular tarifa objetivo",
+            "completed": false
           },
           {
-            "id": "chk-set-minimum-fee",
-            "task": "Establecer y registrar la tarifa base o fee mínimo de entrada para filtrar clientes no calificados.",
-            "registryFieldRef": "minimum-entry-fee"
+            "id": "v2-chk-tar-03",
+            "task": "Documentar estructura final",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-tar-04",
+            "task": "Crear tabla de tarifas para sitio web",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a definir una estructura de tarifas adecuada para su firma de asesoría financiera.",
+          "context": "El usuario ya tiene el catálogo de servicios y necesita definir cómo cobrar por ellos.",
+          "suggestions": [
+            "¿Cuánto cobra normalmente un asesor financiero?"
+          ]
+        },
+        "knowledge": [],
+        "commonMistakes": [
+          "Subestimar el tiempo no facturable (administración, marketing, gestión) al calcular la tarifa."
+        ],
+        "tip": "Revisa tarifas de al menos 3 firmas comparables en tu mercado — te ayuda a calibrar si estás muy por debajo o por encima.",
+        "registroFields": [
+          {
+            "id": "tarifas-status",
+            "label": "Estado de la tarea: Definir Estructura de Tarifas",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }
     },
     {
-      "id": "step-analisis-competencia-propuesta-valor",
-      "title": "Análisis de Competencia y Propuesta de Valor Diferencial",
+      "id": "v2-step-paquetes",
+      "title": "Diseñar Paquetes de Asesoría",
+      "description": "Arma paquetes concretos fáciles de explicar y vender.",
+      "order": 2,
       "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-tarifas"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Análisis de Competencia y Propuesta de Valor Diferencial",
-          "summary": "Investigar el mercado local o digital para identificar las debilidades de la competencia y articular una Propuesta de Valor Única (UVP) que te haga irreemplazable para tu nicho.",
-          "body": "El mercado de asesoría financiera está saturado de generalistas que prometen 'hacerte rico' o 'proteger tu patrimonio'. Para destacar, no necesitas ser mejor en todo; necesitas ser radicalmente diferente y relevante para un grupo específico de personas. Tu UVP debe responder en 10 segundos por qué un cliente debería elegirte a ti y no al banco tradicional o al asesor de la esquina."
+          "title": "Diseñar Paquetes de Asesoría",
+          "summary": "Arma paquetes concretos fáciles de explicar y vender.",
+          "body": "Arma paquetes concretos fáciles de explicar y vender.\n\nEjemplo: 'Plan Financiero Inicial', 'Acompañamiento Anual'.\n\nDeja claro por escrito qué incluye y qué no incluye cada paquete."
         },
         "objective": {
-          "description": "Documentar un análisis de 3 a 5 competidores directos y redactar una Propuesta de Valor Única (UVP) clara, específica y orientada al dolor del cliente ideal."
+          "description": "¿Empaquetaste tus servicios en ofertas claras?"
         },
-        "whyItMatters": "Sin una UVP sólida, te conviertes en una mercancía (commodity) y tu única herramienta de venta es bajar el precio. Una UVP bien definida te permite cobrar tarifas premium, atrae a los clientes correctos de forma orgánica y facilita enormemente la creación de tu marketing y contenido.",
-        "bestPractices": [
-          "Analiza las reseñas negativas de tus competidores en Google Maps o redes sociales; esas quejas son tus oportunidades de oro.",
-          "Estructura tu UVP así: 'Ayudamos a [Nicho Específico] a lograr [Resultado Deseado] sin [Dolor Común], a través de [Tu Mecanismo Único]'.",
-          "Valida tu UVP con 3 o 4 clientes ideales o colegas antes de imprimirla en tu web."
-        ],
-        "commonMistakes": [
-          "Usar diferenciadores genéricos como 'somos más honestos', 'damos mejor servicio' o 'tenemos más experiencia' (todo el mundo dice eso).",
-          "Centrar la UVP en ti ('tenemos 20 años en el mercado') en lugar de en el cliente ('te ahorramos 10 horas al mes en gestión financiera').",
-          "No monitorear a la competencia de forma periódica, asumiendo que el mercado no cambia."
-        ],
-        "tip": "Tu mayor ventaja competitiva a menudo no es técnica, sino de experiencia del cliente. Si todos los asesores de tu zona envían informes en PDF aburridos y tardan 3 días en contestar un WhatsApp, tu UVP puede ser simplemente: 'Claridad financiera en tiempo real, con un asesor que contesta en menos de 2 horas y te explica todo sin jerga bancaria'.",
-        "recommendedTools": [
-          {
-            "name": "SEMrush o SimilarWeb (Para analizar el tráfico y estrategia digital de competidores)",
-            "url": "https://www.semrush.com/"
-          },
-          {
-            "name": "Value Proposition Canvas (Plantilla de Strategyzer)",
-            "url": "https://www.strategyzer.com/canvas/value-proposition-canvas"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "competitor-analysis-summary",
-            "label": "Resumen de Análisis Competitivo (Fortalezas y Debilidades de 3-5 rivales)",
-            "type": "textarea",
-            "placeholder": "Ej: 'Competidor A: Fuerte en inversiones, pero requiere $100k mínimos y trato impersonal. Competidor B: Bueno en deudas, pero su web es obsoleta y no tiene citas online. Oportunidad: Ofrecer planificación accesible desde $50k con atención 100% digital y humana.'",
-            "required": true
-          },
-          {
-            "id": "unique-value-proposition",
-            "label": "Propuesta de Valor Única (UVP) en una frase",
-            "type": "textarea",
-            "placeholder": "Ej: 'Ayudamos a médicos independientes a construir un plan de jubilación sólido y libre de estrés, sin jerga financiera compleja ni comisiones ocultas, mediante un sistema de revisión trimestral 100% en línea.'",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-analyze-competitors",
-            "task": "Investigar y resumir las fortalezas, debilidades y huecos en el mercado de 3 a 5 competidores directos.",
-            "registryFieldRef": "competitor-analysis-summary"
+            "id": "v2-chk-paq-01",
+            "task": "Diseñar 2-4 paquetes con diferente alcance",
+            "completed": false,
+            "registryFieldRef": "paquetes-status"
           },
           {
-            "id": "chk-draft-uvp",
-            "task": "Redactar y refinar la Propuesta de Valor Única (UVP) en una sola frase clara y contundente.",
-            "registryFieldRef": "unique-value-proposition"
+            "id": "v2-chk-paq-02",
+            "task": "Documentar alcance de cada paquete",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-paq-03",
+            "task": "Definir qué NO incluye",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-paq-04",
+            "task": "Establecer precios por paquete",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a diseñar paquetes de asesoría financiera atractivos y fáciles de explicar.",
+          "context": "El usuario ya tiene los servicios y tarifas definidos y necesita empaquetarlos.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Especificar qué NO incluye un paquete es tan importante como especificar qué incluye — evita malentendidos costosos con clientes.",
+        "registroFields": [
+          {
+            "id": "paquetes-status",
+            "label": "Estado de la tarea: Diseñar Paquetes de Asesoría",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
           }
         ]
       }

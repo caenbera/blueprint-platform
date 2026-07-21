@@ -33,3 +33,12 @@ describe("Blueprint de referencia: Asesoría Financiera", () => {
     expect(allSteps.some((s) => s.type === "monthly")).toBe(true);
   });
 });
+
+describe("Blueprint unificado: Asesoría Financiera Profesional", () => {
+  it("cumple el schema oficial", () => {
+    const raw = JSON.parse(
+      readFileSync(join(__dirname, "..", "blueprints", "asesoria-financiera-profesional.json"), "utf8"),
+    );
+    expect(() => validateBlueprintJson(raw)).not.toThrow();
+  });
+});

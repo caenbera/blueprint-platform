@@ -1,219 +1,880 @@
 {
-  "id": "fase-constitucion-legal-cumplimiento",
+  "id": "fase-negocios",
   "title": "Constitución Legal y Cumplimiento",
   "block": "business",
   "steps": [
     {
-      "id": "step-constitucion-registro-mercantil",
-      "title": "Constitución y Registro Mercantil",
+      "id": "v2-step-entidad-juridica",
+      "title": "Definir la Entidad Jurídica de la Firma",
+      "description": "Elige la estructura legal que mejor protege tu patrimonio y se adapta a tu modelo de operación.",
+      "order": 0,
       "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Constitución y Registro Mercantil",
-          "summary": "Formalizar legalmente la firma de asesoría financiera, registrando la sociedad, los estatutos y obteniendo la identificación fiscal oficial.",
-          "body": "Operar sin una estructura legal clara expone tu patrimonio personal a los riesgos del negocio y genera desconfianza inmediata en clientes corporativos o de alto patrimonio. Este paso convierte tu idea en una entidad legal reconocida, apta para firmar contratos, abrir cuentas bancarias a nombre de la empresa y emitir facturas legales."
+          "title": "Definir la Entidad Jurídica de la Firma",
+          "summary": "Elige la estructura legal que mejor protege tu patrimonio y se adapta a tu modelo de operación.",
+          "body": "La estructura legal determina:\n- Cuánto respondes con tu patrimonio personal\n- Cómo pagas impuestos\n- Qué tan fácil es sumar socios\n\nOpciones: Persona natural, SRL, SAS, SA.\n\nConsultar con un abogado o contador especializado antes de decidir.\n\nCambiar la estructura legal después cuesta tiempo y dinero."
         },
         "objective": {
-          "description": "Completar el registro mercantil de la sociedad, definir el objeto social específicamente para asesoría financiera y obtener el número de identificación fiscal (RUT, NIF, RUC, según el país)."
+          "description": "¿Qué estructura legal mejor protege tu patrimonio?"
         },
-        "whyItMatters": "Las entidades reguladoras financieras y los clientes institucionales exigen comprobar la existencia legal de la firma antes de cualquier relación comercial. Además, constituir una sociedad (como una S.A.S. o S.L.) protege tu patrimonio personal, separando las deudas y responsabilidades del negocio de tus bienes personales.",
-        "bestPractices": [
-          "Redacta un 'objeto social' amplio pero específico que incluya 'asesoría financiera', 'planificación patrimonial' y 'consultoría en inversiones', evitando términos que requieran licencias bancarias si no las tienes.",
-          "Verifica la disponibilidad del nombre comercial en el registro mercantil y como dominio web (.com o local) antes de iniciar el trámite.",
-          "Define claramente desde los estatutos las reglas de salida de socios y la distribución de utilidades para evitar conflictos futuros."
-        ],
-        "commonMistakes": [
-          "Usar un objeto social demasiado genérico (ej. 'consultoría general') que luego genera rechazos al abrir cuentas bancarias especializadas.",
-          "Constituir la empresa a nombre de un solo socio cuando operativamente será un esfuerzo conjunto, sin un acuerdo de accionistas previo.",
-          "Olvidar registrar la marca comercial en la oficina de propiedad intelectual, lo que permite que otro use tu nombre."
-        ],
-        "tip": "Antes de pagar los aranceles de registro, solicita a tu contador o abogado una 'simulación de carga tributaria' según el tipo de sociedad elegida. A veces, constituirse como persona jurídica con un régimen simplificado o especial es mucho más eficiente fiscalmente en los primeros 2 años que una sociedad anónima estándar.",
-        "recommendedTools": [
-          {
-            "name": "Cámara de Comercio o Registro Mercantil Local (Sitio oficial para verificación de nombres)",
-            "url": ""
-          },
-          {
-            "name": "LegalZoom o plataforma local de constitución de empresas en línea",
-            "url": "https://www.legalzoom.com/"
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "commercial-name",
-            "label": "Nombre Comercial y Razón Social Registrada",
-            "type": "text",
-            "placeholder": "Ej: Asesoría Financiera Integral S.A.S.",
-            "required": true
-          },
-          {
-            "id": "tax-id-number",
-            "label": "Número de Identificación Fiscal (RUT, NIF, RUC, EIN, etc.)",
-            "type": "text",
-            "placeholder": "Ej: 900.123.456-1",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-verify-name",
-            "task": "Verificar la disponibilidad del nombre comercial y reservarlo en el registro mercantil.",
-            "registryFieldRef": "commercial-name"
+            "id": "v2-chk-entidad-01",
+            "task": "Comparar al menos 2 estructuras legales",
+            "completed": false,
+            "registryFieldRef": "v2-reg-estructura-elegida"
           },
           {
-            "id": "chk-draft-by-laws",
-            "task": "Redactar y firmar los estatutos sociales ante notario o cámara de comercio.",
-            "registryFieldRef": "commercial-name"
+            "id": "v2-chk-entidad-02",
+            "task": "Consultar con abogado especializado",
+            "completed": false
           },
           {
-            "id": "chk-obtain-tax-id",
-            "task": "Obtener y registrar el número de identificación fiscal oficial de la empresa.",
-            "registryFieldRef": "tax-id-number"
+            "id": "v2-chk-entidad-03",
+            "task": "Seleccionar estructura legal definitiva",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-entidad-04",
+            "task": "Documentar la decisión",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir la estructura legal correcta para su firma de asesoría financiera.",
+          "context": "El usuario está iniciando una firma de asesoría financiera y necesita decidir su estructura legal.",
+          "suggestions": [
+            "¿Qué estructura legal conviene para una asesoría financiera unipersonal?"
+          ]
+        },
+        "knowledge": [],
+        "whyItMatters": "La estructura legal que elijas hoy determina cuánto respondes con tu patrimonio personal si algo sale mal, cómo pagas impuestos, y qué tan fácil es sumar socios o inversionistas más adelante.",
+        "tip": "Si todavía no estás seguro de tener suficientes clientes para justificar una sociedad formal, muchas jurisdicciones permiten empezar como persona natural con negocio y migrar después.",
+        "registroFields": [
+          {
+            "id": "v2-reg-estructura-elegida",
+            "label": "Estructura legal elegida",
+            "type": "text",
+            "required": true
           }
         ]
       }
     },
     {
-      "id": "step-registros-certificaciones-oficiales",
-      "title": "Registros y Certificaciones Oficiales",
+      "id": "v2-step-nombre-comercial",
+      "title": "Registrar Nombre Comercial",
+      "description": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.",
+      "order": 1,
       "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-entidad-juridica"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Registros y Certificaciones Oficiales",
-          "summary": "Obtener las inscripciones, licencias o certificaciones profesionales obligatorias ante las entidades de vigilancia financiera o asociaciones del sector.",
-          "body": "A diferencia de otros servicios, la asesoría financiera está altamente regulada o autorregulada. Dependiendo de tu país y de si manejas activos directamente o solo das consejos, debes registrarte ante la entidad de vigilancia (ej. CNMV, SEC, Superfinanciera) o obtener certificaciones de prestigio (ej. CFP - Certified Financial Planner) que avalen tu competencia y te permitan operar legalmente."
+          "title": "Registrar Nombre Comercial",
+          "summary": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.",
+          "body": "Verifica disponibilidad del nombre en registro mercantil, dominio web y redes sociales.\n\nRegistra la marca comercial si aplica."
         },
         "objective": {
-          "description": "Identificar los requisitos regulatorios específicos para tu modelo de negocio, iniciar el trámite de registro o certificación y documentar los códigos y fechas de vencimiento."
+          "description": "¿Cómo se llamará tu firma ante el público?"
         },
-        "whyItMatters": "Operar sin el registro o certificación requerida puede acarrear multas millonarias, el cierre inmediato del negocio e incluso responsabilidades penales. Además, mostrar un número de registro oficial en tu sitio web y contratos es el mayor generador de confianza para un cliente que va a entregarte su patrimonio.",
-        "bestPractices": [
-          "Consulta directamente con un abogado especialista en derecho financiero de tu país para determinar si tu modelo requiere registro de 'asesor de inversiones', 'distribuidor' o solo 'consultor'.",
-          "Si optas por certificaciones internacionales (como CFP), inicia el proceso de educación y examen con al menos 6 meses de anticipación.",
-          "Crea un calendario de renovaciones; estos registros no son eternos y requieren educación continua o pagos anuales."
-        ],
-        "commonMistakes": [
-          "Asumir que por no 'tocar el dinero' del cliente (solo dar consejos) no se necesita ningún registro. Muchas jurisdicciones exigen registro incluso para asesoría pura.",
-          "Usar títulos o siglas (ej. 'Asesor Financiero Certificado') sin tener la acreditación vigente, lo que constituye publicidad engañosa.",
-          "No notificar a la entidad reguladora sobre cambios en la dirección, socios o estructura de la empresa dentro de los plazos legales."
-        ],
-        "tip": "Mientras tramitas tu certificación o registro definitivo, opera bajo un modelo de 'Consultoría Educativa' (cobrando por enseñar al cliente a gestionar su dinero, no por recomendarle productos específicos), ya que este modelo suele tener menores barreras de entrada regulatorias en la mayoría de los países.",
-        "recommendedTools": [
-          {
-            "name": "CFP Board (Certified Financial Planner - Estándar global)",
-            "url": "https://www.cfp.net/"
-          },
-          {
-            "name": "Sitio web de la entidad reguladora financiera de tu país",
-            "url": ""
-          }
-        ],
-        "registroFields": [
-          {
-            "id": "regulatory-registration-code",
-            "label": "Código de Registro, Licencia o Certificación Profesional Obtenida",
-            "type": "text",
-            "placeholder": "Ej: Registro Nacional de Asesores de Inversión #A-12345 o CFP® #987654",
-            "required": true
-          },
-          {
-            "id": "registration-expiration-date",
-            "label": "Fecha de Vencimiento del Registro o Certificación",
-            "type": "date",
-            "required": true
-          }
-        ],
         "checklist": [
           {
-            "id": "chk-identify-requirements",
-            "task": "Identificar y documentar los requisitos legales y certificaciones necesarias para operar en tu jurisdicción.",
-            "registryFieldRef": "regulatory-registration-code"
+            "id": "v2-chk-nombre-01",
+            "task": "Verificar disponibilidad en registro mercantil",
+            "completed": false,
+            "registryFieldRef": "v2-reg-nombre-elegido"
           },
           {
-            "id": "chk-submit-application",
-            "task": "Completar y enviar la solicitud de registro o certificación ante la entidad competente.",
-            "registryFieldRef": "regulatory-registration-code"
+            "id": "v2-chk-nombre-02",
+            "task": "Verificar disponibilidad de dominio web",
+            "completed": false
           },
           {
-            "id": "chk-log-expiration",
-            "task": "Registrar el código oficial otorgado y su fecha de vencimiento para programar su renovación.",
-            "registryFieldRef": "registration-expiration-date"
+            "id": "v2-chk-nombre-03",
+            "task": "Verificar disponibilidad en redes sociales",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-nombre-04",
+            "task": "Registrar marca comercial",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a elegir y verificar la disponibilidad del nombre comercial de su firma de asesoría financiera.",
+          "context": "El usuario necesita definir el nombre bajo el cual sus clientes lo conocerán.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "El nombre es la base de tu marca, tu dominio y tus redes sociales — cambiarlo después de registrado implica rehacer papelería, sitio web y materiales.",
+        "tip": "Pronuncia el nombre en voz alta y pide a 2-3 personas que lo escriban de oído — si lo escriben mal, probablemente tus clientes también lo hagan.",
+        "registroFields": [
+          {
+            "id": "v2-reg-nombre-elegido",
+            "label": "Nombre comercial elegido",
+            "type": "text",
+            "required": true
           }
         ]
       }
     },
     {
-      "id": "step-estructura-contratos-legales",
-      "title": "Estructura de Contratos Legales",
+      "id": "v2-step-registro-mercantil",
+      "title": "Realizar Registro Mercantil",
+      "description": "Presenta toda la documentación ante la cámara de comercio y obtén el certificado de existencia.",
+      "order": 2,
       "type": "one_time",
+      "estimatedHours": 6,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-nombre-comercial"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
       "content": {
         "overview": {
-          "title": "Estructura de Contratos Legales",
-          "summary": "Redactar, revisar legalmente y estandarizar los contratos de prestación de servicios y acuerdos de confidencialidad (NDA) que protegerán a la firma y al cliente.",
-          "body": "En servicios financieros, un contrato no es solo un trámite de cobro; es tu principal herramienta de gestión de expectativas y protección legal. Debe dejar absolutamente claro qué servicios se prestan, cómo se cobra, qué NO se hace (limitación de responsabilidad) y cómo se protege la información del cliente."
+          "title": "Realizar Registro Mercantil",
+          "summary": "Presenta toda la documentación ante la cámara de comercio y obtén el certificado de existencia.",
+          "body": "Presenta toda la documentación ante la cámara de comercio y obtén certificado de existencia.\n\nObtener identificación tributaria (NIT/RFC/RUT) para operar fiscalmente."
         },
         "objective": {
-          "description": "Desarrollar y validar con un abogado las plantillas maestras de Contrato de Prestación de Servicios de Asesoría y Acuerdo de Confidencialidad (NDA)."
+          "description": "¿Ya formalizaste legalmente la existencia de la firma?"
         },
-        "whyItMatters": "Un contrato débil te deja expuesto a demandas si el mercado cae y el cliente culpa a tu asesoría, o si un empleado se va con tu cartera de clientes. Un contrato sólido delimita responsabilidades, establece el mecanismo de resolución de disputas (ej. arbitraje) y profesionaliza la relación desde el primer día.",
-        "bestPractices": [
-          "Incluye una cláusula explícita de 'No Garantía de Rendimiento', aclarando que las proyecciones son estimaciones basadas en supuestos y que los mercados conllevan riesgos.",
-          "Define claramente las condiciones de terminación del contrato: ¿cuánto aviso previo se necesita? ¿Qué pasa con los honorarios pagados por adelantado?",
-          "Utiliza firma electrónica con validez legal (ej. DocuSign) para agilizar el proceso y crear un rastro de auditoría inmutable."
-        ],
-        "commonMistakes": [
-          "Descargar una plantilla de contrato de internet sin adaptarla a la legislación local ni a la realidad específica de la asesoría financiera.",
-          "No incluir una cláusula de 'No Solicitación' que impida a un ex-empleado o socio contactarte a tus clientes para llevárselos.",
-          "Usar un lenguaje legal tan complejo que el cliente no lo entienda, lo que genera desconfianza en lugar de seguridad."
-        ],
-        "tip": "Crea dos versiones de tu contrato: una 'Versión Legal Completa' para tu archivo y respaldo, y una 'Carta de Compromiso' (Engagement Letter) de 2-3 páginas en lenguaje sencillo para el cliente, que resuma los puntos clave (alcance, honorarios, duración) y que se adjunta como anexo del contrato principal.",
-        "recommendedTools": [
+        "checklist": [
           {
-            "name": "DocuSign o Adobe Sign (Firma electrónica con validez legal)",
-            "url": "https://www.docusign.com/"
+            "id": "v2-chk-reg-01",
+            "task": "Preparar documentación requerida",
+            "completed": false,
+            "registryFieldRef": "v2-reg-fecha-constitucion"
           },
           {
-            "name": "PandaDoc (Para creación y seguimiento de propuestas y contratos)",
-            "url": "https://www.pandadoc.com/"
+            "id": "v2-chk-reg-02",
+            "task": "Presentar trámite ante cámara de comercio",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-reg-03",
+            "task": "Obtener certificado de existencia",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-reg-04",
+            "task": "Obtener NIT/RFC/RUT",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-reg-05",
+            "task": "Obtener resolución de facturación electrónica",
+            "completed": false
           }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario con el proceso de registro legal de su firma de asesoría financiera.",
+          "context": "El usuario ya eligió nombre y estructura legal y va a presentar el trámite.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Sin el registro mercantil no puedes facturar legalmente ni abrir la cuenta bancaria empresarial — es el trámite que desbloquea casi todo lo demás.",
+        "tip": "Los tiempos de respuesta de las autoridades varían mucho según el país — inicia este trámite lo antes posible.",
+        "registroFields": [
+          {
+            "id": "v2-reg-fecha-constitucion",
+            "label": "Fecha de constitución legal",
+            "type": "date"
+          },
+          {
+            "id": "v2-reg-num-tributario",
+            "label": "Número de identificación tributaria (NIT/RFC/RUT)",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-investigar-cert",
+      "title": "Investigar Requisitos de Certificación",
+      "description": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
+      "order": 3,
+      "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Investigar Requisitos de Certificación",
+          "summary": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.",
+          "body": "Identifica qué certificación o registro profesional es obligatorio en tu jurisdicción.\n\nVerifica licencias necesarias para asesorar y requisitos de educación continua.\n\nProfesionales exigen horas de educación continua y renovación periódica — agenda los recordatorios desde ahora."
+        },
+        "objective": {
+          "description": "¿Qué certificación exige el regulador de tu país?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-cert-01",
+            "task": "Investigar requisitos regulatorios locales",
+            "completed": false,
+            "registryFieldRef": "investigar-cert-status"
+          },
+          {
+            "id": "v2-chk-cert-02",
+            "task": "Verificar licencias necesarias",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cert-03",
+            "task": "Documentar requisitos de educación continua",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cert-04",
+            "task": "Identificar autoridad regulatoria principal",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar qué certificaciones profesionales necesita para ejercer como asesor financiero en su país.",
+          "context": "El usuario está formalizando su firma y necesita saber qué certificación es obligatoria en su jurisdicción.",
+          "suggestions": [
+            "¿Qué certificaciones existen para asesores financieros?"
+          ]
+        },
+        "knowledge": [],
+        "whyItMatters": "Ejercer sin la certificación o el registro exigido puede exponerte a sanciones legales y que tus clientes no puedan confiar en que estás autorizado para asesorarlos.",
+        "registroFields": [
+          {
+            "id": "investigar-cert-status",
+            "label": "Estado de la tarea: Investigar Requisitos de Certificación",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-inscribir-examen",
+      "title": "Inscribirte al Examen de Certificación",
+      "description": "Completa la inscripción al examen o proceso de certificación correspondiente.",
+      "order": 4,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-investigar-cert"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Inscribirte al Examen de Certificación",
+          "summary": "Completa la inscripción al examen o proceso de certificación correspondiente.",
+          "body": "Completa la inscripción al examen o proceso de certificación correspondiente."
+        },
+        "objective": {
+          "description": "¿Completaste la inscripción al proceso de certificación?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-inscr-01",
+            "task": "Inscribirse en programa de certificación",
+            "completed": false,
+            "registryFieldRef": "inscribir-examen-status"
+          },
+          {
+            "id": "v2-chk-inscr-02",
+            "task": "Pagar derechos de examen",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-inscr-03",
+            "task": "Agendar fecha de examen",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a completar el proceso de inscripción al examen de certificación profesional.",
+          "context": "El usuario ya identificó el examen requerido y necesita inscribirse.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "inscribir-examen-status",
+            "label": "Estado de la tarea: Inscribirte al Examen de Certificación",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-estudiar-examen",
+      "title": "Estudiar para el Examen de Certificación",
+      "description": "Reserva tiempo constante cada semana para prepararte para el examen.",
+      "order": 5,
+      "type": "one_time",
+      "estimatedHours": 40,
+      "difficulty": "hard",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-inscribir-examen"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Estudiar para el examen de certificación",
+          "summary": "Prepárate con el material de estudio oficial del examen.",
+          "body": "Reserva tiempo constante cada semana para estudiar - la mayoría de estas certificaciones requieren varias semanas o meses de preparación."
+        },
+        "objective": {
+          "description": "Prepararte con el material de estudio oficial del examen de certificación."
+        },
+        "checklist": [
+          {
+            "id": "chk-estudiar-examen",
+            "task": "Prepararte con el material de estudio oficial del examen de certificación.",
+            "completed": false,
+            "registryFieldRef": "estudiar-examen-status"
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a organizar un plan de estudio para su examen de certificación.",
+          "context": "El usuario ya se inscribió al examen y necesita prepararse.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Si el proceso completo toma meses, revisa si tu regulador permite operar bajo supervisión de un profesional ya certificado mientras la obtienes.",
+        "registroFields": [
+          {
+            "id": "estudiar-examen-status",
+            "label": "Estado de la tarea: Estudiar para el Examen de Certificación",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-presentar-examen",
+      "title": "Presentar y Aprobar el Examen",
+      "description": "Llega con anticipación y lleva identificación oficial vigente.",
+      "order": 6,
+      "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "hard",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-estudiar-examen"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Presentar y Aprobar el Examen",
+          "summary": "Llega con anticipación y lleva identificación oficial vigente.",
+          "body": "Llega con anticipación y lleva identificación oficial vigente."
+        },
+        "objective": {
+          "description": "¿Aprobaste el examen de certificación?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-exam-01",
+            "task": "Presentar examen de certificación",
+            "completed": false,
+            "registryFieldRef": "presentar-examen-status"
+          },
+          {
+            "id": "v2-chk-exam-02",
+            "task": "Obtener resultado aprobatorio",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a prepararse mentalmente y logísticamente para presentar el examen de certificación.",
+          "context": "El usuario está listo para presentar el examen.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "registroFields": [
+          {
+            "id": "presentar-examen-status",
+            "label": "Estado de la tarea: Presentar y Aprobar el Examen",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-registro-profesional",
+      "title": "Obtener Número de Registro Profesional",
+      "description": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.",
+      "order": 7,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "easy",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-presentar-examen"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Obtener Número de Registro Profesional",
+          "summary": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.",
+          "body": "Con el examen aprobado, tramita tu número de certificación o registro profesional oficial.\n\nPublica tus credenciales en tu sitio web y materiales de marketing."
+        },
+        "objective": {
+          "description": "¿Ya tienes tu número de registro oficial?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-regprof-01",
+            "task": "Tramitar número de registro profesional",
+            "completed": false,
+            "registryFieldRef": "v2-reg-num-profesional"
+          },
+          {
+            "id": "v2-chk-regprof-02",
+            "task": "Obtener certificado oficial",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-regprof-03",
+            "task": "Publicar credenciales en sitio web",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a completar el trámite de registro profesional después de aprobar el examen.",
+          "context": "El usuario aprobó el examen y necesita obtener su número de registro oficial.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "Publicar tus credenciales oficiales genera confianza inmediata en clientes potenciales que aún no te conocen.",
+        "registroFields": [
+          {
+            "id": "v2-reg-num-profesional",
+            "label": "Número de registro profesional",
+            "type": "text"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-kyc-aml",
+      "title": "Implementar Políticas KYC/AML",
+      "description": "Como asesor financiero, estás obligado a implementar políticas de conocimiento del cliente y anti-lavado.",
+      "order": 8,
+      "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "hard",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-politica-confidencialidad"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Implementar Políticas KYC/AML",
+          "summary": "Como asesor financiero, estás obligado a implementar políticas de conocimiento del cliente y anti-lavado.",
+          "body": "Como asesor financiero, estás obligado a implementar KYC y AML.\n\nIncluye: verificación de identidad, origen de fondos, monitoreo de transacciones inusuales, reporte de operaciones sospechosas.\n\nEl incumplimiento puede resultar en sanciones legales severas."
+        },
+        "objective": {
+          "description": "¿Cumples con regulaciones anti-lavado?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-kyc-01",
+            "task": "Crear procedimiento KYC",
+            "completed": false,
+            "registryFieldRef": "kyc-aml-status"
+          },
+          {
+            "id": "v2-chk-kyc-02",
+            "task": "Implementar verificación de identidad",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-kyc-03",
+            "task": "Documentar reporte de operaciones sospechosas",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-kyc-04",
+            "task": "Capacitar equipo en políticas AML",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a entender e implementar los procedimientos KYC y AML requeridos para una firma de asesoría financiera.",
+          "context": "El usuario necesita cumplir con regulaciones anti-lavado de dinero.",
+          "suggestions": [
+            "¿Qué es KYC y AML en asesoría financiera?"
+          ]
+        },
+        "knowledge": [],
+        "whyItMatters": "El incumplimiento de normas AML puede resultar en sanciones regulatorias severas, incluyendo la cancelación de licencias y responsabilidad penal.",
+        "commonMistakes": [
+          "Creer que KYC/AML solo aplica a bancos — cualquier firma que maneje o asesore sobre activos financieros está sujeta a estas obligaciones."
         ],
         "registroFields": [
           {
-            "id": "contract-template-name",
-            "label": "Nombre de la Plantilla de Contrato Principal Validada",
+            "id": "kyc-aml-status",
+            "label": "Estado de la tarea: Implementar Políticas KYC/AML",
             "type": "text",
-            "placeholder": "Ej: Contrato Maestro de Prestación de Servicios de Asesoría Financiera v1.2",
-            "required": true
-          },
-          {
-            "id": "last-legal-review-date",
-            "label": "Fecha de la Última Revisión Legal por un Abogado Especialista",
-            "type": "date",
-            "required": true
-          },
-          {
-            "id": "contract-repository-url",
-            "label": "Enlace al Repositorio Seguro de Plantillas y Contratos Firmados",
-            "type": "url",
-            "placeholder": "Ej: https://drive.google.com/drive/folders/contratos-legales-firma",
+            "placeholder": "Ej: Completado o Registrado",
             "required": true
           }
-        ],
+        ]
+      }
+    },
+    {
+      "id": "v2-step-conflictos-interes",
+      "title": "Definir Política de Conflictos de Interés",
+      "description": "Gestiona transparentemente posibles conflictos de interés con tus clientes.",
+      "order": 9,
+      "type": "one_time",
+      "estimatedHours": 2,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-kyc-aml"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Definir Política de Conflictos de Interés",
+          "summary": "Gestiona transparentemente posibles conflictos de interés con tus clientes.",
+          "body": "Si recibes comisiones de terceros necesitas identificarlo y declararlo.\n\nLa regla más simple: si dudas si algo es un conflicto, decláralo. La transparencia siempre construye más confianza.\n\nCrea un formato estándar y úsalo consistentemente."
+        },
+        "objective": {
+          "description": "¿Gestionas transparentemente posibles conflictos?"
+        },
         "checklist": [
           {
-            "id": "chk-draft-contracts",
-            "task": "Redactar el borrador del contrato de servicios y el acuerdo de confidencialidad (NDA).",
-            "registryFieldRef": "contract-template-name"
+            "id": "v2-chk-ci-01",
+            "task": "Listar fuentes de ingreso con conflicto",
+            "completed": false,
+            "registryFieldRef": "conflictos-interes-status"
           },
           {
-            "id": "chk-lawyer-validation",
-            "task": "Enviar los borradores a un abogado especialista para su revisión, ajuste a la ley local y validación final.",
-            "registryFieldRef": "last-legal-review-date"
+            "id": "v2-chk-ci-02",
+            "task": "Definir proceso de declaración",
+            "completed": false
           },
           {
-            "id": "chk-store-templates",
-            "task": "Guardar las plantillas finales aprobadas en un repositorio seguro y accesible solo para personal autorizado.",
-            "registryFieldRef": "contract-repository-url"
+            "id": "v2-chk-ci-03",
+            "task": "Crear formato estándar",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-ci-04",
+            "task": "Documentar política por escrito",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a identificar y gestionar conflictos de interés en una firma de asesoría financiera.",
+          "context": "El usuario necesita definir cómo manejará situaciones donde sus intereses puedan afectar sus recomendaciones.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "whyItMatters": "La transparencia en conflictos de interés es una obligación regulatoria en la mayoría de jurisdicciones y el pilar de la relación fiduciaria con el cliente.",
+        "registroFields": [
+          {
+            "id": "conflictos-interes-status",
+            "label": "Estado de la tarea: Definir Política de Conflictos de Interés",
+            "type": "text",
+            "placeholder": "Ej: Completado o Registrado",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-seguro-eo",
+      "title": "Contratar Seguro de Responsabilidad Profesional (E & O)",
+      "description": "Protege la firma contra errores u omisiones en tus recomendaciones.",
+      "order": 10,
+      "type": "one_time",
+      "estimatedHours": 3,
+      "difficulty": "medium",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-entidad-juridica"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Contratar Seguro de Responsabilidad Profesional (E & O)",
+          "summary": "Protege la firma contra errores u omisiones en tus recomendaciones.",
+          "body": "Un seguro E & O te protege si un cliente reclama que una recomendación tuya le causó pérdida financiera.\n\nCotiza al menos 2 aseguradoras que cubran servicios financieros.\n\nSin esta cobertura, un solo reclamo puede comprometer todo el patrimonio de la firma.\n\nRevisa con cuidado los montos de cobertura y las exclusiones antes de contratar."
+        },
+        "objective": {
+          "description": "¿Protegiste la firma contra errores u omisiones?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-eo-01",
+            "task": "Cotizar al menos 2 aseguradoras",
+            "completed": false,
+            "registryFieldRef": "v2-reg-aseguradora"
+          },
+          {
+            "id": "v2-chk-eo-02",
+            "task": "Comparar coberturas y exclusiones",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-eo-03",
+            "task": "Contratar póliza antes del primer cliente",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-eo-04",
+            "task": "Documentar póliza en carpeta segura",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a entender qué cubre un seguro de responsabilidad profesional para asesores financieros y cómo elegir la mejor póliza.",
+          "context": "El usuario está por empezar a atender clientes y necesita protegerse frente a reclamos.",
+          "suggestions": [
+            "¿Qué cubre un seguro E & O para asesores financieros?"
+          ]
+        },
+        "knowledge": [],
+        "whyItMatters": "Sin esta cobertura, un solo reclamo de un cliente insatisfecho puede comprometer todo el patrimonio de la firma y el tuyo personal.",
+        "commonMistakes": [
+          "Empezar a atender clientes antes de tener la póliza activa, confiando en que 'nada va a pasar'."
+        ],
+        "registroFields": [
+          {
+            "id": "v2-reg-aseguradora",
+            "label": "Aseguradora contratada",
+            "type": "text"
+          },
+          {
+            "id": "v2-reg-poliza-drive",
+            "label": "Enlace a la póliza en almacenamiento seguro",
+            "type": "url"
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-calendario-renovacion",
+      "title": "Configurar Calendario de Renovación",
+      "description": "Programa recordatorios para renovar certificaciones y pólizas antes de su vencimiento.",
+      "order": 11,
+      "type": "one_time",
+      "estimatedHours": 1,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [
+        "v2-step-registro-profesional",
+        "v2-step-seguro-eo"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Configurar Calendario de Renovación",
+          "summary": "Programa recordatorios para renovar certificaciones y pólizas antes de su vencimiento.",
+          "body": "Profesionales exigen horas de educación continua y renovación periódica.\n\nAgenda los recordatorios desde ahora para no perder vigencia."
+        },
+        "objective": {
+          "description": "¿Programaste recordatorios para renovar certificaciones?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-cal-01",
+            "task": "Programar recordatorios de renovación",
+            "completed": false,
+            "registryFieldRef": "calendario-renovacion-status"
+          },
+          {
+            "id": "v2-chk-cal-02",
+            "task": "Agendar horas de educación continua",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cal-03",
+            "task": "Configurar alertas 60 días antes de vencimiento",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a configurar un calendario de renovaciones para certificaciones y pólizas.",
+          "context": "El usuario ya obtuvo su certificación y contrató el seguro y necesita programar sus renovaciones.",
+          "suggestions": []
+        },
+        "knowledge": [],
+        "tip": "Configura los recordatorios con 60 días de anticipación — te da tiempo suficiente para completar la educación continua requerida sin carreras de último momento.",
+        "registroFields": [
+          {
+            "id": "calendario-renovacion-status",
+            "label": "Estado de la tarea: Configurar Calendario de Renovación",
+            "type": "date",
+            "placeholder": "Selecciona la fecha",
+            "required": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "v2-step-contrato",
+      "title": "Redactar Contrato de Servicios",
+      "description": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.",
+      "order": 12,
+      "type": "one_time",
+      "estimatedHours": 4,
+      "difficulty": "hard",
+      "priority": "high",
+      "dependencies": [
+        "v2-step-paquetes"
+      ],
+      "completionRules": {
+        "requiredChecklist": true,
+        "requiredResources": false,
+        "requiredApproval": false,
+        "requiredQuiz": false
+      },
+      "content": {
+        "overview": {
+          "title": "Redactar Contrato de Servicios",
+          "summary": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.",
+          "body": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación.\n\nHacer revisar por abogado especializado."
+        },
+        "objective": {
+          "description": "¿Tienes un contrato legal listo para clientes?"
+        },
+        "checklist": [
+          {
+            "id": "v2-chk-cont-01",
+            "task": "Redactar borrador del contrato",
+            "completed": false,
+            "registryFieldRef": "v2-reg-contrato-drive"
+          },
+          {
+            "id": "v2-chk-cont-02",
+            "task": "Incluir cláusulas de confidencialidad",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cont-03",
+            "task": "Definir política de cancelación",
+            "completed": false
+          },
+          {
+            "id": "v2-chk-cont-04",
+            "task": "Hacer revisar por abogado",
+            "completed": false
+          }
+        ],
+        "resources": [],
+        "assistant": {
+          "systemPrompt": "Ayuda al usuario a estructurar las cláusulas clave de un contrato de servicios de asesoría financiera.",
+          "context": "El usuario necesita un contrato legal listo antes de firmar con su primer cliente.",
+          "suggestions": [
+            "¿Qué cláusulas debe incluir un contrato de asesoría financiera?"
+          ]
+        },
+        "knowledge": [],
+        "whyItMatters": "Un contrato bien redactado protege tanto al cliente como a tu firma — define expectativas claras y evita disputas costosas.",
+        "registroFields": [
+          {
+            "id": "v2-reg-contrato-drive",
+            "label": "Enlace al contrato en almacenamiento seguro",
+            "type": "url"
           }
         ]
       }
