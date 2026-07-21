@@ -4,11 +4,612 @@
   "block": "operations",
   "steps": [
     {
+      "id": "weekly-portfolio-and-tasks-review",
+      "title": "Revisión Semanal de Cartera de Clientes y Tareas Pendientes",
+      "type": "weekly",
+      "content": {
+        "overview": {
+          "title": "Revisión Semanal de Cartera de Clientes y Tareas Pendientes",
+          "summary": "Dedicar un bloque de tiempo fijo cada semana para revisar el estado de la cartera de clientes, despejar tareas administrativas pendientes y planificar la semana entrante.",
+          "body": "En la asesoría financiera, la consistencia operativa es tan importante como el conocimiento técnico. Una revisión semanal estructurada evita que las solicitudes de los clientes se pierdan en el correo electrónico, que las fechas límite de implementación se venzan y que el asesor termine la semana sintiendo que 'no avanzó en nada importante'. Este ritual semanal es el motor de tu productividad."
+        },
+        "objective": {
+          "description": "Ejecutar una revisión sistemática de 1 a 2 horas cada semana para auditar el progreso de los planes activos, responder consultas pendientes y bloquear tiempo en la agenda para la semana siguiente."
+        },
+        "whyItMatters": "Sin un ritual semanal, las tareas urgentes pero no importantes (como responder correos triviales) devoran el tiempo destinado a tareas importantes pero no urgentes (como el análisis profundo de un plan o la prospección). La revisión semanal te devuelve el control de tu agenda y asegura que ningún cliente se sienta ignorado por más de 5 días hábiles.",
+        "bestPractices": [
+          "Bloquea un horario fijo e inamovible en tu calendario (ej. viernes de 4:00 PM a 5:30 PM) exclusivamente para esta revisión.",
+          "Utiliza un tablero Kanban (Por hacer, En progreso, Esperando al cliente, Completado) para visualizar el estado de cada cliente.",
+          "Aplica la regla de 'Cero Bandeja de Entrada': archiva, delega o responde cada correo relacionado con clientes antes de cerrar la semana."
+        ],
+        "commonMistakes": [
+          "Hacer la revisión 'cuando haya tiempo', lo que invariablemente significa que nunca se hace.",
+          "Mezclar esta revisión operativa con la prospección de nuevos clientes; son modos de trabajo diferentes y requieren enfoques distintos.",
+          "No registrar las acciones tomadas, lo que obliga a empezar de cero la semana siguiente sin recordar en qué punto quedó cada cliente."
+        ],
+        "tip": "Crea una plantilla de correo o mensaje pre-redactada para los clientes que están en la fase de 'Esperando al cliente' (ej. 'Hola [Nombre], solo recordándote amablemente que para avanzar con tu plan de jubilación necesito que me envíes el estado de cuenta de tu cuenta X antes del martes'). Copiar y pegar esto te ahorra 15 minutos por cliente.",
+        "recommendedTools": [
+          {
+            "name": "Trello o Asana (Para gestión visual de tareas por cliente)",
+            "url": "https://trello.com/"
+          },
+          {
+            "name": "TextExpander o Espacio de Trabajo de Gmail (Para respuestas rápidas y plantillas de seguimiento)",
+            "url": "https://textexpander.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "weekly-review-date",
+            "label": "Fecha de la Revisión Semanal",
+            "type": "date",
+            "required": true
+          },
+          {
+            "id": "pending-tasks-count",
+            "label": "Número de Tareas Pendientes o Clientes en 'Espera de Respuesta'",
+            "type": "number",
+            "placeholder": "Ej: 4",
+            "required": true
+          },
+          {
+            "id": "urgent-client-actions",
+            "label": "Acciones Urgentes o Bloqueos Detectados para la Próxima Semana",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Llamar a Cliente A para revisar cambios en su póliza de vida. 2. Enviar proyección actualizada a Cliente B antes del miércoles. 3. Renovar licencia de software de planificación.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-review-date",
+            "task": "Registrar la fecha en que se realizó la revisión semanal.",
+            "registryFieldRef": "weekly-review-date"
+          },
+          {
+            "id": "chk-count-pending",
+            "task": "Contabilizar y registrar el número de tareas o clientes que requieren acción inmediata.",
+            "registryFieldRef": "pending-tasks-count"
+          },
+          {
+            "id": "chk-list-urgent-actions",
+            "task": "Documentar las acciones urgentes y bloqueos que se deben resolver en los próximos 5 días hábiles.",
+            "registryFieldRef": "urgent-client-actions"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 0
+    },
+    {
+      "id": "monthly-market-and-knowledge-update",
+      "title": "Actualización Mensual de Conocimientos, Normativas y Tasas de Mercado",
+      "type": "monthly",
+      "content": {
+        "overview": {
+          "title": "Actualización Mensual de Conocimientos, Normativas y Tasas de Mercado",
+          "summary": "Dedicar tiempo cada mes a estudiar cambios en la regulación financiera, actualizaciones fiscales y tendencias de mercado para mantener la asesoría precisa y vigente.",
+          "body": "El entorno financiero es dinámico: las tasas de interés cambian, las leyes fiscales se reforman y aparecen nuevos vehículos de inversión. Un asesor que da consejos basados en la normativa o el mercado de hace un año no solo es ineficaz, sino que expone a su cliente a riesgos innecesarios y a la firma a responsabilidades legales. La educación continua mensual no es opcional, es parte del servicio."
+        },
+        "objective": {
+          "description": "Revisar y documentar mensualmente los cambios macroeconómicos, regulatorios o fiscales relevantes que impacten directamente las recomendaciones dadas a la cartera de clientes."
+        },
+        "whyItMatters": "La credibilidad de un asesor financiero se construye sobre la precisión y la actualidad de su conocimiento. Mantenerse actualizado te permite anticipar problemas para tus clientes (ej. 'La nueva reforma fiscal afecta tu deducción, hagamos este ajuste') y te posiciona como una autoridad proactiva, no reactiva, justificando tus honorarios.",
+        "bestPractices": [
+          "Suscríbete a boletines oficiales de las entidades reguladoras locales (ej. Comisión de Valores, Banco Central, Autoridad Tributaria).",
+          "Dedica al menos 2 horas al mes a leer análisis de fuentes primarias, no solo resúmenes de redes sociales.",
+          "Si hay un cambio regulatorio mayor, envía una comunicación proactiva y simplificada a todos tus clientes explicando cómo les afecta (o no les afecta)."
+        ],
+        "commonMistakes": [
+          "Confiar únicamente en noticias sensacionalistas o hilos de redes sociales para tomar decisiones que afectan el patrimonio de los clientes.",
+          "Ignorar las actualizaciones fiscales locales, asumiendo que 'la contabilidad es cosa del contador' (el asesor debe conocer el impacto fiscal de las inversiones).",
+          "No documentar las fuentes de la actualización, lo que dificulta respaldar una recomendación si un cliente o un auditor la cuestiona."
+        ],
+        "tip": "Crea una 'Matriz de Impacto' simple cada mes: Columna 1: El cambio (ej. 'Subida de tasa de referencia'). Columna 2: A quién afecta en mi cartera (ej. 'Clientes con deuda variable o bonos de largo plazo'). Columna 3: Acción recomendada (ej. 'Revisar refinanciamiento o rebalanceo'). Esto convierte la teoría en acción práctica.",
+        "recommendedTools": [
+          {
+            "name": "Bloomberg o Reuters (Para noticias financieras de primera mano)",
+            "url": "https://www.bloomberg.com/"
+          },
+          {
+            "name": "Sitio web oficial de la entidad reguladora financiera de tu país",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "monthly-update-month",
+            "label": "Mes y Año de la Actualización",
+            "type": "text",
+            "placeholder": "Ej: Octubre 2023",
+            "required": true
+          },
+          {
+            "id": "key-market-changes",
+            "label": "Principales Cambios de Mercado o Tasas Identificados",
+            "type": "textarea",
+            "placeholder": "Ej: 'La tasa de interés de referencia subió 0.5%. Los bonos del tesoro a 10 años rinden un 4.5%. Esto impacta las proyecciones de ingresos fijos de los clientes en fase de retiro.'",
+            "required": true
+          },
+          {
+            "id": "new-regulations-applied",
+            "label": "Nuevas Normativas o Cambios Fiscales que Requieren Ajuste en los Planes",
+            "type": "textarea",
+            "placeholder": "Ej: 'Nueva regulación sobre declaración de activos en el extranjero a partir del próximo año fiscal. Se debe agregar una sección de cumplimiento a los planes de los clientes con inversiones offshore.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-update-month",
+            "task": "Registrar el mes y año correspondiente a esta revisión de actualización.",
+            "registryFieldRef": "monthly-update-month"
+          },
+          {
+            "id": "chk-document-market-changes",
+            "task": "Documentar los cambios macroeconómicos o de mercado más relevantes del mes.",
+            "registryFieldRef": "key-market-changes"
+          },
+          {
+            "id": "chk-document-regulations",
+            "task": "Identificar y registrar cualquier cambio normativo o fiscal que requiera ajustar los planes de los clientes.",
+            "registryFieldRef": "new-regulations-applied"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 1
+    },
+    {
+      "id": "quarterly-security-and-data-audit",
+      "title": "Auditoría Trimestral de Seguridad de Datos, Accesos y Respaldos",
+      "type": "quarterly",
+      "content": {
+        "overview": {
+          "title": "Auditoría Trimestral de Seguridad de Datos, Accesos y Respaldos",
+          "summary": "Realizar una verificación profunda cada 3 meses para garantizar que los protocolos de seguridad, los respaldos en la nube y los controles de acceso a la información de los clientes funcionan correctamente.",
+          "body": "La seguridad informática no es un estado, es un proceso continuo. Las contraseñas se filtran, los empleados cambian, los software se actualizan y los respaldos pueden corromperse sin que nadie lo note hasta que es demasiado tarde. Esta auditoría trimestral es tu red de seguridad para asegurar que la 'caja fuerte' digital de tu firma está realmente cerrada con llave."
+        },
+        "objective": {
+          "description": "Ejecutar un checklist de verificación de seguridad, probar la restauración de un respaldo y auditar los permisos de acceso de todos los usuarios del sistema."
+        },
+        "whyItMatters": "Una brecha de datos en una asesoría financiera es catastrófica. Las multas regulatorias por mala gestión de datos personales son cuantiosas, pero el daño reputacional es peor: perderás a todos tus clientes. La auditoría trimestral detecta vulnerabilidades (ej. un ex-empleado que aún tiene acceso, o un respaldo que dejó de funcionar hace 2 meses) antes de que sean explotadas o causen una pérdida de datos.",
+        "bestPractices": [
+          "Realiza una prueba real de restauración de archivos: descarga un respaldo de la nube y verifica que los archivos se abran y no estén corruptos.",
+          "Revisa la lista de usuarios con acceso a tu software de planificación, CRM y correo; elimina inmediatamente a cualquier persona que ya no colabore contigo.",
+          "Cambia las contraseñas maestras de las cuentas de la firma cada 6 meses, y obliga a todo el equipo a usar autenticación de dos factores (2FA)."
+        ],
+        "commonMistakes": [
+          "Asumir que porque el software dice 'Respaldado', el respaldo es funcional. Los respaldos no verificados son tan útiles como no tener respaldo.",
+          "Compartir credenciales de administrador entre varios miembros del equipo, imposibilitando la trazabilidad de quién hizo un cambio o borró un archivo.",
+          "Ignorar las actualizaciones de seguridad del sistema operativo de las computadoras, dejando vulnerabilidades conocidas sin parchar."
+        ],
+        "tip": "Programa esta auditoría para la primera semana de cada trimestre (enero, abril, julio, octubre). Configura una alarma recurrente en tu calendario con el asunto '🚨 AUDITORÍA DE SEGURIDAD TRIMESTRAL - NO POSTERGAR' para asegurar que se convierta en un hábito innegociable.",
+        "recommendedTools": [
+          {
+            "name": "Have I Been Pwned (Para verificar si los correos de la firma fueron comprometidos en filtraciones)",
+            "url": "https://haveibeenpwned.com/"
+          },
+          {
+            "name": "LastPass o 1Password (Auditoría de salud de contraseñas del equipo)",
+            "url": "https://1password.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "audit-quarter",
+            "label": "Trimestre y Año de la Auditoría",
+            "type": "text",
+            "placeholder": "Ej: T3 2023 (Julio-Septiembre)",
+            "required": true
+          },
+          {
+            "id": "backup-restore-test-status",
+            "label": "Estado de la Prueba de Restauración de Respaldos",
+            "type": "select",
+            "options": [
+              "Exitoso: Archivos restaurados y verificados sin corrupción",
+              "Fallido: Requiere acción inmediata para corregir el sistema de respaldo",
+              "No realizado: Se pospone por fuerza mayor (debe reprogramarse en 48h)"
+            ],
+            "required": true
+          },
+          {
+            "id": "access-logs-reviewed",
+            "label": "Revisión de Permisos y Accesos de Usuarios",
+            "type": "select",
+            "options": [
+              "Sí, sin anomalías (Todos los accesos son de personal activo y autorizado)",
+              "Sí, con anomalías resueltas (Se revocaron accesos de ex-colaboradores o terceros)",
+              "No realizado: Requiere programación inmediata"
+            ],
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-audit-quarter",
+            "task": "Registrar el trimestre y año correspondiente a esta auditoría de seguridad.",
+            "registryFieldRef": "audit-quarter"
+          },
+          {
+            "id": "chk-test-backup-restore",
+            "task": "Ejecutar y registrar el resultado de una prueba real de restauración de archivos desde el respaldo en la nube.",
+            "registryFieldRef": "backup-restore-test-status"
+          },
+          {
+            "id": "chk-review-access-logs",
+            "task": "Auditar y validar que solo el personal activo y autorizado tenga acceso a los sistemas y datos de clientes.",
+            "registryFieldRef": "access-logs-reviewed"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 2
+    },
+    {
+      "id": "monthly-tax-and-social-security-payment",
+      "title": "Declaración y Pago de Impuestos y Seguridad Social",
+      "type": "monthly",
+      "content": {
+        "overview": {
+          "title": "Declaración y Pago de Impuestos y Seguridad Social",
+          "summary": "Ejecutar mensualmente el cálculo, declaración y pago de los impuestos correspondientes a los ingresos del mes y las contribuciones de seguridad social del equipo.",
+          "body": "El cumplimiento fiscal mensual es la columna vertebral de la salud legal de tu firma. En la asesoría financiera, donde la reputación y la ética son tu producto, caer en mora con la entidad tributaria o con la seguridad social no solo genera multas e intereses, sino que mancha tu historial crediticio y profesional, poniendo en riesgo tus licencias regulatorias."
+        },
+        "objective": {
+          "description": "Conciliar los ingresos y gastos del mes, calcular los impuestos a pagar (IVA, retenciones, renta anticipos) y las contribuciones de seguridad social, realizando los pagos antes de las fechas límite."
+        },
+        "whyItMatters": "Las entidades reguladoras financieras y tributarias cruzan datos. Mantener los impuestos al día es requisito para licencias, créditos y contratos corporativos.",
+        "bestPractices": [
+          "Programa los pagos en tu calendario con al menos 5 días de anticipación a la fecha límite oficial para evitar olvidos o fallos en la pasarela de pagos bancarios.",
+          "Separa mentalmente el IVA o impuestos retenidos desde el momento en que recibes el pago del cliente; nunca los consideres como ingresos disponibles para operar.",
+          "Revisa mensualmente los cambios en los topes de cotización de la seguridad social para evitar pagar de menos o de más."
+        ],
+        "commonMistakes": [
+          "Pagar los impuestos con el flujo de caja operativo sin haber separado previamente el monto, generando descapitalización en momentos críticos.",
+          "Olvidar declarar los impuestos de los meses donde no hubo ingresos; en muchos regímenes, la declaración en cero (inactiva) es obligatoria y su omisión genera multas.",
+          "No conciliar los pagos de seguridad social con los contratos reales de los empleados o contratistas, exponiendo a la firma a demandas laborales."
+        ],
+        "tip": "Crea una 'Cuenta de Pasivos Fiscales' en tu banco. Cada vez que emites una factura, transfiere automáticamente el porcentaje exacto del impuesto (ej. 16% IVA + 10% retención) a esta cuenta. Trátala como si ese dinero ya no te perteneciera; es dinero del gobierno que tú solo estás custodiando temporalmente.",
+        "recommendedTools": [
+          {
+            "name": "Software Contable (QuickBooks, Xero) con módulo de impuestos integrado",
+            "url": "https://quickbooks.intuit.com/"
+          },
+          {
+            "name": "Portal oficial de la entidad tributaria de tu país (SAT, DIAN, IRS, AEAT)",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "tax-payment-month",
+            "label": "Mes y Año de la Declaración y Pago",
+            "type": "text",
+            "placeholder": "Ej: Octubre 2023",
+            "required": true
+          },
+          {
+            "id": "taxes-paid-amount",
+            "label": "Monto Total de Impuestos Pagados (IVA, Retenciones, Renta)",
+            "type": "number",
+            "placeholder": "Ej: 1250.00",
+            "required": true
+          },
+          {
+            "id": "social-security-paid-amount",
+            "label": "Monto Total de Seguridad Social Pagada (Empleador y Empleados)",
+            "type": "number",
+            "placeholder": "Ej: 450.00",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-tax-month",
+            "task": "Registrar el mes y año correspondiente a esta declaración fiscal mensual.",
+            "registryFieldRef": "tax-payment-month"
+          },
+          {
+            "id": "chk-calc-and-pay-taxes",
+            "task": "Calcular, declarar y realizar el pago de los impuestos del mes ante la entidad tributaria.",
+            "registryFieldRef": "taxes-paid-amount"
+          },
+          {
+            "id": "chk-calc-and-pay-social-security",
+            "task": "Calcular, planillar y pagar las contribuciones de seguridad social del equipo.",
+            "registryFieldRef": "social-security-paid-amount"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 3
+    },
+    {
+      "id": "yearly-mercantile-and-certification-renewal",
+      "title": "Renovación Anual de Matrículas Mercantiles y Certificaciones",
+      "type": "yearly",
+      "content": {
+        "overview": {
+          "title": "Renovación Anual de Matrículas Mercantiles y Certificaciones",
+          "summary": "Gestionar anualmente la renovación del registro mercantil de la empresa y las certificaciones o licencias profesionales obligatorias para operar en el sector financiero.",
+          "body": "Las licencias para operar no son eternas. La Cámara de Comercio, la entidad reguladora financiera y los organismos de certificación profesional (ej. CFP Board) exigen renovaciones anuales que implican el pago de aranceles, la presentación de estados financieros auditados o la comprobación de horas de educación continua. Dejar vencer estos registros paraliza tu capacidad legal de facturar y asesorar."
+        },
+        "objective": {
+          "description": "Ejecutar los trámites de renovación mercantil y profesional antes de las fechas de vencimiento, pagando los aranceles correspondientes y actualizando la información de la firma."
+        },
+        "whyItMatters": "Operar con el registro mercantil vencido puede impedirte renovar contratos bancarios, firmar nuevos contratos con clientes o acceder a licitaciones. Operar con certificaciones profesionales vencidas no solo es ilegal en muchos casos, sino que te expone a sanciones disciplinarias por parte de los colegios o juntas de reguladores, incluyendo la suspensión definitiva de tu licencia.",
+        "bestPractices": [
+          "Configura alertas en tu calendario 90 días antes de la fecha de vencimiento de cada registro; algunos trámites (como la auditoría de estados financieros) toman semanas de preparación.",
+          "Aprovecha la renovación anual para actualizar la información de la firma (dirección, socios, representantes legales) y evitar inconsistencias entre el registro mercantil y la entidad tributaria.",
+          "Lleva un registro digital organizado de los certificados de horas de educación continua (CPE/CE) aprobados para presentarlos en caso de auditoría aleatoria."
+        ],
+        "commonMistakes": [
+          "Dejar la renovación para la última semana, asumiendo que los trámites son inmediatos, y terminar pagando multas por extemporaneidad.",
+          "No completar las horas de educación continua requeridas durante el año, lo que resulta en la suspensión automática de la certificación profesional al momento de renovarla.",
+          "Olvidar renovar los permisos municipales o de funcionamiento de la oficina física, lo que puede resultar en el cierre temporal del local por parte de las autoridades."
+        ],
+        "tip": "Crea un 'Tablero de Cumplimiento Anual' (puede ser en Trello, Notion o Asana) con una tarjeta por cada licencia o registro. Cada tarjeta debe tener: Fecha de vencimiento, Costo de renovación, Requisitos previos (ej. auditoría, horas de educación) y el enlace al trámite en línea. Revisa este tablero en la primera semana de cada trimestre.",
+        "recommendedTools": [
+          {
+            "name": "Notion o Asana (Para crear el Tablero de Cumplimiento Anual)",
+            "url": "https://www.notion.so/"
+          },
+          {
+            "name": "Portal de la Cámara de Comercio o Registro Mercantil Local",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "renewal-year",
+            "label": "Año de la Renovación",
+            "type": "text",
+            "placeholder": "Ej: 2024",
+            "required": true
+          },
+          {
+            "id": "mercantile-renewal-status",
+            "label": "Estado de la Renovación Mercantil (Cámara de Comercio / Registro)",
+            "type": "select",
+            "options": [
+              "Renovado exitosamente y certificado descargado",
+              "En trámite (Pendiente de aprobación o pago)",
+              "No realizado (Requiere acción inmediata por vencimiento)"
+            ],
+            "required": true
+          },
+          {
+            "id": "certification-renewal-status",
+            "label": "Estado de la Renovación de Certificaciones Profesionales y Licencias Regulatorias",
+            "type": "select",
+            "options": [
+              "Renovado exitosamente (Horas CE/CPE validadas y aranceles pagados)",
+              "En trámite (Pendiente de validación de horas o pago)",
+              "No realizado (Requiere acción inmediata por vencimiento)"
+            ],
+            "required": true
+          },
+          {
+            "id": "renewal-costs-total",
+            "label": "Costo Total de las Renovaciones Anuales (Aranceles, auditorías, cursos)",
+            "type": "number",
+            "placeholder": "Ej: 1500.00",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-renewal-year",
+            "task": "Registrar el año correspondiente a este ciclo de renovaciones anuales.",
+            "registryFieldRef": "renewal-year"
+          },
+          {
+            "id": "chk-renew-mercantile",
+            "task": "Completar el trámite de renovación mercantil, pagar los aranceles y guardar el certificado actualizado.",
+            "registryFieldRef": "mercantile-renewal-status"
+          },
+          {
+            "id": "chk-renew-certifications",
+            "task": "Validar las horas de educación continua, pagar los aranceles y renovar las licencias y certificaciones profesionales.",
+            "registryFieldRef": "certification-renewal-status"
+          },
+          {
+            "id": "chk-calc-renewal-costs",
+            "task": "Sumar y registrar el costo total incurrido en todas las renovaciones anuales (aranceles, auditorías, cursos).",
+            "registryFieldRef": "renewal-costs-total"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 4
+    },
+    {
+      "id": "monthly-newsletter-market-updates",
+      "title": "Envío de Boletín Mensual con Actualizaciones de Mercado y Tips",
+      "type": "monthly",
+      "content": {
+        "overview": {
+          "title": "Envío de Boletín Mensual con Actualizaciones de Mercado y Tips",
+          "summary": "Redactar y enviar mensualmente un boletín (newsletter) curado que mantenga a los clientes y suscriptores informados sobre el mercado, cambios fiscales y consejos prácticos, reforzando tu autoridad.",
+          "body": "En la asesoría financiera, el silencio es interpretado como abandono o incompetencia. Un boletín mensual bien estructurado es la herramienta más eficaz para mantenerte en la mente de tus clientes (Top of Mind) entre las revisiones formales. No se trata de enviar noticias genéricas que ya leyeron en el periódico, sino de traducir los eventos macroeconómicos a lo que significan específicamente para su patrimonio."
+        },
+        "objective": {
+          "description": "Producir y distribuir el boletín mensual, seleccionando los temas más relevantes del mes y registrando el alcance y la tasa de apertura para medir el impacto."
+        },
+        "whyItMatters": "Un cliente que recibe valor constante y gratuito a través de tu boletín percibe un mayor retorno sobre su inversión (ROI) en tus honorarios. Además, es el canal perfecto para anunciar nuevos servicios, recordar la importancia de las revisiones anuales y mantener una comunicación de 'baja fricción' que previene que te contacten solo cuando hay una crisis.",
+        "bestPractices": [
+          "Estructura el boletín en 3 secciones fijas: 1) 'Lo que pasó este mes' (1 párrafo de contexto macro), 2) 'Qué significa para ti' (el impacto en su bolsillo), 3) 'Un consejo accionable' (algo que puedan hacer hoy).",
+          "Mantén el tono empático y educativo; evita el alarmismo o el sensacionalismo financiero ('¡El mercado se desploma!').",
+          "Incluye siempre un enlace directo para agendar una llamada rápida o responder al correo con dudas."
+        ],
+        "commonMistakes": [
+          "Copiar y pegar artículos de noticias financieras sin aportar tu análisis o visión única como asesor.",
+          "Enviar el boletín de forma inconsistente (ej. un mes sí, dos meses no), lo que hace que los suscriptores se den de baja por desinterés.",
+          "Hacer el boletín demasiado largo y técnico; los clientes ocupados lo archivarán sin leerlo si no captan su atención en los primeros 10 segundos."
+        ],
+        "tip": "Graba un video corto (Loom) de 3 minutos donde resumas el boletín del mes mirando a la cámara. Incrustar ese video en el correo aumenta la tasa de lectura y la conexión humana drásticamente en comparación con solo texto y gráficos.",
+        "recommendedTools": [
+          {
+            "name": "Mailchimp o ConvertKit (Para diseño, envío y analítica de boletines)",
+            "url": "https://mailchimp.com/"
+          },
+          {
+            "name": "Substack (Alternativa minimalista para boletines de opinión y análisis)",
+            "url": "https://substack.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "newsletter-month",
+            "label": "Mes y Año del Boletín Enviado",
+            "type": "text",
+            "placeholder": "Ej: Noviembre 2023",
+            "required": true
+          },
+          {
+            "id": "newsletter-topic",
+            "label": "Tema Central y Consejo Accionable del Mes",
+            "type": "textarea",
+            "placeholder": "Ej: 'Tema: Impacto de la nueva reforma fiscal en las deducciones de vivienda. Consejo: Revisar si tu hipoteca actual permite la portabilidad para aprovechar la nueva tasa antes de fin de año.'",
+            "required": true
+          },
+          {
+            "id": "subscribers-reached",
+            "label": "Número de Suscriptores Alcanzados y Tasa de Apertura (%)",
+            "type": "number",
+            "placeholder": "Ej: 450 suscriptores, 38% de apertura",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-newsletter-month",
+            "task": "Registrar el mes y año correspondiente a esta edición del boletín mensual.",
+            "registryFieldRef": "newsletter-month"
+          },
+          {
+            "id": "chk-define-newsletter-topic",
+            "task": "Redactar y registrar el tema central, el análisis de impacto y el consejo accionable del mes.",
+            "registryFieldRef": "newsletter-topic"
+          },
+          {
+            "id": "chk-track-newsletter-reach",
+            "task": "Enviar el boletín y registrar el alcance total y la tasa de apertura obtenida.",
+            "registryFieldRef": "subscribers-reached"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 5
+    },
+    {
+      "id": "quarterly-satisfaction-nps-survey",
+      "title": "Encuesta Trimestral de Satisfacción y Net Promoter Score (NPS)",
+      "type": "quarterly",
+      "content": {
+        "overview": {
+          "title": "Encuesta Trimestral de Satisfacción y Net Promoter Score (NPS)",
+          "summary": "Medir cada 3 meses el nivel de satisfacción de los clientes activos y su probabilidad de recomendarte (NPS), identificando áreas de mejora antes de que se conviertan en cancelaciones.",
+          "body": "El Net Promoter Score (NPS) es la métrica reina de la lealtad en servicios profesionales. Responde a la pregunta: '¿Qué tan probable es que recomiendes nuestros servicios a un amigo o colega?'. Medirlo trimestralmente te permite detectar clientes 'detraigtores' (insatisfechos que hablan mal de ti) y convertir a los 'promotores' en tu principal motor de referidos."
+        },
+        "objective": {
+          "description": "Diseñar, enviar y analizar la encuesta trimestral de satisfacción, calculando el NPS y documentando los planes de acción para abordar el feedback recibido."
+        },
+        "whyItMatters": "En asesoría financiera, los clientes rara vez se quejan antes de irse; simplemente cancelan el retainer o cambian de asesor. Una encuesta trimestral te da una 'alerta temprana' si la satisfacción está cayendo. Además, demostrar que pides y actúas sobre su feedback refuerza la relación de confianza y el sentido de pertenencia del cliente.",
+        "bestPractices": [
+          "Mantén la encuesta extremadamente corta: 1 pregunta de NPS (escala 0-10), 1 pregunta de satisfacción general (1-5 estrellas) y 1 campo de texto abierto opcional ('¿Qué podemos hacer para mejorar?').",
+          "Llama personalmente a cualquier cliente que califique con 6 o menos (Detractores) en un plazo de 48 horas para entender su frustración y recuperarlo.",
+          "Comparte los resultados positivos y los cambios implementados gracias a su feedback en el boletín mensual siguiente."
+        ],
+        "commonMistakes": [
+          "Enviar encuestas largas de 20 preguntas que los clientes de alto patrimonio nunca tendrán tiempo de completar.",
+          "Pedir feedback pero no actuar sobre él ni comunicar los cambios realizados, lo que genera cinismo y frustración.",
+          "Medir el NPS solo una vez al año; los problemas de servicio deben detectarse y corregirse en tiempo real, no cuando ya es demasiado tarde."
+        ],
+        "tip": "Calcula tu NPS restando el porcentaje de Detractores (0-6) al porcentaje de Promotores (9-10). Un NPS superior a 50 es excelente en servicios financieros. Si tu NPS está estancado, enfócate en convertir a los clientes 'Pasivos' (7-8) en Promotores mediante pequeños detalles de experiencia del cliente (ej. un regalo sorpresa en su cumpleaños o una llamada proactiva sin motivo).",
+        "recommendedTools": [
+          {
+            "name": "Typeform o SurveyMonkey (Para crear encuestas de NPS visuales y fáciles de responder desde el móvil)",
+            "url": "https://www.typeform.com/"
+          },
+          {
+            "name": "Delighted o Retently (Herramientas especializadas en métricas de experiencia del cliente y NPS)",
+            "url": "https://delighted.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "survey-quarter",
+            "label": "Trimestre y Año de la Encuesta",
+            "type": "text",
+            "placeholder": "Ej: T4 2023 (Octubre-Diciembre)",
+            "required": true
+          },
+          {
+            "id": "nps-score",
+            "label": "Puntuación NPS Obtenida (Promotores % - Detractores %)",
+            "type": "number",
+            "placeholder": "Ej: 65 (Escala de -100 a 100)",
+            "required": true
+          },
+          {
+            "id": "key-feedback-summary",
+            "label": "Resumen de Feedback Clave y Plan de Acción Derivado",
+            "type": "textarea",
+            "placeholder": "Ej: '3 clientes solicitaron más claridad en los informes de comisiones. Acción: Rediseñar la sección de 'Costos' en el portal del cliente para el próximo mes. 1 cliente detractor por demora en respuesta de emails. Acción: Implementar regla de respuesta en menos de 24h.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-log-survey-quarter",
+            "task": "Registrar el trimestre y año correspondiente a esta medición de satisfacción.",
+            "registryFieldRef": "survey-quarter"
+          },
+          {
+            "id": "chk-calculate-nps",
+            "task": "Enviar la encuesta, recopilar respuestas y calcular la puntuación NPS oficial del trimestre.",
+            "registryFieldRef": "nps-score"
+          },
+          {
+            "id": "chk-analyze-feedback",
+            "task": "Analizar los comentarios abiertos, contactar a los detractores y documentar el plan de acción de mejora.",
+            "registryFieldRef": "key-feedback-summary"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 6
+    },
+    {
       "id": "step-seguimiento-mensual",
       "title": "Seguimiento mensual con el cliente",
       "description": "Acompaña al cliente en la ejecución de su plan y ajusta según cambien sus circunstancias.",
       "icon": "repeat",
-      "order": 0,
+      "order": 7,
       "type": "monthly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -74,7 +675,7 @@
       "title": "Solicitar retroalimentación al cliente tras el primer trimestre",
       "description": "Pide retroalimentación honesta sobre el servicio recibido.",
       "icon": "message-circle",
-      "order": 1,
+      "order": 8,
       "type": "quarterly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -127,7 +728,7 @@
       "title": "Solicitar una referencia al cliente satisfecho",
       "description": "Pide al cliente que te refiera con alguien que conozca.",
       "icon": "gift",
-      "order": 2,
+      "order": 9,
       "type": "quarterly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -179,7 +780,7 @@
       "id": "v2-rec-revision-contratos",
       "title": "Revisar Contratos Vigentes",
       "description": "Revisa contratos vigentes, identifica renovaciones y actualiza términos si aplica.",
-      "order": 3,
+      "order": 10,
       "type": "quarterly",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -248,7 +849,7 @@
       "id": "v2-rec-auditoria-cumplimiento",
       "title": "Auditoría de Cumplimiento",
       "description": "Revisa cumplimiento normativo, verifica certificaciones y actualiza políticas.",
-      "order": 4,
+      "order": 11,
       "type": "semester",
       "estimatedHours": 4,
       "difficulty": "hard",
@@ -318,7 +919,7 @@
       "id": "v2-rec-renovar-certificaciones",
       "title": "Renovar Certificaciones Profesionales",
       "description": "Verifica fechas de vencimiento, completa educación continua y renueva certificaciones.",
-      "order": 5,
+      "order": 12,
       "type": "yearly",
       "estimatedHours": 8,
       "difficulty": "medium",
@@ -388,7 +989,7 @@
       "id": "v2-rec-backups",
       "title": "Realizar Copias de Seguridad",
       "description": "Verifica respaldos automáticos y revisa integridad de datos.",
-      "order": 6,
+      "order": 13,
       "type": "weekly",
       "estimatedHours": 0.5,
       "difficulty": "easy",
@@ -457,7 +1058,7 @@
       "id": "v2-rec-actualizaciones-software",
       "title": "Actualizar Herramientas",
       "description": "Las actualizaciones corrigen vulnerabilidades de seguridad y mejoran rendimiento.",
-      "order": 7,
+      "order": 14,
       "type": "monthly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -526,7 +1127,7 @@
       "id": "v2-rec-auditoria-accesos",
       "title": "Auditoría de Accesos",
       "description": "Revisa permisos de usuarios, verifica accesos activos y elimina los innecesarios.",
-      "order": 8,
+      "order": 15,
       "type": "quarterly",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -596,7 +1197,7 @@
       "id": "v2-rec-revision-licencias",
       "title": "Revisar Licencias de Software",
       "description": "Revisa licencias, evalúa uso de herramientas y cancela servicios no utilizados.",
-      "order": 9,
+      "order": 16,
       "type": "semester",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -665,7 +1266,7 @@
       "id": "v2-rec-reunion-semanal",
       "title": "Realizar Reunión Semanal de Equipo",
       "description": "Repasa tareas, asigna prioridades y comparte aprendizajes.",
-      "order": 10,
+      "order": 17,
       "type": "weekly",
       "estimatedHours": 1,
       "difficulty": "easy",

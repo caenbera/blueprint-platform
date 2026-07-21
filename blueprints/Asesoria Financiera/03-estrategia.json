@@ -4,370 +4,169 @@
   "block": "strategy",
   "steps": [
     {
-      "id": "step-catalogo-servicios",
-      "title": "Listar todos los servicios de asesoría que podrías ofrecer",
-      "description": "Elabora un listado completo de posibles servicios.",
-      "icon": "list-checks",
-      "order": 0,
+      "id": "step-definicion-servicios-core",
+      "title": "Definición de Servicios Core",
       "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "easy",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
       "content": {
         "overview": {
-          "title": "Listar todos los servicios de asesoría que podrías ofrecer",
-          "summary": "Elabora un listado completo de posibles servicios.",
-          "body": "Antes de priorizar, escribe todos los servicios de asesoría que podrías ofrecer: planeación financiera integral, gestión de inversiones, planeación de retiro, planeación fiscal, y cualquier otro que domines."
+          "title": "Definición de Servicios Core",
+          "summary": "Delimitar con precisión los 3 o 4 servicios financieros principales que ofrecerá la firma, evitando la dispersión y la promesa de soluciones para todos los problemas.",
+          "body": "En asesoría financiera, la especialización es sinónimo de autoridad. Intentar ofrecer planificación fiscal, gestión de inversiones, seguros, contabilidad y bienes raíces al mismo tiempo diluye tu experiencia y multiplica tu riesgo legal. Esta fase te obliga a elegir tus batallas y definir claramente qué harás excepcionalmente bien."
         },
         "objective": {
-          "description": "Elaborar un listado completo de los servicios de asesoría que podrías ofrecer."
+          "description": "Listar y detallar los servicios centrales (core) de la firma y, con igual importancia, definir explícitamente qué servicios están fuera del alcance (out of scope)."
         },
-        "checklist": [
-          {
-            "id": "chk-catalogo-servicios",
-            "task": "Elaborar un listado completo de los servicios de asesoría que podrías ofrecer.",
-            "completed": false,
-            "registryFieldRef": "reg-listado-servicios-considerados"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a hacer una lluvia de ideas de posibles servicios de asesoría financiera.",
-          "context": "El usuario está diseñando el catálogo de servicios de su firma nueva.",
-          "suggestions": [
-            "¿Qué tipos de servicios de asesoría financiera existen?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "El listado inicial es el insumo para priorizar - si te saltas este paso sueles quedarte solo con las primeras ideas que se te ocurren, no con las mejores.",
-        "registroFields": [
-          {
-            "id": "reg-listado-servicios-considerados",
-            "label": "Listado de servicios considerados",
-            "type": "textarea",
-            "helpText": "Escribe aquí todos los servicios que evaluaste, aunque no los ofrezcas todos desde el inicio."
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-priorizar-servicios",
-      "title": "Priorizar los servicios principales para lanzar",
-      "description": "Prioriza entre 1 y 3 servicios principales para lanzar primero.",
-      "icon": "flag",
-      "order": 1,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "step-catalogo-servicios"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Priorizar los servicios principales para lanzar",
-          "summary": "Prioriza entre 1 y 3 servicios principales para lanzar primero.",
-          "body": "Intentar ofrecer todo desde el día uno suele diluir tu propuesta de valor - elige los servicios que dominas mejor y que más piden tus clientes potenciales."
-        },
-        "objective": {
-          "description": "Priorizar entre 1 y 3 servicios principales para lanzar primero."
-        },
-        "checklist": [
-          {
-            "id": "chk-priorizar-servicios",
-            "task": "Priorizar entre 1 y 3 servicios principales para lanzar primero.",
-            "completed": false,
-            "registryFieldRef": "reg-numero-servicios-lanzar"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a priorizar los servicios con los que debería lanzar su firma.",
-          "context": "El usuario ya tiene un listado completo de posibles servicios.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Un catálogo demasiado amplio desde el inicio hace que sea difícil comunicar tu propuesta de valor y que los clientes no sepan exactamente por qué contratarte a ti.",
-        "commonMistakes": [
-          "Copiar el catálogo de servicios de una firma grande sin adaptarlo a tu capacidad real como firma nueva."
-        ],
-        "registroFields": [
-          {
-            "id": "reg-numero-servicios-lanzar",
-            "label": "Número de servicios a lanzar",
-            "type": "select",
-            "options": [
-              "1 servicio",
-              "2 servicios",
-              "3 servicios"
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-perfil-por-servicio",
-      "title": "Definir el perfil de cliente para cada servicio",
-      "description": "Define a qué perfil de cliente va dirigido cada servicio priorizado.",
-      "icon": "user-check",
-      "order": 2,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [
-        "step-priorizar-servicios"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Definir el perfil de cliente para cada servicio",
-          "summary": "Define a qué perfil de cliente va dirigido cada servicio priorizado.",
-          "body": "Para cada servicio priorizado, define claramente a qué tipo de cliente le sirve más."
-        },
-        "objective": {
-          "description": "Definir a qué perfil de cliente va dirigido cada servicio priorizado."
-        },
-        "checklist": [
-          {
-            "id": "chk-perfil-por-servicio",
-            "task": "Definir a qué perfil de cliente va dirigido cada servicio priorizado.",
-            "completed": false,
-            "registryFieldRef": "step-perfil-por-servicio-status"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a definir el perfil de cliente ideal para cada uno de sus servicios.",
-          "context": "El usuario ya priorizó sus servicios principales.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Si un servicio no tiene un perfil de cliente claro, probablemente todavía no está listo para lanzarse.",
-        "registroFields": [
-          {
-            "id": "step-perfil-por-servicio-status",
-            "label": "Estado de: Definir el perfil de cliente para cada servicio",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-comparar-modelos-cobro",
-      "title": "Comparar los modelos de cobro habituales del sector",
-      "description": "Compara tarifa fija, AUM, por hora y retainer mensual.",
-      "icon": "percent",
-      "order": 3,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Comparar los modelos de cobro habituales del sector",
-          "summary": "Compara tarifa fija, AUM, por hora y retainer mensual.",
-          "body": "Existen varios modelos de cobro habituales en asesoría financiera: tarifa fija por servicio, porcentaje de activos gestionados (AUM), cobro por hora, o un retainer mensual."
-        },
-        "objective": {
-          "description": "Comparar los modelos de cobro habituales en asesoría financiera."
-        },
-        "checklist": [
-          {
-            "id": "chk-comparar-modelos-cobro",
-            "task": "Comparar los modelos de cobro habituales en asesoría financiera.",
-            "completed": false,
-            "registryFieldRef": "step-comparar-modelos-cobro-status"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a comparar los modelos de cobro habituales en asesoría financiera.",
-          "context": "El usuario está definiendo cómo va a cobrar por sus servicios.",
-          "suggestions": [
-            "¿Qué modelo de tarifas conviene para un asesor financiero nuevo?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "El modelo de cobro que elijas determina qué tipo de cliente te va a buscar - no es solo una decisión de precio, es una decisión de posicionamiento.",
-        "registroFields": [
-          {
-            "id": "step-comparar-modelos-cobro-status",
-            "label": "Estado de: Comparar los modelos de cobro habituales del sector",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-calcular-tarifa",
-      "title": "Calcular tu tarifa objetivo",
-      "description": "Calcula la tarifa objetivo según tus costos y el tiempo estimado por cliente.",
-      "icon": "calculator",
-      "order": 4,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "step-comparar-modelos-cobro"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Calcular tu tarifa objetivo",
-          "summary": "Calcula la tarifa objetivo según tus costos y el tiempo estimado por cliente.",
-          "body": "Calcula tu tarifa a partir de tus costos fijos, el tiempo que te toma atender a un cliente y las tarifas de referencia del mercado."
-        },
-        "objective": {
-          "description": "Calcular la tarifa objetivo según tus costos y el tiempo estimado por cliente."
-        },
-        "checklist": [
-          {
-            "id": "chk-calcular-tarifa",
-            "task": "Calcular la tarifa objetivo según tus costos y el tiempo estimado por cliente.",
-            "completed": false,
-            "registryFieldRef": "step-calcular-tarifa-status"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a calcular su tarifa objetivo como asesor financiero.",
-          "context": "El usuario ya comparó los modelos de cobro habituales.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Incluye en el cálculo el tiempo que dedicas a tareas no facturables (administración, marketing) - subestimarlo es el error más común al fijar tarifas.",
-        "registroFields": [
-          {
-            "id": "step-calcular-tarifa-status",
-            "label": "Estado de: Calcular tu tarifa objetivo",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-documentar-tarifas",
-      "title": "Documentar la estructura de tarifas final",
-      "description": "Define y documenta el modelo de tarifas de la firma.",
-      "icon": "dollar-sign",
-      "order": 5,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "easy",
-      "priority": "high",
-      "dependencies": [
-        "step-calcular-tarifa"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Documentar la estructura de tarifas final",
-          "summary": "Define y documenta el modelo de tarifas de la firma.",
-          "body": "El modelo de tarifas que elijas afecta directamente qué tipo de cliente atraes: un modelo por AUM favorece clientes con más patrimonio, mientras que una tarifa fija o por hora es más accesible para clientes que están empezando a construir patrimonio."
-        },
-        "objective": {
-          "description": "Definir y documentar el modelo de tarifas de la firma."
-        },
-        "checklist": [
-          {
-            "id": "chk-documentar-tarifas",
-            "task": "Definir y documentar el modelo de tarifas de la firma.",
-            "completed": false,
-            "registryFieldRef": "reg-modelo-cobro"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a documentar su estructura de tarifas final.",
-          "context": "El usuario ya calculó su tarifa objetivo.",
-          "suggestions": []
-        },
-        "knowledge": [],
+        "whyItMatters": "El 'scope creep' (aumento no controlado del alcance) es el asesino silencioso de la rentabilidad en servicios profesionales. Si no defines tus límites, los clientes esperarán que resuelvas problemas legales o contables complejos por los que no estás equipado ni asegurado, exponiendo tu negocio a demandas y quemando tu tiempo no facturable.",
         "bestPractices": [
-          "Revisa las tarifas de al menos 3 firmas comparables en tu mercado antes de fijar las tuyas.",
-          "No fijes tu tarifa tan baja que no puedas sostener el negocio a mediano plazo."
+          "Limita tus servicios core a un máximo de 3 o 4 áreas donde tengas verdadera expertise o certificaciones.",
+          "Empaqueta tus servicios como 'productos' con entregables claros (ej. 'Plan de Jubilación en 90 Días') en lugar de 'consultoría por hora' vaga.",
+          "Crea una lista de 'Derivaciones de Confianza': una red de contadores, abogados y corredores de seguros a quienes derivarás lo que no está en tu scope."
         ],
         "commonMistakes": [
-          "Cobrar tarifas muy bajas al inicio para 'ganar clientes', generando un techo difícil de subir después."
+          "Decir 'sí' a todo tipo de cliente y problema por miedo a perder ingresos iniciales.",
+          "Confundir asesoría financiera con asesoría legal o contable, cruzando líneas regulatorias peligrosas.",
+          "No tener un proceso estandarizado para derivar al cliente a un especialista cuando surge una necesidad fuera de tu alcance."
         ],
-        "tip": "Puedes combinar modelos: por ejemplo, una tarifa fija por el plan financiero inicial y un retainer mensual para el acompañamiento continuo.",
+        "tip": "Aplica la regla del 'No hacemos eso, pero conozco a alguien que sí'. Tener una respuesta preparada y una red de contactos para derivar trabajos fuera de tu especialidad te hace ver más profesional y confiable que intentar hacerlo todo tú mismo.",
+        "recommendedTools": [
+          {
+            "name": "Notion (Para documentar y publicar el catálogo de servicios)",
+            "url": "https://www.notion.so/"
+          },
+          {
+            "name": "Miro (Para mapear el viaje del cliente en cada servicio core)",
+            "url": "https://miro.com/"
+          }
+        ],
         "registroFields": [
           {
-            "id": "reg-modelo-cobro",
-            "label": "Modelo de cobro elegido",
+            "id": "core-services-list",
+            "label": "Listado Detallado de Servicios Core",
+            "type": "textarea",
+            "placeholder": "Ej: 1. Planificación Financiera Integral (Fee único). 2. Coaching de Eliminación de Deudas (Programa de 12 semanas). 3. Revisión Anual de Portafolio de Inversiones (Retainer mensual).",
+            "required": true
+          },
+          {
+            "id": "out-of-scope-definition",
+            "label": "Definición de Servicios FUERA del Alcance (Out of Scope)",
+            "type": "textarea",
+            "placeholder": "Ej: 'No ofrecemos preparación de declaraciones de impuestos, no representamos clientes ante entidades fiscales, no vendemos productos de seguros ni gestionamos directamente los activos en cuentas de terceros.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-list-core-services",
+            "task": "Listar y detallar los 3 a 4 servicios core que serán la base de la oferta de la firma.",
+            "registryFieldRef": "core-services-list"
+          },
+          {
+            "id": "chk-define-out-of-scope",
+            "task": "Redactar y documentar explícitamente qué responsabilidades o servicios están fuera del alcance para evitar malentendidos.",
+            "registryFieldRef": "out-of-scope-definition"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 0
+    },
+    {
+      "id": "step-estructura-tarifas-modelos-cobro",
+      "title": "Estructura de Tarifas y Modelos de Cobro",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Estructura de Tarifas y Modelos de Cobro",
+          "summary": "Establecer modelos de precios transparentes, rentables y alineados con el valor entregado, eliminando la ambigüedad que genera desconfianza en los clientes.",
+          "body": "La forma en que cobras comunica tu posicionamiento. Cobrar por hora castiga tu eficiencia (cuanto más rápido resuelves un problema, menos ganas). Los modelos basados en valor (Flat Fee) o en relación continua (Retainer) son los estándares de oro en la asesoría financiera moderna, ya que alinean tus incentivos con el éxito a largo plazo del cliente."
+        },
+        "objective": {
+          "description": "Definir el modelo de cobro principal, diseñar paquetes escalonados de servicios y establecer una tarifa base o fee mínimo que filtre a clientes no calificados."
+        },
+        "whyItMatters": "La opacidad en los costos es la principal razón por la que los clientes desconfían de los asesores financieros. Una estructura de tarifas clara y publicada (o fácilmente explicable) genera confianza inmediata. Además, un fee mínimo adecuado protege tu tiempo de clientes con problemas financieros demasiado pequeños para tu modelo de negocio.",
+        "bestPractices": [
+          "Ofrece modelos escalonados (Good, Better, Best) para dar sensación de control y opción al cliente, guiándolo hacia la opción intermedia.",
+          "Cobra por el valor del problema resuelto, no por los minutos que te tomó la reunión.",
+          "Exige un pago inicial (setup fee) antes de comenzar cualquier trabajo de análisis profundo."
+        ],
+        "commonMistakes": [
+          "Competir siendo 'el más barato', lo que atrae a clientes de alto mantenimiento y bajo respeto por tu tiempo.",
+          "Ocultar comisiones de terceros (conflicto de interés) en lugar de adoptar un modelo de 'Fee-Only' (solo honorarios) que es más transparente.",
+          "No ajustar las tarifas anualmente según la inflación y la mejora en tu experiencia."
+        ],
+        "tip": "Para planificación financiera, el modelo híbrido suele ser el más sostenible: un 'Flat Fee' inicial alto por el diagnóstico y plan maestro (ej. $1,500), seguido de un 'Retainer' mensual más bajo (ej. $150/mes) para revisiones trimestrales, ajustes y acceso a consultas rápidas. Esto cubre tus costos iniciales y genera flujo de caja recurrente.",
+        "recommendedTools": [
+          {
+            "name": "Baremetrics o ProfitWell (Para modelar ingresos recurrentes)",
+            "url": "https://www.baremetrics.com/"
+          },
+          {
+            "name": "Stripe o MercadoPago (Para configurar cobros recurrentes y transparentes)",
+            "url": "https://stripe.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "pricing-model-selected",
+            "label": "Modelo de Cobro Principal Seleccionado",
             "type": "select",
             "options": [
-              "Tarifa fija",
-              "Porcentaje de activos gestionados (AUM)",
-              "Por hora",
-              "Retainer mensual"
+              "Fee-Only por Proyecto (Flat Fee)",
+              "Retainer Mensual/Trimestral (Suscripción)",
+              "Por Hora (Solo para consultas puntuales)",
+              "Híbrido (Fee inicial + Retainer de seguimiento)",
+              "Porcentaje de Activos bajo Gestión (AUM)"
             ],
             "required": true
           },
           {
-            "id": "reg-tarifa-referencia",
-            "label": "Tarifa de referencia definida",
-            "type": "text",
-            "placeholder": "Ej. $150/hora, o 1% AUM anual"
+            "id": "tiered-packages-description",
+            "label": "Descripción de Paquetes Escalonados (Ej. Básico, Premium, Elite)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Paquete Esencial: Diagnóstico y plan de 1 año ($X). Paquete Integral: Plan a 5 años + 4 sesiones de seguimiento anuales ($Y).'",
+            "required": true
           },
           {
-            "id": "reg-notas-tarifas",
-            "label": "Notas sobre la estructura de tarifas",
-            "type": "textarea",
-            "helpText": "Cualquier consideración especial (descuentos, paquetes, condiciones)."
+            "id": "minimum-entry-fee",
+            "label": "Tarifa Base o Fee Mínimo de Entrada",
+            "type": "number",
+            "placeholder": "Ej: 500 (Monto mínimo para aceptar un nuevo cliente o proyecto)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-select-pricing-model",
+            "task": "Seleccionar y registrar el modelo de cobro principal que regirá la firma.",
+            "registryFieldRef": "pricing-model-selected"
+          },
+          {
+            "id": "chk-design-packages",
+            "task": "Diseñar y describir al menos 2 o 3 paquetes escalonados de servicios con entregables claros.",
+            "registryFieldRef": "tiered-packages-description"
+          },
+          {
+            "id": "chk-set-minimum-fee",
+            "task": "Establecer y registrar la tarifa base o fee mínimo de entrada para filtrar clientes no calificados.",
+            "registryFieldRef": "minimum-entry-fee"
           }
         ]
-      }
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 1
     },
     {
       "id": "step-definir-paquetes",
       "title": "Definir entre 2 y 4 paquetes de asesoría",
       "description": "Empaqueta tus servicios y tarifas en ofertas claras.",
       "icon": "package",
-      "order": 6,
+      "order": 2,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -423,7 +222,7 @@
       "title": "Documentar el alcance de cada paquete",
       "description": "Documenta qué incluye y qué no incluye cada paquete.",
       "icon": "clipboard-list",
-      "order": 7,
+      "order": 3,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "easy",
@@ -473,196 +272,11 @@
       }
     },
     {
-      "id": "step-borrador-contrato",
-      "title": "Redactar el borrador del contrato de servicios",
-      "description": "Redacta el borrador del contrato de servicios estándar.",
-      "icon": "file-signature",
-      "order": 8,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "step-alcance-paquetes"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": true,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Redactar el borrador del contrato de servicios",
-          "summary": "Redacta el borrador del contrato de servicios estándar.",
-          "body": "Redacta un contrato que defina claramente el alcance, las tarifas, la confidencialidad y las condiciones de cancelación."
-        },
-        "objective": {
-          "description": "Redactar el borrador del contrato de servicios estándar."
-        },
-        "checklist": [
-          {
-            "id": "chk-borrador-contrato",
-            "task": "Redactar el borrador del contrato de servicios estándar.",
-            "completed": false,
-            "registryFieldRef": "reg-contrato-drive"
-          }
-        ],
-        "resources": [
-          {
-            "id": "res-plantilla-contrato",
-            "type": "word",
-            "title": "Plantilla de contrato de servicios",
-            "description": "Base editable para tu contrato de servicios de asesoría financiera.",
-            "provider": "Blueprint",
-            "previewUrl": "",
-            "downloadUrl": "",
-            "embedUrl": "",
-            "thumbnailUrl": "",
-            "mimeType": "",
-            "extension": "",
-            "size": 0,
-            "metadata": {
-              "pages": null,
-              "duration": null,
-              "language": "es"
-            },
-            "tags": [
-              "legal",
-              "contrato"
-            ],
-            "visibility": "organization"
-          }
-        ],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a estructurar las secciones clave de un contrato de servicios de asesoría financiera.",
-          "context": "El usuario ya definió sus paquetes y tarifas.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-contrato-drive",
-            "label": "Enlace al borrador en Google Drive",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-revision-abogado-contrato",
-      "title": "Hacer revisar el contrato por un abogado",
-      "description": "Obtén la revisión legal final del contrato de servicios.",
-      "icon": "scale",
-      "order": 9,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "step-borrador-contrato"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Hacer revisar el contrato por un abogado",
-          "summary": "Obtén la revisión legal final del contrato de servicios.",
-          "body": "No uses una plantilla genérica sin revisión - haz que un abogado valide el contrato antes de usarlo con tu primer cliente."
-        },
-        "objective": {
-          "description": "Obtener la revisión legal final del contrato de servicios."
-        },
-        "checklist": [
-          {
-            "id": "chk-revision-abogado-contrato",
-            "task": "Obtener la revisión legal final del contrato de servicios.",
-            "completed": false,
-            "registryFieldRef": "step-revision-abogado-contrato-status"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a preparar las preguntas clave para la revisión legal de su contrato.",
-          "context": "El usuario tiene un borrador de contrato listo para revisión legal.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Incluye siempre una cláusula clara de cancelación - protege tanto al cliente como a tu firma y evita conflictos futuros.",
-        "registroFields": [
-          {
-            "id": "step-revision-abogado-contrato-status",
-            "label": "Estado de: Hacer revisar el contrato por un abogado",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-politica-cancelacion",
-      "title": "Redactar la política de cancelación y reembolsos",
-      "description": "Define y documenta tu política de cancelación y reembolsos.",
-      "icon": "file-text",
-      "order": 10,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [
-        "step-alcance-paquetes"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Redactar la política de cancelación y reembolsos",
-          "summary": "Define y documenta tu política de cancelación y reembolsos.",
-          "body": "Define con claridad qué pasa si un cliente cancela antes de terminar un servicio contratado."
-        },
-        "objective": {
-          "description": "Definir y documentar tu política de cancelación y reembolsos."
-        },
-        "checklist": [
-          {
-            "id": "chk-politica-cancelacion",
-            "task": "Definir y documentar tu política de cancelación y reembolsos.",
-            "completed": false,
-            "registryFieldRef": "reg-politica-cancelacion-texto"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a redactar una política de cancelación y reembolsos justa y clara.",
-          "context": "El usuario está terminando de definir las condiciones de su contrato.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Sin esta política clara, una cancelación conflictiva puede terminar en una disputa legal o en una mala reseña pública.",
-        "registroFields": [
-          {
-            "id": "reg-politica-cancelacion-texto",
-            "label": "Política de cancelación documentada",
-            "type": "textarea"
-          }
-        ]
-      }
-    },
-    {
       "id": "step-tabla-tarifas-web",
       "title": "Crear la tabla de tarifas para publicar en el sitio web",
       "description": "Prepara la tabla de tarifas y paquetes lista para publicar.",
       "icon": "table",
-      "order": 11,
+      "order": 4,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",

@@ -4,57 +4,75 @@
   "block": "operations",
   "steps": [
     {
-      "id": "step-proceso-analisis",
-      "title": "Documentar los pasos del proceso de análisis financiero",
-      "description": "Documenta un proceso de análisis financiero repetible.",
-      "icon": "search",
-      "order": 0,
+      "id": "step-diseno-proceso-onboarding-diagnostico",
+      "title": "Diseño del Proceso de Onboarding y Diagnóstico Financiero Inicial",
       "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [
-        "step-plantilla-plan"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
       "content": {
         "overview": {
-          "title": "Documentar los pasos del proceso de análisis financiero",
-          "summary": "Estandariza los pasos que sigues para analizar la situación financiera de cada cliente.",
-          "body": "Tener un proceso repetible te permite atender más clientes sin perder calidad ni consistencia."
+          "title": "Diseño del Proceso de Onboarding y Diagnóstico Financiero Inicial",
+          "summary": "Estructurar el flujo exacto desde que un prospecto firma el contrato hasta que se completa su radiografía financiera inicial, garantizando una experiencia impecable y segura.",
+          "body": "Los primeros 30 días de relación con un cliente financiero definen su nivel de confianza en ti para los próximos años. Si el onboarding es caótico, si le pides la misma información tres veces o si no hay claridad sobre qué sigue, el cliente sentirá que su patrimonio está en manos de alguien desorganizado. Este paso diseña una 'autopista' de incorporación que sea segura, profesional y respetuosa con el tiempo del cliente."
         },
         "objective": {
-          "description": "Documentar los pasos del proceso de análisis financiero."
+          "description": "Mapear el flujo de onboarding paso a paso y diseñar el cuestionario de diagnóstico financiero inicial que se enviará antes de la primera sesión profunda."
         },
-        "checklist": [
+        "whyItMatters": "Un onboarding friccional genera ansiedad en el cliente (quien te está entregando datos extremadamente sensibles) y consume horas no facturables de tu equipo persiguiendo documentos por correo. Un proceso estandarizado y automatizado en la recolección de datos te permite llegar a la primera reunión de diagnóstico ya habiendo analizado los números, enfocando el tiempo en la estrategia y no en la recolección de datos.",
+        "bestPractices": [
+          "Envía un 'Paquete de Bienvenida' digital el mismo día de la firma del contrato, explicando exactamente qué esperar en las próximas 4 semanas.",
+          "Utiliza un portal seguro o formulario cifrado para que el cliente suba sus estados de cuenta y documentos; nunca los pidas por correo electrónico estándar.",
+          "Establece una 'Llamada de Alineación de Expectativas' de 15 minutos antes de la sesión de diagnóstico profundo para explicar cómo se usará la información.",
+          "Automatiza los recordatorios de documentos faltantes para no tener que enviar correos manuales de seguimiento."
+        ],
+        "commonMistakes": [
+          "Iniciar la sesión de diagnóstico profundo sin haber firmado el contrato de servicios y el acuerdo de confidencialidad (NDA) previamente.",
+          "Pedir al cliente que organice y resuma sus propios estados de cuenta; tu trabajo es analizarlos, no hacer su contabilidad básica.",
+          "No tener un checklist interno de 'Documentos Mínimos Requeridos', lo que resulta en sesiones de diagnóstico incompletas que requieren una segunda reunión solo para recabar datos."
+        ],
+        "tip": "Diseña un 'Cuestionario de Radiografía Financiera' digital de 15 minutos que el cliente deba completar obligatoriamente antes de la sesión de diagnóstico. Incluye preguntas sobre sus deudas, activos, seguros, testamentos y, lo más importante, sus 3 mayores miedos y 3 mayores metas financieras. Llegar a la reunión con esto leído te posiciona inmediatamente como un experto preparado.",
+        "recommendedTools": [
           {
-            "id": "chk-proceso-analisis",
-            "task": "Documentar los pasos del proceso de análisis financiero.",
-            "completed": false,
-            "registryFieldRef": "reg-proceso-analisis-texto"
+            "name": "Typeform o Jotform (Para crear cuestionarios financieros seguros y con buena UX)",
+            "url": "https://www.typeform.com/"
+          },
+          {
+            "name": "Docusign o HelloSign (Para firma electrónica de contratos y NDAs)",
+            "url": "https://www.docusign.com/"
           }
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a diseñar un proceso interno consistente de análisis financiero.",
-          "context": "El usuario está definiendo cómo va a analizar la situación financiera de sus clientes de forma repetible.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Un proceso estandarizado es lo que te permite crecer sin que la calidad del servicio dependa únicamente de tu memoria o de tu disponibilidad en cada caso.",
         "registroFields": [
           {
-            "id": "reg-proceso-analisis-texto",
-            "label": "Proceso de análisis financiero documentado",
-            "type": "textarea"
+            "id": "onboarding-flow-description",
+            "label": "Flujo de Onboarding Paso a Paso (Desde la firma hasta el diagnóstico)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Día 1: Envío de Paquete de Bienvenida y enlace a portal seguro. Días 2-7: Cliente completa Cuestionario de Radiografía y sube estados de cuenta. Día 10: Equipo revisa documentos y solicita faltantes. Día 14: Sesión de Diagnóstico Profundo (90 min). Día 15: Envío de resumen ejecutivo con hallazgos iniciales.'",
+            "required": true
+          },
+          {
+            "id": "initial-diagnosis-questionnaire",
+            "label": "Estructura del Cuestionario de Diagnóstico Financiero Inicial",
+            "type": "textarea",
+            "placeholder": "Ej: 'Sección 1: Datos demográficos y familiares. Sección 2: Ingresos y flujo de caja mensual. Sección 3: Inventario de activos (liquidez, inversiones, bienes raíces). Sección 4: Inventario de deudas y tasas de interés. Sección 5: Coberturas de seguros y planificación sucesoria. Sección 6: 3 Metas a corto, mediano y largo plazo.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-map-onboarding-flow",
+            "task": "Mapear y documentar el flujo de onboarding día por día, incluyendo los puntos de contacto y automatizaciones.",
+            "registryFieldRef": "onboarding-flow-description"
+          },
+          {
+            "id": "chk-design-diagnosis-questionnaire",
+            "task": "Diseñar la estructura y las secciones del cuestionario de diagnóstico financiero inicial que completará el cliente.",
+            "registryFieldRef": "initial-diagnosis-questionnaire"
           }
         ]
-      }
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 0
     },
     {
       "id": "step-pasos-onboarding",
@@ -112,164 +130,11 @@
       }
     },
     {
-      "id": "step-cuestionario-descubrimiento",
-      "title": "Preparar el cuestionario de descubrimiento financiero",
-      "description": "Prepara el cuestionario que envías antes de la primera reunión.",
-      "icon": "clipboard-list",
-      "order": 2,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "step-pasos-onboarding"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": true,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Preparar el cuestionario de descubrimiento financiero",
-          "summary": "Prepara el cuestionario que envías antes de la primera reunión.",
-          "body": "Usa un cuestionario estructurado para no olvidar información clave sobre la situación financiera del cliente."
-        },
-        "objective": {
-          "description": "Preparar el cuestionario de descubrimiento financiero."
-        },
-        "checklist": [
-          {
-            "id": "chk-cuestionario-descubrimiento",
-            "task": "Preparar el cuestionario de descubrimiento financiero.",
-            "completed": false,
-            "registryFieldRef": "reg-cuestionario-drive"
-          }
-        ],
-        "resources": [
-          {
-            "id": "res-cuestionario-financiero",
-            "type": "form",
-            "title": "Cuestionario de descubrimiento financiero",
-            "description": "Preguntas base para conocer la situación financiera de un cliente nuevo antes de la primera reunión.",
-            "provider": "Blueprint",
-            "previewUrl": "",
-            "downloadUrl": "",
-            "embedUrl": "",
-            "thumbnailUrl": "",
-            "mimeType": "",
-            "extension": "",
-            "size": 0,
-            "metadata": {
-              "pages": null,
-              "duration": null,
-              "language": "es"
-            },
-            "tags": [
-              "clientes",
-              "descubrimiento"
-            ],
-            "visibility": "organization"
-          }
-        ],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a redactar un cuestionario de descubrimiento financiero completo.",
-          "context": "El usuario está preparando su proceso de onboarding de clientes.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-cuestionario-drive",
-            "label": "Enlace a la plantilla en Google Drive",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-paquete-bienvenida",
-      "title": "Preparar el paquete de bienvenida para clientes nuevos",
-      "description": "Prepara el material que recibe un cliente nuevo al firmar.",
-      "icon": "gift",
-      "order": 3,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [
-        "step-pasos-onboarding"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": true,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Preparar el paquete de bienvenida para clientes nuevos",
-          "summary": "Prepara el material que recibe un cliente nuevo al firmar contigo.",
-          "body": "El paquete de bienvenida incluye el contrato firmado, el cuestionario, y los próximos pasos claros."
-        },
-        "objective": {
-          "description": "Preparar el paquete de bienvenida para clientes nuevos."
-        },
-        "checklist": [
-          {
-            "id": "chk-paquete-bienvenida",
-            "task": "Preparar el paquete de bienvenida para clientes nuevos.",
-            "completed": false,
-            "registryFieldRef": "reg-paquete-bienvenida-drive"
-          }
-        ],
-        "resources": [
-          {
-            "id": "res-paquete-bienvenida",
-            "type": "template",
-            "title": "Plantilla de paquete de bienvenida",
-            "description": "Estructura base del material que recibe un cliente nuevo al firmar contigo.",
-            "provider": "Blueprint",
-            "previewUrl": "",
-            "downloadUrl": "",
-            "embedUrl": "",
-            "thumbnailUrl": "",
-            "mimeType": "",
-            "extension": "",
-            "size": 0,
-            "metadata": {
-              "pages": null,
-              "duration": null,
-              "language": "es"
-            },
-            "tags": [
-              "clientes"
-            ],
-            "visibility": "organization"
-          }
-        ],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a diseñar un paquete de bienvenida profesional para clientes nuevos.",
-          "context": "El usuario está a punto de recibir a sus primeros clientes.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-paquete-bienvenida-drive",
-            "label": "Enlace al paquete en Google Drive",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
       "id": "step-agendar-primera-reunion",
       "title": "Agendar la primera reunión con el prospecto",
       "description": "Agenda la primera reunión con un cliente potencial.",
       "icon": "calendar",
-      "order": 4,
+      "order": 2,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -324,7 +189,7 @@
       "title": "Enviar el cuestionario financiero previo a la reunión",
       "description": "Envía el cuestionario de descubrimiento antes de la reunión.",
       "icon": "send",
-      "order": 5,
+      "order": 3,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -378,7 +243,7 @@
       "title": "Enviar la agenda de la primera reunión",
       "description": "Envía al cliente lo que se va a cubrir en la reunión.",
       "icon": "send",
-      "order": 6,
+      "order": 4,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -431,7 +296,7 @@
       "title": "Realizar la primera reunión financiera con el cliente",
       "description": "Conoce la situación financiera completa del cliente y establece expectativas claras.",
       "icon": "users",
-      "order": 7,
+      "order": 5,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -598,7 +463,7 @@
       "title": "Enviar el resumen y notas de la primera reunión",
       "description": "Envía un resumen escrito de lo conversado.",
       "icon": "send",
-      "order": 8,
+      "order": 6,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -650,7 +515,7 @@
       "title": "Solicitar los documentos financieros del cliente",
       "description": "Solicita los documentos necesarios para construir el plan.",
       "icon": "folder",
-      "order": 9,
+      "order": 7,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -703,7 +568,7 @@
       "title": "Crear el expediente digital del cliente en el CRM",
       "description": "Registra al cliente en el CRM con toda su información.",
       "icon": "folder",
-      "order": 10,
+      "order": 8,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -756,7 +621,7 @@
       "title": "Construir el plan financiero del cliente",
       "description": "Traduce la información recopilada en un plan financiero claro y accionable.",
       "icon": "line-chart",
-      "order": 11,
+      "order": 9,
       "type": "one_time",
       "estimatedHours": 6,
       "difficulty": "hard",
@@ -832,64 +697,11 @@
       }
     },
     {
-      "id": "step-revisar-plan",
-      "title": "Revisar el plan financiero antes de presentarlo",
-      "description": "Revisa el plan antes de la reunión de presentación.",
-      "icon": "clipboard-check",
-      "order": 12,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [
-        "step-construir-plan"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Revisar el plan financiero antes de presentarlo",
-          "summary": "Revisa el plan antes de la reunión de presentación.",
-          "body": "Revisa cifras, ortografía y claridad antes de presentar el plan al cliente."
-        },
-        "objective": {
-          "description": "Revisar el plan financiero antes de presentarlo al cliente."
-        },
-        "checklist": [
-          {
-            "id": "chk-revisar-plan",
-            "task": "Revisar el plan financiero antes de presentarlo al cliente.",
-            "completed": false,
-            "registryFieldRef": "reg-plan-revisado-drive"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a hacer una revisión final de un plan financiero antes de presentarlo.",
-          "context": "El usuario ya construyó el plan financiero del cliente.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Deja pasar al menos un día entre terminar el plan y revisarlo - revisar inmediatamente después de escribirlo hace más fácil pasar por alto errores.",
-        "registroFields": [
-          {
-            "id": "reg-plan-revisado-drive",
-            "label": "Enlace al plan ya revisado",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
       "id": "step-agendar-presentacion-plan",
       "title": "Agendar la reunión de presentación del plan",
       "description": "Agenda la reunión donde vas a presentar el plan.",
       "icon": "calendar",
-      "order": 13,
+      "order": 10,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -942,7 +754,7 @@
       "title": "Presentar el plan financiero al cliente",
       "description": "Presenta el plan financiero completo al cliente.",
       "icon": "presentation",
-      "order": 14,
+      "order": 11,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -994,7 +806,7 @@
       "title": "Recopilar la firma del cliente sobre el plan acordado",
       "description": "Obtén la confirmación formal del cliente sobre el plan.",
       "icon": "pen-tool",
-      "order": 15,
+      "order": 12,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -1047,7 +859,7 @@
       "title": "Programar el primer seguimiento mensual",
       "description": "Programa la primera reunión de seguimiento con el cliente.",
       "icon": "calendar-clock",
-      "order": 16,
+      "order": 13,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",

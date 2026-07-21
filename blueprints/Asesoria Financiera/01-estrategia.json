@@ -4,93 +4,299 @@
   "block": "strategy",
   "steps": [
     {
-      "id": "v2-step-mision-vision",
-      "title": "Definir la Misión y Visión de la Firma",
-      "description": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
-      "order": 0,
+      "id": "step-declaracion-mision-proposito",
+      "title": "Declaración de Misión y Propósito",
       "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "high",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
       "content": {
         "overview": {
-          "title": "Definir la Misión y Visión de la Firma",
-          "summary": "Redacta una declaración clara que defina tu propósito como asesor financiero.",
-          "body": "Redacta una declaración clara que defina tu propósito como asesor financiero.\n\nEjemplo: 'Ser el brazo administrativo y estratégico que potencia la rentabilidad y sostenibilidad financiera de cada cliente que confía en nosotros'.\n\nLa misión debe comunicar claramente:\n- A quién ayudas\n- Qué problema resuelves\n- Cómo lo haces de forma única\n\nPublícala en un lugar donde puedas revisarla regularmente."
+          "title": "Declaración de Misión y Propósito",
+          "summary": "Definir la razón de ser de la firma de asesoría financiera y el impacto que busca generar en la vida económica de sus clientes.",
+          "body": "La misión es el corazón de tu negocio. En el sector financiero, donde manejas los recursos, los sueños y la tranquilidad de las personas, tu misión debe comunicar claramente tu propósito, a quién sirves y el valor transformador que aportas más allá de los simples números."
         },
         "objective": {
-          "description": "¿Cuál es el propósito fundamental de tu firma de asesoría financiera?"
+          "description": "Redactar una declaración de misión clara, inspiradora y centrada en el cliente, que sirva como guía para todas las decisiones futuras del negocio."
         },
-        "checklist": [
+        "whyItMatters": "Sin una misión clara, una asesoría financiera se convierte en un simple trámite de gestión de inversiones o contabilidad. La misión es lo que te diferencia, atrae al talento adecuado y, sobre todo, genera la confianza inicial que los clientes necesitan para entregarte el control de sus finanzas. Si tu equipo y tus clientes no entienden tu 'porqué', no habrá lealtad a largo plazo.",
+        "bestPractices": [
+          "Enfócate en el impacto en el cliente (ej. 'dar tranquilidad', 'construir libertad') en lugar de solo en la tarea técnica (ej. 'hacer hojas de cálculo').",
+          "Mantén la declaración breve (1 o 2 oraciones) para que sea fácil de recordar y comunicar.",
+          "Asegúrate de que la misión sea auténtica y refleje realmente lo que tú y tu equipo están apasionados por hacer."
+        ],
+        "commonMistakes": [
+          "Usar jerga financiera compleja o clichés corporativos vacíos que no conectan emocionalmente.",
+          "Copiar la misión de un banco grande o de la competencia sin adaptarla a tu realidad y nicho específico.",
+          "Olvidar mencionar al cliente; la misión debe centrarse en cómo le ayudas, no solo en lo grande que quieres ser."
+        ],
+        "tip": "Para redactar tu misión, responde a esta pregunta: 'Si mi firma de asesoría desapareciera mañana, ¿qué vacío emocional o financiero dejaría en la vida de mis clientes?'. La respuesta a esa pregunta es el núcleo de tu verdadera misión.",
+        "recommendedTools": [
           {
-            "id": "v2-chk-mision-01",
-            "task": "Redactar declaración de misión clara y concisa",
-            "completed": false,
-            "registryFieldRef": "v2-reg-mision"
+            "name": "Simon Sinek's Start With Why (Libro/Concepto)",
+            "url": "https://www.startwithwhy.com/"
           },
           {
-            "id": "v2-chk-mision-02",
-            "task": "Definir visión a 3-5 años",
-            "completed": false,
-            "registryFieldRef": "v2-reg-mision"
-          },
-          {
-            "id": "v2-chk-mision-03",
-            "task": "Establecer valores fundamentales",
-            "completed": false,
-            "registryFieldRef": "v2-reg-mision"
-          },
-          {
-            "id": "v2-chk-mision-04",
-            "task": "Documentar propuesta de valor única",
-            "completed": false,
-            "registryFieldRef": "v2-reg-mision"
-          },
-          {
-            "id": "v2-chk-mision-05",
-            "task": "Validar misión con 2-3 colegas de confianza",
-            "completed": false,
-            "registryFieldRef": "v2-reg-mision"
+            "name": "Notion (Para documentar y compartir la misión)",
+            "url": "https://www.notion.so/"
           }
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a redactar la misión, visión y valores fundamentales de su firma de asesoría financiera.",
-          "context": "El usuario está definiendo el propósito y la dirección estratégica de su firma.",
-          "suggestions": [
-            "¿Cómo redacto una declaración de misión para una firma de asesoría financiera?"
-          ]
-        },
-        "knowledge": [],
-        "tip": "Publica la misión en un lugar donde la veas con frecuencia — te va a servir como brújula cuando tengas que tomar decisiones difíciles.",
         "registroFields": [
           {
-            "id": "v2-reg-mision",
-            "label": "Declaración de misión redactada",
+            "id": "mission-statement",
+            "label": "Declaración de Misión",
             "type": "textarea",
+            "placeholder": "Ej: 'Empoderar a profesionales independientes para que alcancen la libertad financiera mediante planes de inversión claros, transparentes y libres de sesgos, permitiéndoles enfocarse en lo que aman.'",
             "required": true
           },
           {
-            "id": "v2-reg-vision",
-            "label": "Visión a 3-5 años",
+            "id": "core-values-list",
+            "label": "Valores Fundamentales del Negocio",
             "type": "textarea",
+            "placeholder": "Ej: 1. Transparencia radical (cero comisiones ocultas). 2. Educación continua del cliente. 3. Confidencialidad absoluta. 4. Empatía ante las crisis económicas.",
             "required": true
           }
+        ],
+        "checklist": [
+          {
+            "id": "chk-draft-mission",
+            "task": "Redactar el borrador de la declaración de misión enfocada en el impacto al cliente.",
+            "registryFieldRef": "mission-statement"
+          },
+          {
+            "id": "chk-define-values",
+            "task": "Definir y listar los valores fundamentales que regirán la operación diaria.",
+            "registryFieldRef": "core-values-list"
+          }
         ]
-      }
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 0
+    },
+    {
+      "id": "step-vision-crecimiento-largo-plazo",
+      "title": "Visión de Crecimiento a Largo Plazo (3-5 años)",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Visión de Crecimiento a Largo Plazo (3-5 años)",
+          "summary": "Proyectar el tamaño, alcance y posición de mercado deseada para la firma de asesoría financiera en el mediano plazo.",
+          "body": "La visión es tu destino. Mientras la misión es tu brújula diaria, la visión te dice hacia dónde navegas. En los servicios financieros, definir esto es crucial para saber si necesitarás contratar analistas, abrir oficinas físicas, desarrollar software propio o expandirte a otros nichos de mercado en los próximos años."
+        },
+        "objective": {
+          "description": "Establecer una meta clara y medible de crecimiento a 3-5 años, definiendo el tamaño del equipo, la cartera de clientes objetivo y la posición en el mercado."
+        },
+        "whyItMatters": "Las asesorías financieras que no tienen una visión de crecimiento suelen estancarse como 'freelancers' o pequeños despachos, limitando sus ingresos y su impacto. Definir la visión te obliga a pensar en la escalabilidad del negocio, a planificar la infraestructura tecnológica necesaria y a atraer inversores o socios que compartan esa ambición.",
+        "bestPractices": [
+          "Haz que la visión sea ambiciosa pero realista; debe retarte pero no desanimarte.",
+          "Incluye métricas cuantificables (ej. 'Gestionar $10M en activos', 'Atender a 200 familias', 'Tener un equipo de 5 analistas').",
+          "Alinea la visión con las tendencias macroeconómicas y demográficas de tu región."
+        ],
+        "commonMistakes": [
+          "Confundir la visión con un plan de ventas anual (la visión es a 3-5 años, no para el próximo trimestre).",
+          "No considerar la capacidad operativa; querer atender a 1,000 clientes sin planear el software o el equipo necesario para hacerlo.",
+          "Ser demasiado genérico (ej. 'Ser la mejor asesoría del país') en lugar de ser específico sobre el nicho o el modelo de servicio."
+        ],
+        "tip": "Para calcular tu capacidad máxima futura, multiplica el número de horas productivas semanales de tu equipo por el tiempo promedio que te toma atender a un cliente ideal. Ese es tu techo operativo actual; tu visión debe incluir cómo romper ese techo (tecnología, delegación, productos digitales).",
+        "recommendedTools": [
+          {
+            "name": "Miro (Para crear mapas visuales de crecimiento)",
+            "url": "https://miro.com/"
+          },
+          {
+            "name": "Statista (Para investigar proyecciones demográficas y económicas)",
+            "url": "https://www.statista.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "vision-statement",
+            "label": "Declaración de Visión (3-5 años)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Ser la firma líder de asesoría financiera para médicos independientes en la región, gestionando más de $15M en activos bajo asesoría y contando con un equipo de 4 planificadores certificados en 2028.'",
+            "required": true
+          },
+          {
+            "id": "max-capacity-target",
+            "label": "Capacidad Máxima de Clientes/Activos Proyectada",
+            "type": "number",
+            "placeholder": "Ej: 250 (clientes) o 15000000 (monto en activos)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-draft-vision",
+            "task": "Redactar la declaración de visión detallando el estado deseado de la firma en 3 a 5 años.",
+            "registryFieldRef": "vision-statement"
+          },
+          {
+            "id": "chk-calc-capacity",
+            "task": "Calcular y registrar la meta numérica de capacidad máxima (clientes o activos bajo gestión).",
+            "registryFieldRef": "max-capacity-target"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 1
+    },
+    {
+      "id": "step-valores-centrales-politicas-etica",
+      "title": "Valores Centrales y Políticas Éticas",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Valores Centrales y Políticas Éticas",
+          "summary": "Establecer el código de conducta, los principios de confidencialidad y los protocolos de cumplimiento normativo que blindarán la reputación de la firma.",
+          "body": "En la asesoría financiera, la ética no es un complemento, es el producto principal. Tus clientes te entregan sus datos más sensibles y su patrimonio. Esta fase define las reglas inquebrantables sobre cómo manejarás conflictos de interés, cómo protegerás la información y cómo te comportarás ante las entidades reguladoras."
+        },
+        "objective": {
+          "description": "Documentar un código de ética formal y definir el nivel de rigor de los protocolos de confidencialidad y cumplimiento (compliance) que regirán la operación."
+        },
+        "whyItMatters": "Un solo escándalo ético o una fuga de datos puede destruir décadas de reputación en minutos y acarrear sanciones legales severas. Tener políticas éticas claras y documentadas no solo te protege legalmente, sino que es tu principal herramienta de marketing: los clientes de alto patrimonio exigen y pagan por la máxima discreción y ética.",
+        "bestPractices": [
+          "Adopta el estándar 'Fiduciario' (actuar siempre en el mejor interés del cliente, por encima de tu propia comisión).",
+          "Documenta explícitamente cómo manejarás los conflictos de interés (ej. si recibes comisiones de terceros por recomendar ciertos productos).",
+          "Establece una política de 'Puertas Abiertas' para que los empleados o clientes puedan reportar prácticas no éticas de forma anónima."
+        ],
+        "commonMistakes": [
+          "Tener un código de ética genérico copiado de internet que no refleja la realidad operativa de tu firma.",
+          "No definir claramente cómo se manejan los datos sensibles (contraseñas, estados de cuenta) en el día a día.",
+          "Priorizar la venta de productos que dejan mayor comisión personal sobre los que realmente necesita el cliente."
+        ],
+        "tip": "Redacta un 'Manifiesto de Confidencialidad' de una sola página que cada empleado y cada nuevo cliente deba firmar. Este documento debe explicar en lenguaje sencillo exactamente qué datos proteges, cómo los cifras y qué sanciones aplicas si se rompe la confidencialidad.",
+        "recommendedTools": [
+          {
+            "name": "CFA Institute Code of Ethics (Referencia global)",
+            "url": "https://www.cfainstitute.org/en/about/standards/code-of-ethics"
+          },
+          {
+            "name": "1Password (Para gestión segura de credenciales del equipo)",
+            "url": "https://1password.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "ethical-code-manifesto",
+            "label": "Código de Ética y Manifiesto de Conducta",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Actuaremos siempre como fiduciarios. 2. No aceptaremos comisiones ocultas de terceros. 3. La confidencialidad de los datos del cliente es absoluta y se almacenan con cifrado de grado bancario...'",
+            "required": true
+          },
+          {
+            "id": "confidentiality-protocol-level",
+            "label": "Nivel de Protocolo de Confidencialidad",
+            "type": "select",
+            "options": [
+              "Estándar Legal (Cumplimiento básico de ley de datos)",
+              "Cifrado Bancario (Cifrado de extremo a extremo en comunicaciones)",
+              "Máxima Seguridad Fiduciaria (Protocolos de grado institucional, salas seguras, auditorías externas)"
+            ],
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-draft-ethics",
+            "task": "Redactar el código de ética y el manifiesto de conducta fiduciaria de la firma.",
+            "registryFieldRef": "ethical-code-manifesto"
+          },
+          {
+            "id": "chk-select-confidentiality",
+            "task": "Definir y seleccionar el nivel de rigor del protocolo de confidencialidad que se implementará.",
+            "registryFieldRef": "confidentiality-protocol-level"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 2
+    },
+    {
+      "id": "step-protocolo-seguimiento-revisiones",
+      "title": "Protocolo de Seguimiento y Revisiones Periódicas con el Cliente",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Protocolo de Seguimiento y Revisiones Periódicas",
+          "summary": "Establecer la cadencia, el formato y las reglas de comunicación para las reuniones de seguimiento, asegurando que el plan financiero se mantenga vigente y adaptado a la vida del cliente.",
+          "body": "Un plan financiero no es un documento estático; la vida cambia (matrimonios, nacimientos, cambios de empleo, crisis de mercado, herencias). Sin un protocolo de seguimiento estructurado, el plan queda obsoleto en 6 meses, el cliente siente que pagó por algo que no le sirve a largo plazo y tu tasa de retención cae drásticamente. Este paso define cómo mantendrás el plan vivo."
+        },
+        "objective": {
+          "description": "Definir la cadencia oficial de revisiones formales (trimestrales, semestrales o anuales) y establecer el protocolo de comunicación y seguimiento entre estas revisiones."
+        },
+        "whyItMatters": "La retención de clientes es la métrica más importante para la rentabilidad a largo plazo de una asesoría financiera. Cuesta 5 veces más adquirir un cliente nuevo que retener uno existente. Un protocolo de seguimiento proactivo (donde tú llamas al cliente, no al revés) demuestra que te importa su éxito continuo, justifica el cobro de fees recurrentes (retainers) y genera referidos orgánicos.",
+        "bestPractices": [
+          "Agenda las revisiones anuales de los próximos 12 meses en la primera reunión de entrega del plan; no esperes a que el cliente te busque.",
+          "Envía un 'Recordatorio de Vida' 30 días antes de la revisión con un mini-cuestionario sobre cambios patrimoniales o familiares recientes.",
+          "Documenta cada reunión de seguimiento con un 'Acta de Acuerdos y Próximos Pasos' enviada por correo dentro de las 24 horas posteriores a la sesión."
+        ],
+        "commonMistakes": [
+          "Dejar que sea el cliente quien tenga que acordarse de agendar la revisión; la mayoría no lo hará hasta que ocurra una crisis.",
+          "No hacer seguimiento a las tareas asignadas al cliente en la reunión anterior (ej. '¿Ya abriste la cuenta de inversión que acordamos?').",
+          "Convertir la revisión anual en una clase de macroeconomía aburrida en lugar de enfocarla en los cambios personales y metas del cliente."
+        ],
+        "tip": "Implementa un 'Chequeo de Mitad de Año' por correo electrónico o video corto (Loom) de 5 minutos entre las revisiones formales. Solo necesitas decir: 'Hola [Nombre], revisé tu portafolio este mes, todo sigue en línea con tu plan, no necesitas hacer nada por ahora. Nos vemos en tu revisión anual en noviembre'. Ese mensaje de 5 minutos vale oro en tranquilidad y percepción de valor.",
+        "recommendedTools": [
+          {
+            "name": "Calendly o Acuity Scheduling (Para que los clientes agenden sus revisiones periódicas automáticamente)",
+            "url": "https://calendly.com/"
+          },
+          {
+            "name": "Loom (Para enviar actualizaciones de mercado o cheques de mitad de año en video personalizado)",
+            "url": "https://www.loom.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "review-cadence-policy",
+            "label": "Cadencia Oficial de Revisiones Periódicas con el Cliente",
+            "type": "select",
+            "options": [
+              "Trimestral (Cada 3 meses - Recomendado para clientes de alto patrimonio o en fase de acumulación agresiva)",
+              "Semestral (Cada 6 meses - Estándar para clientes en fase de mantenimiento)",
+              "Anual (Cada 12 meses - Solo para clientes con planes muy estables y bajo mantenimiento)",
+              "Híbrida (Revisiones formales anuales + Chequeos rápidos trimestrales por email/video)"
+            ],
+            "required": true
+          },
+          {
+            "id": "follow-up-communication-protocol",
+            "label": "Protocolo de Comunicación y Seguimiento entre Revisiones Formales",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Envío de boletín mensual con actualizaciones de mercado (no personalizado). 2. Chequeo de mitad de año por video corto (Loom) confirmando que todo sigue en línea. 3. Canal de WhatsApp/Email exclusivo para dudas urgentes con tiempo de respuesta garantizado de 24 horas hábiles. 4. Acta de acuerdos enviada en menos de 24h post-reunión.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-review-cadence",
+            "task": "Definir y seleccionar la cadencia oficial de revisiones formales que se aplicará según el paquete del cliente.",
+            "registryFieldRef": "review-cadence-policy"
+          },
+          {
+            "id": "chk-establish-communication-protocol",
+            "task": "Establecer y documentar el protocolo de comunicación, seguimiento y tiempos de respuesta entre revisiones formales.",
+            "registryFieldRef": "follow-up-communication-protocol"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 3
     },
     {
       "id": "v2-step-gobernanza",
       "title": "Establecer el Modelo de Gobernanza",
       "description": "Define la relación de independencia y reporte con clientes y stakeholders.",
-      "order": 1,
+      "order": 4,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -160,7 +366,7 @@
       "id": "v2-step-encuesta-necesidades",
       "title": "Realizar Encuesta de Necesidades del Mercado",
       "description": "Entiende qué necesidades financieras tienen tus clientes potenciales antes de lanzar.",
-      "order": 2,
+      "order": 5,
       "type": "one_time",
       "estimatedHours": 3,
       "difficulty": "medium",
@@ -230,7 +436,7 @@
       "id": "v2-rec-kpis-mensual",
       "title": "Revisión Mensual de KPIs",
       "description": "Analiza métricas clave y compara con objetivos.",
-      "order": 3,
+      "order": 6,
       "type": "monthly",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -299,7 +505,7 @@
       "id": "v2-rec-informe-trimestral",
       "title": "Presentar Informe Trimestral",
       "description": "Incluye KPIs, estado financiero, desafíos y logros, objetivos para próximo trimestre.",
-      "order": 4,
+      "order": 7,
       "type": "quarterly",
       "estimatedHours": 3,
       "difficulty": "medium",
@@ -368,7 +574,7 @@
       "id": "v2-rec-revision-estrategia",
       "title": "Revisar y Ajustar Estrategia",
       "description": "Analiza qué servicios son más usados, evalúa feedback y propone mejoras.",
-      "order": 5,
+      "order": 8,
       "type": "quarterly",
       "estimatedHours": 2,
       "difficulty": "medium",

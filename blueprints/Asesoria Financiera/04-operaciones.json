@@ -4,424 +4,177 @@
   "block": "operations",
   "steps": [
     {
-      "id": "step-equipar-oficina",
-      "title": "Equipar tu oficina o espacio de trabajo",
-      "description": "Adquiere el equipo básico que necesitas para operar la firma día a día.",
-      "order": 0,
+      "id": "step-calendario-estacionalidad-flujo-caja",
+      "title": "Calendario de Estacionalidad de Ingresos y Flujo de Caja",
       "type": "one_time",
-      "estimatedHours": 4,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
       "content": {
         "overview": {
-          "title": "Equipar tu oficina o espacio de trabajo",
-          "summary": "Adquiere el equipo básico que necesitas para operar la firma día a día.",
-          "body": "Aunque una asesoría financiera no requiere tanto equipo físico como otros negocios, sí necesitas una base mínima confiable: una computadora adecuada, conexión a internet estable, y un espacio de trabajo donde puedas atender reuniones virtuales sin interrupciones."
+          "title": "Calendario de Estacionalidad de Ingresos y Flujo de Caja",
+          "summary": "Mapear los meses de alta y baja demanda de asesoría financiera para planificar reservas de efectivo y campañas de captación con anticipación.",
+          "body": "La asesoría financiera tiene una estacionalidad marcada: enero (propósitos de año nuevo, declaración anual), abril-mayo (impuestos), septiembre (regreso a rutinas, planificación de fin de año) suelen ser picos. Julio-agosto y diciembre suelen ser valles. Conocer este ciclo te permite construir un colchón de efectivo en meses buenos y planificar campañas de marketing en meses previos a los picos."
         },
         "objective": {
-          "description": "Adquirir y organizar el equipo físico básico necesario para operar la firma."
+          "description": "Identificar los meses de ingresos altos y bajos, calcular el costo de mantenimiento del negocio durante los meses de escasez y diseñar un calendario de flujo de caja que evite crisis de liquidez."
         },
-        "checklist": [
-          {
-            "id": "chk-equipo-computadora",
-            "task": "Comprar o acondicionar una computadora con buen rendimiento",
-            "completed": false,
-            "registryFieldRef": "reg-equipo-detalle"
-          },
-          {
-            "id": "chk-equipo-internet",
-            "task": "Contratar una conexión a internet estable para videollamadas",
-            "completed": false,
-            "registryFieldRef": "reg-equipo-detalle"
-          },
-          {
-            "id": "chk-equipo-espacio",
-            "task": "Definir tu espacio de trabajo (oficina propia, coworking o en casa)",
-            "completed": false,
-            "registryFieldRef": "reg-equipo-detalle"
-          },
-          {
-            "id": "chk-equipo-impresora",
-            "task": "Comprar una impresora si vas a manejar documentos físicos",
-            "completed": false,
-            "registryFieldRef": "reg-equipo-detalle"
-          },
-          {
-            "id": "chk-equipo-basicos",
-            "task": "Abastecer artículos básicos de oficina (papelería, café, agua)",
-            "completed": false,
-            "registryFieldRef": "reg-equipo-detalle"
-          }
+        "whyItMatters": "Muchos asesores financieros cierran no porque no tengan clientes, sino porque tienen un descalce de flujo de caja: gastan como si todos los meses fueran iguales, y cuando llega el mes de vacas flacas no pueden pagar la renta de la oficina o las licencias de software. Un calendario de estacionalidad te permite ahorrar en meses buenos exactamente lo que necesitas para sobrevivir los meses malos sin estrés.",
+        "bestPractices": [
+          "Mapea al menos 2 años de estacionalidad si ya tienes experiencia; si eres nuevo, investiga con colegas del sector o asociaciones profesionales.",
+          "Identifica los 'eventos detonantes' de cada pico (declaración de impuestos, bonos de fin de año, herencias estacionales) y planifica campañas 6 semanas antes.",
+          "Construye un fondo de reserva equivalente a 3 meses de costos fijos + vida personal para cubrir el valle más largo.",
+          "Diversifica tus fuentes de ingreso: combina clientes de pago único (proyectos) con clientes de retainer mensual para suavizar la curva."
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a definir qué equipo básico necesita para operar su firma de asesoría financiera.",
-          "context": "El usuario está equipando su espacio de trabajo antes de recibir a sus primeros clientes.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Un equipo confiable es indispensable para atender reuniones virtuales, construir planes financieros y proteger la información de tus clientes con software actualizado - una falla técnica en medio de una reunión con un cliente proyecta poca seriedad.",
-        "tip": "Prioriza una computadora con buena batería y una cámara y micrófono de calidad si la mayoría de tus reuniones van a ser virtuales - es más importante que la potencia bruta para la mayoría de firmas de servicios.",
-        "registroFields": [
-          {
-            "id": "reg-equipo-detalle",
-            "label": "Detalle de lo comprado",
-            "type": "textarea",
-            "helpText": "Lista lo que compraste (computadora, impresora, mobiliario, etc.)."
-          },
-          {
-            "id": "reg-equipo-costo-total",
-            "label": "Costo total invertido",
-            "type": "number",
-            "placeholder": "Ej. 2500"
-          },
-          {
-            "id": "reg-equipo-facturas-drive",
-            "label": "Enlace a las facturas en Google Drive",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-comparar-crm",
-      "title": "Comparar opciones de CRM para firmas pequeñas",
-      "description": "Compara al menos 2 opciones de CRM.",
-      "icon": "search",
-      "order": 1,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Comparar opciones de CRM para firmas pequeñas",
-          "summary": "Compara al menos 2 opciones de CRM adecuadas para firmas pequeñas.",
-          "body": "Un CRM te permite llevar el historial de cada cliente, sus reuniones y sus documentos en un solo lugar."
-        },
-        "objective": {
-          "description": "Comparar al menos 2 opciones de CRM adecuadas para firmas pequeñas."
-        },
-        "checklist": [
-          {
-            "id": "chk-comparar-crm",
-            "task": "Comparar al menos 2 opciones de CRM adecuadas para firmas pequeñas.",
-            "completed": false,
-            "registryFieldRef": "step-comparar-crm-status"
-          }
+        "commonMistakes": [
+          "Asumir que todos los meses serán iguales y no planificar para los valles de demanda.",
+          "Gastar los ingresos de los meses pico en lujos o expansiones prematuras en lugar de construir la reserva de escasez.",
+          "No considerar que los clientes de retainer también pueden cancelar en masa durante crisis económicas (ej. pandemias, recesiones).",
+          "Ignorar los ciclos de pago de tus clientes corporativos (pymes que pagan a 30, 60 o 90 días)."
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a comparar opciones de CRM para una firma de asesoría financiera pequeña.",
-          "context": "El usuario está montando las herramientas operativas de su firma.",
-          "suggestions": []
-        },
-        "knowledge": [],
+        "tip": "Crea una 'cuenta de estacionalidad' separada. Cada mes de ingreso alto, transfiere automáticamente el 25-30% de la utilidad a esa cuenta. Esa cuenta SOLO se toca en los meses de valle identificados en tu calendario. Trátala como un gasto fijo obligatorio, no como un ahorro opcional.",
         "recommendedTools": [
           {
-            "name": "HubSpot CRM",
-            "url": "https://www.hubspot.com/products/crm"
+            "name": "Float App (Proyección visual de flujo de caja)",
+            "url": "https://www.floatapp.com/"
           },
           {
-            "name": "Notion (como CRM ligero)",
-            "url": "https://www.notion.so"
+            "name": "Google Calendar (Para marcar eventos detonantes fiscales y estacionales)",
+            "url": "https://calendar.google.com/"
           }
         ],
-        "whyItMatters": "Cambiar de CRM después de tener varios clientes cargados es mucho más costoso que comparar bien antes de elegir uno.",
         "registroFields": [
           {
-            "id": "step-comparar-crm-status",
-            "label": "Estado de: Comparar opciones de CRM para firmas pequeñas",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
+            "id": "high-income-months",
+            "label": "Meses de Ingresos Altos (Picos de demanda identificados)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Enero (propósitos financieros), Abril-Mayo (declaración de impuestos), Octubre (planificación fiscal de fin de año). Evento detonante: vencimiento de declaración anual el 30 de abril.'",
+            "required": true
+          },
+          {
+            "id": "low-income-months",
+            "label": "Meses de Escasez o Valle de Demanda",
+            "type": "textarea",
+            "placeholder": "Ej: 'Julio-Agosto (vacaciones, clientes viajan), Diciembre (cierre de año, presupuestos agotados). Duración del valle más largo: 6 semanas.'",
+            "required": true
+          },
+          {
+            "id": "scarcity-maintenance-cost",
+            "label": "Costo Estimado de Mantenimiento en Meses de Escasez",
+            "type": "number",
+            "placeholder": "Ej: 3500 (suma de costos fijos + vida personal durante el valle)",
             "required": true
           }
+        ],
+        "checklist": [
+          {
+            "id": "chk-map-peak-months",
+            "task": "Identificar y registrar los meses de ingresos altos con sus eventos detonantes fiscales o estacionales.",
+            "registryFieldRef": "high-income-months"
+          },
+          {
+            "id": "chk-map-valley-months",
+            "task": "Identificar y registrar los meses de escasez o valle de demanda y su duración estimada.",
+            "registryFieldRef": "low-income-months"
+          },
+          {
+            "id": "chk-calc-scarcity-cost",
+            "task": "Calcular el costo total de mantenimiento del negocio y vida personal durante el período de escasez.",
+            "registryFieldRef": "scarcity-maintenance-cost"
+          }
         ]
-      }
-    },
-    {
-      "id": "step-elegir-crm",
-      "title": "Elegir y contratar el CRM",
-      "description": "Elige y contrata el CRM que vas a usar.",
-      "icon": "users",
-      "order": 2,
-      "type": "one_time",
-      "estimatedHours": 1,
+      },
+      "estimatedHours": 0,
       "difficulty": "easy",
       "priority": "normal",
-      "dependencies": [
-        "step-comparar-crm"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Elegir y contratar el CRM",
-          "summary": "Elige y contrata el CRM que vas a usar.",
-          "body": "Con la comparación hecha, elige y contrata el CRM definitivo."
-        },
-        "objective": {
-          "description": "Elegir y contratar el CRM definitivo."
-        },
-        "checklist": [
-          {
-            "id": "chk-elegir-crm",
-            "task": "Elegir y contratar el CRM definitivo.",
-            "completed": false,
-            "registryFieldRef": "reg-crm-elegido"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a tomar la decisión final sobre su CRM.",
-          "context": "El usuario ya comparó las opciones de CRM disponibles.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-crm-elegido",
-            "label": "CRM elegido",
-            "type": "text"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-configurar-crm",
-      "title": "Configurar el CRM con tus paquetes de servicios",
-      "description": "Configura el CRM elegido con tus paquetes de servicios.",
-      "icon": "wrench",
-      "order": 3,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [
-        "step-elegir-crm",
-        "step-alcance-paquetes"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Configurar el CRM con tus paquetes de servicios",
-          "summary": "Configura el CRM elegido con tus paquetes de servicios.",
-          "body": "Configura el CRM con tus paquetes, etapas del proceso de venta y campos personalizados para clientes de asesoría financiera."
-        },
-        "objective": {
-          "description": "Configurar el CRM elegido con tus paquetes de servicios."
-        },
-        "checklist": [
-          {
-            "id": "chk-configurar-crm",
-            "task": "Configurar el CRM elegido con tus paquetes de servicios.",
-            "completed": false,
-            "registryFieldRef": "reg-configuracion-crm-drive"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a configurar su CRM para una firma de asesoría financiera.",
-          "context": "El usuario ya eligió su CRM y tiene sus paquetes de servicios definidos.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Configura al menos una automatización simple desde el inicio (por ejemplo, un recordatorio de seguimiento) - te ahorra tiempo desde el primer cliente.",
-        "registroFields": [
-          {
-            "id": "reg-configuracion-crm-drive",
-            "label": "Enlace a la configuración documentada del CRM",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-comparar-planificacion",
-      "title": "Comparar software de planificación financiera",
-      "description": "Compara opciones de software de planificación financiera.",
-      "icon": "search",
-      "order": 4,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "high",
       "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
+      "order": 0
+    },
+    {
+      "id": "step-configuracion-crm-automatizacion-embudos",
+      "title": "Configuración de CRM y Automatización de Embudos de Venta",
+      "type": "one_time",
       "content": {
         "overview": {
-          "title": "Comparar software de planificación financiera",
-          "summary": "Compara opciones de software de planificación financiera.",
-          "body": "La herramienta de planificación financiera es el corazón de tu operación: ahí vas a proyectar escenarios y calcular metas de ahorro y retiro."
+          "title": "Configuración de CRM y Automatización de Embudos de Venta",
+          "summary": "Implementar un sistema de gestión de relaciones con clientes (CRM) y diseñar las automatizaciones que guiarán al prospecto desde que descarga un recurso hasta que agenda una cita.",
+          "body": "Un asesor financiero que lleva sus prospectos en la cabeza, en post-its o en el correo personal está dejando dinero sobre la mesa y cometiendo errores de seguimiento. Un CRM te permite saber exactamente en qué etapa está cada prospecto, automatizar los correos de nutrición y asegurar que ninguna oportunidad de negocio se enfríe por falta de seguimiento."
         },
         "objective": {
-          "description": "Comparar opciones de software de planificación financiera."
+          "description": "Seleccionar e implementar un CRM, definir las etapas del embudo de ventas específicas para servicios financieros y configurar la secuencia de correos automatizada post-descarga."
         },
-        "checklist": [
+        "whyItMatters": "El seguimiento es donde se cierran los contratos de asesoría. Estadísticamente, se necesitan entre 5 y 8 puntos de contacto para que un cliente de alto patrimonio tome la decisión de contratarte. Sin un CRM y automatizaciones, es humanamente imposible mantener un seguimiento personalizado y constante con decenas de prospectos simultáneamente.",
+        "bestPractices": [
+          "Define etapas claras en tu embudo: 'Nuevo Lead', 'Recurso Descargado', 'Email de Nutrición Enviado', 'Cita Agendada', 'Diagnóstico Realizado', 'Propuesta Enviada', 'Cliente Ganado/Perdido'.",
+          "Configura una secuencia de 3 a 5 correos automatizados que se envíen en los días posteriores a la descarga del Lead Magnet, aportando valor y terminando con una invitación a agendar.",
+          "Integra tu CRM con tu calendario (ej. Calendly) para que, cuando el prospecto haga clic en 'Agendar', el sistema bloquee el horario y cree la tarea automáticamente."
+        ],
+        "commonMistakes": [
+          "Comprar un CRM demasiado complejo (como Salesforce) para un equipo de 1 o 2 personas, terminando por no usarlo por la curva de aprendizaje.",
+          "Configurar automatizaciones que suenan a 'robot corporativo' en lugar de usar un tono personal, empático y directo (ej. 'Hola [Nombre], vi que descargaste la guía...').",
+          "No definir un proceso claro para los leads que 'se quedan estancados' en una etapa intermedia (ej. ¿qué pasa si agendaron pero no asistieron?)."
+        ],
+        "tip": "Configura una 'Tarea de Oro' en tu CRM: Si un prospecto abre tu correo de seguimiento más de 3 veces o hace clic en el enlace de precios, el sistema debe enviarte una notificación inmediata a tu celular. Ese es el momento exacto en que están evaluando contratarte; llámalos o escríbeles en ese instante.",
+        "recommendedTools": [
           {
-            "id": "chk-comparar-planificacion",
-            "task": "Comparar opciones de software de planificación financiera.",
-            "completed": false,
-            "registryFieldRef": "step-comparar-planificacion-status"
+            "name": "HubSpot CRM (Excelente para automatización de marketing y embudos)",
+            "url": "https://www.hubspot.com/"
+          },
+          {
+            "name": "Wealthbox o Redtail (CRMs diseñados específicamente para asesores financieros)",
+            "url": "https://www.wealthbox.com/"
           }
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a comparar opciones de software de planificación financiera.",
-          "context": "El usuario está montando las herramientas operativas de su firma.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Esta herramienta es donde vas a pasar más tiempo trabajando con cada cliente - una interfaz confusa te va a costar horas cada semana.",
         "registroFields": [
           {
-            "id": "step-comparar-planificacion-status",
-            "label": "Estado de: Comparar software de planificación financiera",
+            "id": "crm-software-selected",
+            "label": "Software CRM Seleccionado e Implementado",
             "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
+            "placeholder": "Ej: HubSpot CRM / Wealthbox",
+            "required": true
+          },
+          {
+            "id": "sales-funnel-stages",
+            "label": "Etapas del Embudo de Ventas Definidas",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Lead Frío (Descargó recurso). 2. Lead Nutrido (Recibió secuencia de 4 emails). 3. Cita de Diagnóstico Agendada. 4. Plan Financiero Propuesto. 5. Cliente Activo (Firmó contrato).'",
+            "required": true
+          },
+          {
+            "id": "key-automation-configured",
+            "label": "Automatización Clave Configurada (Ej. Secuencia post-descarga)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Secuencia de 3 correos: Día 1 (Entrega del recurso + bienvenida). Día 3 (Caso de éxito de un cliente similar). Día 7 (Invitación directa a agendar diagnóstico de 15 min).'",
             "required": true
           }
+        ],
+        "checklist": [
+          {
+            "id": "chk-select-setup-crm",
+            "task": "Seleccionar, adquirir y configurar la cuenta del software CRM para la firma.",
+            "registryFieldRef": "crm-software-selected"
+          },
+          {
+            "id": "chk-define-funnel-stages",
+            "task": "Mapear y configurar las etapas del embudo de ventas en el CRM.",
+            "registryFieldRef": "sales-funnel-stages"
+          },
+          {
+            "id": "chk-configure-automation",
+            "task": "Diseñar y activar la secuencia de correos automatizada para la nutrición de leads.",
+            "registryFieldRef": "key-automation-configured"
+          }
         ]
-      }
-    },
-    {
-      "id": "step-elegir-planificacion",
-      "title": "Elegir y contratar el software de planificación financiera",
-      "description": "Elige y contrata el software definitivo.",
-      "icon": "line-chart",
-      "order": 5,
-      "type": "one_time",
-      "estimatedHours": 1,
+      },
+      "estimatedHours": 0,
       "difficulty": "easy",
-      "priority": "high",
-      "dependencies": [
-        "step-comparar-planificacion"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Elegir y contratar el software de planificación financiera",
-          "summary": "Elige y contrata el software de planificación financiera definitivo.",
-          "body": "Con la comparación hecha, elige y contrata la herramienta definitiva."
-        },
-        "objective": {
-          "description": "Elegir y contratar el software de planificación financiera definitivo."
-        },
-        "checklist": [
-          {
-            "id": "chk-elegir-planificacion",
-            "task": "Elegir y contratar el software de planificación financiera definitivo.",
-            "completed": false,
-            "registryFieldRef": "reg-software-planificacion"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a tomar la decisión final sobre su software de planificación financiera.",
-          "context": "El usuario ya comparó las opciones disponibles.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-software-planificacion",
-            "label": "Software de planificación elegido",
-            "type": "text"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-plantilla-plan",
-      "title": "Configurar una plantilla base de plan financiero",
-      "description": "Configura una plantilla base de plan financiero.",
-      "icon": "file-text",
-      "order": 6,
-      "type": "one_time",
-      "estimatedHours": 4,
-      "difficulty": "medium",
       "priority": "normal",
-      "dependencies": [
-        "step-elegir-planificacion"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Configurar una plantilla base de plan financiero",
-          "summary": "Configura una plantilla base de plan financiero.",
-          "body": "Crea una plantilla base que vas a reutilizar (y personalizar) con cada cliente nuevo."
-        },
-        "objective": {
-          "description": "Tener una plantilla base de plan financiero configurada."
-        },
-        "checklist": [
-          {
-            "id": "chk-plantilla-plan",
-            "task": "Tener una plantilla base de plan financiero configurada.",
-            "completed": false,
-            "registryFieldRef": "reg-plantilla-plan-drive"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a estructurar una plantilla base de plan financiero.",
-          "context": "El usuario ya eligió su software de planificación financiera.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-plantilla-plan-drive",
-            "label": "Enlace a la plantilla en Google Drive",
-            "type": "url"
-          }
-        ]
-      }
+      "dependencies": [],
+      "order": 1
     },
     {
       "id": "step-agendamiento",
       "title": "Elegir una herramienta de agendamiento de citas",
       "description": "Elige una herramienta de agendamiento de citas.",
       "icon": "calendar",
-      "order": 7,
+      "order": 2,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -472,7 +225,7 @@
       "title": "Conectar la herramienta de agendamiento a tu calendario",
       "description": "Conecta la herramienta de agendamiento a tu calendario personal.",
       "icon": "calendar-check",
-      "order": 8,
+      "order": 3,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -525,7 +278,7 @@
       "title": "Elegir una herramienta de firma electrónica",
       "description": "Elige una herramienta de firma electrónica para contratos.",
       "icon": "pen-tool",
-      "order": 9,
+      "order": 4,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -576,7 +329,7 @@
       "title": "Configurar las carpetas de almacenamiento por cliente",
       "description": "Configura la estructura de carpetas que vas a usar con cada cliente.",
       "icon": "folder",
-      "order": 10,
+      "order": 5,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -628,7 +381,7 @@
       "title": "Contratar una línea telefónica profesional",
       "description": "Contrata una línea telefónica separada de tu número personal.",
       "icon": "phone",
-      "order": 11,
+      "order": 6,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -670,63 +423,6 @@
             "id": "reg-numero-linea-profesional",
             "label": "Número de línea profesional",
             "type": "phone"
-          }
-        ]
-      }
-    },
-    {
-      "id": "step-formato-entregable",
-      "title": "Definir el formato del entregable final para el cliente",
-      "description": "Define el formato final del plan que le entregas al cliente.",
-      "icon": "file-check",
-      "order": 12,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [
-        "step-proceso-analisis"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Definir el formato del entregable final para el cliente",
-          "summary": "Define el formato del entregable final para el cliente.",
-          "body": "Define cómo se va a ver el documento final que recibe cada cliente, con tu marca y una estructura consistente."
-        },
-        "objective": {
-          "description": "Definir el formato del entregable final para el cliente."
-        },
-        "checklist": [
-          {
-            "id": "chk-formato-entregable",
-            "task": "Definir el formato del entregable final para el cliente.",
-            "completed": false,
-            "registryFieldRef": "reg-formato-entregable-drive"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a definir el formato de su entregable final para clientes.",
-          "context": "El usuario ya documentó su proceso de análisis financiero.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-formato-entregable-drive",
-            "label": "Enlace a la plantilla final en Google Drive",
-            "type": "url"
-          },
-          {
-            "id": "reg-formato-entregable-descripcion",
-            "label": "Descripción del entregable final",
-            "type": "textarea"
           }
         ]
       }

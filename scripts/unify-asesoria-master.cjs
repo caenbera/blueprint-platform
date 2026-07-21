@@ -4,20 +4,23 @@ const path = require('path');
 
 const origPath = path.resolve('blueprints/asesoria-financiera.json');
 const v3Path = path.resolve('blueprints/asesoria-financiera-v3-linear.json');
+const profPath = path.resolve('blueprints/asesoria-financiera-profesional-orig36.json');
 const targetDir = path.resolve('blueprints/Asesoria Financiera');
 
-if (!fs.existsSync(origPath) || !fs.existsSync(v3Path)) {
+if (!fs.existsSync(origPath) || !fs.existsSync(v3Path) || !fs.existsSync(profPath)) {
   console.error("❌ Error: Faltan archivos de origen para realizar la fusión.");
   process.exit(1);
 }
 
 const orig = JSON.parse(fs.readFileSync(origPath, 'utf8'));
 const v3 = JSON.parse(fs.readFileSync(v3Path, 'utf8'));
+const prof = JSON.parse(fs.readFileSync(profPath, 'utf8'));
 
 const origSteps = (orig.roadmap || []).flatMap(p => p.steps || []);
 const v3Steps = (v3.roadmap || []).flatMap(p => p.steps || []);
+const profSteps = (prof.roadmap || []).flatMap(p => p.steps || []);
 
-console.log(`📊 Total Pasos Iniciales - Original: ${origSteps.length} | v3-Linear: ${v3Steps.length}`);
+console.log(`📊 Total Pasos Iniciales - Original: ${origSteps.length} | v3-Linear: ${v3Steps.length} | Profesional Pulido: ${profSteps.length}`);
 
 // Normalización de texto para búsqueda semántica
 function cleanString(str) {
@@ -57,7 +60,6 @@ const phasesMeta = {
 
 function getDestKey(s, origPhaseTitle) {
   const title = cleanTextForSearch(s.title);
-  const id = s.id.toLowerCase();
   const type = s.type || 'one_time';
   
   if (type !== 'one_time') {
@@ -109,63 +111,272 @@ function getDestKey(s, origPhaseTitle) {
   }
 
   // Fallbacks if phase title is empty (for v3-linear unique steps)
-  if (title.includes('mision') || title.includes('vision') || title.includes('proposito') || title.includes('gobernanza') || title.includes('mercado') || title.includes('encuesta')) return '01-estrategia';
-  if (title.includes('kpi') || title.includes('presupuesto') || title.includes('equilibrio')) return '02-estrategia';
-  if (title.includes('catalogo') || title.includes('tarifa') || title.includes('cobro') || title.includes('paquete')) return '03-estrategia';
+  if (title.includes('mision') || title.includes('vision') || title.includes('proposito') || title.includes('gobernanza') || title.includes('mercado') || title.includes('encuesta') || title.includes('valores')) return '01-estrategia';
+  if (title.includes('kpi') || title.includes('presupuesto') || title.includes('equilibrio') || title.includes('costos')) return '02-estrategia';
+  if (title.includes('catalogo') || title.includes('tarifa') || title.includes('cobro') || title.includes('paquete') || title.includes('servicios core')) return '03-estrategia';
   if (title.includes('seguro') || title.includes('riesgo') || title.includes('crisis')) return '09-negocios';
   if (title.includes('banc') || title.includes('cuenta') || title.includes('contabil')) return '08-negocios';
   if (title.includes('entidad') || title.includes('mercantil') || title.includes('registro') || title.includes('contrato') || title.includes('certificac') || title.includes('examen') || title.includes('kyc') || title.includes('aml')) return '07-negocios';
-  if (title.includes('color') || title.includes('tipograf') || title.includes('logo') || title.includes('eslogan') || title.includes('biograf') || title.includes('foto')) return '11-clientes';
-  if (title.includes('dominio') || title.includes('hosting') || title.includes('sitio web') || title.includes('web') || title.includes('google business') || title.includes('seo')) return '12-clientes';
+  if (title.includes('color') || title.includes('tipograf') || title.includes('logo') || title.includes('eslogan') || title.includes('biograf') || title.includes('foto') || title.includes('logotipo')) return '11-clientes';
+  if (title.includes('dominio') || title.includes('hosting') || title.includes('sitio web') || title.includes('web') || title.includes('google business') || title.includes('seo') || title.includes('maps')) return '12-clientes';
   if (title.includes('onboarding') || title.includes('bienvenida') || title.includes('cuestionario') || title.includes('reunion') || title.includes('plan financiero')) return '05-operaciones';
   if (title.includes('crm') || title.includes('agendamiento') || title.includes('calendario') || title.includes('firma electronica') || title.includes('almacenamiento') || title.includes('linea telefonica')) return '04-operaciones';
   
   return '13-clientes';
 }
 
-const allStepsToMerge = [];
+// Mapa conceptual de equivalencia: los 36 pasos profesionales absorben/reemplazan ciertos grupos de pasos granulares de la versión de 120
+const conceptMapping = {
+  'declaracion de mision y proposito': [
+    'declaracion de mision y proposito',
+    'definir la mision y vision de la firma'
+  ],
+  'vision de crecimiento a largo plazo 3 5 anos': [
+    'vision de crecimiento a largo plazo 3 5 anos'
+  ],
+  'valores centrales y politicas eticas': [
+    'valores centrales y politicas eticas'
+  ],
+  'perfil del cliente ideal y segmento': [
+    'perfil del cliente ideal y segmento',
+    'describir el perfil demografico de tu cliente ideal',
+    'identificar los principales dolores y metas de tu cliente ideal'
+  ],
+  'calculo de costos y punto de equilibrio': [
+    'calculo de costos y punto de equilibrio',
+    'costos fijos y variables',
+    'calcular tu tarifa objetivo',
+    'documentar la estructura de tarifas final',
+    'calcular tarifa'
+  ],
+  'calendario de estacionalidad de ingresos y flujo de caja': [
+    'calendario de estacionalidad de ingresos y flujo de caja'
+  ],
+  'definicion de kpis y metas anuales': [
+    'definicion de kpis y metas anuales',
+    'desarrollar los kpis estrategicos'
+  ],
+  'definicion de servicios core': [
+    'disenar el catalogo de servicios',
+    'listar todos los servicios de asesoria que podrías ofrecer',
+    'priorizar los servicios principales para lanzar',
+    'definir el perfil de cliente para cada servicio',
+    'definicion de servicios core',
+    'disenar el catalogo de servicios'
+  ],
+  'estructura de tarifas y modelos de cobro': [
+    'definir estructura de tarifas',
+    'comparar los modelos de cobro habituales del sector',
+    'estructura de tarifas y modelos de cobro'
+  ],
+  'analisis de competencia y propuesta de valor diferencial': [
+    'analisis de competencia y propuesta de valor diferencial'
+  ],
+  'configuracion de entorno de trabajo seguro y ergonomico': [
+    'equipar tu oficina o espacio de trabajo',
+    'configuracion de entorno de trabajo seguro y ergonomico'
+  ],
+  'seleccion e implementacion de software de planificacion financiera y cifrado': [
+    'elegir software de planificacion financiera',
+    'comparar software de planificacion financiera',
+    'elegir y contratar el software de planificacion financiera',
+    'configurar una plantilla base de plan financiero',
+    'seleccion e implementacion de software de planificacion financiera y cifrado'
+  ],
+  'protocolos de seguridad de la informacion y confidencialidad': [
+    'redactar la politica de confidencialidad y manejo de datos',
+    'definir donde y como se almacenara la informacion de los clientes',
+    'definir tu politica de retencion de registros',
+    'protocolos de seguridad de la informacion y confidencialidad'
+  ],
+  'diseno del proceso de onboarding y diagnostico financiero inicial': [
+    'disenar proceso de onboarding',
+    'preparar cuestionario de descubrimiento financiero',
+    'disenar el proceso de bienvenida',
+    'preparar el cuestionario de descubrimiento financiero',
+    'preparar el paquete de bienvenida para clientes nuevos',
+    'diseno del proceso de onboarding y diagnostico financiero inicial'
+  ],
+  'estandarizacion de la entrega de planes financieros formatos y plantillas': [
+    'revisar el plan financiero antes de presentarlo',
+    'documentar los pasos del proceso de analisis financiero',
+    'definir el formato del entregable final para el cliente',
+    'estandarizacion de la entrega de planes financieros formatos y plantillas'
+  ],
+  'protocolo de seguimiento y revisiones periodicas con el cliente': [
+    'protocolo de seguimiento y revisiones periodicas con el cliente'
+  ],
+  'constitucion y registro mercantil': [
+    'elegir el nombre comercial de la firma',
+    'verificar disponibilidad del nombre comercial',
+    'elegir la estructura legal definitiva',
+    'reunir los documentos requeridos para el registro',
+    'presentar el tramite de registro mercantil',
+    'obtener el numero de identificacion tributaria',
+    'registrar la firma ante el municipio o autoridad local',
+    'constitucion y registro mercantil'
+  ],
+  'registros y certificaciones oficiales': [
+    'investigar que certificacion exige el regulador de tu pais',
+    'inscribirte al examen o proceso de certificacion',
+    'presentar el examen de certificacion',
+    'obtener el numero de registro profesional',
+    'registros y certificaciones oficiales'
+  ],
+  'estructura de contratos legales': [
+    'redactar el borrador del contrato de servicios',
+    'hacer revisar el contrato por un abogado',
+    'redactar la politica de cancelacion y reembolsos',
+    'redactar contrato de servicios',
+    'estructura de contratos legales'
+  ],
+  'cuentas bancarias comerciales': [
+    'comparar bancos con cuentas para empresas de servicios profesionales',
+    'reunir los documentos requeridos por el banco',
+    'abrir la cuenta bancaria empresarial',
+    'activar la banca en línea',
+    'abrir cuenta bancaria empresarial',
+    'cuentas bancarias comerciales'
+  ],
+  'software contable y conciliacion': [
+    'elegir un software de contabilidad',
+    'configurar el software de contabilidad',
+    'elegir y configurar software contable',
+    'software contable y conciliacion'
+  ],
+  'contratacion de seguro de responsabilidad civil profesional eo': [
+    'cotizar seguros de responsabilidad profesional',
+    'contratar el seguro de responsabilidad profesional',
+    'contratar seguro de responsabilidad profesional e o',
+    'contratacion de seguro de responsabilidad civil profesional eo'
+  ],
+  'protocolo de continuidad del negocio y de gestion de crisis': [
+    'protocolo de continuidad del negocio y gestion de crisis'
+  ],
+  'diseno de logotipo y paleta de colores': [
+    'definir la paleta de colores de marca',
+    'elegir la tipografia de marca',
+    'definir las variantes del logo',
+    'disenar la tarjeta de presentacion',
+    'disenar el membrete',
+    'configurar la firma de correo de marca',
+    'definir el nombre comercial visible al publico',
+    'escribir el eslogan de la firma',
+    'escribir el eslogan',
+    'definir paleta de colores',
+    'elegir tipografia',
+    'disenar el logo',
+    'diseno de logotipo y paleta de colores'
+  ],
+  'registro de dominio y sitio web basico': [
+    'registrar el dominio del sitio web',
+    'contratar el hosting del sitio web',
+    'elegir la plataforma para construir el sitio web',
+    'definir el mapa del sitio',
+    'redactar el contenido de la pagina de inicio',
+    'redactar la pagina de servicios',
+    'redactar la pagina sobre mi nosotros',
+    'redactar la pagina de contacto',
+    'publicar la politica de privacidad en el sitio',
+    'configurar el correo electronico profesional',
+    'registrar dominio y contratar hosting',
+    'definir mapa del sitio',
+    'redactar contenido de pagina de inicio',
+    'publicar el sitio web',
+    'registro de dominio y sitio web basico'
+  ],
+  'ficha en google maps y seo local': [
+    'crear el perfil de google business profile',
+    'crear google business profile',
+    'registrar la firma en directorios profesionales del sector',
+    'registrar tu firma en sitios de resenas relevantes del sector',
+    'ficha en google maps y seo local'
+  ],
+  'creacion de material educativo y lead magnets': [
+    'escribir tu biografia profesional',
+    'tomar fotografias profesionales',
+    'definir el tono de comunicacion de la marca',
+    'redactar el guion de presentacion de 30 segundos',
+    'disenar un folleto o material de presentacion descargable',
+    'creacion de material educativo y lead magnets'
+  ],
+  'configuracion de crm y automatizacion de embudos de venta': [
+    'comparar opciones de crm para firmas pequenas',
+    'elegir y contratar el crm',
+    'configurar el crm con tus paquetes de servicios',
+    'elegir crm para la firma',
+    'configuracion de crm y automatizacion de embudos de venta'
+  ],
+  'programa de referidos y fidelizacion de clientes': [
+    'definir tu programa de referidos',
+    'implementar programa de referidos',
+    'programa de referidos y fidelizacion de clientes'
+  ]
+};
 
-// 1. Agregar todos los 120 pasos originales
-origSteps.forEach(s => {
-  const pInfo = orig.roadmap.find(p => p.steps.some(st => st.id === s.id));
-  const origPhaseTitle = pInfo ? pInfo.title : '';
-  allStepsToMerge.push({
-    step: s,
-    origPhaseTitle
+// Crear conjunto de títulos cubiertos conceptualmente por la versión profesional pulida
+const coveredTitles = new Set();
+
+Object.entries(conceptMapping).forEach(([profKey, origList]) => {
+  coveredTitles.add(cleanString(profKey));
+  origList.forEach(item => {
+    coveredTitles.add(cleanString(item));
   });
 });
 
-// Lista blanca de pasos one_time de v3 que son verdaderamente exclusivos/nuevos
-const uniqueV3OneTimeTitles = [
-  'definir la mision y vision de la firma',
-  'establecer el modelo de gobernanza',
-  'desarrollar los kpis estrategicos',
-  'realizar encuesta de necesidades del mercado',
-  'implementar politicas kyc/aml'
-];
+const allStepsToMerge = [];
 
-// 2. Agregar pasos de v3-linear (recurrentes + one_time exclusivos de la lista blanca)
-v3Steps.forEach(v3s => {
-  const type = v3s.type || 'one_time';
-  const titleClean = cleanString(v3s.title);
-  
-  if (type === 'one_time') {
-    const isWhiteListed = uniqueV3OneTimeTitles.some(t => cleanString(t) === titleClean);
-    if (!isWhiteListed) return; // Se descarta para evitar duplicados del original de 120
-  }
+// 1. Añadir los 36 pasos profesionales pulidos como el core maestro de la unificación (100% de calidad)
+profSteps.forEach(s => {
+  allStepsToMerge.push({
+    step: s,
+    origPhaseTitle: '' // Se guiará por fallbacks de palabras clave
+  });
+});
 
-  const dup = allStepsToMerge.some(item => cleanString(item.step.title) === titleClean);
-  
-  if (!dup) {
-    console.log(`➕ Agregando paso exclusivo de v3: "${v3s.title}" (type: ${v3s.type || 'one_time'})`);
+// 2. Añadir los pasos adicionales de la versión de 120 que NO están cubiertos conceptualmente
+origSteps.forEach(s => {
+  const cleanT = cleanString(s.title);
+  if (!coveredTitles.has(cleanT)) {
+    console.log(`➕ Añadiendo paso granular de 120: "${s.title}"`);
+    const pInfo = orig.roadmap.find(p => p.steps.some(st => st.id === s.id));
+    const origPhaseTitle = pInfo ? pInfo.title : '';
     allStepsToMerge.push({
-      step: v3s,
-      origPhaseTitle: ''
+      step: s,
+      origPhaseTitle
     });
   }
 });
 
-// 3. Mapear y distribuir en el mapa de fases estándar
+// 3. Añadir los pasos recurrentes y los one_time exclusivos de la lista blanca de v3-linear que NO estén cubiertos
+const uniqueV3OneTimeTitles = [
+  'establecer el modelo de gobernanza',
+  'realizar encuesta de necesidades del mercado',
+  'implementar politicas kyc/aml'
+];
+
+v3Steps.forEach(v3s => {
+  const type = v3s.type || 'one_time';
+  const cleanT = cleanString(v3s.title);
+
+  if (type === 'one_time') {
+    const isUnique = uniqueV3OneTimeTitles.some(t => cleanString(t) === cleanT);
+    if (!isUnique) return; // Se descarta porque ya está cubierto en 36 o en 120
+  }
+
+  if (!coveredTitles.has(cleanT)) {
+    const dup = allStepsToMerge.some(item => cleanString(item.step.title) === cleanT);
+    if (!dup) {
+      console.log(`➕ Añadiendo paso exclusivo de v3: "${v3s.title}" (type: ${type})`);
+      allStepsToMerge.push({
+        step: v3s,
+        origPhaseTitle: ''
+      });
+    }
+  }
+});
+
+// 4. Mapear y distribuir en el mapa de fases estándar
 allStepsToMerge.forEach(({ step, origPhaseTitle }) => {
   const destKey = getDestKey(step, origPhaseTitle);
   
@@ -176,7 +387,7 @@ allStepsToMerge.forEach(({ step, origPhaseTitle }) => {
   }
 });
 
-// 4. Salvar archivos fragmentados
+// 5. Salvar archivos fragmentados
 let totalSteps = 0;
 Object.entries(phasesMeta).forEach(([key, phase]) => {
   const filename = `${key}.json`;
@@ -229,6 +440,6 @@ Object.entries(phasesMeta).forEach(([key, phase]) => {
 });
 
 console.log(`=======================================================`);
-console.log(`🎉 ¡FUSIÓN MÁXIMA COMPLETA CON RESPETO A GRANULARIDAD!`);
+console.log(`🎉 ¡FUSIÓN MÁXIMA E HIGIÉNICA COMPLETADA!`);
 console.log(`📊 Total Pasos Distribuidos: ${totalSteps}`);
 console.log(`=======================================================`);

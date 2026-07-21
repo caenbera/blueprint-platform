@@ -4,118 +4,617 @@
   "block": "customers",
   "steps": [
     {
-      "id": "step-cliente-ideal-perfil",
-      "title": "Describir el perfil demográfico de tu cliente ideal",
-      "description": "Construye el perfil del cliente al que mejor puedes servir.",
-      "icon": "target",
-      "order": 0,
+      "id": "step-perfil-cliente-ideal-segmento",
+      "title": "Perfil del Cliente Ideal y Segmento",
       "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "easy",
-      "priority": "high",
-      "dependencies": [
-        "step-priorizar-servicios"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
       "content": {
         "overview": {
-          "title": "Describir el perfil demográfico de tu cliente ideal",
-          "summary": "Construye el perfil demográfico y financiero de tu cliente ideal.",
-          "body": "Conocer a tu cliente ideal te permite enfocar tus esfuerzos de marketing donde realmente generan resultado."
+          "title": "Perfil del Cliente Ideal y Segmento",
+          "summary": "Definir con precisión quirúrgica a quién vas a asesorar, sus dolores financieros, su nivel de ingresos y sus motivaciones profundas.",
+          "body": "El error número uno en los servicios financieros es querer asesorar a 'todo el mundo'. Un estudiante universitario, un empresario en quiebra y un médico pre-jubilado tienen necesidades, lenguaje y tolerancia al riesgo completamente distintos. Esta fase te obliga a nichar tu mercado para poder crear servicios, mensajes y tarifas que resuenen profundamente."
         },
         "objective": {
-          "description": "Describir el perfil demográfico y financiero de tu cliente ideal."
+          "description": "Crear el 'Buyer Persona' detallado de tu cliente ideal y estimar el tamaño real del mercado objetivo en tu zona de influencia."
         },
-        "checklist": [
+        "whyItMatters": "El error de querer asesorar a todos es letal. Nichar tu asesoría financiera te permite cobrar tarifas más altas (porque eres un especialista, no un generalista), reduce tu costo de adquisición de clientes (porque sabes exactamente dónde buscarlos) y te permite estandarizar tus procesos, ya que los problemas financieros de un nicho específico suelen ser muy similares entre sí.",
+        "bestPractices": [
+          "Define no solo datos demográficos (edad, ingresos), sino psicográficos (miedos, aspiraciones, relación emocional con el dinero).",
+          "Identifica el 'momento de dolor' exacto que los lleva a buscarte (ej. venta de una empresa, herencia, divorcio, miedo a la jubilación).",
+          "Valida que el nicho elegido tenga suficiente capacidad de pago para sostener tu modelo de negocio."
+        ],
+        "commonMistakes": [
+          "Elegir un nicho demasiado amplio (ej. 'personas con dinero') en lugar de uno específico (ej. 'dueños de pymes en transición de venta').",
+          "Ignorar la psicología del dinero; no entender que las decisiones financieras de tus clientes están dictadas por el miedo o la avaricia, no solo por la lógica.",
+          "No calcular el tamaño real del mercado; elegir un nicho tan pequeño que no te permita alcanzar tu punto de equilibrio."
+        ],
+        "tip": "Para encontrar a tu cliente ideal, piensa en tus últimos 3 mejores clientes (los que pagan bien, son fáciles de tratar y valoran tu consejo). Busca el patrón común entre ellos: ¿Qué profesión tienen? ¿Qué problema específico resolviste para ellos? ¿Qué edad tenían? Ese patrón es tu nicho inicial.",
+        "recommendedTools": [
           {
-            "id": "chk-cliente-ideal-perfil",
-            "task": "Describir el perfil demográfico y financiero de tu cliente ideal.",
-            "completed": false,
-            "registryFieldRef": "reg-nombre-arquetipo-cliente"
+            "name": "HubSpot Make My Persona (Generador de Buyer Persona)",
+            "url": "https://www.hubspot.es/make-my-persona"
+          },
+          {
+            "name": "INEGI / DANE / Instituto de Estadística Local (Para datos demográficos)",
+            "url": "https://www.inegi.org.mx/"
           }
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a definir el perfil de su cliente ideal como asesor financiero.",
-          "context": "El usuario está construyendo su estrategia de marketing.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "Un mensaje de marketing dirigido a 'cualquiera que necesite asesoría financiera' no le habla realmente a nadie. Entre más específico sea tu cliente ideal, más efectivo será cada peso que inviertas en atraerlo.",
         "registroFields": [
           {
-            "id": "reg-nombre-arquetipo-cliente",
-            "label": "Nombre del arquetipo de cliente ideal",
-            "type": "text",
-            "placeholder": "Ej. Profesional independiente en crecimiento"
+            "id": "buyer-persona-profile",
+            "label": "Perfil Detallado del Cliente Ideal (Buyer Persona)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Carlos, 45 años, cirujano dentista con clínica propia. Ingresos altos pero flujo de caja desordenado. Su mayor miedo es no tener liquidez para su jubilación a los 60. Su momento de dolor: no sabe cuánto debe ahorrar mensualmente ni cómo invertir sus excedentes.'",
+            "required": true
+          },
+          {
+            "id": "target-market-size",
+            "label": "Tamaño Estimado del Mercado Objetivo",
+            "type": "number",
+            "placeholder": "Ej: 5000 (Número de profesionales de ese nicho en tu ciudad/región)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-persona",
+            "task": "Redactar el perfil detallado del buyer persona, incluyendo datos demográficos, psicográficos y su 'momento de dolor'.",
+            "registryFieldRef": "buyer-persona-profile"
+          },
+          {
+            "id": "chk-estimate-market",
+            "task": "Investigar y registrar el tamaño estimado del mercado objetivo (número de personas o empresas de ese nicho).",
+            "registryFieldRef": "target-market-size"
           }
         ]
-      }
-    },
-    {
-      "id": "step-dolores-metas",
-      "title": "Identificar los principales dolores y metas de tu cliente ideal",
-      "description": "Identifica los dolores y metas financieras de tu cliente ideal.",
-      "icon": "target",
-      "order": 1,
-      "type": "one_time",
-      "estimatedHours": 1,
+      },
+      "estimatedHours": 0,
       "difficulty": "easy",
       "priority": "normal",
-      "dependencies": [
-        "step-cliente-ideal-perfil"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
+      "dependencies": [],
+      "order": 0
+    },
+    {
+      "id": "step-analisis-competencia-propuesta-valor",
+      "title": "Análisis de Competencia y Propuesta de Valor Diferencial",
+      "type": "one_time",
       "content": {
         "overview": {
-          "title": "Identificar los principales dolores y metas de tu cliente ideal",
-          "summary": "Identifica sus principales dolores y metas financieras.",
-          "body": "Anota los problemas financieros que más le preocupan a tu cliente ideal y las metas que quiere alcanzar."
+          "title": "Análisis de Competencia y Propuesta de Valor Diferencial",
+          "summary": "Investigar el mercado local o digital para identificar las debilidades de la competencia y articular una Propuesta de Valor Única (UVP) que te haga irreemplazable para tu nicho.",
+          "body": "El mercado de asesoría financiera está saturado de generalistas que prometen 'hacerte rico' o 'proteger tu patrimonio'. Para destacar, no necesitas ser mejor en todo; necesitas ser radicalmente diferente y relevante para un grupo específico de personas. Tu UVP debe responder en 10 segundos por qué un cliente debería elegirte a ti y no al banco tradicional o al asesor de la esquina."
         },
         "objective": {
-          "description": "Identificar los principales dolores y metas financieras de tu cliente ideal."
+          "description": "Documentar un análisis de 3 a 5 competidores directos y redactar una Propuesta de Valor Única (UVP) clara, específica y orientada al dolor del cliente ideal."
         },
-        "checklist": [
+        "whyItMatters": "Sin una UVP sólida, te conviertes en una mercancía (commodity) y tu única herramienta de venta es bajar el precio. Una UVP bien definida te permite cobrar tarifas premium, atrae a los clientes correctos de forma orgánica y facilita enormemente la creación de tu marketing y contenido.",
+        "bestPractices": [
+          "Analiza las reseñas negativas de tus competidores en Google Maps o redes sociales; esas quejas son tus oportunidades de oro.",
+          "Estructura tu UVP así: 'Ayudamos a [Nicho Específico] a lograr [Resultado Deseado] sin [Dolor Común], a través de [Tu Mecanismo Único]'.",
+          "Valida tu UVP con 3 o 4 clientes ideales o colegas antes de imprimirla en tu web."
+        ],
+        "commonMistakes": [
+          "Usar diferenciadores genéricos como 'somos más honestos', 'damos mejor servicio' o 'tenemos más experiencia' (todo el mundo dice eso).",
+          "Centrar la UVP en ti ('tenemos 20 años en el mercado') en lugar de en el cliente ('te ahorramos 10 horas al mes en gestión financiera').",
+          "No monitorear a la competencia de forma periódica, asumiendo que el mercado no cambia."
+        ],
+        "tip": "Tu mayor ventaja competitiva a menudo no es técnica, sino de experiencia del cliente. Si todos los asesores de tu zona envían informes en PDF aburridos y tardan 3 días en contestar un WhatsApp, tu UVP puede ser simplemente: 'Claridad financiera en tiempo real, con un asesor que contesta en menos de 2 horas y te explica todo sin jerga bancaria'.",
+        "recommendedTools": [
           {
-            "id": "chk-dolores-metas",
-            "task": "Identificar los principales dolores y metas financieras de tu cliente ideal.",
-            "completed": false,
-            "registryFieldRef": "reg-dolores-metas-texto"
+            "name": "SEMrush o SimilarWeb (Para analizar el tráfico y estrategia digital de competidores)",
+            "url": "https://www.semrush.com/"
+          },
+          {
+            "name": "Value Proposition Canvas (Plantilla de Strategyzer)",
+            "url": "https://www.strategyzer.com/canvas/value-proposition-canvas"
           }
         ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a identificar los dolores y metas de su cliente ideal.",
-          "context": "El usuario ya definió el perfil demográfico de su cliente ideal.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "tip": "Entrevista a 2-3 clientes potenciales reales antes de asumir cuáles son sus dolores - las suposiciones sin validar suelen estar equivocadas.",
         "registroFields": [
           {
-            "id": "reg-dolores-metas-texto",
-            "label": "Dolores y metas del cliente ideal",
-            "type": "textarea"
+            "id": "competitor-analysis-summary",
+            "label": "Resumen de Análisis Competitivo (Fortalezas y Debilidades de 3-5 rivales)",
+            "type": "textarea",
+            "placeholder": "Ej: 'Competidor A: Fuerte en inversiones, pero requiere $100k mínimos y trato impersonal. Competidor B: Bueno en deudas, pero su web es obsoleta y no tiene citas online. Oportunidad: Ofrecer planificación accesible desde $50k con atención 100% digital y humana.'",
+            "required": true
+          },
+          {
+            "id": "unique-value-proposition",
+            "label": "Propuesta de Valor Única (UVP) en una frase",
+            "type": "textarea",
+            "placeholder": "Ej: 'Ayudamos a médicos independientes a construir un plan de jubilación sólido y libre de estrés, sin jerga financiera compleja ni comisiones ocultas, mediante un sistema de revisión trimestral 100% en línea.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-analyze-competitors",
+            "task": "Investigar y resumir las fortalezas, debilidades y huecos en el mercado de 3 a 5 competidores directos.",
+            "registryFieldRef": "competitor-analysis-summary"
+          },
+          {
+            "id": "chk-draft-uvp",
+            "task": "Redactar y refinar la Propuesta de Valor Única (UVP) en una sola frase clara y contundente.",
+            "registryFieldRef": "unique-value-proposition"
           }
         ]
-      }
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 1
+    },
+    {
+      "id": "step-seleccion-software-planificacion-cifrado",
+      "title": "Selección e Implementación de Software de Planificación Financiera y Cifrado",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Selección e Implementación de Software de Planificación Financiera y Cifrado",
+          "summary": "Elegir y configurar las herramientas tecnológicas centrales para modelar planes financieros, gestionar la cartera de clientes y cifrar la información sensible.",
+          "body": "La tecnología en una asesoría financiera no es un lujo, es el motor que te permite escalar sin perder calidad. Necesitas software que te permita proyectar flujos de caja a 30 años, analizar asignaciones de activos y, sobre todo, que garantice que los datos bancarios y patrimoniales de tus clientes estén cifrados de extremo a extremo. Este paso define tu 'stack' tecnológico operativo."
+        },
+        "objective": {
+          "description": "Seleccionar el software principal de planificación financiera, la herramienta de gestión de contraseñas/cifrado y calcular el costo mensual de estas licencias críticas."
+        },
+        "whyItMatters": "Usar hojas de cálculo manuales no solo es propenso a errores fatales en los cálculos de interés compuesto o proyecciones fiscales, sino que es un riesgo de seguridad masivo. Un archivo de Excel con los patrimonios de 50 clientes enviado por correo sin cifrar es una bomba de tiempo legal y reputacional. El software especializado automatiza los cálculos, genera informes visuales de alto impacto y garantiza el cumplimiento de normativas de protección de datos.",
+        "bestPractices": [
+          "Elige software de planificación que permita escenarios dinámicos (Monte Carlo) para mostrar al cliente la probabilidad de éxito de su plan bajo diferentes condiciones de mercado.",
+          "Implementa un gestor de contraseñas de grado empresarial para todo el equipo; nunca guardes credenciales de clientes en archivos de texto o correos.",
+          "Asegúrate de que el software elegido cumpla con las normativas locales de protección de datos (ej. GDPR en Europa, HIPAA si manejas datos de salud vinculados a seguros, o leyes locales de habeas data).",
+          "Configura la autenticación de dos factores (2FA) obligatoria en todas las herramientas que almacenen datos de clientes."
+        ],
+        "commonMistakes": [
+          "Comprar software de contabilidad general (ej. QuickBooks) y usarlo para planificación financiera avanzada; son herramientas para propósitos distintos.",
+          "Compartir una sola cuenta de software de planificación entre varios asesores de la firma, perdiendo el historial de quién modificó qué plan y cuándo.",
+          "Ignorar las actualizaciones de seguridad del software; usar versiones obsoletas expone a los clientes a vulnerabilidades conocidas."
+        ],
+        "tip": "Antes de pagar la licencia anual de un software de planificación financiera caro, exige una prueba gratuita de 14 días y carga los datos ficticios de tu 'Buyer Persona'. Si la interfaz es tan compleja que te toma más de 30 minutos generar un plan básico, descártala; la fricción tecnológica te hará abandonar su uso en el primer mes.",
+        "recommendedTools": [
+          {
+            "name": "eMoney Advisor o MoneyGuidePro (Software líder de planificación financiera)",
+            "url": "https://www.emoneyadvisor.com/"
+          },
+          {
+            "name": "1Password Business o Bitwarden (Gestión de credenciales y cifrado)",
+            "url": "https://1password.com/"
+          },
+          {
+            "name": "Tresorit o Proton Drive (Almacenamiento en la nube cifrado de extremo a extremo)",
+            "url": "https://tresorit.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "financial-planning-software",
+            "label": "Software Principal de Planificación Financiera Seleccionado",
+            "type": "text",
+            "placeholder": "Ej: eMoney Advisor / MoneyGuidePro / Planificator",
+            "required": true
+          },
+          {
+            "id": "encryption-password-manager",
+            "label": "Herramienta de Cifrado y Gestión de Contraseñas Seleccionada",
+            "type": "text",
+            "placeholder": "Ej: 1Password Business / Bitwarden Enterprise",
+            "required": true
+          },
+          {
+            "id": "monthly-software-costs",
+            "label": "Costo Mensual Total de Licencias de Software Crítico",
+            "type": "number",
+            "placeholder": "Ej: 350 (en tu moneda local)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-select-planning-software",
+            "task": "Evaluar, seleccionar y registrar el nombre del software principal de planificación financiera.",
+            "registryFieldRef": "financial-planning-software"
+          },
+          {
+            "id": "chk-select-encryption-tool",
+            "task": "Seleccionar y registrar la herramienta de gestión de contraseñas y cifrado de grado empresarial.",
+            "registryFieldRef": "encryption-password-manager"
+          },
+          {
+            "id": "chk-calc-software-costs",
+            "task": "Calcular y registrar el costo mensual total de todas las licencias de software crítico seleccionadas.",
+            "registryFieldRef": "monthly-software-costs"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 2
+    },
+    {
+      "id": "step-protocolos-seguridad-confidencialidad",
+      "title": "Protocolos de Seguridad de la Información y Confidencialidad",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Protocolos de Seguridad de la Información y Confidencialidad",
+          "summary": "Documentar las reglas inquebrantables sobre cómo se reciben, almacenan, comparten y destruyen los datos financieros sensibles de los clientes.",
+          "body": "Tus clientes te entregarán las llaves de su vida financiera: estados de cuenta, números de seguridad social, escrituras de propiedades y testamentos. Este paso no es sobre comprar software, es sobre definir el comportamiento humano y los procesos operativos que garantizarán que esa información nunca sea comprometida, ya sea por un ciberataque, un error humano o una fuga física."
+        },
+        "objective": {
+          "description": "Redactar la política formal de manejo de datos sensibles y definir el protocolo operativo de respaldos (backups) y recuperación ante desastres."
+        },
+        "whyItMatters": "En el sector financiero, la confidencialidad es tu moneda de cambio. Un solo incidente donde los datos de un cliente se filtren (ej. enviar un correo al destinatario equivocado, perder una laptop sin cifrar) no solo resultará en demandas millonarias y sanciones regulatorias, sino que destruirá tu reputación de forma irreversible. Los protocolos escritos te protegen legalmente al demostrar 'debida diligencia' y obligan a tu equipo a seguir un estándar.",
+        "bestPractices": [
+          "Establece un canal exclusivo y cifrado para que los clientes te envíen documentos sensibles (ej. portal de clientes seguro), prohibiendo el envío de datos críticos por correo electrónico estándar o WhatsApp.",
+          "Define una política de retención y destrucción de documentos: ¿cuántos años guardas los expedientes de un cliente que se fue? ¿Cómo los destruyes de forma segura (trituración industrial, borrado criptográfico)?",
+          "Realiza simulacros semestrales de recuperación ante desastres: si tu servidor principal cae hoy, ¿en cuánto tiempo puedes volver a acceder a los planes de todos tus clientes?"
+        ],
+        "commonMistakes": [
+          "Guardar documentos físicos de clientes en archivadores sin llave en oficinas compartidas o áreas de acceso público.",
+          "Depender de un solo lugar para los respaldos (ej. solo en la computadora local); si hay un robo o un incendio, pierdes todo el negocio.",
+          "No tener un protocolo claro de qué hacer en las primeras 24 horas si se detecta una brecha de seguridad (quién llama al abogado, quién notifica al cliente, quién contiene el daño)."
+        ],
+        "tip": "Implementa la regla de los '3-2-1 para respaldos': Mantén al menos 3 copias de tus datos críticos, en 2 medios diferentes (ej. nube cifrada y disco duro externo), y 1 de esas copias fuera de las instalaciones físicas (ej. en la nube o en una caja de seguridad bancaria). Prueba restaurar una copia cada trimestre para asegurar que los archivos no están corruptos.",
+        "recommendedTools": [
+          {
+            "name": "ShareFile o Citrix (Portales seguros para intercambio de documentos con clientes)",
+            "url": "https://www.sharefile.com/"
+          },
+          {
+            "name": "Backblaze B2 (Copia de seguridad en la nube de bajo costo y alta seguridad)",
+            "url": "https://www.backblaze.com/b2/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "data-handling-policy",
+            "label": "Política Formal de Manejo, Retención y Destrucción de Datos Sensibles",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Los clientes subirán documentos solo vía portal cifrado. 2. Prohibido enviar números de cuenta completos por email. 3. Los expedientes de clientes inactivos se archivarán en frío por 7 años y luego se destruirán mediante trituración certificada.'",
+            "required": true
+          },
+          {
+            "id": "backup-disaster-recovery-protocol",
+            "label": "Protocolo de Respaldos (Backups) y Recuperación ante Desastres",
+            "type": "textarea",
+            "placeholder": "Ej: 'Regla 3-2-1 aplicada. Respaldo automático diario a las 2 AM a Backblaze B2 cifrado. Respaldo semanal en disco externo físico guardado en caja fuerte. Tiempo objetivo de recuperación (RTO): 4 horas. Simulacro de restauración cada 90 días.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-draft-data-policy",
+            "task": "Redactar y documentar la política formal de cómo se reciben, almacenan, comparten y destruyen los datos sensibles de los clientes.",
+            "registryFieldRef": "data-handling-policy"
+          },
+          {
+            "id": "chk-define-backup-protocol",
+            "task": "Definir y registrar el protocolo de respaldos (backups) y el plan de recuperación ante desastres (RTO/RPO).",
+            "registryFieldRef": "backup-disaster-recovery-protocol"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 3
+    },
+    {
+      "id": "step-estandarizacion-entrega-planes",
+      "title": "Estandarización de la Entrega de Planes Financieros (Formatos y plantillas)",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Estandarización de la Entrega de Planes Financieros",
+          "summary": "Definir el formato, la estructura y el canal de entrega del plan financiero para garantizar consistencia, profesionalismo y máxima comprensión por parte del cliente.",
+          "body": "Un plan financiero brillante pero mal presentado es un plan inútil. Si entregas un archivo de Excel de 50 pestañas lleno de fórmulas macroeconómicas, el cliente se sentirá abrumado y no tomará acción. La estandarización de la entrega asegura que cada cliente reciba la misma calidad de experiencia, facilita la revisión por pares dentro de tu firma y convierte datos complejos en decisiones claras."
+        },
+        "objective": {
+          "description": "Seleccionar el formato y canal de entrega del plan, y documentar la estructura estándar (índice de secciones) que tendrá todo plan financiero emitido por la firma."
+        },
+        "whyItMatters": "La presentación del plan es el momento de la verdad donde el cliente decide si tu asesoría vale lo que pagó. Una entrega estandarizada y visualmente impecable justifica tus tarifas premium, reduce las objeciones y, lo más importante, aumenta drásticamente la probabilidad de que el cliente implemente tus recomendaciones porque las entiende.",
+        "bestPractices": [
+          "Aplica la 'Regla de las 3 Capas': 1) Resumen Ejecutivo de 1-2 páginas (para el cliente ocupado), 2) Análisis y Recomendaciones de 10-15 páginas (para el cliente curioso), 3) Anexos Técnicos y Proyecciones (para el cliente analítico o auditor).",
+          "Traduce cada recomendación técnica a un 'Siguiente Paso Accionable' con una fecha límite y el responsable (tú o el cliente).",
+          "Utiliza gráficos de embudo, gráficos de torta de asignación de activos y líneas de tiempo visuales en lugar de tablas gigantes de números."
+        ],
+        "commonMistakes": [
+          "Entregar el plan por correo electrónico sin agendar una sesión de revisión en vivo; el cliente malinterpretará los datos y generará objeciones innecesarias.",
+          "Usar plantillas genéricas de software que incluyen secciones irrelevantes para el nicho específico del cliente (ej. incluir planificación universitaria para un cliente sin hijos).",
+          "Olvidar incluir una sección de 'Riesgos y Supuestos' que proteja legalmente a la firma si las proyecciones de mercado no se cumplen."
+        ],
+        "tip": "Incluye al final del plan un 'Plan de Acción de los Próximos 90 Días'. Divide las recomendaciones en 3 categorías: 'Qué hacer esta semana' (ej. cambiar beneficiarios de seguro), 'Qué hacer este mes' (ej. abrir cuenta de inversión) y 'Qué hacer este trimestre' (ej. refinanciar deuda). Esto convierte un documento estático en una hoja de ruta dinámica.",
+        "recommendedTools": [
+          {
+            "name": "Canva o Adobe InDesign (Para diseñar plantillas de informes financieros de alto impacto visual)",
+            "url": "https://www.canva.com/"
+          },
+          {
+            "name": "Visme o Piktochart (Para crear infografías financieras y resúmenes ejecutivos)",
+            "url": "https://www.visme.co/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "plan-delivery-format",
+            "label": "Formato y Canal de Entrega del Plan Financiero",
+            "type": "select",
+            "options": [
+              "PDF Interactivo presentado en sesión de videollamada/privada",
+              "Portal Web Privado del Cliente (con acceso 24/7 al plan y documentos)",
+              "Presentación en Vivo (Diapositivas) sin entrega de documento físico inicial",
+              "Híbrido (Presentación en vivo + PDF de resumen + Portal para anexos técnicos)"
+            ],
+            "required": true
+          },
+          {
+            "id": "standardized-template-structure",
+            "label": "Estructura Estándar del Documento de Plan Financiero (Índice de Secciones)",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Carta de Bienvenida y Resumen Ejecutivo. 2. Análisis de la Situación Actual (Radiografía). 3. Brecha entre Situación Actual y Metas. 4. Estrategia y Recomendaciones Core. 5. Plan de Acción a 90 Días. 6. Proyecciones a 10/20/30 años. 7. Supuestos, Riesgos y Descargos de Responsabilidad.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-select-delivery-format",
+            "task": "Seleccionar y definir el formato y canal oficial de entrega del plan financiero al cliente.",
+            "registryFieldRef": "plan-delivery-format"
+          },
+          {
+            "id": "chk-define-template-structure",
+            "task": "Documentar la estructura estándar (índice de secciones) que tendrán todos los planes financieros emitidos por la firma.",
+            "registryFieldRef": "standardized-template-structure"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 4
+    },
+    {
+      "id": "step-software-contable-conciliacion",
+      "title": "Software Contable y Conciliación",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Software Contable y Conciliación",
+          "summary": "Seleccionar, configurar y poner en marcha el sistema contable que registrará cada ingreso, gasto y movimiento fiscal de la firma.",
+          "body": "La contabilidad no es solo para pagar impuestos; es el tablero de control de tu rentabilidad. En una asesoría financiera, donde tus principales gastos son intangibles (software, marketing, educación, tiempo), un buen sistema contable te permite saber exactamente cuánto te cuesta adquirir un cliente (CAC), cuánto te cuesta entregar el servicio y cuál es tu margen real por hora trabajada."
+        },
+        "objective": {
+          "description": "Implementar el software contable, definir el catálogo de cuentas (categorías de ingresos y gastos) y establecer la rutina de registro y conciliación."
+        },
+        "whyItMatters": "Llevar la contabilidad en hojas de cálculo manuales o en una caja de zapatos con recibos es la receta perfecta para pagar impuestos de más (por no deducir gastos válidos) o recibir multas por declaraciones erróneas. Un software contable automatiza la categorización, genera los reportes fiscales a tiempo y te da claridad financiera para tomar decisiones de inversión en el negocio.",
+        "bestPractices": [
+          "Configura el 'Plan de Cuentas' desde el día uno, separando claramente los gastos operativos (software, oficina) de los gastos de venta (marketing, comisiones) y los activos (equipos).",
+          "Conecta tu cuenta bancaria empresarial directamente al software contable para que los movimientos se importen automáticamente y solo tengas que categorizarlos.",
+          "Establece una rutina semanal (no mensual) para registrar las ventas y conciliar los gastos; la contabilidad al día toma 15 minutos, la contabilidad acumulada toma días y genera errores."
+        ],
+        "commonMistakes": [
+          "Contratar al contador más barato que solo 'mete los datos al sistema una vez al año' para la declaración de impuestos, perdiendo la oportunidad de tener análisis financiero mensual.",
+          "Mezclar categorías contables (ej. meter los gastos de marketing dentro de 'gastos de oficina'), lo que te impide saber si tu estrategia de captación es rentable.",
+          "No configurar los impuestos retenidos o traslados correctamente en el software, generando descuadres fiscales constantes."
+        ],
+        "tip": "Crea una categoría de gasto llamada 'Inversión en Crecimiento' separada de los 'Gastos Operativos'. Esto te permite ver mensualmente cuánto estás reinvirtiendo en el negocio (ej. nueva certificación, mejora de web, contratar asistente) versus cuánto te cuesta mantenerlo abierto. Los asesores financieros exitosos reinvierten al menos el 15-20% de sus ingresos en los primeros 3 años.",
+        "recommendedTools": [
+          {
+            "name": "QuickBooks Online o Xero (Estándares globales en contabilidad para pymes y servicios)",
+            "url": "https://quickbooks.intuit.com/"
+          },
+          {
+            "name": "Contpaqi o software contable local certificado por la entidad fiscal de tu país",
+            "url": ""
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "accounting-software-selected",
+            "label": "Software Contable Seleccionado y Configurado",
+            "type": "text",
+            "placeholder": "Ej: QuickBooks Online Plus / Xero Premium",
+            "required": true
+          },
+          {
+            "id": "expense-categories-list",
+            "label": "Listado de Categorías de Gastos e Ingresos Configuradas",
+            "type": "textarea",
+            "placeholder": "Ej: 'Ingresos: Honorarios Planificación, Fees Retainer. Gastos Operativos: Licencias Software, Renta Oficina, Seguros. Gastos Venta: Ads, Webinars. Inversión: Certificaciones, Equipos.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-setup-accounting-software",
+            "task": "Seleccionar, adquirir y configurar el software contable, enlazando la cuenta bancaria empresarial.",
+            "registryFieldRef": "accounting-software-selected"
+          },
+          {
+            "id": "chk-configure-expense-accounts",
+            "task": "Configurar el catálogo de cuentas y el listado detallado de categorías de gastos e ingresos.",
+            "registryFieldRef": "expense-categories-list"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 5
+    },
+    {
+      "id": "step-creacion-material-educativo-lead-magnets",
+      "title": "Creación de Material Educativo y Lead Magnets",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Creación de Material Educativo y Lead Magnets",
+          "summary": "Diseñar y producir recursos de alto valor (calculadoras, guías, webinars) que resuelvan un dolor específico de tu nicho y te permitan capturar los datos de prospectos calificados.",
+          "body": "En la asesoría financiera, la gente no compra 'asesoría', compra 'tranquilidad' o 'claridad'. Un Lead Magnet efectivo (como una 'Calculadora de Años para la Jubilación' o una 'Guía para Proteger tu Patrimonio ante una Crisis') demuestra tu expertise antes de que te contraten, filtrando a los curiosos y atrayendo a los clientes serios que ya tienen un problema que resolver."
+        },
+        "objective": {
+          "description": "Producir al menos un Lead Magnet principal de alta calidad, configurar la página de aterrizaje (landing page) para su descarga y definir la métrica de conversión esperada."
+        },
+        "whyItMatters": "Intentar vender una asesoría financiera de alto ticket directamente a un desconocido es muy difícil. El Lead Magnet actúa como el 'primer paso' de baja fricción. Además, el contenido educativo te posiciona como una autoridad, haciendo que el cliente llegue a la primera reunión ya convencido de que eres la persona adecuada para ayudarle, reduciendo drásticamente tu ciclo de ventas.",
+        "bestPractices": [
+          "Resuelve un problema micro, no macro. En lugar de 'Cómo ser millonario', ofrece 'Los 5 errores fiscales que están costando dinero a los médicos independientes este año'.",
+          "Asegúrate de que el diseño del material coincida exactamente con tu manual de marca (colores, tipografías, tono profesional).",
+          "Incluye una 'llamada a la acción' (CTA) clara al final del material, invitando al lector a agendar una 'Sesión de Diagnóstico Gratuita de 15 minutos'."
+        ],
+        "commonMistakes": [
+          "Crear un Lead Magnet demasiado genérico (ej. '10 tips financieros') que podría haber escrito cualquiera, sin aportar tu visión única o datos específicos de tu nicho.",
+          "Pedir demasiados datos en el formulario de descarga (ej. pedir teléfono y dirección cuando solo se necesita el correo electrónico), lo que destruye la tasa de conversión.",
+          "No hacer seguimiento automatizado después de la descarga; el prospecto descarga el PDF y nunca más sabe de ti."
+        ],
+        "tip": "Las calculadoras interactivas (ej. '¿Cuánto necesitas ahorrar mensualmente para retirarte a los 60?') convierten hasta un 40% más que los PDFs estáticos. Herramientas como Outgrow o incluso fórmulas bien diseñadas en Typeform te permiten crear estas calculadoras y capturar el correo para enviar los resultados personalizados.",
+        "recommendedTools": [
+          {
+            "name": "Outgrow o Typeform (Para crear calculadoras financieras interactivas y cuestionarios)",
+            "url": "https://try.outgrow.co/"
+          },
+          {
+            "name": "Canva Pro (Para diseñar Ebooks, guías y plantillas de alto impacto visual)",
+            "url": "https://www.canva.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "lead-magnet-topic",
+            "label": "Tema y Formato del Lead Magnet Principal",
+            "type": "textarea",
+            "placeholder": "Ej: 'Calculadora Interactiva de Brecha de Jubilación' o 'Ebook: Guía de Protección Patrimonial para Emprendedores en 2024'.",
+            "required": true
+          },
+          {
+            "id": "lead-magnet-url",
+            "label": "Enlace a la Landing Page o Recurso Descargable",
+            "type": "url",
+            "placeholder": "Ej: https://tuasesoria.com/calculadora-jubilacion",
+            "required": true
+          },
+          {
+            "id": "expected-conversion-rate",
+            "label": "Tasa de Conversión Esperada del Lead Magnet (%)",
+            "type": "number",
+            "placeholder": "Ej: 15 (porcentaje de visitantes de la landing que dejan sus datos)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-lead-magnet",
+            "task": "Definir el tema, formato y valor central del Lead Magnet principal orientado al dolor del nicho.",
+            "registryFieldRef": "lead-magnet-topic"
+          },
+          {
+            "id": "chk-publish-landing-page",
+            "task": "Diseñar, configurar y publicar la landing page o recurso interactivo para la captura de datos.",
+            "registryFieldRef": "lead-magnet-url"
+          },
+          {
+            "id": "chk-set-conversion-goal",
+            "task": "Establecer y registrar la meta de tasa de conversión esperada para evaluar el éxito del recurso.",
+            "registryFieldRef": "expected-conversion-rate"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 6
+    },
+    {
+      "id": "step-programa-referidos-fidelizacion",
+      "title": "Programa de Referidos y Fidelización de Clientes",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Programa de Referidos y Fidelización de Clientes",
+          "summary": "Diseñar un sistema formal y ético para incentivar a los clientes actuales a referir a nuevos clientes de su círculo de confianza, y establecer rituales de fidelización.",
+          "body": "En servicios financieros, el boca a boca es el canal de adquisición más poderoso y barato, pero no ocurre por inercia; hay que diseñarlo. Los clientes satisfechos quieren referirte, pero a menudo no lo hacen porque no saben cómo, les da pena 'hablar de dinero' con sus amigos, o no tienen un marco claro para hacerlo. Un programa de referidos estructurado elimina esa fricción."
+        },
+        "objective": {
+          "description": "Definir el incentivo para el cliente que refiere y para el nuevo cliente, establecer la mecánica de solicitud de referidos y diseñar el ritual anual de fidelización."
+        },
+        "whyItMatters": "Un cliente referido tiene un costo de adquisición (CAC) cercano a cero, un ciclo de venta más corto (porque llega con la confianza ya transferida) y una tasa de retención mucho mayor. Formalizar este proceso convierte a tus mejores clientes en una fuerza de ventas externa y altamente motivada.",
+        "bestPractices": [
+          "Ofrece incentivos que aporten valor real pero que no parezcan 'sobornos' (ej. una sesión de planificación fiscal avanzada gratuita, una donación a una obra de caridad a su nombre, o un libro de finanzas de alto valor). Evita dar efectivo directo, ya que puede tener implicaciones fiscales o éticas.",
+          "Facilita el trabajo del cliente: entrégale un 'Kit de Referidos' con un correo pre-redactado que él solo tenga que reenviar a su amigo, o un enlace único de invitación.",
+          "Pide referidos en el 'momento de mayor felicidad' del cliente (ej. justo después de entregarle un plan financiero exitoso o después de resolverle una crisis)."
+        ],
+        "commonMistakes": [
+          "Esperar a que los clientes te refieran espontáneamente sin haberles pedido explícitamente ni dado las herramientas para hacerlo.",
+          "Ofrecer descuentos en las tarifas del cliente existente por referir; en servicios financieros de alto nivel, los clientes no buscan descuentos, buscan exclusividad y valor añadido.",
+          "Olvidar agradecer y cerrar el ciclo; si un cliente te refiere y tú contratas a su amigo, el cliente que refiere DEBE ser notificado y agradecido personalmente."
+        ],
+        "tip": "Implementa la 'Regla de los 3 Nombres' en tu revisión anual con cada cliente. Al final de la sesión, cuando el cliente está satisfecho con su plan, dile: 'Me alegra mucho que estemos en el camino correcto. Para poder ayudar a más personas como tú, ¿hay 3 amigos o colegas de tu misma profesión que crees que también están preocupados por su jubilación y a quienes podrías presentarme?'. Anota los nombres ahí mismo.",
+        "recommendedTools": [
+          {
+            "name": "ReferralCandy o FirstPromoter (Para gestionar enlaces de referidos y recompensas)",
+            "url": "https://www.referralcandy.com/"
+          },
+          {
+            "name": "Bonusly (Para recompensas internas y donaciones a caridad)",
+            "url": "https://bonusly.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "referral-incentive",
+            "label": "Incentivo para el Cliente que Refiere y para el Nuevo Cliente",
+            "type": "textarea",
+            "placeholder": "Ej: 'Cliente que refiere: Sesión estratégica de optimización fiscal gratuita ($300 valor). Nuevo cliente: 50% de descuento en el fee de diagnóstico inicial. Alternativa: Donación de $100 a la ONG favorita del cliente que refiere.'",
+            "required": true
+          },
+          {
+            "id": "referral-mechanics",
+            "label": "Mecánica y Herramienta de Solicitud de Referidos",
+            "type": "textarea",
+            "placeholder": "Ej: '1. Regla de los 3 Nombres en revisión anual. 2. Kit de correo pre-redactado enviado por email para que el cliente reenvíe a su red. 3. Enlace único de invitación generado por el CRM.'",
+            "required": true
+          },
+          {
+            "id": "loyalty-ritual",
+            "label": "Ritual Anual de Fidelización para Clientes Actuales",
+            "type": "textarea",
+            "placeholder": "Ej: 'Cena anual exclusiva para clientes (Networking + Conferencia de mercado). Regalo físico de fin de año de alta calidad (ej. agenda de cuero personalizada). Carta manuscrita de agradecimiento por su confianza.'",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-incentives",
+            "task": "Definir los incentivos éticos y de alto valor para el programa de referidos.",
+            "registryFieldRef": "referral-incentive"
+          },
+          {
+            "id": "chk-design-mechanics",
+            "task": "Diseñar la mecánica de solicitud y las herramientas (correos, enlaces) para facilitar los referidos.",
+            "registryFieldRef": "referral-mechanics"
+          },
+          {
+            "id": "chk-establish-loyalty-ritual",
+            "task": "Documentar el ritual anual de fidelización y agradecimiento para los clientes actuales.",
+            "registryFieldRef": "loyalty-ritual"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 7
     },
     {
       "id": "step-canales-contenido",
       "title": "Definir en qué canales vas a publicar contenido de forma constante",
       "description": "Elige el canal principal donde vas a publicar contenido.",
       "icon": "megaphone",
-      "order": 2,
+      "order": 8,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -176,7 +675,7 @@
       "title": "Crear el calendario de contenido del primer mes",
       "description": "Planea las publicaciones del primer mes.",
       "icon": "calendar",
-      "order": 3,
+      "order": 9,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -229,7 +728,7 @@
       "title": "Escribir el primer artículo o publicación educativa",
       "description": "Publica tu primera pieza de contenido educativo.",
       "icon": "pen-tool",
-      "order": 4,
+      "order": 10,
       "type": "one_time",
       "estimatedHours": 3,
       "difficulty": "medium",
@@ -278,65 +777,11 @@
       }
     },
     {
-      "id": "step-programa-referidos",
-      "title": "Definir tu programa de referidos",
-      "description": "Define cómo vas a pedir y recompensar referidos.",
-      "icon": "gift",
-      "order": 5,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Definir tu programa de referidos",
-          "summary": "Define cómo vas a pedir y recompensar referidos de clientes actuales.",
-          "body": "La mayoría de los clientes satisfechos no refieren por iniciativa propia, pero sí aceptan cuando se lo pides de forma directa."
-        },
-        "objective": {
-          "description": "Definir cómo vas a pedir y recompensar referidos de clientes actuales."
-        },
-        "checklist": [
-          {
-            "id": "chk-programa-referidos",
-            "task": "Definir cómo vas a pedir y recompensar referidos de clientes actuales.",
-            "completed": false,
-            "registryFieldRef": "reg-programa-referidos-texto"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a diseñar un programa de referidos simple y efectivo.",
-          "context": "El usuario está diseñando su estrategia de captación de clientes.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "bestPractices": [
-          "Pide referidos de forma explícita a tus clientes satisfechos - la mayoría no lo hace por iniciativa propia, pero sí acepta cuando se lo pides."
-        ],
-        "registroFields": [
-          {
-            "id": "reg-programa-referidos-texto",
-            "label": "Programa de referidos definido",
-            "type": "textarea",
-            "helpText": "Cómo se piden y recompensan las referencias."
-          }
-        ]
-      }
-    },
-    {
       "id": "step-identificar-asociaciones",
       "title": "Identificar asociaciones o cámaras profesionales para afiliarte",
       "description": "Identifica asociaciones relevantes de tu sector.",
       "icon": "users",
-      "order": 6,
+      "order": 11,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -389,7 +834,7 @@
       "title": "Afiliarte a una asociación o cámara profesional",
       "description": "Completa tu afiliación a la asociación elegida.",
       "icon": "badge-check",
-      "order": 7,
+      "order": 12,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "easy",
@@ -437,66 +882,11 @@
       }
     },
     {
-      "id": "step-sitios-resenas",
-      "title": "Registrar tu firma en sitios de reseñas relevantes del sector",
-      "description": "Registra tu firma en sitios de reseñas relevantes.",
-      "icon": "star",
-      "order": 8,
-      "type": "one_time",
-      "estimatedHours": 1,
-      "difficulty": "easy",
-      "priority": "normal",
-      "dependencies": [
-        "step-google-business"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Registrar tu firma en sitios de reseñas relevantes del sector",
-          "summary": "Registra tu firma en sitios de reseñas relevantes del sector.",
-          "body": "Las reseñas de clientes anteriores generan confianza en un cliente potencial que todavía no te conoce."
-        },
-        "objective": {
-          "description": "Registrar tu firma en los sitios de reseñas relevantes de tu sector."
-        },
-        "checklist": [
-          {
-            "id": "chk-sitios-resenas",
-            "task": "Registrar tu firma en los sitios de reseñas relevantes de tu sector.",
-            "completed": false,
-            "registryFieldRef": "step-sitios-resenas-status"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a identificar sitios de reseñas relevantes para asesores financieros.",
-          "context": "El usuario ya tiene su perfil de Google Business creado.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "whyItMatters": "La mayoría de los prospectos revisan reseñas antes de agendar una primera reunión, incluso en servicios profesionales.",
-        "registroFields": [
-          {
-            "id": "step-sitios-resenas-status",
-            "label": "Estado de: Registrar tu firma en sitios de reseñas relevantes del sector",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
-          }
-        ]
-      }
-    },
-    {
       "id": "step-primera-resena",
       "title": "Solicitar tu primera reseña a un contacto de confianza",
       "description": "Solicita tu primera reseña.",
       "icon": "star",
-      "order": 9,
+      "order": 13,
       "type": "one_time",
       "estimatedHours": 1,
       "difficulty": "easy",
@@ -547,64 +937,11 @@
       }
     },
     {
-      "id": "step-folleto",
-      "title": "Diseñar un folleto o material de presentación descargable",
-      "description": "Diseña un folleto o PDF de presentación de tu firma.",
-      "icon": "file-text",
-      "order": 10,
-      "type": "one_time",
-      "estimatedHours": 3,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [
-        "step-disenar-logo",
-        "step-alcance-paquetes"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Diseñar un folleto o material de presentación descargable",
-          "summary": "Diseña un folleto o PDF de presentación de tu firma.",
-          "body": "Un material descargable resume tus servicios y es útil para enviar por correo tras un primer contacto."
-        },
-        "objective": {
-          "description": "Diseñar un folleto o material de presentación descargable."
-        },
-        "checklist": [
-          {
-            "id": "chk-folleto",
-            "task": "Diseñar un folleto o material de presentación descargable.",
-            "completed": false,
-            "registryFieldRef": "reg-folleto-drive"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a estructurar el contenido de un folleto de presentación profesional.",
-          "context": "El usuario ya tiene su identidad de marca y sus paquetes de servicios listos.",
-          "suggestions": []
-        },
-        "knowledge": [],
-        "registroFields": [
-          {
-            "id": "reg-folleto-drive",
-            "label": "Enlace al archivo final en Google Drive",
-            "type": "url"
-          }
-        ]
-      }
-    },
-    {
       "id": "step-estrategia-webinar",
       "title": "Definir tu estrategia de eventos o webinars introductorios",
       "description": "Define el formato y tema de tu primer evento introductorio.",
       "icon": "presentation",
-      "order": 11,
+      "order": 14,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -658,7 +995,7 @@
       "title": "Planear tu primer webinar o evento introductorio",
       "description": "Planea la logística de tu primer evento.",
       "icon": "presentation",
-      "order": 12,
+      "order": 15,
       "type": "one_time",
       "estimatedHours": 4,
       "difficulty": "medium",

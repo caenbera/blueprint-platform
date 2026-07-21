@@ -4,11 +4,211 @@
   "block": "strategy",
   "steps": [
     {
+      "id": "step-calculo-costos-punto-equilibrio",
+      "title": "Cálculo de Costos y Punto de Equilibrio",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Cálculo de Costos y Punto de Equilibrio",
+          "summary": "Determinar con precisión matemática cuántos clientes o cuántas horas de asesoría necesitas vender mensualmente para cubrir todos tus gastos y empezar a generar utilidad.",
+          "body": "En una asesoría financiera, tu principal activo es tu tiempo y tu conocimiento. A diferencia de un negocio de productos, no tienes un 'costo de materia prima' evidente, pero sí tienes costos fijos (licencias de software, renta de oficina, seguros, certificaciones) y costos de vida personal que debes cubrir antes de que el negocio sea rentable. Este paso te obliga a poner números reales sobre la mesa para que no trabajes meses sin saber si estás ganando o perdiendo dinero."
+        },
+        "objective": {
+          "description": "Calcular el punto de equilibrio exacto en número de clientes activos o horas facturables mensuales, separando costos fijos del negocio, costos de vida personal y costos variables por cliente atendido."
+        },
+        "whyItMatters": "El 70% de los asesores financieros independientes fracasan en los primeros 2 años no por falta de conocimiento técnico, sino por no saber cuántos clientes necesitan para sobrevivir. Sin un punto de equilibrio claro, subestimas tus tarifas, aceptas clientes que no cubren tu tiempo, o vives en un estado permanente de ansiedad financiera que te impide tomar decisiones estratégicas de largo plazo.",
+        "bestPractices": [
+          "Separa estrictamente los costos del negocio (software, oficina, marketing) de tus costos de vida personal (renta de casa, alimentación, transporte). Ambos deben cubrirse.",
+          "Incluye en los costos fijos las certificaciones anuales (CFP, CFA, registros regulatorios) prorrateadas mensualmente.",
+          "Calcula el costo variable por cliente: tiempo promedio de atención × tu tarifa horaria interna + costo de herramientas por sesión + tiempo de preparación de informes.",
+          "Añade un margen de seguridad del 20-30% sobre tu punto de equilibrio para cubrir meses flojos o clientes que cancelan."
+        ],
+        "commonMistakes": [
+          "Olvidar incluir tu propio salario como costo fijo; muchos asesores trabajan 'gratis' los primeros meses sin contabilizar su tiempo.",
+          "No prorratear gastos anuales (seguros, renovaciones de licencias, membresías profesionales) en un costo mensual, lo que genera sorpresas de liquidez.",
+          "Calcular el punto de equilibrio solo con clientes nuevos, ignorando que los clientes recurrentes (retainers) tienen un costo de mantenimiento menor pero un ingreso predecible.",
+          "Usar una tarifa horaria 'de mercado' en lugar de una tarifa que realmente cubra tus costos reales más la utilidad deseada."
+        ],
+        "tip": "Aplica esta fórmula rápida: Punto de Equilibrio (en clientes) = (Costos Fijos Mensuales + Costos de Vida Personal) ÷ (Tarifa Promedio por Cliente - Costo Variable por Cliente). Si el resultado es 12 clientes y tu capacidad máxima es 15, tienes un margen muy estrecho; necesitas subir tarifas o reducir costos fijos antes de abrir.",
+        "recommendedTools": [
+          {
+            "name": "QuickBooks Self-Employed (Para separar gastos personales y de negocio)",
+            "url": "https://quickbooks.intuit.com/self-employed/"
+          },
+          {
+            "name": "Plantilla de Punto de Equilibrio en Google Sheets",
+            "url": "https://docs.google.com/spreadsheets/"
+          },
+          {
+            "name": "Calculadora de Tarifas de la NAPFA (National Association of Personal Financial Advisors)",
+            "url": "https://www.napfa.org/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "fixed-costs-monthly",
+            "label": "Costos Fijos Mensuales del Negocio (Software, oficina, seguros, membresías prorrateadas)",
+            "type": "number",
+            "placeholder": "Ej: 1500 (en tu moneda local)",
+            "required": true
+          },
+          {
+            "id": "personal-living-costs",
+            "label": "Costos de Vida Personal Mensuales (Renta, alimentación, transporte, salud)",
+            "type": "number",
+            "placeholder": "Ej: 2000 (en tu moneda local)",
+            "required": true
+          },
+          {
+            "id": "variable-cost-per-client",
+            "label": "Costo Variable Unitario por Cliente Atendido (Tiempo de prep + herramientas + informes)",
+            "type": "number",
+            "placeholder": "Ej: 85 (en tu moneda local por cada cliente)",
+            "required": true
+          },
+          {
+            "id": "breakeven-calculation",
+            "label": "Punto de Equilibrio Calculado (Número de clientes o horas facturables mensuales)",
+            "type": "number",
+            "placeholder": "Ej: 14 (clientes activos necesarios al mes)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-list-fixed-costs",
+            "task": "Listar y sumar todos los costos fijos mensuales del negocio (software, renta, seguros, membresías prorrateadas).",
+            "registryFieldRef": "fixed-costs-monthly"
+          },
+          {
+            "id": "chk-list-living-costs",
+            "task": "Calcular y registrar los costos de vida personal que el negocio debe cubrir como mínimo.",
+            "registryFieldRef": "personal-living-costs"
+          },
+          {
+            "id": "chk-calc-variable-cost",
+            "task": "Determinar el costo variable unitario por cada cliente atendido (tiempo, herramientas, preparación).",
+            "registryFieldRef": "variable-cost-per-client"
+          },
+          {
+            "id": "chk-calc-breakeven",
+            "task": "Aplicar la fórmula de punto de equilibrio y registrar el número exacto de clientes/horas necesarias.",
+            "registryFieldRef": "breakeven-calculation"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 0
+    },
+    {
+      "id": "step-definicion-kpis-metas-anuales",
+      "title": "Definición de KPIs y Metas Anuales",
+      "type": "one_time",
+      "content": {
+        "overview": {
+          "title": "Definición de KPIs y Metas Anuales",
+          "summary": "Establecer los indicadores clave de rendimiento que medirán la salud del negocio y las metas numéricas concretas para el primer año de operación.",
+          "body": "Lo que no se mide, no se mejora. En una asesoría financiera, los KPIs van más allá de 'cuánto facturé este mes'. Debes medir la calidad del servicio (tasa de retención, NPS), la eficiencia operativa (horas facturables vs. horas totales), la salud financiera (ingreso por cliente, margen por servicio) y el crecimiento (tasa de referidos, costo de adquisición). Este paso define tu tablero de control."
+        },
+        "objective": {
+          "description": "Seleccionar entre 5 y 8 KPIs críticos, definir metas numéricas anuales para cada uno y establecer la frecuencia de revisión (semanal, mensual, trimestral)."
+        },
+        "whyItMatters": "Sin KPIs claros, un asesor financiero puede sentirse 'ocupado' todo el mes atendiendo reuniones, respondiendo correos y preparando informes, sin darse cuenta de que su ingreso por hora efectiva está por debajo del salario mínimo. Los KPIs te obligan a distinguir entre actividad (estar ocupado) y productividad (generar valor medible).",
+        "bestPractices": [
+          "Elige máximo 5-8 KPIs; más de eso genera parálisis y nadie los revisa.",
+          "Incluye al menos un KPI de cada dimensión: Financiero (ingreso/cliente), Operativo (tasa de utilización de horas), Cliente (NPS o retención) y Crecimiento (nuevos clientes/mes).",
+          "Define metas SMART: Específicas, Medibles, Alcanzables, Relevantes y con Tiempo definido.",
+          "Revisa los KPIs en una reunión contigo mismo (o tu equipo) cada viernes durante 30 minutos; no esperes al cierre de mes."
+        ],
+        "commonMistakes": [
+          "Medir solo ingresos totales sin desglosar por fuente (clientes nuevos vs. recurrentes, servicios premium vs. básicos).",
+          "No medir la 'tasa de utilización': el porcentaje de horas trabajadas que realmente son facturables vs. horas en administración, marketing o reuniones improductivas.",
+          "Fijar metas anuales sin desglosarlas en metas mensuales o semanales, lo que genera la sensación de 'ya veremos a fin de año'.",
+          "Ignorar KPIs de satisfacción del cliente; en servicios financieros, un cliente insatisfecho no solo se va, sino que habla mal de ti en su círculo."
+        ],
+        "tip": "Tu KPI más importante en el primer año debe ser la 'Tasa de Utilización Facturable': (Horas facturadas al cliente ÷ Horas totales trabajadas) × 100. Si trabajas 40 horas semanales pero solo facturas 20, tu tasa es 50% y estás regalando la mitad de tu tiempo. La meta estándar en consultoría es 65-75%. Todo lo que hagas debe orientarse a subir ese número.",
+        "recommendedTools": [
+          {
+            "name": "Toggl Track (Para medir horas facturables vs. no facturables)",
+            "url": "https://toggl.com/track/"
+          },
+          {
+            "name": "Google Data Studio / Looker Studio (Para crear dashboards de KPIs)",
+            "url": "https://lookerstudio.google.com/"
+          },
+          {
+            "name": "Harvest (Time tracking + facturación integrada)",
+            "url": "https://www.getharvest.com/"
+          }
+        ],
+        "registroFields": [
+          {
+            "id": "target-revenue-per-client",
+            "label": "Meta de Ingreso Promedio por Cliente Anual",
+            "type": "number",
+            "placeholder": "Ej: 4800 (ingreso anual promedio esperado por cada cliente activo)",
+            "required": true
+          },
+          {
+            "id": "target-utilization-rate",
+            "label": "Meta de Tasa de Utilización Facturable (%)",
+            "type": "number",
+            "placeholder": "Ej: 70 (porcentaje de horas trabajadas que son facturables)",
+            "required": true
+          },
+          {
+            "id": "target-retention-rate",
+            "label": "Meta de Tasa de Retención de Clientes Anual (%)",
+            "type": "number",
+            "placeholder": "Ej: 85 (porcentaje de clientes que renuevan al año siguiente)",
+            "required": true
+          },
+          {
+            "id": "max-acceptable-acquisition-cost",
+            "label": "Costo Máximo Aceptable de Adquisición por Cliente",
+            "type": "number",
+            "placeholder": "Ej: 200 (máximo que estás dispuesto a invertir en marketing/ventas para conseguir 1 cliente)",
+            "required": true
+          }
+        ],
+        "checklist": [
+          {
+            "id": "chk-define-revenue-target",
+            "task": "Definir la meta de ingreso promedio anual por cliente activo y registrar el valor numérico.",
+            "registryFieldRef": "target-revenue-per-client"
+          },
+          {
+            "id": "chk-define-utilization",
+            "task": "Establecer la meta de tasa de utilización facturable (horas productivas vs. totales).",
+            "registryFieldRef": "target-utilization-rate"
+          },
+          {
+            "id": "chk-define-retention",
+            "task": "Fijar la meta de retención de clientes anual como indicador de calidad del servicio.",
+            "registryFieldRef": "target-retention-rate"
+          },
+          {
+            "id": "chk-define-cac-limit",
+            "task": "Calcular y registrar el costo máximo aceptable de adquisición de un nuevo cliente.",
+            "registryFieldRef": "max-acceptable-acquisition-cost"
+          }
+        ]
+      },
+      "estimatedHours": 0,
+      "difficulty": "easy",
+      "priority": "normal",
+      "dependencies": [],
+      "order": 1
+    },
+    {
       "id": "step-presupuesto-inicial",
       "title": "Definir el presupuesto inicial de arranque",
       "description": "Calcula cuánto capital necesitas para operar hasta generar ingresos estables.",
       "icon": "piggy-bank",
-      "order": 0,
+      "order": 2,
       "type": "one_time",
       "estimatedHours": 2,
       "difficulty": "medium",
@@ -53,80 +253,6 @@
             "type": "number",
             "placeholder": "Ej. 15000",
             "helpText": "Incluye la moneda en las notas si lo prefieres (USD, COP, MXN, etc.)."
-          }
-        ]
-      }
-    },
-    {
-      "id": "v2-step-kpis",
-      "title": "Desarrollar los KPIs Estratégicos",
-      "description": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
-      "order": 1,
-      "type": "one_time",
-      "estimatedHours": 2,
-      "difficulty": "medium",
-      "priority": "normal",
-      "dependencies": [
-        "v2-step-gobernanza"
-      ],
-      "completionRules": {
-        "requiredChecklist": true,
-        "requiredResources": false,
-        "requiredApproval": false,
-        "requiredQuiz": false
-      },
-      "content": {
-        "overview": {
-          "title": "Desarrollar los KPIs Estratégicos",
-          "summary": "Define las métricas que medirán objetivamente el desempeño de tu firma.",
-          "body": "Los KPIs te permiten medir objetivamente el desempeño de tu firma y tomar decisiones basadas en datos.\n\nEjemplos de KPIs para asesoría financiera:\n- % de clientes que utilizan servicios recurrentemente\n- Tiempo promedio de resolución de consultas\n- Número de planes financieros entregados\n- Tasa de retención de clientes\n- Ingresos recurrentes mensuales (MRR)"
-        },
-        "objective": {
-          "description": "¿Qué métricas medirán el éxito de tu firma?"
-        },
-        "checklist": [
-          {
-            "id": "v2-chk-kpi-01",
-            "task": "Definir métricas de clientes",
-            "completed": false,
-            "registryFieldRef": "kpis-status"
-          },
-          {
-            "id": "v2-chk-kpi-02",
-            "task": "Establecer métricas financieras",
-            "completed": false,
-            "registryFieldRef": "kpis-status"
-          },
-          {
-            "id": "v2-chk-kpi-03",
-            "task": "Crear dashboard de seguimiento",
-            "completed": false,
-            "registryFieldRef": "kpis-status"
-          },
-          {
-            "id": "v2-chk-kpi-04",
-            "task": "Documentar frecuencia de revisión",
-            "completed": false,
-            "registryFieldRef": "kpis-status"
-          }
-        ],
-        "resources": [],
-        "assistant": {
-          "systemPrompt": "Ayuda al usuario a definir los KPIs más relevantes para una firma de asesoría financiera.",
-          "context": "El usuario está estableciendo las métricas que usará para medir el éxito de su firma.",
-          "suggestions": [
-            "¿Cuáles son los KPIs más importantes para una firma de asesoría financiera?"
-          ]
-        },
-        "knowledge": [],
-        "whyItMatters": "Sin métricas claras no sabrás si tus esfuerzos están funcionando — los KPIs convierten la intuición en decisiones basadas en datos.",
-        "registroFields": [
-          {
-            "id": "kpis-status",
-            "label": "Estado de: Desarrollar los KPIs Estratégicos",
-            "type": "text",
-            "placeholder": "Ej: Completado o Registrado",
-            "required": true
           }
         ]
       }
