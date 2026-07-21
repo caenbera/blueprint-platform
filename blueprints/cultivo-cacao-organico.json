@@ -15821,7 +15821,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "monthly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -15963,7 +15963,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "quarterly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -16155,7 +16155,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "monthly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -16349,7 +16349,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "monthly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -16531,7 +16531,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "monthly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -16726,7 +16726,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "weekly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -16909,7 +16909,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "weekly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -17091,7 +17091,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "weekly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -17251,7 +17251,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "daily",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -17409,7 +17409,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "daily",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -17598,7 +17598,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "weekly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -17789,7 +17789,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "weekly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -17971,7 +17971,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "weekly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",
@@ -18151,7 +18151,7 @@
               }
             ]
           },
-          "type": "one_time",
+          "type": "weekly",
           "estimatedHours": 0,
           "difficulty": "easy",
           "priority": "normal",

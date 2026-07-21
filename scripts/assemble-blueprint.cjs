@@ -25,6 +25,26 @@ const ALLOWED_STEP_TYPES = [
   "one_time", "daily", "weekly", "monthly", "quarterly", "semester", "yearly", "milestone", "custom"
 ];
 
+function detectStepType(stepId, title, isRecurrentFile) {
+  if (!isRecurrentFile) return "one_time";
+  
+  const idLower = stepId.toLowerCase();
+  const titleLower = title.toLowerCase();
+  
+  if (idLower.includes("daily") || titleLower.includes("diari")) return "daily";
+  if (idLower.includes("weekly") || titleLower.includes("semanal")) return "weekly";
+  if (idLower.includes("monthly") || titleLower.includes("mensual")) return "monthly";
+  if (idLower.includes("quarterly") || titleLower.includes("trimestral")) return "quarterly";
+  if (idLower.includes("yearly") || titleLower.includes("anual")) return "yearly";
+  
+  // Específicos de Cacao/Operaciones recurrentes
+  if (idLower.includes("fermentation") || idLower.includes("drying")) return "daily";
+  if (idLower.includes("harvesting") || idLower.includes("collection") || idLower.includes("transport") || idLower.includes("traceability") || idLower.includes("maintenance")) return "weekly";
+  if (idLower.includes("fertilization") || idLower.includes("pruning") || idLower.includes("monitoring") || idLower.includes("inputs") || idLower.includes("tools")) return "monthly";
+  
+  return "weekly"; // fallback default
+}
+
 function main() {
   const targetDir = process.argv[2];
   if (!targetDir) {
@@ -173,7 +193,8 @@ function main() {
 
         // Rellenar valores por defecto para campos obligatorios
         if (!step.type) {
-          step.type = "one_time";
+          const isRecurrentFile = file.toLowerCase().includes("recurrentes");
+          step.type = detectStepType(step.id || "", step.title || "", isRecurrentFile);
         }
         if (step.estimatedHours === undefined) {
           step.estimatedHours = 0;
