@@ -59,10 +59,11 @@ async function main() {
     for (const projDoc of projects.docs) {
       const projData = projDoc.data();
       // Match either by blueprintId or if slug/name matches
-      if (projData.blueprintId === "lFE0X5KXgp8Mn8WZFaVA" || (projData.blueprintSnapshot && projData.blueprintSnapshot.slug === "asesoria-financiera-profesional")) {
+      if (projData.name.includes("Asesoría Financiera")) {
         console.log(`Updating Project: "${projData.name}" (ID: ${projDoc.id}) in Org: ${orgDoc.id}`);
         
         await projDoc.ref.update({
+          blueprintId: "lFE0X5KXgp8Mn8WZFaVA",
           "blueprintSnapshot.roadmap": normalizedRoadmap,
           "blueprintSnapshot.name": bpData.name,
           "blueprintSnapshot.slug": bpData.slug,
