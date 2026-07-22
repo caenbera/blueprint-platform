@@ -81,7 +81,14 @@
             "task": "Finalizar el diseño del logotipo y subir los archivos maestros (vectoriales y de alta resolución) al repositorio seguro.",
             "registryFieldRef": "logo-assets-url"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -100,7 +107,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-disenar-logo"
+        "step-diseno-logotipo-paleta-colores"
       ],
       "completionRules": {
         "requiredChecklist": true,

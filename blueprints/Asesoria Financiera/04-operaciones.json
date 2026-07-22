@@ -79,7 +79,14 @@
             "task": "Calcular el costo total de mantenimiento del negocio y vida personal durante el período de escasez.",
             "registryFieldRef": "scarcity-maintenance-cost"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -161,7 +168,14 @@
             "task": "Diseñar y activar la secuencia de correos automatizada para la nutrición de leads.",
             "registryFieldRef": "key-automation-configured"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",

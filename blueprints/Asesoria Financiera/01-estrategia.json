@@ -65,7 +65,14 @@
             "task": "Definir y listar los valores fundamentales que regirán la operación diaria.",
             "registryFieldRef": "core-values-list"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -135,7 +142,14 @@
             "task": "Calcular y registrar la meta numérica de capacidad máxima (clientes o activos bajo gestión).",
             "registryFieldRef": "max-capacity-target"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -209,7 +223,14 @@
             "task": "Definir y seleccionar el nivel de rigor del protocolo de confidencialidad que se implementará.",
             "registryFieldRef": "confidentiality-protocol-level"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -284,7 +305,14 @@
             "task": "Establecer y documentar el protocolo de comunicación, seguimiento y tiempos de respuesta entre revisiones formales.",
             "registryFieldRef": "follow-up-communication-protocol"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -302,7 +330,7 @@
       "difficulty": "medium",
       "priority": "high",
       "dependencies": [
-        "v2-step-mision-vision"
+        "step-declaracion-mision-proposito"
       ],
       "completionRules": {
         "requiredChecklist": true,

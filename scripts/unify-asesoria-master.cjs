@@ -387,6 +387,53 @@ allStepsToMerge.forEach(({ step, origPhaseTitle }) => {
   }
 });
 
+// A. Construir conjunto de todos los IDs válidos en el blueprint final
+const finalStepIds = new Set();
+Object.values(phasesMeta).forEach(phase => {
+  phase.steps.forEach(s => {
+    finalStepIds.add(s.id);
+  });
+});
+
+// B. Construir el mapa de traducción de dependencias
+const depTranslationMap = {};
+Object.entries(conceptMapping).forEach(([profTitle, origTitles]) => {
+  const profClean = cleanString(profTitle);
+  const pStep = profSteps.find(ps => cleanString(ps.title) === profClean);
+  if (!pStep) return;
+
+  const newId = pStep.id;
+
+  origTitles.forEach(origTitle => {
+    const origClean = cleanString(origTitle);
+    const oStep = origSteps.find(os => cleanString(os.title) === origClean);
+    if (oStep && oStep.id !== newId) {
+      depTranslationMap[oStep.id] = newId;
+    }
+    const vStep = v3Steps.find(vs => cleanString(vs.title) === origClean);
+    if (vStep && vStep.id !== newId) {
+      depTranslationMap[vStep.id] = newId;
+    }
+  });
+});
+
+// C. Corregir y sanitizar dependencias
+Object.values(phasesMeta).forEach(phase => {
+  phase.steps.forEach(s => {
+    if (s.dependencies && s.dependencies.length > 0) {
+      s.dependencies = s.dependencies
+        .map(depId => depTranslationMap[depId] || depId)
+        .filter(depId => {
+          const isValid = finalStepIds.has(depId);
+          if (!isValid) {
+            console.log(`⚠️ Depurada dependencia huérfana en "${s.title}": "${depId}" eliminada.`);
+          }
+          return isValid;
+        });
+    }
+  });
+});
+
 // 5. Salvar archivos fragmentados
 let totalSteps = 0;
 Object.entries(phasesMeta).forEach(([key, phase]) => {
@@ -395,6 +442,16 @@ Object.entries(phasesMeta).forEach(([key, phase]) => {
 
   // Asegurar interactividad en el 100% de los pasos
   phase.steps.forEach((s) => {
+    // Inicializar campos obligatorios si faltan para evitar crashes en el cliente
+    if (!s.dependencies) s.dependencies = [];
+    if (!s.content) s.content = {};
+    if (!s.content.resources) s.content.resources = [];
+    if (!s.content.checklist) s.content.checklist = [];
+    if (!s.content.knowledge) s.content.knowledge = [];
+    if (!s.content.assistant) s.content.assistant = { systemPrompt: "", context: "", suggestions: [] };
+    if (!s.content.overview) s.content.overview = { title: s.title, summary: s.description || "", body: "" };
+    if (!s.content.objective) s.content.objective = { description: s.title };
+
     if (!s.content.registroFields || s.content.registroFields.length === 0) {
       const isDate = cleanString(s.title).includes('renov') || cleanString(s.title).includes('venc') || cleanString(s.title).includes('fecha');
       s.content.registroFields = [

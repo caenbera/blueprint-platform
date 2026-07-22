@@ -95,7 +95,14 @@
             "task": "Aplicar la fórmula de punto de equilibrio y registrar el número exacto de clientes/horas necesarias.",
             "registryFieldRef": "breakeven-calculation"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -195,7 +202,14 @@
             "task": "Calcular y registrar el costo máximo aceptable de adquisición de un nuevo cliente.",
             "registryFieldRef": "max-acceptable-acquisition-cost"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",

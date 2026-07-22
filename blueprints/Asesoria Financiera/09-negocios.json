@@ -71,7 +71,14 @@
             "task": "Calcular y registrar el presupuesto total necesario para la adecuación ergonómica, de privacidad y tecnológica del espacio.",
             "registryFieldRef": "workspace-setup-budget"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -148,7 +155,14 @@
             "task": "Formalizar la contratación y registrar el número de póliza, fecha de vencimiento y el límite de cobertura financiera.",
             "registryFieldRef": "insurance-policy-number"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -230,7 +244,14 @@
             "task": "Consolidar todos los protocolos en el documento oficial de BCP y subirlo a un repositorio seguro y accesible para el sucesor.",
             "registryFieldRef": "bcp-document-url"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -302,7 +323,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-definir-almacenamiento"
+        "step-protocolos-seguridad-confidencialidad"
       ],
       "completionRules": {
         "requiredChecklist": true,

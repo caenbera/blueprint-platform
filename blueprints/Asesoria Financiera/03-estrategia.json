@@ -65,7 +65,14 @@
             "task": "Redactar y documentar explícitamente qué responsabilidades o servicios están fuera del alcance para evitar malentendidos.",
             "registryFieldRef": "out-of-scope-definition"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -153,7 +160,14 @@
             "task": "Establecer y registrar la tarifa base o fee mínimo de entrada para filtrar clientes no calificados.",
             "registryFieldRef": "minimum-entry-fee"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -172,8 +186,8 @@
       "difficulty": "medium",
       "priority": "normal",
       "dependencies": [
-        "step-documentar-tarifas",
-        "step-priorizar-servicios"
+        "step-calculo-costos-punto-equilibrio",
+        "step-definicion-servicios-core"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -282,7 +296,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-documentar-tarifas"
+        "step-calculo-costos-punto-equilibrio"
       ],
       "completionRules": {
         "requiredChecklist": true,

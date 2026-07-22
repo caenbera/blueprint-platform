@@ -76,7 +76,14 @@
             "task": "Documentar las acciones urgentes y bloqueos que se deben resolver en los próximos 5 días hábiles.",
             "registryFieldRef": "urgent-client-actions"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -158,7 +165,14 @@
             "task": "Identificar y registrar cualquier cambio normativo o fiscal que requiera ajustar los planes de los clientes.",
             "registryFieldRef": "new-regulations-applied"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -248,7 +262,14 @@
             "task": "Auditar y validar que solo el personal activo y autorizado tenga acceso a los sistemas y datos de clientes.",
             "registryFieldRef": "access-logs-reviewed"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -330,7 +351,14 @@
             "task": "Calcular, planillar y pagar las contribuciones de seguridad social del equipo.",
             "registryFieldRef": "social-security-paid-amount"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -432,7 +460,14 @@
             "task": "Sumar y registrar el costo total incurrido en todas las renovaciones anuales (aranceles, auditorías, cursos).",
             "registryFieldRef": "renewal-costs-total"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -514,7 +549,14 @@
             "task": "Enviar el boletín y registrar el alcance total y la tasa de apertura obtenida.",
             "registryFieldRef": "subscribers-reached"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -596,7 +638,14 @@
             "task": "Analizar los comentarios abiertos, contactar a los detractores y documentar el plan de acción de mejora.",
             "registryFieldRef": "key-feedback-summary"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",

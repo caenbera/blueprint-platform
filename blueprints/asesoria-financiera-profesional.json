@@ -87,7 +87,14 @@
                 "task": "Definir y listar los valores fundamentales que regirán la operación diaria.",
                 "registryFieldRef": "core-values-list"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -157,7 +164,14 @@
                 "task": "Calcular y registrar la meta numérica de capacidad máxima (clientes o activos bajo gestión).",
                 "registryFieldRef": "max-capacity-target"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -231,7 +245,14 @@
                 "task": "Definir y seleccionar el nivel de rigor del protocolo de confidencialidad que se implementará.",
                 "registryFieldRef": "confidentiality-protocol-level"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -306,7 +327,14 @@
                 "task": "Establecer y documentar el protocolo de comunicación, seguimiento y tiempos de respuesta entre revisiones formales.",
                 "registryFieldRef": "follow-up-communication-protocol"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -324,7 +352,7 @@
           "difficulty": "medium",
           "priority": "high",
           "dependencies": [
-            "v2-step-mision-vision"
+            "step-declaracion-mision-proposito"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -761,7 +789,14 @@
                 "task": "Aplicar la fórmula de punto de equilibrio y registrar el número exacto de clientes/horas necesarias.",
                 "registryFieldRef": "breakeven-calculation"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -861,7 +896,14 @@
                 "task": "Calcular y registrar el costo máximo aceptable de adquisición de un nuevo cliente.",
                 "registryFieldRef": "max-acceptable-acquisition-cost"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -993,7 +1035,14 @@
                 "task": "Redactar y documentar explícitamente qué responsabilidades o servicios están fuera del alcance para evitar malentendidos.",
                 "registryFieldRef": "out-of-scope-definition"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -1081,7 +1130,14 @@
                 "task": "Establecer y registrar la tarifa base o fee mínimo de entrada para filtrar clientes no calificados.",
                 "registryFieldRef": "minimum-entry-fee"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -1100,8 +1156,8 @@
           "difficulty": "medium",
           "priority": "normal",
           "dependencies": [
-            "step-documentar-tarifas",
-            "step-priorizar-servicios"
+            "step-calculo-costos-punto-equilibrio",
+            "step-definicion-servicios-core"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -1210,7 +1266,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-documentar-tarifas"
+            "step-calculo-costos-punto-equilibrio"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -1338,7 +1394,14 @@
                 "task": "Calcular el costo total de mantenimiento del negocio y vida personal durante el período de escasez.",
                 "registryFieldRef": "scarcity-maintenance-cost"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -1420,7 +1483,14 @@
                 "task": "Diseñar y activar la secuencia de correos automatizada para la nutrición de leads.",
                 "registryFieldRef": "key-automation-configured"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -1757,7 +1827,14 @@
                 "task": "Diseñar la estructura y las secciones del cuestionario de diagnóstico financiero inicial que completará el cliente.",
                 "registryFieldRef": "initial-diagnosis-questionnaire"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -1776,7 +1853,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-revision-abogado-contrato"
+            "step-estructura-contratos-legales"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -1831,7 +1908,7 @@
           "difficulty": "easy",
           "priority": "high",
           "dependencies": [
-            "step-paquete-bienvenida"
+            "step-diseno-proceso-onboarding-diagnostico"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -1887,7 +1964,7 @@
           "priority": "high",
           "dependencies": [
             "step-agendar-primera-reunion",
-            "step-cuestionario-descubrimiento"
+            "step-diseno-proceso-onboarding-diagnostico"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -2398,7 +2475,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-revisar-plan"
+            "step-estandarizacion-entrega-planes"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -2684,7 +2761,14 @@
                 "task": "Documentar las acciones urgentes y bloqueos que se deben resolver en los próximos 5 días hábiles.",
                 "registryFieldRef": "urgent-client-actions"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -2766,7 +2850,14 @@
                 "task": "Identificar y registrar cualquier cambio normativo o fiscal que requiera ajustar los planes de los clientes.",
                 "registryFieldRef": "new-regulations-applied"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -2856,7 +2947,14 @@
                 "task": "Auditar y validar que solo el personal activo y autorizado tenga acceso a los sistemas y datos de clientes.",
                 "registryFieldRef": "access-logs-reviewed"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -2938,7 +3036,14 @@
                 "task": "Calcular, planillar y pagar las contribuciones de seguridad social del equipo.",
                 "registryFieldRef": "social-security-paid-amount"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -3040,7 +3145,14 @@
                 "task": "Sumar y registrar el costo total incurrido en todas las renovaciones anuales (aranceles, auditorías, cursos).",
                 "registryFieldRef": "renewal-costs-total"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -3122,7 +3234,14 @@
                 "task": "Enviar el boletín y registrar el alcance total y la tasa de apertura obtenida.",
                 "registryFieldRef": "subscribers-reached"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -3204,7 +3323,14 @@
                 "task": "Analizar los comentarios abiertos, contactar a los detractores y documentar el plan de acción de mejora.",
                 "registryFieldRef": "key-feedback-summary"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -4015,7 +4141,14 @@
                 "task": "Obtener y registrar el número de identificación fiscal oficial de la empresa.",
                 "registryFieldRef": "tax-id-number"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -4089,7 +4222,14 @@
                 "task": "Registrar el código oficial otorgado y su fecha de vencimiento para programar su renovación.",
                 "registryFieldRef": "registration-expiration-date"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -4170,7 +4310,14 @@
                 "task": "Guardar las plantillas finales aprobadas en un repositorio seguro y accesible solo para personal autorizado.",
                 "registryFieldRef": "contract-repository-url"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -4256,7 +4403,14 @@
                 "task": "Configurar y enlazar la pasarela de cobro en el sitio web para facilitar el pago de honorarios.",
                 "registryFieldRef": "payment-gateway-linked"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -4602,7 +4756,7 @@
           "difficulty": "hard",
           "priority": "high",
           "dependencies": [
-            "step-inscribir-examen"
+            "step-registros-certificaciones-oficiales"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -4818,7 +4972,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-obtener-registro"
+            "step-registros-certificaciones-oficiales"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -4874,9 +5028,7 @@
           "estimatedHours": 4,
           "difficulty": "hard",
           "priority": "high",
-          "dependencies": [
-            "v2-step-politica-confidencialidad"
-          ],
+          "dependencies": [],
           "completionRules": {
             "requiredChecklist": true,
             "requiredResources": false,
@@ -5012,7 +5164,14 @@
                 "task": "Solicitar las tarjetas de débito y crédito corporativas en la entidad bancaria seleccionada.",
                 "registryFieldRef": "banking-entity"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -5096,7 +5255,14 @@
                 "task": "Calcular y registrar el presupuesto total necesario para la adecuación ergonómica, de privacidad y tecnológica del espacio.",
                 "registryFieldRef": "workspace-setup-budget"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -5173,7 +5339,14 @@
                 "task": "Formalizar la contratación y registrar el número de póliza, fecha de vencimiento y el límite de cobertura financiera.",
                 "registryFieldRef": "insurance-policy-number"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -5255,7 +5428,14 @@
                 "task": "Consolidar todos los protocolos en el documento oficial de BCP y subirlo a un repositorio seguro y accesible para el sucesor.",
                 "registryFieldRef": "bcp-document-url"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -5327,7 +5507,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-definir-almacenamiento"
+            "step-protocolos-seguridad-confidencialidad"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -5747,7 +5927,14 @@
                 "task": "Finalizar el diseño del logotipo y subir los archivos maestros (vectoriales y de alta resolución) al repositorio seguro.",
                 "registryFieldRef": "logo-assets-url"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -5766,7 +5953,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-disenar-logo"
+            "step-diseno-logotipo-paleta-colores"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -5896,7 +6083,14 @@
                 "task": "Definir e integrar las palabras clave locales principales en la descripción del perfil y el sitio web.",
                 "registryFieldRef": "local-seo-keywords"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -5915,8 +6109,8 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-biografia",
-            "step-fotos-profesionales"
+            "step-creacion-material-educativo-lead-magnets",
+            "step-creacion-material-educativo-lead-magnets"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -5968,7 +6162,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-disenar-logo"
+            "step-diseno-logotipo-paleta-colores"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -6022,7 +6216,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-publicar-sitio"
+            "step-registro-dominio-sitio-web"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -6134,7 +6328,14 @@
                 "task": "Investigar y registrar el tamaño estimado del mercado objetivo (número de personas o empresas de ese nicho).",
                 "registryFieldRef": "target-market-size"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6204,7 +6405,14 @@
                 "task": "Redactar y refinar la Propuesta de Valor Única (UVP) en una sola frase clara y contundente.",
                 "registryFieldRef": "unique-value-proposition"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6291,7 +6499,14 @@
                 "task": "Calcular y registrar el costo mensual total de todas las licencias de software crítico seleccionadas.",
                 "registryFieldRef": "monthly-software-costs"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6361,7 +6576,14 @@
                 "task": "Definir y registrar el protocolo de respaldos (backups) y el plan de recuperación ante desastres (RTO/RPO).",
                 "registryFieldRef": "backup-disaster-recovery-protocol"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6436,7 +6658,14 @@
                 "task": "Documentar la estructura estándar (índice de secciones) que tendrán todos los planes financieros emitidos por la firma.",
                 "registryFieldRef": "standardized-template-structure"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6506,7 +6735,14 @@
                 "task": "Configurar el catálogo de cuentas y el listado detallado de categorías de gastos e ingresos.",
                 "registryFieldRef": "expense-categories-list"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6588,7 +6824,14 @@
                 "task": "Establecer y registrar la meta de tasa de conversión esperada para evaluar el éxito del recurso.",
                 "registryFieldRef": "expected-conversion-rate"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6670,7 +6913,14 @@
                 "task": "Documentar el ritual anual de fidelización y agradecimiento para los clientes actuales.",
                 "registryFieldRef": "loyalty-ritual"
               }
-            ]
+            ],
+            "resources": [],
+            "knowledge": [],
+            "assistant": {
+              "systemPrompt": "",
+              "context": "",
+              "suggestions": []
+            }
           },
           "estimatedHours": 0,
           "difficulty": "easy",
@@ -6961,7 +7211,7 @@
           "difficulty": "easy",
           "priority": "normal",
           "dependencies": [
-            "step-sitios-resenas"
+            "step-ficha-google-maps-seo-local"
           ],
           "completionRules": {
             "requiredChecklist": true,
@@ -7016,7 +7266,7 @@
           "difficulty": "medium",
           "priority": "normal",
           "dependencies": [
-            "step-dolores-metas"
+            "step-perfil-cliente-ideal-segmento"
           ],
           "completionRules": {
             "requiredChecklist": true,

@@ -66,7 +66,14 @@
             "task": "Diseñar la estructura y las secciones del cuestionario de diagnóstico financiero inicial que completará el cliente.",
             "registryFieldRef": "initial-diagnosis-questionnaire"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -85,7 +92,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-revision-abogado-contrato"
+        "step-estructura-contratos-legales"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -140,7 +147,7 @@
       "difficulty": "easy",
       "priority": "high",
       "dependencies": [
-        "step-paquete-bienvenida"
+        "step-diseno-proceso-onboarding-diagnostico"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -196,7 +203,7 @@
       "priority": "high",
       "dependencies": [
         "step-agendar-primera-reunion",
-        "step-cuestionario-descubrimiento"
+        "step-diseno-proceso-onboarding-diagnostico"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -707,7 +714,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-revisar-plan"
+        "step-estandarizacion-entrega-planes"
       ],
       "completionRules": {
         "requiredChecklist": true,

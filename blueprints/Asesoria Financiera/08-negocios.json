@@ -65,7 +65,14 @@
             "task": "Solicitar las tarjetas de débito y crédito corporativas en la entidad bancaria seleccionada.",
             "registryFieldRef": "banking-entity"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",

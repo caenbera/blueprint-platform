@@ -70,7 +70,14 @@
             "task": "Obtener y registrar el número de identificación fiscal oficial de la empresa.",
             "registryFieldRef": "tax-id-number"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -144,7 +151,14 @@
             "task": "Registrar el código oficial otorgado y su fecha de vencimiento para programar su renovación.",
             "registryFieldRef": "registration-expiration-date"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -225,7 +239,14 @@
             "task": "Guardar las plantillas finales aprobadas en un repositorio seguro y accesible solo para personal autorizado.",
             "registryFieldRef": "contract-repository-url"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -311,7 +332,14 @@
             "task": "Configurar y enlazar la pasarela de cobro en el sitio web para facilitar el pago de honorarios.",
             "registryFieldRef": "payment-gateway-linked"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -657,7 +685,7 @@
       "difficulty": "hard",
       "priority": "high",
       "dependencies": [
-        "step-inscribir-examen"
+        "step-registros-certificaciones-oficiales"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -873,7 +901,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-obtener-registro"
+        "step-registros-certificaciones-oficiales"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -929,9 +957,7 @@
       "estimatedHours": 4,
       "difficulty": "hard",
       "priority": "high",
-      "dependencies": [
-        "v2-step-politica-confidencialidad"
-      ],
+      "dependencies": [],
       "completionRules": {
         "requiredChecklist": true,
         "requiredResources": false,

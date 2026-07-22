@@ -81,7 +81,14 @@
             "task": "Definir e integrar las palabras clave locales principales en la descripción del perfil y el sitio web.",
             "registryFieldRef": "local-seo-keywords"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -100,8 +107,8 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-biografia",
-        "step-fotos-profesionales"
+        "step-creacion-material-educativo-lead-magnets",
+        "step-creacion-material-educativo-lead-magnets"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -153,7 +160,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-disenar-logo"
+        "step-diseno-logotipo-paleta-colores"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -207,7 +214,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-publicar-sitio"
+        "step-registro-dominio-sitio-web"
       ],
       "completionRules": {
         "requiredChecklist": true,

@@ -65,7 +65,14 @@
             "task": "Investigar y registrar el tamaño estimado del mercado objetivo (número de personas o empresas de ese nicho).",
             "registryFieldRef": "target-market-size"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -135,7 +142,14 @@
             "task": "Redactar y refinar la Propuesta de Valor Única (UVP) en una sola frase clara y contundente.",
             "registryFieldRef": "unique-value-proposition"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -222,7 +236,14 @@
             "task": "Calcular y registrar el costo mensual total de todas las licencias de software crítico seleccionadas.",
             "registryFieldRef": "monthly-software-costs"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -292,7 +313,14 @@
             "task": "Definir y registrar el protocolo de respaldos (backups) y el plan de recuperación ante desastres (RTO/RPO).",
             "registryFieldRef": "backup-disaster-recovery-protocol"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -367,7 +395,14 @@
             "task": "Documentar la estructura estándar (índice de secciones) que tendrán todos los planes financieros emitidos por la firma.",
             "registryFieldRef": "standardized-template-structure"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -437,7 +472,14 @@
             "task": "Configurar el catálogo de cuentas y el listado detallado de categorías de gastos e ingresos.",
             "registryFieldRef": "expense-categories-list"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -519,7 +561,14 @@
             "task": "Establecer y registrar la meta de tasa de conversión esperada para evaluar el éxito del recurso.",
             "registryFieldRef": "expected-conversion-rate"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -601,7 +650,14 @@
             "task": "Documentar el ritual anual de fidelización y agradecimiento para los clientes actuales.",
             "registryFieldRef": "loyalty-ritual"
           }
-        ]
+        ],
+        "resources": [],
+        "knowledge": [],
+        "assistant": {
+          "systemPrompt": "",
+          "context": "",
+          "suggestions": []
+        }
       },
       "estimatedHours": 0,
       "difficulty": "easy",
@@ -892,7 +948,7 @@
       "difficulty": "easy",
       "priority": "normal",
       "dependencies": [
-        "step-sitios-resenas"
+        "step-ficha-google-maps-seo-local"
       ],
       "completionRules": {
         "requiredChecklist": true,
@@ -947,7 +1003,7 @@
       "difficulty": "medium",
       "priority": "normal",
       "dependencies": [
-        "step-dolores-metas"
+        "step-perfil-cliente-ideal-segmento"
       ],
       "completionRules": {
         "requiredChecklist": true,
